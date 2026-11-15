@@ -1,0 +1,132 @@
+/* Portal surfaces are scoped by the desktop marker, leaving custom themes untouched. */
+[data-frame-desktop] [data-frame-menu] {
+  border: var(--frame-rule);
+  border-radius: 6px;
+  background: var(--color-surface);
+  backdrop-filter: none;
+  box-shadow: 0 12px 36px rgb(0 0 0 / 32%);
+}
+
+[data-frame-desktop] [data-frame-dialog] {
+  border: var(--frame-rule);
+  background: var(--color-surface);
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 40%);
+}
+
+[data-frame-desktop] form[data-frame-dialog] {
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+}
+
+[data-frame-desktop] [data-frame-onboarding] {
+  z-index: 240;
+  padding: 24px;
+  background: color-mix(in srgb, var(--color-canvas) 94%, transparent);
+  backdrop-filter: none;
+}
+
+[data-frame-desktop] [data-frame-onboarding] > [data-frame-dialog] {
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+}
+
+[data-frame-desktop] .harbor-search-cascade {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr);
+  gap: 28px 36px;
+}
+
+[data-frame-desktop] .harbor-search-cascade > section:first-child {
+  grid-column: 1 / -1;
+}
+
+[data-frame-desktop] .harbor-search-cascade button {
+  border-radius: 5px;
+}
+
+[data-frame-desktop] [data-search-overlay] > div.relative {
+  max-width: 1440px;
+  padding: 32px;
+}
+
+[data-frame-desktop] [data-search-overlay] .modal-panel {
+  border: var(--frame-rule);
+  background: var(--color-canvas);
+  border-radius: 8px;
+  min-height: min(720px, calc(100vh - 64px));
+}
+
+[data-frame-desktop] [data-search-overlay] .harbor-search-body {
+  padding: 28px;
+  scrollbar-width: thin;
+}
+
+[data-frame-desktop] .harbor-search-backdrop {
+  background: color-mix(in srgb, var(--color-canvas) 90%, transparent);
+  backdrop-filter: none;
+}
+
+.frame-search-heading {
+  padding: 22px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.frame-search-heading h2 {
+  font-family: var(--frame-display);
+  font-size: 30px;
+  color: var(--color-ink);
+}
+
+.frame-search-heading p {
+  font-size: 13px;
+  color: var(--color-ink-subtle);
+}
+
+[data-frame-desktop] [data-frame-transport] {
+  padding: 26px 36px 22px;
+  gap: 16px;
+}
+
+[data-frame-desktop] [data-frame-transport] > div[aria-hidden] {
+  background: linear-gradient(0deg, rgb(0 0 0 / 95%), rgb(0 0 0 / 65%) 65%, transparent);
+}
+
+[data-frame-desktop] [data-frame-transport] > div:last-child {
+  padding-block-start: 8px;
+  border-block-start: 1px solid rgb(255 255 255 / 16%);
+}
+
+[data-frame-desktop] [data-frame-transport] button {
+  border-radius: 6px;
+}
+
+[data-frame-desktop] [data-frame-player-header] {
+  padding-inline: 36px;
+  padding-block-start: 20px;
+}
+
+[data-frame-desktop] [data-frame-player-header] button {
+  border-radius: 6px;
+}
+
+@media (max-width: 760px) {
+  [data-frame-desktop] .harbor-search-cascade {
+    display: flex;
+  }
+  [data-frame-desktop] [data-search-overlay] > div.relative {
+    padding: 12px;
+  }
+  .frame-search-heading {
+    flex-wrap: wrap;
+  }
+  [data-frame-desktop] [data-frame-transport] {
+    padding-inline: 12px;
+  }
+  [data-frame-desktop] [data-frame-player-header] {
+    padding-inline: 12px;
+  }
+}

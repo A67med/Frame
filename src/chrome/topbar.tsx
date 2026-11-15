@@ -1,4 +1,8 @@
 import { ArrowLeft } from "lucide-react";
+import { HistoryControls } from "./history-controls";
+import { AccountMenu } from "./account-menu/account-menu";
+import { useParental } from "@/lib/parental";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import { WindowControlButton as Control, WindowControlGlyph } from "./window-control-button";
 import { Search } from "@/components/icons/search-icon";
 import { UiIcon } from "@/components/ui-icon";
@@ -68,6 +72,8 @@ function PresenceAvatar({ name, src, color }: { name: string; src: string | null
 }
 
 export function Topbar({ connecting = false }: { connecting?: boolean } = {}) {
+  const cinematic = useCinematicDesktop() && !connecting;
+  const { locked } = useParental();
   const { chromeHidden, canGoBack, view, setView, topKind } = useView();
   const liveHasSources = usePlaylists().length > 0;
   const { settings } = useSettings();
@@ -118,6 +124,8 @@ export function Topbar({ connecting = false }: { connecting?: boolean } = {}) {
     IS_TAURI && !settings.useNativeTitleBar && settings.hybridTitleBar && !fullscreen;
   return (
     <header
+      data-frame-command={cinematic ? "" : undefined}
+      data-frame-hybrid={cinematic && hybridBar ? "" : undefined}
       data-cleannav={settings.topbarAppearance === "transparent" ? "on" : undefined}
       className={`pointer-events-none fixed inset-x-0 top-0 ${topKind === "picker" || connecting ? "z-[130]" : "z-[55]"} h-20`}
     >
@@ -169,7 +177,12 @@ export function Topbar({ connecting = false }: { connecting?: boolean } = {}) {
               </span>
             </div>
           )}
-          {!onLiveRoot && !connecting && <BackChrome />}
+          {!onLiveRoot && !connecting && (cinematic ? <HistoryControls /> : <BackChrome />)}
+          {cinematic && (
+            <span className="frame-command-brand">
+              Frame<span aria-hidden> / </span>
+            </span>
+          )}
         </div>
         <div
           {...dragProps}
@@ -182,6 +195,7 @@ export function Topbar({ connecting = false }: { connecting?: boolean } = {}) {
           data-harbor-topbar-actions
           className="pointer-events-auto flex h-full items-center justify-end gap-2"
         >
+          {cinematic && !locked && <AccountMenu trigger="avatar" placement="down" align="end" />}
           {!inSettings && (
             <div className="hidden items-center gap-2 min-[900px]:flex">
               {settings.navbarSleepTimer && <SleepTimerButton />}

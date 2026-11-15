@@ -32,7 +32,11 @@ export function ServiceView({ service }: { service: StreamingService }) {
   }, [loadMore]);
 
   return (
-    <main ref={scrollRef} className="absolute inset-0 overflow-y-auto pb-14">
+    <main
+      data-frame-feature-page="service"
+      ref={scrollRef}
+      className="absolute inset-0 overflow-y-auto pb-14"
+    >
       <div className="relative px-12 pt-28 pb-6">
         <div
           aria-hidden

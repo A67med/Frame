@@ -81,6 +81,8 @@ import { WatchlistSync } from "@/lib/watchlist-sync";
 import { ContextMenuProvider } from "@/lib/context-menu";
 import { TopRankModalProvider } from "@/lib/top-rank-modal";
 import { OnboardingProvider } from "@/lib/onboarding";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
+import "@/styles/frame-desktop.css";
 import { RankingsProvider } from "@/lib/rankings";
 import { SettingsProvider } from "@/lib/settings";
 import { SearchProvider, useSearch } from "@/lib/search-context";
@@ -552,6 +554,7 @@ function RevealOnMount({ onReady }: { onReady?: () => void }) {
 }
 
 function Shell({ onReady }: { onReady?: () => void }) {
+  const cinematic = useCinematicDesktop();
   const {
     topKind,
     service,
@@ -585,6 +588,11 @@ function Shell({ onReady }: { onReady?: () => void }) {
   const { settings, update } = useSettings();
   const { open: searchOpen, setOpen: setSearchOpen } = useSearch();
   const bigPicture = useBigPicture().active;
+  useEffect(() => {
+    const root = document.documentElement;
+    root.toggleAttribute("data-frame-desktop", cinematic && !bigPicture);
+    return () => root.removeAttribute("data-frame-desktop");
+  }, [cinematic, bigPicture]);
   const bigPictureBootChecked = useRef(false);
   const uiScaleRef = useRef(settings.uiScale);
   const { activeProfile } = useProfiles();
@@ -1182,10 +1190,17 @@ function Shell({ onReady }: { onReady?: () => void }) {
   const radarAlive = useIdleEvict(radarTop);
   const followingAlive = useIdleEvict(followingTop);
   return (
-    <div data-harbor-shell className="relative flex h-full">
+    <div
+      data-harbor-shell
+      data-frame-shell={cinematic ? "" : undefined}
+      data-frame-view={topKind}
+      className="relative flex h-full"
+    >
       <div data-harbor-native-backdrop className="relative flex h-full min-w-0 flex-1">
         {!settingsTop && !playerActive && !pickerTop && layout === "sidebar" && <Sidebar />}
-        {!settingsTop && !playerActive && !pickerTop && layout === "dracula" && <DraculaSidebar />}
+        {(!settingsTop || cinematic) && !playerActive && !pickerTop && layout === "dracula" && (
+          <DraculaSidebar cinematic={cinematic} />
+        )}
         {!settingsTop && !playerActive && !pickerTop && layout === "nord" && <NordSidebar />}
         {!settingsTop && !playerActive && !pickerTop && layout === "forest" && <ForestSidebar />}
         {!settingsTop && !playerActive && !pickerTop && layout === "stremio" && <StremioRail />}

@@ -21,6 +21,7 @@ import { Synopsis } from "@/views/detail/synopsis";
 import { TitlePlate } from "@/views/detail/title-plate";
 import { Pill } from "@/views/detail/pill";
 import { PlayModeHint } from "@/views/detail/play-mode-hint";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 
 export interface EpisodeDetailViewProps {
   seriesId: string;
@@ -39,6 +40,7 @@ export function EpisodeDetailView({
 }: EpisodeDetailViewProps) {
   const t = useT();
   const { settings } = useSettings();
+  const cinematic = useCinematicDesktop();
   const { openPicker, openMeta, goBack } = useView();
 
   const [seriesMeta, setSeriesMeta] = useState<Meta | null>(initialSeriesMeta || null);
@@ -225,25 +227,37 @@ export function EpisodeDetailView({
   }
 
   return (
-    <main ref={scrollRef} className="absolute inset-0 z-30 overflow-y-auto bg-canvas">
+    <main
+      ref={scrollRef}
+      data-frame-detail={cinematic ? "" : undefined}
+      className="absolute inset-0 z-30 overflow-y-auto bg-canvas"
+    >
       <section className="relative">
         <div
           data-tauri-drag-region
-          className="harbor-bleed-stremio relative h-[78vh] min-h-[640px] overflow-hidden"
+          className={
+            cinematic
+              ? "frame-detail-dossier"
+              : "harbor-bleed-stremio relative h-[78vh] min-h-[640px] overflow-hidden"
+          }
         >
-          {background && (
-            <img
-              src={background}
-              alt=""
-              decoding="async"
-              fetchPriority="high"
-              className={`absolute inset-0 h-full w-full object-cover ${artworkHidden ? "scale-105 blur-[24px]" : ""}`}
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/55 via-45% to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-canvas/85 via-canvas/35 to-transparent" />
+          <div className={cinematic ? "frame-detail-art" : "contents"}>
+            {background && (
+              <img
+                src={background}
+                alt=""
+                decoding="async"
+                fetchPriority="high"
+                className={`absolute inset-0 h-full w-full object-cover ${artworkHidden ? "scale-105 blur-[24px]" : ""}`}
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/55 via-45% to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-canvas/85 via-canvas/35 to-transparent" />
+          </div>
 
-          <div className="absolute inset-x-0 bottom-0 px-12 pb-14">
+          <div
+            className={cinematic ? "frame-detail-copy" : "absolute inset-x-0 bottom-0 px-12 pb-14"}
+          >
             <div className="max-w-3xl">
               <button
                 onClick={handleSeriesClick}
@@ -305,7 +319,7 @@ export function EpisodeDetailView({
         </div>
       </section>
 
-      <div className="flex flex-col gap-16 px-12 pb-24 pt-14">
+      <div data-frame-detail-body className="flex flex-col gap-16 px-12 pb-24 pt-14">
         {episodeData.overview && <Synopsis text={episodeData.overview} />}
 
         {episodeData.guestStars && episodeData.guestStars.length > 0 && (

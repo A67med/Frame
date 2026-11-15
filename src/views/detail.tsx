@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { Check, Plus } from "lucide-react";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import { Play } from "@/components/icons/play-filled";
 import { animePlayEpisode } from "./detail/anime-play-episode";
 import {
@@ -226,6 +227,7 @@ export function DetailView({
 }) {
   const t = useT();
   const { settings } = useSettings();
+  const cinematic = useCinematicDesktop();
   const contentDrag = useContentDrag();
   const settingsRef = useRef(settings);
   settingsRef.current = settings;
@@ -1716,38 +1718,77 @@ export function DetailView({
   return (
     <main
       ref={scrollRef}
+      data-frame-detail={cinematic ? "" : undefined}
       className="harbor-detail-enter absolute inset-0 z-30 overflow-y-auto bg-canvas"
     >
       <section className="relative">
         <div
           data-tauri-drag-region
           data-tv-hero-zone
-          className="harbor-bleed-stremio relative h-[78vh] min-h-[640px] overflow-hidden"
+          className={
+            cinematic
+              ? "frame-detail-dossier"
+              : "harbor-bleed-stremio relative h-[78vh] min-h-[640px] overflow-hidden"
+          }
         >
-          {carouselOn ? (
-            backdropPool.map((b, i) => (
+          <div className={cinematic ? "frame-detail-art" : "contents"}>
+            {carouselOn ? (
+              backdropPool.map((b, i) => (
+                <img
+                  key={b}
+                  src={b}
+                  alt=""
+                  decoding="async"
+                  fetchPriority={i === 0 ? "high" : "low"}
+                  loading={i < 3 ? "eager" : "lazy"}
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${i === backdropIdx ? "opacity-100" : "opacity-0"}`}
+                />
+              ))
+            ) : backdrop ? (
+              <HeroBackdrop url={backdrop} />
+            ) : (
+              <div className="absolute inset-0 animate-pulse bg-white/[0.02]" />
+            )}
+            {settings.detailTrailerAutoplay && trailerCandidate && (
+              <DetailHeroTrailer candidateId={trailerCandidate} paused={trailerOpen} />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/55 via-45% to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-canvas/85 via-canvas/35 to-transparent" />
+            {cinematic && listSeed.poster && (
               <img
-                key={b}
-                src={b}
+                key={listSeed.poster}
+                className="frame-detail-poster"
+                src={listSeed.poster}
                 alt=""
                 decoding="async"
-                fetchPriority={i === 0 ? "high" : "low"}
-                loading={i < 3 ? "eager" : "lazy"}
-                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${i === backdropIdx ? "opacity-100" : "opacity-0"}`}
+                onError={(e) => {
+                  e.currentTarget.style.visibility = "hidden";
+                }}
               />
-            ))
-          ) : backdrop ? (
-            <HeroBackdrop url={backdrop} />
-          ) : (
-            <div className="absolute inset-0 animate-pulse bg-white/[0.02]" />
-          )}
-          {settings.detailTrailerAutoplay && trailerCandidate && (
-            <DetailHeroTrailer candidateId={trailerCandidate} paused={trailerOpen} />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/55 via-45% to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-canvas/85 via-canvas/35 to-transparent" />
+            )}
+            {cinematic && logo && (
+              <img
+                key={logo}
+                className="frame-detail-logo"
+                src={logo}
+                alt=""
+                decoding="async"
+                onError={(e) => {
+                  e.currentTarget.style.visibility = "hidden";
+                }}
+              />
+            )}
+          </div>
 
-          <div className="absolute inset-x-0 bottom-0 px-12 pb-14">
+          <div
+            className={cinematic ? "frame-detail-copy" : "absolute inset-x-0 bottom-0 px-12 pb-14"}
+          >
+            {cinematic && (
+              <span className="frame-eyebrow">
+                {isSeries ? t("TV Shows") : t("Movies")}
+                {meta.releaseInfo ? ` / ${meta.releaseInfo}` : ""}
+              </span>
+            )}
             <div className={awardsInDescription ? "max-w-3xl" : undefined}>
               {tagline && !loading && !detectingAnime && (
                 <p
@@ -1760,7 +1801,11 @@ export function DetailView({
                   {tagline}
                 </p>
               )}
-              <TitlePlate title={title} logo={logo} loading={loading} />
+              <TitlePlate
+                title={title}
+                logo={cinematic ? undefined : logo}
+                loading={cinematic ? !title : loading}
+              />
               {awardsInDescription ? (
                 <div className="mt-6 flex flex-wrap items-center gap-3 text-[13px] font-medium text-ink-muted">
                   {heroPills}
@@ -2010,14 +2055,23 @@ export function DetailView({
                 )}
               </div>
             </div>
+            {cinematic && overview && (
+              <div className="frame-detail-synopsis">
+                <Synopsis text={overview} />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <div {...contentDrag} className="flex flex-col gap-16 px-12 pb-24 pt-14">
-        {(overview || heroAwardsInline) && (
+      <div
+        {...contentDrag}
+        data-frame-detail-body
+        className="flex flex-col gap-16 px-12 pb-24 pt-14"
+      >
+        {((!cinematic && overview) || heroAwardsInline) && (
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
-            {overview && <Synopsis text={overview} />}
+            {!cinematic && overview && <Synopsis text={overview} />}
             {heroAwardsInline && <div className="lg:ms-auto lg:shrink-0">{heroAwardsInline}</div>}
           </div>
         )}

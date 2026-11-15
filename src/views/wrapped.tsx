@@ -76,7 +76,10 @@ export function WrappedView({ active }: { active: boolean }) {
     openMeta({ id: tt.id, type: tt.type, name: tt.title, poster: stats?.posters[tt.id] });
 
   return (
-    <main className="h-full w-full overflow-y-auto bg-canvas px-5 pb-28 pt-24 sm:px-8 lg:px-12 lg:pt-28">
+    <main
+      data-frame-page="wrapped"
+      className="h-full w-full overflow-y-auto bg-canvas px-5 pb-28 pt-24 sm:px-8 lg:px-12 lg:pt-28"
+    >
       <div className="mx-auto flex max-w-3xl flex-col gap-6">
         <div className="flex flex-col gap-1.5">
           <button

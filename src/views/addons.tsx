@@ -287,7 +287,11 @@ export function AddonsView({ active = true }: { active?: boolean }) {
   }
 
   return (
-    <main data-tv-chrome-offset className="relative flex h-full flex-col overflow-hidden">
+    <main
+      data-frame-feature-page="addons"
+      data-tv-chrome-offset
+      className="relative flex h-full flex-col overflow-hidden"
+    >
       {tab === "discover" && <AddonsMosaicBackdrop />}
       <AgeGateModal
         open={ageGateOpen}

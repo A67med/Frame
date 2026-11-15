@@ -2,7 +2,7 @@
 
 A personal desktop media app for movies and TV, built with Tauri 2, React, TypeScript, Rust and libmpv.
 
-Version 0.2.0.
+Version 0.3.0.
 
 Frame began as a fork of [Harbor](https://github.com/crazyrabbit0/harbor), a Stremio client, and keeps its MIT license and notice. See [LICENSE](LICENSE) and `src-tauri/THIRD-PARTY-NOTICES.txt`.
 
@@ -47,11 +47,11 @@ Radar, Following and most artwork read from TMDB. Add your own key in **Settings
 
 ```sh
 pnpm install
-pnpm run setup          # fetches ffmpeg, yt-dlp, libmpv, mpv, fonts
+pnpm run setup          # fetches sidecars/fonts and stages the Java extension runtime
 pnpm tauri build --bundles nsis
 ```
 
-The installer is written to `src-tauri/target/release/bundle/nsis/`. On Windows you also need the MSVC toolchain, CMake and the Rust toolchain.
+The installer is written to `src-tauri/target/release/bundle/nsis/`. On Windows you also need the MSVC toolchain, CMake, Rust and Git Bash's `sh` on `PATH` for the extension build. The extension staging step fetches its pinned jars and uses a JDK with `jlink`.
 
 To regenerate the logo, icons and installer art, run `node scripts/generate-brand.mjs`, then `pnpm tauri icon src-tauri/icons/source.png`.
 

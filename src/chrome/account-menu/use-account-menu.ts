@@ -10,6 +10,7 @@ import {
 } from "@/lib/social/presence";
 import { openMyProfile } from "@/lib/social/open-my-profile";
 import { openNotificationCenter } from "@/lib/social/notification-open";
+import { useEscape } from "@/components/modal-shell";
 
 export function useAccountMenu() {
   const { user, signOut } = useAuth();
@@ -24,6 +25,11 @@ export function useAccountMenu() {
   const [authOpen, setAuthOpen] = useState(false);
   const [pendingSwitch, setPendingSwitch] = useState<Profile | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+  useEscape(() => {
+    setMenuOpen(false);
+    setStatusOpen(false);
+    ref.current?.querySelector("button")?.focus();
+  }, menuOpen || statusOpen);
 
   useEffect(() => {
     if (!menuOpen) setManageOpen(false);

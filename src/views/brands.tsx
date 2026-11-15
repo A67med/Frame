@@ -115,7 +115,11 @@ export function BrandsView({ brand }: { brand: BrandKind }) {
     openFilter({ kind: b.kind, mediaType: b.media, name: b.name, id: b.id });
 
   return (
-    <main ref={scrollRef} className="absolute inset-0 z-30 overflow-y-auto bg-canvas">
+    <main
+      data-frame-feature-page="brands"
+      ref={scrollRef}
+      className="absolute inset-0 z-30 overflow-y-auto bg-canvas"
+    >
       <div className="relative px-12 pb-6 pt-28">
         <span className="text-[12.5px] font-medium uppercase tracking-[0.22em] text-ink-subtle">
           {t("Discover")}

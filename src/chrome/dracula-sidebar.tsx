@@ -28,7 +28,7 @@ const PRIMARY_IDS = new Set([
   "vod",
 ]);
 
-export function DraculaSidebar() {
+export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = {}) {
   const editing = useNavEditMode();
   const { view, setView, chromeHidden } = useView();
   const { locked, unlock, hiddenTabs } = useParental();
@@ -75,6 +75,8 @@ export function DraculaSidebar() {
         data-tv-focus-scope={editing || undefined}
         aria-hidden={chromeHidden}
         data-harbor-sidebar
+        data-frame-navigation={cinematic ? "" : undefined}
+        data-collapsed={collapsed ? "true" : "false"}
         className={`relative z-[60] flex w-[78px] shrink-0 flex-col transition-[opacity,transform,width] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           collapsed ? "" : "lg:w-64"
         } ${
@@ -140,6 +142,7 @@ export function DraculaSidebar() {
               />
             ))}
 
+            {cinematic && collections.some(isVisible) && <hr className="frame-nav-divider" />}
             {collections.filter(isVisible).map((item) => (
               <NavPill
                 key={item.id}
@@ -192,9 +195,9 @@ export function DraculaSidebar() {
                   </div>
                 )}
               </div>
-            ) : (
+            ) : !cinematic ? (
               <ProfileChip collapsed={collapsed} />
-            )}
+            ) : null}
           </div>
         </div>
       </aside>
@@ -249,6 +252,7 @@ function NavPill({
           })
         }
         data-harbor-nav={item.id}
+        aria-current={active ? "page" : undefined}
         data-tauri-drag-region={editing ? "false" : undefined}
         onPointerDown={drag.onPointerDown}
         onKeyDown={drag.onKeyDown}

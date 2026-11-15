@@ -35,7 +35,11 @@ export function CuratedListView({ listId }: { listId: string }) {
   if (!list) return null;
 
   return (
-    <main ref={scrollRef} className="relative h-full overflow-y-auto bg-canvas">
+    <main
+      data-frame-feature-page="curated-list"
+      ref={scrollRef}
+      className="relative h-full overflow-y-auto bg-canvas"
+    >
       <ListHeader list={list} />
       <div className="relative mx-auto flex max-w-[1180px] flex-col gap-10 px-12 pb-32 pt-14">
         {list.prose ? (

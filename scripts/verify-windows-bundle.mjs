@@ -17,6 +17,15 @@ const REQUIRED = [
   "resources\\harbor-stream-blocker\\manifest.json",
 ];
 
+if (process.argv.includes("--require-capstan")) {
+  REQUIRED.push(
+    "resources\\capstan\\capstan.jar",
+    "resources\\capstan\\runtime\\bin\\java.exe",
+    "resources\\capstan\\libs\\gson-2.11.0.jar",
+    "resources\\capstan\\dex-tools\\dex-tools-v2.4.jar",
+  );
+}
+
 function findScripts(dir, found = []) {
   if (!existsSync(dir)) return found;
   for (const name of readdirSync(dir)) {

@@ -151,7 +151,11 @@ export function PersonView({ personId }: { personId: number }) {
   const age = person?.birthday ? calcAge(person.birthday, person.deathday) : null;
 
   return (
-    <main ref={scrollRef} className="absolute inset-0 z-40 overflow-y-auto bg-canvas">
+    <main
+      data-frame-feature-page="person"
+      ref={scrollRef}
+      className="absolute inset-0 z-40 overflow-y-auto bg-canvas"
+    >
       <div className="relative isolate">
         {backdrop && (
           <div

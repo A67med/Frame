@@ -1,5 +1,11 @@
 // Newly introduced UI copy remains usable until each locale provides an override.
 const uiFallback: Record<string, string> = {
+  "Your cinema": "Your cinema",
+  "A world worth watching.": "A world worth watching.",
+  "In the spotlight": "In the spotlight",
+  "Find your next favourite.": "Find your next favourite.",
+  "Movies, shows, people and more.": "Movies, shows, people and more.",
+  Forward: "Forward",
   "Following 1 person.": "Following 1 person.",
   "Paste an invite link from someone hosting a room to join them.":
     "Paste an invite link from someone hosting a room to join them.",

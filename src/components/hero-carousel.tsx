@@ -33,6 +33,7 @@ export function HeroCarousel({
   playSquare = false,
   moreInfo = false,
   onActive,
+  editorial = false,
 }: {
   slides: Slide[];
   full?: boolean;
@@ -44,9 +45,11 @@ export function HeroCarousel({
   moreInfo?: boolean;
   /** The slide on show, for a caller that has something of its own to place over it. */
   onActive?: (index: number) => void;
+  editorial?: boolean;
 }) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [focusWithin, setFocusWithin] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState(0);
   const [inViewport, setInViewport] = useState(true);
@@ -82,7 +85,16 @@ export function HeroCarousel({
   const downRef = useRef(false);
 
   useEffect(() => {
-    if (paused || dragging || !inViewport || !pageVisible || slides.length < 2) return;
+    if (
+      reduce ||
+      paused ||
+      focusWithin ||
+      dragging ||
+      !inViewport ||
+      !pageVisible ||
+      slides.length < 2
+    )
+      return;
     if (settings.heroTrailerAudio) return;
     const id = setInterval(
       () => setActive((a) => (a + 1) % slides.length),
@@ -91,12 +103,14 @@ export function HeroCarousel({
     return () => clearInterval(id);
   }, [
     paused,
+    focusWithin,
     dragging,
     inViewport,
     pageVisible,
     slides.length,
     settings.heroTrailerAudio,
     billboard,
+    reduce,
   ]);
 
   useEffect(() => {
@@ -240,9 +254,13 @@ export function HeroCarousel({
 
   return (
     <div
-      className={full ? "relative" : "flex flex-col gap-5"}
+      className={editorial ? "frame-feature" : full ? "relative" : "flex flex-col gap-5"}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setFocusWithin(true)}
+      onBlurCapture={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setFocusWithin(false);
+      }}
     >
       <div
         ref={viewportRef}
@@ -280,6 +298,7 @@ export function HeroCarousel({
                 key={`${s.meta.id}-${i}`}
                 dir={rtl ? "rtl" : "ltr"}
                 aria-hidden={!isActive}
+                inert={!isActive}
                 className={`w-full shrink-0 ${billboard ? "[grid-area:1/1]" : ""}`}
                 style={slideStyle(isActive, distance)}
               >
@@ -338,6 +357,30 @@ export function HeroCarousel({
           </>
         )}
       </div>
+      {editorial && (
+        <nav className="frame-feature-index" aria-label={t("Featured")}>
+          <div className="frame-eyebrow">{t("In the spotlight")}</div>
+          {slides.map((slide, i) => (
+            <button
+              key={`${slide.meta.id}-${i}`}
+              type="button"
+              aria-pressed={i === safeActive}
+              onClick={() => setActive(i)}
+            >
+              <span className="frame-feature-number" aria-hidden>
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="frame-feature-index-copy">
+                <strong>{slide.meta.name}</strong>
+                <span>
+                  {slide.meta.releaseInfo}
+                  {slide.rank ? ` · ${slide.rank.label}` : ""}
+                </span>
+              </span>
+            </button>
+          ))}
+        </nav>
+      )}
       {slides.length > 1 && (
         <div
           className={`flex justify-center gap-2.5 ${full ? "absolute bottom-4 inset-x-0" : "pt-1"}`}
