@@ -443,10 +443,14 @@ export function RadarView({ active = true }: { active?: boolean }) {
   }, []);
 
   return (
-    <main ref={scrollCb} className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas">
+    <main
+      data-frame-page="radar"
+      ref={scrollCb}
+      className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas"
+    >
       <ScrollRootContext.Provider value={scrollEl}>
         <div className="relative flex w-full flex-col gap-12 px-12 pb-32 pt-12">
-          <header>
+          <header className="frame-section-heading">
             <h1 className="text-[34px] font-semibold tracking-tight text-ink">{t("Radar")}</h1>
             <p className="mt-1 text-[14px] text-ink-subtle">
               {people.length > 0
@@ -478,11 +482,42 @@ export function RadarView({ active = true }: { active?: boolean }) {
             </div>
           ) : (
             <>
-              <ForYouSection tmdbKey={tmdbKey} />
-              <TrendingSection tmdbKey={tmdbKey} />
-              <DigitalReleasesSection />
-              <DiscoverSection tmdbKey={tmdbKey} />
-              <ReleasesSection tmdbKey={tmdbKey} />
+              <nav className="frame-radar-index" aria-label={t("Radar")}>
+                {[
+                  ["for-you", t("For You")],
+                  ["trending", t("Trending")],
+                  ["digital", t("Digital Releases")],
+                  ["discover", t("Discover")],
+                  ["releases", t("Upcoming / New Releases")],
+                ].map(([id, label]) => (
+                  <button
+                    type="button"
+                    key={id}
+                    onClick={() =>
+                      scrollRef.current
+                        ?.querySelector(`#radar-${id}`)
+                        ?.scrollIntoView({ block: "start" })
+                    }
+                  >
+                    {label}
+                  </button>
+                ))}
+              </nav>
+              <section id="radar-for-you" className="frame-radar-section">
+                <ForYouSection tmdbKey={tmdbKey} />
+              </section>
+              <section id="radar-trending" className="frame-radar-section">
+                <TrendingSection tmdbKey={tmdbKey} />
+              </section>
+              <section id="radar-digital" className="frame-radar-section">
+                <DigitalReleasesSection />
+              </section>
+              <section id="radar-discover" className="frame-radar-section">
+                <DiscoverSection tmdbKey={tmdbKey} />
+              </section>
+              <section id="radar-releases" className="frame-radar-section">
+                <ReleasesSection tmdbKey={tmdbKey} />
+              </section>
             </>
           )}
         </div>
