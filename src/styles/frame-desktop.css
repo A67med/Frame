@@ -1,0 +1,315 @@
+/* Cinematic Desktop is opt-in for the built-in Frame presets. Legacy theme hooks stay intact. */
+@import "./frame-discovery.css";
+@import "./frame-workspaces.css";
+@import "./frame-overlays.css";
+[data-frame-desktop] {
+  --frame-rail: 96px;
+  --frame-command: 64px;
+  --frame-gutter: clamp(24px, 3.4vw, 64px);
+  --frame-section-gap: 40px;
+  --frame-content-max: 1840px;
+  --frame-radius: 8px;
+  --frame-rule: 1px solid var(--color-edge);
+  --frame-panel: color-mix(in srgb, var(--color-surface) 72%, var(--color-canvas));
+  --frame-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+}
+
+[data-frame-desktop]:has([data-frame-navigation][data-collapsed="true"]) {
+  --frame-rail: 64px;
+}
+
+[data-frame-desktop]:has([data-frame-command][data-frame-hybrid]) {
+  --frame-command: 108px;
+}
+
+[data-frame-desktop] :is(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Rail: one fixed identity cell, scrollable destinations, anchored utilities. */
+[data-frame-navigation] {
+  width: var(--frame-rail);
+  border-inline-end: var(--frame-rule);
+  background: var(--color-canvas);
+}
+
+[data-frame-navigation] > div {
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--color-canvas) !important;
+}
+
+[data-frame-navigation] > div > span[aria-hidden] {
+  display: none;
+}
+
+[data-frame-navigation] > div > [data-tauri-drag-region] {
+  height: var(--frame-command);
+  padding: 0;
+  justify-content: center;
+  border-block-end: var(--frame-rule);
+}
+
+[data-frame-navigation] > div > [data-tauri-drag-region] button > span {
+  display: none;
+}
+
+[data-frame-navigation] .harbor-dracula-moon {
+  width: 28px;
+  height: 28px;
+  filter: none;
+}
+
+[data-frame-navigation] nav {
+  gap: 3px;
+  padding: 12px 8px;
+  scrollbar-width: thin;
+}
+
+[data-frame-navigation] [data-harbor-nav] {
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  height: auto;
+  padding: 6px 3px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+[data-frame-navigation] [data-harbor-nav] > span:last-child:not(:only-child) {
+  display: block;
+  flex: none;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 550;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+[data-frame-navigation] [data-harbor-nav] > span[aria-hidden] {
+  border-radius: 6px;
+  box-shadow: none !important;
+}
+
+[data-frame-navigation] [data-harbor-nav][aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -8px;
+  width: 3px;
+  height: 22px;
+  border-radius: 0 3px 3px 0;
+  background: var(--color-accent);
+}
+
+[data-frame-navigation] [data-harbor-nav] svg {
+  width: 21px;
+  height: 21px;
+}
+
+.frame-nav-divider {
+  margin: 7px 12px;
+  border: 0;
+  border-block-start: var(--frame-rule);
+}
+
+[data-frame-navigation] > div > div:last-child {
+  padding: 8px;
+  border-block-start: var(--frame-rule);
+}
+
+[data-frame-navigation] > div > div:last-child [data-harbor-sidebar-label] {
+  display: none;
+}
+
+[data-frame-navigation] > div > div:last-child button {
+  justify-content: center;
+  padding-inline: 5px;
+}
+
+/* Command bar keeps the native controls and their existing drag exclusions. */
+[data-frame-command] {
+  height: 64px;
+  inset-inline-start: var(--frame-rail);
+  background: var(--color-canvas);
+  border-block-end: var(--frame-rule);
+  z-index: 70;
+}
+
+[data-frame-shell][data-frame-view="picker"] [data-frame-command] {
+  inset-inline-start: 0;
+}
+
+[data-frame-command] > [aria-hidden] {
+  display: none;
+}
+
+[data-frame-command] [data-harbor-topbar-content] {
+  grid-template-columns: minmax(150px, 1fr) minmax(180px, 500px) minmax(120px, 1fr);
+  padding-inline: 20px;
+  gap: 16px;
+}
+
+[data-frame-command] [data-harbor-topbar-leading] {
+  padding: 0;
+  gap: 18px;
+}
+
+[data-frame-command] [data-harbor-topbar-content] > div:nth-child(2) {
+  width: 100%;
+}
+
+.frame-command-brand {
+  white-space: nowrap;
+  font-weight: 650;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--color-ink);
+}
+
+.frame-command-brand > span {
+  margin-inline-start: 16px;
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.frame-history {
+  display: flex;
+  gap: 2px;
+}
+
+.frame-history button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 32px;
+  border-radius: 5px;
+  color: var(--color-ink-muted);
+}
+
+.frame-history button:hover:not(:disabled) {
+  background: var(--color-elevated);
+  color: var(--color-ink);
+}
+
+.frame-history button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+[data-frame-command][data-frame-hybrid] {
+  top: 44px;
+}
+
+[data-frame-command][data-frame-hybrid] [data-harbor-topbar-content] {
+  padding-block-start: 0;
+}
+
+/* Page foundations. Data hooks are explicit so custom CSS and secondary windows are isolated. */
+[data-frame-desktop] [data-frame-page] {
+  padding: calc(var(--frame-command) + 28px) var(--frame-gutter) 64px;
+  scroll-padding-block-start: calc(var(--frame-command) + 24px);
+}
+
+[data-frame-desktop] [data-frame-page] > div:first-child {
+  max-width: var(--frame-content-max);
+  margin-inline: auto;
+}
+
+.frame-page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-block-end: 22px;
+  border-block-end: var(--frame-rule);
+}
+
+.frame-page-heading-copy {
+  min-width: 0;
+}
+
+.frame-eyebrow {
+  display: block;
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-block-end: 10px;
+}
+
+.frame-page-heading h1 {
+  font-family: var(--frame-display);
+  font-size: clamp(30px, 3.2vw, 52px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+.frame-page-description {
+  max-width: 70ch;
+  color: var(--color-ink-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-block-start: 12px;
+}
+
+.frame-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.frame-page-actions button {
+  padding: 8px 12px;
+  border: var(--frame-rule);
+  border-radius: 5px;
+  color: var(--color-ink-muted);
+  font-size: 13px;
+}
+
+.frame-page-actions button:hover {
+  color: var(--color-ink);
+  background: var(--color-surface);
+}
+
+[data-frame-desktop] .harbor-row-shell {
+  padding-inline-start: 0;
+  gap: 16px;
+}
+
+[data-frame-desktop] .harbor-row-shell > div:first-child:has(h3) {
+  border-block-start: var(--frame-rule);
+  padding-block-start: 16px;
+}
+
+[data-frame-desktop] .harbor-row-shell h3 {
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 900px) {
+  [data-frame-desktop] {
+    --frame-rail: 72px;
+    --frame-gutter: 22px;
+  }
+  .frame-command-brand {
+    display: none;
+  }
+  [data-frame-command] [data-harbor-topbar-content] {
+    grid-template-columns: auto minmax(100px, 1fr) auto;
+    gap: 10px;
+    padding-inline: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-frame-desktop] [data-frame-navigation],
+  [data-frame-desktop] [data-frame-command],
+  [data-frame-desktop] .frame-feature-index button {
+    transition: none;
+  }
+}
