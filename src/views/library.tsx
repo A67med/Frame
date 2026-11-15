@@ -10,7 +10,8 @@ import {
   Star,
 } from "lucide-react";
 import { UiIcon } from "@/components/ui-icon";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import traktLogo from "@/assets/trakt.svg";
 import anilistLogo from "@/assets/anilist.png";
 import simklLogo from "@/assets/simkl.png";
@@ -76,6 +77,7 @@ function readSavedTab(): Tab {
 }
 
 export function LibraryView({ active }: { active: boolean }) {
+  const cinematic = useCinematicDesktop();
   const [tab, setTab] = useState<Tab>(readSavedTab);
   const { settings } = useSettings();
   const { isConnected: traktConnected } = useTrakt();
@@ -136,12 +138,13 @@ export function LibraryView({ active }: { active: boolean }) {
 
   return (
     <main
+      data-frame-page="library"
       ref={scrollRef}
       className="flex-1 overflow-y-auto px-5 pt-24 pb-14 sm:px-8 lg:px-12 lg:pt-28"
     >
       <LibraryFeaturedProvider>
         <div {...contentDrag} className="flex flex-col gap-7">
-          {settings.libraryHero && <LibraryHero tabKey={tab} />}
+          {!cinematic && settings.libraryHero && <LibraryHero tabKey={tab} />}
           <Header
             tab={tab}
             onTab={setTab}
@@ -150,19 +153,25 @@ export function LibraryView({ active }: { active: boolean }) {
             malConnected={malConnected}
             simklConnected={simklConnected}
             lbConnected={lb.isActive}
-          />
-          {tab === "library" && <WatchlistTab mode="library" scrollRef={scrollRef} />}
-          {tab === "watchlist" && <WatchlistTab mode="watchlist" scrollRef={scrollRef} />}
-          {tab === "history" && <HistoryTab />}
-          {tab === "local" && <LocalTab scrollRef={scrollRef} />}
-          {tab === "media-servers" && <MediaServersTab scrollRef={scrollRef} />}
-          {tab === "lists" && <MyListsTab />}
-          {tab === "favorites" && <FavoritesTab />}
-          {tab === "trakt" && traktConnected && <TraktTab />}
-          {tab === "anilist" && anilistConnected && <AnilistTab />}
-          {tab === "simkl" && simklConnected && <SimklTab />}
-          {tab === "letterboxd" && lb.isActive && <LetterboxdTab />}
-          {tab === "mal" && malConnected && <MalTab />}
+          >
+            {cinematic && settings.libraryHero && (
+              <div className="frame-library-feature">
+                <LibraryHero tabKey={tab} />
+              </div>
+            )}
+            {tab === "library" && <WatchlistTab mode="library" scrollRef={scrollRef} />}
+            {tab === "watchlist" && <WatchlistTab mode="watchlist" scrollRef={scrollRef} />}
+            {tab === "history" && <HistoryTab />}
+            {tab === "local" && <LocalTab scrollRef={scrollRef} />}
+            {tab === "media-servers" && <MediaServersTab scrollRef={scrollRef} />}
+            {tab === "lists" && <MyListsTab />}
+            {tab === "favorites" && <FavoritesTab />}
+            {tab === "trakt" && traktConnected && <TraktTab />}
+            {tab === "anilist" && anilistConnected && <AnilistTab />}
+            {tab === "simkl" && simklConnected && <SimklTab />}
+            {tab === "letterboxd" && lb.isActive && <LetterboxdTab />}
+            {tab === "mal" && malConnected && <MalTab />}
+          </Header>
         </div>
       </LibraryFeaturedProvider>
     </main>
@@ -192,6 +201,7 @@ function Header({
   malConnected,
   simklConnected,
   lbConnected,
+  children,
 }: {
   tab: Tab;
   onTab: (t: Tab) => void;
@@ -200,13 +210,14 @@ function Header({
   malConnected: boolean;
   simklConnected: boolean;
   lbConnected: boolean;
+  children: ReactNode;
 }) {
   const t = useT();
   const { setView } = useView();
   const { settings, update } = useSettings();
   return (
-    <header className="flex flex-col gap-5">
-      <div className="flex items-end justify-between gap-6">
+    <div className="frame-library-layout flex flex-col gap-7">
+      <header className="frame-library-heading flex items-end justify-between gap-6">
         <div className="flex flex-col gap-1.5">
           <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-ink-subtle">
             {t("My library")}
@@ -247,68 +258,78 @@ function Header({
             </button>
           )}
         </div>
+      </header>
+      <div className="frame-library-workspace flex flex-col gap-7">
+        <nav
+          aria-label={t("My library")}
+          className="frame-library-nav flex items-center gap-1 border-b border-edge-soft"
+        >
+          <TabBtn active={tab === "library"} onClick={() => onTab("library")}>
+            <Library size={14} strokeWidth={2.2} />
+            {t("Library")}
+          </TabBtn>
+          <TabBtn active={tab === "watchlist"} onClick={() => onTab("watchlist")}>
+            <Bookmark size={14} strokeWidth={2.2} />
+            {t("Watchlist")}
+          </TabBtn>
+          <TabBtn active={tab === "history"} onClick={() => onTab("history")}>
+            <Clock size={14} strokeWidth={2.2} />
+            {t("History")}
+          </TabBtn>
+          <TabBtn active={tab === "local"} onClick={() => onTab("local")}>
+            <HardDrive size={14} strokeWidth={2.2} />
+            {t("Local")}
+          </TabBtn>
+          <TabBtn active={tab === "media-servers"} onClick={() => onTab("media-servers")}>
+            <Server size={14} strokeWidth={2.2} />
+            {t("Media Servers")}
+          </TabBtn>
+          <TabBtn active={tab === "lists"} onClick={() => onTab("lists")}>
+            <UiIcon name="list" className="h-3.5 w-3.5" />
+            {t("My Lists")}
+          </TabBtn>
+          <TabBtn active={tab === "favorites"} onClick={() => onTab("favorites")}>
+            <Star size={14} strokeWidth={2.2} />
+            {t("Favorites")}
+          </TabBtn>
+          {traktConnected && (
+            <TabBtn active={tab === "trakt"} onClick={() => onTab("trakt")}>
+              <img src={traktLogo} alt="" className="h-3.5 w-3.5 object-contain" />
+              Trakt
+            </TabBtn>
+          )}
+          {anilistConnected && (
+            <TabBtn active={tab === "anilist"} onClick={() => onTab("anilist")}>
+              <img src={anilistLogo} alt="" className="h-3.5 w-3.5 rounded-[3px] object-contain" />
+              AniList
+            </TabBtn>
+          )}
+          {malConnected && (
+            <TabBtn active={tab === "mal"} onClick={() => onTab("mal")}>
+              <MalLogo className="h-3.5 w-3.5" />
+              MAL
+            </TabBtn>
+          )}
+          {simklConnected && (
+            <TabBtn active={tab === "simkl"} onClick={() => onTab("simkl")}>
+              <img src={simklLogo} alt="" className="h-3.5 w-3.5 object-contain" />
+              Simkl
+            </TabBtn>
+          )}
+          {lbConnected && (
+            <TabBtn active={tab === "letterboxd"} onClick={() => onTab("letterboxd")}>
+              <img
+                src={letterboxdLogo}
+                alt=""
+                className="h-3.5 w-3.5 rounded-[3px] object-contain"
+              />
+              Letterboxd
+            </TabBtn>
+          )}
+        </nav>
+        <div className="frame-library-results flex min-w-0 flex-col gap-7">{children}</div>
       </div>
-      <div className="flex items-center gap-1 border-b border-edge-soft">
-        <TabBtn active={tab === "library"} onClick={() => onTab("library")}>
-          <Library size={14} strokeWidth={2.2} />
-          {t("Library")}
-        </TabBtn>
-        <TabBtn active={tab === "watchlist"} onClick={() => onTab("watchlist")}>
-          <Bookmark size={14} strokeWidth={2.2} />
-          {t("Watchlist")}
-        </TabBtn>
-        <TabBtn active={tab === "history"} onClick={() => onTab("history")}>
-          <Clock size={14} strokeWidth={2.2} />
-          {t("History")}
-        </TabBtn>
-        <TabBtn active={tab === "local"} onClick={() => onTab("local")}>
-          <HardDrive size={14} strokeWidth={2.2} />
-          {t("Local")}
-        </TabBtn>
-        <TabBtn active={tab === "media-servers"} onClick={() => onTab("media-servers")}>
-          <Server size={14} strokeWidth={2.2} />
-          {t("Media Servers")}
-        </TabBtn>
-        <TabBtn active={tab === "lists"} onClick={() => onTab("lists")}>
-          <UiIcon name="list" className="h-3.5 w-3.5" />
-          {t("My Lists")}
-        </TabBtn>
-        <TabBtn active={tab === "favorites"} onClick={() => onTab("favorites")}>
-          <Star size={14} strokeWidth={2.2} />
-          {t("Favorites")}
-        </TabBtn>
-        {traktConnected && (
-          <TabBtn active={tab === "trakt"} onClick={() => onTab("trakt")}>
-            <img src={traktLogo} alt="" className="h-3.5 w-3.5 object-contain" />
-            Trakt
-          </TabBtn>
-        )}
-        {anilistConnected && (
-          <TabBtn active={tab === "anilist"} onClick={() => onTab("anilist")}>
-            <img src={anilistLogo} alt="" className="h-3.5 w-3.5 rounded-[3px] object-contain" />
-            AniList
-          </TabBtn>
-        )}
-        {malConnected && (
-          <TabBtn active={tab === "mal"} onClick={() => onTab("mal")}>
-            <MalLogo className="h-3.5 w-3.5" />
-            MAL
-          </TabBtn>
-        )}
-        {simklConnected && (
-          <TabBtn active={tab === "simkl"} onClick={() => onTab("simkl")}>
-            <img src={simklLogo} alt="" className="h-3.5 w-3.5 object-contain" />
-            Simkl
-          </TabBtn>
-        )}
-        {lbConnected && (
-          <TabBtn active={tab === "letterboxd"} onClick={() => onTab("letterboxd")}>
-            <img src={letterboxdLogo} alt="" className="h-3.5 w-3.5 rounded-[3px] object-contain" />
-            Letterboxd
-          </TabBtn>
-        )}
-      </div>
-    </header>
+    </div>
   );
 }
 

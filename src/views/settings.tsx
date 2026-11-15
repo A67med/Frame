@@ -32,6 +32,7 @@ import { useSettings } from "@/lib/settings";
 import { useView } from "@/lib/view";
 import { useT } from "@/lib/i18n";
 import { useMediaQuery } from "@/lib/use-media-query";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import { isBackKey } from "@/lib/keyboard-navigation/geometry";
 
 const BasicsPanel = lazy(() =>
@@ -279,6 +280,7 @@ function measureTopChrome(shell: HTMLElement): number {
 type SavedKey = LibraryKey | DebridKey;
 
 export function Settings({ visible = true }: { visible?: boolean }) {
+  const cinematic = useCinematicDesktop();
   const t = useT();
   const { settings, update } = useSettings();
   const [tmdbDraft, setTmdbDraft] = useState(settings.tmdbKey);
@@ -529,6 +531,22 @@ export function Settings({ visible = true }: { visible?: boolean }) {
       <PageActionsProvider value={{ reg: pageActions, setReg: setPageActions }}>
         <SubTabsProvider value={{ section: active, reg: subReg, setReg: setSubReg }}>
           <div ref={shellRef} className="harbor-settings-shell flex h-full flex-col bg-canvas">
+            {cinematic && (
+              <nav className="frame-settings-categories" aria-label={t("Settings")}>
+                {TOP_GROUPS.filter(
+                  (group, i, groups) => groups.findIndex((g) => g.section === group.section) === i,
+                ).map((group) => (
+                  <button
+                    key={group.section}
+                    type="button"
+                    aria-current={activeGroup?.section === group.section ? "page" : undefined}
+                    onClick={() => handleNav(group.children[0])}
+                  >
+                    {t(group.section === "SETUP" ? "Account & setup" : group.label)}
+                  </button>
+                ))}
+              </nav>
+            )}
             <div
               data-tauri-drag-region
               className="hset-top-space shrink-0"
@@ -548,6 +566,11 @@ export function Settings({ visible = true }: { visible?: boolean }) {
                   <h1 ref={titleRef} tabIndex={-1} className="hset-title">
                     {t(landingGroup?.label ?? SECTION_META[active].label)}
                   </h1>
+                  {cinematic && (
+                    <p className="frame-settings-description">
+                      {t(landingGroup?.sub ?? SECTION_META[active].sub)}
+                    </p>
+                  )}
                 </div>
                 <button
                   ref={browseRef}
@@ -561,6 +584,7 @@ export function Settings({ visible = true }: { visible?: boolean }) {
                 </button>
               </div>
               <SettingsSidebar
+                cinematic={cinematic}
                 active={active}
                 activeTab={subReg?.value ?? null}
                 meta={SECTION_META}
