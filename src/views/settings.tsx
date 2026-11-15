@@ -388,8 +388,8 @@ export function Settings({ visible = true }: { visible?: boolean }) {
     const target = isTracker ? ("trackers" as SectionId) : id;
     const wantTab = isTracker ? (tab ?? id) : tab;
     pendingTab.current = wantTab ?? null;
-    if (wantTab && target === active) {
-      subRegRef.current?.onChange(wantTab);
+    if (wantTab && target === active && subRegRef.current) {
+      subRegRef.current.onChange(wantTab);
       pendingTab.current = null;
     }
     startTransition(() => {
@@ -402,7 +402,9 @@ export function Settings({ visible = true }: { visible?: boolean }) {
     if (id === active) {
       closeBrowse();
       setPendingPage(null);
-      if (tab) subRegRef.current?.onChange(tab);
+      const registeredTabs = subRegRef.current;
+      pendingTab.current = registeredTabs ? null : (tab ?? null);
+      if (tab) registeredTabs?.onChange(tab);
       return;
     }
     handleNav(id, undefined, tab);
