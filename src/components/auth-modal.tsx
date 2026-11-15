@@ -42,6 +42,10 @@ export function AuthModal({ onClose }: { onClose: () => void }) {
       }}
     >
       <form
+        data-frame-dialog
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("Sign in")}
         onMouseDown={(e) => e.stopPropagation()}
         onSubmit={submit}
         className="animate-dialog-in flex w-[min(92vw,420px)] flex-col gap-5 rounded-md bg-surface p-7 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"

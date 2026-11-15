@@ -153,7 +153,11 @@ export function PeopleView({ init }: { init: PeopleInit }) {
   }, [filtered, source, heroShown, heroCandidate]);
 
   return (
-    <main ref={scrollRef} className="absolute inset-0 z-40 overflow-y-auto bg-canvas">
+    <main
+      data-frame-feature-page="people"
+      ref={scrollRef}
+      className="absolute inset-0 z-40 overflow-y-auto bg-canvas"
+    >
       <div className="relative isolate">
         {heroShown && heroCandidate ? (
           <>

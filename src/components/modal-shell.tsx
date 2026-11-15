@@ -91,6 +91,7 @@ export function ModalShell({
     >
       <div
         ref={dialogRef}
+        data-frame-dialog
         role="dialog"
         aria-modal="true"
         aria-labelledby={labelledBy}

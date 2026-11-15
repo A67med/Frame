@@ -86,11 +86,16 @@ export function OnboardingModal() {
 
   return (
     <div
+      data-frame-onboarding
       className={`fixed inset-0 z-50 flex items-center justify-center bg-canvas/85 backdrop-blur-md ${
         closing ? "opacity-0 transition-opacity duration-300" : "animate-fade-in"
       }`}
     >
       <div
+        data-frame-dialog
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("Get Started")}
         className={`relative flex flex-col overflow-hidden rounded-2xl border border-edge-soft bg-elevated/95 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] ${
           isTaste ? "w-[min(93vw,640px)]" : "w-[min(92vw,580px)]"
         } transition-[width] duration-300 ${closing ? "scale-[0.97] opacity-0 !transition-all !duration-300" : "animate-modal-in"}`}

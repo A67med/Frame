@@ -164,7 +164,7 @@ export function Plugins({ active = true }: { active?: boolean }) {
   const searchingShelf = { id: "plugin-search", title: t("Results for {q}", { q: asked }) };
 
   return (
-    <main className="flex-1 overflow-y-auto px-12 pb-24 pt-28">
+    <main data-frame-page="plugins" className="flex-1 overflow-y-auto px-12 pb-24 pt-28">
       <div {...contentDrag} className="flex flex-col gap-8">
         <header className="flex items-center justify-end gap-6">
           {!loading && catalogs.length > 0 && (

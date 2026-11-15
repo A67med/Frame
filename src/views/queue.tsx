@@ -190,7 +190,11 @@ export function QueueView() {
   }, [onNext, onPrev]);
 
   return (
-    <main ref={rootRef} className="harbor-queue-page min-w-0 flex-1 overflow-hidden pb-12 pt-20">
+    <main
+      data-frame-feature-page="queue"
+      ref={rootRef}
+      className="harbor-queue-page min-w-0 flex-1 overflow-hidden pb-12 pt-20"
+    >
       <div className="mx-auto flex h-full min-w-0 max-w-[1180px] flex-col gap-5 px-6 sm:px-12">
         <header className="harbor-queue-head flex shrink-0 items-baseline gap-3">
           <h1 className="font-display text-[20px] font-medium tracking-tight text-ink">
