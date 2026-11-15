@@ -53,9 +53,14 @@ test("the Trakt, Simkl and MAL clients refuse before any request", () => {
     ["simkl/client.ts", "simklRequest"],
     ["mal/client.ts", "malRequest"],
   ]) {
-    const src = readFileSync(new URL(`../src/lib/${file}`, import.meta.url), "utf8");
+    const src = readFileSync(new URL(`../src/lib/${file}`, import.meta.url), "utf8").replace(
+      /\r\n/g,
+      "\n",
+    );
     const body = src.slice(src.indexOf(`function ${fn}<T>(`));
-    const firstLine = body.slice(body.indexOf("{\n") + 2).split("\n")[0];
+    const openingBrace = body.indexOf("{\n");
+    assert.ok(openingBrace >= 0, `Could not locate the body of ${fn} in ${file}`);
+    const firstLine = body.slice(openingBrace + 2).split("\n")[0];
     assert.match(firstLine, /^\s+if \(TRACKERS_REMOVED\) (throw|return Promise\.reject\()/, file);
   }
 });
