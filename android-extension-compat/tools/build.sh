@@ -4,9 +4,12 @@
 set -e
 R=$(cd "$(dirname "$0")/.." && pwd)
 . "$R/tools/portable.sh"
+cd "$R"
 rm -rf "$R/out/classes" "$R/out/capstan.jar"
 mkdir -p "$R/out/classes"
-SRC=$(find "$R/src" -name '*.kt' | sort)
+# Relative paths keep the compiler invocation below the Windows command-line
+# limit even when the checkout path is long.
+SRC=$(find src -name '*.kt' | sort)
 [ -n "$SRC" ] || { echo "no sources"; exit 1; }
 # A checkout can sit under a path with a space in it, and an unquoted expansion of a file list is
 # split on that space, which turns one path into several names the compiler cannot find. Read the
@@ -19,7 +22,7 @@ done <<SRC_EOF
 $SRC
 SRC_EOF
 sh "$R/tools/kc.sh" "$@" -d "$R/out/classes"
-JAVA=$(find "$R/src" -name '*.java' | sort)
+JAVA=$(find src -name '*.java' | sort)
 if [ -n "$JAVA" ]; then
   set --
   while IFS= read -r f; do

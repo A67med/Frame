@@ -18,10 +18,6 @@ concurrency:
 
 env:
   NODE_OPTIONS: --max-old-space-size=6144
-  # The extension compat layer is not in this repository, so a runner cannot stage its runtime and
-  # these installers ship without extension support. The build says so on every run. Drop this line
-  # the day the layer ships with the checkout, and the build starts refusing to omit it.
-  HARBOR_CAPSTAN_OPTIONAL: "1"
 
 jobs:
   prepare:
@@ -143,7 +139,7 @@ jobs:
           tauriScript: pnpm tauri
           args: --target x86_64-pc-windows-msvc --bundles nsis --config src-tauri/tauri.updater.conf.json
       - name: Verify installer includes required runtime files
-        run: node scripts/verify-windows-bundle.mjs
+        run: node scripts/verify-windows-bundle.mjs --require-capstan
       - name: Verify signed Windows release artifacts
         shell: pwsh
         run: |
@@ -199,7 +195,11 @@ jobs:
           cp "artifacts/windows/$installer" upload/
           cp "artifacts/windows/$installer.sig" sigs/
           previous="$(git tag --list 'v*' --sort=-v:refname | grep -vx "v$VERSION" | head -n 1 || true)"
-          node scripts/release-notes.mjs "${previous:-$(git rev-list --max-parents=0 HEAD | tail -n 1)}" "$SHA" > notes.md
+          if [ -f "docs/releases/v$VERSION.md" ]; then
+            cp "docs/releases/v$VERSION.md" notes.md
+          else
+            node scripts/release-notes.mjs "${previous:-$(git rev-list --max-parents=0 HEAD | tail -n 1)}" "$SHA" > notes.md
+          fi
           node scripts/updater-manifest.mjs "$VERSION" upload sigs notes.md
           {
             echo "## Downloads (Windows x64)"
