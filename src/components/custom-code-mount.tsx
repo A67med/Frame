@@ -1,3 +1,4 @@
+import { useThemePreview } from "@/lib/theme-preview";
 import { useEffect, useMemo, useState } from "react";
 import { useSettings } from "@/lib/settings";
 import { getThemeById } from "@/lib/theme";
@@ -24,13 +25,14 @@ function runThemeCleanup(key: "__harborCustomCleanup" | "__harborThemeCleanup") 
 
 export function CustomCodeMount() {
   const { settings } = useSettings();
+  const previewing = !!useThemePreview();
   const { player } = useView();
   const [themesTick, setThemesTick] = useState(0);
 
   useEffect(() => subscribeCustomThemes(() => setThemesTick((t) => t + 1)), []);
 
   const themeExt = useMemo(() => {
-    if (settings.theme.preset === "custom") return null;
+    if (previewing || settings.theme.preset === "custom") return null;
     const t = getThemeById(settings.theme.preset) as CustomTheme | null;
     if (!t) return null;
     const payload = { css: t.css ?? "", js: t.js ?? "", html: t.html ?? "" };
@@ -43,7 +45,7 @@ export function CustomCodeMount() {
       return { css: "", js: "", html: "" };
     }
     return payload;
-  }, [settings.theme.preset, themesTick]);
+  }, [settings.theme.preset, themesTick, previewing]);
 
   useEffect(() => {
     if (typeof document === "undefined") return;

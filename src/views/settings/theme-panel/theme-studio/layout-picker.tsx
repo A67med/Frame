@@ -11,6 +11,36 @@ type LayoutDef = {
 
 const LAYOUTS: LayoutDef[] = [
   {
+    id: "frame",
+    name: "Frame",
+    blurb: "Navigation rail, command bar and editorial discovery.",
+    diagram: (a) => <Diagram active={a} kind="rail" />,
+  },
+  {
+    id: "dracula",
+    name: "Legacy sidebar",
+    blurb: "Original wide sidebar for existing themes.",
+    diagram: (a) => <Diagram active={a} kind="sidebar" />,
+  },
+  {
+    id: "royal",
+    name: "Royal",
+    blurb: "Original floating navigation.",
+    diagram: (a) => <Diagram active={a} kind="topdock" />,
+  },
+  {
+    id: "nord",
+    name: "Nord",
+    blurb: "Original wide sidebar for existing themes.",
+    diagram: (a) => <Diagram active={a} kind="sidebar" />,
+  },
+  {
+    id: "forest",
+    name: "Forest",
+    blurb: "Original wide sidebar for existing themes.",
+    diagram: (a) => <Diagram active={a} kind="sidebar" />,
+  },
+  {
     id: "sidebar",
     name: "Sidebar",
     blurb: "Wide left bar with labels.",
@@ -71,6 +101,7 @@ export function LayoutPicker({
             key={l.id}
             type="button"
             onClick={() => onChange(l.id)}
+            aria-pressed={active}
             className={`group relative flex flex-col gap-2 overflow-hidden rounded-lg border p-3 text-start transition-colors ${
               active
                 ? "border-accent/80 bg-accent-soft"

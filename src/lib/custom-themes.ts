@@ -1,3 +1,4 @@
+import { normalizeThemeDesign } from "./theme-design";
 import {
   FONT_PAIRS,
   type ChromeConfig,
@@ -141,6 +142,7 @@ function isCustomTheme(t: unknown): t is CustomTheme {
 }
 
 const LAYOUTS = new Set<ThemeLayout>([
+  "frame",
   "sidebar",
   "topdock",
   "rail",
@@ -323,6 +325,7 @@ export function parseThemeJson(
       ...(background ? { background } : {}),
       ...(logo ? { logo } : {}),
       ...(layout ? { layout } : {}),
+      ...(co.design ? { design: normalizeThemeDesign(co.design) } : {}),
       ...(cardStyle ? { cardStyle } : {}),
       ...(buttonStyle ? { buttonStyle } : {}),
       ...(fontPair ? { fontPair } : {}),
@@ -370,6 +373,33 @@ export function saveCustomTheme(theme: CustomTheme): boolean {
   return ok;
 }
 
+/** Studio waits for durable storage before closing or activating the edited theme. */
+export async function persistCustomTheme(theme: CustomTheme): Promise<boolean> {
+  await hydrateCustomThemes();
+  const next = [...getCustomThemes().filter((t) => t.id !== theme.id), theme];
+  const serialized = JSON.stringify(next);
+  const storedInDB = await themeKvPut(IDB_KEY, serialized);
+  if (!storedInDB) {
+    // Do not remove the old value to make quota room. A failed edit must preserve it.
+    try {
+      localStorage.setItem(STORAGE_KEY, serialized);
+    } catch {
+      return false;
+    }
+  }
+  if (storedInDB) {
+    idbReady = true;
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      /* The database holds the complete list. */
+    }
+  }
+  cache = next;
+  emit();
+  return true;
+}
+
 export function removeCustomTheme(id: string): void {
   cache = getCustomThemes().filter((t) => t.id !== id);
   writeRaw(cache);
@@ -394,6 +424,7 @@ export function exportThemeJson(theme: ThemePreset | CustomTheme): string {
   if (theme.background) out.background = theme.background;
   if (theme.logo) out.logo = theme.logo;
   if (theme.layout) out.layout = theme.layout;
+  if (theme.design) out.design = normalizeThemeDesign(theme.design);
   if (theme.cardStyle) out.cardStyle = theme.cardStyle;
   if (theme.buttonStyle) out.buttonStyle = theme.buttonStyle;
   if (theme.fontPair) out.fontPair = theme.fontPair;
@@ -427,7 +458,7 @@ export function getStarterTemplate(): string {
         "--color-accent-soft": "#7b5cff2e",
         "--color-danger": "#ef5a5a",
       },
-      layout: "sidebar",
+      layout: "frame",
       cardStyle: "flat",
       buttonStyle: "flat",
       fontPair: "sentient-switzer",

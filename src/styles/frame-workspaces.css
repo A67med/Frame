@@ -16,7 +16,7 @@
 
 [data-frame-desktop] [data-frame-page] h1 {
   font-family: var(--frame-display);
-  font-size: clamp(32px, 3.2vw, 48px);
+  font-size: clamp(32px, calc(3.2vw * var(--frame-heading-scale)), 58px);
   font-weight: 500;
   line-height: 1.1;
 }
@@ -40,7 +40,7 @@
   padding: 10px;
   border: var(--frame-rule);
   background: var(--frame-panel);
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
 }
 
 [data-frame-desktop] .frame-radar-index button {
@@ -74,7 +74,7 @@
 
 [data-frame-desktop] .frame-library-heading h1 {
   font-family: var(--frame-display);
-  font-size: clamp(32px, 3.2vw, 48px);
+  font-size: clamp(32px, calc(3.2vw * var(--frame-heading-scale)), 58px);
 }
 
 [data-frame-desktop] .frame-library-heading p {
@@ -87,7 +87,7 @@
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
   align-items: start;
-  gap: 28px;
+  gap: calc(28px * var(--frame-density));
 }
 
 [data-frame-desktop] .frame-library-nav {
@@ -240,7 +240,7 @@
 
 [data-frame-desktop] .harbor-settings-group {
   border: var(--frame-rule);
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
   background: var(--frame-panel);
 }
 

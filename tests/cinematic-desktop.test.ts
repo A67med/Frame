@@ -1,3 +1,5 @@
+import "./_localstorage-stub.ts";
+import { activeLayout } from "../src/lib/theme.ts";
 // @ts-expect-error Node test types are outside the browser tsconfig.
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are outside the browser tsconfig.
@@ -37,6 +39,7 @@ test("imported and alternate themes keep their authored layout without rewriting
     const theme = Object.freeze({ preset, customColors: null });
     const settings = Object.freeze({ theme });
     const { useCinematicDesktop } = load("lib/use-cinematic-desktop.ts", {
+      "./theme": { activeLayout },
       "./settings": { useSettings: () => ({ settings }) },
       "./profiles": { useActiveKid: () => null },
       "./theme-preview": { useThemePreview: () => null },
@@ -46,17 +49,21 @@ test("imported and alternate themes keep their authored layout without rewriting
   }
 });
 
-test("theme previews and child profiles retain their own interface", () => {
-  for (const [kid, preview] of [
-    [{ id: "child" }, null],
-    [null, { preset: "frame" }],
+test("preview layout is authoritative and child profiles retain their own interface", () => {
+  for (const [kid, preview, enabled] of [
+    [{ id: "child" }, null, false],
+    [{ id: "child" }, { layout: "frame" }, false],
+    [null, { layout: "frame" }, true],
+    [null, { layout: "dracula" }, false],
+    [null, { layout: "custom" }, false],
   ]) {
     const { useCinematicDesktop } = load("lib/use-cinematic-desktop.ts", {
+      "./theme": { activeLayout },
       "./settings": { useSettings: () => ({ settings: { theme: { preset: "frame" } } }) },
       "./profiles": { useActiveKid: () => kid },
       "./theme-preview": { useThemePreview: () => preview },
     });
-    assert.equal(useCinematicDesktop(), false);
+    assert.equal(useCinematicDesktop(), enabled);
   }
 });
 

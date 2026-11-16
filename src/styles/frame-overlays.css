@@ -1,7 +1,7 @@
 /* Portal surfaces are scoped by the desktop marker, leaving custom themes untouched. */
 [data-frame-desktop] [data-frame-menu] {
   border: var(--frame-rule);
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
   background: var(--color-surface);
   backdrop-filter: none;
   box-shadow: 0 12px 36px rgb(0 0 0 / 32%);
@@ -10,7 +10,7 @@
 [data-frame-desktop] [data-frame-dialog] {
   border: var(--frame-rule);
   background: var(--color-surface);
-  border-radius: 8px;
+  border-radius: var(--frame-radius);
   box-shadow: 0 24px 80px rgb(0 0 0 / 40%);
 }
 
@@ -53,7 +53,7 @@
 [data-frame-desktop] [data-search-overlay] .modal-panel {
   border: var(--frame-rule);
   background: var(--color-canvas);
-  border-radius: 8px;
+  border-radius: var(--frame-radius);
   min-height: min(720px, calc(100vh - 64px));
 }
 
@@ -101,7 +101,7 @@
 }
 
 [data-frame-desktop] [data-frame-transport] button {
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
 }
 
 [data-frame-desktop] [data-frame-player-header] {
@@ -110,7 +110,7 @@
 }
 
 [data-frame-desktop] [data-frame-player-header] button {
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
 }
 
 @media (max-width: 760px) {

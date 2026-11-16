@@ -1,3 +1,5 @@
+import type { ThemeDesign } from "@/lib/theme-design";
+import type { ThemeBackground, ThemeLogo } from "@/lib/theme";
 import type {
   ChromeConfig,
   CustomColors,
@@ -11,6 +13,9 @@ import type { NavCustomization } from "@/chrome/nav-items";
 
 export type Draft = {
   navCustomization: NavCustomization;
+  design: ThemeDesign;
+  background?: ThemeBackground;
+  logo?: ThemeLogo;
   name: string;
   blurb: string;
   layout: ThemeLayout;

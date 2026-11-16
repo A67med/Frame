@@ -1,3 +1,4 @@
+import { ThemeThumbnail } from "@/components/theme-thumbnail";
 import { ArrowRight, Check, FileDown, Library, Palette } from "../../icons";
 import type { ReactNode } from "react";
 import type { ThemePreset } from "@/lib/theme";
@@ -60,7 +61,7 @@ const DECK = [
 function ThemeDeck({ themes }: { themes: ThemePreset[] }) {
   const shown = themes
     .slice()
-    .sort((a, b) => (b.previewImage ? 1 : 0) - (a.previewImage ? 1 : 0))
+    .sort((a, b) => Number(b.layout === "frame") - Number(a.layout === "frame"))
     .slice(0, 3);
   if (shown.length === 0) return <div className="h-full w-full bg-elevated" />;
   return (
@@ -70,11 +71,15 @@ function ThemeDeck({ themes }: { themes: ThemePreset[] }) {
           key={t.id}
           className={`absolute aspect-[16/10] w-[46%] overflow-hidden rounded-md harbor-float transition-transform duration-300 ease-out motion-reduce:transition-none ${DECK[i]}`}
         >
-          <Fit
-            kind="theme"
-            tokens={tokensFromPreset(t)}
-            cover={t.previewImage ?? t.background?.image ?? null}
-          />
+          {t.layout === "frame" ? (
+            <ThemeThumbnail theme={t} />
+          ) : (
+            <Fit
+              kind="theme"
+              tokens={tokensFromPreset(t)}
+              cover={t.previewImage ?? t.background?.image ?? null}
+            />
+          )}
         </span>
       ))}
     </div>

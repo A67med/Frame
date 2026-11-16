@@ -1,14 +1,12 @@
 # Frame Style
 name: Default
-blurb: Violet on graphite, bold accents. Easy on the eyes.
-layout: dracula
+blurb: Frame’s editorial cinema. Warm amber, crisp navigation, considered space.
+layout: frame
 card: flat
 button: flat
 font: general-sans
 bokeh: false
 swatch: #0c1217, #151f27, #f3ae69
-nav-order: home, discover, catalogs, plugins, movies, shows, kids, anime, manga, ebook, music, games, live, sports, vod, calendar, collections, downloads, addons, library, settings
-nav-hidden: manga, live, ebook, anime, shows, catalogs, calendar, games, kids, sports, vod, collections, downloads, music
 
 @tokens
 --color-canvas: #0c1217

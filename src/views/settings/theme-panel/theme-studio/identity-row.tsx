@@ -17,6 +17,8 @@ export function IdentityRow({
           type="text"
           value={name}
           onChange={(e) => onChange({ name: e.target.value })}
+          aria-label={t("Theme name")}
+          maxLength={60}
           placeholder={t("Name your theme")}
           className="h-11 w-full rounded-md bg-transparent px-3 pe-7 text-[19px] font-semibold tracking-tight text-ink placeholder:text-ink-subtle/70 focus:outline-none"
         />
@@ -30,6 +32,8 @@ export function IdentityRow({
         type="text"
         value={blurb}
         onChange={(e) => onChange({ blurb: e.target.value })}
+        aria-label={t("Theme description")}
+        maxLength={160}
         placeholder={t("One line for the picker (optional)")}
         className="h-11 w-full rounded-md bg-transparent px-3 text-[15.5px] text-ink-muted placeholder:text-ink-subtle/70 focus:outline-none"
       />

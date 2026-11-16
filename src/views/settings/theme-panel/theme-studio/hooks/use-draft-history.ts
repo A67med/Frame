@@ -1,56 +1,25 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import type { Draft } from "../studio-types";
+import { updateDraftHistory, stepDraftHistory, type DraftHistory } from "../draft-history";
 
 type Updater = Draft | ((prev: Draft) => Draft);
 
-const COALESCE_MS = 450;
-const MAX_DEPTH = 120;
-
 export function useDraftHistory(initial: () => Draft) {
-  const [state, setState] = useState(() => ({
+  const [state, setState] = useState<DraftHistory>(() => ({
     draft: initial(),
-    past: [] as Draft[],
-    future: [] as Draft[],
+    past: [],
+    future: [],
+    lastPushAt: 0,
+    group: null,
   }));
-  const lastPushAt = useRef(0);
-
-  const setDraft = useCallback((updater: Updater) => {
-    setState((s) => {
-      const next =
-        typeof updater === "function" ? (updater as (p: Draft) => Draft)(s.draft) : updater;
-      if (next === s.draft) return s;
-      const now = Date.now();
-      const coalesce = s.past.length > 0 && now - lastPushAt.current < COALESCE_MS;
-      lastPushAt.current = now;
-      const past = coalesce ? s.past : [...s.past, s.draft].slice(-MAX_DEPTH);
-      return { draft: next, past, future: [] };
-    });
+  const setDraft = useCallback((updater: Updater, group: string | null = null) => {
+    const now = Date.now();
+    setState((s) =>
+      updateDraftHistory(s, typeof updater === "function" ? updater(s.draft) : updater, now, group),
+    );
   }, []);
-
-  const undo = useCallback(() => {
-    lastPushAt.current = 0;
-    setState((s) => {
-      if (s.past.length === 0) return s;
-      return {
-        draft: s.past[s.past.length - 1],
-        past: s.past.slice(0, -1),
-        future: [...s.future, s.draft],
-      };
-    });
-  }, []);
-
-  const redo = useCallback(() => {
-    lastPushAt.current = 0;
-    setState((s) => {
-      if (s.future.length === 0) return s;
-      return {
-        draft: s.future[s.future.length - 1],
-        past: [...s.past, s.draft],
-        future: s.future.slice(0, -1),
-      };
-    });
-  }, []);
-
+  const undo = useCallback(() => setState((s) => stepDraftHistory(s, "undo")), []);
+  const redo = useCallback(() => setState((s) => stepDraftHistory(s, "redo")), []);
   return {
     draft: state.draft,
     setDraft,

@@ -6,7 +6,7 @@
 
 [data-frame-recommended] > .grid > div {
   min-height: 370px;
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
 }
 
 [data-frame-recommended] aside {
@@ -50,7 +50,7 @@
 
 [data-frame-desktop] [data-frame-page="home"] > div,
 [data-frame-desktop] [data-frame-page="discover"] > div {
-  gap: 28px;
+  gap: calc(28px * var(--frame-density));
 }
 
 .frame-home-nudge:has(> div:empty) {
@@ -59,7 +59,7 @@
 
 .frame-home-nudge > div > div {
   padding: 10px 14px;
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
   background: var(--frame-panel);
   box-shadow: none;
   backdrop-filter: none;
@@ -367,7 +367,7 @@
 }
 
 .frame-detail-copy button.rounded-full {
-  border-radius: 6px;
+  border-radius: var(--frame-radius);
 }
 
 .frame-detail-synopsis {
@@ -432,4 +432,18 @@
   .frame-feature .harbor-hero-content {
     padding: 22px;
   }
+}
+
+/* Artwork and supplied title logos retain a dark media surface in light themes. */
+[data-frame-desktop][data-theme-mode="light"] .harbor-hero-stage,
+[data-frame-desktop][data-theme-mode="light"]
+  [data-frame-feature-page="movies"]
+  > .harbor-bleed-stremio {
+  --color-canvas: #0c1217;
+  --color-ink: #f1f5f8;
+  --color-ink-muted: #c2cdd6;
+  --color-ink-subtle: #aabac7;
+  --color-accent: #e0e7eb;
+  --color-accent-soft: #e0e7eb2e;
+  color: var(--color-ink);
 }

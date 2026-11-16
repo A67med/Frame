@@ -14,11 +14,17 @@ export function ThemeBackdrop() {
 
   const preset = settings.theme.preset !== "custom" ? getThemeById(settings.theme.preset) : null;
   const wantsBokeh = (preview ? preview.bokeh : !!preset?.bokeh) && view !== "addons";
-  const img =
-    storedBackgroundImage(settings.theme.backgroundImage) ?? preset?.background?.image ?? null;
+  const img = preview
+    ? (preview.background?.image ?? null)
+    : (storedBackgroundImage(settings.theme.backgroundImage) ?? preset?.background?.image ?? null);
   const dim = Math.max(
     0,
-    Math.min(1, settings.theme.backgroundDim ?? preset?.background?.dim ?? 0.65),
+    Math.min(
+      1,
+      preview
+        ? (preview.background?.dim ?? 0.65)
+        : (settings.theme.backgroundDim ?? preset?.background?.dim ?? 0.65),
+    ),
   );
 
   if (!img) {

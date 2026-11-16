@@ -1,0 +1,22 @@
+{
+  "results": [
+    "Default preview, design edit, reset, undo/redo, export, save, reload and edit existing theme passed",
+    "frame HTML5 clip playback, pause and player screenshot passed",
+    "frame home, discover, movies, shows, library, detail, settings, search and 640/960 viewport checks passed",
+    "noir-cinema HTML5 clip playback, pause and player screenshot passed",
+    "noir-cinema home, discover, movies, shows, library, detail, settings, search and 640/960 viewport checks passed",
+    "aurora-frame HTML5 clip playback, pause and player screenshot passed",
+    "aurora-frame home, discover, movies, shows, library, detail, settings, search and 640/960 viewport checks passed",
+    "minimal-frost HTML5 clip playback, pause and player screenshot passed",
+    "minimal-frost home, discover, movies, shows, library, detail, settings, search and 640/960 viewport checks passed",
+    "editorial HTML5 clip playback, pause and player screenshot passed",
+    "editorial home, discover, movies, shows, library, detail, settings, search and 640/960 viewport checks passed",
+    "amoled HTML5 clip playback, pause and player screenshot passed",
+    "amoled home, discover, movies, shows, library, detail, settings, search and 640/960 viewport checks passed",
+    "retro-cinema HTML5 clip playback, pause and player screenshot passed",
+    "retro-cinema home, discover, movies, shows, library, detail, settings, search and 640/960 viewport checks passed",
+    "Exported file import, legacy preservation and explicit conversion saved as a separate copy passed"
+  ],
+  "errors": [],
+  "fontFailures": []
+}
