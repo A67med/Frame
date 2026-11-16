@@ -126,3 +126,9 @@ gemini.key
 
 # Rotated dev-server logs: *.log covers dev.log but not its .prev rotation.
 dev.log*
+
+# Private local reference images, never distributed.
+/backgrounds/
+
+# Locally built macOS virtual microphone bundle.
+/native/macos/virtual-mic/build/

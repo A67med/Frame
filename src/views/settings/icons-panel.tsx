@@ -79,7 +79,6 @@ const SVG_RAW = import.meta.glob(["../../assets/nav-icons/*.svg", "../../assets/
 const LOTTIE_NAV = import.meta.glob("../../assets/lottie/nav/*.json") as LazyGlob;
 const LOTTIE_MAIN = import.meta.glob("../../assets/lottie/*.json") as LazyGlob;
 const LOTTIE_APP: LazyGlob = {
-  "../../assets/harbor-lottie.json": () => import("../../assets/harbor-lottie.json"),
   "@/assets/boot-box.json": () => import("@/assets/boot-box.json"),
 };
 
@@ -96,10 +95,6 @@ const NAMES: Record<string, string> = {
   ebook: "eBook",
   "wt-waiting-dark": "Watch together (dark)",
   "wt-waiting-white": "Watch together (light)",
-  "addons-boat-dark": "Addons boat (dark)",
-  "addons-boat-white": "Addons boat (light)",
-  "install-boat-white": "Install boat",
-  "harbor-loader": "Frame loader",
   "flame-streak": "Flame streak",
   "voyage-boat": "Voyage boat",
   "mark-unwatched": "Mark unwatched",

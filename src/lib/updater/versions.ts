@@ -1,10 +1,9 @@
 import { safeFetch } from "@/lib/safe-fetch";
 import { probeHandoff } from "./handoff";
 
-const RELEASES_API =
-  "https://api.github.com/repos/abdallahkattriah-sketch/frame/releases?per_page=30";
+const RELEASES_API = "https://api.github.com/repos/A67med/Frame/releases?per_page=30";
 // The API allows 60 unauthenticated requests an hour per IP; the Atom feed has no such limit but lists only 10.
-const RELEASES_FEED = "https://github.com/abdallahkattriah-sketch/frame/releases.atom";
+const RELEASES_FEED = "https://github.com/A67med/Frame/releases.atom";
 
 export type VersionEntry = {
   version: string;
@@ -31,11 +30,15 @@ const INSTALLER_SUFFIX: Record<string, string> = {
 export const currentVersion = __APP_VERSION__;
 
 export function versionFromRelease(release: GitHubRelease): VersionEntry | null {
+  if (!release || typeof release !== "object") return null;
   const version = /^v(\d+\.\d+\.\d+)$/.exec(release.tag_name ?? "")?.[1];
   if (!version || release.draft) return null;
   const assets: Record<string, string> = {};
   for (const [key, suffix] of Object.entries(INSTALLER_SUFFIX)) {
-    const url = release.assets?.find((a) => a.name?.endsWith(suffix))?.browser_download_url;
+    const url = Array.isArray(release.assets)
+      ? release.assets.find((a) => typeof a?.name === "string" && a.name.endsWith(suffix))
+          ?.browser_download_url
+      : undefined;
     if (url) assets[key] = url;
   }
   return {
@@ -97,8 +100,8 @@ async function fetchReleases(): Promise<GitHubRelease[]> {
     headers: { accept: "application/vnd.github+json" },
   }).catch(() => null);
   if (res?.ok) {
-    const data = (await res.json()) as unknown;
-    return Array.isArray(data) ? (data as GitHubRelease[]) : [];
+    const data: unknown = await res.json().catch(() => null);
+    if (Array.isArray(data)) return data as GitHubRelease[];
   }
   const feed = await safeFetch(RELEASES_FEED, { cache: "no-store" });
   if (!feed.ok) throw new Error(`history ${res?.status ?? "offline"} / feed ${feed.status}`);

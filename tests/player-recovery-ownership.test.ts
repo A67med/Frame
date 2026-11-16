@@ -15,6 +15,13 @@ function deferred<T = any>() {
 }
 
 function recoveryHarness() {
+  let now = 100_000;
+  const timers = new Map<number, { run: () => void; at: number; interval: number }>();
+  const schedule = (run: () => void, ms: number, interval = 0) => {
+    const id = ++timer;
+    timers.set(id, { run, at: now + ms, interval });
+    return id;
+  };
   const effects: Array<{ deps?: unknown[]; cleanup?: () => void }> = [];
   const refs: Array<{ current: any }> = [],
     states: any[] = [],
@@ -107,16 +114,17 @@ function recoveryHarness() {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
   }).outputText;
   const module: any = {};
-  new Function("require", "exports", "window", "console", compiled)(
+  new Function("require", "exports", "window", "console", "Date", compiled)(
     (id: string) => (id === "react" ? react : dependencies),
     module,
     {
-      setTimeout: () => ++timer,
-      clearTimeout() {},
-      setInterval: () => ++timer,
-      clearInterval() {},
+      setTimeout: (fn: () => void, ms: number) => schedule(fn, ms),
+      clearTimeout: (id: number) => timers.delete(id),
+      setInterval: (fn: () => void, ms: number) => schedule(fn, ms, ms),
+      clearInterval: (id: number) => timers.delete(id),
     },
     { warn() {} },
+    { now: () => now },
   );
   let params: any = {
     src: { url: "https://media.test/a.mkv", meta: { id: "tt100", type: "movie" }, subtitles: [] },
@@ -150,6 +158,22 @@ function recoveryHarness() {
   render();
   return {
     render,
+    advance: (ms: number) => {
+      const end = now + ms;
+      while (true) {
+        const next = [...timers]
+          .filter(([, t]) => t.at <= end)
+          .sort((a, b) => a[1].at - b[1].at)[0];
+        if (!next) break;
+        const [id, timer] = next;
+        now = timer.at;
+        if (timer.interval) timer.at += timer.interval;
+        else timers.delete(id);
+        timer.run();
+        render();
+      }
+      now = end;
+    },
     fail,
     cycle,
     bridge,
@@ -348,4 +372,35 @@ test("manual source recovery failure does not silently choose another title or s
   assert.equal(h.pickers.length, 0);
   assert.equal(h.bridge.destroyed, 0);
   assert.equal(h.render().sourceError?.host, "media.test");
+});
+
+for (const seconds of [10, 20, 30, 60, 120]) {
+  test(`paused completed P2P stream retains its session for ${seconds}s`, () => {
+    const h = recoveryHarness();
+    h.render({
+      snap: { ...emptySnapshot, status: "paused" },
+      isP2pEngine: true,
+      engineStats: {
+        streamLen: 100,
+        streamProgress: 100,
+        downloaded: 100,
+        downloadSpeed: 0,
+        unchoked: 0,
+      },
+    });
+    h.advance(seconds * 1000);
+    assert.equal(h.bridge.loads.length, 0);
+    assert.equal(h.bridge.destroyed, 0);
+    assert.equal(h.pickers.length, 0);
+    h.unmount();
+  });
+}
+
+test("pausing before a room's first frame cannot trip its recovery timer", () => {
+  const h = recoveryHarness();
+  h.render({ inRoom: true, snap: { ...emptySnapshot, status: "paused" } });
+  h.advance(120_000);
+  assert.equal(h.bridge.destroyed, 0);
+  assert.equal(h.pickers.length, 0);
+  h.unmount();
 });

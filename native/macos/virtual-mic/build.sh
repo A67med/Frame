@@ -14,7 +14,7 @@ if [ "$strict" = "0" ]; then
 fi
 
 if [ "$(uname -s)" != "Darwin" ]; then
-  echo "harbor-audio-plugin builds on macOS only. Current system: $(uname -s)" >&2
+  echo "Frame virtual microphone builds on macOS only. Current system: $(uname -s)" >&2
   exit 1
 fi
 

@@ -15,7 +15,7 @@ Powered by Tauri 2, React, TypeScript, Rust and libmpv.
 
 <img src="docs/theme-studio-evidence/frame-home.png" alt="Frame 0.4 desktop interface, Default theme" width="900">
 
-*The redesigned Frame desktop — browse your collection, find your next watch and make every screen your own.*
+_The redesigned Frame desktop — browse your collection, find your next watch and make every screen your own._
 
 </div>
 
@@ -36,20 +36,20 @@ Powered by Tauri 2, React, TypeScript, Rust and libmpv.
 
 <div align="center">
 
-| Default | Noir Cinema |
-| :---: | :---: |
+|                                                  Default                                                   |                                                  Noir Cinema                                                   |
+| :--------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
 | <img src="docs/theme-studio-evidence/frame-home.png" alt="Frame Default — graphite and amber" width="430"> | <img src="docs/theme-studio-evidence/noir-cinema-home.png" alt="Noir Cinema — charcoal and brass" width="430"> |
-| Graphite, amber, editorial detail | Cinematic charcoal and brass |
+|                                     Graphite, amber, editorial detail                                      |                                          Cinematic charcoal and brass                                          |
 
-| Aurora | Minimal Frost |
-| :---: | :---: |
+|                                                         Aurora                                                         |                                                      Minimal Frost                                                      |
+| :--------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: |
 | <img src="docs/theme-studio-evidence/aurora-frame-home.png" alt="Aurora — violet, blue and luminous mint" width="430"> | <img src="docs/theme-studio-evidence/minimal-frost-home.png" alt="Minimal Frost — bright neutral surfaces" width="430"> |
-| Deep blue, violet, soft glow | Clean, bright and translucent |
+|                                              Deep blue, violet, soft glow                                              |                                              Clean, bright and translucent                                              |
 
-| Editorial | OLED Black |
-| :---: | :---: |
+|                                                      Editorial                                                      |                                                  OLED Black                                                   |
+| :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 | <img src="docs/theme-studio-evidence/editorial-home.png" alt="Editorial — warm paper with red accents" width="430"> | <img src="docs/theme-studio-evidence/amoled-home.png" alt="OLED Black — black with mint accents" width="430"> |
-| Warm paper, ink, red accents | True black, minimal decoration |
+|                                            Warm paper, ink, red accents                                             |                                        True black, minimal decoration                                         |
 
 <img src="docs/theme-studio-evidence/retro-cinema-home.png" alt="Retro Cinema — oxblood, cream and amber" width="620">
 
@@ -73,17 +73,17 @@ Reset and undo/redo work on your current draft. You can export your theme and im
 
 ## What you can do
 
-| Explore | Play and organize | Personalize |
-| --- | --- | --- |
-| **Home, Discover, Movies & TV** — browse titles, artwork, filters and global search. | **Native mpv playback** — local files, subtitles, resume, skip intro/outro and picture-in-picture. | **Theme Studio** — seven modern presets, detailed design controls, custom CSS, HTML and optional JavaScript. |
+| Explore                                                                                 | Play and organize                                                                                   | Personalize                                                                                                     |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Home, Discover, Movies & TV** — browse titles, artwork, filters and global search.    | **Native mpv playback** — local files, subtitles, resume, skip intro/outro and picture-in-picture.  | **Theme Studio** — seven modern presets, detailed design controls, custom CSS, HTML and optional JavaScript.    |
 | **Radar & Following** — track popular, upcoming and followed people with TMDB metadata. | **My Library** — collections, filters and context menus; back up and restore settings and app data. | **Optional integrations** — Stremio add-ons, Letterboxd tracking, paired remote control and additional sources. |
 
 Frame is a **desktop application**, not a hosted streaming service. Your local video files stay on your computer; browsing metadata and optional integrations can require network access.
 
 ### A closer look
 
-| Navigation and settings | Theme selection |
-| :---: | :---: |
+|                               Navigation and settings                               |                                            Theme selection                                            |
+| :---------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
 | <img src="docs/screenshots/sidebar.png" alt="Frame navigation sidebar" width="160"> | <img src="docs/theme-studio-evidence/default-studio.png" alt="Frame Theme Studio editor" width="560"> |
 
 <details>
@@ -129,6 +129,7 @@ For a development build:
 pnpm install
 pnpm dev
 pnpm tauri dev
+
 ```
 
 Run checks with `pnpm run typecheck` and `pnpm test`.
@@ -161,3 +162,5 @@ Frame began as a fork of [Harbor](https://github.com/crazyrabbit0/harbor) and re
 Made for the movies and shows you love.
 
 </div>
+
+Architecture and compatibility: [architecture](docs/ARCHITECTURE.md), [cleanup audit](docs/SOURCE-CLEANUP-AUDIT.md), [legacy compatibility](docs/LEGACY-COMPATIBILITY.md). Run `pnpm check:hygiene` to check repository invariants.

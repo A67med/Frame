@@ -41,7 +41,9 @@ fn candidates() -> Vec<PathBuf> {
     for ancestor in dir.ancestors().take(6) {
         found.push(
             ancestor
-                .join("harbor-audio-plugin")
+                .join("native")
+                .join("macos")
+                .join("virtual-mic")
                 .join("build")
                 .join(DRIVER_BUNDLE),
         );

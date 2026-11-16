@@ -11,7 +11,7 @@ The module root is `../music.rs` (no `mod.rs`): `MusicState`, `initialize`, `shu
 | Sources                                      | `connectors/` (`youtube_music/`, `soundcloud/`, `jellyfin/`, `plex/`, `subsonic/`, `local/`; `catalog/` is metadata only: Deezer, iTunes, MusicBrainz, ListenBrainz) |
 | Connector subprocess                         | `worker.rs`, `worker_policy.rs`, `connector.rs`, `registry.rs`                                                                                                       |
 | DJ decks, FX, broadcast                      | `deck.rs`, `deck_audio.rs`, `deck_events.rs`, `audio_fx.rs`, `broadcast.rs`; the `harbor-dj` window is `../dj_deck.rs`                                               |
-| Virtual audio cable                          | `cable_win/`, `cable_mac/` (installs the CoreAudio driver from `harbor-audio-plugin/`), `cable_pipewire.rs`/`cable_linux.rs`, commands in `commands/cable.rs`        |
+| Virtual audio cable                          | `cable_win/`, `cable_mac/` (installs the CoreAudio driver from `native/macos/virtual-mic/`), `cable_pipewire.rs`/`cable_linux.rs`, commands in `commands/cable.rs`   |
 | Local library DB                             | `db/`, `migrations.rs`, `store.rs`, `library.rs`                                                                                                                     |
 | Scrobbling                                   | `lastfm.rs`                                                                                                                                                          |
 

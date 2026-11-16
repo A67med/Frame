@@ -63,6 +63,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582"
 
 [[package]]
+name = "frame-core"
+version = "0.1.0"
+dependencies = [
+ "js-sys",
+ "once_cell",
+ "regex",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "unicode-normalization",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+]
+
+[[package]]
 name = "futures-core"
 version = "0.3.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -84,21 +99,6 @@ dependencies = [
  "futures-task",
  "pin-project-lite",
  "slab",
-]
-
-[[package]]
-name = "harbor-core"
-version = "0.1.0"
-dependencies = [
- "js-sys",
- "once_cell",
- "regex",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "unicode-normalization",
- "wasm-bindgen",
- "wasm-bindgen-test",
 ]
 
 [[package]]

@@ -10,7 +10,7 @@ function resolveBase(raw: string | undefined, fallback: string): string {
 // matching VITE_* variable.
 export const HARBOR_API_BASE = resolveBase(import.meta.env.VITE_HARBOR_API_BASE, "");
 
-export const HARBOR_REPO_URL = "https://github.com/abdallahkattriah-sketch/frame";
+export const HARBOR_REPO_URL = "https://github.com/A67med/Frame";
 export const HARBOR_RELEASES_URL = `${HARBOR_REPO_URL}/releases`;
 export const HARBOR_ISSUES_URL = `${HARBOR_REPO_URL}/issues`;
 export const HARBOR_BUG_FORM_URL = `${HARBOR_ISSUES_URL}/new?template=bug_report.yml`;
@@ -18,7 +18,7 @@ export const HARBOR_BUG_FORM_URL = `${HARBOR_ISSUES_URL}/new?template=bug_report
 // Static feeds (awards, hero art, release notes, theme index) served from the repo's data/ folder.
 export const HARBOR_DATA_BASE = resolveBase(
   import.meta.env.VITE_HARBOR_DATA_BASE,
-  "https://raw.githubusercontent.com/abdallahkattriah-sketch/frame/main/data",
+  "https://raw.githubusercontent.com/A67med/Frame/main/data",
 );
 
 export const HARBOR_TRAKT_BASE = resolveBase(

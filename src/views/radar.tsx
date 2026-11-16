@@ -26,10 +26,8 @@ import { useSettings } from "@/lib/settings";
 import { library } from "@/lib/stremio";
 import { useScrollMemory, useView } from "@/lib/view";
 import { readLocalEntries, subscribeWatchlist } from "@/lib/watchlist";
-import { openUrl } from "@/lib/window";
+import { fetchDigitalReleases } from "@/lib/radar/digital-releases";
 import { fmtDate } from "./person/person-utils";
-
-const BLURAY_CALENDAR_URL = "https://www.blu-ray.com/digital/releasedates.php";
 
 const PILL =
   "flex items-center gap-2 rounded-full px-3 py-1 text-[12.5px] font-medium ring-1 transition-colors disabled:opacity-60";
@@ -277,35 +275,73 @@ function TrendingSection({ tmdbKey }: { tmdbKey: string }) {
   );
 }
 
-// Digital release dates may only come from Blu-ray.com, and Frame cannot read that
-// calendar yet, so this says so instead of showing dates from another source.
-function DigitalReleasesSection() {
+function DigitalReleasesSection({ tmdbKey }: { tmdbKey: string }) {
   const t = useT();
+  const { settings } = useSettings();
+  const [month, setMonth] = useState(() => localIsoDay(Date.now()).slice(0, 7));
+  const [items, setItems] = useState<RadarItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const region = settings.region.toUpperCase();
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setError(false);
+    setItems([]);
+    const [year, number] = month.split("-").map(Number);
+    const end = localIsoDay(new Date(year, number, 0).getTime());
+    fetchDigitalReleases(tmdbKey, region, `${month}-01`, end)
+      .then((result) => {
+        if (!cancelled) setItems(result);
+      })
+      .catch(() => {
+        if (!cancelled) setError(true);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [tmdbKey, region, month, attempt]);
   return (
-    <section className="flex flex-col gap-3">
-      <div>
-        <h2 className="text-[20px] font-semibold tracking-tight text-ink">
-          {t("Digital Releases")}
-        </h2>
-        <p className="mt-0.5 text-[13px] text-ink-subtle">
-          {t("Digital release dates from the Blu-ray.com calendar.")}
-        </p>
-      </div>
-      <div className="flex flex-col items-start gap-3 rounded-2xl bg-surface p-5 ring-1 ring-edge-soft">
-        <p className="max-w-[70ch] text-[13.5px] text-ink-muted">
-          {t(
-            "This calendar isn't connected yet. Frame only shows digital dates from Blu-ray.com, so nothing is listed here until it can read them.",
-          )}
-        </p>
-        <button
-          type="button"
-          onClick={() => openUrl(BLURAY_CALENDAR_URL)}
-          className="text-[13px] font-medium text-accent hover:underline"
-        >
-          {t("Open the calendar on Blu-ray.com")}
-        </button>
-      </div>
-    </section>
+    <Row
+      title={t("Digital Releases")}
+      headerDescription={t("TMDB digital dates for {region}. No other region is substituted.", {
+        region,
+      })}
+      headerRight={
+        <input
+          type="month"
+          aria-label={t("Release month")}
+          value={month}
+          onChange={(event) => {
+            if (/^\d{4}-\d{2}$/.test(event.target.value)) setMonth(event.target.value);
+          }}
+          className="rounded-lg bg-surface px-3 py-2 text-[13px] text-ink ring-1 ring-edge-soft"
+        />
+      }
+      min={148}
+      shape="portrait"
+      scrollKey={`radar:digital:${region}:${month}`}
+    >
+      {loading ? (
+        <RowMessage>
+          <Spinner />
+        </RowMessage>
+      ) : error ? (
+        <RetryMessage onRetry={() => setAttempt((n) => n + 1)} />
+      ) : items.length ? (
+        items.map((item) => (
+          <RadarCard key={item.id} meta={item} reason={`${fmtDate(item.radarDate!)} · ${region}`} />
+        ))
+      ) : (
+        <RowMessage>
+          {t("No digital release dates are recorded for this region and month.")}
+        </RowMessage>
+      )}
+    </Row>
   );
 }
 
@@ -510,7 +546,7 @@ export function RadarView({ active = true }: { active?: boolean }) {
                 <TrendingSection tmdbKey={tmdbKey} />
               </section>
               <section id="radar-digital" className="frame-radar-section">
-                <DigitalReleasesSection />
+                <DigitalReleasesSection tmdbKey={tmdbKey} />
               </section>
               <section id="radar-discover" className="frame-radar-section">
                 <DiscoverSection tmdbKey={tmdbKey} />

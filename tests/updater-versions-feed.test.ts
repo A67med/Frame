@@ -46,3 +46,10 @@ test("reads versions, dates, installers and changes from the releases feed", () 
     "### Fixes\n\n- Load the player's About panel from IMDb again (imdb)",
   );
 });
+
+test("malformed historical releases cannot break the version list", () => {
+  assert.equal(versionFromRelease(null as never), null);
+  assert.equal(versionFromRelease({ tag_name: "latest" }), null);
+  assert.equal(versionFromRelease({ tag_name: "v0.4.5", draft: true }), null);
+  assert.deepEqual(versionFromRelease({ tag_name: "v0.4.0", assets: {} as never })?.assets, {});
+});
