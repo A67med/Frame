@@ -25,7 +25,7 @@ Frame began as a fork of [Harbor](https://github.com/crazyrabbit0/harbor), a Str
 - **Sources:** Stremio and its add-ons, extensions and local files, with metadata and artwork from TMDB.
 - **Profile:** your Stremio account is your profile. Frame's local settings stay separate from it, and Frame works without signing in.
 - **Track:** Letterboxd is the only tracker.
-- **Themes:** Default, Stremio, Royal, Velvet and Amoled. Themes import and export as `.framestyle` files.
+- **Themes:** Editable Frame Default, Noir Cinema, Aurora, Minimal Frost, Editorial, OLED Black and Retro Cinema, with Stremio, Royal and Velvet retained as compatible classics. Theme Studio edits typography, spacing, surfaces and navigation treatments live. Themes import and export as `.framestyle` files. See [the Theme Studio guide](docs/THEME-STUDIO.md).
 
 Backups save as `frame-backup-YYYY-MM-DD.framex`, optionally encrypted with a password (AES-256-GCM). Both `.framex` and older `.harbx` backups can be imported. Before a restore, the desktop app saves a copy of your current setup to its data folder (`backups/`, newest five kept), and a restore that cannot finish is rolled back. Custom JavaScript and HTML in a backup are only restored if you tick that option. Backups hold settings and app data only, never your video files.
 
