@@ -1,9 +1,11 @@
+import { DesignControls } from "./design-controls";
+import { emptyDraft } from "./studio-draft";
+import { THEME_PRESETS } from "@/lib/theme";
 import { RotateCcw, Shuffle } from "../../icons";
 import { useState, type ReactNode } from "react";
 import type { CodeLang } from "@/components/code-editor";
 import { useT } from "@/lib/i18n";
 import {
-  DEFAULT_CUSTOM_COLORS,
   selectableThemes,
   type ChromeConfig,
   type ThemeButtonStyle,
@@ -24,9 +26,10 @@ import { ROW_DESC, ToggleRow } from "../../shared";
 import { StudioSection } from "./controls/studio-section";
 import type { Draft } from "./studio-types";
 
-type Tab = "look" | "layout" | "code";
+type Tab = "themes" | "look" | "layout" | "code";
 
 const TABS: Array<{ id: Tab; label: string }> = [
+  { id: "themes", label: "Themes" },
   { id: "look", label: "Look" },
   { id: "layout", label: "Layout" },
   { id: "code", label: "Code" },
@@ -39,8 +42,10 @@ export function Inspector({
   onChromeChange,
   onRegenerateChrome,
   onExpand,
+  onReset,
 }: {
   draft: Draft;
+  onReset: () => void;
   onPatch: (patch: Partial<Draft>) => void;
   onSeed: (theme: ThemePreset) => void;
   onChromeChange: (config: ChromeConfig) => void;
@@ -88,10 +93,9 @@ export function Inspector({
 
       <div className="min-h-0 flex-1 overflow-y-auto">
         <div key={tab} className="harbor-studio-body px-5 py-4">
-          {tab === "look" && (
-            <div className="flex flex-col">
-              <IdentityRow name={draft.name} blurb={draft.blurb} onChange={(p) => onPatch(p)} />
-              <div className="h-5" />
+          {tab === "themes" && (
+            <div>
+              {" "}
               <StudioSection
                 title={t("Start from")}
                 action={
@@ -104,6 +108,32 @@ export function Inspector({
               >
                 <PresetGallery onSeed={onSeed} />
               </StudioSection>
+            </div>
+          )}
+          {tab === "look" && (
+            <div className="flex flex-col">
+              <IdentityRow name={draft.name} blurb={draft.blurb} onChange={(p) => onPatch(p)} />
+              <div className="my-3 flex items-center justify-between gap-2 text-sm text-ink-muted">
+                <span>
+                  {draft.layout === "frame"
+                    ? t("Frame layout · Live preview")
+                    : t("Legacy layout · Preserved")}
+                </span>
+                <button
+                  type="button"
+                  className="min-h-11 px-2 underline underline-offset-4"
+                  onClick={onReset}
+                >
+                  {t("Reset theme")}
+                </button>
+              </div>
+              {draft.layout !== "frame" && (
+                <p className="mb-4 text-sm text-ink-muted">
+                  {t(
+                    "This theme keeps its original layout. Choose Frame in Layout to adopt the new interface. Your saved original is unchanged until you save.",
+                  )}
+                </p>
+              )}
               <Hairline />
               <StudioSection
                 title={t("Palette")}
@@ -111,20 +141,30 @@ export function Inspector({
                   <HeaderAction
                     icon={<RotateCcw size={16} strokeWidth={2.2} />}
                     label={t("Reset")}
-                    onClick={() => onPatch({ colors: { ...DEFAULT_CUSTOM_COLORS } })}
+                    onClick={() => onPatch({ colors: emptyDraft(THEME_PRESETS.frame).colors })}
                   />
                 }
               >
                 <ColorsGrid colors={draft.colors} onChange={(colors) => onPatch({ colors })} />
               </StudioSection>
               <Hairline />
+              {draft.layout === "frame" && (
+                <StudioSection title={t("Design details")}>
+                  <DesignControls value={draft.design} onChange={(design) => onPatch({ design })} />
+                </StudioSection>
+              )}
               <StudioSection title={t("Type")}>
-                <FontPicker
-                  pairValue={draft.fontPair}
-                  customValue={draft.customFontId}
-                  onPickPair={(fontPair) => onPatch({ fontPair, customFontId: null })}
-                  onPickCustom={(id) => onPatch({ customFontId: id })}
-                />
+                <details>
+                  <summary className="min-h-11 cursor-pointer text-sm text-ink-muted">
+                    {t("Choose fonts")}
+                  </summary>
+                  <FontPicker
+                    pairValue={draft.fontPair}
+                    customValue={draft.customFontId}
+                    onPickPair={(fontPair) => onPatch({ fontPair, customFontId: null })}
+                    onPickCustom={(id) => onPatch({ customFontId: id })}
+                  />
+                </details>
               </StudioSection>
               <StudioSection title={t("Surfaces")}>
                 <div className="flex flex-col gap-4">

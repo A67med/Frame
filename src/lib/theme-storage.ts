@@ -97,7 +97,7 @@ export async function themeKvPut(key: string, value: string): Promise<boolean> {
     try {
       const tx = db.transaction(STORE, "readwrite");
       const req = tx.objectStore(STORE).put(value, key);
-      req.onsuccess = () => resolve(true);
+      tx.oncomplete = () => resolve(true);
       req.onerror = () => resolve(false);
       tx.onerror = () => resolve(false);
       tx.onabort = () => resolve(false);

@@ -1,11 +1,51 @@
 // Newly introduced UI copy remains usable until each locale provides an override.
 const uiFallback: Record<string, string> = {
+  "Choose fonts": "Choose fonts",
+  "Customize theme": "Customize theme",
+  "Frame layout": "Frame layout",
+  "Accent glow": "Accent glow",
+  "Accent line": "Accent line",
+  "Atmospheric gradient": "Atmospheric gradient",
+  "Built-in collection · Style previews": "Built-in collection · Style previews",
+  "Content spacing": "Content spacing",
+  "Corner radius": "Corner radius",
+  "Could not save theme. Export a copy and try again.":
+    "Could not save theme. Export a copy and try again.",
+  "Design details": "Design details",
+  "Editorial serif": "Editorial serif",
+  "Elevation": "Elevation",
+  "Find a theme": "Find a theme",
+  "Frame layout · Live preview": "Frame layout · Live preview",
+  "Frosted glass": "Frosted glass",
+  "Heading scale": "Heading scale",
+  "Heading style": "Heading style",
+  "Legacy layout · Preserved": "Legacy layout · Preserved",
+  "Navigation treatment": "Navigation treatment",
+  "No themes found": "No themes found",
+  "None": "None",
+  "Reset theme": "Reset theme",
+  "Save as a new theme": "Save as a new theme",
+  "Save changes": "Save changes",
+  "Save theme": "Save theme",
+  "Selected body font": "Selected body font",
+  "Selected display font": "Selected display font",
+  "Soft pill": "Soft pill",
+  "Soft shadow": "Soft shadow",
+  "Solid": "Solid",
+  "Square block": "Square block",
+  "Surface treatment": "Surface treatment",
+  "Theme description": "Theme description",
+  "Theme name": "Theme name",
+  "This theme keeps its original layout. Choose Frame in Layout to adopt the new interface. Your saved original is unchanged until you save.":
+    "This theme keeps its original layout. Choose Frame in Layout to adopt the new interface. Your saved original is unchanged until you save.",
+  "{name} copy": "{name} copy",
+
   "Your cinema": "Your cinema",
   "A world worth watching.": "A world worth watching.",
   "In the spotlight": "In the spotlight",
   "Find your next favourite.": "Find your next favourite.",
   "Movies, shows, people and more.": "Movies, shows, people and more.",
-  Forward: "Forward",
+  "Forward": "Forward",
   "Following 1 person.": "Following 1 person.",
   "Paste an invite link from someone hosting a room to join them.":
     "Paste an invite link from someone hosting a room to join them.",
@@ -70,7 +110,7 @@ const uiFallback: Record<string, string> = {
   "Follow Frame": "Follow Frame",
   "Open on the same monitor as Frame": "Open on the same monitor as Frame",
   "Open on {name}": "Open on {name}",
-  Primary: "Primary",
+  "Primary": "Primary",
   "A source couldn't be reached": "A source couldn't be reached",
   "{n} sources couldn't be reached": "{n} sources couldn't be reached",
   "blocked by the network policy": "blocked by the network policy",
@@ -82,7 +122,7 @@ const uiFallback: Record<string, string> = {
   "Refresh subtitle": "Refresh subtitle",
   "Translating… try again in a minute": "Translating… try again in a minute",
   "Translating… we'll add it when it's ready": "Translating… we'll add it when it's ready",
-  Translations: "Translations",
+  "Translations": "Translations",
   "Showing {lang}": "Showing {lang}",
   "Sends HDR to the display through macOS EDR instead of mapping it down to SDR. Needs HDR-to-SDR tonemapping off, mpv embedded, and a display with HDR headroom. Takes effect on the next video. Experimental: color can look flat, and an SDR video after an HDR one may need a window resize.":
     "Sends HDR to the display through macOS EDR instead of mapping it down to SDR. Needs HDR-to-SDR tonemapping off, mpv embedded, and a display with HDR headroom. Takes effect on the next video. Experimental: color can look flat, and an SDR video after an HDR one may need a window resize.",
@@ -114,7 +154,7 @@ const uiFallback: Record<string, string> = {
   "Click to choose": "Click to choose",
   "Default drifts through backdrops from what's trending. Boat plays a hand drawn illustration. Custom plays your own videos, GIFs, or images.":
     "Default drifts through backdrops from what's trending. Boat plays a hand drawn illustration. Custom plays your own videos, GIFs, or images.",
-  Boat: "Boat",
+  "Boat": "Boat",
   "Your screensavers": "Your screensavers",
   "Add videos, GIFs, or images from this computer. Videos loop with the sound off, and everything fills the screen.":
     "Add videos, GIFs, or images from this computer. Videos loop with the sound off, and everything fills the screen.",
@@ -122,9 +162,9 @@ const uiFallback: Record<string, string> = {
     "Nothing added yet. The default screensaver plays until you add one.",
   "Add video, GIF, or image": "Add video, GIF, or image",
   "Try it now": "Try it now",
-  GIF: "GIF",
+  "GIF": "GIF",
   "{kind} · In use": "{kind} · In use",
-  Use: "Use",
+  "Use": "Use",
   "Who's watching background": "Who's watching background",
   "Shown behind the profile picker only. It does not change the app theme or wallpaper.":
     "Shown behind the profile picker only. It does not change the app theme or wallpaper.",
@@ -224,7 +264,7 @@ const uiFallback: Record<string, string> = {
     "No match on your extensions. Edit the query above or check the language filter in the manga tab.",
   "Everything from {name}": "Everything from {name}",
   "Filter, sort and search the full catalogue": "Filter, sort and search the full catalogue",
-  Launch: "Launch",
+  "Launch": "Launch",
   "Start Frame in the couch-friendly Big Picture layout whenever the app opens.":
     "Start Frame in the couch-friendly Big Picture layout whenever the app opens.",
   "Animate backdrop art on Big Picture screens.": "Animate backdrop art on Big Picture screens.",
@@ -257,7 +297,7 @@ const uiFallback: Record<string, string> = {
   "Reorder extensions": "Reorder extensions",
   "Reset order": "Reset order",
   "Filter sources...": "Filter sources...",
-  Scanlator: "Scanlator",
+  "Scanlator": "Scanlator",
   "Resolving pages": "Resolving pages",
   "Match manga": "Match manga",
   "Choose a match, or select None to skip": "Choose a match, or select None to skip",
@@ -286,7 +326,7 @@ const uiFallback: Record<string, string> = {
   "Choose whether the content advisory appears in full color or a restrained monochrome tone.":
     "Choose whether the content advisory appears in full color or a restrained monochrome tone.",
   "Content advisory theme": "Content advisory theme",
-  Monochrome: "Monochrome",
+  "Monochrome": "Monochrome",
   "#": "#",
   "%": "%",
   "1 minute": "1 minute",
@@ -317,7 +357,7 @@ const uiFallback: Record<string, string> = {
   "API-Sports": "API-Sports",
   "API-Sports key": "API-Sports key",
   "API-Sports · leagues ESPN does not carry": "API-Sports · leagues ESPN does not carry",
-  Acknowledgements: "Acknowledgements",
+  "Acknowledgements": "Acknowledgements",
   "Add a Discord or Telegram destination first. Rules need somewhere to send their alerts.":
     "Add a Discord or Telegram destination first. Rules need somewhere to send their alerts.",
   "Add a Discord webhook URL on the Destinations tab first.":
@@ -362,12 +402,12 @@ const uiFallback: Record<string, string> = {
   "Attach a stream": "Attach a stream",
   "Auto uses mpv when Frame can reach it and falls back to the built in player. Pick one yourself if playback misbehaves.":
     "Auto uses mpv when Frame can reach it and falls back to the built in player. Pick one yourself if playback misbehaves.",
-  Automatic: "Automatic",
-  Avatar: "Avatar",
+  "Automatic": "Automatic",
+  "Avatar": "Avatar",
   "Badge art packs you installed from the community store. Remove one to put its badges back to Frame's default.":
     "Badge art packs you installed from the community store. Remove one to put its badges back to Frame's default.",
   "Badges you have changed": "Badges you have changed",
-  Bench: "Bench",
+  "Bench": "Bench",
   "Both shows direct, debrid, and peer-to-peer results together. Direct/debrid keeps torrents out of the way unless nothing else is available. P2P puts torrents first.":
     "Both shows direct, debrid, and peer-to-peer results together. Direct/debrid keeps torrents out of the way unless nothing else is available. P2P puts torrents first.",
   "Bring your Letterboxd watchlist, diary, liked films and lists into Frame through the Stremboxd bridge.":
@@ -388,7 +428,7 @@ const uiFallback: Record<string, string> = {
     "Caps how many score chips a poster shows. Extras drop off the end of the chip. You have {n} turned on.",
   "Caps what Frame asks {name} to send. Original streams the file exactly as it is stored.":
     "Caps what Frame asks {name} to send. Original streams the file exactly as it is stored.",
-  Carousel: "Carousel",
+  "Carousel": "Carousel",
   "Centered along the top edge, clear of the subtitles.":
     "Centered along the top edge, clear of the subtitles.",
   "Change the ratio while watching": "Change the ratio while watching",
@@ -414,12 +454,12 @@ const uiFallback: Record<string, string> = {
     "Clearing these is always safe. Nothing you downloaded on purpose is removed.",
   "Cloudflare is a single origin, so on a very fast line this can read lower than a multi-server test. Uses up to 150 MB, with a 90 second cooldown.":
     "Cloudflare is a single origin, so on a very fast line this can read lower than a multi-server test. Uses up to 150 MB, with a 90 second cooldown.",
-  Colored: "Colored",
+  "Colored": "Colored",
   "Colors your name, your cursor in Watch Together, and the ring around your avatar.":
     "Colors your name, your cursor in Watch Together, and the ring around your avatar.",
   "Comments and reviews posted by other Trakt members.":
     "Comments and reviews posted by other Trakt members.",
-  Compatibility: "Compatibility",
+  "Compatibility": "Compatibility",
   "Connect Discord or Telegram and Frame posts a message when something you follow is about to drop. Hit Send test to send yourself a sample first.":
     "Connect Discord or Telegram and Frame posts a message when something you follow is about to drop. Hit Send test to send yourself a sample first.",
   "Connect Jellyfin, Emby, and Plex libraries on this device. Credentials stay in native secret storage. Each server keeps its own refresh schedule, and cached titles stay available while a server is offline.":
@@ -460,34 +500,34 @@ const uiFallback: Record<string, string> = {
     "Describe what Frame did instead, including any message on screen.",
   "Didn't get it? Send another code": "Didn't get it? Send another code",
   "Direct media link": "Direct media link",
-  Direct3D: "Direct3D",
+  "Direct3D": "Direct3D",
   "Directed by {names}": "Directed by {names}",
   "Discord confirmed. Pick a username and password to finish.":
     "Discord confirmed. Pick a username and password to finish.",
   "Discord linked": "Discord linked",
-  Display: "Display",
+  "Display": "Display",
   "Displays the raw release filename under each source in the condensed picker. Off keeps rows compact. The Stremio layout always shows it.":
     "Displays the raw release filename under each source in the condensed picker. Off keeps rows compact. The Stremio layout always shows it.",
-  Donate: "Donate",
+  "Donate": "Donate",
   "Download folder": "Download folder",
   "Downloaded and ready to use. Re-download to pick up a newer version from the author.":
     "Downloaded and ready to use. Re-download to pick up a newer version from the author.",
-  Draws: "Draws",
-  Drew: "Drew",
+  "Draws": "Draws",
+  "Drew": "Drew",
   "Each title gets its own folder holding its EPUB or PDF.":
     "Each title gets its own folder holding its EPUB or PDF.",
   "Egyptian, Qatari, Emirati and Korean football plus the KHL on the sports page.":
     "Egyptian, Qatari, Emirati and Korean football plus the KHL on the sports page.",
   "ElfHosted plans": "ElfHosted plans",
-  Elsewhere: "Elsewhere",
+  "Elsewhere": "Elsewhere",
   "Email address or Discord handle": "Email address or Discord handle",
   "Embedded player": "Embedded player",
   "Enable the Books API on your app. Lists refresh weekly.":
     "Enable the Books API on your app. Lists refresh weekly.",
   "Enter a full http:// or https:// address.": "Enter a full http:// or https:// address.",
   "Enter your code": "Enter your code",
-  Essentials: "Essentials",
-  Estimated: "Estimated",
+  "Essentials": "Essentials",
+  "Estimated": "Estimated",
   "Every change on this page shows up here first. The art you pick below rides on rows exactly like this one.":
     "Every change on this page shows up here first. The art you pick below rides on rows exactly like this one.",
   "Every format badge Frame can show on streams. Pick one to swap its art, hide it, or put it back. Changes apply everywhere badges appear.":
@@ -542,13 +582,13 @@ const uiFallback: Record<string, string> = {
   "Full pack format reference: docs/avatar-packs.md in the Frame repository.":
     "Full pack format reference: docs/avatar-packs.md in the Frame repository.",
   "Full time": "Full time",
-  GB: "GB",
-  GD: "GD",
-  GP: "GP",
+  "GB": "GB",
+  "GD": "GD",
+  "GP": "GP",
   "GPU (compatibility)": "GPU (compatibility)",
   "GPU next": "GPU next",
-  Goals: "Goals",
-  Graphics: "Graphics",
+  "Goals": "Goals",
+  "Graphics": "Graphics",
   "Groups Refresh beside Back at the start of the picker header. Off keeps it at the far end, across from Back.":
     "Groups Refresh beside Back at the start of the picker header. Off keeps it at the far end, across from Back.",
   "Frame did not draw its own icons. Two people did, and they are worth hiring.":
@@ -643,7 +683,7 @@ const uiFallback: Record<string, string> = {
   "How the navigation icons behave.": "How the navigation icons behave.",
   "How thick the timeline sits at the bottom of the player.":
     "How thick the timeline sits at the bottom of the player.",
-  Hue: "Hue",
+  "Hue": "Hue",
   "If a stream or the video player misbehaves, the log usually names the cause.":
     "If a stream or the video player misbehaves, the log usually names the cause.",
   "If this account has Discord linked, we'll DM you a code to reset your password without the recovery key.":
@@ -660,7 +700,7 @@ const uiFallback: Record<string, string> = {
     "Include film releases from every source you turned on above.",
   "Include series premieres and new episodes. Anime is counted separately.":
     "Include series premieres and new episodes. Anime is counted separately.",
-  Independence: "Independence",
+  "Independence": "Independence",
   "Instant playback preparation": "Instant playback preparation",
   "Instant starts the best-ranked stream straight away. Pick a source opens the stream list every time, so you choose the release, quality and provider yourself.":
     "Instant starts the best-ranked stream straight away. Pick a source opens the stream list every time, so you choose the release, quality and provider yourself.",
@@ -668,14 +708,14 @@ const uiFallback: Record<string, string> = {
   "Keeps subtitles visible when the player shrinks into the small floating window. Turn off to hide them there.":
     "Keeps subtitles visible when the player shrinks into the small floating window. Turn off to hide them there.",
   "Keyboard size": "Keyboard size",
-  L: "L",
+  "L": "L",
   "Latest chapters": "Latest chapters",
   "Letterboxd asked for a second step. Enter the six digit code, then connect again.":
     "Letterboxd asked for a second step. Enter the six digit code, then connect again.",
   "Licence texts": "Licence texts",
   "Lift subtitles clear of a letterbox bar or a burned-in logo.":
     "Lift subtitles clear of a letterbox bar or a burned-in logo.",
-  Lineups: "Lineups",
+  "Lineups": "Lineups",
   "Link Discord": "Link Discord",
   "Linked as {username}": "Linked as {username}",
   "Linked to your Frame account.": "Linked to your Frame account.",
@@ -688,7 +728,7 @@ const uiFallback: Record<string, string> = {
     "Loads a backup file and restores exactly what it contains, without touching the rest of your setup. Your Stremio sign-in on this device stays as is.",
   "Look any of them up before you give, or find a cause of your own.":
     "Look any of them up before you give, or find a cause of your own.",
-  Lost: "Lost",
+  "Lost": "Lost",
   "Low end lifted, for weight on speakers that do not have it.":
     "Low end lifted, for weight on speakers that do not have it.",
   "Low end pulled back, kinder to small speakers and to the neighbours.":
@@ -701,17 +741,17 @@ const uiFallback: Record<string, string> = {
   "Match report": "Match report",
   "Match stats": "Match stats",
   "Measure this connection": "Measure this connection",
-  Meetings: "Meetings",
+  "Meetings": "Meetings",
   "Mid range lifted, so dialogue sits forward of the music and effects.":
     "Mid range lifted, so dialogue sits forward of the music and effects.",
   "Modern renderer with higher-quality processing. The right choice for almost every machine.":
     "Modern renderer with higher-quality processing. The right choice for almost every machine.",
   "Monochrome (White)": "Monochrome (White)",
-  Motion: "Motion",
+  "Motion": "Motion",
   "MyAnimeList is a free site for tracking the anime you watch. Open it to read more or to make an account.":
     "MyAnimeList is a free site for tracking the anime you watch. Open it to read more or to make an account.",
-  NR: "NR",
-  NRR: "NRR",
+  "NR": "NR",
+  "NRR": "NRR",
   "Name of the badge": "Name of the badge",
   "Name or pattern": "Name or pattern",
   "Name what broke in one sentence. Maintainers read this line first.":
@@ -750,7 +790,7 @@ const uiFallback: Record<string, string> = {
     "Nvidia RTX GPUs only. Upconverts SDR video to HDR on the GPU (turn on RTX Video HDR in the Nvidia app; needs GPU decode). Experimental. Unavailable while SVP is active for the current video.",
   "Nvidia RTX GPUs only. Upscales SDR video with AI on the GPU (turn on RTX Video Super Resolution in the Nvidia app; needs GPU decode). Experimental. Unavailable while SVP is active for the current video.":
     "Nvidia RTX GPUs only. Upscales SDR video with AI on the GPU (turn on RTX Video Super Resolution in the Nvidia app; needs GPU decode). Experimental. Unavailable while SVP is active for the current video.",
-  OTL: "OTL",
+  "OTL": "OTL",
   "Off the row": "Off the row",
   "Older, simpler renderer. Use it only if the modern one shows a black screen, wrong colors, or won't start on your graphics card.":
     "Older, simpler renderer. Use it only if the modern one shows a black screen, wrong colors, or won't start on your graphics card.",
@@ -767,7 +807,7 @@ const uiFallback: Record<string, string> = {
   "Open myanimelist.net": "Open myanimelist.net",
   "Open simkl.com": "Open simkl.com",
   "Open trakt.tv": "Open trakt.tv",
-  OpenGL: "OpenGL",
+  "OpenGL": "OpenGL",
   "Opens Stremio's donation page in your browser.":
     "Opens Stremio's donation page in your browser.",
   "Opens anilist.co in your browser, where you can read what AniList does and make a free account.":
@@ -780,13 +820,13 @@ const uiFallback: Record<string, string> = {
     "Opens trakt.tv in your browser, where you can read what Trakt does and make a free account.",
   "Optional. Point at a png, webp, or svg to show a picture instead of a text badge.":
     "Optional. Point at a png, webp, or svg to show a picture instead of a text badge.",
-  P: "P",
-  PCT: "PCT",
-  PD: "PD",
-  PTS: "PTS",
+  "P": "P",
+  "PCT": "PCT",
+  "PD": "PD",
+  "PTS": "PTS",
   "Page metadata": "Page metadata",
   "Page source": "Page source",
-  Pages: "Pages",
+  "Pages": "Pages",
   "Paste a link to a png, webp, or svg. Frame will use it for this badge everywhere streams show format chips.":
     "Paste a link to a png, webp, or svg. Frame will use it for this badge everywhere streams show format chips.",
   "Paste a stream": "Paste a stream",
@@ -816,7 +856,7 @@ const uiFallback: Record<string, string> = {
     "Pick which languages Frame looks for first, and which ones it falls back to.",
   "Pick who this rule watches. With nobody picked, everyone you track counts.":
     "Pick who this rule watches. With nobody picked, everyone you track counts.",
-  Picked: "Picked",
+  "Picked": "Picked",
   "Pin this competition": "Pin this competition",
   "Play opens the stream list so you pick the release yourself.":
     "Play opens the stream list so you pick the release yourself.",
@@ -854,7 +894,7 @@ const uiFallback: Record<string, string> = {
   "Recommended: sign in with Plex": "Recommended: sign in with Plex",
   "Recover via Discord": "Recover via Discord",
   "Recover via a code sent to Discord": "Recover via a code sent to Discord",
-  Red: "Red",
+  "Red": "Red",
   "Red cards": "Red cards",
   "Refresh every": "Refresh every",
   "Refresh this library": "Refresh this library",
@@ -862,21 +902,21 @@ const uiFallback: Record<string, string> = {
   "Remove comment": "Remove comment",
   "Remove from your teams": "Remove from your teams",
   "Remove this stream": "Remove this stream",
-  Renderer: "Renderer",
+  "Renderer": "Renderer",
   "Rendering backend": "Rendering backend",
   "Renders mpv inline so playback lives in Frame itself. Turn off to open it in a separate window instead.":
     "Renders mpv inline so playback lives in Frame itself. Turn off to open it in a separate window instead.",
   "Renders subtitles in a heavier weight. Turn off to use your font's normal weight.":
     "Renders subtitles in a heavier weight. Turn off to use your font's normal weight.",
   "Replace selected data?": "Replace selected data?",
-  Required: "Required",
+  "Required": "Required",
   "Reset size": "Reset size",
   "Resolved from {host}": "Resolved from {host}",
   "Rest the cursor on a poster to peek at the rating, story, and quick actions without opening it. Off by default.":
     "Rest the cursor on a poster to peek at the rating, story, and quick actions without opening it. Off by default.",
   "Right in the middle of the picture, hard to miss.":
     "Right in the middle of the picture, hard to miss.",
-  Role: "Role",
+  "Role": "Role",
   "Rule is active": "Rule is active",
   "Rule name": "Rule name",
   "Rulesets bring a full badge set with their own matching. Art remaps only swap the pictures on Frame's built-in badges. Anything shared as a badges.json link imports here too.":
@@ -970,11 +1010,11 @@ const uiFallback: Record<string, string> = {
   "Size of the controller on-screen keyboard.": "Size of the controller on-screen keyboard.",
   "Small outlined pills that slide in under the title.":
     "Small outlined pills that slide in under the title.",
-  Software: "Software",
+  "Software": "Software",
   "Source extension": "Source extension",
   "Space in use": "Space in use",
-  Standings: "Standings",
-  Starter: "Starter",
+  "Standings": "Standings",
+  "Starter": "Starter",
   "Starting soon": "Starting soon",
   "Still watching check-in": "Still watching check-in",
   "Stops syncing on this device. Your library stays safe in your Stremio account.":
@@ -991,7 +1031,7 @@ const uiFallback: Record<string, string> = {
   "Switch relay": "Switch relay",
   "Switch to sharing? This profile will use {name}'s library, watchlist and addons. Its own data is kept but hidden until you switch back.":
     "Switch to sharing? This profile will use {name}'s library, watchlist and addons. Its own data is kept but hidden until you switch back.",
-  T: "T",
+  "T": "T",
   "TMDB, Fanart, TVDB, OMDb and RPDB supply posters, artwork and ratings. Adding your own free keys makes artwork load faster and more completely.":
     "TMDB, Fanart, TVDB, OMDb and RPDB supply posters, artwork and ratings. Adding your own free keys makes artwork load faster and more completely.",
   "Takes effect the next time Frame starts.": "Takes effect the next time Frame starts.",
@@ -1070,12 +1110,12 @@ const uiFallback: Record<string, string> = {
     "This file restores its {n} saved entries and replaces only those parts of your setup. Anything it does not contain stays exactly as it is.",
   "Tile your own artwork across the timeline instead of a plain fill.":
     "Tile your own artwork across the timeline instead of a plain fill.",
-  Timeline: "Timeline",
+  "Timeline": "Timeline",
   "Titles you are part-way through in your local downloads, even offline.":
     "Titles you are part-way through in your local downloads, even offline.",
   "Torrentio 4K": "Torrentio 4K",
   "Trakt progress": "Trakt progress",
-  Trigger: "Trigger",
+  "Trigger": "Trigger",
   "Tucked into the upper corner, clear of the subtitles.":
     "Tucked into the upper corner, clear of the subtitles.",
   "Turn on AniList comments first.": "Turn on AniList comments first.",
@@ -1095,7 +1135,7 @@ const uiFallback: Record<string, string> = {
     "Unavailable while Continue Watching is kept private to each profile, because Trakt progress is shared across every profile on this account.",
   "Unavailable while Continue Watching is kept private to each profile.":
     "Unavailable while Continue Watching is kept private to each profile.",
-  Unlink: "Unlink",
+  "Unlink": "Unlink",
   "Unpin this competition": "Unpin this competition",
   "Up to 3840 × 2160 when the source has it. Takes a beat longer to start.":
     "Up to 3840 × 2160 when the source has it. Takes a beat longer to start.",
@@ -1113,8 +1153,8 @@ const uiFallback: Record<string, string> = {
   "Using these": "Using these",
   "Video element": "Video element",
   "Volume {n}": "Volume {n}",
-  Vulkan: "Vulkan",
-  W: "W",
+  "Vulkan": "Vulkan",
+  "W": "W",
   "Warming up…": "Warming up…",
   "Watched history": "Watched history",
   "Watchlist ({n})": "Watchlist ({n})",
@@ -1156,9 +1196,9 @@ const uiFallback: Record<string, string> = {
   "Your preferences, layout state, and small lookup caches. Clearing caches shrinks this.":
     "Your preferences, layout state, and small lookup caches. Clearing caches shrinks this.",
   "Your teams": "Your teams",
-  at: "at",
+  "at": "at",
   "contains login credentials": "contains login credentials",
-  icons: "icons",
+  "icons": "icons",
   "in 4d 6h": "in 4d 6h",
   "in {d}d": "in {d}d",
   "in {d}d {h}h": "in {d}d {h}h",
@@ -1168,8 +1208,8 @@ const uiFallback: Record<string, string> = {
   "in {n}m": "in {n}m",
   "in {n}s": "in {n}s",
   "nowhere yet": "nowhere yet",
-  username: "username",
-  vs: "vs",
+  "username": "username",
+  "vs": "vs",
   "{count} installed. Their results are merged in with everything else.":
     "{count} installed. Their results are merged in with everything else.",
   "{ms} ms": "{ms} ms",
@@ -1193,7 +1233,7 @@ const uiFallback: Record<string, string> = {
   "Ten-foot uses large controls built for a remote across the room. Desktop keeps the same player you use in the normal window, which is quicker with a mouse and keyboard.":
     "Ten-foot uses large controls built for a remote across the room. Desktop keeps the same player you use in the normal window, which is quicker with a mouse and keyboard.",
   "Ten-foot": "Ten-foot",
-  Desktop: "Desktop",
+  "Desktop": "Desktop",
   "Prefer original-language audio": "Prefer original-language audio",
   "Pick the audio track in the title's original language before your list, so a Japanese film plays in Japanese and a Spanish series in Spanish. Uses TMDB to find the language when the title doesn't say.":
     "Pick the audio track in the title's original language before your list, so a Japanese film plays in Japanese and a Spanish series in Spanish. Uses TMDB to find the language when the title doesn't say.",
@@ -1238,7 +1278,7 @@ const uiFallback: Record<string, string> = {
   "Signature works by winners of the Nobel Prize": "Signature works by winners of the Nobel Prize",
   "Twentieth century books that never left the shelf":
     "Twentieth century books that never left the shelf",
-  Dystopias: "Dystopias",
+  "Dystopias": "Dystopias",
   "Futures nobody would choose to live in": "Futures nobody would choose to live in",
   "Crime and Mystery Essentials": "Crime and Mystery Essentials",
   "The cases that set the genre": "The cases that set the genre",
@@ -1253,7 +1293,7 @@ const uiFallback: Record<string, string> = {
   "games.savedEmpty": "A place for your next adventure",
   "Snapshot {date}": "Snapshot {date}",
   "Inducted {year}": "Inducted {year}",
-  Credits: "Credits",
+  "Credits": "Credits",
   "Essay by {name}": "Essay by {name}",
   "Essay from the Library": "Essay from the Library",
   "Showing {shown} of {total} from the last snapshot.":
@@ -1263,37 +1303,37 @@ const uiFallback: Record<string, string> = {
   "One other screen version": "One other screen version",
   "{n} other screen versions": "{n} other screen versions",
   "Read it": "Read it",
-  Television: "Television",
+  "Television": "Television",
   "No Season": "No Season",
   "One episode · Apple Podcasts": "One episode · Apple Podcasts",
   "{n} episodes · Apple Podcasts": "{n} episodes · Apple Podcasts",
   "Open in Apple Podcasts": "Open in Apple Podcasts",
   "Based on": "Based on",
-  Soundtrack: "Soundtrack",
+  "Soundtrack": "Soundtrack",
   "Discussed on": "Discussed on",
-  ShotOnWhat: "ShotOnWhat",
-  Digital: "Digital",
+  "ShotOnWhat": "ShotOnWhat",
+  "Digital": "Digital",
   "Shot on": "Shot on",
-  Camera: "Camera",
-  Cameras: "Cameras",
-  Lens: "Lens",
-  Lenses: "Lenses",
+  "Camera": "Camera",
+  "Cameras": "Cameras",
+  "Lens": "Lens",
+  "Lenses": "Lenses",
   "Film stock": "Film stock",
-  Finish: "Finish",
+  "Finish": "Finish",
   "Shares crew with 1 other film": "Shares crew with 1 other film",
   "Shares crew with {n} other films": "Shares crew with {n} other films",
   "Shares crew with": "Shares crew with",
   "Three or more of the same crew": "Three or more of the same crew",
   "Same source": "Same source",
   "Shares {n} crew": "Shares {n} crew",
-  Editions: "Editions",
+  "Editions": "Editions",
   "{n} published": "{n} published",
-  Readers: "Readers",
+  "Readers": "Readers",
   "{n} ratings": "{n} ratings",
   "Want to read": "Want to read",
   "{n} readers": "{n} readers",
-  Setting: "Setting",
-  Period: "Period",
+  "Setting": "Setting",
+  "Period": "Period",
   "The series that carried {name} beyond its own borders":
     "The series that carried {name} beyond its own borders",
   "The films that carried {name} beyond its own borders":
@@ -1898,7 +1938,7 @@ const uiFallback: Record<string, string> = {
   "Born today": "Born today",
   "Seen all {total} films": "Seen all {total} films",
   "Seen {n} of {total} films": "Seen {n} of {total} films",
-  Editing: "Editing",
+  "Editing": "Editing",
   "Production Design": "Production Design",
   "Costume Design": "Costume Design",
   "Searching streams": "Searching streams",
@@ -1930,13 +1970,13 @@ const uiFallback: Record<string, string> = {
   "Keep folders up to date": "Keep folders up to date",
   "Checks the folders already in your library when you open it and adds anything new it finds. Titles you already have are left alone, including any you corrected with Identify.":
     "Checks the folders already in your library when you open it and adds anything new it finds. Titles you already have are left alone, including any you corrected with Identify.",
-  Selected: "Selected",
+  "Selected": "Selected",
   "Picture in picture": "Picture in picture",
   "Picture in picture style": "Picture in picture style",
   "Resize shrinks the Frame window itself, so the app goes with it. Detached moves the video into its own floating window and hands Frame back to you, so you can keep browsing while it plays.":
     "Resize shrinks the Frame window itself, so the app goes with it. Detached moves the video into its own floating window and hands Frame back to you, so you can keep browsing while it plays.",
-  Resize: "Resize",
-  Detached: "Detached",
+  "Resize": "Resize",
+  "Detached": "Detached",
   "Frame could not start the runtime that Android extensions need. Reinstall Frame, or install Java 17 or newer, then try again.":
     "Frame could not start the runtime that Android extensions need. Reinstall Frame, or install Java 17 or newer, then try again.",
   "This does not look like a plugin repository. Frame reads its own plugin manifests, provider-script manifests and Android extension repositories.":
@@ -1965,7 +2005,7 @@ const uiFallback: Record<string, string> = {
   "Refresh all": "Refresh all",
   "Runs every plugin Frame stood down. One that answers comes back; the others stay paused.":
     "Runs every plugin Frame stood down. One that answers comes back; the others stay paused.",
-  Android: "Android",
+  "Android": "Android",
   "Paste the manifest link of a repository you trust. Frame reads its own plugin repositories, provider-script repositories and Android extension repositories as they are, and installs nothing until you choose to.":
     "Paste the manifest link of a repository you trust. Frame reads its own plugin repositories, provider-script repositories and Android extension repositories as they are, and installs nothing until you choose to.",
   "Reopen playing broadcasts after changing this setting.":
@@ -1975,7 +2015,7 @@ const uiFallback: Record<string, string> = {
   "Resized cover cache, kept 30 days up to size limits. Rebuilds as you browse.":
     "Resized cover cache, kept 30 days up to size limits. Rebuilds as you browse.",
   "{size} across {n} files": "{size} across {n} files",
-  Halloween: "Halloween",
+  "Halloween": "Halloween",
   "Use the album art as the app icon while music plays":
     "Use the album art as the app icon while music plays",
   "The taskbar button becomes the cover of the track you are listening to, and goes back to your Frame icon when music stops. The thumbnail preview always shows the cover either way.":
@@ -1985,7 +2025,7 @@ const uiFallback: Record<string, string> = {
     "Match list only; bracket structure is not available for this title.",
   "Race time": "Race time",
   "Average speed (mph)": "Average speed (mph)",
-  Leader: "Leader",
+  "Leader": "Leader",
   "Full score": "Full score",
   "Search audio language": "Search audio language",
   "No audio track in that language.": "No audio track in that language.",
@@ -2207,13 +2247,13 @@ const uiFallback: Record<string, string> = {
     "For Application URL anything works, for example https://github.com. TMDB never visits it.",
   "These settings stay on this computer.": "These settings stay on this computer.",
   "Changes not synced yet": "Changes not synced yet",
-  Theatrical: "Theatrical",
+  "Theatrical": "Theatrical",
   "Show more": "Show more",
   "Release date listed on TMDB for {region}": "Release date listed on TMDB for {region}",
   "TMDB didn't answer.": "TMDB didn't answer.",
   "Try again": "Try again",
   "TMDB lists nothing here for {region} yet.": "TMDB lists nothing here for {region} yet.",
-  Radar: "Radar",
+  "Radar": "Radar",
   "Following {n} people.": "Following {n} people.",
   "Follow actors and directors to see their films first.":
     "Follow actors and directors to see their films first.",
@@ -2224,14 +2264,14 @@ const uiFallback: Record<string, string> = {
   "Add TMDB key": "Add TMDB key",
   "Search actors, directors…": "Search actors, directors…",
   "Add a TMDB key in settings first": "Add a TMDB key in settings first",
-  Following: "Following",
+  "Following": "Following",
   "What to follow": "What to follow",
-  Unfollow: "Unfollow",
+  "Unfollow": "Unfollow",
   "Their upcoming films show first in Radar.": "Their upcoming films show first in Radar.",
   "Open Radar": "Open Radar",
   "You aren't following anyone yet. Search above, or use Follow on a person's page.":
     "You aren't following anyone yet. Search above, or use Follow on a person's page.",
-  Follow: "Follow",
+  "Follow": "Follow",
   "Coming Soon": "Coming Soon",
   "Digital Release": "Digital Release",
   "Newly Released": "Newly Released",
@@ -2242,9 +2282,9 @@ const uiFallback: Record<string, string> = {
     "Films with a recent or upcoming digital release date.",
   "Recently released in theaters.": "Recently released in theaters.",
   "What people are watching right now.": "What people are watching right now.",
-  Everything: "Everything",
-  Acting: "Acting",
-  Directing: "Directing",
+  "Everything": "Everything",
+  "Acting": "Acting",
+  "Directing": "Directing",
   "This backup is too large to restore.": "This backup is too large to restore.",
   "This backup was made by a newer version of Frame. Update Frame, then try again.":
     "This backup was made by a newer version of Frame. Update Frame, then try again.",
@@ -2257,7 +2297,7 @@ const uiFallback: Record<string, string> = {
   "Password (optional)": "Password (optional)",
   "With a password the file is encrypted, and it cannot be restored without it. Frame cannot recover a forgotten password.":
     "With a password the file is encrypted, and it cannot be restored without it. Frame cannot recover a forgotten password.",
-  Password: "Password",
+  "Password": "Password",
   "Repeat the password": "Repeat the password",
   "Use at least {n} characters.": "Use at least {n} characters.",
   "The passwords do not match.": "The passwords do not match.",
@@ -2283,7 +2323,7 @@ const uiFallback: Record<string, string> = {
     "Frame has no community server of its own. Enter a URL to use a server you run yourself. Private mode below stops all contact either way.",
   "Enter the address of a server you run yourself, or leave this blank to keep community lookups off.":
     "Enter the address of a server you run yourself, or leave this blank to keep community lookups off.",
-  Unlock: "Unlock",
+  "Unlock": "Unlock",
   "Also restore the custom JavaScript and HTML in this file. That code runs with full access to Frame, so only include it from a backup you made yourself. Left unticked, your current custom code stays.":
     "Also restore the custom JavaScript and HTML in this file. That code runs with full access to Frame, so only include it from a backup you made yourself. Left unticked, your current custom code stays.",
   "{name} wants to control Frame": "{name} wants to control Frame",
@@ -2297,7 +2337,7 @@ const uiFallback: Record<string, string> = {
   "Frame only takes commands from devices you pair. Ask for a code, then type the code Frame shows on its screen.":
     "Frame only takes commands from devices you pair. Ask for a code, then type the code Frame shows on its screen.",
   "Pairing code": "Pairing code",
-  Pair: "Pair",
+  "Pair": "Pair",
   "That code expired. Ask for a new one.": "That code expired. Ask for a new one.",
   "Code expires in {time}": "Code expires in {time}",
   "Show a code on Frame": "Show a code on Frame",
@@ -2323,7 +2363,7 @@ const uiFallback: Record<string, string> = {
   "Unnamed device": "Unnamed device",
   "Paired {date}": "Paired {date}",
   "Forget {name}": "Forget {name}",
-  Forget: "Forget",
+  "Forget": "Forget",
   "Forget every device": "Forget every device",
   "Every phone and computer has to pair again before it can control Frame.":
     "Every phone and computer has to pair again before it can control Frame.",

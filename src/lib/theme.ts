@@ -1,3 +1,5 @@
+import { FRAME_THEME_COLLECTION } from "./theme-collection";
+import { themeDesignTokens, type ThemeDesign } from "./theme-design";
 import { kawaiiCss } from "./theme-kawaii";
 import auroraPreview from "@/assets/theme-previews/aurora.png";
 import crunchPreview from "@/assets/theme-previews/crunchy.png";
@@ -24,6 +26,11 @@ function escapeGeneratedHtml(value: string): string {
 }
 
 export type ThemePresetId =
+  | "noir-cinema"
+  | "aurora-frame"
+  | "minimal-frost"
+  | "editorial"
+  | "retro-cinema"
   | "frame"
   | "amoled"
   | "cool-grey"
@@ -36,6 +43,7 @@ export type ThemePresetId =
   | "noir";
 
 export type ThemeLayout =
+  | "frame"
   | "sidebar"
   | "topdock"
   | "rail"
@@ -99,6 +107,7 @@ export type ThemePreset = {
   background?: ThemeBackground;
   logo?: ThemeLogo;
   layout?: ThemeLayout;
+  design?: ThemeDesign;
   cardStyle?: ThemeCardStyle;
   buttonStyle?: ThemeButtonStyle;
   bokeh?: boolean;
@@ -124,11 +133,12 @@ export type FontPair = {
 };
 
 export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
+  ...FRAME_THEME_COLLECTION,
   // Frame's out-of-the-box look, taken from Default.framestyle.
   frame: {
     id: "frame",
     name: "Default",
-    blurb: "Violet on graphite, bold accents. Easy on the eyes.",
+    blurb: "Frame’s editorial cinema. Warm amber, crisp navigation, considered space.",
     swatch: ["#0c1217", "#151f27", "#f3ae69"],
     tokens: {
       "--color-canvas": "#0c1217",
@@ -145,7 +155,7 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
       "--color-danger": "#e06c75",
     },
     // A plain canvas: the default ships no background image and no bokeh.
-    layout: "dracula",
+    layout: "frame",
     cardStyle: "flat",
     buttonStyle: "flat",
     bokeh: false,
@@ -154,7 +164,7 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
   // True black for OLED screens, taken from Amoled.framestyle.
   amoled: {
     id: "amoled",
-    name: "Amoled",
+    name: "OLED Black",
     blurb: "True black for OLED screens, with an electric mint accent.",
     swatch: ["#000000", "#0a0a0a", "#2ee6c5"],
     tokens: {
@@ -171,11 +181,20 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
       "--color-accent-soft": "#2ee6c52e",
       "--color-danger": "#ff5c6c",
     },
-    layout: "dracula",
+    layout: "frame",
     cardStyle: "flat",
     buttonStyle: "flat",
     bokeh: false,
     fontPair: "general-sans",
+    design: {
+      radius: 2,
+      density: 0.9,
+      headingScale: 0.95,
+      heading: "sans",
+      surface: "solid",
+      elevation: "none",
+      navigation: "line",
+    },
   },
   "cool-grey": {
     id: "cool-grey",
@@ -1985,10 +2004,15 @@ export function isKnownPreset(id: string): boolean {
  */
 export const SELECTABLE_THEME_IDS = [
   "frame",
+  "noir-cinema",
+  "aurora-frame",
+  "minimal-frost",
+  "editorial",
+  "amoled",
+  "retro-cinema",
   "stremio",
   "tokyo-night",
   "velvet",
-  "amoled",
 ] as const;
 
 export function isSelectableTheme(id: string): boolean {
@@ -2041,9 +2065,9 @@ export function isLightColor(value: string | undefined): boolean {
   return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 > 0.55;
 }
 
-export function applyTheme(theme: ThemeSettings): void {
+export function applyTheme(theme: ThemeSettings, preview?: ThemePreset): void {
   const root = document.documentElement;
-  const tokens = resolveTokens(theme);
+  const tokens = preview?.tokens ?? resolveTokens(theme);
   for (const [k, v] of Object.entries(tokens)) {
     root.style.setProperty(k, v);
   }
@@ -2051,7 +2075,9 @@ export function applyTheme(theme: ThemeSettings): void {
   // light-dark() is how album-art colours pick a readable lightness. Without a real
   // color-scheme it always resolves dark, so light themes got an invisible tint.
   root.style.colorScheme = root.dataset.themeMode;
-  const preset = theme.preset !== "custom" ? getThemeById(theme.preset) : null;
+  const preset = preview ?? (theme.preset !== "custom" ? getThemeById(theme.preset) : null);
+  for (const [k, v] of Object.entries(themeDesignTokens(preset?.design)))
+    root.style.setProperty(k, v);
   const fontPairId = preset?.fontPair ?? theme.fontPair;
   const pair = FONT_PAIRS[fontPairId] ?? FONT_PAIRS["sentient-switzer"];
   if (theme.customFontId) {
@@ -2084,7 +2110,7 @@ export function resolveChromeTheme(
   return activeLayout(theme) === "stremio" ? "stremio" : "default";
 }
 
-const TOPBAR_BACK_LAYOUTS = new Set(["sidebar", "dracula", "nord", "forest", "stremio"]);
+const TOPBAR_BACK_LAYOUTS = new Set(["frame", "sidebar", "dracula", "nord", "forest", "stremio"]);
 
 export function layoutHasGlobalBack(): boolean {
   const l = document.documentElement.dataset.themeLayout ?? "sidebar";

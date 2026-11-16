@@ -1,4 +1,4 @@
-/* Cinematic Desktop is opt-in for the built-in Frame presets. Legacy theme hooks stay intact. */
+/* The Frame layout is shared by built-in themes, Studio drafts and saved custom themes. */
 @import "./frame-discovery.css";
 @import "./frame-workspaces.css";
 @import "./frame-overlays.css";
@@ -6,12 +6,9 @@
   --frame-rail: 96px;
   --frame-command: 64px;
   --frame-gutter: clamp(24px, 3.4vw, 64px);
-  --frame-section-gap: 40px;
+  --frame-section-gap: calc(40px * var(--frame-density));
   --frame-content-max: 1840px;
-  --frame-radius: 8px;
   --frame-rule: 1px solid var(--color-edge);
-  --frame-panel: color-mix(in srgb, var(--color-surface) 72%, var(--color-canvas));
-  --frame-display: "Fraunces", "Iowan Old Style", Georgia, serif;
 }
 
 [data-frame-desktop]:has([data-frame-navigation][data-collapsed="true"]) {
@@ -74,7 +71,7 @@
   min-height: 44px;
   height: auto;
   padding: 6px 3px;
-  border-radius: 6px;
+  border-radius: var(--frame-nav-radius);
   width: 100%;
 }
 
@@ -89,7 +86,7 @@
 }
 
 [data-frame-navigation] [data-harbor-nav] > span[aria-hidden] {
-  border-radius: 6px;
+  border-radius: var(--frame-nav-radius);
   box-shadow: none !important;
 }
 
@@ -97,7 +94,7 @@
   content: "";
   position: absolute;
   inset-inline-start: -8px;
-  width: 3px;
+  width: var(--frame-nav-marker);
   height: 22px;
   border-radius: 0 3px 3px 0;
   background: var(--color-accent);
@@ -209,7 +206,7 @@
 
 /* Page foundations. Data hooks are explicit so custom CSS and secondary windows are isolated. */
 [data-frame-desktop] [data-frame-page] {
-  padding: calc(var(--frame-command) + 28px) var(--frame-gutter) 64px;
+  padding: calc(var(--frame-command) + 28px * var(--frame-density)) var(--frame-gutter) 64px;
   scroll-padding-block-start: calc(var(--frame-command) + 24px);
 }
 
@@ -244,7 +241,7 @@
 
 .frame-page-heading h1 {
   font-family: var(--frame-display);
-  font-size: clamp(30px, 3.2vw, 52px);
+  font-size: clamp(30px, calc(3.2vw * var(--frame-heading-scale)), 62px);
   line-height: 1.06;
   letter-spacing: -0.035em;
   color: var(--color-ink);
@@ -313,4 +310,38 @@
   [data-frame-desktop] .frame-feature-index button {
     transition: none;
   }
+}
+
+/* Shared visual tokens apply equally to the live editor and persisted Frame themes. */
+[data-frame-desktop] :is(.harbor-poster, .harbor-card-ring) {
+  border-radius: var(--frame-radius);
+}
+[data-frame-desktop] .harbor-poster {
+  box-shadow: var(--frame-elevation);
+}
+[data-frame-desktop]
+  :is([data-scroll-anchor="cw"], .frame-radar-index, [data-frame-menu], [data-frame-dialog]) {
+  background: var(--frame-panel);
+  backdrop-filter: var(--frame-blur);
+  box-shadow: var(--frame-elevation);
+}
+[data-frame-desktop] .frame-feature > div:first-child {
+  overflow: hidden;
+  box-shadow: var(--frame-elevation);
+}
+[data-frame-desktop] [data-frame-page] .harbor-row-track {
+  gap: calc(16px * var(--frame-density));
+}
+[data-frame-desktop] [data-frame-navigation] [data-harbor-nav][aria-current="page"] {
+  border-radius: var(--frame-nav-radius);
+}
+.harbor-studio-panel {
+  color-scheme: dark;
+  --frame-radius: 8px;
+  --frame-elevation: none;
+  font-family: var(--font-sans);
+}
+.harbor-studio-panel :is(button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }

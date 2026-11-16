@@ -50,6 +50,13 @@ function harborStyleToObject(
   if (manifest.name) value.name = manifest.name;
   if (manifest.blurb) value.blurb = manifest.blurb;
   if (manifest.layout) value.layout = manifest.layout;
+  if (manifest.design) {
+    try {
+      value.design = JSON.parse(manifest.design);
+    } catch {
+      return { ok: false, error: "This theme contains invalid design settings." };
+    }
+  }
   if (manifest.card) value.cardStyle = manifest.card;
   if (manifest.button) value.buttonStyle = manifest.button;
   if (manifest.font) value.fontPair = manifest.font;
@@ -146,6 +153,7 @@ export function serializeHarborStyle(theme: ThemePreset | CustomTheme): string {
   const lines: string[] = ["# Frame Style", `name: ${theme.name}`];
   if (theme.blurb) lines.push(`blurb: ${theme.blurb}`);
   if (theme.layout) lines.push(`layout: ${theme.layout}`);
+  if (theme.design) lines.push(`design: ${JSON.stringify(theme.design)}`);
   if (theme.cardStyle) lines.push(`card: ${theme.cardStyle}`);
   if (theme.buttonStyle) lines.push(`button: ${theme.buttonStyle}`);
   if (theme.fontPair) lines.push(`font: ${theme.fontPair}`);
@@ -184,7 +192,7 @@ export function harborStyleStarter(): string {
   return `# Frame Style
 name: My Theme
 blurb: A short tagline shown in the picker.
-layout: sidebar
+layout: frame
 card: flat
 button: flat
 font: sentient-switzer

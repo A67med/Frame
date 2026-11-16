@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { ThemeLayout } from "@/lib/theme";
+import type { ThemeLayout, ThemeBackground, ThemeLogo } from "@/lib/theme";
 import type { NavCustomization } from "@/chrome/nav-items";
 import { setThemePreview } from "@/lib/theme-preview";
 import { useView } from "@/lib/view";
@@ -8,6 +8,8 @@ export function useStudioPreview(
   layout: ThemeLayout,
   bokeh: boolean,
   navCustomization: NavCustomization,
+  background?: ThemeBackground,
+  logo?: ThemeLogo,
 ) {
   const { setView } = useView();
   const [inspectorHidden, setInspectorHidden] = useState(false);
@@ -21,8 +23,8 @@ export function useStudioPreview(
   }, [setView]);
 
   useEffect(() => {
-    setThemePreview({ layout, bokeh, navCustomization });
-  }, [layout, bokeh, navCustomization]);
+    setThemePreview({ layout, bokeh, navCustomization, background, logo });
+  }, [layout, bokeh, navCustomization, background, logo]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

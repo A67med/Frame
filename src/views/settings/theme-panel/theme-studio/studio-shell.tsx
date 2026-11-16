@@ -1,6 +1,6 @@
 import { useT } from "@/lib/i18n";
 import { type PanelPosition } from "./hooks/use-panel-drag";
-import { SUITE_CHROME_LIGHT as STABLE_CHROME } from "./suite-theme";
+import { SUITE_CHROME as STABLE_CHROME } from "./suite-theme";
 
 const PANEL_W = 416;
 
@@ -21,7 +21,7 @@ export function StudioShell({
       <div
         ref={cardRef}
         role="dialog"
-        aria-modal="true"
+        aria-modal="false"
         aria-label={t("Theme studio")}
         style={{
           ...STABLE_CHROME,

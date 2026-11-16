@@ -613,7 +613,7 @@ function Shell({ onReady }: { onReady?: () => void }) {
     () => (preview ? preview.layout : activeLayout(settings.theme)),
     [preview, settings.theme],
   );
-  const layout = kid ? "sidebar" : baseLayout;
+  const layout = kid ? "sidebar" : baseLayout === "frame" ? "dracula" : baseLayout;
   const themeHasTopbar =
     layout === "sidebar" ||
     layout === "dracula" ||

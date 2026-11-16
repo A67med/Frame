@@ -10,7 +10,7 @@ import {
   getCustomThemes,
   parseThemeJson,
   removeCustomTheme,
-  saveCustomTheme,
+  persistCustomTheme,
   subscribeCustomThemes,
   type CustomTheme,
 } from "@/lib/custom-themes";
@@ -159,7 +159,12 @@ export function CustomThemesSection({
       if (!result.ok) {
         const foreign = importForeignTheme(text, file.name);
         if (foreign.ok && foreign.themes.length > 0) {
-          for (const t of foreign.themes) saveCustomTheme(t);
+          for (const theme of foreign.themes) {
+            if (!(await persistCustomTheme(theme))) {
+              setError(t("Could not save theme. Export a copy and try again."));
+              return;
+            }
+          }
           const first = foreign.themes[0];
           setImportedNotice(
             foreign.themes.length > 1
@@ -176,7 +181,10 @@ export function CustomThemesSection({
         setError(localizeImportError(result.error));
         return;
       }
-      saveCustomTheme(result.theme);
+      if (!(await persistCustomTheme(result.theme))) {
+        setError(t("Could not save theme. Export a copy and try again."));
+        return;
+      }
       setImportedNotice(result.theme.name);
       activateTheme(result.theme.id, result.theme.navCustomization);
     } catch {
@@ -251,7 +259,7 @@ export function CustomThemesSection({
       <ActiveBanner
         theme={activeTheme}
         onExport={() => activeTheme && showExport(activeTheme.id)}
-        onCustomize={() => window.dispatchEvent(new CustomEvent("harbor:open-theme-editor"))}
+        onCustomize={() => setStudioOpen(true)}
       />
 
       <HeroCards
