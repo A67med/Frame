@@ -17,17 +17,25 @@ export function useMpvEmbed(params: { engine: "html5" | "mpv"; settings: Setting
 
   useEffect(() => {
     if (engine !== "mpv" || !settings.playerMpvEmbed) return;
+    let cancelled = false;
     let unMove: (() => void) | null = null;
     let unResize: (() => void) | null = null;
     void (async () => {
       try {
         const { getCurrentWindow } = await import("@tauri-apps/api/window");
+        if (cancelled) return;
         const win = getCurrentWindow();
         unMove = await win.onMoved(() => void modalOverlaySync());
+        if (cancelled) {
+          unMove();
+          return;
+        }
         unResize = await win.onResized(() => void modalOverlaySync());
+        if (cancelled) unResize();
       } catch {}
     })();
     return () => {
+      cancelled = true;
       unMove?.();
       unResize?.();
       void modalOverlayClose();

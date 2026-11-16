@@ -1,5 +1,13 @@
 // Newly introduced UI copy remains usable until each locale provides an override.
 const uiFallback: Record<string, string> = {
+  "Download an earlier installer if needed. Export a backup first: older builds may not understand settings or data written by a newer version.":
+    "Download an earlier installer if needed. Export a backup first: older builds may not understand settings or data written by a newer version.",
+  "TMDB digital dates for {region}. No other region is substituted.":
+    "TMDB digital dates for {region}. No other region is substituted.",
+  "Release month": "Release month",
+  "No digital release dates are recorded for this region and month.":
+    "No digital release dates are recorded for this region and month.",
+
   "Choose fonts": "Choose fonts",
   "Customize theme": "Customize theme",
   "Frame layout": "Frame layout",

@@ -56,14 +56,7 @@ export const TOP_GROUPS: TopGroup[] = [
     section: "SYSTEM",
     label: "System",
     sub: "Storage, automation, and the settings most people never need.",
-    children: ["storage", "advanced"],
-  },
-  {
-    id: "updates",
-    section: "SYSTEM",
-    label: "Updates & backup",
-    sub: "Install updates and keep a copy of your setup.",
-    children: ["updates"],
+    children: ["storage", "advanced", "updates"],
   },
   {
     id: "help",

@@ -27,11 +27,7 @@ function success(msg) {
 }
 
 // 1. Forbidden root directories
-const forbiddenDirs = [
-  "harbor-core",
-  "harbor-install-recovery",
-  "harbor-audio-plugin",
-];
+const forbiddenDirs = ["harbor-core", "harbor-install-recovery", "harbor-audio-plugin"];
 
 for (const dir of forbiddenDirs) {
   if (fs.existsSync(path.join(rootDir, dir))) {
@@ -40,15 +36,16 @@ for (const dir of forbiddenDirs) {
 }
 
 // 2. Required modern crate directories
-const requiredCrates = [
-  "crates/frame-core/Cargo.toml",
-  "crates/frame-install-recovery/Cargo.toml",
-];
+const requiredCrates = ["crates/frame-core/Cargo.toml", "crates/frame-install-recovery/Cargo.toml"];
 
 for (const crate of requiredCrates) {
   if (!fs.existsSync(path.join(rootDir, crate))) {
     error(`Required crate manifest missing: ${crate}`);
   }
+}
+
+if (!fs.existsSync(path.join(rootDir, "native/macos/virtual-mic/build.sh"))) {
+  error("macOS virtual microphone source must remain available for supported platform builds.");
 }
 
 // 3. Required architecture & compatibility documentation
@@ -65,11 +62,7 @@ for (const doc of requiredDocs) {
 }
 
 // 4. Check for forbidden root file clutter
-const forbiddenRootPatterns = [
-  /\.old\.exe$/i,
-  /\.zip$/i,
-  /^harbor/i,
-];
+const forbiddenRootPatterns = [/\.old\.exe$/i, /\.zip$/i, /^harbor/i];
 
 const rootFiles = fs.readdirSync(rootDir);
 for (const file of rootFiles) {
@@ -78,7 +71,9 @@ for (const file of rootFiles) {
     if (pat.test(file)) {
       // Check if it's an ignored artifact or tracked
       try {
-        const isIgnored = execSync(`git check-ignore "${file}"`, { stdio: "pipe" }).toString().trim();
+        const isIgnored = execSync(`git check-ignore "${file}"`, { stdio: "pipe" })
+          .toString()
+          .trim();
         if (isIgnored) continue;
       } catch {
         // not ignored
@@ -90,17 +85,32 @@ for (const file of rootFiles) {
 
 // 5. Verify cargo paths in src-tauri/Cargo.toml
 const tauriCargo = fs.readFileSync(path.join(rootDir, "src-tauri/Cargo.toml"), "utf8");
-if (tauriCargo.includes('path = "../harbor-core"') || tauriCargo.includes('path = "../harbor-install-recovery"')) {
-  error("src-tauri/Cargo.toml still references legacy harbor-core or harbor-install-recovery paths!");
+if (
+  tauriCargo.includes('path = "../harbor-core"') ||
+  tauriCargo.includes('path = "../harbor-install-recovery"')
+) {
+  error(
+    "src-tauri/Cargo.toml still references legacy harbor-core or harbor-install-recovery paths!",
+  );
 }
-if (!tauriCargo.includes('path = "../crates/frame-core"') || !tauriCargo.includes('path = "../crates/frame-install-recovery"')) {
-  error("src-tauri/Cargo.toml missing required crates/frame-core or crates/frame-install-recovery paths!");
+if (
+  !tauriCargo.includes('path = "../crates/frame-core"') ||
+  !tauriCargo.includes('path = "../crates/frame-install-recovery"')
+) {
+  error(
+    "src-tauri/Cargo.toml missing required crates/frame-core or crates/frame-install-recovery paths!",
+  );
 }
 
 // 6. Verify release workflow stays Windows x64 focused
-const releaseWorkflow = fs.readFileSync(path.join(rootDir, ".github/workflows/tauri-build.yml"), "utf8");
+const releaseWorkflow = fs.readFileSync(
+  path.join(rootDir, ".github/workflows/tauri-build.yml"),
+  "utf8",
+);
 if (releaseWorkflow.includes("macos-15") || releaseWorkflow.includes("ubuntu-22.04")) {
-  error("Release workflow .github/workflows/tauri-build.yml has regressed to multi-platform! Must stay Windows x64 only.");
+  error(
+    "Release workflow .github/workflows/tauri-build.yml has regressed to multi-platform! Must stay Windows x64 only.",
+  );
 }
 
 if (!failed) {

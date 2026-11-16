@@ -1950,7 +1950,7 @@ dependencies = [
 
 [[package]]
 name = "frame"
-version = "0.4.0"
+version = "0.4.5"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1963,14 +1963,14 @@ dependencies = [
  "dunce",
  "encoding_rs",
  "flate2",
+ "frame-core",
+ "frame-install-recovery",
  "futures",
  "futures-util",
  "gilrs",
  "gtk",
  "hadris-iso",
  "harbor-udfread",
- "frame-core",
- "frame-install-recovery",
  "hound",
  "httpdate",
  "image",
@@ -2043,6 +2043,24 @@ dependencies = [
  "zeroize",
  "zip",
 ]
+
+[[package]]
+name = "frame-core"
+version = "0.1.0"
+dependencies = [
+ "js-sys",
+ "once_cell",
+ "regex",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "unicode-normalization",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "frame-install-recovery"
+version = "0.1.0"
 
 [[package]]
 name = "fs_extra"
@@ -2663,24 +2681,6 @@ dependencies = [
  "crunchy",
  "zerocopy",
 ]
-
-[[package]]
-name = "frame-core"
-version = "0.1.0"
-dependencies = [
- "js-sys",
- "once_cell",
- "regex",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "unicode-normalization",
- "wasm-bindgen",
-]
-
-[[package]]
-name = "frame-install-recovery"
-version = "0.1.0"
 
 [[package]]
 name = "harbor-udfread"

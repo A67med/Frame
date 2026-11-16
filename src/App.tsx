@@ -167,11 +167,7 @@ import {
   useIdleEvict,
   useKeepAlive,
 } from "@/app/layer-lifecycle";
-import {
-  clampUiScale,
-  UI_SCALE_ACTIVITY_EVENT,
-  UI_SCALE_STEP,
-} from "@/app/ui-scale";
+import { clampUiScale, UI_SCALE_ACTIVITY_EVENT, UI_SCALE_STEP } from "@/app/ui-scale";
 import {
   AutoDownloadRunner,
   RevealOnMount,
@@ -741,6 +737,7 @@ function Shell({ onReady }: { onReady?: () => void }) {
   }, []);
 
   useEffect(() => {
+    let cancelled = false;
     let dispose: (() => void) | null = null;
     void import("@/lib/deep-link").then(
       ({
@@ -750,47 +747,53 @@ function Shell({ onReady }: { onReady?: () => void }) {
         onOpenLocalFile,
         isProfileEditUrl,
       }) => {
-        void startDeepLinkBridge().then((stopBridge) => {
-          const stopListener = onDeepLinkInstall((rawUrl) => {
-            if (window.__harborInstallerOpen) return;
-            if (isProfileEditUrl(rawUrl)) return;
-            setView("addons");
+        if (cancelled) return;
+        let stopBridge: (() => void) | null = null;
+        const stopListener = onDeepLinkInstall((rawUrl) => {
+          if (window.__harborInstallerOpen) return;
+          if (isProfileEditUrl(rawUrl)) return;
+          setView("addons");
+        });
+        const stopOpen = onDeepLinkOpen(({ type, id, videoId }) => {
+          if (type === "person") {
+            const personId = Number(id);
+            if (Number.isInteger(personId) && personId > 0) openPerson(personId);
+            return;
+          }
+          if (type === "manga" || type === "ebook") return;
+          const hint = parseDeepLinkEpisode(videoId);
+          openMeta(
+            { id, type: type as MetaType, name: "" },
+            hint ? { episodeHint: hint } : undefined,
+          );
+        });
+        const stopFile = onOpenLocalFile((path) => {
+          const name = (path.replace(/\\/g, "/").split("/").pop() || "Video").replace(
+            /\.[^.]+$/,
+            "",
+          );
+          openPlayer({
+            meta: { id: `local:${path}`, type: "movie", name },
+            url: path,
+            title: name,
+            notWebReady: true,
           });
-          const stopOpen = onDeepLinkOpen(({ type, id, videoId }) => {
-            if (type === "person") {
-              const personId = Number(id);
-              if (Number.isInteger(personId) && personId > 0) openPerson(personId);
-              return;
-            }
-            if (type === "manga" || type === "ebook") return;
-            const hint = parseDeepLinkEpisode(videoId);
-            openMeta(
-              { id, type: type as MetaType, name: "" },
-              hint ? { episodeHint: hint } : undefined,
-            );
-          });
-          const stopFile = onOpenLocalFile((path) => {
-            const name = (path.replace(/\\/g, "/").split("/").pop() || "Video").replace(
-              /\.[^.]+$/,
-              "",
-            );
-            openPlayer({
-              meta: { id: `local:${path}`, type: "movie", name },
-              url: path,
-              title: name,
-              notWebReady: true,
-            });
-          });
-          dispose = () => {
-            stopBridge();
-            stopListener();
-            stopOpen();
-            stopFile();
-          };
+        });
+        dispose = () => {
+          stopBridge?.();
+          stopListener();
+          stopOpen();
+          stopFile();
+        };
+        // Subscribe before the bridge consumes startup files and deep links.
+        void startDeepLinkBridge().then((stop) => {
+          if (cancelled) stop();
+          else stopBridge = stop;
         });
       },
     );
     return () => {
+      cancelled = true;
       dispose?.();
     };
   }, [setView, openMeta, openPlayer, openPerson]);

@@ -147,6 +147,7 @@ export function useAutoRetry(params: {
     const attempt = liveRetryCountRef.current + 1;
     const timer = window.setTimeout(
       () => {
+        if (snapRef.current.status === "paused") return;
         liveRetryCountRef.current = attempt;
         console.warn(`[player] live auto-reconnect attempt ${attempt}/${maxAttempts}`);
         void b.load({
@@ -164,7 +165,7 @@ export function useAutoRetry(params: {
 
   const triggerAutoRetry = useCallback(
     (reason: string) => {
-      if (autoRetriedRef.current) return;
+      if (snapRef.current.status === "paused" || autoRetriedRef.current) return;
       if (isLocal) {
         console.warn(`[player] local file: skipping auto-retry (${reason})`);
         return;
@@ -546,7 +547,7 @@ export function useAutoRetry(params: {
     const t = window.setTimeout(
       () => {
         const s = snapRef.current;
-        if (s.status === "playing" || s.status === "ended") return;
+        if (s.status === "playing" || s.status === "paused" || s.status === "ended") return;
         if (s.durationSec > 0 || getPlaybackPosition() > 0) return;
         console.warn(`[player] source never started within ${NEVER_STARTED_CEILING_MS}ms`);
         setSourceError((prev) => prev ?? { status: 0, host: hostOf(src.url) });
@@ -590,6 +591,8 @@ export function useAutoRetry(params: {
   useEffect(() => {
     if (!isP2pEngine || snap.status === "ended") return;
     const id = window.setInterval(() => {
+      // A completed download is not a failed decoder while the user has paused.
+      if (snapRef.current.status === "paused") return;
       if (getPlaybackPosition() > 5) return;
       if ((src.attempt ?? 0) >= MAX_AUTORETRY_ATTEMPTS) return;
       const age = Date.now() - urlAtRef.current;
@@ -640,7 +643,6 @@ export function useAutoRetry(params: {
           (dlRef.current.at > 0 && Date.now() - dlRef.current.at < GENUINE_FAILURE_WINDOW_MS));
       if (
         !progressing &&
-        snapRef.current.status !== "paused" &&
         snapRef.current.videoWidth <= 0 &&
         getPlaybackPosition() < 0.5 &&
         age > ENGINE_HARD_CEILING_MS

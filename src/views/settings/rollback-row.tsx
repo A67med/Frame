@@ -18,7 +18,7 @@ export function RollbackRow() {
       icon={<History size={20} strokeWidth={2.1} className="text-ink-muted" />}
       label={t("Roll back to an earlier build")}
       desc={t(
-        "Is a new build giving you trouble? Pick an earlier one below and run its installer over your current copy. Your library, settings, and downloads all stay put.",
+        "Download an earlier installer if needed. Export a backup first: older builds may not understand settings or data written by a newer version.",
       )}
     >
       <div className="flex w-full min-w-0 flex-col gap-3">

@@ -207,7 +207,8 @@ function ExportPicker({
 }) {
   const t = useT();
   const [selected, setSelected] = useState<Set<BackupSectionKey>>(
-    () => new Set(BACKUP_SECTIONS.map((s) => s.key)),
+    () =>
+      new Set(BACKUP_SECTIONS.map((s) => s.key).filter((key) => !selectionHasCredentials([key]))),
   );
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");

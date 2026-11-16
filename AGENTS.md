@@ -8,7 +8,7 @@ Frame is a cross-platform desktop media app built with Tauri 2, React, TypeScrip
 - The bundle identifier is `io.github.abdallahkattriah-sketch.frame` and the binary is `frame.exe`. `src-tauri/src/legacy_data.rs` copies `app.harbor` data across on first launch, leaving the original.
 - `harbor-*` CSS classes, `data-harbor-*` attributes, `harbor.*` storage keys, `harbor://` internal event names and `HARBOR_*` variables stay on purpose: saved data and user themes depend on them. Only user-facing text and project identity were renamed.
 - The theme selector offers exactly `SELECTABLE_THEME_IDS` (`lib/theme.ts`); other presets stay defined for shared styles, and a saved choice of one falls back to Default. Royal's id is `tokyo-night`.
-- Digital release dates may only come from Blu-ray.com, never TMDB. Radar's Digital Releases section stays an "isn't connected" notice until retrieval from that site is confirmed to be permitted and workable.
+- Digital Releases uses TMDB discovery plus verified type-4 release-date records. Always label the region; never substitute theatrical dates or silently fall back to another country.
 
 ## The fork is the project now
 

@@ -17,6 +17,7 @@ frame/
 ├── docs/                    # Architecture guide, cleanup audit, sunset notes & compatibility matrix
 ├── flatpak/                 # Flathub/Flatpak packaging metadata
 ├── i18n/                    # Locale translation dictionaries (Crowdin integration)
+├── native/macos/virtual-mic/ # CoreAudio virtual microphone source; stable driver identity
 ├── public/                  # Static assets, avatars, and bundled runtime scripts
 ├── scripts/                 # Asset setup, build helpers, validators & diagnostic utilities
 ├── src/                     # React 19 + TypeScript frontend
@@ -46,6 +47,7 @@ frame/
 ## 2. Responsibilities & Boundaries
 
 ### 2.1 Frontend Architecture (`src/`)
+
 - **App Shell (`src/app/`)**: Extracted from `App.tsx` into modular subsystems:
   - `views.tsx`: Layered view stack registry and lazy component loader.
   - `layer-lifecycle.ts`: Keep-alive view management, idle frame eviction, and deep-link parsing.
@@ -56,6 +58,7 @@ frame/
 - **Themes & Styling**: Built on TailwindCSS v4 with custom CSS in `src/index.css`. Theme definitions use `.framestyle` and `.harborstyle` formats parsed by `src/lib/harborstyle.ts`.
 
 ### 2.2 Native Tauri Backend (`src-tauri/`)
+
 - **Native Host (`src-tauri/src/lib.rs`)**: Initializes Tauri plugins, managed state, system tray, window geometry, startup routines, and command registrations.
 - **Launch Arguments (`src-tauri/src/launch_args.rs`)**: Owns CLI media file detection, pending startup file consumption, and OS `stremio://` deep-link registration.
 - **Media Engine (`src-tauri/src/mpv.rs`)**: Direct C bindings to `libmpv-2.dll` controlling playback state, audio tracks, and hardware acceleration.
@@ -66,6 +69,7 @@ frame/
 ## 3. Compatibility Invariants
 
 Detailed in [docs/LEGACY-COMPATIBILITY.md](file:///E:/PROJECTS/Frame/docs/LEGACY-COMPATIBILITY.md):
+
 - **Local Storage Keys**: `harbor.*` keys must remain unchanged to preserve user settings, watch progress, and addon configurations.
 - **Theme Selectors**: `.harbor-*` CSS classes and `data-harbor-*` attributes are part of the external theme API and must not be renamed.
 - **IPC Command Aliases**: Any new command must keep its legacy `harbor_*` alias registered.
