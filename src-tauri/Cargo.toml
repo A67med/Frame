@@ -1,6 +1,6 @@
 [package]
 name = "frame"
-version = "0.3.0"
+version = "0.4.0"
 description = "A personal desktop media app for movies and TV"
 edition = "2021"
 
