@@ -149,12 +149,6 @@ macOS and Linux are not officially built or distributed. Flatpak packaging is ma
 
 **Tauri 2 · React · TypeScript · Rust · libmpv · TMDB**
 
-App identifier: `io.github.abdallahkattriah-sketch.frame`. The app can migrate settings from a v0.1.0 installation (`app.harbor`) without deleting the original data directory.
-
-Frame began as a fork of [Harbor](https://github.com/crazyrabbit0/harbor) and retains its upstream MIT license and notices. Frame is maintained as an independent app. See [LICENSE](LICENSE) and [third-party notices](src-tauri/THIRD-PARTY-NOTICES.txt).
-
----
-
 <div align="center">
 
 **[Releases](https://github.com/A67med/Frame/releases) · [Theme Studio](docs/THEME-STUDIO.md) · [Screenshots](docs/theme-studio-evidence/README.md)**
