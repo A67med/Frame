@@ -4,6 +4,7 @@ import { defineConfig, type ViteDevServer, type HttpProxy } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import pkg from "./package.json" with { type: "json" };
+import fmt from "./.oxfmtrc.json" with { type: "json" };
 
 declare const process: { env: Record<string, string | undefined> };
 
@@ -52,6 +53,7 @@ export default defineConfig(({ mode }) => {
   const android = mode === "android" || process.env.HARBOR_TARGET === "android";
   const devHost = process.env.TAURI_DEV_HOST;
   return {
+    fmt,
     staged: { "*": "vp check --fix" },
     plugins: [react(), tailwindcss(), silenceMediapipeSourcemap(), servePublicMediapipe()],
     clearScreen: false,
