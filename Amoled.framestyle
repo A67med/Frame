@@ -1,14 +1,13 @@
 # Frame Style
-name: Amoled
+name: OLED Black
 blurb: True black for OLED screens, with an electric mint accent.
-layout: dracula
+layout: frame
+design: {"radius":2,"density":0.9,"headingScale":0.95,"heading":"sans","surface":"solid","elevation":"none","navigation":"line"}
 card: flat
 button: flat
 font: general-sans
 bokeh: false
 swatch: #000000, #0a0a0a, #2ee6c5
-nav-order: home, discover, catalogs, plugins, movies, shows, kids, anime, manga, ebook, music, games, live, sports, vod, calendar, collections, downloads, addons, library, settings
-nav-hidden: manga, live, ebook, anime, shows, catalogs, calendar, games, kids, sports, vod, collections, downloads, music
 
 @tokens
 --color-canvas: #000000

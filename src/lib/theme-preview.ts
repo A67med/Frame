@@ -1,10 +1,12 @@
 import { useSyncExternalStore } from "react";
-import type { ThemeLayout } from "./theme";
+import type { ThemeLayout, ThemeBackground, ThemeLogo } from "./theme";
 import type { NavCustomization } from "@/chrome/nav-items";
 
 export type ThemePreviewState = {
   layout: ThemeLayout;
   bokeh: boolean;
+  background?: ThemeBackground;
+  logo?: ThemeLogo;
   navCustomization?: NavCustomization;
 };
 

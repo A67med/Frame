@@ -6,7 +6,7 @@ import { StudioHeader } from "./theme-studio/studio-header";
 import { CodePopout } from "./theme-studio/code-popout";
 import { buildChrome } from "./theme-studio/chrome-config";
 import { nextBackgroundImage } from "@/lib/theme-background";
-import { SUITE_CHROME_LIGHT as STABLE_CHROME } from "./theme-studio/suite-theme";
+import { SUITE_CHROME as STABLE_CHROME } from "./theme-studio/suite-theme";
 import { useStudioPreview } from "./theme-studio/hooks/use-studio-preview";
 import { useDraftHistory } from "./theme-studio/hooks/use-draft-history";
 import { usePanelDrag } from "./theme-studio/hooks/use-panel-drag";
@@ -14,7 +14,7 @@ import { StudioShell } from "./theme-studio/studio-shell";
 import { emptyDraft } from "./theme-studio/studio-draft";
 import type { Draft } from "./theme-studio/studio-types";
 import type { CodeLang } from "@/components/code-editor";
-import { saveCustomTheme, type CustomTheme } from "@/lib/custom-themes";
+import { persistCustomTheme, type CustomTheme } from "@/lib/custom-themes";
 import { downloadText } from "@/lib/download-text";
 import { serializeHarborStyle } from "@/lib/harborstyle";
 import {
@@ -34,15 +34,24 @@ import { useT } from "@/lib/i18n";
 
 const STUDIO_STYLE_ID = "harbor-studio-preview-css";
 const STUDIO_HTML_ID = "harbor-studio-preview-html";
-const STUDIO_AUTHORITY_ID = "harbor-studio-authority-css";
 
 export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: () => void }) {
   const t = useT();
   const { settings, update } = useSettings();
-  const [initialDraft] = useState(() => emptyDraft(seed, settings.navCustomization));
+  const [initialDraft] = useState(() => {
+    const draft = emptyDraft(seed, settings.navCustomization);
+    if (settings.theme.backgroundImage)
+      draft.background = {
+        image: settings.theme.backgroundImage,
+        dim: settings.theme.backgroundDim,
+      };
+    return draft;
+  });
   const { draft, setDraft, undo, redo, canUndo, canRedo } = useDraftHistory(() => initialDraft);
   const drag = usePanelDrag();
-  const restoreRef = useState(() => settings.theme.preset)[0];
+  const savedThemeRef = useRef<typeof settings.theme | null>(null);
+  const [saveError, setSaveError] = useState(false);
+  const [saving, setSaving] = useState(false);
   const liveThemeRef = useRef(settings.theme);
   liveThemeRef.current = settings.theme;
   const [popoutTab, setPopoutTab] = useState<CodeLang | null>(null);
@@ -50,6 +59,8 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
     draft.layout,
     draft.bokeh,
     draft.navCustomization,
+    draft.background,
+    draft.logo,
   );
   const [initialJson] = useState(() => JSON.stringify(initialDraft));
   const [confirmClose, setConfirmClose] = useState(false);
@@ -64,6 +75,7 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
   const untitledThemeName = t("Untitled theme");
   const dirty = useMemo(() => JSON.stringify(draft) !== initialJson, [draft, initialJson]);
   const requestClose = () => {
+    if (saving) return;
     if (dirty) setConfirmClose(true);
     else onClose();
   };
@@ -87,6 +99,9 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
       ],
       tokens: customColorsToTokens(draft.colors),
       layout: draft.layout,
+      design: draft.design,
+      background: draft.background,
+      logo: draft.logo,
       cardStyle: draft.cardStyle,
       buttonStyle: draft.buttonStyle,
       fontPair: draft.fontPair,
@@ -96,20 +111,14 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
   );
 
   useEffect(() => {
-    applyTheme({
-      preset: "custom",
-      customColors: draft.colors,
-      backgroundImage: null,
-      backgroundDim: 0,
-      fontPair: draft.fontPair,
-      customFontId: draft.customFontId,
-    });
-    const root = document.documentElement;
-    root.dataset.themeLayout = draft.layout;
-    root.dataset.themeCard = draft.cardStyle;
-    root.dataset.themeButton = draft.buttonStyle;
-    root.dataset.themeBokeh = draft.bokeh ? "on" : "off";
-  }, [draft]);
+    applyTheme(
+      {
+        ...settings.theme,
+        customFontId: draft.customFontId,
+      },
+      draftPreset,
+    );
+  }, [draftPreset, draft.customFontId, settings.theme]);
 
   useEffect(() => {
     let style = document.getElementById(STUDIO_STYLE_ID) as HTMLStyleElement | null;
@@ -122,19 +131,6 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
   }, [draft.css]);
 
   useEffect(() => {
-    let authority = document.getElementById(STUDIO_AUTHORITY_ID) as HTMLStyleElement | null;
-    if (!authority) {
-      authority = document.createElement("style");
-      authority.id = STUDIO_AUTHORITY_ID;
-      document.head.appendChild(authority);
-    }
-    const vars = Object.entries(customColorsToTokens(draft.colors))
-      .map(([k, v]) => `${k}: ${v} !important;`)
-      .join("\n  ");
-    authority.textContent = `:root:root {\n  ${vars}\n}`;
-  }, [draft.colors]);
-
-  useEffect(() => {
     let overlay = document.getElementById(STUDIO_HTML_ID) as HTMLDivElement | null;
     if (!overlay) {
       overlay = document.createElement("div");
@@ -143,17 +139,16 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
       overlay.setAttribute("data-tv-skip", "");
       document.body.appendChild(overlay);
     }
-    overlay.innerHTML = draft.layout === "custom" ? draft.html : "";
+    overlay.innerHTML = draft.html;
   }, [draft.html, draft.layout]);
 
   useEffect(() => {
     return () => {
       document.getElementById(STUDIO_STYLE_ID)?.remove();
       document.getElementById(STUDIO_HTML_ID)?.remove();
-      document.getElementById(STUDIO_AUTHORITY_ID)?.remove();
-      applyTheme({ ...liveThemeRef.current, preset: restoreRef });
+      applyTheme(savedThemeRef.current ?? liveThemeRef.current);
     };
-  }, [restoreRef]);
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -179,7 +174,17 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [onClose, inspectorHidden, setInspectorHidden, popoutTab, confirmClose, dirty, undo, redo]);
+  }, [
+    onClose,
+    inspectorHidden,
+    setInspectorHidden,
+    popoutTab,
+    confirmClose,
+    dirty,
+    undo,
+    redo,
+    saving,
+  ]);
 
   useEffect(() => {
     const el = inspectorHidden ? editThemeRef.current : minimizeRef.current;
@@ -215,7 +220,7 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
         next.chromeDirty = true;
       }
       return next;
-    });
+    }, Object.keys(patch).sort().join(","));
   const onSeed = (t: ThemePreset) => setDraft(emptyDraft(t, draft.navCustomization));
 
   const onChromeChange = (config: ChromeConfig) =>
@@ -233,9 +238,11 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
 
   const trimmedName = draft.name.trim();
   const canSave =
-    trimmedName.length > 0 && (draft.layout !== "custom" || draft.chrome.items.length > 0);
+    !saving &&
+    trimmedName.length > 0 &&
+    (draft.layout !== "custom" || draft.chrome.items.length > 0);
 
-  const buildTheme = (): CustomTheme => {
+  const buildTheme = (copy = false): CustomTheme => {
     const slug =
       trimmedName
         .toLowerCase()
@@ -246,24 +253,20 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
     const hasNav =
       nav.order.length > 0 || nav.hidden.length > 0 || Object.keys(nav.renamed).length > 0;
     return {
-      id: `user:${slug}-${Date.now().toString(36)}`,
+      id:
+        !copy && seed?.id.startsWith("user:") ? seed.id : `user:${slug}-${Date.now().toString(36)}`,
       name: trimmedName.slice(0, 60),
       blurb: draft.blurb.trim().slice(0, 160),
       swatch: draftPreset.swatch as [string, string, string],
       tokens: draftPreset.tokens,
       layout: draft.layout,
+      design: draft.design,
+      background: draft.background,
+      logo: draft.logo,
       cardStyle: draft.cardStyle,
       buttonStyle: draft.buttonStyle,
       fontPair: draft.fontPair,
       bokeh: draft.bokeh,
-      ...(settings.theme.backgroundImage
-        ? {
-            background: {
-              image: settings.theme.backgroundImage,
-              dim: settings.theme.backgroundDim,
-            },
-          }
-        : {}),
       ...(draft.customFontId ? { customFontId: draft.customFontId } : {}),
       ...(draft.layout === "custom" ? { chrome: draft.chrome } : {}),
       ...(hasNav ? { navCustomization: nav } : {}),
@@ -273,13 +276,25 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
     };
   };
 
-  const onSave = () => {
+  const onSave = async (copy = false) => {
     if (!canSave) return;
-    const theme = buildTheme();
+    const theme = buildTheme(copy);
     const previous =
       settings.theme.preset !== "custom" ? getThemeById(settings.theme.preset) : null;
     const image = nextBackgroundImage(settings.theme.backgroundImage, previous, theme);
-    saveCustomTheme(theme);
+    setSaving(true);
+    setSaveError(false);
+    if (!(await persistCustomTheme(theme))) {
+      setSaving(false);
+      setSaveError(true);
+      return;
+    }
+    savedThemeRef.current = {
+      ...settings.theme,
+      preset: theme.id as ActiveThemeId,
+      customFontId: draft.customFontId,
+      backgroundImage: image,
+    };
     update({
       navCustomization: draft.navCustomization,
       theme: {
@@ -315,6 +330,7 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
             dragHandleProps={drag.handleProps}
           />
           <Inspector
+            onReset={() => setDraft(initialDraft)}
             draft={draft}
             onPatch={onPatch}
             onSeed={onSeed}
@@ -322,6 +338,21 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
             onRegenerateChrome={onRegenerateChrome}
             onExpand={(t) => setPopoutTab(t)}
           />
+          {saveError && (
+            <p role="alert" className="px-5 text-danger">
+              {t("Could not save theme. Export a copy and try again.")}
+            </p>
+          )}
+          {seed?.id.startsWith("user:") && (
+            <button
+              type="button"
+              className="min-h-11 text-ink-muted"
+              disabled={!canSave}
+              onClick={() => onSave(true)}
+            >
+              {t("Save as a new theme")}
+            </button>
+          )}
           <footer className="flex shrink-0 items-center gap-2.5 bg-canvas px-5 py-3.5">
             <button
               type="button"
@@ -333,11 +364,11 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
             </button>
             <button
               type="button"
-              onClick={onSave}
+              onClick={() => onSave()}
               disabled={!canSave}
               className="harbor-press-pop flex h-12 flex-[1.6] items-center justify-center rounded-md bg-ink text-[15px] font-semibold text-canvas transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              {t("Save theme")}
+              {seed?.id.startsWith("user:") ? t("Save changes") : t("Save theme")}
             </button>
           </footer>
         </StudioShell>

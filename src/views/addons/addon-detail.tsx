@@ -189,7 +189,11 @@ export function AddonDetail({
   }, [resolved.transportUrl]);
 
   return (
-    <main ref={mainRef} className="h-full overflow-y-auto px-12 pb-0 pt-24">
+    <main
+      data-frame-feature-page="addon-detail"
+      ref={mainRef}
+      className="h-full overflow-y-auto px-12 pb-0 pt-24"
+    >
       <header className="relative isolate -mx-12 -mt-24 flex min-h-[460px] items-start gap-10 px-12 pt-32 pb-10">
         <DetailHeaderBackdrop background={m?.background ?? undefined} />
         <div className="relative shrink-0">

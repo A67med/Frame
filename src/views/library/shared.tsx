@@ -45,6 +45,7 @@ export function TabBtn({
   return (
     <button
       type="button"
+      aria-current={active ? "page" : undefined}
       onClick={onClick}
       className={`relative -mb-px flex items-center gap-2 px-4 pb-3 pt-2 text-[13.5px] font-semibold transition-colors ${
         active ? "text-ink" : "text-ink-muted hover:text-ink"

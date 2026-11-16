@@ -168,6 +168,7 @@ function SectionRow({
 }
 
 export function SettingsSidebar({
+  cinematic = false,
   active,
   activeTab,
   meta,
@@ -175,6 +176,7 @@ export function SettingsSidebar({
   onSelect,
   onJump,
 }: {
+  cinematic?: boolean;
   active: SectionId;
   activeTab: string | null;
   meta: Record<SectionId, { label: string; sub: string }>;
@@ -278,92 +280,94 @@ export function SettingsSidebar({
     >
       <RailAccount />
       <div className="hset-rail-nav" key="browse">
-        {bands().map((band) => {
-          const flat = flatPage(band);
-          if (flat) {
-            const on = flat === active;
+        {bands()
+          .filter((band) => !cinematic || band.section === activeBand)
+          .map((band) => {
+            const flat = flatPage(band);
+            if (flat) {
+              const on = flat === active;
+              return (
+                <div key={band.section} className="hset-rail-band" data-open={on || undefined}>
+                  <button
+                    type="button"
+                    className={`hset-rail-category is-flat ${on ? "is-on" : ""}`}
+                    aria-current={on ? "page" : undefined}
+                    onClick={() => onSelect(flat)}
+                  >
+                    <span className="hset-category-icon" aria-hidden>
+                      <Glyph name={BAND_ICONS[band.section] ?? SECTION_ICONS[flat]} size={20} />
+                    </span>
+                    <span className="hset-category-name">
+                      {t(BAND_LABELS[band.section] ?? meta[flat].label)}
+                    </span>
+                  </button>
+                </div>
+              );
+            }
             return (
-              <div key={band.section} className="hset-rail-band" data-open={on || undefined}>
+              <div
+                key={band.section}
+                className="hset-rail-band"
+                data-open={openBands.has(band.section) || undefined}
+              >
                 <button
                   type="button"
-                  className={`hset-rail-category is-flat ${on ? "is-on" : ""}`}
-                  aria-current={on ? "page" : undefined}
-                  onClick={() => onSelect(flat)}
+                  id={`hset-category-button-${band.section.replaceAll(" ", "-")}`}
+                  className="hset-rail-category"
+                  aria-expanded={openBands.has(band.section)}
+                  aria-controls={`hset-category-${band.section.replaceAll(" ", "-")}`}
+                  onClick={() => toggleBand(band.section)}
                 >
                   <span className="hset-category-icon" aria-hidden>
-                    <Glyph name={BAND_ICONS[band.section] ?? SECTION_ICONS[flat]} size={20} />
+                    <Glyph name={BAND_ICONS[band.section]} size={20} />
                   </span>
                   <span className="hset-category-name">
-                    {t(BAND_LABELS[band.section] ?? meta[flat].label)}
+                    {t(BAND_LABELS[band.section] ?? band.section)}
                   </span>
+                  <span className="hset-category-caret" aria-hidden />
                 </button>
-              </div>
-            );
-          }
-          return (
-            <div
-              key={band.section}
-              className="hset-rail-band"
-              data-open={openBands.has(band.section) || undefined}
-            >
-              <button
-                type="button"
-                id={`hset-category-button-${band.section.replaceAll(" ", "-")}`}
-                className="hset-rail-category"
-                aria-expanded={openBands.has(band.section)}
-                aria-controls={`hset-category-${band.section.replaceAll(" ", "-")}`}
-                onClick={() => toggleBand(band.section)}
-              >
-                <span className="hset-category-icon" aria-hidden>
-                  <Glyph name={BAND_ICONS[band.section]} size={20} />
-                </span>
-                <span className="hset-category-name">
-                  {t(BAND_LABELS[band.section] ?? band.section)}
-                </span>
-                <span className="hset-category-caret" aria-hidden />
-              </button>
-              <div
-                id={`hset-category-${band.section.replaceAll(" ", "-")}`}
-                role="group"
-                aria-labelledby={`hset-category-button-${band.section.replaceAll(" ", "-")}`}
-                className="hset-category-pages"
-                hidden={!openBands.has(band.section)}
-              >
-                {band.sections.map((id) => {
-                  const tabs =
-                    !native && (id === "mpv" || id === "shaders")
-                      ? []
-                      : tabsFor(id).filter(
-                          (tab) => native || id !== "theme" || tab.id !== "window",
-                        );
-                  return (
-                    <div key={id} className="hset-rail-page-group">
-                      {tabs.length > 0 ? (
-                        tabs.map((tab) => (
+                <div
+                  id={`hset-category-${band.section.replaceAll(" ", "-")}`}
+                  role="group"
+                  aria-labelledby={`hset-category-button-${band.section.replaceAll(" ", "-")}`}
+                  className="hset-category-pages"
+                  hidden={!openBands.has(band.section)}
+                >
+                  {band.sections.map((id) => {
+                    const tabs =
+                      !native && (id === "mpv" || id === "shaders")
+                        ? []
+                        : tabsFor(id).filter(
+                            (tab) => native || id !== "theme" || tab.id !== "window",
+                          );
+                    return (
+                      <div key={id} className="hset-rail-page-group">
+                        {tabs.length > 0 ? (
+                          tabs.map((tab) => (
+                            <SectionRow
+                              key={tab.id}
+                              id={id}
+                              tab={tab}
+                              label={t(PAGE_LABELS[id + "." + tab.id] ?? tab.label)}
+                              on={id === active && (activeTab ?? tabs[0].id) === tab.id}
+                              onPick={onSelect}
+                            />
+                          ))
+                        ) : (
                           <SectionRow
-                            key={tab.id}
                             id={id}
-                            tab={tab}
-                            label={t(PAGE_LABELS[id + "." + tab.id] ?? tab.label)}
-                            on={id === active && (activeTab ?? tabs[0].id) === tab.id}
+                            label={t(meta[id].label)}
+                            on={id === active}
                             onPick={onSelect}
                           />
-                        ))
-                      ) : (
-                        <SectionRow
-                          id={id}
-                          label={t(meta[id].label)}
-                          on={id === active}
-                          onPick={onSelect}
-                        />
-                      )}
-                    </div>
-                  );
-                })}
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </nav>
   );

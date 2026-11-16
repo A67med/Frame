@@ -43,6 +43,7 @@ export function CollectionView({ collectionId }: { collectionId: number }) {
     <main
       ref={scrollRef}
       data-rail-flush
+      data-frame-feature-page="collection"
       className="relative flex min-h-0 flex-1 flex-col overflow-y-auto"
     >
       {data?.backdrop && (

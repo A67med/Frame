@@ -6,6 +6,7 @@ import { createPortal } from "react-dom";
 import { TvModalClose } from "@/components/tv-modal-close";
 import { tvFocus } from "@/lib/keyboard-navigation";
 import { useT } from "@/lib/i18n";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import type { Meta } from "@/lib/cinemeta";
 import { useSearch } from "@/lib/search-context";
 import { useView } from "@/lib/view";
@@ -34,6 +35,7 @@ import { useWindowFullscreen } from "@/lib/use-window-fullscreen";
 import { isMagnetInput, isDirectVideoUrl } from "@/lib/torrent/magnet";
 
 export function SearchOverlay() {
+  const cinematic = useCinematicDesktop();
   const {
     open,
     setOpen,
@@ -304,6 +306,12 @@ export function SearchOverlay() {
             closing ? "harbor-search-panel-out" : "harbor-search-panel-in"
           }`}
         >
+          {cinematic && (
+            <header className="frame-search-heading">
+              <h2>{t("Search")}</h2>
+              <p>{t("Movies, shows, people and more.")}</p>
+            </header>
+          )}
           <div
             data-tv-focus-container
             className="flex shrink-0 items-center gap-3 border-b border-edge-soft/60 px-6"

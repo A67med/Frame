@@ -1,0 +1,292 @@
+/* Library and settings prioritize persistent navigation and readable working space. */
+[data-frame-desktop]
+  :is([data-frame-page="radar"], [data-frame-page="following"])
+  > div:first-child {
+  padding: 0;
+  gap: 32px;
+}
+
+[data-frame-desktop] .frame-section-heading,
+[data-frame-desktop]
+  :is([data-frame-page="catalogs"], [data-frame-page="collections"], [data-frame-page="downloads"])
+  header {
+  padding-block-end: 24px;
+  border-block-end: var(--frame-rule);
+}
+
+[data-frame-desktop] [data-frame-page] h1 {
+  font-family: var(--frame-display);
+  font-size: clamp(32px, calc(3.2vw * var(--frame-heading-scale)), 58px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+[data-frame-desktop] [data-frame-page="downloads"] > div:first-child {
+  max-width: 1200px;
+}
+
+.frame-radar-index {
+  display: none;
+}
+
+.frame-radar-section {
+  display: contents;
+}
+
+[data-frame-desktop] .frame-radar-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+  border: var(--frame-rule);
+  background: var(--frame-panel);
+  border-radius: var(--frame-radius);
+}
+
+[data-frame-desktop] .frame-radar-index button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+[data-frame-desktop] .frame-radar-index button:hover {
+  color: var(--color-ink);
+  background: var(--color-elevated);
+}
+
+[data-frame-desktop] .frame-radar-section {
+  display: block;
+  scroll-margin-block-start: calc(var(--frame-command) + 20px);
+}
+
+[data-frame-desktop] #radar-digital {
+  padding: 24px;
+  background: var(--frame-panel);
+  border-inline-start: 2px solid var(--color-accent);
+}
+
+[data-frame-desktop] .frame-library-heading {
+  align-items: flex-start;
+  padding-block-end: 24px;
+  border-block-end: var(--frame-rule);
+}
+
+[data-frame-desktop] .frame-library-heading h1 {
+  font-family: var(--frame-display);
+  font-size: clamp(32px, calc(3.2vw * var(--frame-heading-scale)), 58px);
+}
+
+[data-frame-desktop] .frame-library-heading p {
+  max-width: 66ch;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+[data-frame-desktop] .frame-library-workspace {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: start;
+  gap: calc(28px * var(--frame-density));
+}
+
+[data-frame-desktop] .frame-library-nav {
+  position: sticky;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3px;
+  border: 0;
+  padding-inline-end: 20px;
+  border-inline-end: var(--frame-rule);
+}
+
+[data-frame-desktop] .frame-library-nav button {
+  margin: 0;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: start;
+  font-size: 13px;
+}
+
+[data-frame-desktop] .frame-library-nav button[aria-current="page"] {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+[data-frame-desktop] .frame-library-nav button > span:last-child {
+  display: none;
+}
+
+[data-frame-desktop] .frame-library-results {
+  min-height: 400px;
+}
+
+.frame-library-feature:empty {
+  display: none;
+}
+
+.frame-library-feature .harbor-hero-stage {
+  height: 280px;
+  min-height: 280px;
+}
+
+.frame-library-feature .harbor-hero-content {
+  padding: 24px;
+}
+
+.frame-library-feature .harbor-hero-content p {
+  display: none;
+}
+
+.frame-library-feature .harbor-hero-content img[alt]:not([alt=""]) {
+  max-height: 60px;
+}
+
+.frame-library-feature .harbor-hero-content h2 {
+  font-size: 36px;
+}
+
+.frame-settings-categories {
+  display: flex;
+  flex-wrap: wrap;
+  flex: none;
+  gap: 4px;
+  padding: 12px 24px;
+  margin-block-start: var(--frame-command);
+  border-block-end: var(--frame-rule);
+  background: var(--frame-panel);
+}
+
+.frame-settings-categories button {
+  padding: 10px 16px;
+  color: var(--color-ink-muted);
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.frame-settings-categories button[aria-current="page"] {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.frame-settings-categories button:hover {
+  color: var(--color-ink);
+}
+
+[data-frame-desktop] .harbor-settings-shell {
+  --hset-nav-w: 250px;
+  --hset-content-max: 1100px;
+  --hset-pad-inline: 32px;
+  --hset-sidebar-bg: var(--color-canvas);
+}
+
+[data-frame-desktop] .hset-grid {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+[data-frame-desktop] .hset-top-space {
+  display: none;
+}
+
+[data-frame-desktop] .hset-tools {
+  grid-row: 1;
+  padding: 20px 16px;
+  border-inline-end: var(--frame-rule);
+  border-block-end: var(--frame-rule);
+}
+
+[data-frame-desktop] .hset-heading {
+  grid-row: 1;
+  padding-block: 22px;
+  align-items: center;
+  border-block-end: var(--frame-rule);
+}
+
+[data-frame-desktop] .hset-title {
+  font-family: var(--frame-display);
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.frame-settings-description {
+  color: var(--color-ink-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-block-start: 4px;
+}
+
+[data-frame-desktop] .hset-grid > .hset-rail {
+  grid-row: 2;
+  border-inline-end: var(--frame-rule);
+  background: var(--color-canvas);
+}
+
+[data-frame-desktop] .hset-grid > .hset-main {
+  grid-row: 2;
+  padding-block-start: 24px;
+}
+
+[data-frame-desktop] .hset-rail-me {
+  padding-block: 16px;
+}
+
+[data-frame-desktop] .hset-rail-row {
+  min-height: 42px;
+  border-radius: 5px;
+}
+
+[data-frame-desktop] .harbor-settings-group {
+  border: var(--frame-rule);
+  border-radius: var(--frame-radius);
+  background: var(--frame-panel);
+}
+
+[data-frame-desktop] .hset-row {
+  padding-block: 18px;
+}
+
+@media (max-width: 900px) {
+  [data-frame-desktop] .frame-library-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  [data-frame-desktop] .frame-library-nav {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 0 16px;
+    border-inline-end: 0;
+    border-block-end: var(--frame-rule);
+  }
+  [data-frame-desktop] .frame-library-heading {
+    flex-wrap: wrap;
+  }
+  .frame-settings-categories {
+    padding: 10px;
+  }
+  .frame-settings-categories button {
+    padding: 8px 10px;
+  }
+  [data-frame-desktop] .hset-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
+  }
+  [data-frame-desktop] .hset-tools {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 12px 20px;
+  }
+  [data-frame-desktop] .hset-heading {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 16px 20px;
+  }
+  [data-frame-desktop] .hset-grid > .hset-main,
+  [data-frame-desktop] .hset-grid > .hset-rail {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}

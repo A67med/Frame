@@ -7,12 +7,17 @@ import { Lightbox } from "./featured-banner/lightbox";
 import { SidePanel } from "./featured-banner/side-panel";
 import { Dots } from "./featured-banner/stepper";
 import type { LightboxState } from "./featured-banner/types";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 const ROTATE_MS = 14000;
 
 export function FeaturedBanner({ items }: { items: Meta[] }) {
+  const cinematic = useCinematicDesktop();
+  const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [focusWithin, setFocusWithin] = useState(false);
   const [inView, setInView] = useState(true);
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
   const visible = usePageVisible();
@@ -28,10 +33,11 @@ export function FeaturedBanner({ items }: { items: Meta[] }) {
   }, []);
 
   useEffect(() => {
-    if (paused || lightbox || !inView || !visible || items.length < 2) return;
+    if (reduce || paused || focusWithin || lightbox || !inView || !visible || items.length < 2)
+      return;
     const id = setInterval(() => setActive((i) => (i + 1) % items.length), ROTATE_MS);
     return () => clearInterval(id);
-  }, [paused, lightbox, inView, visible, items.length]);
+  }, [reduce, paused, focusWithin, lightbox, inView, visible, items.length]);
 
   useEffect(() => {
     if (active >= items.length && items.length > 0) setActive(items.length - 1);
@@ -40,7 +46,7 @@ export function FeaturedBanner({ items }: { items: Meta[] }) {
   if (items.length === 0) {
     if (hasLoadedRef.current) return null;
     return (
-      <section className="flex flex-col gap-5">
+      <section data-frame-recommended={cinematic ? "" : undefined} className="flex flex-col gap-5">
         <h2 className="font-display text-[28px] font-medium leading-tight tracking-tight text-ink">
           {t("Recommended")}
         </h2>
@@ -58,9 +64,14 @@ export function FeaturedBanner({ items }: { items: Meta[] }) {
   return (
     <section
       ref={ref}
+      data-frame-recommended={cinematic ? "" : undefined}
       className="flex flex-col gap-5"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setFocusWithin(true)}
+      onBlurCapture={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setFocusWithin(false);
+      }}
     >
       <h2 className="font-display text-[28px] font-medium leading-tight tracking-tight text-ink">
         {t("Recommended")}

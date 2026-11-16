@@ -930,7 +930,11 @@ export function PlayPicker({
   }
 
   return (
-    <main ref={mainRef} className="absolute inset-0 z-50 overflow-y-auto bg-canvas">
+    <main
+      data-frame-feature-page="picker"
+      ref={mainRef}
+      className="absolute inset-0 z-50 overflow-y-auto bg-canvas"
+    >
       <BackdropLayer src={backdropSrc} />
 
       <div

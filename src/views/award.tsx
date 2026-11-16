@@ -123,7 +123,11 @@ export function AwardView({ awardType }: { awardType: AwardType }) {
     people.writers.length === 0;
 
   return (
-    <main ref={scrollRef} className="relative h-full overflow-y-auto bg-canvas">
+    <main
+      data-frame-feature-page="award"
+      ref={scrollRef}
+      className="relative h-full overflow-y-auto bg-canvas"
+    >
       <AwardHero type={awardType} tint={tint} films={films} loading={loadingFilms} />
 
       <div className="relative mx-auto flex max-w-[1180px] flex-col gap-12 px-12 pb-32 pt-14">

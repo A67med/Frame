@@ -303,10 +303,14 @@ export function FollowingView({ active = true }: { active?: boolean }) {
   }, []);
 
   return (
-    <main ref={scrollCb} className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas">
+    <main
+      data-frame-page="following"
+      ref={scrollCb}
+      className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas"
+    >
       <ScrollRootContext.Provider value={scrollEl}>
         <div className="flex w-full flex-col gap-10 px-12 pb-32 pt-12">
-          <header>
+          <header className="frame-section-heading">
             <h1 className="text-[34px] font-semibold tracking-tight text-ink">{t("Following")}</h1>
             <p className="mt-1 text-[14px] text-ink-subtle">
               {t("The people you follow shape For You in Radar.")}{" "}

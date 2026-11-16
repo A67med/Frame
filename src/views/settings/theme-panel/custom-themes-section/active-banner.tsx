@@ -29,7 +29,7 @@ export function ActiveBanner({
           onClick={onCustomize}
           className="harbor-press-pop h-11 shrink-0 rounded-[8px] bg-ink px-4 text-[15.5px] font-semibold text-canvas transition-opacity hover:opacity-90"
         >
-          {t("Edit colors")}
+          {t("Customize theme")}
         </button>
       </div>
     );
@@ -82,7 +82,7 @@ export function ActiveBanner({
             onClick={onCustomize}
             className="harbor-press-pop flex h-11 items-center gap-2 rounded-[8px] bg-ink/[0.08] px-4 text-[15.5px] font-semibold text-ink transition-colors hover:bg-ink/[0.14]"
           >
-            {t("Edit colors")}
+            {t("Customize theme")}
           </button>
           <button
             type="button"
@@ -100,6 +100,8 @@ export function ActiveBanner({
 
 function labelForLayout(l?: string): string {
   switch (l) {
+    case "frame":
+      return "Frame layout";
     case "topdock":
       return "Top dock";
     case "rail":

@@ -293,7 +293,11 @@ export function Movies({ active = true }: { active?: boolean }) {
   }, [top10, rows, allRestRows]);
 
   return (
-    <main ref={scrollCb} className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas">
+    <main
+      data-frame-feature-page="movies"
+      ref={scrollCb}
+      className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas"
+    >
       <ScrollRootContext.Provider value={scrollEl}>
         <CinemaHero slides={shownHero} eyebrow={t("Featured tonight")} />
         <div className="relative flex w-full flex-col gap-12 px-12 pb-32 pt-12">

@@ -6,6 +6,8 @@ import { BrandTiles } from "@/components/brand-tiles";
 import { DiscoveryQueueCta } from "@/components/discovery-queue-cta";
 import { TopPeopleCta } from "@/components/top-people-cta";
 import { FeaturedBanner } from "@/components/featured-banner";
+import { PageHeading } from "@/components/frame/page-heading";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import { AwardTiles } from "@/components/award-tiles";
 import { GenreTiles } from "@/components/genre-tiles";
 import { LanguageTiles } from "@/components/language-tiles";
@@ -527,9 +529,14 @@ export function Discover({ active = true }: { active?: boolean }) {
   };
 
   return (
-    <main ref={scrollCb} className="flex-1 overflow-y-auto overflow-x-hidden px-12 pb-20 pt-28">
+    <main
+      data-frame-page="discover"
+      ref={scrollCb}
+      className="flex-1 overflow-y-auto overflow-x-hidden px-12 pb-20 pt-28"
+    >
       <ScrollRootContext.Provider value={scrollEl}>
         <div {...contentDrag} className="flex flex-col gap-14">
+          <DiscoverHeading />
           {pageRows.editMode || !hiddenFeatured ? (
             <div className="relative">
               {pageRows.editMode && (
@@ -679,3 +686,15 @@ export function Discover({ active = true }: { active?: boolean }) {
 }
 
 export { Discover as DiscoverView };
+
+function DiscoverHeading() {
+  const cinematic = useCinematicDesktop();
+  const t = useT();
+  return cinematic ? (
+    <PageHeading
+      eyebrow={t("Discover")}
+      title={t("Find your next favourite.")}
+      description={t("Browse your catalogs")}
+    />
+  ) : null;
+}

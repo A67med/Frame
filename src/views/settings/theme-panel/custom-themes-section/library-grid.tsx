@@ -1,3 +1,4 @@
+import { ThemeThumbnail } from "@/components/theme-thumbnail";
 import { ArrowRight, Check, Copy, FilePlus2, Palette, Trash2 } from "../../icons";
 import { useState } from "react";
 import type { ThemePreset } from "@/lib/theme";
@@ -193,6 +194,7 @@ function LibraryCard({
             : { background: bg }
         }
       >
+        {theme.layout === "frame" && <ThemeThumbnail theme={theme} />}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-canvas/40" />
         <CategoryBadge category={category} active={active} />
         {active && (

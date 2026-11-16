@@ -10,6 +10,8 @@ import {
 } from "react";
 import { BackToTop } from "@/components/back-to-top";
 import { HeroCarousel, type Slide } from "@/components/hero-carousel";
+import { PageHeading } from "@/components/frame/page-heading";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import { CollectionsRow } from "@/components/collections-row";
 import { TmdbNudge } from "@/components/nudge";
 import { Row, ScrollRootContext } from "@/components/row";
@@ -852,7 +854,8 @@ export function Home({
   }, []);
   useScrollMemory("home", scrollRef, active);
 
-  const { homeResetTick } = useView();
+  const { homeResetTick, setView } = useView();
+  const cinematic = useCinematicDesktop();
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0, behavior: "auto" });
   }, [homeResetTick]);
@@ -1156,12 +1159,29 @@ export function Home({
 
   return (
     <main
+      data-frame-page="home"
       ref={scrollCb}
       className="flex-1 overflow-y-auto overflow-x-hidden px-5 pt-24 pb-14 sm:px-8 lg:px-12 lg:pt-28"
     >
       <ScrollRootContext.Provider value={scrollEl}>
         <div {...contentDrag} className="relative flex flex-col gap-12">
-          <div className={tmdbNudgePosition}>
+          {cinematic && (
+            <PageHeading
+              eyebrow={t("Your cinema")}
+              title={t("A world worth watching.")}
+              actions={
+                <>
+                  <button type="button" onClick={() => setView("discover")}>
+                    {t("Discover")}
+                  </button>
+                  <button type="button" onClick={() => setView("library")}>
+                    {t("My library")}
+                  </button>
+                </>
+              }
+            />
+          )}
+          <div className={cinematic ? "frame-home-nudge" : tmdbNudgePosition}>
             <div className="pointer-events-auto">
               <TmdbNudge suppress={tmdbProvidedByAddon || settings.homeMode === "classic"} />
             </div>
@@ -1191,7 +1211,7 @@ export function Home({
               <div
                 data-scroll-anchor="hero"
                 data-tv-hero-zone
-                className={`relative ${heroFull ? `${cwTop ? "" : "-mt-24 lg:-mt-28"} -mb-12 harbor-hero-full` : ""}`}
+                className={`relative ${!cinematic && heroFull ? `${cwTop ? "" : "-mt-24 lg:-mt-28"} -mb-12 harbor-hero-full` : ""}`}
               >
                 {editMode && (
                   <PinnedRowControls
@@ -1202,7 +1222,8 @@ export function Home({
                 )}
                 <HeroCarousel
                   slides={shownHeroSlides}
-                  full={heroFull}
+                  full={cinematic ? false : heroFull}
+                  editorial={cinematic}
                   fullQuality={settings.heroFullQuality}
                   playTrailers={settings.heroTrailers}
                   bottomAlign
