@@ -1,160 +1,96 @@
 <div align="center">
 
+<img src="docs/media/showcase/hero.jpg" width="920" alt="Frame, a home for your movies and shows. The Default desktop shows its navigation rail, featured movie and trending picks.">
+
 # Frame
 
-**Your media, your space.**
+**An open source desktop app for discovering, organizing and watching movies and TV.**
 
-A personal Windows desktop app for discovering, organizing and watching movies and TV.
-Powered by Tauri 2, React, TypeScript, Rust and libmpv.
+<a href="https://github.com/A67med/Frame/releases/latest"><img src="docs/media/showcase/download.png" width="310" alt="Download Frame for Windows x64, latest stable release"></a>
 
-[**Download Frame for Windows**](https://github.com/A67med/Frame/releases/latest) · [Explore themes](#make-it-yours) · [Features](#what-you-can-do) · [Build from source](#build-from-source)
+Windows 10 / 11 · x64 · Signed updater
 
-![Latest release](https://img.shields.io/github/v/release/A67med/Frame?label=release)
-![Platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-343a40)
-![License](https://img.shields.io/github/license/A67med/Frame)
-
-<img src="docs/theme-studio-evidence/frame-home.png" alt="Frame 0.4 desktop interface, Default theme" width="900">
-
-_The redesigned Frame desktop — browse your collection, find your next watch and make every screen your own._
+[Explore the app](#inside-frame) · [Browse the themes](#cinematic-themes) · [Build from source](#build-from-source)
 
 </div>
 
----
+## Inside Frame
 
-## What's new in v0.4.0
+### Follow the people behind the films
 
-**Theme Studio, reinvented.** Default now stays in the Frame layout while you're editing and previewing it. Seven distinct modern themes, richer design controls, reliable live previews, undo/redo, and separate options to update a custom theme or save a new copy.
+Follow your favorite actors and directors. Radar brings their work together, and **Digital Releases** shows verified Egyptian digital dates from TMDB. Browse by month and see which people you follow are connected to each release.
 
-- **Frame layout everywhere it belongs.** Default, modern presets, previews and saved copies use the same explicit layout. Existing classic themes retain their original design.
-- **Design the details.** Adjust typography, spacing, corner radius, solid/glass/gradient surfaces, elevation and navigation treatment.
-- **Keep control.** Search the theme collection; reset, undo and redo; import and export your work as a `.framestyle` file.
-- **Save with confidence.** Edit without duplicate themes, or use **Save as a new theme**. Draft and saved appearance now agree.
+<a href="docs/media/showcase/radar.jpg"><img src="docs/media/showcase/radar.jpg" width="920" alt="Digital Releases in Zodiac, showing Being Heumann with its November 13 Egyptian digital date and Mark Ruffalo’s Following chip."></a>
 
-[Read the Theme Studio guide](docs/THEME-STUDIO.md) · [See verification screenshots](docs/theme-studio-evidence/README.md) · [View the v0.4.0 release](https://github.com/A67med/Frame/releases/tag/v0.4.0)
+### From discovery to playback
 
-## Make it yours
+Browse Home, Discover and global search, then keep your shortlist in My Library, Watchlist or Collections. Frame uses **libmpv** for desktop playback, with subtitles, resume and picture-in-picture. Optional Stremio add-ons and tracking integrations extend the experience.
 
-<div align="center">
+<a href="docs/media/showcase/details.jpg"><img src="docs/media/showcase/details.jpg" width="920" alt="The Being Heumann movie page in Zodiac with playback, Watchlist and provider information."></a>
 
-|                                                  Default                                                   |                                                  Noir Cinema                                                   |
-| :--------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
-| <img src="docs/theme-studio-evidence/frame-home.png" alt="Frame Default — graphite and amber" width="430"> | <img src="docs/theme-studio-evidence/noir-cinema-home.png" alt="Noir Cinema — charcoal and brass" width="430"> |
-|                                     Graphite, amber, editorial detail                                      |                                          Cinematic charcoal and brass                                          |
+## Cinematic themes
 
-|                                                         Aurora                                                         |                                                      Minimal Frost                                                      |
-| :--------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: |
-| <img src="docs/theme-studio-evidence/aurora-frame-home.png" alt="Aurora — violet, blue and luminous mint" width="430"> | <img src="docs/theme-studio-evidence/minimal-frost-home.png" alt="Minimal Frost — bright neutral surfaces" width="430"> |
-|                                              Deep blue, violet, soft glow                                              |                                              Clean, bright and translucent                                              |
+<img src="docs/media/showcase/collection.png" width="920" alt="The cinematic collection, with swatches from Frame’s six built-in themes.">
 
-|                                                      Editorial                                                      |                                                  OLED Black                                                   |
-| :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-| <img src="docs/theme-studio-evidence/editorial-home.png" alt="Editorial — warm paper with red accents" width="430"> | <img src="docs/theme-studio-evidence/amoled-home.png" alt="OLED Black — black with mint accents" width="430"> |
-|                                            Warm paper, ink, red accents                                             |                                        True black, minimal decoration                                         |
+Six themes change the typography, navigation, spacing and shape of the interface. The same Radar view shows how each one looks.
 
-<img src="docs/theme-studio-evidence/retro-cinema-home.png" alt="Retro Cinema — oxblood, cream and amber" width="620">
+| Default                                                                                                                                                                     | Project Hail Mary                                                                                                                                                                                                 |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="docs/media/showcase/frame.jpg"><img src="docs/media/showcase/frame.jpg" width="450" alt="Default theme with warm amber accents and editorial serif headings."></a> | <a href="docs/media/showcase/project-hail-mary.jpg"><img src="docs/media/showcase/project-hail-mary.jpg" width="450" alt="Project Hail Mary theme with rounded navigation, General Sans and slate surfaces."></a> |
+| Editorial type and a compact graphite rail.                                                                                                                                 | Floating navigation, slate panels and amber controls.                                                                                                                                                             |
 
-**Retro Cinema** — expressive type, oxblood, cream and amber.
+| Dune                                                                                                                                                                               | La La Land                                                                                                                                                                                      |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="docs/media/showcase/dune.jpg"><img src="docs/media/showcase/dune.jpg" width="450" alt="Dune theme with angular posters, copper details and a wider navigation rail."></a> | <a href="docs/media/showcase/la-la-land.jpg"><img src="docs/media/showcase/la-la-land.jpg" width="450" alt="La La Land theme with indigo panels, rounded posters and italic serif titles."></a> |
+| Wide spacing, angular cards and copper rules.                                                                                                                                      | Indigo surfaces, arched posters and italic serif titles.                                                                                                                                        |
 
-</div>
+| Doomsday                                                                                                                                                                                  | Zodiac                                                                                                                                                                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="docs/media/showcase/doomsday.jpg"><img src="docs/media/showcase/doomsday.jpg" width="450" alt="Doomsday theme with green-black surfaces, bold headings and gold selection."></a> | <a href="docs/media/showcase/zodiac.jpg"><img src="docs/media/showcase/zodiac.jpg" width="450" alt="Zodiac theme with blue-green panels, silver accents and geometric Jura typography."></a> |
+| Green-black surfaces, heavy titles and gold selection.                                                                                                                                    | Geometric Jura lettering, silver accents and fine rules.                                                                                                                                     |
 
-> **Classics are still here.** Stremio, Royal and Velvet remain available with their original layouts. Your existing imported themes are not silently converted.
+### Design your own
 
-<details>
-<summary><strong>How do I customize a theme?</strong></summary>
+Open **Settings → Appearance → Your themes** to get to Theme Studio. Preview colors, typography, layout and spacing as you work. Save a custom theme or share it as a `.framestyle` file.
 
-1. Open **Settings → Appearance → Your themes**.
-2. Choose **Customize theme** or **Open studio**.
-3. Pick a preset in **Themes**, then use **Look**, **Layout**, and **Code** to make it yours.
-4. Use **Save changes** for a custom theme or **Save as a new theme** for a separate copy. Built-in presets save as user themes.
-
-Reset and undo/redo work on your current draft. You can export your theme and import it again later.
-
-</details>
-
-## What you can do
-
-| Explore                                                                                 | Play and organize                                                                                   | Personalize                                                                                                     |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Home, Discover, Movies & TV** — browse titles, artwork, filters and global search.    | **Native mpv playback** — local files, subtitles, resume, skip intro/outro and picture-in-picture.  | **Theme Studio** — seven modern presets, detailed design controls, custom CSS, HTML and optional JavaScript.    |
-| **Radar & Following** — track popular, upcoming and followed people with TMDB metadata. | **My Library** — collections, filters and context menus; back up and restore settings and app data. | **Optional integrations** — Stremio add-ons, Letterboxd tracking, paired remote control and additional sources. |
-
-Frame is a **desktop application**, not a hosted streaming service. Your local video files stay on your computer; browsing metadata and optional integrations can require network access.
-
-### A closer look
-
-|                               Navigation and settings                               |                                            Theme selection                                            |
-| :---------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
-| <img src="docs/screenshots/sidebar.png" alt="Frame navigation sidebar" width="160"> | <img src="docs/theme-studio-evidence/default-studio.png" alt="Frame Theme Studio editor" width="560"> |
-
-<details>
-<summary><strong>How do backups and remote access work?</strong></summary>
-
-Backups use `frame-backup-YYYY-MM-DD.framex` and can be encrypted with AES-256-GCM. Frame can also import older `.harbx` backups. The app saves a restore checkpoint beforehand and rolls back if restoring fails. Backups cover settings and app data, **not your movie or TV files**.
-
-The optional phone remote and browser access are off by default. Enable them under **Settings → Sources & library → P2P & servers → Server**, then pair the other device using the displayed code. You can forget paired devices at any time.
-
-</details>
+<a href="docs/media/showcase/studio.jpg"><img src="docs/media/showcase/studio.jpg" width="920" alt="Theme Studio's live Look editor with palette swatches and controls beside the Frame Home view."></a>
 
 ## Get Frame
 
-**Windows 10 or 11 (x64)** is the supported release target. The installer includes mpv and its runtime files; it also sets up WebView2 if needed.
-
-### [Download the latest Windows installer](https://github.com/A67med/Frame/releases/latest)
-
-The app checks GitHub Releases for signed updates. It downloads them in the background when appropriate and only installs when you choose. Builds using an older updater signing key may require a one-time manual installation.
+**[Download the latest Windows x64 installer](https://github.com/A67med/Frame/releases/latest)**. The installer bundles playback dependencies. Frame checks GitHub for signed updates.
 
 <details>
-<summary><strong>TMDB setup</strong></summary>
+<summary><strong>Set up metadata and optional integrations</strong></summary>
 
-Radar, Following and most artwork use TMDB. Add your own API key under **Settings → Sources & library → Library & metadata**. Some features and external integrations need an internet connection.
+Add a TMDB API key in **Settings → Sources & library → Library & metadata** to enable Radar and Following metadata. Digital Releases depends on TMDB’s Egyptian records, which can be incomplete. You can connect Stremio or trackers from Settings and pair an optional phone remote under **Sources & library → P2P & servers**.
+
+Use **Backup & restore** to export your settings and app data. Video files stay on your drive.
 
 </details>
 
-<details>
-<summary><strong>Build from source</strong></summary>
+## Build from source
 
-Requires Node.js, pnpm, Rust, the Windows MSVC toolchain, CMake and Git Bash's `sh` on your PATH. Java extensions also require the JDK/jlink staging step.
+<details>
+<summary><strong>Windows prerequisites and commands</strong></summary>
+
+Install Node.js, pnpm, Rust, the Windows MSVC toolchain, CMake and Git Bash. Java extension tooling also requires a JDK.
 
 ```sh
 pnpm install
 pnpm run setup
-pnpm tauri build --bundles nsis
-```
-
-The NSIS installer is emitted under `src-tauri/target/release/bundle/nsis/`.
-
-For a development build:
-
-```sh
-pnpm install
-pnpm dev
 pnpm tauri dev
-
 ```
 
-Run checks with `pnpm run typecheck` and `pnpm test`.
+Run `pnpm run typecheck` and `pnpm test` to check changes. Use `pnpm tauri build --bundles nsis` to create an installer under `src-tauri/target/release/bundle/nsis/`.
 
 </details>
-
-<details>
-<summary><strong>Release process and supported platforms</strong></summary>
-
-Merging changes into `main` starts the Windows Release workflow. It prepares the version, builds and verifies a signed x64 NSIS installer, creates `latest.json`, and publishes only after the build succeeds. The configured Tauri updater public key must match the repository's `TAURI_SIGNING_PRIVATE_KEY` Actions secret.
-
-macOS and Linux are not officially built or distributed. Flatpak packaging is manual-only.
-
-</details>
-
-## Under the hood
-
-**Tauri 2 · React · TypeScript · Rust · libmpv · TMDB**
 
 <div align="center">
 
-**[Releases](https://github.com/A67med/Frame/releases) · [Theme Studio](docs/THEME-STUDIO.md) · [Screenshots](docs/theme-studio-evidence/README.md)**
+**Tauri 2 · React · TypeScript · Rust · libmpv**
 
-Made for the movies and shows you love.
+[Releases](https://github.com/A67med/Frame/releases) · [Report an issue](https://github.com/A67med/Frame/issues) · [Architecture](docs/ARCHITECTURE.md) · [MIT License](LICENSE)
+
+<sub>Application screenshots use a demo profile. Film artwork and metadata are supplied by TMDB and other catalog providers.</sub>
 
 </div>
-
-Architecture and compatibility: [architecture](docs/ARCHITECTURE.md), [cleanup audit](docs/SOURCE-CLEANUP-AUDIT.md), [legacy compatibility](docs/LEGACY-COMPATIBILITY.md). Run `pnpm check:hygiene` to check repository invariants.
