@@ -34,7 +34,7 @@ export function AnchoredMenu({
     const place = () => {
       const r = anchorRef.current?.getBoundingClientRect();
       if (!r) return;
-      const w = Math.max(r.width, width ?? 0);
+      const w = Math.min(Math.max(r.width, width ?? 0), Math.max(0, window.innerWidth - EDGE * 2));
       const left = Math.min(Math.max(EDGE, r.left), window.innerWidth - w - EDGE);
       const menuH = menuRef.current?.offsetHeight ?? 0;
       const above = r.top - GAP - EDGE;

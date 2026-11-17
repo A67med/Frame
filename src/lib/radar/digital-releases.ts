@@ -2,8 +2,11 @@ import { effectiveTmdbLanguage, get } from "@/lib/providers/tmdb/tmdb-client";
 import { movieMeta, type RawMovie } from "@/lib/providers/tmdb/tmdb-meta-mappers";
 import { createCatalogCache } from "@/lib/providers/tmdb/tmdb-catalog-cache";
 import type { RadarItem } from "./radar";
+import { loadFollowCredits, type FollowAttribution } from "@/lib/follow-credits";
+import type { FollowedPerson } from "@/lib/follows";
 
 const calendars = createCatalogCache();
+export type DigitalRelease = RadarItem & { people: FollowAttribution[] };
 
 type ReleaseDates = {
   results: { iso_3166_1: string; release_dates: { type: number; release_date: string }[] }[];
@@ -37,13 +40,15 @@ export function digitalReleaseDay(
   return dates.sort()[0] ?? null;
 }
 
-/** Read every discovery page in the window, then verify regional type-4 records. */
+/** Discover only followed people's movies, then verify role and regional type-4 records. */
 export async function fetchDigitalReleases(
   key: string,
   region: string,
   from: string,
   to: string,
-): Promise<RadarItem[]> {
+  people: FollowedPerson[],
+  signal?: AbortSignal,
+): Promise<DigitalRelease[]> {
   if (!key) throw new Error("missing-tmdb-key");
   if (
     !/^[A-Z]{2}$/.test(region) ||
@@ -53,58 +58,86 @@ export async function fetchDigitalReleases(
   ) {
     throw new Error("invalid-release-window");
   }
-  const cacheKey = JSON.stringify([key, region, from, to, effectiveTmdbLanguage()]);
-  const cached = calendars.get<RadarItem[]>(cacheKey);
+  const followed = [...new Map(people.map((p) => [p.id, p])).values()];
+  if (!followed.length) return [];
+  if (followed.some((p) => !Number.isSafeInteger(p.id) || p.id <= 0))
+    throw new Error("invalid-person");
+  const cacheKey = JSON.stringify([key, region, from, to, effectiveTmdbLanguage(), followed]);
+  const cached = calendars.get<DigitalRelease[]>(cacheKey);
   if (cached) return cached;
   const movies = new Map<number, RawMovie>();
-  let totalPages = 1;
-  for (let page = 1; page <= totalPages; page += 1) {
-    const data = await get<{ results: RawMovie[]; total_pages: number }>(key, "discover/movie", {
-      region,
-      with_release_type: "4",
-      "release_date.gte": from,
-      "release_date.lte": to,
-      sort_by: "primary_release_date.asc",
-      include_adult: "false",
-      page: String(page),
-    });
-    if (
-      !data ||
-      !Array.isArray(data.results) ||
-      !Number.isInteger(data.total_pages) ||
-      data.total_pages < 0
-    ) {
-      throw new Error("digital-releases-unavailable");
-    }
-    // TMDB cannot serve pages above 500; never present a truncated calendar as complete.
-    if (data.total_pages > 500) throw new Error("release-window-too-large");
-    totalPages = data.total_pages;
-    for (const movie of data.results) {
-      if (
-        !movie ||
-        !Number.isInteger(movie.id) ||
-        movie.id <= 0 ||
-        typeof movie.title !== "string"
-      ) {
-        throw new Error("invalid-movie");
+  const discover = async () => {
+    // Keep URLs bounded for large Following lists; a pipe means any of these people.
+    for (let start = 0; start < followed.length; start += 40) {
+      let totalPages = 1;
+      for (let page = 1; page <= totalPages; page += 1) {
+        if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
+        const data = await get<{ results: RawMovie[]; total_pages: number }>(
+          key,
+          "discover/movie",
+          {
+            with_people: followed
+              .slice(start, start + 40)
+              .map((p) => p.id)
+              .join("|"),
+            region,
+            with_release_type: "4",
+            "release_date.gte": from,
+            "release_date.lte": to,
+            sort_by: "primary_release_date.asc",
+            include_adult: "false",
+            page: String(page),
+          },
+        );
+        if (
+          !data ||
+          !Array.isArray(data.results) ||
+          !Number.isInteger(data.total_pages) ||
+          data.total_pages < 0
+        ) {
+          throw new Error("digital-releases-unavailable");
+        }
+        // TMDB cannot serve pages above 500; never present a truncated calendar as complete.
+        if (data.total_pages > 500) throw new Error("release-window-too-large");
+        totalPages = data.total_pages;
+        for (const movie of data.results) {
+          if (
+            !movie ||
+            !Number.isInteger(movie.id) ||
+            movie.id <= 0 ||
+            typeof movie.title !== "string"
+          ) {
+            throw new Error("invalid-movie");
+          }
+          movies.set(movie.id, movie);
+        }
       }
-      movies.set(movie.id, movie);
     }
-  }
-  const items: RadarItem[] = [];
-  const candidates = [...movies.values()];
+  };
+  // Discovery and the cached filmographies are independent; avoid a request waterfall.
+  const [follows] = await Promise.all([loadFollowCredits(key, followed), discover()]);
+  if (follows.failed) throw new Error("following-unavailable");
+  const credits = new Map(
+    follows.credits.filter((c) => c.mediaType === "movie").map((c) => [c.tmdbId, c]),
+  );
+  const items: DigitalRelease[] = [];
+  const candidates = [...movies.values()].filter((movie) => credits.has(movie.id));
   // Bound pending work as well as the shared TMDB scheduler's HTTP concurrency.
   for (let i = 0; i < candidates.length; i += 6) {
+    if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
     const batch = await Promise.all(
       candidates.slice(i, i + 6).map(async (movie) => {
         const data = await get<ReleaseDates>(key, `movie/${movie.id}/release_dates`);
         if (!data) throw new Error("digital-releases-unavailable");
         const day = digitalReleaseDay(data, region, from, to);
-        return day ? { ...movieMeta(movie), radarDate: day } : null;
+        return day
+          ? { ...movieMeta(movie), radarDate: day, people: credits.get(movie.id)!.people }
+          : null;
       }),
     );
     for (const item of batch) if (item) items.push(item);
   }
+  if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
   items.sort((a, b) => a.radarDate!.localeCompare(b.radarDate!) || a.name.localeCompare(b.name));
   calendars.set(cacheKey, items);
   return items;

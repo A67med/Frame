@@ -714,7 +714,7 @@ export function Row({
     >
       {hasHeader && (
         <div
-          className="relative z-20 flex items-baseline justify-between gap-4 pe-1"
+          className="relative z-20 flex flex-wrap items-baseline justify-between gap-4 pe-1"
           onPointerEnter={() => {
             if (dockEnabled) {
               dockPointerXRef.current = null;
@@ -743,7 +743,7 @@ export function Row({
             </div>
           )}
           {(onViewAll || headerRight) && (
-            <div className="flex shrink-0 items-center gap-3">
+            <div className="flex min-w-0 flex-wrap items-center gap-3">
               {headerRight}
               {onViewAll && (
                 <button

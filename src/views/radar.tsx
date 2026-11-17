@@ -26,7 +26,8 @@ import { useSettings } from "@/lib/settings";
 import { library } from "@/lib/stremio";
 import { useScrollMemory, useView } from "@/lib/view";
 import { readLocalEntries, subscribeWatchlist } from "@/lib/watchlist";
-import { fetchDigitalReleases } from "@/lib/radar/digital-releases";
+import { fetchDigitalReleases, type DigitalRelease } from "@/lib/radar/digital-releases";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { fmtDate } from "./person/person-utils";
 
 const PILL =
@@ -277,21 +278,35 @@ function TrendingSection({ tmdbKey }: { tmdbKey: string }) {
 
 function DigitalReleasesSection({ tmdbKey }: { tmdbKey: string }) {
   const t = useT();
-  const { settings } = useSettings();
+  const { people } = useFollows();
+  const { setView } = useView();
+  const peopleKey = JSON.stringify(people);
   const [month, setMonth] = useState(() => localIsoDay(Date.now()).slice(0, 7));
-  const [items, setItems] = useState<RadarItem[]>([]);
+  const [items, setItems] = useState<DigitalRelease[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);
-  const region = settings.region.toUpperCase();
+  const region = "EG";
+  const moveMonth = (delta: number) => {
+    const [year, number] = month.split("-").map(Number);
+    setMonth(localIsoDay(new Date(year, number - 1 + delta, 1).getTime()).slice(0, 7));
+  };
   useEffect(() => {
     let cancelled = false;
+    const controller = new AbortController();
     setLoading(true);
     setError(false);
     setItems([]);
     const [year, number] = month.split("-").map(Number);
     const end = localIsoDay(new Date(year, number, 0).getTime());
-    fetchDigitalReleases(tmdbKey, region, `${month}-01`, end)
+    fetchDigitalReleases(
+      tmdbKey,
+      region,
+      `${month}-01`,
+      end,
+      JSON.parse(peopleKey),
+      controller.signal,
+    )
       .then((result) => {
         if (!cancelled) setItems(result);
       })
@@ -303,43 +318,91 @@ function DigitalReleasesSection({ tmdbKey }: { tmdbKey: string }) {
       });
     return () => {
       cancelled = true;
+      controller.abort();
     };
-  }, [tmdbKey, region, month, attempt]);
+  }, [tmdbKey, region, month, peopleKey, attempt]);
   return (
     <Row
       title={t("Digital Releases")}
-      headerDescription={t("TMDB digital dates for {region}. No other region is substituted.", {
-        region,
-      })}
+      headerDescription={
+        <p className="max-w-prose text-[13px] leading-relaxed text-ink-subtle">
+          {t("Movies from your Following. Verified TMDB digital dates for {region} only.", {
+            region: t("Egypt"),
+          })}
+        </p>
+      }
       headerRight={
-        <input
-          type="month"
-          aria-label={t("Release month")}
-          value={month}
-          onChange={(event) => {
-            if (/^\d{4}-\d{2}$/.test(event.target.value)) setMonth(event.target.value);
-          }}
-          className="rounded-lg bg-surface px-3 py-2 text-[13px] text-ink ring-1 ring-edge-soft"
-        />
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            aria-label={t("Previous month")}
+            onClick={() => moveMonth(-1)}
+            className="rounded-lg p-2 hover:bg-elevated"
+          >
+            <ChevronLeft size={18} className="dir-icon" />
+          </button>
+          <input
+            type="month"
+            aria-label={t("Release month")}
+            value={month}
+            onChange={(event) => {
+              if (/^\d{4}-\d{2}$/.test(event.target.value)) setMonth(event.target.value);
+            }}
+            className="rounded-lg bg-surface px-3 py-2 text-[13px] text-ink ring-1 ring-edge-soft"
+          />
+          <button
+            type="button"
+            aria-label={t("Next month")}
+            onClick={() => moveMonth(1)}
+            className="rounded-lg p-2 hover:bg-elevated"
+          >
+            <ChevronRight size={18} className="dir-icon" />
+          </button>
+        </div>
       }
       min={148}
       shape="portrait"
       scrollKey={`radar:digital:${region}:${month}`}
     >
       {loading ? (
-        <RowMessage>
-          <Spinner />
-        </RowMessage>
+        Array.from({ length: 6 }, (_, i) => (
+          <div
+            key={i}
+            aria-label={i === 0 ? t("Loading") : undefined}
+            className="aspect-[2/3] rounded-lg bg-elevated motion-safe:animate-pulse"
+          />
+        ))
       ) : error ? (
         <RetryMessage onRetry={() => setAttempt((n) => n + 1)} />
       ) : items.length ? (
         items.map((item) => (
-          <RadarCard key={item.id} meta={item} reason={`${fmtDate(item.radarDate!)} · ${region}`} />
+          <RadarCard
+            key={item.id}
+            meta={item}
+            people={item.people}
+            reason={`${fmtDate(item.radarDate!)} · ${region}`}
+          />
         ))
       ) : (
-        <RowMessage>
-          {t("No digital release dates are recorded for this region and month.")}
-        </RowMessage>
+        <div
+          style={{ gridColumn: "span 3" }}
+          className="flex min-h-40 max-w-full flex-col justify-center gap-3 text-[13px] leading-relaxed text-ink-subtle"
+        >
+          <p>
+            {people.length
+              ? t(
+                  "No matching digital releases from your Following in Egypt this month. Try another month or follow more people; regional records may be incomplete.",
+                )
+              : t("Follow actors and directors to find their verified digital releases.")}
+          </p>
+          <button
+            type="button"
+            onClick={() => setView("following")}
+            className="self-start text-accent hover:underline"
+          >
+            {t("Manage Following")}
+          </button>
+        </div>
       )}
     </Row>
   );

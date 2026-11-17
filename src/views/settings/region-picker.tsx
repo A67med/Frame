@@ -7,6 +7,7 @@ import { t, useUiLanguage } from "@/lib/i18n";
 import { regionFlagSrc } from "@/lib/region-flags";
 
 const REGIONS: Array<{ code: string; label: string }> = [
+  { code: "EG", label: "Egypt" },
   { code: "US", label: "United States" },
   { code: "CA", label: "Canada" },
   { code: "GB", label: "United Kingdom" },

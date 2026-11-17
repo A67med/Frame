@@ -1,5 +1,13 @@
 // Newly introduced UI copy remains usable until each locale provides an override.
 const uiFallback: Record<string, string> = {
+  "Movies from your Following. Verified TMDB digital dates for {region} only.":
+    "Movies from your Following. Verified TMDB digital dates for {region} only.",
+  "No matching digital releases from your Following in Egypt this month. Try another month or follow more people; regional records may be incomplete.":
+    "No matching digital releases from your Following in Egypt this month. Try another month or follow more people; regional records may be incomplete.",
+  "Follow actors and directors to find their verified digital releases.":
+    "Follow actors and directors to find their verified digital releases.",
+  "Egypt": "Egypt",
+
   "Download an earlier installer if needed. Export a backup first: older builds may not understand settings or data written by a newer version.":
     "Download an earlier installer if needed. Export a backup first: older builds may not understand settings or data written by a newer version.",
   "TMDB digital dates for {region}. No other region is substituted.":

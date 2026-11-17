@@ -26,11 +26,11 @@ function escapeGeneratedHtml(value: string): string {
 }
 
 export type ThemePresetId =
-  | "noir-cinema"
-  | "aurora-frame"
-  | "minimal-frost"
-  | "editorial"
-  | "retro-cinema"
+  | "project-hail-mary"
+  | "dune"
+  | "la-la-land"
+  | "doomsday"
+  | "zodiac"
   | "frame"
   | "amoled"
   | "cool-grey"
@@ -61,6 +61,7 @@ export type ThemeButtonStyle = "flat" | "glossy" | "minui" | "crunch" | "noir" |
 export type ActiveThemeId = ThemePresetId | "custom" | `user:${string}`;
 
 export type FontPairId =
+  | "jura-inter"
   | "sentient-switzer"
   | "fraunces-inter"
   | "general-sans"
@@ -187,6 +188,7 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
     bokeh: false,
     fontPair: "general-sans",
     design: {
+      composition: "standard",
       radius: 2,
       density: 0.9,
       headingScale: 0.95,
@@ -1866,6 +1868,13 @@ export const TEMPLATE_THEMES: ThemePreset[] = [
 ];
 
 export const FONT_PAIRS: Record<FontPairId, FontPair> = {
+  "jura-inter": {
+    id: "jura-inter",
+    name: "Jura + Inter",
+    blurb: "Geometric cinema titles, readable everyday text.",
+    display: '"Jura", "Inter", system-ui, sans-serif',
+    sans: '"Inter", system-ui, sans-serif',
+  },
   "sentient-switzer": {
     id: "sentient-switzer",
     name: "Sentient + Switzer",
@@ -2004,15 +2013,11 @@ export function isKnownPreset(id: string): boolean {
  */
 export const SELECTABLE_THEME_IDS = [
   "frame",
-  "noir-cinema",
-  "aurora-frame",
-  "minimal-frost",
-  "editorial",
-  "amoled",
-  "retro-cinema",
-  "stremio",
-  "tokyo-night",
-  "velvet",
+  "project-hail-mary",
+  "dune",
+  "la-la-land",
+  "doomsday",
+  "zodiac",
 ] as const;
 
 export function isSelectableTheme(id: string): boolean {
@@ -2091,6 +2096,7 @@ export function applyTheme(theme: ThemeSettings, preview?: ThemePreset): void {
   const layout: ThemeLayout = preset?.layout ?? "sidebar";
   const cardStyle: ThemeCardStyle = preset?.cardStyle ?? "flat";
   const buttonStyle: ThemeButtonStyle = preset?.buttonStyle ?? "flat";
+  root.dataset.themeComposition = preset?.design?.composition ?? "standard";
   root.dataset.themeLayout = layout;
   root.dataset.themeCard = cardStyle;
   root.dataset.themeButton = buttonStyle;

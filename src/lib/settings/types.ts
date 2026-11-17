@@ -121,8 +121,8 @@ export type Settings = {
   adKey: string;
   pmKey: string;
   dlKey: string;
-  region: string;
   /** Release region for Radar's dates (ISO 3166-1). */
+  region: string;
   preferredLanguages: string[];
   requirePreferredLanguage: boolean;
   showImdbBadge: boolean;

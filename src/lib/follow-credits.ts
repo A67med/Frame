@@ -138,7 +138,7 @@ const EMPTY_STATE: FollowCreditsState = {
 
 const CONCURRENT_PEOPLE = 6;
 
-async function loadFollowCredits(
+export async function loadFollowCredits(
   key: string,
   people: FollowedPerson[],
 ): Promise<Omit<FollowCreditsState, "loading">> {

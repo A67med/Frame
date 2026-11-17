@@ -60,12 +60,6 @@
   scroll-margin-block-start: calc(var(--frame-command) + 20px);
 }
 
-[data-frame-desktop] #radar-digital {
-  padding: 24px;
-  background: var(--frame-panel);
-  border-inline-start: 2px solid var(--color-accent);
-}
-
 [data-frame-desktop] .frame-library-heading {
   align-items: flex-start;
   padding-block-end: 24px;
@@ -245,6 +239,7 @@
 }
 
 [data-frame-desktop] .hset-row {
+  margin-inline: 0;
   padding-block: 18px;
 }
 

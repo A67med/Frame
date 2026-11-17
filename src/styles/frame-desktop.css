@@ -2,6 +2,7 @@
 @import "./frame-discovery.css";
 @import "./frame-workspaces.css";
 @import "./frame-overlays.css";
+@import "./cinematic-themes.css";
 [data-frame-desktop] {
   --frame-rail: 96px;
   --frame-command: 64px;

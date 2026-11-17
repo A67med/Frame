@@ -363,6 +363,10 @@ function parseStoredSettings(raw: string | null): Settings {
       ...DEFAULT,
       ...parsed,
       ...posterCards,
+      region:
+        typeof parsed.region === "string" && /^[a-z]{2}$/i.test(parsed.region)
+          ? parsed.region.toUpperCase()
+          : DEFAULT.region,
       showQuickGameLibrary: parsed.showQuickGameLibrary === true,
       topbarAppearance: sanitizeTopbarAppearance(
         parsed.topbarAppearance,

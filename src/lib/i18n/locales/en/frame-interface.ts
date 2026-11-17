@@ -1,10 +1,18 @@
 const frameInterface: Record<string, string> = {
+  "Movies from your Following. Verified TMDB digital dates for {region} only.":
+    "Movies from your Following. Verified TMDB digital dates for {region} only.",
+  "No matching digital releases from your Following in Egypt this month. Try another month or follow more people; regional records may be incomplete.":
+    "No matching digital releases from your Following in Egypt this month. Try another month or follow more people; regional records may be incomplete.",
+  "Follow actors and directors to find their verified digital releases.":
+    "Follow actors and directors to find their verified digital releases.",
+  "Egypt": "Egypt",
+
   "Your cinema": "Your cinema",
   "A world worth watching.": "A world worth watching.",
   "In the spotlight": "In the spotlight",
   "Find your next favourite.": "Find your next favourite.",
   "Movies, shows, people and more.": "Movies, shows, people and more.",
-  Forward: "Forward",
+  "Forward": "Forward",
 };
 
 export default frameInterface;
