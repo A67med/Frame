@@ -6,29 +6,29 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
 import { parseHarborStyle } from "../src/lib/harborstyle.ts";
-import { sanitizeTheme } from "../src/lib/settings/load.ts";
+import { loadStoredSettings, sanitizeTheme } from "../src/lib/settings/load.ts";
 import { getThemeById, selectableThemes } from "../src/lib/theme.ts";
 
-test("the selector offers the Frame collection and compatible classics, in order", () => {
+test("the selector offers the Frame collection and cinematic themes, in order", () => {
   assert.deepEqual(
     selectableThemes().map((t) => t.name),
-    [
-      "Default",
-      "Noir Cinema",
-      "Aurora",
-      "Minimal Frost",
-      "Editorial",
-      "OLED Black",
-      "Retro Cinema",
-      "Stremio",
-      "Royal",
-      "Velvet",
-    ],
+    ["Default", "Project Hail Mary", "Dune", "La La Land", "Doomsday", "Zodiac"],
   );
 });
 
 test("a saved theme that is no longer offered falls back to Default", () => {
-  for (const preset of ["nord", "dracula", "elegantfin", "custom", "does-not-exist"]) {
+  for (const preset of [
+    "nord",
+    "dracula",
+    "elegantfin",
+    "stremio",
+    "tokyo-night",
+    "velvet",
+    "amoled",
+    "noir-cinema",
+    "custom",
+    "does-not-exist",
+  ]) {
     assert.equal(sanitizeTheme({ preset: preset as never }).preset, "frame", preset);
   }
 });
@@ -45,36 +45,41 @@ test("an imported theme keeps working without joining the built-in themes", () =
     selectableThemes().some((theme) => theme.id.startsWith("user:")),
     false,
   );
-  assert.equal(selectableThemes().length, 10);
+  assert.equal(selectableThemes().length, 6);
 });
 
-test("Amoled.framestyle parses and matches the shipped preset", () => {
-  const parsed = parseHarborStyle(readFileSync("Amoled.framestyle", "utf8"));
+test("the supplied Project Hail Mary styling matches the distributable built-in", () => {
+  const source = readFileSync("data/themes/project-hail-mary.framestyle", "utf8");
+  const parsed = parseHarborStyle(source);
   assert.equal(parsed.ok, true);
   if (!parsed.ok) return;
-  assert.equal(parsed.theme.name, "OLED Black");
-  assert.equal(parsed.theme.layout, "frame");
-  assert.deepEqual(parsed.theme.design, getThemeById("amoled")?.design);
-  assert.deepEqual(parsed.theme.tokens, getThemeById("amoled")?.tokens);
-  assert.equal(parsed.theme.tokens["--color-canvas"], "#000000");
-  assert.equal(parsed.theme.background?.image, undefined);
+  const preset = getThemeById("project-hail-mary");
+  assert.deepEqual(parsed.theme.tokens, preset?.tokens);
+  assert.equal(parsed.theme.layout, preset?.layout);
+  assert.equal(parsed.theme.bokeh, preset?.bokeh);
+  assert.equal(parsed.theme.fontPair, preset?.fontPair);
+  assert.equal(parsed.theme.background, undefined);
+  assert.equal(source.includes("data:image"), false);
 });
 
-test("Default.framestyle matches the shipped preset's colors", () => {
-  const parsed = parseHarborStyle(readFileSync("Default.framestyle", "utf8"));
-  assert.equal(parsed.ok, true);
-  if (!parsed.ok) return;
-  assert.deepEqual(parsed.theme.tokens, getThemeById("frame")?.tokens);
+test("Default remains unchanged and all built-ins ship without reference images", () => {
+  assert.equal(getThemeById("frame")?.layout, "frame");
+  assert.equal(getThemeById("frame")?.tokens["--color-canvas"], "#0c1217");
+  for (const preset of selectableThemes()) {
+    assert.equal(preset.background, undefined);
+    assert.equal(JSON.stringify(preset).includes("backgrounds/"), false);
+  }
+  assert.equal(getThemeById("zodiac")?.fontPair, "jura-inter");
 });
 
-test("the Default theme ships a plain canvas, with no wallpaper in code or its .framestyle", () => {
-  const preset = getThemeById("frame");
-  assert.equal(preset?.background, undefined);
-  assert.equal(preset?.bokeh, false);
-  const text = readFileSync("Default.framestyle", "utf8");
-  assert.equal(/^bg-image:/m.test(text), false);
-  assert.equal(text.includes("data:image"), false);
-  const parsed = parseHarborStyle(text);
-  assert.equal(parsed.ok, true);
-  if (parsed.ok) assert.equal(parsed.theme.background?.image, undefined);
+test("missing region defaults to Egypt and an explicit saved region survives", () => {
+  for (const [input, expected] of [
+    [{}, "EG"],
+    [{ region: "US" }, "US"],
+    [{ region: "eg" }, "EG"],
+    [{ region: "" }, "EG"],
+  ] as const) {
+    localStorage.setItem("region-test", JSON.stringify(input));
+    assert.equal(loadStoredSettings("region-test").region, expected);
+  }
 });

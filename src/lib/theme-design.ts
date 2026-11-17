@@ -1,5 +1,6 @@
 /** Serializable visual choices. Layout remains a separate, explicit compatibility contract. */
 export type ThemeDesign = {
+  composition: "standard" | "dune" | "la-la-land" | "doomsday" | "zodiac";
   radius: number;
   density: number;
   headingScale: number;
@@ -10,6 +11,7 @@ export type ThemeDesign = {
 };
 
 export const DEFAULT_THEME_DESIGN: ThemeDesign = {
+  composition: "standard",
   radius: 8,
   density: 1,
   headingScale: 1,
@@ -27,7 +29,7 @@ export function normalizeThemeDesign(value: unknown): ThemeDesign {
       ? Math.min(max, Math.max(min, v))
       : DEFAULT_THEME_DESIGN[key];
   };
-  const choice = <K extends "heading" | "surface" | "elevation" | "navigation">(
+  const choice = <K extends "heading" | "surface" | "elevation" | "navigation" | "composition">(
     key: K,
     values: readonly ThemeDesign[K][],
   ): ThemeDesign[K] =>
@@ -35,6 +37,7 @@ export function normalizeThemeDesign(value: unknown): ThemeDesign {
       ? (input[key] as ThemeDesign[K])
       : DEFAULT_THEME_DESIGN[key];
   return {
+    composition: choice("composition", ["standard", "dune", "la-la-land", "doomsday", "zodiac"]),
     radius: number("radius", 0, 24),
     density: number("density", 0.8, 1.3),
     headingScale: number("headingScale", 0.85, 1.2),

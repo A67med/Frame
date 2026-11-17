@@ -108,7 +108,7 @@ test("preview and saved themes apply identically and switching back clears visua
     value: { documentElement: root },
   });
   try {
-    const preset = getThemeById("aurora-frame")!;
+    const preset = getThemeById("la-la-land")!;
     applyTheme(DEFAULT_THEME, preset);
     const preview = [...properties.entries()];
     const result = parseThemeJson(exportThemeJson(preset));

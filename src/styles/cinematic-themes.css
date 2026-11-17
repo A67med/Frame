@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Jura";
+  src: url("../assets/fonts/Jura-Variable.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Each film uses the shared shell and design tokens; no private artwork is shipped. */
+html[data-theme-composition="dune"][data-frame-desktop] {
+  --frame-rail: 112px;
+  --frame-gutter: clamp(28px, 4.2vw, 76px);
+  --frame-rule: 1px solid var(--color-edge-soft);
+}
+html[data-theme-composition="dune"] [data-frame-navigation] {
+  border-inline-end: 3px double var(--color-edge);
+}
+html[data-theme-composition="dune"] [data-frame-page] :is(h1, h3) {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+html[data-theme-composition="dune"] [data-harbor-nav][aria-current="page"] {
+  border-block: 1px solid var(--color-accent);
+}
+html[data-theme-composition="dune"] .harbor-poster {
+  border-block-end: 3px solid var(--color-edge);
+}
+
+html[data-theme-composition="la-la-land"] [data-frame-navigation] {
+  padding-block: 12px;
+  border-inline-end-style: dashed;
+}
+html[data-theme-composition="la-la-land"] [data-frame-navigation] [data-harbor-nav] {
+  padding-block: 10px;
+}
+html[data-theme-composition="la-la-land"] [data-frame-page] :is(h1, h3) {
+  font-family: var(--font-display);
+  font-style: italic;
+  letter-spacing: -0.025em;
+}
+html[data-theme-composition="la-la-land"] .harbor-poster {
+  border-radius: 32px 32px 8px 8px;
+  border: 1px solid var(--color-edge-soft);
+}
+html[data-theme-composition="la-la-land"] .harbor-settings-group {
+  border-radius: 20px 4px 20px 4px;
+}
+
+html[data-theme-composition="doomsday"] [data-frame-navigation] {
+  border-inline-end: 2px solid var(--color-accent);
+  background: var(--color-surface);
+}
+html[data-theme-composition="doomsday"] [data-frame-page] :is(h1, h3) {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+}
+html[data-theme-composition="doomsday"]
+  [data-frame-navigation]
+  [data-harbor-nav][aria-current="page"] {
+  color: var(--color-canvas);
+  background: var(--color-accent);
+  box-shadow: inset 4px 0 var(--color-ink);
+}
+html[data-theme-composition="doomsday"] .harbor-poster {
+  border: 1px solid var(--color-edge);
+  border-block-start: 3px solid var(--color-accent);
+}
+
+html[data-theme-composition="zodiac"][data-frame-desktop] {
+  --frame-rail: 108px;
+  --frame-rule: 1px solid var(--color-edge-soft);
+}
+html[data-theme-composition="zodiac"] [data-frame-page] :is(h1, h3) {
+  font-family: "Jura", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+}
+html[data-theme-composition="zodiac"] [data-frame-navigation] [data-harbor-nav] > span:last-child {
+  font-family: "Jura", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-size: 11px;
+}
+html[data-theme-composition="zodiac"] [data-frame-command] {
+  border-block-end: 3px double var(--color-edge);
+}
+html[data-theme-composition="zodiac"] .harbor-poster {
+  border: 1px solid var(--color-edge);
+  padding: 3px;
+  background: var(--color-canvas);
+}
+html[data-theme-composition="zodiac"] .harbor-row-shell > div:first-child {
+  padding-block-end: 12px;
+  border-block-end: 1px solid var(--color-edge-soft);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-theme-composition="la-la-land"] .harbor-poster {
+    transition:
+      border-radius 220ms ease,
+      box-shadow 220ms ease;
+  }
+}

@@ -5093,6 +5093,7 @@ html[data-theme-card="crunch"][dir="rtl"] .harbor-profile-dropdown {
 }
 
 .hset-row-desc {
+  overflow-wrap: anywhere;
   max-inline-size: var(--hset-desc-measure);
   font-size: var(--hset-desc-size);
   line-height: var(--hset-desc-lh);

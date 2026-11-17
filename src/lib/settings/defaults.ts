@@ -26,7 +26,7 @@ export const DEFAULT: Settings = {
   adKey: "",
   pmKey: "",
   dlKey: "",
-  region: "US",
+  region: "EG",
   preferredLanguages: ["English"],
   requirePreferredLanguage: false,
   showImdbBadge: true,

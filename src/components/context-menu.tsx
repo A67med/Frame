@@ -296,7 +296,10 @@ export function ContextMenu() {
   if (!state) return null;
 
   const subtitleDetails = state.target.kind === "subtitle" ? (state.target.details ?? null) : null;
-  const menuWidth = subtitleDetails ? SUBTITLE_MENU_WIDTH : MENU_WIDTH;
+  const menuWidth = Math.min(
+    subtitleDetails ? SUBTITLE_MENU_WIDTH : MENU_WIDTH,
+    window.innerWidth - 16,
+  );
   const estimatedHeight = subtitleDetails ? 460 : 120;
   const left = Math.max(8, Math.min(state.pos.x, window.innerWidth - menuWidth - 8));
   const top = Math.max(8, Math.min(state.pos.y, window.innerHeight - estimatedHeight - 8));
@@ -1197,7 +1200,7 @@ function Item({
       role="menuitem"
       onClick={onClick}
       disabled={disabled}
-      className={`flex h-9 items-center gap-2.5 rounded-lg px-3 text-start text-[13px] transition-colors ${
+      className={`flex min-h-9 shrink-0 items-center gap-2.5 rounded-lg px-3 py-2 text-start text-[13px] transition-colors ${
         disabled
           ? "cursor-not-allowed text-ink-subtle/55"
           : accent

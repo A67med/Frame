@@ -376,7 +376,7 @@ export function NavHiddenTray({
   if (!editing) return null;
   const byId = new Map(NAV_ITEMS.map((it) => [it.id, it]));
   const hidden = cfg.hidden.map((id) => byId.get(id as NavItemId)).filter((it) => it != null);
-  if (compact) {
+  if (compact && orientation !== "vertical") {
     return (
       <div className="flex flex-wrap items-center justify-center gap-1.5 rounded-xl border border-dashed border-edge-soft bg-canvas/40 p-1.5">
         <NavEditClose />
@@ -427,11 +427,17 @@ export function NavHiddenTray({
       </div>
     );
   }
-  return (
+  const tray = (
     <div
+      data-nav-edit-tray
+      style={
+        orientation === "vertical"
+          ? { bottom: 24, insetInlineStart: "min(112px, max(16px, calc(100vw - 316px)))" }
+          : undefined
+      }
       className={
         orientation === "vertical"
-          ? "flex flex-col gap-1 rounded-xl border border-edge-soft bg-surface p-2 shadow-lg"
+          ? "fixed z-[150] flex max-h-[60vh] w-[300px] max-w-[calc(100vw-32px)] flex-col gap-1 overflow-y-auto rounded-xl border border-edge-soft bg-surface p-3 shadow-lg"
           : "flex flex-wrap items-center gap-1.5 rounded-xl border border-edge-soft bg-surface px-2.5 py-2 shadow-lg"
       }
     >
@@ -453,7 +459,7 @@ export function NavHiddenTray({
           }`}
         >
           <Plus size={14} strokeWidth={2.4} className="shrink-0 text-accent" />
-          <span className="truncate">{t(it!.label)}</span>
+          <span className="min-w-0 break-words">{t(it!.label)}</span>
         </button>
       ))}
       {hidden.length > 0 && (
@@ -483,4 +489,5 @@ export function NavHiddenTray({
       </button>
     </div>
   );
+  return tray;
 }
