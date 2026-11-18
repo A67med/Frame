@@ -8,6 +8,7 @@ This directory includes current product/developer documentation, compatibility r
 - [Theme Studio](THEME-STUDIO.md) — appearance and theme authoring.
 - [Legacy compatibility](LEGACY-COMPATIBILITY.md) — identifiers and data contracts that **must not be blindly renamed**.
 - [Source cleanup audit](SOURCE-CLEANUP-AUDIT.md) — decisions around code and asset cleanup.
+- [Release process](RELEASING.md) — reviewed version bumps, protected-branch settings, and safe publishing.
 - [Release notes](releases/) — curated Frame release notes and engineering summaries.
 
 ## Historical references

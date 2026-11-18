@@ -33,7 +33,7 @@ The full architecture and build boundaries are documented in [docs/ARCHITECTURE.
 - Keep local media files and private credentials out of commits, screenshots, and issue logs.
 - Preserve existing user data, theme files, update signatures, and other compatibility boundaries. Some `harbor.*` keys and identifiers are intentionally retained from the predecessor project; do not rename them just for branding. Review [legacy compatibility notes](docs/LEGACY-COMPATIBILITY.md) first.
 - Keep public product copy and issue templates branded **Frame**. Preserve historical credit and third-party notices.
-- Releases are managed by the maintainers. Do not manually bump versions or publish a release as part of an ordinary contribution unless specifically requested.
+- Releases are managed through reviewed version-bump pull requests. Do not bump versions or publish releases in ordinary feature/bug-fix contributions. Maintainers follow [the release guide](docs/RELEASING.md).
 
 ## Security
 
