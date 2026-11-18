@@ -38,7 +38,7 @@
  *
  * Extraction tools (documented external dependency):
  *   .tar.xz -> `tar -xJf`  (linux; GNU tar + xz-utils)
- *   .zip    -> macOS: `unzip`   windows: PowerShell Expand-Archive   (both built in)
+ *   .zip    -> macOS: `unzip`   windows: `tar.exe`/bsdtar   (built into supported Windows)
  *
  * Env overrides (mirrors / air-gapped): HARBOR_YTDLP_URL, HARBOR_FFMPEG_URL,
  * HARBOR_FFPROBE_URL replace the resolved URL for the current platform (on Windows
@@ -193,16 +193,9 @@ function extractMember(buf, kind, member, dest) {
     if (kind === "tar.xz") {
       execFileSync("tar", ["-xJf", archive, "-C", outDir], { stdio: "inherit" });
     } else if (process.platform === "win32") {
-      execFileSync(
-        "powershell",
-        [
-          "-NoProfile",
-          "-NonInteractive",
-          "-Command",
-          `Expand-Archive -LiteralPath "${archive}" -DestinationPath "${outDir}" -Force`,
-        ],
-        { stdio: "inherit" },
-      );
+      // The built-in Windows bsdtar supports ZIP and avoids Expand-Archive's
+      // PowerShell/.NET overload failures on some Windows runners.
+      execFileSync("tar.exe", ["-xf", archive, "-C", outDir], { stdio: "inherit" });
     } else {
       execFileSync("unzip", ["-oq", archive, "-d", outDir], { stdio: "inherit" });
     }
