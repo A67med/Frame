@@ -24,5 +24,8 @@ test("release notes group internal changes without empty sections", () => {
 });
 
 test("release notes handle no changes", () => {
-  assert.equal(renderReleaseNotes(["", "chore(release): prepare v1.2.3"]), "No changes since the previous release.");
+  assert.equal(
+    renderReleaseNotes(["", "chore(release): prepare v1.2.3"]),
+    "No changes since the previous release.",
+  );
 });
