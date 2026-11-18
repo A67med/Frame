@@ -1,30 +1,34 @@
 ## Summary
 
-<!-- Describe the change clearly and keep its scope focused. -->
+<!-- What changed? Keep the PR focused on one problem or feature. -->
 
 ## Why
 
-<!-- Explain the problem being solved and why this approach fits Harbor. -->
+<!-- Explain the user or maintainer problem this change solves for Frame. -->
+
+## Risk and compatibility
+
+<!-- Mention affected Windows behavior, saved data, updater/installer identity, and any retained Harbor-era compatibility identifiers. Write "None" where appropriate. -->
 
 ## Verification
 
-<!-- List the commands and manual scenarios used to verify the change. -->
+<!-- Record actual checks and manual testing. For docs-only changes, state "Documentation only; no application build performed." -->
 
-## Platform Impact
+- [ ] I checked the affected files and documented any skipped tests.
+- [ ] I ran relevant typechecking, linting, tests, or build checks if application code changed.
+- [ ] I considered backward compatibility and release/update behavior.
 
-<!-- Note behavior verified on Windows, macOS, Linux, and TV-style input. Write "None" when not applicable. -->
+## Screenshots or recordings
 
-## UI Changes
+<!-- For visible UI changes, add before/after images. Otherwise write "Not applicable". -->
 
-<!-- Include before/after screenshots for visual changes and a short recording for motion or interaction changes. Remove this section when not applicable. -->
+## Release notes
+
+<!-- User-facing summary, or "Not applicable — documentation/repository maintenance". -->
 
 ## Checklist
 
-- [ ] This pull request is focused and contains no unrelated refactors.
-- [ ] I ran `vp check` for the changed files.
-- [ ] I ran `vp run typecheck` after TypeScript changes.
-- [ ] I ran the relevant Cargo checks after Rust changes.
-- [ ] I tested affected platforms when the change is platform-specific.
-- [ ] I preserved playback, navigation, and configured hotkey behavior where applicable.
-- [ ] I added or updated tests for behavior changes.
-- [ ] I removed secrets, tokens, private URLs, and personal data from logs and screenshots.
+- [ ] The PR is scoped and contains no unrelated cleanup.
+- [ ] User data, saved settings, playback, and existing updater identities remain compatible where relevant.
+- [ ] No credentials, private URLs, personal information, or copyrighted media files were added.
+- [ ] Docs and issue templates use the Frame identity (except explicit historical/attribution references).

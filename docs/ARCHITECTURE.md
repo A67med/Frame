@@ -1,6 +1,6 @@
 # Frame Architecture Guide
 
-Frame is a cross-platform desktop media client built with **Tauri 2**, **React 19**, **TypeScript**, **Rust**, and **libmpv**, targeting **Windows 10/11 x64** as its primary supported platform. Frame originated as an independent fork of Harbor (`crazyrabbit0/harbor`) and maintains full MIT license attribution (`LICENSE`, `src-tauri/THIRD-PARTY-NOTICES.txt`) while evolving independently at `A67med/frame`.
+Frame is a desktop media application built with **Tauri 2**, **React 19**, **TypeScript**, **Rust**, and **libmpv**. **Windows 10/11 x64 is the only currently supported release target**; some macOS, Linux, and TV-related source remains for compatibility or development, but is not distributed as a supported desktop release. Frame originated as an independent fork of Harbor (`crazyrabbit0/harbor`) and maintains full MIT license attribution (`LICENSE`, `src-tauri/THIRD-PARTY-NOTICES.txt`) while evolving independently at `A67med/frame`.
 
 ---
 

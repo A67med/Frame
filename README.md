@@ -4,29 +4,29 @@
 
 # Frame
 
-**An open source desktop app for discovering, organizing and watching movies and TV.**
+**A local-first Windows desktop app for organizing and watching the movies and TV shows you keep on your own drives.**
 
 <a href="https://github.com/A67med/Frame/releases/latest"><img src="docs/media/showcase/download.png" width="310" alt="Download Frame for Windows x64, latest stable release"></a>
 
-Windows 10 / 11 · x64 · Signed updater
+Windows 10 / 11 · x64 · Signed in-app updates
 
-[Explore the app](#inside-frame) · [Browse the themes](#cinematic-themes) · [Build from source](#build-from-source)
+[Explore the app](#inside-frame) · [Browse themes](#cinematic-themes) · [Get Frame](#get-frame) · [Build from source](#build-from-source)
 
 </div>
 
 ## Inside Frame
+
+### From discovery to playback
+
+Bring your local movies and episodes together in Frame, then browse Home, Discover and search to organize titles in My Library, Watchlist or Collections. Playback uses **libmpv**, with subtitles, resume and picture-in-picture. Online metadata, optional Stremio add-ons and tracking integrations can extend the experience; your local video files stay on your drive.
+
+<a href="docs/media/showcase/details.jpg"><img src="docs/media/showcase/details.jpg" width="920" alt="The Being Heumann movie page in Zodiac with playback, Watchlist and provider information."></a>
 
 ### Follow the people behind the films
 
 Follow your favorite actors and directors. Radar brings their work together, and **Digital Releases** shows verified Egyptian digital dates from TMDB. Browse by month and see which people you follow are connected to each release.
 
 <a href="docs/media/showcase/radar.jpg"><img src="docs/media/showcase/radar.jpg" width="920" alt="Digital Releases in Zodiac, showing Being Heumann with its November 13 Egyptian digital date and Mark Ruffalo’s Following chip."></a>
-
-### From discovery to playback
-
-Browse Home, Discover and global search, then keep your shortlist in My Library, Watchlist or Collections. Frame uses **libmpv** for desktop playback, with subtitles, resume and picture-in-picture. Optional Stremio add-ons and tracking integrations extend the experience.
-
-<a href="docs/media/showcase/details.jpg"><img src="docs/media/showcase/details.jpg" width="920" alt="The Being Heumann movie page in Zodiac with playback, Watchlist and provider information."></a>
 
 ## Cinematic themes
 
@@ -57,7 +57,15 @@ Open **Settings → Appearance → Your themes** to get to Theme Studio. Preview
 
 ## Get Frame
 
-**[Download the latest Windows x64 installer](https://github.com/A67med/Frame/releases/latest)**. The installer bundles playback dependencies. Frame checks GitHub for signed updates.
+**[Download the latest Windows x64 installer](https://github.com/A67med/Frame/releases/latest)**. The installer bundles playback dependencies. Frame checks GitHub for cryptographically signed in-app updates.
+
+### Quick start
+
+1. Install and open Frame on Windows 10 or 11 (x64).
+2. Add your own movies or episodes using Frame's local media/library controls. Your video files stay on your device.
+3. Optionally connect TMDB for richer discovery and follow-up metadata, or enable other integrations from Settings.
+
+Frame is a **desktop app, not a streaming subscription service**. Metadata and optional integrations can contact their respective online services; local media playback does not require uploading your files.
 
 <details>
 <summary><strong>Set up metadata and optional integrations</strong></summary>
@@ -89,7 +97,7 @@ Run `pnpm run typecheck` and `pnpm test` to check changes. Use `pnpm tauri build
 
 **Tauri 2 · React · TypeScript · Rust · libmpv**
 
-[Releases](https://github.com/A67med/Frame/releases) · [Report an issue](https://github.com/A67med/Frame/issues) · [Architecture](docs/ARCHITECTURE.md) · [MIT License](LICENSE)
+[Releases](https://github.com/A67med/Frame/releases) · [Report an issue](https://github.com/A67med/Frame/issues) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Architecture](docs/ARCHITECTURE.md) · [MIT License](LICENSE)
 
 <sub>Application screenshots use a demo profile. Film artwork and metadata are supplied by TMDB and other catalog providers.</sub>
 

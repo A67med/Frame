@@ -1,12 +1,22 @@
 name: Release (Windows x64)
 
-# Every change merged into main automatically prepares a versioned release commit.
-# The GITHUB_TOKEN push does not start another workflow, avoiding recursion.
+# Changes to application/release inputs on main automatically prepare a versioned release.
+# Documentation, community files, and GitHub-only maintenance do not publish installers.
+# GITHUB_TOKEN pushes do not trigger a second workflow run, avoiding recursion.
 # Only the signed Windows x64 NSIS installer is published after validation.
 # macOS, Linux and Flatpak do not block the Windows release.
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - ".github/**"
+      - "docs/**"
+      - "**/*.md"
+      - "LICENSE"
+      - ".gitignore"
+      - ".gitattributes"
+      - ".dockerignore"
+      - ".prettierignore"
   workflow_dispatch:
 
 permissions:
@@ -205,6 +215,8 @@ jobs:
             echo "## Downloads (Windows x64)"
             echo
             node scripts/release-assets.mjs "$VERSION" "$installer"
+            echo
+            echo "**Installer SHA-256:** $(sha256sum "upload/$installer" | cut -c1-64)"
             echo
             echo "## Changes"
             echo

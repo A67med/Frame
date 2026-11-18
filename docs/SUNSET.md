@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **Historical Harbor-era reference — not current Frame documentation.** This file was preserved to explain upstream migration and compatibility history. Its project URLs, platform support, update instructions, and feature availability may be obsolete. For the actively maintained Windows x64 application, start with the [Frame README](../README.md), [architecture guide](ARCHITECTURE.md), and [legacy compatibility notes](LEGACY-COMPATIBILITY.md). Do not use this document as an installation or release guide.
+
 # Running Harbor after the official project shut down
 
 The official Harbor project ended in October 2026. `harbor.site` now serves only a "Harbor is Sunsetting" page (citing legal and personal reasons) and the `harborstremio` GitHub organization, its repository, releases and pull requests return 404. This fork (`crazyrabbit0/harbor`) is maintained on its own from here: `main` holds the current code (upstream's final `beta-branch` plus this fork's work), and `beta-branch` stays at upstream's last beta commit.
