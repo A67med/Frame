@@ -1,8 +1,9 @@
 name: Release (Windows x64)
 
-# Changes to application/release inputs on main automatically prepare a versioned release.
-# Documentation, community files, and GitHub-only maintenance do not publish installers.
-# GITHUB_TOKEN pushes do not trigger a second workflow run, avoiding recursion.
+# Version changes are reviewed in a PR. A merge to main publishes only when the
+# checked-in version does not already have a GitHub Release.
+# The release pipeline never commits or pushes to the protected main branch.
+# Documentation-only and GitHub-only maintenance do not publish installers.
 # Only the signed Windows x64 NSIS installer is published after validation.
 # macOS, Linux and Flatpak do not block the Windows release.
 on:
@@ -31,11 +32,9 @@ env:
 
 jobs:
   prepare:
-    name: Prepare automatic version on main
+    name: Validate approved release version
     runs-on: ubuntu-24.04
     timeout-minutes: 10
-    permissions:
-      contents: write
     outputs:
       version: ${{ steps.check.outputs.version }}
       sha: ${{ steps.check.outputs.sha }}
@@ -50,41 +49,50 @@ jobs:
         with:
           node-version: 24
 
-      - name: Prepare and commit a consistent release version
+      - name: Verify release version and check for existing publication
         id: check
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           git fetch origin main --tags
           git checkout -B main origin/main
-          # A queued release run with no new user changes must not produce a
-          # second release for the version-only commit made by an earlier run.
-          last_release="$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | head -n 1 || true)"
-          if [ -n "$last_release" ] && git merge-base --is-ancestor "$last_release" HEAD; then
-            changed="$(git log --format=%s "$last_release"..HEAD | grep -v '^chore(release): prepare v' || true)"
-            if [ -z "$changed" ]; then
-              echo "ready=false" >> "$GITHUB_OUTPUT"
-              echo "No unreleased application changes; skipping duplicate release."
-              exit 0
-            fi
+          version="$(node -p "require('./package.json').version")"
+          tag="v$version"
+          node scripts/check-release-version.mjs "$tag"
+
+          # A regular app or documentation change with an already-published
+          # version must not create a second release.
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json tagName >/dev/null 2>&1; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "Frame $tag is already published; release not needed."
+            exit 0
           fi
-          version="$(node scripts/bump-version.mjs --next)"
-          node scripts/bump-version.mjs "$version"
-          node scripts/check-release-version.mjs "v$version"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml src-tauri/Cargo.lock flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(release): prepare v$version [skip ci]"
-            # Branch-protection rules may require allowing this bot to push;
-            # fail visibly rather than bypassing checks or publishing stale code.
-            git push origin HEAD:main
-          else
-            echo "Version $version was already prepared by an earlier failed run; retrying this build."
+
+          existing_tag="$(git rev-parse -q --verify "refs/tags/$tag^{commit}" || true)"
+          if [ -n "$existing_tag" ] && [ "$existing_tag" != "$(git rev-parse HEAD)" ]; then
+            echo "::error::$tag already points to $existing_tag, not current main. Do not rewrite a published tag."
+            exit 1
           fi
+
+          previous="$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | head -n 1 || true)"
+          if [ -n "$previous" ] && [ "$previous" != "$tag" ]; then
+            node -e '
+              const next = process.argv[1].split(".").map(Number);
+              const last = process.argv[2].slice(1).split(".").map(Number);
+              const order = next[0] - last[0] || next[1] - last[1] || next[2] - last[2];
+              if (order <= 0) {
+                console.error("::error::Release version must be newer than " + process.argv[2]);
+                process.exit(1);
+              }
+            ' "$version" "$previous"
+          fi
+
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           echo "ready=true" >> "$GITHUB_OUTPUT"
+          echo "Building approved release $tag from main without committing or pushing."
 
   build:
     name: Windows x64 (NSIS)
