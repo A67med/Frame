@@ -46,13 +46,10 @@ jobs:
           cargo audit --file crates/frame-core/Cargo.lock
           cargo audit --file crates/frame-install-recovery/Cargo.lock
       - name: Audit the Tauri application
-        # zip 4 -> 9: RUSTSEC-2026-0367/0368/0369/0429 (direct and tauri-plugin-updater)
         # quick-xml < 0.41: RUSTSEC-2026-0194/0195 (transitive)
         # libsqlite3-sys < 0.39 via rusqlite 0.32: RUSTSEC-2026-0459
         # rsa 0.9 via vendored librespot-core: RUSTSEC-2023-0071 (no fixed 0.9 release)
         run: >
           cargo audit --file src-tauri/Cargo.lock
-          --ignore RUSTSEC-2026-0367 --ignore RUSTSEC-2026-0368
-          --ignore RUSTSEC-2026-0369 --ignore RUSTSEC-2026-0429
           --ignore RUSTSEC-2026-0194 --ignore RUSTSEC-2026-0195
           --ignore RUSTSEC-2026-0459 --ignore RUSTSEC-2023-0071
