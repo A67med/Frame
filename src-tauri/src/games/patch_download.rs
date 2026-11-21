@@ -57,7 +57,7 @@ pub fn inspect(root: &Path, name: &str, bytes: &[u8]) -> Result<DownloadReview> 
     let mut total=0usize;
     for index in 0..archive.len() {
         let mut file=archive.by_index(index).map_err(|_| "patch_invalid")?;
-        let name=file.name().to_string();
+        let name = file.name().map_err(|_| "patch_invalid")?.into_owned();
         let ext=name.rsplit('.').next().unwrap_or("").to_ascii_lowercase();
         if !["bps","ips","ups","txt","md"].contains(&ext.as_str()) { continue; }
         let note=["txt","md"].contains(&ext.as_str());

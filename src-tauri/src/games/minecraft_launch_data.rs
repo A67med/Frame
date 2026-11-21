@@ -48,7 +48,8 @@ pub fn native_libraries(runtime: &Runtime, root: &Path, output: &Path, cancel: &
         if zip.len()>4096 { return Err("launch_natives"); }
         for i in 0..zip.len() {
             minecraft_pack::canceled(cancel)?; let mut entry = zip.by_index(i).map_err(|_| "launch_natives")?;
-            let name = entry.name().trim_end_matches('/').to_owned(); let path = instances::relative(&name)?;
+            let name = entry.name().map_err(|_| "launch_natives")?.trim_end_matches('/').to_owned();
+            let path = instances::relative(&name)?;
             let mode = entry.unix_mode().unwrap_or(0o100644) & 0o170000;
             if mode != 0 && mode != if entry.is_dir() { 0o040000 } else { 0o100000 } { return Err("launch_natives"); }
             if entry.is_dir() || name.starts_with("META-INF/") { continue; }

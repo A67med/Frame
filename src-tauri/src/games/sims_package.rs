@@ -371,11 +371,12 @@ pub fn validate_script_checked(bytes: &[u8], check: &dyn Fn() -> Result<()>) -> 
     for i in 0..archive.len() {
         check()?;
         let mut file = archive.by_index(i).map_err(|_| "sims_script")?;
-        archive_path(file.name().trim_end_matches('/'))?;
+        let name = file.name().map_err(|_| "sims_script")?;
+        archive_path(name.trim_end_matches('/'))?;
         if file.unix_mode().is_some_and(|v| v & 0o170000 == 0o120000) || file.encrypted() {
             return Err("sims_archive");
         }
-        if !names.insert(file.name().to_ascii_lowercase()) {
+        if !names.insert(name.to_ascii_lowercase()) {
             return Err("sims_archive");
         }
         if file.is_dir() {
@@ -385,16 +386,10 @@ pub fn validate_script_checked(bytes: &[u8], check: &dyn Fn() -> Result<()>) -> 
         if total > MAX_IMPORT as u64 || file.size() > MAX_FILE as u64 {
             return Err("sims_limit");
         }
-        let ext = file
-            .name()
-            .rsplit('.')
-            .next()
-            .unwrap_or("")
-            .to_ascii_lowercase();
+        let ext = name.rsplit('.').next().unwrap_or("").to_ascii_lowercase();
         // LlamaLogic manifests are inert metadata inside the original script ZIP.
         // Accept the known filename without parsing YAML or trusting its claims.
-        let manifest = file
-            .name()
+        let manifest = name
             .rsplit('/')
             .next()
             .is_some_and(|name| name.eq_ignore_ascii_case("llamalogic.modfilemanifest.yml"));
@@ -468,14 +463,14 @@ pub fn unpack_zip_checked(bytes: &[u8], check: &dyn Fn() -> Result<()>) -> Resul
     for i in 0..archive.len() {
         check()?;
         let mut file = archive.by_index(i).map_err(|_| "sims_archive")?;
-        archive_path(file.name().trim_end_matches('/'))?;
+        let path = file.name().map_err(|_| "sims_archive")?.into_owned();
+        archive_path(path.trim_end_matches('/'))?;
         if file.unix_mode().is_some_and(|v| v & 0o170000 == 0o120000) || file.encrypted() {
             return Err("sims_archive");
         }
         if file.is_dir() {
             continue;
         }
-        let path = file.name().to_owned();
         let (directory, name) = path.rsplit_once('/').unwrap_or(("", path.as_str()));
         let extension = name.rsplit('.').next().unwrap_or("").to_ascii_lowercase();
         if ["txt", "md", "pdf", "png", "jpg", "jpeg"].contains(&extension.as_str()) {

@@ -82,7 +82,8 @@ pub fn parse(bytes: &[u8], installer: runtime::File, game: &str, kind: &str, ver
     let mut entries = HashSet::new(); let mut total = 0_u64;
     for index in 0..archive.len() {
         let item = archive.by_index(index).map_err(|_| "runtime_metadata")?;
-        let name = item.name().trim_end_matches('/'); instances::relative(name)?;
+        let name = item.name().map_err(|_| "runtime_metadata")?;
+        let name = name.trim_end_matches('/'); instances::relative(name)?;
         if !entries.insert(name.to_ascii_lowercase()) || item.unix_mode().is_some_and(|v| ![0,0o100000,0o040000].contains(&(v & 0o170000))) { return Err("runtime_metadata"); }
         total = total.checked_add(item.size()).ok_or("runtime_limit")?;
         if item.size() > 128 * 1024 * 1024 || total > 256 * 1024 * 1024 { return Err("runtime_limit"); }

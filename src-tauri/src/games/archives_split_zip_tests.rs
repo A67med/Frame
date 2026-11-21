@@ -165,8 +165,8 @@ fn split_zip_zip64_and_comments_preserve_directory_boundaries() {
         let f = Fixture::new();
         let source = f.0.join("Game 雨.zip");
         let mut zip = zip::ZipWriter::new(File::create(&source).unwrap());
-        zip.set_comment("comment PK\u{5}\u{6} with signature");
-        zip.set_zip64_comment(Some("extended ZIP64 comment"));
+        zip.set_comment("comment PK\u{5}\u{6} with signature").unwrap();
+        zip.set_raw_zip64_extensible_data_sector(b"extended ZIP64 comment".as_slice().into());
         zip.start_file("game.bin", SimpleFileOptions::default().large_file(true))
             .unwrap();
         zip.write_all(b"ZIP64 payload").unwrap();

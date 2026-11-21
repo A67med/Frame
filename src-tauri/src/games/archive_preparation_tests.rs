@@ -101,7 +101,7 @@ fn selected_multipart_volume_digest_is_checked_against_that_volume(){
 fn changed_later_volume_is_rejected_even_when_the_selected_part_and_zip_remain_valid(){
     let _engines = crate::games::test_lock::hold();
     let fixture=Fixture::new();let manager=fixture.manager();
-    let mut zip=zip::ZipWriter::new(File::create(&fixture.source).unwrap());zip.set_comment("original comment");
+    let mut zip=zip::ZipWriter::new(File::create(&fixture.source).unwrap());zip.set_comment("original comment").unwrap();
     zip.start_file("data.bin",zip::write::SimpleFileOptions::default()).unwrap();zip.write_all(&fixture.payload).unwrap();zip.finish().unwrap();
     let bytes=fs::read(&fixture.source).unwrap();let first=fixture.root.join("parts.zip.001");let second=fixture.root.join("parts.zip.002");
     fs::write(&first,&bytes[..bytes.len()/2]).unwrap();fs::write(&second,&bytes[bytes.len()/2..]).unwrap();

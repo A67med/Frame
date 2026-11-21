@@ -125,7 +125,7 @@ pub fn contains_tray(bytes: &[u8], check: &dyn Fn() -> Result<()>) -> Result<boo
     for i in 0..zip.len() {
         check()?;
         let entry = zip.by_index(i).map_err(|_| "sims_archive")?;
-        if !entry.is_dir() && is_tray(entry.name()) {
+        if !entry.is_dir() && is_tray(&entry.name().map_err(|_| "sims_archive")?) {
             return Ok(true);
         }
     }
@@ -177,7 +177,8 @@ fn read_inputs(
         for i in 0..zip.len() {
             check()?;
             let mut entry = zip.by_index(i).map_err(|_| "sims_archive")?;
-            let relative = entry.name().trim_end_matches('/');
+            let archive_name = entry.name().map_err(|_| "sims_archive")?;
+            let relative = archive_name.trim_end_matches('/');
             if relative.is_empty()
                 || relative.len() > 1000
                 || relative.contains('\\')

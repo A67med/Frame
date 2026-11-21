@@ -80,7 +80,8 @@ pub fn parse(path: &Path, cancel: &AtomicBool) -> Result<Parsed> {
     let mut archive_names = HashSet::new(); let mut common = BTreeMap::new(); let mut client = BTreeMap::new(); let mut expanded = 0_u64;
     for i in 0..archive.len() {
         canceled(cancel)?; let entry = archive.by_index(i).map_err(|_| "instance_pack_format")?;
-        let name = entry.name().trim_end_matches('/'); instances::relative(name)?;
+        let name = entry.name().map_err(|_| "instance_pack_format")?;
+        let name = name.trim_end_matches('/'); instances::relative(name)?;
         if !archive_names.insert(name.to_lowercase()) || entry.unix_mode().is_some_and(|m| ![0, 0o040000, 0o100000].contains(&(m & 0o170000))) { return Err("instance_pack_path"); }
         if entry.is_dir() { continue; }
         expanded = expanded.checked_add(entry.size()).ok_or("instance_limit")?;

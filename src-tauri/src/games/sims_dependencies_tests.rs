@@ -491,10 +491,11 @@ fn dependencies_changed_or_unverifiable_manifests_cannot_confirm_absence() {
     let mut changed = zip::ZipWriter::new(Cursor::new(Vec::new()));
     for index in 0..source.len() {
         let mut file = source.by_index(index).unwrap();
+        let name = file.name().unwrap();
         changed
-            .start_file(file.name(), zip::write::SimpleFileOptions::default())
+            .start_file(&name, zip::write::SimpleFileOptions::default())
             .unwrap();
-        if file.name() == "mod.pyc" {
+        if name == "mod.pyc" {
             changed
                 .write_all(b"Changed bytecode; never executed")
                 .unwrap();

@@ -44,7 +44,8 @@ pub fn extract(archive: &Path, root: &Path, zip: bool, cancel: &AtomicBool) -> R
         if reader.len() > MAX_ENTRIES { return Err("java_archive"); }
         for i in 0..reader.len() {
             minecraft_pack::canceled(cancel)?; let mut item = reader.by_index(i).map_err(|_| "java_archive")?;
-            let name = item.name().trim_end_matches('/').to_string(); let mode = item.unix_mode().unwrap_or(0o100644); let is_dir = item.is_dir();
+            let name = item.name().map_err(|_| "java_archive")?.trim_end_matches('/').to_owned();
+            let mode = item.unix_mode().unwrap_or(0o100644); let is_dir = item.is_dir();
             if mode & 0o170000 != 0 && mode & 0o170000 != if is_dir { 0o040000 } else { 0o100000 } { return Err("java_archive"); }
             let path = entries.add(&name, is_dir, if is_dir { 0 } else { item.size() })?;
             if is_dir { directory(root, &path)?; } else { let size = item.size(); copy(&mut item, root, &name, size, mode, cancel)?; }

@@ -91,7 +91,7 @@ pub fn unpack(bytes: &[u8], check: &dyn Fn() -> Result<()>) -> Result<Package> {
     for index in 0..zip.len() {
         check()?;
         let mut entry = zip.by_index(index).map_err(|_| "stardew_archive")?;
-        let name = entry.name().replace('\\', "/");
+        let name = entry.name().map_err(|_| "stardew_archive")?.replace('\\', "/");
         let name = name.trim_end_matches('/');
         if !relative(name)
             || entry.enclosed_name().is_none()
