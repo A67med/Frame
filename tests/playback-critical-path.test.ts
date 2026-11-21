@@ -67,10 +67,16 @@ test("Windows embedded mpv is retained across compatible VOD bitrate profiles", 
   assert.match(mpv, /invoke\("mpv_restore_media_surface"\)/);
   assert.match(mpv, /await ensureGeometryTracking\(opts\);/);
   assert.match(mpv, /A retained Windows mpv child was hidden/);
-  assert.match(nativeMpv, /pub async fn mpv_release_media/);
-  assert.match(nativeMpv, /pub async fn mpv_restore_media_surface/);
-  assert.match(nativeMpv, /mpv\.command\("stop", &\[\]\)/);
-  assert.match(nativeMpv, /set_embedded_mpv_children_visible\(&app, false\)/);
+  const release = nativeMpv.slice(
+    nativeMpv.indexOf("pub async fn mpv_release_media"),
+    nativeMpv.indexOf("pub async fn mpv_restore_media_surface"),
+  );
+  assert.match(release, /mpv\.command\("stop", &\[\]\)/);
+  assert.match(release, /set_mpv_viewport_visible\(&app, false\)/);
+  assert.match(
+    nativeMpv,
+    /pub async fn mpv_restore_media_surface[^]*?set_mpv_viewport_visible\(&app, true\)/,
+  );
 });
 
 test("playback timing is local-only and contains no media URLs or account identifiers", () => {
