@@ -259,9 +259,10 @@ fn public_zip(name: &str) -> zip::ZipArchive<Cursor<Vec<u8>>> {
 fn zip_file(zip: &mut zip::ZipArchive<Cursor<Vec<u8>>>, ext: &str) -> Vec<u8> {
     let name = zip
         .file_names()
+        .map(|name| name.unwrap())
         .find(|n| n.ends_with(ext))
         .unwrap()
-        .to_owned();
+        .into_owned();
     let mut bytes = Vec::new();
     zip.by_name(&name).unwrap().read_to_end(&mut bytes).unwrap();
     bytes
