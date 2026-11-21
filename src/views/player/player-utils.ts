@@ -62,7 +62,6 @@ export async function pickBridge(
     rtxVsr?: boolean;
     embed?: boolean;
     anime4kShaders?: string[];
-    d3d11Flip?: boolean;
     macEdr?: boolean;
     renderer?: "gpu-next" | "gpu";
     forceYuv420p?: boolean;

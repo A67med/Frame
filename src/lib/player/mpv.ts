@@ -145,7 +145,6 @@ export type MpvOptions = {
   rtxVsr?: boolean;
   embed?: boolean;
   anime4kShaders?: string[];
-  d3d11Flip?: boolean;
   macEdr?: boolean;
   renderer?: "gpu-next" | "gpu";
   forceYuv420p?: boolean;
@@ -168,7 +167,6 @@ function mpvReuseConfigKey(options: MpvOptions | undefined, hdrToSdr: boolean): 
     rtxVsr: options?.rtxVsr === true,
     embed: options?.embed === true,
     anime4kShaders: options?.anime4kShaders ?? [],
-    d3d11Flip: options?.d3d11Flip === true,
     macEdr: options?.macEdr === true,
     renderer: options?.renderer ?? "gpu-next",
     forceYuv420p: options?.forceYuv420p === true,
@@ -1068,7 +1066,6 @@ export function createMpvBridge(mpvOptions?: MpvOptions): PlayerBridge {
             rtxVsr: opts.rtxVsr === true,
             embed: opts.embed === true,
             anime4kShaders: opts.anime4kShaders ?? [],
-            d3d11Flip: opts.d3d11Flip === true,
             macEdr: opts.macEdr === true,
             isLive: src.isLive === true,
             fullDownload: opts.fullDownload === true,

@@ -3656,20 +3656,6 @@ const SETTINGS_OPTIONS: SettingsOption[] = [
     keywords: ["oled", "lcd", "panel type", "shadow detail", "black levels", "perfect black"],
   },
   {
-    label: "Line-free video mode",
-    section: "player",
-    tab: "engine",
-    anchorTitle: "Picture",
-    keywords: [
-      "bright line",
-      "edge line",
-      "monitor artifact",
-      "d3d11",
-      "compatibility present mode",
-      "thin line fix",
-    ],
-  },
-  {
     label: "Internet speed",
     section: "player",
     tab: "engine",
