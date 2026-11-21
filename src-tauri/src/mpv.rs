@@ -1841,6 +1841,7 @@ fn size_separate_mpv_window(x: i32, y: i32, w: i32, h: i32) -> Option<()> {
         EnumWindows, GetClassNameW, GetWindowThreadProcessId, SetWindowPos, HWND_TOP,
         SWP_FRAMECHANGED, SWP_NOACTIVATE, SWP_NOZORDER,
     };
+    use windows::core::BOOL;
 
     let own_pid = std::process::id();
 
@@ -1859,7 +1860,6 @@ fn size_separate_mpv_window(x: i32, y: i32, w: i32, h: i32) -> Option<()> {
         if s.found.is_some() {
             return BOOL(0);
         }
-    use windows::core::BOOL;
         let mut pid = 0u32;
         GetWindowThreadProcessId(hwnd, Some(&mut pid));
         if pid != s.own_pid {
