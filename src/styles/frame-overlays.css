@@ -100,6 +100,10 @@
   border-block-start: 1px solid rgb(255 255 255 / 16%);
 }
 
+[data-frame-desktop] [data-frame-transport][data-controls-visible="false"] > div:last-child {
+  border-block-start-color: transparent;
+}
+
 [data-frame-desktop] [data-frame-transport] button {
   border-radius: var(--frame-radius);
 }
