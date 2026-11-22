@@ -454,7 +454,6 @@ export type Settings = {
   aiGroqKey: string;
   jinaKey: string;
   aiWebSearch: boolean;
-  playerD3d11Flip: boolean;
   mpvExtraOptions: string;
   mpvQuality: "balanced" | "performance" | "quality";
   mpvHwdec: "auto" | "on" | "off";

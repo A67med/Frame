@@ -273,11 +273,8 @@ fn inspect(
         {
             return Err("wow_addons_archive");
         }
-        let path = relative(if dir {
-            file.name().trim_end_matches('/')
-        } else {
-            file.name()
-        })?;
+        let name = file.name().map_err(|_| "wow_addons_archive")?;
+        let path = relative(if dir { name.trim_end_matches('/') } else { &name })?;
         if !names.insert(path.to_ascii_lowercase()) {
             return Err("wow_addons_archive");
         }

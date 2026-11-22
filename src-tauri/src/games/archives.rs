@@ -416,7 +416,8 @@ fn zip_inventory(
             return Err("archive_links");
         }
         let directory = item.is_dir();
-        let path = relative(item.name(), directory)?;
+        let name = item.name().map_err(|_| "archive_format")?;
+        let path = relative(&name, directory)?;
         if item.enclosed_name().is_none() {
             return Err("archive_path");
         }

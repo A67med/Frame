@@ -11,7 +11,7 @@ pub(super) fn encrypted(f: &Fixture, mode: Option<AesMode>, mixed: bool, passwor
     let options = SimpleFileOptions::default().compression_method(CompressionMethod::Stored);
     let options = match mode {
         Some(mode) => options.with_aes_encryption(mode, password),
-        None => options.with_deprecated_encryption(password.as_bytes()),
+        None => options.with_deprecated_encryption(password.as_bytes()).unwrap(),
     };
     zip.start_file("data/世界.bin", options).unwrap();
     zip.write_all(&vec![73; 2 * 1024 * 1024]).unwrap();

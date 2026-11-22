@@ -74,6 +74,7 @@ fn extract_validated(
             let mut member = archive.by_index(index).map_err(|_| "sims_script")?;
             if !member
                 .name()
+                .map_err(|_| "sims_script")?
                 .rsplit('/')
                 .next()
                 .is_some_and(|s| s.eq_ignore_ascii_case("llamalogic.modfilemanifest.yml"))

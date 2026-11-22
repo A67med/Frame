@@ -54,5 +54,17 @@ jobs:
       - name: Prepare build assets
         run: pnpm run setup
 
-      - name: Build app without installers
-        run: pnpm tauri build --no-bundle
+      - name: Build Windows test installer
+        run: pnpm tauri build --target x86_64-pc-windows-msvc --bundles nsis
+
+      - name: Verify installer includes required runtime files
+        run: node scripts/verify-windows-bundle.mjs --require-capstan
+
+      - name: Upload Windows test installer
+        uses: actions/upload-artifact@v7
+        with:
+          name: Frame-Windows-x64-Test-Installer
+          path: src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/Frame_*-setup.exe
+          compression-level: 0
+          retention-days: 14
+          if-no-files-found: error

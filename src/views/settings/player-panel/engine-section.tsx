@@ -170,19 +170,6 @@ export function PlayerEnginePanel() {
         <SettingGroup label={t("Connection")}>
           <BandwidthInput />
         </SettingGroup>
-
-        {isWindowsDesktop() && (
-          <SettingGroup label={t("Picture")}>
-            <ToggleRow
-              label={t("Line-free video mode")}
-              sub={t(
-                "Forces a compatibility present mode that removes a thin bright line some monitors show at the screen edge. Side effects: 4K playback can drop to a slideshow and HDR content looks dimmer, because this mode bypasses the HDR display path. Leave off unless you see that line. Restart playback to apply.",
-              )}
-              value={settings.playerD3d11Flip}
-              onChange={(v) => update({ playerD3d11Flip: v })}
-            />
-          </SettingGroup>
-        )}
       </div>
     </DesktopOnlyBlock>
   );

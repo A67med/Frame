@@ -48,7 +48,6 @@ pub struct MpvStartArgs {
     pub rtx_vsr: Option<bool>,
     pub embed: Option<bool>,
     pub anime4k_shaders: Option<Vec<String>>,
-    pub d3d11_flip: Option<bool>,
     pub mac_edr: Option<bool>,
     pub is_live: Option<bool>,
     pub full_download: Option<bool>,
@@ -349,6 +348,13 @@ fn mpv_header_field(name: &str, value: &str) -> String {
     format!("{name}: {value}").replace('\\', "\\\\").replace(',', "\\,")
 }
 
+fn video_output(args: &MpvStartArgs) -> &'static str {
+    match args.renderer.as_deref() {
+        Some("gpu") => "gpu",
+        _ => "gpu-next",
+    }
+}
+
 fn apply_pre_init(
     init: &MpvInitializer,
     args: &MpvStartArgs,
@@ -452,9 +458,11 @@ fn apply_pre_init(
                 .map_err(|e| format!("parse wid {}: {}", hwnd, e))?;
             init.set_property("wid", hwnd_i64)
                 .map_err(|e| format!("set wid={}: {}", hwnd_i64, e))?;
-            if args.d3d11_flip.unwrap_or(false) && args.hdr_to_sdr.unwrap_or(false) {
-                set("d3d11-flip", "no");
-            }
+            set("vo", video_output(args));
+            set("gpu-api", "d3d11");
+            // Preserve synchronized flip-model presentation in both SDR and HDR.
+            set("d3d11-flip", "yes");
+            set("d3d11-sync-interval", "1");
         }
         #[cfg(not(windows))]
         {
@@ -511,7 +519,7 @@ fn apply_pre_init(
         #[cfg(windows)]
         {
             opt("target-colorspace-hint", "yes");
-            if embed_hwnd.is_some() || rtx_vsr {
+            if rtx_vsr {
                 opt("gpu-api", "d3d11");
             }
         }
@@ -843,6 +851,13 @@ pub async fn mpv_start(
         }
     }
 
+    #[cfg(windows)]
+    let embed_hwnd = if want_embed {
+        Some(ensure_mpv_viewport(&app).await?)
+    } else {
+        None
+    };
+    #[cfg(not(windows))]
     let embed_hwnd = if want_embed {
         get_main_hwnd_str(&app)
     } else {
@@ -908,12 +923,10 @@ pub async fn mpv_start(
     }
     let use_render_api = (cfg!(target_os = "macos") || cfg!(target_os = "linux")) && want_embed;
     if !use_render_api {
-        let vo = match args.renderer.as_deref() {
-            Some("gpu") => "gpu",
-            _ => "gpu-next",
-        };
-        if let Err(e) = mpv.set_property("vo", vo) {
-            eprintln!("[harbor::mpv] vo set FAILED: {:?}", e);
+        if !(cfg!(windows) && embed_hwnd.is_some()) {
+            if let Err(e) = mpv.set_property("vo", video_output(&args)) {
+                eprintln!("[harbor::mpv] vo set FAILED: {:?}", e);
+            }
         }
         if args.force_yuv420p.unwrap_or(false) {
             if let Err(e) = mpv.set_property("vf-append", "format=yuv420p") {
@@ -1668,7 +1681,7 @@ pub async fn mpv_set_geometry(
             g.as_ref().map(|s| s.embedded).unwrap_or(false)
         };
         if embedded {
-            return position_embedded_mpv_child(&app, geom);
+            return position_mpv_viewport(&app, geom);
         }
     }
     #[cfg(target_os = "macos")]
@@ -1763,51 +1776,21 @@ pub async fn mpv_force_below(_app: AppHandle) -> Result<(), String> {
         {
             return Ok(());
         }
-        use windows::Win32::Foundation::{HWND, LPARAM};
         use windows::Win32::UI::WindowsAndMessaging::{
-            EnumChildWindows, GetClassNameW, SetWindowPos, HWND_BOTTOM, SWP_NOACTIVATE, SWP_NOMOVE,
-            SWP_NOSIZE,
+            SetWindowPos, HWND_BOTTOM, SWP_NOACTIVATE, SWP_NOMOVE, SWP_NOSIZE,
         };
-        let window = _app
-            .get_webview_window("main")
-            .ok_or_else(|| "main window missing".to_string())?;
-        let parent_hwnd = window.hwnd().map_err(|e| format!("hwnd: {}", e))?;
-
-        struct EnumState {
-            mpv_hwnds: Vec<isize>,
-        }
-        let mut state = EnumState {
-            mpv_hwnds: Vec::new(),
-        };
-        let state_ptr = &mut state as *mut EnumState;
-
-        unsafe extern "system" fn enum_proc(hwnd: HWND, lparam: LPARAM) -> windows::core::BOOL {
-            let mut class_buf = [0u16; 256];
-            let class_len = GetClassNameW(hwnd, &mut class_buf);
-            let class_name = String::from_utf16_lossy(&class_buf[..class_len as usize]);
-            let s = lparam.0 as *mut EnumState;
-            if class_name == "mpv" || class_name.starts_with("mpv ") {
-                (*s).mpv_hwnds.push(hwnd.0 as isize);
-            }
-            windows::core::BOOL(1)
-        }
-
-        unsafe {
-            let _ = EnumChildWindows(
-                Some(parent_hwnd),
-                Some(enum_proc),
-                LPARAM(state_ptr as isize),
-            );
-            for h in state.mpv_hwnds {
-                let _ = SetWindowPos(
-                    HWND(h as *mut _),
+        if let Some(viewport) = find_mpv_viewport(main_player_hwnd(&_app)?) {
+            unsafe {
+                SetWindowPos(
+                    viewport,
                     Some(HWND_BOTTOM),
                     0,
                     0,
                     0,
                     0,
                     SWP_NOACTIVATE | SWP_NOMOVE | SWP_NOSIZE,
-                );
+                )
+                .map_err(|e| format!("lower native video viewport: {e}"))?;
             }
         }
     }
@@ -1819,9 +1802,6 @@ pub async fn mpv_set_hdr_stage(_app: AppHandle, active: bool) -> Result<(), Stri
     #[cfg(windows)]
     {
         MPV_HDR_STAGE.store(active, std::sync::atomic::Ordering::Relaxed);
-        if let Ok(mut guard) = MPV_POS_LAST_RECT.lock() {
-            *guard = None;
-        }
     }
     #[cfg(not(windows))]
     let _ = active;
@@ -3014,18 +2994,14 @@ pub async fn mpv_stop(app: AppHandle, state: State<'_, MpvState>) -> Result<(), 
         {
             let was_off = !session.hdr_baseline_on;
             let session_monitor = session.hdr_monitor;
+            if session.embedded {
+                let _ = set_mpv_viewport_visible(&app, false);
+            }
             let _ = session.mpv.command("quit", &[]);
             drop(session);
             drop(g);
             restore_display_sdr_if_flipped(&app, was_off, session_monitor).await;
         }
-    }
-    #[cfg(windows)]
-    {
-        if let Ok(mut guard) = MPV_POS_LAST_RECT.lock() {
-            *guard = None;
-        }
-        MPV_POS_LAST_COUNT.store(usize::MAX, std::sync::atomic::Ordering::Relaxed);
     }
     let _ = app;
     Ok(())
@@ -3047,7 +3023,7 @@ pub async fn mpv_release_media(app: AppHandle, state: State<'_, MpvState>) -> Re
         }
         mpv.command("stop", &[])
             .map_err(|e| format!("stop retained mpv media: {e}"))?;
-        set_embedded_mpv_children_visible(&app, false)?;
+        set_mpv_viewport_visible(&app, false)?;
         return Ok(true);
     }
     #[cfg(not(windows))]
@@ -3072,7 +3048,7 @@ pub async fn mpv_restore_media_surface(
         if !embedded {
             return Ok(false);
         }
-        set_embedded_mpv_children_visible(&app, true)?;
+        set_mpv_viewport_visible(&app, true)?;
         return Ok(true);
     }
     #[cfg(not(windows))]
@@ -3081,14 +3057,6 @@ pub async fn mpv_restore_media_surface(
         let _ = state;
         Ok(false)
     }
-}
-
-#[cfg(windows)]
-fn get_main_hwnd_str(app: &AppHandle) -> Option<String> {
-    let window = app.get_webview_window("main")?;
-    let hwnd = window.hwnd().ok()?;
-    let raw: isize = hwnd.0 as isize;
-    Some(raw.to_string())
 }
 
 #[cfg(target_os = "macos")]
@@ -3126,10 +3094,126 @@ fn get_main_hwnd_str(_app: &AppHandle) -> Option<String> {
 }
 
 #[cfg(windows)]
-const HARBOR_MPV_SUBCLASS_ID: usize = 0xA1B2C3D4;
+const MPV_VIEWPORT_NAME: windows::core::PCWSTR = windows::core::w!("Frame video viewport");
 
 #[cfg(windows)]
-unsafe extern "system" fn mpv_subclass_proc(
+static MPV_HDR_STAGE: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+
+#[cfg(windows)]
+fn main_player_hwnd(app: &AppHandle) -> Result<windows::Win32::Foundation::HWND, String> {
+    use windows::Win32::Foundation::HWND;
+    app.get_webview_window("main")
+        .ok_or_else(|| "main window missing".to_string())?
+        .hwnd()
+        .map(|hwnd| HWND(hwnd.0))
+        .map_err(|e| format!("main window handle: {e}"))
+}
+
+#[cfg(windows)]
+pub(crate) fn find_mpv_viewport(
+    main: windows::Win32::Foundation::HWND,
+) -> Option<windows::Win32::Foundation::HWND> {
+    use windows::Win32::UI::WindowsAndMessaging::FindWindowExW;
+    unsafe {
+        FindWindowExW(
+            Some(main),
+            None,
+            windows::core::w!("Static"),
+            MPV_VIEWPORT_NAME,
+        )
+        .ok()
+    }
+}
+
+#[cfg(windows)]
+fn active_mpv_viewport(
+    app: &AppHandle,
+    main: windows::Win32::Foundation::HWND,
+) -> Option<windows::Win32::Foundation::HWND> {
+    find_mpv_viewport(main).or_else(|| {
+        let pip = app.get_webview_window(crate::pip_window::PIP_LABEL)?;
+        find_mpv_viewport(windows::Win32::Foundation::HWND(pip.hwnd().ok()?.0))
+    })
+}
+
+#[cfg(windows)]
+async fn ensure_mpv_viewport(app: &AppHandle) -> Result<String, String> {
+    let (tx, rx) = tokio::sync::oneshot::channel();
+    let handle = app.clone();
+    app.run_on_main_thread(move || {
+        let result = main_player_hwnd(&handle).and_then(|main| {
+            let viewport = match active_mpv_viewport(&handle, main) {
+                Some(viewport) => viewport,
+                None => {
+                    let viewport = create_mpv_viewport(main)?;
+                    use windows::Win32::UI::WindowsAndMessaging::{
+                        SetWindowPos, HWND_BOTTOM, SWP_NOACTIVATE, SWP_NOMOVE, SWP_NOSIZE,
+                    };
+                    unsafe {
+                        SetWindowPos(
+                            viewport,
+                            Some(HWND_BOTTOM),
+                            0,
+                            0,
+                            0,
+                            0,
+                            SWP_NOACTIVATE | SWP_NOMOVE | SWP_NOSIZE,
+                        )
+                        .map_err(|e| format!("lower native video viewport: {e}"))?;
+                    }
+                    viewport
+                }
+            };
+            set_mpv_viewport_visible(&handle, true)?;
+            Ok((viewport.0 as isize).to_string())
+        });
+        let _ = tx.send(result);
+    })
+    .map_err(|e| format!("schedule native video viewport: {e}"))?;
+    rx.await
+        .map_err(|e| format!("create native video viewport: {e}"))?
+}
+
+#[cfg(windows)]
+fn create_mpv_viewport(
+    main: windows::Win32::Foundation::HWND,
+) -> Result<windows::Win32::Foundation::HWND, String> {
+    use windows::Win32::Foundation::RECT;
+    use windows::Win32::UI::Shell::SetWindowSubclass;
+    use windows::Win32::UI::WindowsAndMessaging::{
+        CreateWindowExW, DestroyWindow, GetClientRect, WINDOW_EX_STYLE, WS_CHILD, WS_CLIPCHILDREN,
+    };
+
+    // mpv fits its render window to wid. Resize this host so only mpv sizes the swapchain HWND.
+    let mut rect = RECT::default();
+    unsafe {
+        GetClientRect(main, &mut rect).map_err(|e| format!("get main window bounds: {e}"))?;
+        let viewport = CreateWindowExW(
+            WINDOW_EX_STYLE::default(),
+            windows::core::w!("Static"),
+            MPV_VIEWPORT_NAME,
+            // WebView2 covers this sibling's rectangle even where its pixels are transparent.
+            WS_CHILD | WS_CLIPCHILDREN,
+            0,
+            0,
+            rect.right.max(1),
+            rect.bottom.max(1),
+            Some(main),
+            None,
+            None,
+            None,
+        )
+        .map_err(|e| format!("create native video viewport: {e}"))?;
+        if !SetWindowSubclass(viewport, Some(mpv_viewport_proc), 0, 0).as_bool() {
+            let _ = DestroyWindow(viewport);
+            return Err("Cannot configure the native video viewport".into());
+        }
+        Ok(viewport)
+    }
+}
+
+#[cfg(windows)]
+unsafe extern "system" fn mpv_viewport_proc(
     hwnd: windows::Win32::Foundation::HWND,
     msg: u32,
     wparam: windows::Win32::Foundation::WPARAM,
@@ -3138,272 +3222,110 @@ unsafe extern "system" fn mpv_subclass_proc(
     _data: usize,
 ) -> windows::Win32::Foundation::LRESULT {
     use windows::Win32::Foundation::LRESULT;
+    use windows::Win32::Graphics::Gdi::ValidateRect;
     use windows::Win32::UI::Shell::DefSubclassProc;
-    use windows::Win32::UI::WindowsAndMessaging::{HTTRANSPARENT, WM_APPCOMMAND, WM_NCHITTEST};
-    if msg == WM_NCHITTEST {
-        return LRESULT(HTTRANSPARENT as isize);
+    use windows::Win32::UI::WindowsAndMessaging::{
+        HTTRANSPARENT, WM_APPCOMMAND, WM_ERASEBKGND, WM_NCHITTEST, WM_PAINT,
+    };
+    match msg {
+        WM_NCHITTEST => LRESULT(HTTRANSPARENT as isize),
+        WM_APPCOMMAND | WM_ERASEBKGND => LRESULT(1),
+        WM_PAINT => {
+            let _ = ValidateRect(Some(hwnd), None);
+            LRESULT(0)
+        }
+        _ => DefSubclassProc(hwnd, msg, wparam, lparam),
     }
-    if msg == WM_APPCOMMAND {
-        return LRESULT(1);
-    }
-    DefSubclassProc(hwnd, msg, wparam, lparam)
 }
 
 #[cfg(windows)]
-static MPV_POS_LAST_COUNT: std::sync::atomic::AtomicUsize =
-    std::sync::atomic::AtomicUsize::new(usize::MAX);
-
-#[cfg(windows)]
-static MPV_POS_LAST_RECT: std::sync::Mutex<Option<(isize, i32, i32, u32, u32)>> =
-    std::sync::Mutex::new(None);
-
-#[cfg(windows)]
-static MPV_HDR_STAGE: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
-
-#[cfg(windows)]
-fn set_embedded_mpv_children_visible(app: &AppHandle, visible: bool) -> Result<(), String> {
-    use windows::core::BOOL;
-    use windows::Win32::Foundation::{HWND, LPARAM};
+fn set_mpv_viewport_visible(app: &AppHandle, visible: bool) -> Result<(), String> {
     use windows::Win32::UI::WindowsAndMessaging::{
-        EnumChildWindows, GetClassNameW, GetWindowTextW, SetWindowPos, HWND_BOTTOM, SWP_HIDEWINDOW,
-        SWP_NOACTIVATE, SWP_NOMOVE, SWP_NOSIZE, SWP_SHOWWINDOW,
+        SetWindowPos, SWP_HIDEWINDOW, SWP_NOACTIVATE, SWP_NOMOVE, SWP_NOSIZE, SWP_NOZORDER,
+        SWP_SHOWWINDOW,
     };
-
-    let window = app
-        .get_webview_window("main")
-        .ok_or_else(|| "main window missing".to_string())?;
-    let parent_hwnd = window.hwnd().map_err(|e| format!("hwnd: {e}"))?;
-    let mut children: Vec<isize> = Vec::new();
-    let children_ptr = &mut children as *mut Vec<isize>;
-
-    unsafe extern "system" fn enum_proc(hwnd: HWND, lparam: LPARAM) -> BOOL {
-        let mut class_buf = [0u16; 256];
-        let class_len = GetClassNameW(hwnd, &mut class_buf);
-        let class_name = String::from_utf16_lossy(&class_buf[..class_len as usize]);
-        let mut title_buf = [0u16; 256];
-        let title_len = GetWindowTextW(hwnd, &mut title_buf);
-        let title = String::from_utf16_lossy(&title_buf[..title_len as usize]);
-        let is_mpv = class_name == "mpv"
-            || class_name.starts_with("mpv ")
-            || (class_name.is_empty() && title.starts_with("Frame"));
-        if is_mpv {
-            (*(lparam.0 as *mut Vec<isize>)).push(hwnd.0 as isize);
-        }
-        BOOL(1)
-    }
-
+    let viewport = active_mpv_viewport(app, main_player_hwnd(app)?)
+        .ok_or_else(|| "Native video viewport is not ready".to_string())?;
+    let flags = if visible {
+        SWP_SHOWWINDOW
+    } else {
+        SWP_HIDEWINDOW
+    };
     unsafe {
-        let _ = EnumChildWindows(
-            Some(parent_hwnd),
-            Some(enum_proc),
-            LPARAM(children_ptr as isize),
-        );
-        let flags = if visible {
-            SWP_NOACTIVATE | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW
-        } else {
-            SWP_NOACTIVATE | SWP_NOMOVE | SWP_NOSIZE | SWP_HIDEWINDOW
-        };
-        for child in children {
-            let _ = SetWindowPos(HWND(child as *mut _), Some(HWND_BOTTOM), 0, 0, 0, 0, flags);
-        }
+        SetWindowPos(
+            viewport,
+            None,
+            0,
+            0,
+            0,
+            0,
+            SWP_NOACTIVATE | SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | flags,
+        )
+        .map_err(|e| format!("set native video viewport visibility: {e}"))
     }
-    Ok(())
+}
+
+#[cfg(any(windows, test))]
+fn native_pixel_bounds(native: NativeMpvRect) -> (i32, i32, i32, i32) {
+    let x = native.x.round() as i32;
+    let y = native.y.round() as i32;
+    let right = (native.x + native.width).round() as i32;
+    let bottom = (native.y + native.height).round() as i32;
+    (x, y, (right - x).max(1), (bottom - y).max(1))
 }
 
 #[cfg(windows)]
-fn position_embedded_mpv_child(app: &AppHandle, css: MpvGeometry) -> Result<(), String> {
-    use windows::core::BOOL;
-    use windows::Win32::Foundation::{HWND, LPARAM};
-    use windows::Win32::Graphics::Gdi::{
-        RedrawWindow, RDW_ALLCHILDREN, RDW_INVALIDATE, RDW_UPDATENOW,
-    };
-    use windows::Win32::UI::Shell::{RemoveWindowSubclass, SetWindowSubclass};
+fn position_mpv_viewport(app: &AppHandle, css: MpvGeometry) -> Result<(), String> {
+    use windows::Win32::Foundation::RECT;
     use windows::Win32::UI::WindowsAndMessaging::{
-        EnumChildWindows, GetClassNameW, GetWindowLongW, GetWindowTextW, SetWindowLongW,
-        SetWindowPos, GWL_EXSTYLE, HWND_BOTTOM, HWND_TOP, SWP_HIDEWINDOW, SWP_NOACTIVATE,
-        SWP_SHOWWINDOW, WS_EX_TRANSPARENT,
+        GetClientRect, SetWindowPos, HWND_BOTTOM, HWND_TOP, SWP_NOACTIVATE,
     };
-    let hdr_stage = MPV_HDR_STAGE.load(std::sync::atomic::Ordering::Relaxed)
+    let main = main_player_hwnd(app)?;
+    let viewport =
+        find_mpv_viewport(main).ok_or_else(|| "Native video viewport is not ready".to_string())?;
+    let mut rect = RECT::default();
+    unsafe { GetClientRect(main, &mut rect) }
+        .map_err(|e| format!("get main window bounds: {e}"))?;
+    if rect.right <= 0 || rect.bottom <= 0 {
+        return Ok(());
+    }
+    let native = map_css_geometry(&css, rect.right as f64, rect.bottom as f64);
+    let (x, y, width, height) = native_pixel_bounds(native);
+    let z = if MPV_HDR_STAGE.load(std::sync::atomic::Ordering::Relaxed)
         && app
             .get_webview_window(crate::hdr_overlay::HDR_OVERLAY_LABEL)
-            .is_some();
-    let window = app
-        .get_webview_window("main")
-        .ok_or_else(|| "main window missing".to_string())?;
-    let parent_hwnd = window.hwnd().map_err(|e| format!("hwnd: {}", e))?;
-
-    let (x, y, w, h) = {
-        use windows::Win32::Foundation::RECT;
-        use windows::Win32::UI::WindowsAndMessaging::GetClientRect;
-        let mut rc = RECT::default();
-        let ok = unsafe { GetClientRect(parent_hwnd, &mut rc).is_ok() };
-        let (cw, ch) = (rc.right, rc.bottom);
-        if !(ok && cw > 0 && ch > 0) {
-            (0i32, 0i32, cw.max(1) as u32, ch.max(1) as u32)
-        } else {
-            let native = map_css_geometry(&css, cw as f64, ch as f64);
-            (
-                native.x.round() as i32,
-                native.y.round() as i32,
-                native.width.round().max(1.0) as u32,
-                native.height.round().max(1.0) as u32,
-            )
-        }
+            .is_some()
+    {
+        HWND_TOP
+    } else {
+        HWND_BOTTOM
     };
-
-    struct EnumState {
-        mpv_hwnds: Vec<isize>,
-        all_classes: Vec<(isize, String, String)>,
-    }
-    let mut state = EnumState {
-        mpv_hwnds: Vec::new(),
-        all_classes: Vec::new(),
-    };
-    let state_ptr = &mut state as *mut EnumState;
-
-    unsafe extern "system" fn enum_proc(hwnd: HWND, lparam: LPARAM) -> BOOL {
-        let mut class_buf = [0u16; 256];
-        let class_len = GetClassNameW(hwnd, &mut class_buf);
-        let class_name = String::from_utf16_lossy(&class_buf[..class_len as usize]);
-        let mut title_buf = [0u16; 256];
-        let title_len = GetWindowTextW(hwnd, &mut title_buf);
-        let title = String::from_utf16_lossy(&title_buf[..title_len as usize]);
-        let s = lparam.0 as *mut EnumState;
-        (*s).all_classes
-            .push((hwnd.0 as isize, class_name.clone(), title.clone()));
-        let is_mpv = class_name == "mpv"
-            || class_name.starts_with("mpv ")
-            || (class_name.is_empty() && title.starts_with("Frame"));
-        if is_mpv {
-            (*s).mpv_hwnds.push(hwnd.0 as isize);
-        }
-        BOOL(1)
-    }
-
     unsafe {
-        let _ = EnumChildWindows(
-            Some(parent_hwnd),
-            Some(enum_proc),
-            LPARAM(state_ptr as isize),
-        );
+        SetWindowPos(viewport, Some(z), x, y, width, height, SWP_NOACTIVATE)
+            .map_err(|e| format!("position native video viewport: {e}"))
     }
-
-    let prev_count =
-        MPV_POS_LAST_COUNT.swap(state.mpv_hwnds.len(), std::sync::atomic::Ordering::Relaxed);
-    if prev_count != state.mpv_hwnds.len() {
-        eprintln!(
-            "[harbor::mpv] enumerated {} children of main hwnd:",
-            state.all_classes.len()
-        );
-        for (h, cls, title) in &state.all_classes {
-            eprintln!("  hwnd={:#x} class={:?} title={:?}", h, cls, title);
-        }
-        eprintln!(
-            "[harbor::mpv] mpv child matches found: {} (was {})",
-            state.mpv_hwnds.len(),
-            prev_count
-        );
-        eprintln!(
-            "[harbor::mpv] requested rect x={} y={} w={} h={}",
-            x, y, w, h
-        );
-    }
-
-    let found = state.mpv_hwnds;
-    // A silent no-op here looks identical to a video that is playing but hidden, so say when
-    // there was nothing to position at all.
-    if found.is_empty() {
-        eprintln!("[harbor::mpv] no mpv child window to position");
-        return Err("Native video window is not ready".to_string());
-    }
-    if let Some(&first) = found.first() {
-        for &leftover in found.iter().skip(1) {
-            let target = HWND(leftover as *mut _);
-            unsafe {
-                let _ = SetWindowPos(
-                    target,
-                    Some(HWND_BOTTOM),
-                    -32000,
-                    -32000,
-                    1,
-                    1,
-                    SWP_NOACTIVATE | SWP_HIDEWINDOW,
-                );
-            }
-        }
-        let new_rect = (first, x, y, w, h);
-        let prev_rect = match MPV_POS_LAST_RECT.lock() {
-            Ok(mut guard) => {
-                let prev = *guard;
-                *guard = Some(new_rect);
-                prev
-            }
-            Err(_) => None,
-        };
-        let first_position = prev_rect.map(|r| r.0) != Some(first);
-        let target = HWND(first as *mut _);
-        let z = if hdr_stage { HWND_TOP } else { HWND_BOTTOM };
-        unsafe {
-            if first_position {
-                let cur_ex = GetWindowLongW(target, GWL_EXSTYLE);
-                let want_ex = if hdr_stage {
-                    cur_ex & !(WS_EX_TRANSPARENT.0 as i32)
-                } else {
-                    cur_ex | WS_EX_TRANSPARENT.0 as i32
-                };
-                if cur_ex != want_ex {
-                    SetWindowLongW(target, GWL_EXSTYLE, want_ex);
-                }
-                if hdr_stage {
-                    let _ = RemoveWindowSubclass(
-                        target,
-                        Some(mpv_subclass_proc),
-                        HARBOR_MPV_SUBCLASS_ID,
-                    );
-                } else {
-                    let _ = SetWindowSubclass(
-                        target,
-                        Some(mpv_subclass_proc),
-                        HARBOR_MPV_SUBCLASS_ID,
-                        0,
-                    );
-                }
-                let _ = SetWindowPos(
-                    target,
-                    Some(z),
-                    x,
-                    y,
-                    w as i32,
-                    h as i32,
-                    SWP_NOACTIVATE | SWP_SHOWWINDOW,
-                );
-            } else {
-                // mpv can resize its child to the parent during a window resize.
-                // Reapply the requested viewport even if our last request was identical.
-                let _ = SetWindowPos(
-                    target,
-                    Some(z),
-                    x,
-                    y,
-                    w as i32,
-                    h as i32,
-                    SWP_NOACTIVATE | SWP_SHOWWINDOW,
-                );
-            }
-            let _ = RedrawWindow(
-                Some(target),
-                None,
-                None,
-                RDW_INVALIDATE | RDW_UPDATENOW | RDW_ALLCHILDREN,
-            );
-        }
-    }
-    Ok(())
 }
 
 #[cfg(test)]
 mod geometry_tests {
-    use super::{map_css_geometry, MpvGeometry, NativeMpvRect};
+    use super::{map_css_geometry, native_pixel_bounds, MpvGeometry, NativeMpvRect};
+
+    #[test]
+    fn rounds_shared_viewport_edges_to_the_same_pixel() {
+        let left = NativeMpvRect {
+            x: 0.0,
+            y: 1.6,
+            width: 50.6,
+            height: 10.6,
+        };
+        let right = NativeMpvRect {
+            x: left.x + left.width,
+            width: 49.4,
+            ..left
+        };
+        assert_eq!(native_pixel_bounds(left), (0, 2, 51, 10));
+        assert_eq!(native_pixel_bounds(right), (51, 2, 49, 10));
+    }
 
     #[test]
     fn mpv_geometry_maps_a_zoomed_full_viewport_to_the_full_native_surface() {

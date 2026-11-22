@@ -1,5 +1,7 @@
 use std::sync::atomic::{AtomicBool, Ordering};
 use tauri::{AppHandle, Emitter, Manager, WebviewUrl, WebviewWindowBuilder};
+#[cfg(windows)]
+use windows::Win32::Foundation::HWND;
 
 /// Distinct from pip.rs's `harbor-pip`, which is an HTML5 element that re-opens the
 /// URL. This one hosts the live mpv surface instead.
@@ -12,76 +14,41 @@ pub struct PipWindowState {
 
 #[cfg(windows)]
 mod win {
-    use windows::core::BOOL;
-    use windows::Win32::Foundation::{HWND, LPARAM, RECT};
+    use windows::Win32::Foundation::{HWND, RECT};
     use windows::Win32::UI::WindowsAndMessaging::{
-        EnumChildWindows, GetClassNameW, GetClientRect, GetWindowTextW, SetParent, SetWindowPos,
-        HWND_BOTTOM, SWP_NOACTIVATE, SWP_SHOWWINDOW,
+        GetClientRect, SetParent, SetWindowPos, HWND_BOTTOM, SWP_NOACTIVATE,
     };
 
-    unsafe extern "system" fn collect(hwnd: HWND, lparam: LPARAM) -> BOOL {
-        let mut class_buf = [0u16; 256];
-        let class_len = GetClassNameW(hwnd, &mut class_buf);
-        let class_name = String::from_utf16_lossy(&class_buf[..class_len as usize]);
-        let mut title_buf = [0u16; 256];
-        let title_len = GetWindowTextW(hwnd, &mut title_buf);
-        let title = String::from_utf16_lossy(&title_buf[..title_len as usize]);
-        let is_mpv = class_name == "mpv"
-            || class_name.starts_with("mpv ")
-            || (class_name.is_empty() && title.starts_with("Frame"));
-        if is_mpv {
-            (*(lparam.0 as *mut Vec<isize>)).push(hwnd.0 as isize);
-        }
-        BOOL(1)
-    }
-
-    /// mpv can recreate its surface on a vo reinit, so it is looked up each time.
-    pub fn mpv_children(parent: HWND) -> Vec<isize> {
-        let mut found: Vec<isize> = Vec::new();
-        let ptr = &mut found as *mut Vec<isize>;
+    pub fn fill(viewport: HWND, host: HWND) -> Result<(), String> {
+        let mut rect = RECT::default();
         unsafe {
-            let _ = EnumChildWindows(Some(parent), Some(collect), LPARAM(ptr as isize));
+            GetClientRect(host, &mut rect).map_err(|e| format!("get video host bounds: {e}"))?;
+            if rect.right <= 0 || rect.bottom <= 0 {
+                return Ok(());
+            }
+            SetWindowPos(
+                viewport,
+                Some(HWND_BOTTOM),
+                0,
+                0,
+                rect.right,
+                rect.bottom,
+                SWP_NOACTIVATE,
+            )
+            .map_err(|e| format!("position video viewport: {e}"))
         }
-        found
     }
 
-    fn client_size(hwnd: HWND) -> (i32, i32) {
-        let mut rc = RECT::default();
-        let ok = unsafe { GetClientRect(hwnd, &mut rc).is_ok() };
-        if ok && rc.right > 0 && rc.bottom > 0 {
-            (rc.right, rc.bottom)
-        } else {
-            (1, 1)
-        }
-    }
-
-    pub fn fill(children: &[isize], host: HWND) {
-        let (w, h) = client_size(host);
-        for child in children {
-            unsafe {
-                let _ = SetWindowPos(
-                    HWND(*child as *mut _),
-                    Some(HWND_BOTTOM),
-                    0,
-                    0,
-                    w,
-                    h,
-                    SWP_NOACTIVATE | SWP_SHOWWINDOW,
-                );
+    // Move the viewport without changing the parent that libmpv tracks.
+    pub fn reparent(viewport: HWND, host: HWND) -> Result<(), String> {
+        unsafe {
+            let former_host = SetParent(viewport, Some(host))
+                .map_err(|e| format!("reparent video viewport: {e}"))?;
+            if let Err(error) = fill(viewport, host) {
+                let _ = SetParent(viewport, Some(former_host));
+                return Err(error);
             }
         }
-    }
-
-    /// Moves the surface to another host. mpv keeps decoding throughout, which is the
-    /// whole point: a second instance would re-open the stream and seek.
-    pub fn reparent(children: &[isize], host: HWND) -> Result<(), String> {
-        for child in children {
-            unsafe {
-                SetParent(HWND(*child as *mut _), Some(host))
-                    .map_err(|e| format!("SetParent: {e}"))?;
-            }
-        }
-        fill(children, host);
         Ok(())
     }
 }
@@ -215,17 +182,17 @@ pub async fn pip_window_enter(
     }
 
     #[cfg(windows)]
-    let children = {
-        use windows::Win32::Foundation::HWND;
+    let viewport = {
+        use windows::Win32::UI::WindowsAndMessaging::{GetWindow, GW_CHILD};
         let main = app
             .get_webview_window("main")
             .ok_or_else(|| "main window missing".to_string())?;
-        let main_hwnd = main.hwnd().map_err(|e| format!("hwnd: {e}"))?;
-        let found = win::mpv_children(HWND(main_hwnd.0 as *mut _));
-        if found.is_empty() {
-            return Err("no video surface to detach".to_string());
-        }
-        found
+        let main_hwnd = HWND(main.hwnd().map_err(|e| format!("hwnd: {e}"))?.0);
+        let viewport = crate::mpv::find_mpv_viewport(main_hwnd)
+            .ok_or_else(|| "no video surface to detach".to_string())?;
+        unsafe { GetWindow(viewport, GW_CHILD) }
+            .map_err(|_| "no video surface to detach".to_string())?;
+        viewport.0 as isize
     };
 
     ensure_pip_window(&app).await?;
@@ -237,9 +204,11 @@ pub async fn pip_window_enter(
 
     #[cfg(windows)]
     {
-        use windows::Win32::Foundation::HWND;
-        let pip_hwnd = pip.hwnd().map_err(|e| format!("pip hwnd: {e}"))?;
-        win::reparent(&children, HWND(pip_hwnd.0 as *mut _))?;
+        let pip_hwnd = HWND(pip.hwnd().map_err(|e| format!("pip hwnd: {e}"))?.0);
+        if let Err(error) = win::reparent(HWND(viewport as *mut _), pip_hwnd) {
+            let _ = pip.hide();
+            return Err(error);
+        }
     }
     #[cfg(any(target_os = "macos", target_os = "linux"))]
     {
@@ -266,15 +235,19 @@ pub async fn pip_window_exit(
 
     #[cfg(windows)]
     {
-        use windows::Win32::Foundation::HWND;
         let main = app
             .get_webview_window("main")
             .ok_or_else(|| "main window missing".to_string())?;
-        let main_hwnd = main.hwnd().map_err(|e| format!("hwnd: {e}"))?;
+        let main_hwnd = HWND(main.hwnd().map_err(|e| format!("hwnd: {e}"))?.0);
         if let Some(pip) = app.get_webview_window(PIP_LABEL) {
             if let Ok(pip_hwnd) = pip.hwnd() {
-                let children = win::mpv_children(HWND(pip_hwnd.0 as *mut _));
-                win::reparent(&children, HWND(main_hwnd.0 as *mut _))?;
+                let pip_hwnd = HWND(pip_hwnd.0);
+                if let Some(viewport) = crate::mpv::find_mpv_viewport(pip_hwnd) {
+                    if let Err(error) = win::reparent(viewport, main_hwnd) {
+                        state.active.store(true, Ordering::SeqCst);
+                        return Err(error);
+                    }
+                }
             }
         }
     }
@@ -286,7 +259,7 @@ pub async fn pip_window_exit(
     }
     let _ = app.emit_to("main", "pip://detached-exited", ());
     // The player owns the video rect, so it re-asserts the geometry it wants.
-    let _ = app.emit_to("main", "harbor:mpv-refresh-geom", ());
+    let _ = app.emit_to("main", "harbor:mpv-force-geom", ());
     Ok(())
 }
 
@@ -313,13 +286,13 @@ pub async fn pip_window_fit(
     }
     #[cfg(windows)]
     {
-        use windows::Win32::Foundation::HWND;
         let Some(pip) = app.get_webview_window(PIP_LABEL) else {
             return Ok(());
         };
-        let pip_hwnd = pip.hwnd().map_err(|e| format!("pip hwnd: {e}"))?;
-        let host = HWND(pip_hwnd.0 as *mut _);
-        win::fill(&win::mpv_children(host), host);
+        let pip_hwnd = HWND(pip.hwnd().map_err(|e| format!("pip hwnd: {e}"))?.0);
+        if let Some(viewport) = crate::mpv::find_mpv_viewport(pip_hwnd) {
+            win::fill(viewport, pip_hwnd)?;
+        }
     }
     #[cfg(not(windows))]
     {

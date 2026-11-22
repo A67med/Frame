@@ -1,6 +1,6 @@
 [package]
 name = "frame"
-version = "0.4.9"
+version = "0.4.10"
 description = "A personal desktop media app for movies and TV"
 edition = "2021"
 
@@ -46,7 +46,7 @@ reqwest = { version = "0.12", default-features = false, features = [
 flate2 = "1"
 tar = "0.4"
 plist = "1.9"
-zip = { version = "4", default-features = false, features = ["deflate-flate2", "aes-crypto"] }
+zip = { version = "9.0.5", default-features = false, features = ["deflate-flate2", "aes-crypto"] }
 zeroize = "1"
 sevenz-rust2 = { version = "=0.20.2", default-features = false, features = [
   "aes256",
@@ -107,7 +107,7 @@ trash = "=5.2.9"
 libmpv2 = "4"
 libmpv2-sys = "4"
 tauri-plugin-single-instance = { version = "2", features = ["deep-link"] }
-tauri-plugin-updater = "2"
+tauri-plugin-updater = "2.14.1"
 minisign-verify = "0.2"
 tauri-plugin-process = "2"
 tauri-plugin-window-state = "2"

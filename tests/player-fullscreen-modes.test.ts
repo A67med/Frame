@@ -63,6 +63,11 @@ test("a borderless session survives a stray DOM fullscreenchange", () => {
   assert.match(hookSource, /if \(isBorderlessFullscreen\(\)\) return;/);
 });
 
+test("fullscreen geometry refresh does not trigger its own resize listener", () => {
+  assert.match(hookSource, /window\.addEventListener\("resize", onResize\)/);
+  assert.doesNotMatch(hookSource, /window\.dispatchEvent\(new Event\("resize"\)/);
+});
+
 test("exiting any fullscreen also leaves borderless", () => {
   assert.match(
     body(stateSource, "export async function exitAnyFullscreen()"),

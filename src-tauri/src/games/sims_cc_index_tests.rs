@@ -189,9 +189,10 @@ fn public_creator_package_agrees_with_existing_production_inspector() {
     let mut zip = zip::ZipArchive::new(Cursor::new(bytes)).unwrap();
     let name = zip
         .file_names()
+        .map(|name| name.unwrap())
         .find(|n| n.ends_with(".package"))
         .unwrap()
-        .to_owned();
+        .into_owned();
     let mut package = Vec::new();
     zip.by_name(&name)
         .unwrap()

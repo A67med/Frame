@@ -21,16 +21,16 @@ pub fn calculate(
         for index in 0..archive.len() {
             check()?;
             let entry = archive.by_index(index).map_err(|_| "sims_manifest")?;
-            if identity.excluded.contains(entry.name())
-                || entry
-                    .name()
+            let name = entry.name().map_err(|_| "sims_manifest")?;
+            if identity.excluded.contains(name.as_ref())
+                || name
                     .rsplit('/')
                     .next()
                     .is_some_and(|v| v.eq_ignore_ascii_case("llamalogic.modfilemanifest.yml"))
             {
                 continue;
             }
-            entries.push((entry.name().to_owned(), entry.crc32()));
+            entries.push((name.into_owned(), entry.crc32()));
         }
         // Match .NET StringComparer.Ordinal, including non-BMP names.
         entries.sort_by(|a, b| a.0.encode_utf16().cmp(b.0.encode_utf16()));
