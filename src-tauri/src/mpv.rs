@@ -3182,7 +3182,6 @@ fn create_mpv_viewport(
     use windows::Win32::UI::Shell::SetWindowSubclass;
     use windows::Win32::UI::WindowsAndMessaging::{
         CreateWindowExW, DestroyWindow, GetClientRect, WINDOW_EX_STYLE, WS_CHILD, WS_CLIPCHILDREN,
-        WS_CLIPSIBLINGS,
     };
 
     // mpv fits its render window to wid. Resize this host so only mpv sizes the swapchain HWND.
@@ -3193,7 +3192,8 @@ fn create_mpv_viewport(
             WINDOW_EX_STYLE::default(),
             windows::core::w!("Static"),
             MPV_VIEWPORT_NAME,
-            WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN,
+            // WebView2 covers this sibling's rectangle even where its pixels are transparent.
+            WS_CHILD | WS_CLIPCHILDREN,
             0,
             0,
             rect.right.max(1),

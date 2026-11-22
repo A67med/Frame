@@ -44,7 +44,6 @@ export function useFullscreen() {
     let kickDebounce: number | null = null;
     const mpvKick = async () => {
       if (cancelled) return;
-      window.dispatchEvent(new Event("resize"));
       window.dispatchEvent(new Event("harbor:mpv-refresh-geom"));
       try {
         const { invoke } = await import("@tauri-apps/api/core");
