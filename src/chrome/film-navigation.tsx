@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { ArrowUpRight, ChevronDown, LayoutGrid, Menu } from "lucide-react";
+import { pushBackHandler } from "@/lib/back-intercept";
 import { useT } from "@/lib/i18n";
 import type { ThemeDesign } from "@/lib/theme-design";
 import type { View } from "@/lib/view";
@@ -34,6 +35,15 @@ export function FilmNavigation({
   const t = useT();
   const id = useId();
   const panel = useRef<HTMLDivElement>(null);
+  const [directoryOpen, setDirectoryOpen] = useState(false);
+  useEffect(() => {
+    if (!directoryOpen) return;
+    return pushBackHandler(() => {
+      if (!panel.current?.matches(":popover-open")) return false;
+      panel.current.hidePopover();
+      return true;
+    });
+  }, [directoryOpen]);
   const current = items.find((i) => i.view === view);
   const currentGroup = current ? group(current) : "Discover";
   const [section, setSection] = useState(currentGroup);
@@ -67,13 +77,17 @@ export function FilmNavigation({
   const directory = (
     <div
       popover="auto"
+      onToggle={(event) => setDirectoryOpen(event.newState === "open")}
+      role="dialog"
+      aria-label={t("Navigation")}
+      data-tv-focus-scope
       id={id}
       ref={panel}
       className={`film-directory film-directory-${composition}`}
     >
       <header>
         <h2>{t("Navigation")}</h2>
-        <button type="button" popoverTarget={id} popoverTargetAction="hide">
+        <button type="button" data-tv-modal-close popoverTarget={id} popoverTargetAction="hide">
           {t("Close")}
         </button>
       </header>
@@ -102,7 +116,7 @@ export function FilmNavigation({
   );
   const main = items.filter((i) => core.has(i.id));
   return (
-    <nav aria-label={t("Navigation")} data-film-nav={composition}>
+    <nav data-tv-nav-zone aria-label={t("Navigation")} data-film-nav={composition}>
       {composition === "dune" && (
         <>
           <header>{trigger(t("Navigation"))}</header>
