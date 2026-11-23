@@ -19,6 +19,7 @@ import {
   type PersonSuggestion,
 } from "@/lib/radar/people";
 import { localIsoDay } from "@/lib/radar/release-dates";
+import { useProfiles } from "@/lib/profiles";
 import { useSettings } from "@/lib/settings";
 import { useScrollMemory, useView } from "@/lib/view";
 import { fmtDate } from "./person/person-utils";
@@ -311,6 +312,11 @@ function usePeopleSuggestions(
 }
 
 export function FollowingView({ active = true }: { active?: boolean }) {
+  const { activeProfile } = useProfiles();
+  return <FollowingHub key={activeProfile?.id} active={active} />;
+}
+
+function FollowingHub({ active }: { active: boolean }) {
   const t = useT();
   const { settings } = useSettings();
   const { openPerson, setView, openSettings } = useView();

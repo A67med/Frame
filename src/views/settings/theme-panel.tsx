@@ -91,8 +91,10 @@ function ThemeTab() {
   const { settings, update } = useSettings();
   const theme = settings.theme;
 
+  const currentTheme = useRef(theme);
+  currentTheme.current = theme;
   const setTheme = (patch: Partial<ThemeSettings>) => {
-    update({ theme: { ...theme, ...patch } });
+    update({ theme: { ...currentTheme.current, ...patch } });
   };
 
   return (

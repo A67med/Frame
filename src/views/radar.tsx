@@ -21,6 +21,8 @@ import {
   type RadarPage,
 } from "@/lib/radar/radar";
 import { appendUnique, localIsoDay, type ReleaseKind } from "@/lib/radar/release-dates";
+import { movieWatchedIds } from "@/lib/movie-watched";
+import { watchedFlagIds } from "@/lib/watched-flag";
 import { useMyRatings } from "@/lib/ratings/store";
 import { useSettings } from "@/lib/settings";
 import { library } from "@/lib/stremio";
@@ -169,10 +171,19 @@ function useTasteInput(authKey: string | null): TasteInput {
       cancelled = true;
     };
   }, [authKey]);
-  return useMemo(
-    () => ({ ratings, watchlist, watched, votes: getVoteEntries() }),
-    [ratings, watchlist, watched],
-  );
+  return useMemo(() => {
+    const localMovies = Array.from(movieWatchedIds(), (id) => ({ id, type: "movie" }));
+    const flags = Array.from(watchedFlagIds(), (id) => ({
+      id,
+      type: id.startsWith("tmdb:tv:") ? "series" : id.startsWith("tmdb:movie:") ? "movie" : "",
+    }));
+    return {
+      ratings,
+      watchlist,
+      watched: [...watched, ...localMovies, ...flags],
+      votes: getVoteEntries(),
+    };
+  }, [ratings, watchlist, watched]);
 }
 
 function ForYouSection({ tmdbKey }: { tmdbKey: string }) {

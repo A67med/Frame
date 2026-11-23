@@ -351,14 +351,29 @@ export function SearchOverlay() {
                     }
                     return;
                   }
-                  if (personMatch) {
+                  const person =
+                    mediaFilter === "people"
+                      ? currentResults?.people[0]
+                      : mediaFilter === "all"
+                        ? personMatch
+                        : null;
+                  if (person) {
                     e.preventDefault();
-                    pushExplore({ kind: "person", id: personMatch.id, name: personMatch.name });
+                    pushExplore({ kind: "person", id: person.id, name: person.name });
                     return;
                   }
-                  if (currentResults?.topMatch) {
+                  const meta =
+                    mediaFilter === "movies"
+                      ? currentResults?.movies[0]
+                      : mediaFilter === "shows"
+                        ? currentResults?.series[0]
+                        : addonFilter
+                          ? shownAddonGroups[0]?.metas[0]
+                          : mediaFilter === "all"
+                            ? currentResults?.topMatch?.meta
+                            : undefined;
+                  if (meta) {
                     e.preventDefault();
-                    const meta = currentResults.topMatch.meta;
                     commit();
                     openMeta(meta);
                   }

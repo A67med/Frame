@@ -244,8 +244,13 @@ export function BackgroundPicker({
                     try {
                       const data = await loadRecentBackground(recentProfile, row.id);
                       if (!mounted.current) return;
-                      if (data?.startsWith("data:image/")) onImageChange(data);
-                      else flashError(t("Image unavailable"));
+                      if (!data?.startsWith("data:image/")) throw new Error("Missing background");
+                      const preview = new Image();
+                      preview.src = data;
+                      await preview.decode();
+                      if (mounted.current) onImageChange(data);
+                    } catch {
+                      if (mounted.current) flashError(t("Image unavailable"));
                     } finally {
                       setBusy(false);
                     }
