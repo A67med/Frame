@@ -1,12 +1,17 @@
 import { Star } from "lucide-react";
 import type { Meta } from "@/lib/cinemeta";
-import { useLocalizedOverview } from "@/lib/use-localized-overview";
+import { useT } from "@/lib/i18n";
+import { useInWatchlist } from "@/lib/watchlist";
+import { useInLocalLibrary } from "@/lib/local-library";
 import { ResultPoster } from "./result-poster";
 import { useView } from "@/lib/view";
 
 function MetaRow({ m, onClose, index }: { m: Meta; onClose: () => void; index?: number }) {
   const { openMeta } = useView();
-  const description = useLocalizedOverview(m);
+  const description = m.description;
+  const t = useT();
+  const saved = useInWatchlist(m.id);
+  const local = useInLocalLibrary(m.id);
   const staggered = index != null;
   return (
     <button
@@ -25,6 +30,8 @@ function MetaRow({ m, onClose, index }: { m: Meta; onClose: () => void; index?: 
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <span className="truncate text-[16px] font-semibold text-ink">{m.name}</span>
         <div className="flex items-center gap-2 text-[12.5px] text-ink-muted">
+          {saved && <span className="text-accent">{t("Watchlist")}</span>}
+          {local && <span className="text-accent">{t("Local library")}</span>}
           {m.releaseInfo && <span>{m.releaseInfo}</span>}
           {m.releaseInfo && m.imdbRating && (
             <span aria-hidden className="h-1 w-1 rounded-full bg-ink-subtle" />

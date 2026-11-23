@@ -270,9 +270,11 @@ export function SearchOverlay() {
     count: group.metas.length,
   }));
   const shownAddonGroups = (currentResults?.addonGroups ?? []).filter(
-    (group) => !addonFilter || group.id === addonFilter,
+    (group) => mediaFilter === "all" || group.id === addonFilter,
   );
   const personMatch = matchPersonForQuery(currentResults?.people, trimmed);
+  const featuredId =
+    mediaFilter === "all" && !personMatch ? currentResults?.topMatch?.meta.id : undefined;
   const magnetInput = !!trimmed && isMagnetInput(trimmed);
   const urlInput = !!trimmed && !magnetInput && isDirectVideoUrl(trimmed);
   const directInput = magnetInput || urlInput;
@@ -525,12 +527,14 @@ export function SearchOverlay() {
                           />
                         )
                       )}
-                      <AddonHits hits={currentResults.addons} onClose={commit} />
+                      {mediaFilter === "all" && (
+                        <AddonHits hits={currentResults.addons} onClose={commit} />
+                      )}
                       <PeopleRow
                         people={
                           !showKind("people")
                             ? []
-                            : personMatch
+                            : mediaFilter === "all" && personMatch
                               ? currentResults.people.filter((p) => p.id !== personMatch.id)
                               : currentResults.people
                         }
@@ -546,18 +550,26 @@ export function SearchOverlay() {
                       >
                         <MetaList
                           title={t("Movies")}
-                          items={showKind("movies") ? currentResults.movies : []}
+                          items={
+                            showKind("movies")
+                              ? currentResults.movies.filter((m) => m.id !== featuredId)
+                              : []
+                          }
                           onClose={commit}
                           stagger
                         />
                         <MetaList
                           title={t("Series")}
-                          items={showKind("shows") ? currentResults.series : []}
+                          items={
+                            showKind("shows")
+                              ? currentResults.series.filter((m) => m.id !== featuredId)
+                              : []
+                          }
                           onClose={commit}
                           stagger
                         />
                       </div>
-                      {collectionHits.length > 0 && (
+                      {mediaFilter === "all" && collectionHits.length > 0 && (
                         <CollectionHitsRow
                           hits={collectionHits}
                           onOpen={(h) =>
@@ -587,7 +599,7 @@ export function SearchOverlay() {
                   </div>
                 )}
 
-                {trimmed && !directInput && !aiMode && !results && status !== "done" && (
+                {trimmed && !directInput && !aiMode && !currentResults && status !== "done" && (
                   <LoadingRows />
                 )}
               </>

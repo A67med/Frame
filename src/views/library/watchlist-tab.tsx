@@ -271,7 +271,16 @@ export function WatchlistTab({
         <EmptyWatchlist connected={traktConnected} mode={mode} />
       ) : visible.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-edge-soft bg-canvas/30 px-6 py-10 text-center text-[13px] text-ink-muted">
-          {tr("No matches for these filters.")}
+          {tr("No matches for these filters.")}{" "}
+          <button
+            className="ms-2 text-accent"
+            onClick={() => {
+              setQuery("");
+              setType("all");
+            }}
+          >
+            {tr("Clear filters")}
+          </button>
         </p>
       ) : settings.librarySort !== "recent" ? (
         <GroupedGrid

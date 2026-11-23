@@ -98,10 +98,11 @@ export function FilterBar({
         type="search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        aria-label={t("Search title…")}
         placeholder={t("Search title…")}
-        className="min-w-[220px] flex-1 max-w-md rounded-full bg-elevated/40 px-4 py-2 text-[13px] text-ink placeholder:text-ink-subtle ring-1 ring-edge-soft/60 outline-none focus:ring-edge"
+        className="min-w-[min(100%,180px)] flex-1 max-w-md rounded-full bg-elevated/40 px-4 py-2 text-[13px] text-ink placeholder:text-ink-subtle ring-1 ring-edge-soft/60 outline-none focus:ring-edge"
       />
-      {trailing}
+      <div className="ms-auto flex flex-wrap items-center gap-2">{trailing}</div>
     </div>
   );
 }
@@ -118,6 +119,7 @@ export function FilterPill({
   return (
     <button
       type="button"
+      aria-pressed={active}
       onClick={onClick}
       className={`rounded-full px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors ${
         active ? "bg-ink text-canvas" : "text-ink-muted hover:bg-raised hover:text-ink"
@@ -195,7 +197,11 @@ export function sortedGroups<T extends { meta: Meta; date: number | null }>(
     return [{ label: "A to Z", items }];
   }
   if (sort === "year") {
-    const items = [...entries].sort((a, b) => releaseYear(b.meta) - releaseYear(a.meta));
+    const items = [...entries].sort(
+      (a, b) =>
+        releaseYear(b.meta) - releaseYear(a.meta) ||
+        (a.meta.name ?? "").localeCompare(b.meta.name ?? ""),
+    );
     return [{ label: "By year", items }];
   }
   return groupByDate(entries);
@@ -207,7 +213,7 @@ export function SortControl() {
   const options: Array<[SortKey, string]> = [
     ["recent", t("Recent")],
     ["title", t("A-Z")],
-    ["year", t("Year")],
+    ["year", t("Newest year")],
   ];
   return (
     <div className="flex items-center gap-1 rounded-full bg-elevated/40 p-0.5 ring-1 ring-edge-soft/60">
@@ -215,6 +221,7 @@ export function SortControl() {
         <button
           key={key}
           type="button"
+          aria-pressed={settings.librarySort === key}
           onClick={() => update({ librarySort: key })}
           className={`rounded-full px-3 py-1.5 text-[12px] font-semibold transition-colors ${
             settings.librarySort === key
