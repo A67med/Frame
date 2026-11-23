@@ -10,6 +10,7 @@ export function useStudioPreview(
   navCustomization: NavCustomization,
   background?: ThemeBackground,
   logo?: ThemeLogo,
+  composition?: import("@/lib/theme-design").ThemeDesign["composition"],
 ) {
   const { setView } = useView();
   const [inspectorHidden, setInspectorHidden] = useState(false);
@@ -23,8 +24,8 @@ export function useStudioPreview(
   }, [setView]);
 
   useEffect(() => {
-    setThemePreview({ layout, bokeh, navCustomization, background, logo });
-  }, [layout, bokeh, navCustomization, background, logo]);
+    setThemePreview({ layout, bokeh, navCustomization, background, logo, composition });
+  }, [layout, bokeh, navCustomization, background, logo, composition]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

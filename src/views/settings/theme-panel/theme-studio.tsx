@@ -61,6 +61,7 @@ export function ThemeStudio({ seed, onClose }: { seed?: ThemePreset; onClose: ()
     draft.navCustomization,
     draft.background,
     draft.logo,
+    draft.design?.composition,
   );
   const [initialJson] = useState(() => JSON.stringify(initialDraft));
   const [confirmClose, setConfirmClose] = useState(false);

@@ -161,3 +161,13 @@ test("drag cleanup, reduced motion, and RTL handling are present", () => {
   assert.match(source, /direction === "rtl"/);
   assert.match(source, /e.key === "ContextMenu"/);
 });
+
+test("the first move respects the displayed order of grouped rail destinations", () => {
+  const visible = ["home", "movies", "shows", "catalogs"];
+  const updated = nav.moveNavItem(cfg(), "catalogs", "movies", "before", visible);
+  assert.deepEqual(
+    updated.order.filter((id) => visible.includes(id)),
+    ["home", "catalogs", "movies", "shows"],
+  );
+  assert.equal(new Set(updated.order).size, nav.NAV_ITEMS.length);
+});

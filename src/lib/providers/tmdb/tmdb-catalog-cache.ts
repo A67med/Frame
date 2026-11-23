@@ -6,6 +6,7 @@ const MAX_CATALOG_PAGES = 128;
 // Only public catalog pages: never account, session, search, or personalized state.
 export function isCatalogPath(path: string): boolean {
   return (
+    /^(movie|tv)\/\d+\/recommendations$/.test(path) ||
     /^movie\/\d+\/release_dates$/.test(path) ||
     /^(discover\/(movie|tv)|trending\/(movie|tv|all)\/(day|week)|(movie|tv)\/(popular|top_rated|now_playing|upcoming|on_the_air|airing_today))$/.test(
       path,

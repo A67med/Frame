@@ -25,11 +25,9 @@ export function ColorThemeBody({
             }`}
             style={{ background: p.swatch[0] }}
           >
-            {p.layout === "frame" && (
-              <div className="relative mb-3 aspect-video w-full">
-                <ThemeThumbnail theme={p} />
-              </div>
-            )}
+            <div className="relative mb-3 aspect-video w-full">
+              <ThemeThumbnail theme={p} />
+            </div>
             <div
               className="absolute inset-x-0 top-0 h-2/5 pointer-events-none opacity-10"
               style={{

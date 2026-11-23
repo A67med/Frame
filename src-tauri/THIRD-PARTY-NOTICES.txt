@@ -919,7 +919,7 @@ Some of the benchmark data in testdata/ is licensed differently:
    (http://www.gutenberg.org/ebooks/53).
 
 
-Jura variable font (Zodiac display typography)
+Jura variable font
 Source: https://github.com/google/fonts/tree/7af0d90b4d532ffa4b041937b560c6df4e7b1e95/ofl/jura
 SHA-256: 188b415d44810d68b4d6b4a8c281f864184c2b8edc5e88e6357c89f7b44075bf
 

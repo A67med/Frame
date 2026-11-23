@@ -1,6 +1,8 @@
-import { usePreviewNavCustomization } from "@/lib/theme-preview";
+import { FilmNavigation } from "./film-navigation";
+import { getThemeById } from "@/lib/theme";
+import { useThemePreview, usePreviewNavCustomization } from "@/lib/theme-preview";
 import { Lock } from "lucide-react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { FrameMark } from "@/components/icons/frame-mark";
 import { useAvailableNavItems, applyNavCustomization, type NavItem } from "@/chrome/nav-items";
 import { ProfileChip } from "@/chrome/sidebar/profile-chip";
@@ -34,6 +36,10 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
   const { locked, unlock, hiddenTabs } = useParental();
   const { settings } = useSettings();
   const t = useT();
+  const preview = useThemePreview();
+  const composition = preview
+    ? preview.composition
+    : getThemeById(settings.theme.preset)?.design?.composition;
   const collapsed = settings.sidebarCollapsed;
   const [pinFor, setPinFor] = useState<View | null>(null);
   const { open: openContextMenu } = useContextMenu();
@@ -43,13 +49,15 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
   };
 
   const available = useAvailableNavItems();
-  const items = applyNavCustomization(
-    available,
-    usePreviewNavCustomization(settings.navCustomization),
-  );
-  const primary = items.filter((i) => PRIMARY_IDS.has(i.id));
+  const customization = usePreviewNavCustomization(settings.navCustomization);
+  const items = applyNavCustomization(available, customization);
+  const railItems = customization.order.length
+    ? items
+    : [
+        ...items.filter((item) => PRIMARY_IDS.has(item.id)),
+        ...items.filter((item) => !PRIMARY_IDS.has(item.id)),
+      ];
   // Settings lives in the bottom utility group, above the profile control.
-  const collections = items.filter((i) => !PRIMARY_IDS.has(i.id) && i.id !== "settings");
   // Read from the full list so hiding Settings in the nav editor cannot remove it.
   const settingsItem = available.find((i) => i.id === "settings");
 
@@ -61,6 +69,8 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
     return true;
   };
 
+  const visibleRail = railItems.filter((item) => item.id !== "settings" && isVisible(item));
+  const visibleOrder = visibleRail.map((item) => item.id);
   const go = (item: NavItem) => {
     if (item.pinGated && locked) {
       setPinFor(item.view);
@@ -71,136 +81,143 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
 
   return (
     <>
-      <aside
-        data-tv-focus-scope={editing || undefined}
-        aria-hidden={chromeHidden}
-        data-harbor-sidebar
-        data-frame-navigation={cinematic ? "" : undefined}
-        data-collapsed={collapsed ? "true" : "false"}
-        className={`relative z-[60] flex w-[78px] shrink-0 flex-col transition-[opacity,transform,width] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          collapsed ? "" : "lg:w-64"
-        } ${
-          chromeHidden
-            ? "pointer-events-none -translate-x-2 rtl:translate-x-2 opacity-0"
-            : "translate-x-0 opacity-100"
-        }`}
-      >
-        <div
-          className="relative flex min-h-0 flex-1 flex-col rounded-e-[30px] shadow-[8px_0_34px_-18px_rgba(0,0,0,0.65)] rtl:shadow-[-8px_0_34px_-18px_rgba(0,0,0,0.65)] ring-1 ring-inset ring-edge-soft/70"
-          style={{
-            background: "linear-gradient(180deg, var(--color-surface), var(--color-canvas) 60%)",
-          }}
+      {cinematic && !chromeHidden && composition === "la-la-land" ? (
+        <FilmNavigation
+          locked={locked}
+          items={items.filter((item) => isVisible(item) && item.id !== "settings")}
+          settingsItem={settingsItem}
+          go={go}
+          view={view}
+        />
+      ) : (
+        <aside
+          data-tv-focus-scope={editing || undefined}
+          aria-hidden={chromeHidden}
+          data-harbor-sidebar
+          data-frame-navigation={cinematic ? "" : undefined}
+          data-collapsed={collapsed ? "true" : "false"}
+          className={`relative z-[60] flex w-[78px] shrink-0 flex-col transition-[opacity,transform,width] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            collapsed ? "" : "lg:w-64"
+          } ${
+            chromeHidden
+              ? "pointer-events-none -translate-x-2 rtl:translate-x-2 opacity-0"
+              : "translate-x-0 opacity-100"
+          }`}
         >
-          <span
-            aria-hidden
-            className="pointer-events-none absolute inset-0 overflow-hidden rounded-e-[30px]"
+          <div
+            className="relative flex min-h-0 flex-1 flex-col rounded-e-[30px] shadow-[8px_0_34px_-18px_rgba(0,0,0,0.65)] rtl:shadow-[-8px_0_34px_-18px_rgba(0,0,0,0.65)] ring-1 ring-inset ring-edge-soft/70"
+            style={{
+              background: "linear-gradient(180deg, var(--color-surface), var(--color-canvas) 60%)",
+            }}
           >
             <span
-              className="absolute inset-x-0 top-0 h-44"
-              style={{
-                background:
-                  "radial-gradient(125% 80% at 50% -8%, var(--color-accent-soft), transparent 72%)",
-              }}
-            />
-          </span>
-
-          <div
-            data-tauri-drag-region
-            className={`relative flex h-20 shrink-0 items-center justify-center px-3 ${
-              collapsed ? "" : "lg:justify-start lg:px-6"
-            }`}
-          >
-            <button
-              type="button"
-              onClick={() => setView("home")}
-              aria-label={t("chrome.harborHome")}
-              className="flex items-center gap-2 text-ink"
-            >
-              <FrameMark className="harbor-dracula-moon h-7 w-7 shrink-0 text-accent drop-shadow-[0_0_10px_var(--color-accent-soft)] lg:h-[26px] lg:w-[26px]" />
-              {!collapsed && (
-                <span
-                  className="hidden text-[40px] font-medium leading-none tracking-tight lg:inline"
-                  style={{ fontFamily: "var(--font-display)", transform: "translateY(1px)" }}
-                >
-                  Frame
-                </span>
-              )}
-            </button>
-          </div>
-
-          <nav
-            className="flex min-h-0 flex-1 flex-col gap-1.5 overflow-y-auto px-3 pb-4 pt-1 [scrollbar-width:none] lg:px-4 [&::-webkit-scrollbar]:hidden"
-            onContextMenu={openEmptyMenu}
-          >
-            {primary.filter(isVisible).map((item) => (
-              <NavPill
-                key={item.id}
-                item={item}
-                active={view === item.view}
-                collapsed={collapsed}
-                onClick={() => go(item)}
-              />
-            ))}
-
-            {cinematic && collections.some(isVisible) && <hr className="frame-nav-divider" />}
-            {collections.filter(isVisible).map((item) => (
-              <NavPill
-                key={item.id}
-                item={item}
-                active={view === item.view}
-                gated={!!item.pinGated && locked}
-                collapsed={collapsed}
-                onClick={() => go(item)}
-              />
-            ))}
-          </nav>
-
-          <div className={`relative px-3 pb-3 pt-1 ${collapsed ? "" : "lg:px-4"}`}>
-            <div className="mb-1 px-1">
-              <NavHiddenTray orientation="vertical" compact={collapsed} />
-            </div>
-            <div
               aria-hidden
-              className="pointer-events-none mb-2 h-px bg-gradient-to-r from-transparent via-edge-soft to-transparent"
-            />
-            <div className={`mb-1 flex flex-col gap-1 ${collapsed ? "items-center" : ""}`}>
-              <SidebarBigPictureEntry collapsed={collapsed} />
-              <CollapseToggle collapsed={collapsed} />
-              {settingsItem && (
-                <SidebarSettingsEntry
-                  active={view === settingsItem.view}
-                  gated={!!settingsItem.pinGated && locked}
-                  collapsed={collapsed}
-                  onClick={() => go(settingsItem)}
-                />
-              )}
-            </div>
-            {locked ? (
-              <div
-                className={`flex items-center justify-center gap-3 rounded-2xl py-2.5 ${
-                  collapsed ? "" : "lg:justify-start lg:px-3"
-                }`}
+              className="pointer-events-none absolute inset-0 overflow-hidden rounded-e-[30px]"
+            >
+              <span
+                className="absolute inset-x-0 top-0 h-44"
+                style={{
+                  background:
+                    "radial-gradient(125% 80% at 50% -8%, var(--color-accent-soft), transparent 72%)",
+                }}
+              />
+            </span>
+
+            <div
+              data-tauri-drag-region
+              className={`relative flex h-20 shrink-0 items-center justify-center px-3 ${
+                collapsed ? "" : "lg:justify-start lg:px-6"
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => setView("home")}
+                aria-label={t("chrome.harborHome")}
+                className="flex items-center gap-2 text-ink"
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full ring-1 ring-edge-soft text-ink-subtle">
-                  <Lock size={16} />
-                </div>
+                <FrameMark className="harbor-dracula-moon h-7 w-7 shrink-0 text-accent drop-shadow-[0_0_10px_var(--color-accent-soft)] lg:h-[26px] lg:w-[26px]" />
                 {!collapsed && (
-                  <div className="hidden min-w-0 lg:block">
-                    <div className="truncate text-[13px] font-medium text-ink-muted">
-                      {t("chrome.locked")}
-                    </div>
-                    <div className="truncate text-[11.5px] text-ink-subtle">
-                      {t("chrome.parentalOn")}
-                    </div>
-                  </div>
+                  <span
+                    className="hidden text-[40px] font-medium leading-none tracking-tight lg:inline"
+                    style={{ fontFamily: "var(--font-display)", transform: "translateY(1px)" }}
+                  >
+                    Frame
+                  </span>
+                )}
+              </button>
+            </div>
+
+            <nav
+              className="flex min-h-0 flex-1 flex-col gap-1.5 overflow-y-auto px-3 pb-4 pt-1 [scrollbar-width:none] lg:px-4 [&::-webkit-scrollbar]:hidden"
+              onContextMenu={openEmptyMenu}
+            >
+              {visibleRail.map((item, index, list) => (
+                <Fragment key={item.id}>
+                  {cinematic &&
+                    !editing &&
+                    !customization.order.length &&
+                    index > 0 &&
+                    PRIMARY_IDS.has(list[index - 1].id) &&
+                    !PRIMARY_IDS.has(item.id) && <hr className="frame-nav-divider" />}
+                  <NavPill
+                    visibleOrder={visibleOrder}
+                    item={item}
+                    active={view === item.view}
+                    gated={!!item.pinGated && locked}
+                    collapsed={collapsed}
+                    onClick={() => go(item)}
+                  />
+                </Fragment>
+              ))}
+            </nav>
+
+            <div className={`relative px-3 pb-3 pt-1 ${collapsed ? "" : "lg:px-4"}`}>
+              <div className="mb-1 px-1">
+                <NavHiddenTray orientation="vertical" compact={collapsed} />
+              </div>
+              <div
+                aria-hidden
+                className="pointer-events-none mb-2 h-px bg-gradient-to-r from-transparent via-edge-soft to-transparent"
+              />
+              <div className={`mb-1 flex flex-col gap-1 ${collapsed ? "items-center" : ""}`}>
+                <SidebarBigPictureEntry collapsed={collapsed} />
+                <CollapseToggle collapsed={collapsed} />
+                {settingsItem && (
+                  <SidebarSettingsEntry
+                    active={view === settingsItem.view}
+                    gated={!!settingsItem.pinGated && locked}
+                    collapsed={collapsed}
+                    onClick={() => go(settingsItem)}
+                  />
                 )}
               </div>
-            ) : !cinematic ? (
-              <ProfileChip collapsed={collapsed} />
-            ) : null}
+              {locked ? (
+                <div
+                  className={`flex items-center justify-center gap-3 rounded-2xl py-2.5 ${
+                    collapsed ? "" : "lg:justify-start lg:px-3"
+                  }`}
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full ring-1 ring-edge-soft text-ink-subtle">
+                    <Lock size={16} />
+                  </div>
+                  {!collapsed && (
+                    <div className="hidden min-w-0 lg:block">
+                      <div className="truncate text-[13px] font-medium text-ink-muted">
+                        {t("chrome.locked")}
+                      </div>
+                      <div className="truncate text-[11.5px] text-ink-subtle">
+                        {t("chrome.parentalOn")}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : !cinematic ? (
+                <ProfileChip collapsed={collapsed} />
+              ) : null}
+            </div>
           </div>
-        </div>
-      </aside>
+        </aside>
+      )}
 
       {pinFor !== null && (
         <ParentalPinModal
@@ -221,6 +238,7 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
 }
 
 function NavPill({
+  visibleOrder,
   item,
   active,
   gated,
@@ -228,6 +246,7 @@ function NavPill({
   onClick,
 }: {
   item: NavItem;
+  visibleOrder: NavItem["id"][];
   active: boolean;
   gated?: boolean;
   collapsed?: boolean;
@@ -237,14 +256,15 @@ function NavPill({
   const label = t(item.label);
   const { open: openContextMenu } = useContextMenu();
   const editing = useNavEditMode();
-  const drag = useNavDrag(item.id, "vertical");
+  const drag = useNavDrag(item.id, "vertical", visibleOrder);
   return (
     <NavEditableItem itemId={item.id}>
       <button
-        onClick={onClick}
+        onClick={editing ? undefined : onClick}
         onContextMenu={(e) =>
           openContextMenu(e, {
             kind: "nav",
+            visibleOrder,
             itemId: item.id,
             view: item.view,
             label,

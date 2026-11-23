@@ -447,3 +447,20 @@
   --color-accent-soft: #e0e7eb2e;
   color: var(--color-ink);
 }
+
+.radar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(145px, 100%), 1fr));
+  gap: 24px 16px;
+}
+:is([data-frame-page="radar"], [data-frame-page="following"]) button[aria-pressed="true"] {
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  box-shadow: inset 0 -2px var(--color-accent);
+}
+[data-frame-page="following"] select {
+  background: var(--color-elevated);
+  color: var(--color-ink);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}

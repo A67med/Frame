@@ -1,7 +1,7 @@
 import type { FontPairId, ThemePreset } from "./theme";
 import { DEFAULT_THEME_DESIGN, type ThemeDesign } from "./theme-design";
 
-type CollectionId = "project-hail-mary" | "dune" | "la-la-land" | "doomsday" | "zodiac";
+type CollectionId = "project-hail-mary" | "la-la-land";
 
 function theme(
   id: CollectionId,
@@ -82,24 +82,6 @@ export const FRAME_THEME_COLLECTION: Record<CollectionId, ThemePreset> = {
       "--color-danger": "#e06c75",
     },
   },
-  dune: theme(
-    "dune",
-    "Dune",
-    "Sandstone architecture. Wide horizons, angular cards and copper rules.",
-    [
-      "#171410",
-      "#252018",
-      "#342b20",
-      "#493b2b",
-      "#f1e6ce",
-      "#c9b99c",
-      "#ab997b",
-      "#857052",
-      "#dfb378",
-    ],
-    "cabinet-switzer",
-    { radius: 0, density: 1.25, headingScale: 1.15, heading: "display", navigation: "block" },
-  ),
   "la-la-land": theme(
     "la-la-land",
     "La La Land",
@@ -124,48 +106,5 @@ export const FRAME_THEME_COLLECTION: Record<CollectionId, ThemePreset> = {
       navigation: "pill",
       elevation: "soft",
     },
-  ),
-  doomsday: theme(
-    "doomsday",
-    "Doomsday",
-    "Obsidian green, gilded edges and commanding monumental headings.",
-    [
-      "#080e0b",
-      "#142019",
-      "#233429",
-      "#354737",
-      "#f0f2df",
-      "#c0c9ac",
-      "#a0b18e",
-      "#586847",
-      "#d7c55c",
-    ],
-    "cabinet-switzer",
-    {
-      radius: 2,
-      density: 1.05,
-      headingScale: 1.2,
-      heading: "display",
-      navigation: "block",
-      elevation: "soft",
-    },
-  ),
-  zodiac: theme(
-    "zodiac",
-    "Zodiac",
-    "Jura's geometric letterforms, silver fog and fine blue-green lines.",
-    [
-      "#080f13",
-      "#111e24",
-      "#1b2d35",
-      "#2b414b",
-      "#e1ebed",
-      "#b2c5cb",
-      "#91adb6",
-      "#49636d",
-      "#9cc9cf",
-    ],
-    "jura-inter",
-    { radius: 1, density: 1.2, headingScale: 1.1, heading: "display", navigation: "line" },
   ),
 };

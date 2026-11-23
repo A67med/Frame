@@ -1,3 +1,4 @@
+import { builtInThemePreview, ThemeThumbnail } from "@/components/theme-thumbnail";
 import { useState } from "react";
 import { Check, Copy, Download, ImagePlus, Loader2, Trash2 } from "../../icons";
 import { setCustomThemePreview } from "@/lib/custom-themes";
@@ -27,6 +28,7 @@ export function BrowserCard({
   onRemove: () => void;
 }) {
   const t = useT();
+  const builtIn = !!builtInThemePreview(theme.id);
   const hasImage = !!theme.previewImage;
   const localizedBlurb = !removable && theme.blurb ? t(theme.blurb) : theme.blurb;
   const cover = theme.previewImage ?? theme.background?.image ?? null;
@@ -51,8 +53,14 @@ export function BrowserCard({
         active ? "ring-2 ring-accent" : ""
       }`}
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-elevated">
-        <Fit kind="theme" tokens={tokensFromPreset(theme)} cover={cover} />
+      <div
+        className={`relative overflow-hidden bg-elevated ${builtIn ? "aspect-video" : "aspect-[16/10]"}`}
+      >
+        {builtIn ? (
+          <ThemeThumbnail theme={theme} />
+        ) : (
+          <Fit kind="theme" tokens={tokensFromPreset(theme)} cover={cover} />
+        )}
         {active && (
           <span className="absolute end-2.5 top-2.5 z-10 inline-flex h-[22px] shrink-0 items-center gap-1.5 rounded-[6px] bg-accent px-2 text-[13px] font-bold uppercase leading-[17px] tracking-[0.72px] text-canvas">
             <Check size={14} strokeWidth={3} /> {t("Active")}

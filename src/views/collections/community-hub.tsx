@@ -157,7 +157,10 @@ function HubGrid({
 function EmptyCollections({ onCreate }: { onCreate: () => void }) {
   const t = useT();
   return (
-    <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-edge-soft bg-canvas/30 px-8 py-20 text-center">
+    <div
+      data-film-collection-empty
+      className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-edge-soft bg-canvas/30 px-8 py-20 text-center"
+    >
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-elevated/60 text-ink-subtle ring-1 ring-edge-soft/60">
         <GalleryVerticalEnd size={24} strokeWidth={1.6} />
       </span>

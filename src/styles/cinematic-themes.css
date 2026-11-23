@@ -6,102 +6,432 @@
   font-display: swap;
 }
 
-/* Each film uses the shared shell and design tokens; no private artwork is shipped. */
-html[data-theme-composition="dune"][data-frame-desktop] {
-  --frame-rail: 112px;
-  --frame-gutter: clamp(28px, 4.2vw, 76px);
-  --frame-rule: 1px solid var(--color-edge-soft);
+/* Film navigation exists only in the desktop browse shell. */
+[data-film-nav] {
+  z-index: 62;
+  flex: none;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
 }
-html[data-theme-composition="dune"] [data-frame-navigation] {
-  border-inline-end: 3px double var(--color-edge);
+[data-film-nav] button {
+  cursor: pointer;
 }
-html[data-theme-composition="dune"] [data-frame-page] :is(h1, h3) {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+[data-film-nav] button:hover,
+[data-film-nav] button:focus-visible {
+  color: var(--color-accent);
 }
-html[data-theme-composition="dune"] [data-harbor-nav][aria-current="page"] {
-  border-block: 1px solid var(--color-accent);
+[data-film-nav] [aria-current="page"] {
+  color: var(--color-accent);
 }
-html[data-theme-composition="dune"] .harbor-poster {
-  border-block-end: 3px solid var(--color-edge);
+.film-directory-trigger,
+.film-gallery-dock button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
 }
-
-html[data-theme-composition="la-la-land"] [data-frame-navigation] {
-  padding-block: 12px;
-  border-inline-end-style: dashed;
-}
-html[data-theme-composition="la-la-land"] [data-frame-navigation] [data-harbor-nav] {
-  padding-block: 10px;
-}
-html[data-theme-composition="la-la-land"] [data-frame-page] :is(h1, h3) {
-  font-family: var(--font-display);
-  font-style: italic;
-  letter-spacing: -0.025em;
-}
-html[data-theme-composition="la-la-land"] .harbor-poster {
-  border-radius: 32px 32px 8px 8px;
-  border: 1px solid var(--color-edge-soft);
-}
-html[data-theme-composition="la-la-land"] .harbor-settings-group {
-  border-radius: 20px 4px 20px 4px;
-}
-
-html[data-theme-composition="doomsday"] [data-frame-navigation] {
-  border-inline-end: 2px solid var(--color-accent);
+.film-directory {
+  inset: 0;
+  margin: auto;
+  width: min(720px, 90vw);
+  max-height: 75vh;
+  overflow: auto;
+  border: 1px solid var(--color-edge);
+  color: var(--color-ink);
   background: var(--color-surface);
+  padding: clamp(18px, 3vw, 40px);
+  box-shadow: 0 20px 100px #0006;
 }
-html[data-theme-composition="doomsday"] [data-frame-page] :is(h1, h3) {
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.015em;
+.film-directory::backdrop {
+  background: #0007;
 }
-html[data-theme-composition="doomsday"]
-  [data-frame-navigation]
-  [data-harbor-nav][aria-current="page"] {
-  color: var(--color-canvas);
-  background: var(--color-accent);
-  box-shadow: inset 4px 0 var(--color-ink);
+.film-directory header,
+.film-directory footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
-html[data-theme-composition="doomsday"] .harbor-poster {
-  border: 1px solid var(--color-edge);
-  border-block-start: 3px solid var(--color-accent);
+.film-directory h2 {
+  font: 2rem var(--font-display);
 }
+.film-directory footer {
+  border-top: 1px solid var(--color-edge);
+  padding-top: 12px;
+  justify-content: start;
+  font-size: 13px;
+}
+.film-directory footer button {
+  width: auto;
+}
+.film-directory {
+  inset: auto 0 82px;
+  border-radius: 22px;
+}
+.film-empty p {
+  max-width: 48ch;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+}
+.film-empty button {
+  font-weight: 600;
+  margin-block-start: 16px;
+  color: var(--color-accent);
+}
+html[data-frame-desktop]:has([data-film-nav="la-la-land"]) {
+  --frame-rail: 0px;
+  --frame-gutter: clamp(24px, 7vw, 138px);
+  & [data-film-nav] {
+    position: fixed;
+    inset: auto 0 16px;
+    margin: auto;
+    width: max-content;
+    max-width: 96vw;
+  }
+  & .film-gallery-dock {
+    display: flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 40px;
+    border: 1px solid var(--color-edge);
+    background: var(--color-surface);
+    box-shadow: 0 6px 25px #0003;
+  }
+  & .film-gallery-dock button {
+    border-radius: 30px;
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+  & .film-gallery-dock button svg {
+    width: 17px;
+    height: 17px;
+  }
+  & .film-gallery-dock [aria-current] {
+    background: var(--color-elevated);
+  }
+  & [data-frame-page],
+  & [data-frame-detail] {
+    padding-bottom: 100px;
+  }
+  & :is(.frame-page-heading, .frame-section-heading, .frame-library-heading) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 0;
+    gap: 14px;
+    padding-block: clamp(14px, 3vw, 50px);
+  }
+  & .frame-library-heading p {
+    max-width: 60ch;
+  }
+  & .frame-page-actions {
+    justify-content: center;
+  }
+  & [data-frame-page] h1 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 84px);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+  }
+  & .frame-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  & .frame-feature > div:first-child {
+    border: 0;
+    border-radius: 2px;
+    box-shadow: none;
+  }
+  & .frame-feature-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    border: 0;
+  }
+  & .frame-feature-index button {
+    width: auto;
+    border: 0;
+    padding: 4px;
+    font-size: 12px;
+  }
+  & .frame-feature-number {
+    display: none;
+  }
+  & [data-frame-recommended] > .grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1100px;
+    margin: auto;
+  }
+  & [data-frame-recommended] aside {
+    min-height: 0;
+    border: 0;
+    max-width: 72ch;
+    padding: 12px;
+    margin: auto;
+  }
+  & .frame-library-workspace {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  & .frame-library-nav {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 0;
+    padding: 0;
+    gap: 16px;
+  }
+  & .frame-library-nav button {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    padding: 6px 0;
+  }
+  & .frame-library-nav [aria-current] {
+    box-shadow: 0 1px var(--color-accent);
+  }
+  & .gallery-empty {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 14px;
+    margin: clamp(28px, 6vh, 90px) auto;
+  }
+  & .gallery-empty h2 {
+    font: italic 2.4rem var(--font-display);
+  }
+  & .gallery-empty button {
+    border-bottom: 1px solid currentColor;
+  }
+  & .radar-grid,
+  & [data-film-people="gallery"] {
+    grid-template-columns: repeat(auto-fill, minmax(min(176px, 100%), 1fr));
+    gap: 32px;
+  }
+  & [data-film-people] li {
+    background: none;
+    border: 0;
+  }
+  & .frame-detail-dossier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  & .frame-detail-art {
+    width: min(100%, 1000px);
+    height: 35vh;
+    min-height: 210px;
+  }
+  & .frame-detail-copy {
+    text-align: center;
+    max-width: 860px;
+    align-self: center;
+    padding: 24px;
+  }
+  & .frame-detail-copy .mt-9 {
+    justify-content: center;
+    margin-inline: auto;
+  }
+  & [data-frame-page="collections"] header {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
 
-html[data-theme-composition="zodiac"][data-frame-desktop] {
-  --frame-rail: 108px;
-  --frame-rule: 1px solid var(--color-edge-soft);
-}
-html[data-theme-composition="zodiac"] [data-frame-page] :is(h1, h3) {
-  font-family: "Jura", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1.25;
-}
-html[data-theme-composition="zodiac"] [data-frame-navigation] [data-harbor-nav] > span:last-child {
-  font-family: "Jura", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-  font-size: 11px;
-}
-html[data-theme-composition="zodiac"] [data-frame-command] {
-  border-block-end: 3px double var(--color-edge);
-}
-html[data-theme-composition="zodiac"] .harbor-poster {
-  border: 1px solid var(--color-edge);
-  padding: 3px;
-  background: var(--color-canvas);
-}
-html[data-theme-composition="zodiac"] .harbor-row-shell > div:first-child {
-  padding-block-end: 12px;
-  border-block-end: 1px solid var(--color-edge-soft);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html[data-theme-composition="la-la-land"] .harbor-poster {
-    transition:
-      border-radius 220ms ease,
-      box-shadow 220ms ease;
+  & .film-gallery-dock {
+    padding: 4px 8px;
+    border-radius: 22px;
+    border-color: var(--color-edge);
+    box-shadow: 0 8px 32px #08061955;
+  }
+  & .film-dock-items {
+    display: flex;
+    gap: 2px;
+    min-width: 0;
+    align-items: center;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 5px;
+    scrollbar-width: thin;
+  }
+  & .film-dock-items button[data-harbor-nav],
+  & .film-directory-trigger {
+    flex: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 14px;
+    font-size: 13px;
+    min-height: 38px;
+  }
+  & .film-dock-items button[data-harbor-nav] > span {
+    max-width: 15ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  & .film-gallery-dock [aria-current="page"] {
+    background: var(--color-elevated);
+    color: var(--color-accent);
+  }
+  & .film-dock-items [aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    inset: auto 30% 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  & .film-directory-trigger {
+    border-inline-start: 1px solid var(--color-edge);
+    border-radius: 0;
+    padding-inline: 14px;
+  }
+  & .film-directory-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
+    gap: 4px;
+    margin: 18px 0;
+  }
+  & .film-directory-items button,
+  & .film-directory footer button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    text-align: start;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  & .film-directory-items button svg {
+    width: 18px;
+    flex: none;
+  }
+  & .film-directory-items button:hover,
+  & .film-dock-items button:hover {
+    background: var(--color-elevated);
+  }
+  & [data-film-nav][data-editing] {
+    width: min(920px, 96vw);
+  }
+  & [data-film-nav] [data-nav-edit-tray] {
+    margin-bottom: 6px;
+    max-height: 32vh;
+    overflow-y: auto;
+  }
+  & [data-nav-edit-wrapper] {
+    flex: none;
+  }
+  & [data-editing] .film-dock-items {
+    padding: 12px;
+    touch-action: pan-x;
+  }
+  & [data-editing] [data-nav-drop-id] {
+    touch-action: none;
+    cursor: grab;
+  }
+  & .film-gallery-dock [data-nav-edit-wrapper] > button:last-child {
+    padding: 0;
+    display: grid;
+    border-radius: 50%;
+  }
+  & .frame-feature-index {
+    flex-direction: row;
+    align-items: baseline;
+    max-height: 135px;
+    gap: 8px 22px;
+  }
+  & .frame-feature-index button[aria-current],
+  & .frame-library-nav button[aria-current="page"] {
+    color: var(--color-accent);
+  }
+  & .frame-feature .harbor-hero-stage {
+    height: clamp(290px, 33vw, 520px);
+    min-height: 0;
+  }
+  & .frame-feature .harbor-hero-content {
+    padding: clamp(22px, 3vw, 55px);
+  }
+  & .frame-feature .harbor-hero-content h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+  & .frame-feature > div:first-child {
+    border-radius: 12px;
+  }
+  & :is([data-frame-page="radar"], [data-frame-page="following"]) .frame-radar-index {
+    align-self: center;
+    border: 0;
+    border-block-end: 1px solid var(--color-edge);
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    gap: 8px;
+  }
+  & .frame-radar-index button[aria-pressed="true"] {
+    color: var(--color-accent);
+    background: transparent;
+    box-shadow: inset 0 -2px var(--color-accent);
+  }
+  & [data-frame-recommended] aside {
+    align-items: center;
+    text-align: center;
+  }
+  & [data-film-people="gallery"] li > button:first-child > span:first-child {
+    aspect-ratio: 4/5;
+    border-radius: 60% 60% 8px 8px;
+  }
+  & [data-film-collection-empty] {
+    background: transparent;
+    border: 0;
+    border-block: 1px solid var(--color-edge-soft);
+    border-radius: 0;
+    padding-block: 7vh;
+  }
+  & .frame-detail-art {
+    width: 100%;
+    height: clamp(240px, 32vw, 480px);
+  }
+  & .frame-detail-copy {
+    padding-block: clamp(20px, 3vw, 40px);
+  }
+  & .hset-rail {
+    border-inline-end: 1px solid var(--color-edge-soft);
+  }
+  & .harbor-settings-group {
+    border-radius: 12px;
+    border-color: var(--color-edge-soft);
+    box-shadow: none;
+  }
+  & .hset-main .hset-content {
+    padding-bottom: 90px;
+  }
+  @media (max-width: 700px) {
+    & .film-gallery-dock button[data-harbor-nav] {
+      padding-inline: 8px;
+    }
+    & .film-directory-trigger span {
+      display: none;
+    }
+    & .frame-library-nav {
+      gap: 10px;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    & .film-gallery-dock button {
+      transition:
+        background-color 160ms ease,
+        color 160ms ease;
+    }
   }
 }

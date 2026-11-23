@@ -1,4 +1,4 @@
-import { ThemeThumbnail } from "@/components/theme-thumbnail";
+import { builtInThemePreview, ThemeThumbnail } from "@/components/theme-thumbnail";
 import { ArrowRight, Check, FileDown, Library, Palette } from "../../icons";
 import type { ReactNode } from "react";
 import type { ThemePreset } from "@/lib/theme";
@@ -71,7 +71,7 @@ function ThemeDeck({ themes }: { themes: ThemePreset[] }) {
           key={t.id}
           className={`absolute aspect-[16/10] w-[46%] overflow-hidden rounded-md harbor-float transition-transform duration-300 ease-out motion-reduce:transition-none ${DECK[i]}`}
         >
-          {t.layout === "frame" ? (
+          {builtInThemePreview(t.id) || t.layout === "frame" ? (
             <ThemeThumbnail theme={t} />
           ) : (
             <Fit

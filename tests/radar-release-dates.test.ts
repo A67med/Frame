@@ -28,6 +28,7 @@ test("upcoming lists start tomorrow and have no upper limit", () => {
   assert.equal(params["primary_release_date.gte"], "2026-10-26");
   assert.equal(params["primary_release_date.lte"], undefined);
   assert.equal(params.region, undefined);
+  assert.equal(params.sort_by, "primary_release_date.asc");
 });
 
 test("new releases filter on the actual release date, not the record's age", () => {
@@ -37,6 +38,7 @@ test("new releases filter on the actual release date, not the record's age", () 
   const tv = releaseWindowParams("new", "tv", NOW);
   assert.equal(tv["first_air_date.lte"], "2026-10-25");
   assert.equal(tv.with_release_type, undefined);
+  assert.equal(tv.sort_by, "first_air_date.desc");
 });
 
 test("the release window rejects missing, malformed and out-of-range dates", () => {

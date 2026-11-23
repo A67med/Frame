@@ -2,6 +2,10 @@ import { Bookmark, LibraryBig, RefreshCw } from "lucide-react";
 import type { RefObject } from "react";
 import { type Meta } from "@/lib/cinemeta";
 import { useSettings } from "@/lib/settings";
+import { useView } from "@/lib/view";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
+import { useThemePreview } from "@/lib/theme-preview";
+import { getThemeById } from "@/lib/theme";
 import { useT } from "@/lib/i18n";
 import { VirtualGrid } from "@/components/virtual-grid";
 import { WatchlistCard } from "./watchlist-card";
@@ -98,10 +102,11 @@ export function FilterBar({
         type="search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        aria-label={t("Search title…")}
         placeholder={t("Search title…")}
-        className="min-w-[220px] flex-1 max-w-md rounded-full bg-elevated/40 px-4 py-2 text-[13px] text-ink placeholder:text-ink-subtle ring-1 ring-edge-soft/60 outline-none focus:ring-edge"
+        className="min-w-[min(100%,180px)] flex-1 max-w-md rounded-full bg-elevated/40 px-4 py-2 text-[13px] text-ink placeholder:text-ink-subtle ring-1 ring-edge-soft/60 outline-none focus:ring-edge"
       />
-      {trailing}
+      <div className="ms-auto flex flex-wrap items-center gap-2">{trailing}</div>
     </div>
   );
 }
@@ -118,6 +123,7 @@ export function FilterPill({
   return (
     <button
       type="button"
+      aria-pressed={active}
       onClick={onClick}
       className={`rounded-full px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors ${
         active ? "bg-ink text-canvas" : "text-ink-muted hover:bg-raised hover:text-ink"
@@ -195,7 +201,11 @@ export function sortedGroups<T extends { meta: Meta; date: number | null }>(
     return [{ label: "A to Z", items }];
   }
   if (sort === "year") {
-    const items = [...entries].sort((a, b) => releaseYear(b.meta) - releaseYear(a.meta));
+    const items = [...entries].sort(
+      (a, b) =>
+        releaseYear(b.meta) - releaseYear(a.meta) ||
+        (a.meta.name ?? "").localeCompare(b.meta.name ?? ""),
+    );
     return [{ label: "By year", items }];
   }
   return groupByDate(entries);
@@ -207,7 +217,7 @@ export function SortControl() {
   const options: Array<[SortKey, string]> = [
     ["recent", t("Recent")],
     ["title", t("A-Z")],
-    ["year", t("Year")],
+    ["year", t("Newest year")],
   ];
   return (
     <div className="flex items-center gap-1 rounded-full bg-elevated/40 p-0.5 ring-1 ring-edge-soft/60">
@@ -215,6 +225,7 @@ export function SortControl() {
         <button
           key={key}
           type="button"
+          aria-pressed={settings.librarySort === key}
           onClick={() => update({ librarySort: key })}
           className={`rounded-full px-3 py-1.5 text-[12px] font-semibold transition-colors ${
             settings.librarySort === key
@@ -320,26 +331,48 @@ export function EmptyWatchlist({
   mode?: "library" | "watchlist";
 }) {
   const t = useT();
+  const { setView } = useView();
+  const { settings } = useSettings();
+  const preview = useThemePreview();
+  const composition = preview
+    ? preview.composition
+    : getThemeById(settings.theme.preset)?.design?.composition;
   const library = mode === "library";
   const Icon = library ? LibraryBig : Bookmark;
+  const help = (
+    <>
+      {library
+        ? t(
+            'Titles you add with "Add to Watchlist" and titles you watch show up here, along with your Stremio library once you sign in.',
+          )
+        : t(
+            'Right-click any title in Frame or hit "Add to Watchlist" on its detail page to save it here.',
+          )}
+      {connected
+        ? t(" Anything you save also syncs to your Trakt account.")
+        : t(" Connect Trakt in Settings to sync this list across devices.")}
+    </>
+  );
+  const cinematic = useCinematicDesktop();
+  if (cinematic && composition === "la-la-land") {
+    const title = library ? t("Your library is empty") : t("Your watchlist is empty");
+    const discover = <button onClick={() => setView("discover")}>{t("Discover")}</button>;
+    return (
+      <section className="film-empty gallery-empty">
+        <Icon size={24} />
+        <h2>{title}</h2>
+        <p>{help}</p>
+        {discover}
+      </section>
+    );
+  }
   return (
     <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-edge-soft bg-canvas/30 px-8 py-16 text-center">
       <Icon size={28} strokeWidth={1.6} className="text-ink-subtle" />
       <h2 className="text-[16px] font-semibold text-ink">
         {library ? t("Your library is empty") : t("Your watchlist is empty")}
       </h2>
-      <p className="max-w-md text-[13px] leading-relaxed text-ink-muted">
-        {library
-          ? t(
-              'Titles you add with "Add to Watchlist" and titles you watch show up here, along with your Stremio library once you sign in.',
-            )
-          : t(
-              'Right-click any title in Frame or hit "Add to Watchlist" on its detail page to save it here.',
-            )}
-        {connected
-          ? t(" Anything you save also syncs to your Trakt account.")
-          : t(" Connect Trakt in Settings to sync this list across devices.")}
-      </p>
+      <p className="max-w-md text-[13px] leading-relaxed text-ink-muted">{help}</p>
     </div>
   );
 }

@@ -26,40 +26,25 @@
 }
 
 .frame-radar-index {
-  display: none;
-}
-
-.frame-radar-section {
-  display: contents;
-}
-
-[data-frame-desktop] .frame-radar-index {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  padding: 10px;
-  border: var(--frame-rule);
-  background: var(--frame-panel);
-  border-radius: var(--frame-radius);
+  gap: 4px;
+  padding: 4px;
+  align-self: flex-start;
+  border: 1px solid var(--color-edge-soft);
+  background: var(--color-surface);
+  border-radius: var(--frame-radius, 12px);
 }
-
-[data-frame-desktop] .frame-radar-index button {
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 13px;
+.frame-radar-index button {
+  padding: 8px 16px;
+  border-radius: var(--frame-radius, 8px);
+  font-size: 14px;
   color: var(--color-ink-muted);
 }
-
-[data-frame-desktop] .frame-radar-index button:hover {
-  color: var(--color-ink);
+.frame-radar-index button:hover {
   background: var(--color-elevated);
+  color: var(--color-ink);
 }
-
-[data-frame-desktop] .frame-radar-section {
-  display: block;
-  scroll-margin-block-start: calc(var(--frame-command) + 20px);
-}
-
 [data-frame-desktop] .frame-library-heading {
   align-items: flex-start;
   padding-block-end: 24px;

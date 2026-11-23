@@ -12,12 +12,15 @@ import { getThemeById, selectableThemes } from "../src/lib/theme.ts";
 test("the selector offers the Frame collection and cinematic themes, in order", () => {
   assert.deepEqual(
     selectableThemes().map((t) => t.name),
-    ["Default", "Project Hail Mary", "Dune", "La La Land", "Doomsday", "Zodiac"],
+    ["Default", "Project Hail Mary", "La La Land"],
   );
 });
 
 test("a saved theme that is no longer offered falls back to Default", () => {
   for (const preset of [
+    "dune",
+    "doomsday",
+    "zodiac",
     "nord",
     "dracula",
     "elegantfin",
@@ -45,7 +48,7 @@ test("an imported theme keeps working without joining the built-in themes", () =
     selectableThemes().some((theme) => theme.id.startsWith("user:")),
     false,
   );
-  assert.equal(selectableThemes().length, 6);
+  assert.equal(selectableThemes().length, 3);
 });
 
 test("the supplied Project Hail Mary styling matches the distributable built-in", () => {
@@ -69,7 +72,7 @@ test("Default remains unchanged and all built-ins ship without reference images"
     assert.equal(preset.background, undefined);
     assert.equal(JSON.stringify(preset).includes("backgrounds/"), false);
   }
-  assert.equal(getThemeById("zodiac")?.fontPair, "jura-inter");
+  for (const id of ["dune", "doomsday", "zodiac"]) assert.equal(getThemeById(id), null);
 });
 
 test("missing region defaults to Egypt and an explicit saved region survives", () => {

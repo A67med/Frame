@@ -2,8 +2,30 @@ import type { CSSProperties } from "react";
 import { FONT_PAIRS, type ThemePreset } from "@/lib/theme";
 import { normalizeThemeDesign, themeDesignTokens } from "@/lib/theme-design";
 
-/** A token-driven style diagram, never a screenshot of a different application layout. */
+import frame from "@/assets/theme-previews/frame.jpg";
+import hailMary from "@/assets/theme-previews/project-hail-mary.jpg";
+import laLaLand from "@/assets/theme-previews/la-la-land.jpg";
+
+const previews = new Map([
+  ["frame", frame],
+  ["project-hail-mary", hailMary],
+  ["la-la-land", laLaLand],
+]);
+export function builtInThemePreview(id: string) {
+  return previews.get(id);
+}
+
 export function ThemeThumbnail({ theme }: { theme: ThemePreset }) {
+  const preview = builtInThemePreview(theme.id);
+  if (preview)
+    return (
+      <img
+        data-built-in-preview={theme.id}
+        src={preview}
+        alt=""
+        className="block h-full w-full object-contain"
+      />
+    );
   const design = normalizeThemeDesign(theme.design);
   const pair = FONT_PAIRS[theme.fontPair ?? "general-sans"];
   const style = {

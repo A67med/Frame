@@ -1,6 +1,6 @@
 /** Serializable visual choices. Layout remains a separate, explicit compatibility contract. */
 export type ThemeDesign = {
-  composition: "standard" | "dune" | "la-la-land" | "doomsday" | "zodiac";
+  composition: "standard" | "la-la-land";
   radius: number;
   density: number;
   headingScale: number;
@@ -37,7 +37,7 @@ export function normalizeThemeDesign(value: unknown): ThemeDesign {
       ? (input[key] as ThemeDesign[K])
       : DEFAULT_THEME_DESIGN[key];
   return {
-    composition: choice("composition", ["standard", "dune", "la-la-land", "doomsday", "zodiac"]),
+    composition: choice("composition", ["standard", "la-la-land"]),
     radius: number("radius", 0, 24),
     density: number("density", 0.8, 1.3),
     headingScale: number("headingScale", 0.85, 1.2),

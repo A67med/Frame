@@ -357,7 +357,7 @@ export async function searchAll(
     };
   }
   const metaBase = effectiveTmdbLanguage().split("-")[0]?.toLowerCase() ?? "";
-  let enNameById: Map<number, string> | null = null;
+  let enNameById: Map<string, string> | null = null;
   if (
     loadStoredSettings().translateTitles &&
     metaBase !== "" &&
@@ -373,7 +373,7 @@ export async function searchAll(
       enNameById = new Map();
       for (const r of en.results) {
         const n = (r as { title?: string; name?: string }).title ?? (r as { name?: string }).name;
-        if (typeof r.id === "number" && n) enNameById.set(r.id, n);
+        if (typeof r.id === "number" && n) enNameById.set(`${r.media_type}:${r.id}`, n);
       }
     }
   }
@@ -392,23 +392,24 @@ export async function searchAll(
     | (RawMovie & { media_type: "movie"; popularity?: number })
     | (RawSeries & { media_type: "tv"; popularity?: number });
   let topRaw: Watchable | null = null;
-  let topPop = -1;
+  const seen = new Set<string>();
+  const normalized = trimmed.toLocaleLowerCase();
+  function relevance(r: MultiItem) {
+    const name = (r.media_type === "movie" ? r.title : r.name)?.toLocaleLowerCase() ?? "";
+    return name === normalized ? 2 : name.startsWith(normalized) ? 1 : 0;
+  }
+  results.sort((a, b) => relevance(b) - relevance(a));
 
   for (const r of results) {
+    const identity = `${r.media_type}:${r.id}`;
+    if (seen.has(identity)) continue;
+    seen.add(identity);
     if (r.media_type === "movie" && r.poster_path) {
-      movies.push(movieMeta(r, enNameById?.get(r.id)));
-      const pop = r.popularity ?? 0;
-      if (pop > topPop) {
-        topRaw = r;
-        topPop = pop;
-      }
+      movies.push(movieMeta(r, enNameById?.get(identity)));
+      topRaw ??= r;
     } else if (r.media_type === "tv" && r.poster_path) {
-      series.push(seriesMeta(r, enNameById?.get(r.id)));
-      const pop = r.popularity ?? 0;
-      if (pop > topPop) {
-        topRaw = r;
-        topPop = pop;
-      }
+      series.push(seriesMeta(r, enNameById?.get(identity)));
+      topRaw ??= r;
     } else if (r.media_type === "person") {
       const known = (r.known_for ?? [])
         .map(
@@ -435,7 +436,11 @@ export async function searchAll(
     await fuzzyPeopleFallback(key, trimmed, people);
   }
 
-  people.sort((a, b) => b.popularity - a.popularity);
+  people.sort(
+    (a, b) =>
+      Number(b.name.toLocaleLowerCase() === normalized) -
+        Number(a.name.toLocaleLowerCase() === normalized) || b.popularity - a.popularity,
+  );
 
   let topMatch: SearchResults["topMatch"] = null;
   const winner: Watchable | null = topRaw;
@@ -444,8 +449,8 @@ export async function searchAll(
     topMatch = {
       kind: isMovie ? "movie" : "series",
       meta: isMovie
-        ? movieMeta(winner as RawMovie, enNameById?.get(winner.id))
-        : seriesMeta(winner as RawSeries, enNameById?.get(winner.id)),
+        ? movieMeta(winner as RawMovie, enNameById?.get(`${winner.media_type}:${winner.id}`))
+        : seriesMeta(winner as RawSeries, enNameById?.get(`${winner.media_type}:${winner.id}`)),
       popularity: winner.popularity ?? 0,
       backdrop: winner.backdrop_path
         ? `https://image.tmdb.org/t/p/w1280${winner.backdrop_path}`
