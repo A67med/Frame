@@ -11,12 +11,15 @@ async function readFileAsDataURL(file: File): Promise<string> {
   });
 }
 
-async function downscaleImage(dataURL: string): Promise<string | null> {
+export async function downscaleImage(
+  dataURL: string,
+  maxDimension = MAX_IMAGE_DIMENSION,
+): Promise<string | null> {
   const img = new Image();
   img.src = dataURL;
   await img.decode().catch(() => null);
   if (!img.width || !img.height) return null;
-  const ratio = Math.min(1, MAX_IMAGE_DIMENSION / Math.max(img.width, img.height));
+  const ratio = Math.min(1, maxDimension / Math.max(img.width, img.height));
   const w = Math.round(img.width * ratio);
   const h = Math.round(img.height * ratio);
   const canvas = document.createElement("canvas");

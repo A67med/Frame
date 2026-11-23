@@ -71,7 +71,94 @@ export async function saveBgImage(data: string | null, profileId?: string): Prom
   return themeKvPut(key, data);
 }
 
+export type RecentBackground = { id: string; name: string; thumbnail: string };
+const RECENT_LIMIT = 8;
+
+function recentIndex(profile: string) {
+  return `recent:${profile}`;
+}
+function recentImage(profile: string, id: string) {
+  return `recent-image:${profile}:${id}`;
+}
+
+export async function readRecentBackgrounds(profile: string): Promise<RecentBackground[] | null> {
+  const stored = await themeKvGet(recentIndex(profile));
+  if (!stored) return null;
+  try {
+    const parsed: unknown = JSON.parse(stored);
+    return Array.isArray(parsed) ? parsed.filter(validRecent).slice(0, RECENT_LIMIT) : [];
+  } catch {
+    return [];
+  }
+}
+
+function validRecent(value: unknown): value is RecentBackground {
+  if (!value || typeof value !== "object") return false;
+  const row = value as Partial<RecentBackground>;
+  return (
+    typeof row.id === "string" &&
+    /^[a-f0-9]{64}$/.test(row.id) &&
+    typeof row.name === "string" &&
+    typeof row.thumbnail === "string"
+  );
+}
+
+export function loadRecentBackground(profile: string, id: string) {
+  return themeKvGet(recentImage(profile, id));
+}
+
+export async function backgroundId(data: string) {
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(data));
+  return Array.from(new Uint8Array(digest), (n) => n.toString(16).padStart(2, "0")).join("");
+}
+
+type RecentChange =
+  | { add: RecentBackground; data: string; initialize?: boolean }
+  | { remove: string }
+  | { clear: true };
+
+export async function changeRecentBackgrounds(
+  profile: string,
+  change: RecentChange,
+): Promise<RecentBackground[]> {
+  const db = await openDB();
+  if (!db) throw new Error("Background storage unavailable");
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE, "readwrite");
+    const store = tx.objectStore(STORE);
+    const key = recentIndex(profile);
+    const req = store.get(key);
+    let next: RecentBackground[] = [];
+    req.onsuccess = () => {
+      let previous: RecentBackground[] = [];
+      try {
+        const rows = JSON.parse(req.result ?? "[]");
+        if (Array.isArray(rows)) previous = rows.filter(validRecent);
+      } catch {
+        /* Replace an unreadable index. */
+      }
+      if ("add" in change) {
+        if (change.initialize && req.result != null) {
+          next = previous;
+          return;
+        }
+        next = [change.add, ...previous.filter((row) => row.id !== change.add.id)].slice(
+          0,
+          RECENT_LIMIT,
+        );
+        store.put(change.data, recentImage(profile, change.add.id));
+      } else if ("remove" in change) next = previous.filter((row) => row.id !== change.remove);
+      for (const row of previous)
+        if (!next.some((kept) => kept.id === row.id)) store.delete(recentImage(profile, row.id));
+      store.put(JSON.stringify(next), key);
+    };
+    tx.oncomplete = () => resolve(next);
+    tx.onabort = () => reject(tx.error ?? new Error("Background storage unavailable"));
+  });
+}
+
 export async function deleteProfileBgImage(profileId: string): Promise<boolean> {
+  await changeRecentBackgrounds(profileId, { clear: true }).catch(() => {});
   return themeKvDelete(bgKey(profileId));
 }
 

@@ -3,7 +3,14 @@ import { AlertCircle, ImageDown, Trash2 } from "../icons";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
 import { ROW_ACTION, ROW_ACTION_PRIMARY, SettingRow } from "../kit";
-import { processBackgroundImage } from "./image-utils";
+import {
+  backgroundId,
+  changeRecentBackgrounds,
+  loadRecentBackground,
+  readRecentBackgrounds,
+  type RecentBackground,
+} from "@/lib/theme-storage";
+import { downscaleImage, processBackgroundImage } from "./image-utils";
 
 function pickerShade(dim: number): string {
   const a = (v: number) => `rgb(0 0 0 / ${Math.min(0.94, Math.max(0, v))})`;
@@ -16,11 +23,13 @@ export function BackgroundPicker({
   onImageChange,
   onDimChange,
   variant = "theme",
+  recentProfile,
 }: {
   imageData: string | null;
   dim: number;
   onImageChange: (data: string | null) => void;
   onDimChange: (dim: number) => void;
+  recentProfile?: string;
   variant?: "theme" | "picker";
 }) {
   const t = useT();
@@ -56,6 +65,56 @@ export function BackgroundPicker({
     }
   }, [imageData]);
 
+  const [recent, setRecent] = useState<RecentBackground[]>([]);
+  const [selected, setSelected] = useState("");
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+  useEffect(() => {
+    let current = true;
+    if (!recentProfile) return;
+    async function restore(profile: string) {
+      const id = imageData?.startsWith("data:image/") ? await backgroundId(imageData) : "";
+      const rows = await readRecentBackgrounds(profile);
+      if (!current) return;
+      setSelected(id);
+      if (rows !== null || !id || !imageData) {
+        setRecent(rows ?? []);
+        return;
+      }
+      const thumbnail = await downscaleImage(imageData, 192);
+      if (!current || !thumbnail) return;
+      const migrated = await changeRecentBackgrounds(profile, {
+        add: { id, thumbnail, name: t("Background image") },
+        data: imageData,
+        initialize: true,
+      });
+      if (current) setRecent(migrated);
+    }
+    void restore(recentProfile).catch(() => {
+      if (current) flashError(t("Background storage unavailable"));
+    });
+    return () => {
+      current = false;
+    };
+  }, [recentProfile, imageData]);
+
+  const manage = async (change: { remove: string } | { clear: true }) => {
+    if (!recentProfile) return;
+    setBusy(true);
+    try {
+      setRecent(await changeRecentBackgrounds(recentProfile, change));
+    } catch {
+      flashError(t("Background storage unavailable"));
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const onFile = async (file: File | null) => {
     if (!file) return;
     setError(null);
@@ -67,6 +126,17 @@ export function BackgroundPicker({
           t("Couldn't compress this image small enough. Try a different photo or crop it down."),
         );
         return;
+      }
+      if (recentProfile) {
+        const thumbnail = await downscaleImage(processed, 192);
+        if (!thumbnail) throw new Error("Invalid image");
+        const id = await backgroundId(processed);
+        const rows = await changeRecentBackgrounds(recentProfile, {
+          add: { id, thumbnail, name: file.name },
+          data: processed,
+        });
+        if (!mounted.current) return;
+        setRecent(rows);
       }
       justSetRef.current = true;
       onImageChange(processed);
@@ -149,6 +219,62 @@ export function BackgroundPicker({
           {t("JPEG / PNG / WebP. Big files auto-compress to fit.")}
         </p>
       </div>
+      {recentProfile && recent.length > 0 && (
+        <section className="grid gap-3">
+          <header className="flex justify-between">
+            <h3>{t("Recently added")}</h3>
+            <button
+              disabled={busy}
+              className="text-sm text-ink-muted"
+              onClick={() => void manage({ clear: true })}
+            >
+              {t("Clear collection")}
+            </button>
+          </header>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(116px,1fr))] gap-3">
+            {recent.map((row) => (
+              <div key={row.id} className="min-w-0">
+                <button
+                  type="button"
+                  disabled={busy}
+                  aria-pressed={selected === row.id}
+                  className={`block w-full overflow-hidden rounded-lg border-2 ${selected === row.id ? "border-accent" : "border-transparent"}`}
+                  onClick={async () => {
+                    setBusy(true);
+                    try {
+                      const data = await loadRecentBackground(recentProfile, row.id);
+                      if (!mounted.current) return;
+                      if (data?.startsWith("data:image/")) onImageChange(data);
+                      else flashError(t("Image unavailable"));
+                    } finally {
+                      setBusy(false);
+                    }
+                  }}
+                >
+                  <img
+                    src={row.thumbnail}
+                    alt={row.name}
+                    loading="lazy"
+                    className="aspect-video w-full object-cover"
+                  />
+                </button>
+                <div className="flex items-center gap-1">
+                  <span className="flex-1 truncate text-xs">{row.name}</span>
+                  <button
+                    type="button"
+                    aria-label={t("Remove {name}", { name: row.name })}
+                    disabled={busy}
+                    onClick={() => void manage({ remove: row.id })}
+                    className="p-2 hover:text-danger"
+                  >
+                    <Trash2 size={14} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
       {error && (
         <div className="flex animate-fade-in items-start gap-2.5 rounded-[10px] border border-danger/30 bg-elevated px-4 py-3 text-[15.5px] leading-[22px] text-danger">
           <AlertCircle size={18} strokeWidth={2.2} className="mt-[2px] shrink-0 text-danger" />

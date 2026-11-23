@@ -1,3 +1,4 @@
+import { useProfiles } from "@/lib/profiles";
 import { AppWindow, Frame, Move, PanelTop, PanelTopDashed } from "./icons";
 import { useEffect, useState, type ReactNode, useRef } from "react";
 import { getCustomThemes, subscribeCustomThemes } from "@/lib/custom-themes";
@@ -85,6 +86,7 @@ export function ThemePanel() {
 }
 
 function ThemeTab() {
+  const { activeProfile } = useProfiles();
   const t = useT();
   const { settings, update } = useSettings();
   const theme = settings.theme;
@@ -119,6 +121,8 @@ function ThemeTab() {
         subtitle={t("Drop a wallpaper behind the app. The dim slider keeps text readable.")}
       >
         <BackgroundPicker
+          key={activeProfile?.id ?? "default"}
+          recentProfile={activeProfile?.id ?? "default"}
           imageData={theme.backgroundImage}
           dim={theme.backgroundDim}
           onImageChange={(d) => setTheme({ backgroundImage: d })}
