@@ -352,7 +352,16 @@ html[data-frame-desktop]:has([data-film-nav="dune"]) {
     grid-template-columns: minmax(170px, 28%) minmax(0, 1fr);
     align-items: start;
   }
+  & [data-frame-page="collections"] header h1 {
+    font-size: clamp(24px, 13cqi, 72px);
+    overflow-wrap: anywhere;
+  }
   & [data-frame-page="collections"] header {
+    container-type: inline-size;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 24px;
     display: grid;
     position: sticky;
     top: 0;
@@ -521,6 +530,7 @@ html[data-frame-desktop]:has([data-film-nav="la-la-land"]) {
     margin-inline: auto;
   }
   & [data-frame-page="collections"] header {
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
@@ -889,7 +899,7 @@ html[data-frame-desktop]:has([data-film-nav="zodiac"]) {
   html[data-frame-desktop]:has([data-film-nav="dune"])
     :is([data-frame-page="radar"], [data-frame-page="following"])
     > div:first-child
-    > * {
+    > :where(:not(.frame-section-heading)) {
     grid-column: 1;
   }
   html[data-frame-desktop]:has([data-film-nav="dune"])
@@ -949,7 +959,7 @@ html[data-frame-desktop]:has([data-film-nav="zodiac"]) {
   html[data-frame-desktop]:has([data-film-nav="zodiac"])
     :is([data-frame-page="radar"], [data-frame-page="following"])
     > div:first-child
-    > * {
+    > :where(:not(.frame-section-heading)) {
     grid-column: 2;
   }
   html[data-frame-desktop]:has([data-film-nav="zodiac"])

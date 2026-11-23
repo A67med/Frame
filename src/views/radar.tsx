@@ -50,7 +50,7 @@ const RadarCard = Object.assign(
     return (
       <div className="flex min-w-0 flex-col gap-1.5">
         <PickCard meta={meta} reason={reason} />
-        <small className="film-catalog-data" hidden>
+        <small className="film-catalog-data hidden">
           {[
             meta.type === "series" ? t("Series") : t("Movie"),
             meta.releaseInfo,
