@@ -46,9 +46,19 @@ const RadarCard = Object.assign(
     reason?: string;
     people?: FollowAttribution[];
   }) {
+    const t = useT();
     return (
       <div className="flex min-w-0 flex-col gap-1.5">
         <PickCard meta={meta} reason={reason} />
+        <small className="film-catalog-data" hidden>
+          {[
+            meta.type === "series" ? t("TV show") : t("Movie"),
+            meta.releaseInfo,
+            meta.originalLanguage?.toUpperCase(),
+          ]
+            .filter(Boolean)
+            .join(" · ")}
+        </small>
         <FollowedPeopleChip people={people} />
       </div>
     );
@@ -289,7 +299,7 @@ function ForYouSection({ tmdbKey }: { tmdbKey: string }) {
     );
   }
   return (
-    <section className="grid gap-5">
+    <section className="film-recommendations grid gap-5">
       <h2 className="text-2xl font-semibold">{t("For You")}</h2>
       {body}
     </section>

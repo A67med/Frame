@@ -2,6 +2,10 @@ import { Bookmark, LibraryBig, RefreshCw } from "lucide-react";
 import type { RefObject } from "react";
 import { type Meta } from "@/lib/cinemeta";
 import { useSettings } from "@/lib/settings";
+import { useView } from "@/lib/view";
+import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
+import { useThemePreview } from "@/lib/theme-preview";
+import { getThemeById } from "@/lib/theme";
 import { useT } from "@/lib/i18n";
 import { VirtualGrid } from "@/components/virtual-grid";
 import { WatchlistCard } from "./watchlist-card";
@@ -327,26 +331,86 @@ export function EmptyWatchlist({
   mode?: "library" | "watchlist";
 }) {
   const t = useT();
+  const { setView } = useView();
+  const { settings } = useSettings();
+  const preview = useThemePreview();
+  const composition = preview
+    ? preview.composition
+    : getThemeById(settings.theme.preset)?.design?.composition;
   const library = mode === "library";
   const Icon = library ? LibraryBig : Bookmark;
+  const help = (
+    <>
+      {library
+        ? t(
+            'Titles you add with "Add to Watchlist" and titles you watch show up here, along with your Stremio library once you sign in.',
+          )
+        : t(
+            'Right-click any title in Frame or hit "Add to Watchlist" on its detail page to save it here.',
+          )}
+      {connected
+        ? t(" Anything you save also syncs to your Trakt account.")
+        : t(" Connect Trakt in Settings to sync this list across devices.")}
+    </>
+  );
+  const cinematic = useCinematicDesktop();
+  if (cinematic && composition && composition !== "standard") {
+    const title = library ? t("Your library is empty") : t("Your watchlist is empty");
+    const discover = <button onClick={() => setView("discover")}>{t("Discover")}</button>;
+    const radar = <button onClick={() => setView("radar")}>{t("Radar")}</button>;
+    switch (composition) {
+      case "dune":
+        return (
+          <section className="film-empty dune-empty">
+            <h2>{title}</h2>
+            <div>
+              <p>{help}</p>
+              {discover}
+            </div>
+          </section>
+        );
+      case "la-la-land":
+        return (
+          <section className="film-empty gallery-empty">
+            <Icon size={24} />
+            <h2>{title}</h2>
+            <p>{help}</p>
+            {discover}
+          </section>
+        );
+      case "doomsday":
+        return (
+          <section className="film-empty module-empty">
+            <header>
+              <Icon />
+              <h2>{title}</h2>
+            </header>
+            <p>{help}</p>
+            <div>
+              {discover}
+              {radar}
+            </div>
+          </section>
+        );
+      case "zodiac":
+        return (
+          <section className="film-empty archive-empty">
+            <h2>{title}</h2>
+            <aside>
+              <p>{help}</p>
+              {discover}
+            </aside>
+          </section>
+        );
+    }
+  }
   return (
     <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-edge-soft bg-canvas/30 px-8 py-16 text-center">
       <Icon size={28} strokeWidth={1.6} className="text-ink-subtle" />
       <h2 className="text-[16px] font-semibold text-ink">
         {library ? t("Your library is empty") : t("Your watchlist is empty")}
       </h2>
-      <p className="max-w-md text-[13px] leading-relaxed text-ink-muted">
-        {library
-          ? t(
-              'Titles you add with "Add to Watchlist" and titles you watch show up here, along with your Stremio library once you sign in.',
-            )
-          : t(
-              'Right-click any title in Frame or hit "Add to Watchlist" on its detail page to save it here.',
-            )}
-        {connected
-          ? t(" Anything you save also syncs to your Trakt account.")
-          : t(" Connect Trakt in Settings to sync this list across devices.")}
-      </p>
+      <p className="max-w-md text-[13px] leading-relaxed text-ink-muted">{help}</p>
     </div>
   );
 }

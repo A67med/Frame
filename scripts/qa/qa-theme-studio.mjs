@@ -68,7 +68,7 @@ try {
         document.documentElement.dataset.themeLayout === "frame",
     );
     assert.ok(await page.locator("[data-frame-command]").count());
-    assert.ok(await page.locator("[data-frame-navigation]").count());
+    assert.ok(await page.locator("[data-frame-navigation], [data-film-nav]").count());
   };
   const select = async (preset) => {
     await page.evaluate((id) => {

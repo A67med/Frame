@@ -482,6 +482,7 @@ function FollowingHub({ active }: { active: boolean }) {
                   </p>
                 ) : (
                   <ul
+                    data-film-people={gallery ? "gallery" : "list"}
                     className={
                       gallery
                         ? "grid grid-cols-[repeat(auto-fill,minmax(min(100%,170px),1fr))] gap-3"

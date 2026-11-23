@@ -1,5 +1,7 @@
 // Newly introduced UI copy remains usable until each locale provides an override.
 const uiFallback: Record<string, string> = {
+  "Contents": "Contents",
+  "Index": "Index",
   "Undo": "Undo",
   "Person": "Person",
   "Sort by": "Sort by",

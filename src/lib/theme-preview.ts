@@ -5,6 +5,7 @@ import type { NavCustomization } from "@/chrome/nav-items";
 export type ThemePreviewState = {
   layout: ThemeLayout;
   bokeh: boolean;
+  composition?: import("./theme-design").ThemeDesign["composition"];
   background?: ThemeBackground;
   logo?: ThemeLogo;
   navCustomization?: NavCustomization;

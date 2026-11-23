@@ -1,4 +1,6 @@
 const frameInterface: Record<string, string> = {
+  "Contents": "Contents",
+  "Index": "Index",
   "Undo": "Undo",
   "Person": "Person",
   "Sort by": "Sort by",
