@@ -232,9 +232,17 @@ export function moveNavItem(
   fromId: string,
   toId: string,
   position: "before" | "after",
+  visibleOrder?: NavItemId[],
 ): NavCustomization {
   if (fromId === toId) return cfg;
-  const next = effectiveNavOrder(cfg).filter((id) => id !== fromId);
+  // Seed the first move with the rail’s visual order while retaining hidden tabs in their slots.
+  const displayed = new Set(visibleOrder);
+  let index = 0;
+  const next = effectiveNavOrder(cfg)
+    .map((id) =>
+      !cfg.order.length && visibleOrder && displayed.has(id) ? visibleOrder[index++] : id,
+    )
+    .filter((id) => id !== fromId);
   const anchor = next.indexOf(toId as NavItemId);
   if (anchor < 0) return cfg;
   next.splice(position === "after" ? anchor + 1 : anchor, 0, fromId as NavItemId);

@@ -33,6 +33,22 @@ test("Default and a blank Studio draft both resolve to the canonical Frame layou
   assert.deepEqual(emptyDraft().design, DEFAULT_THEME_DESIGN);
 });
 
+test("an imported retired composition retains its palette and other design settings", () => {
+  const base = getThemeById("la-la-land")!;
+  for (const composition of ["dune", "doomsday", "zodiac"]) {
+    const input = serializeHarborStyle(base).replace(
+      '"composition":"la-la-land"',
+      '"composition":"' + composition + '"',
+    );
+    assert.ok(input.includes('"composition":"' + composition + '"'));
+    const result = parseHarborStyle(input);
+    assert.ok(result.ok);
+    if (!result.ok) continue;
+    assert.deepEqual(result.theme.tokens, base.tokens);
+    assert.deepEqual(result.theme.design, { ...base.design, composition: "standard" });
+  }
+});
+
 test("every modern preset survives both file formats, save and settings resolution", () => {
   for (const preset of selectableThemes().filter((p) => p.layout === "frame")) {
     for (const result of [

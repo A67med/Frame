@@ -27,10 +27,7 @@ function escapeGeneratedHtml(value: string): string {
 
 export type ThemePresetId =
   | "project-hail-mary"
-  | "dune"
   | "la-la-land"
-  | "doomsday"
-  | "zodiac"
   | "frame"
   | "amoled"
   | "cool-grey"
@@ -2011,14 +2008,7 @@ export function isKnownPreset(id: string): boolean {
  * layouts and shared styles reference them, but a saved choice of one falls back to
  * Default when settings load. Royal's id is "tokyo-night" for backward compatibility.
  */
-export const SELECTABLE_THEME_IDS = [
-  "frame",
-  "project-hail-mary",
-  "dune",
-  "la-la-land",
-  "doomsday",
-  "zodiac",
-] as const;
+export const SELECTABLE_THEME_IDS = ["frame", "project-hail-mary", "la-la-land"] as const;
 
 export function isSelectableTheme(id: string): boolean {
   return (SELECTABLE_THEME_IDS as readonly string[]).includes(id);

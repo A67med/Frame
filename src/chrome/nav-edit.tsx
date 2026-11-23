@@ -100,6 +100,7 @@ function clearShifts(): void {
 export function useNavDrag(
   itemId: NavItemId | undefined,
   orientation: "vertical" | "horizontal" = "vertical",
+  visibleOrder?: NavItemId[],
 ) {
   const { cfg, commit } = useNavCfg();
   const editing = useNavEditMode();
@@ -140,7 +141,7 @@ export function useNavDrag(
     window.removeEventListener("pointercancel", onCancel);
     window.removeEventListener("keydown", onKey, true);
     if (commitMove && drag && drag.moved && drag.target && drag.target !== drag.fromId) {
-      commit(moveNavItem(cfgRef.current, drag.fromId, drag.target, drag.pos));
+      commit(moveNavItem(cfgRef.current, drag.fromId, drag.target, drag.pos, visibleOrder));
       const swallow = (e: MouseEvent) => {
         e.stopPropagation();
         e.preventDefault();
@@ -180,7 +181,7 @@ export function useNavDrag(
         g.style.height = `${r.height}px`;
         g.style.margin = "0";
         g.style.pointerEvents = "none";
-        g.style.zIndex = "60";
+        g.style.zIndex = "1000";
         g.style.transition = "none";
         document.body.appendChild(g);
         drag.ghost = g;
@@ -218,11 +219,14 @@ export function useNavDrag(
     const cell = el?.closest?.("[data-nav-drop-id]") as HTMLElement | null;
     const vertical = orientation === "vertical";
     let container: HTMLElement | null =
-      cell?.closest("nav") ?? (draggedEl?.parentElement as HTMLElement | null) ?? null;
+      draggedEl?.closest("nav") ?? cell?.closest("nav") ?? draggedEl?.parentElement ?? null;
     const relevant = (scope: HTMLElement | null) =>
       scope
         ? [...scope.querySelectorAll<HTMLElement>("[data-nav-drop-id]")].filter(
-            (k) => k !== draggedEl && !k.closest('[aria-hidden="true"]'),
+            (k) =>
+              k !== draggedEl &&
+              k.getClientRects().length > 0 &&
+              !k.closest('[aria-hidden="true"]'),
           )
         : [];
     for (let d = 0; d < 5 && container && relevant(container).length < 1; d++) {

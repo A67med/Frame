@@ -14,6 +14,55 @@ export function ThemeThumbnail({ theme }: { theme: ThemePreset }) {
     background: "var(--color-canvas)",
     color: "var(--color-ink)",
   } as CSSProperties;
+  if (theme.layout === "frame" && design.composition === "la-la-land") {
+    return (
+      <svg aria-hidden="true" viewBox="0 0 320 180" className="h-full w-full" style={style}>
+        <rect width="320" height="180" fill="var(--color-canvas)" />
+        <path d="M0 17H320" stroke="var(--color-edge-soft)" />
+        <text x="10" y="11" fontSize="7" fill="var(--color-ink)">
+          Frame
+        </text>
+        <rect x="110" y="4" width="100" height="8" rx="4" fill="var(--color-surface)" />
+        <text
+          x="160"
+          y="44"
+          textAnchor="middle"
+          fontSize="18"
+          fontFamily="var(--font-display)"
+          fontStyle="italic"
+          fill="var(--color-ink)"
+        >
+          {theme.name}
+        </text>
+        <svg x="23" y="54" width="274" height="79" viewBox="0 0 274 79">
+          <rect width="274" height="79" rx="4" fill="var(--color-elevated)" />
+          <circle cx="201" cy="25" r="13" fill="var(--color-accent)" />
+          <path d="M0 70 Q78 62 150 39 T274 34 V79 H0Z" fill="var(--color-raised)" />
+          <path d="M0 76 Q65 48 124 59 T274 41 V79 H0Z" fill="var(--color-surface)" />
+          <path d="M12 51h57m-57 5h37" stroke="var(--color-ink)" strokeWidth="2" />
+          <rect x="12" y="64" width="26" height="6" rx="3" fill="var(--color-accent)" />
+        </svg>
+        <path d="M98 140h26m8 0h26m8 0h26m8 0h20" stroke="var(--color-ink-muted)" />
+        <rect
+          x="73"
+          y="152"
+          width="174"
+          height="21"
+          rx="9"
+          fill="var(--color-surface)"
+          stroke="var(--color-edge)"
+        />
+        <rect x="77" y="155" width="30" height="15" rx="6" fill="var(--color-elevated)" />
+        {[82, 117, 152, 187].map((x, i) => (
+          <g key={x} stroke={i === 0 ? "var(--color-accent)" : "var(--color-ink-muted)"}>
+            <circle cx={x + 2} cy="162" r="2" fill="none" />
+            <line x1={x + 7} x2={x + 18} y1="162" y2="162" />
+          </g>
+        ))}
+        <path d="M219 157v11m7-6h10" stroke="var(--color-ink-muted)" />
+      </svg>
+    );
+  }
   if (theme.id === "project-hail-mary") {
     return (
       <svg aria-hidden="true" viewBox="0 0 320 180" className="h-full w-full" style={style}>

@@ -20,34 +20,24 @@ Windows 10 / 11 · x64 · Signed in-app updates
 
 Bring your local movies and episodes together in Frame, then browse Home, Discover and search to organize titles in My Library, Watchlist or Collections. Playback uses **libmpv**, with subtitles, resume and picture-in-picture. Online metadata, optional Stremio add-ons and tracking integrations can extend the experience; your local video files stay on your drive.
 
-<a href="docs/media/showcase/details.jpg"><img src="docs/media/showcase/details.jpg" width="920" alt="The Being Heumann movie page in Zodiac with playback, Watchlist and provider information."></a>
+<a href="docs/media/showcase/details.jpg"><img src="docs/media/showcase/details.jpg" width="920" alt="The Being Heumann movie page with playback, Watchlist and provider information."></a>
 
 ### Follow the people behind the films
 
 Follow your favorite actors and directors. Radar brings their work together, and **Digital Releases** shows verified Egyptian digital dates from TMDB. Browse by month and see which people you follow are connected to each release.
 
-<a href="docs/media/showcase/radar.jpg"><img src="docs/media/showcase/radar.jpg" width="920" alt="Digital Releases in Zodiac, showing Being Heumann with its November 13 Egyptian digital date and Mark Ruffalo’s Following chip."></a>
+<a href="docs/media/showcase/radar.jpg"><img src="docs/media/showcase/radar.jpg" width="920" alt="Digital Releases, showing Being Heumann with its November 13 Egyptian digital date and Mark Ruffalo’s Following chip."></a>
 
 ## Cinematic themes
 
-<img src="docs/media/showcase/collection.png" width="920" alt="The cinematic collection, with swatches from Frame’s six built-in themes.">
-
-Six themes change the typography, navigation, spacing and shape of the interface. The same Radar view shows how each one looks.
+Frame includes three built-in themes.
 
 | Default                                                                                                                                                                     | Project Hail Mary                                                                                                                                                                                                 |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <a href="docs/media/showcase/frame.jpg"><img src="docs/media/showcase/frame.jpg" width="450" alt="Default theme with warm amber accents and editorial serif headings."></a> | <a href="docs/media/showcase/project-hail-mary.jpg"><img src="docs/media/showcase/project-hail-mary.jpg" width="450" alt="Project Hail Mary theme with rounded navigation, General Sans and slate surfaces."></a> |
 | Editorial type and a compact graphite rail.                                                                                                                                 | Floating navigation, slate panels and amber controls.                                                                                                                                                             |
 
-| Dune                                                                                                                                                                               | La La Land                                                                                                                                                                                      |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <a href="docs/media/showcase/dune.jpg"><img src="docs/media/showcase/dune.jpg" width="450" alt="Dune theme with angular posters, copper details and a wider navigation rail."></a> | <a href="docs/media/showcase/la-la-land.jpg"><img src="docs/media/showcase/la-la-land.jpg" width="450" alt="La La Land theme with indigo panels, rounded posters and italic serif titles."></a> |
-| Wide spacing, angular cards and copper rules.                                                                                                                                      | Indigo surfaces, arched posters and italic serif titles.                                                                                                                                        |
-
-| Doomsday                                                                                                                                                                                  | Zodiac                                                                                                                                                                                       |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <a href="docs/media/showcase/doomsday.jpg"><img src="docs/media/showcase/doomsday.jpg" width="450" alt="Doomsday theme with green-black surfaces, bold headings and gold selection."></a> | <a href="docs/media/showcase/zodiac.jpg"><img src="docs/media/showcase/zodiac.jpg" width="450" alt="Zodiac theme with blue-green panels, silver accents and geometric Jura typography."></a> |
-| Green-black surfaces, heavy titles and gold selection.                                                                                                                                    | Geometric Jura lettering, silver accents and fine rules.                                                                                                                                     |
+[**La La Land**](docs/media/showcase/la-la-land.jpg) pairs a floating bottom dock with indigo surfaces, gold accents and italic serif titles.
 
 ### Design your own
 

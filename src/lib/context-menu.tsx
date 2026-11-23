@@ -39,7 +39,14 @@ export type ContextMenuTarget =
       chapter: MangaChapter;
     }
   | { kind: "ebook"; id: string }
-  | { kind: "nav"; itemId?: NavItemId; view?: View; label?: string; onOpen?: () => void }
+  | {
+      kind: "nav";
+      visibleOrder?: NavItemId[];
+      itemId?: NavItemId;
+      view?: View;
+      label?: string;
+      onOpen?: () => void;
+    }
   | {
       kind: "subtitle";
       label: string;

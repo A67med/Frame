@@ -354,55 +354,17 @@ export function EmptyWatchlist({
     </>
   );
   const cinematic = useCinematicDesktop();
-  if (cinematic && composition && composition !== "standard") {
+  if (cinematic && composition === "la-la-land") {
     const title = library ? t("Your library is empty") : t("Your watchlist is empty");
     const discover = <button onClick={() => setView("discover")}>{t("Discover")}</button>;
-    const radar = <button onClick={() => setView("radar")}>{t("Radar")}</button>;
-    switch (composition) {
-      case "dune":
-        return (
-          <section className="film-empty dune-empty">
-            <h2>{title}</h2>
-            <div>
-              <p>{help}</p>
-              {discover}
-            </div>
-          </section>
-        );
-      case "la-la-land":
-        return (
-          <section className="film-empty gallery-empty">
-            <Icon size={24} />
-            <h2>{title}</h2>
-            <p>{help}</p>
-            {discover}
-          </section>
-        );
-      case "doomsday":
-        return (
-          <section className="film-empty module-empty">
-            <header>
-              <Icon />
-              <h2>{title}</h2>
-            </header>
-            <p>{help}</p>
-            <div>
-              {discover}
-              {radar}
-            </div>
-          </section>
-        );
-      case "zodiac":
-        return (
-          <section className="film-empty archive-empty">
-            <h2>{title}</h2>
-            <aside>
-              <p>{help}</p>
-              {discover}
-            </aside>
-          </section>
-        );
-    }
+    return (
+      <section className="film-empty gallery-empty">
+        <Icon size={24} />
+        <h2>{title}</h2>
+        <p>{help}</p>
+        {discover}
+      </section>
+    );
   }
   return (
     <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-edge-soft bg-canvas/30 px-8 py-16 text-center">

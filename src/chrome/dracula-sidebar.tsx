@@ -2,7 +2,7 @@ import { FilmNavigation } from "./film-navigation";
 import { getThemeById } from "@/lib/theme";
 import { useThemePreview, usePreviewNavCustomization } from "@/lib/theme-preview";
 import { Lock } from "lucide-react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { FrameMark } from "@/components/icons/frame-mark";
 import { useAvailableNavItems, applyNavCustomization, type NavItem } from "@/chrome/nav-items";
 import { ProfileChip } from "@/chrome/sidebar/profile-chip";
@@ -49,13 +49,15 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
   };
 
   const available = useAvailableNavItems();
-  const items = applyNavCustomization(
-    available,
-    usePreviewNavCustomization(settings.navCustomization),
-  );
-  const primary = items.filter((i) => PRIMARY_IDS.has(i.id));
+  const customization = usePreviewNavCustomization(settings.navCustomization);
+  const items = applyNavCustomization(available, customization);
+  const railItems = customization.order.length
+    ? items
+    : [
+        ...items.filter((item) => PRIMARY_IDS.has(item.id)),
+        ...items.filter((item) => !PRIMARY_IDS.has(item.id)),
+      ];
   // Settings lives in the bottom utility group, above the profile control.
-  const collections = items.filter((i) => !PRIMARY_IDS.has(i.id) && i.id !== "settings");
   // Read from the full list so hiding Settings in the nav editor cannot remove it.
   const settingsItem = available.find((i) => i.id === "settings");
 
@@ -67,6 +69,8 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
     return true;
   };
 
+  const visibleRail = railItems.filter((item) => item.id !== "settings" && isVisible(item));
+  const visibleOrder = visibleRail.map((item) => item.id);
   const go = (item: NavItem) => {
     if (item.pinGated && locked) {
       setPinFor(item.view);
@@ -77,10 +81,9 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
 
   return (
     <>
-      {cinematic && !chromeHidden && !editing && composition && composition !== "standard" ? (
+      {cinematic && !chromeHidden && composition === "la-la-land" ? (
         <FilmNavigation
-          key={composition}
-          composition={composition}
+          locked={locked}
           items={items.filter((item) => isVisible(item) && item.id !== "settings")}
           settingsItem={settingsItem}
           go={go}
@@ -148,26 +151,23 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
               className="flex min-h-0 flex-1 flex-col gap-1.5 overflow-y-auto px-3 pb-4 pt-1 [scrollbar-width:none] lg:px-4 [&::-webkit-scrollbar]:hidden"
               onContextMenu={openEmptyMenu}
             >
-              {primary.filter(isVisible).map((item) => (
-                <NavPill
-                  key={item.id}
-                  item={item}
-                  active={view === item.view}
-                  collapsed={collapsed}
-                  onClick={() => go(item)}
-                />
-              ))}
-
-              {cinematic && collections.some(isVisible) && <hr className="frame-nav-divider" />}
-              {collections.filter(isVisible).map((item) => (
-                <NavPill
-                  key={item.id}
-                  item={item}
-                  active={view === item.view}
-                  gated={!!item.pinGated && locked}
-                  collapsed={collapsed}
-                  onClick={() => go(item)}
-                />
+              {visibleRail.map((item, index, list) => (
+                <Fragment key={item.id}>
+                  {cinematic &&
+                    !editing &&
+                    !customization.order.length &&
+                    index > 0 &&
+                    PRIMARY_IDS.has(list[index - 1].id) &&
+                    !PRIMARY_IDS.has(item.id) && <hr className="frame-nav-divider" />}
+                  <NavPill
+                    visibleOrder={visibleOrder}
+                    item={item}
+                    active={view === item.view}
+                    gated={!!item.pinGated && locked}
+                    collapsed={collapsed}
+                    onClick={() => go(item)}
+                  />
+                </Fragment>
               ))}
             </nav>
 
@@ -238,6 +238,7 @@ export function DraculaSidebar({ cinematic = false }: { cinematic?: boolean } = 
 }
 
 function NavPill({
+  visibleOrder,
   item,
   active,
   gated,
@@ -245,6 +246,7 @@ function NavPill({
   onClick,
 }: {
   item: NavItem;
+  visibleOrder: NavItem["id"][];
   active: boolean;
   gated?: boolean;
   collapsed?: boolean;
@@ -254,14 +256,15 @@ function NavPill({
   const label = t(item.label);
   const { open: openContextMenu } = useContextMenu();
   const editing = useNavEditMode();
-  const drag = useNavDrag(item.id, "vertical");
+  const drag = useNavDrag(item.id, "vertical", visibleOrder);
   return (
     <NavEditableItem itemId={item.id}>
       <button
-        onClick={onClick}
+        onClick={editing ? undefined : onClick}
         onContextMenu={(e) =>
           openContextMenu(e, {
             kind: "nav",
+            visibleOrder,
             itemId: item.id,
             view: item.view,
             label,
