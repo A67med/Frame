@@ -4,7 +4,7 @@ import { Search } from "@/components/icons/search-icon";
 import { BackToTop } from "@/components/back-to-top";
 import { FollowedPeopleChip } from "@/components/followed-people-chip";
 import { PersonSuggestionCard } from "@/components/person-suggestion-card";
-import { PickCard } from "@/components/pick-card";
+
 import { Row, ScrollRootContext } from "@/components/row";
 import { Spinner } from "@/components/spinner";
 import { latestFromFollows, useFollowCredits, type FollowCredit } from "@/lib/follow-credits";
@@ -74,6 +74,7 @@ function PersonSearch({
   useEffect(() => {
     const q = query.trim();
     setFailed(false);
+
     if (!q || !tmdbKey) {
       setResults([]);
       setSearched("");
@@ -166,19 +167,50 @@ function PersonTile({
   department,
   onOpen,
   onRole,
+  gallery,
   onRemove,
 }: {
   person: FollowedPerson;
   department: string;
   onOpen: () => void;
   onRole: (role: FollowRole) => void;
+  gallery: boolean;
   onRemove: () => void;
 }) {
   const t = useT();
   return (
-    <li className="flex items-center gap-3 rounded-2xl bg-surface p-3 ring-1 ring-edge-soft">
-      <button type="button" onClick={onOpen} className="flex min-w-0 flex-1 items-center gap-3">
-        <Avatar profile={person.profile} size={52} />
+    <li
+      className={
+        gallery
+          ? "grid min-w-0 grid-cols-[1fr_auto] items-center gap-2 overflow-hidden rounded-xl border border-edge-soft bg-surface p-2"
+          : "flex items-center gap-3 rounded-lg border-b border-edge-soft p-2"
+      }
+    >
+      <button
+        type="button"
+        onClick={onOpen}
+        className={
+          gallery
+            ? "col-span-2 flex min-w-0 flex-col items-stretch gap-2 text-start"
+            : "flex min-w-0 flex-1 items-center gap-3"
+        }
+      >
+        {gallery ? (
+          <span className="grid aspect-[4/3] place-items-center overflow-hidden rounded-lg bg-elevated">
+            {person.profile ? (
+              <img
+                alt=""
+                loading="lazy"
+                src={`https://image.tmdb.org/t/p/w342${person.profile}`}
+                className="h-full w-full object-cover object-[center_30%]"
+              />
+            ) : (
+              <User size={36} />
+            )}
+          </span>
+        ) : (
+          <Avatar profile={person.profile} size={44} />
+        )}
         <span className="min-w-0 text-start">
           <span className="block truncate text-[14px] font-medium text-ink">{person.name}</span>
           {department && (
@@ -211,37 +243,34 @@ function PersonTile({
   );
 }
 
-const FollowCard = Object.assign(
-  function FollowCard({ credit }: { credit: FollowCredit }) {
-    return (
-      <div className="flex min-w-0 flex-col gap-1.5">
-        <PickCard
-          meta={credit.meta}
-          reason={credit.releaseDate ? fmtDate(credit.releaseDate) : undefined}
-        />
-        <FollowedPeopleChip people={credit.people} />
-      </div>
-    );
-  },
-  { isPosterCard: true as const },
-);
-
-function CreditRow({
-  title,
-  credits,
-  scrollKey,
-}: {
-  title: string;
-  credits: FollowCredit[];
-  scrollKey: string;
-}) {
-  if (credits.length === 0) return null;
+function CreditRow({ title, credits }: { title: string; credits: FollowCredit[] }) {
+  const { openMeta } = useView();
+  const t = useT();
+  const [limit, setLimit] = useState(8);
+  if (!credits.length) return null;
   return (
-    <Row title={title} min={148} shape="portrait" scrollKey={scrollKey}>
-      {credits.map((credit) => (
-        <FollowCard key={credit.id} credit={credit} />
+    <section className="min-w-0 rounded-xl border border-edge-soft bg-surface p-4">
+      <h3 className="mb-3 font-display text-xl">{title}</h3>
+      {credits.slice(0, limit).map((c) => (
+        <div key={c.id} className="border-t border-edge-soft py-3">
+          <button
+            onClick={() => openMeta(c.meta)}
+            className="flex w-full items-start justify-between gap-2 text-start hover:text-accent"
+          >
+            <strong>{c.meta.name}</strong>
+            <time className="shrink-0 text-xs text-ink-muted" dateTime={c.releaseDate ?? undefined}>
+              {fmtDate(c.releaseDate!)}
+            </time>
+          </button>
+          <FollowedPeopleChip people={c.people} />
+        </div>
       ))}
-    </Row>
+      {credits.length > limit && (
+        <button className="text-accent" onClick={() => setLimit((n) => n + 8)}>
+          {t("Show more")}
+        </button>
+      )}
+    </section>
   );
 }
 
@@ -253,16 +282,19 @@ function usePeopleSuggestions(
 ) {
   const [suggestions, setSuggestions] = useState<PersonSuggestion[] | null>(null);
   const [failed, setFailed] = useState(false);
-  const sourceKey = people.map((p) => p.id).join(",");
+
   useEffect(() => {
     if (!tmdbKey || !ready) return;
     let cancelled = false;
     setFailed(false);
+    setSuggestions(null);
     const load = async (): Promise<PersonSuggestion[]> => {
       const collaborators = await suggestCollaborators(tmdbKey, people, details);
       if (collaborators.length > 0) return collaborators;
       const { actors, directors } = await discoverPeople(tmdbKey, new Set(people.map((p) => p.id)));
-      return [...directors.slice(0, 4), ...actors].slice(0, 12);
+      return Array.from(
+        new Map([...directors.slice(0, 4), ...actors].map((p) => [p.id, p])).values(),
+      ).slice(0, 12);
     };
     load()
       .then((next) => {
@@ -274,9 +306,7 @@ function usePeopleSuggestions(
     return () => {
       cancelled = true;
     };
-    // people is re-created on every settings write; ready flips when its credits reload.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tmdbKey, ready, sourceKey]);
+  }, [tmdbKey, ready, people, details]);
   return { suggestions, failed };
 }
 
@@ -285,14 +315,39 @@ export function FollowingView({ active = true }: { active?: boolean }) {
   const { settings } = useSettings();
   const { openPerson, setView, openSettings } = useView();
   const { people, isFollowing, follow, unfollow, setRole } = useFollows();
-  const tmdbKey = settings.tmdbKey;
+  const tmdbKey = active ? settings.tmdbKey : "";
+  const [tab, setTab] = useState("People you follow");
+  const [query, setQuery] = useState("");
+  const [roleFilter, setRoleFilter] = useState("all");
+  const [sort, setSort] = useState("newest");
+  const [gallery, setGallery] = useState(true);
+  const [selected, setSelected] = useState(0);
+  const [removed, setRemoved] = useState<FollowedPerson | null>(null);
   const { credits, details, loading, failed } = useFollowCredits(tmdbKey, people);
-  const latest = useMemo(() => latestFromFollows(credits, localIsoDay(Date.now())), [credits]);
+  const visible = people.filter(
+    (p) =>
+      p.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()) &&
+      (roleFilter === "all" ||
+        details.get(p.id)?.knownForDepartment === roleFilter ||
+        p.role === (roleFilter === "Acting" ? "acting" : "directing")),
+  );
+  if (sort === "name") visible.sort((a, b) => a.name.localeCompare(b.name));
+  else visible.reverse();
+  const latest = useMemo(
+    () =>
+      latestFromFollows(
+        selected && people.some((p) => p.id === selected)
+          ? credits.filter((c) => c.people.some((p) => p.id === selected))
+          : credits,
+        localIsoDay(Date.now()),
+      ),
+    [credits, selected, people],
+  );
   const { suggestions, failed: suggestionsFailed } = usePeopleSuggestions(
     tmdbKey,
     people,
     details,
-    !loading,
+    !loading && tab === "People you might like",
   );
   const scrollRef = useRef<HTMLElement>(null);
   const [scrollEl, setScrollEl] = useState<HTMLElement | null>(null);
@@ -309,7 +364,7 @@ export function FollowingView({ active = true }: { active?: boolean }) {
       className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas"
     >
       <ScrollRootContext.Provider value={scrollEl}>
-        <div className="flex w-full flex-col gap-10 px-12 pb-32 pt-12">
+        <div className="flex w-full flex-col gap-6 px-5 md:px-12 pb-32 pt-12">
           <header className="frame-section-heading">
             <h1 className="text-[34px] font-semibold tracking-tight text-ink">{t("Following")}</h1>
             <p className="mt-1 text-[14px] text-ink-subtle">
@@ -337,41 +392,133 @@ export function FollowingView({ active = true }: { active?: boolean }) {
               </button>
             </div>
           )}
-          <PersonSearch
-            tmdbKey={tmdbKey}
-            isFollowing={isFollowing}
-            onAdd={(p) => follow({ id: p.id, name: p.name, profile: p.profile, role: "any" })}
-          />
-          <section className="flex flex-col gap-3">
-            <h2 className="text-[20px] font-semibold tracking-tight text-ink">
-              {t("People you follow")}
-            </h2>
-            {people.length === 0 ? (
-              <p className="text-[14px] text-ink-subtle">
-                {t(
-                  "You aren't following anyone yet. Search above, or use Follow on a person's page.",
+          <nav aria-label={t("Following")} className="frame-radar-index">
+            {["People you follow", "Activity", "People you might like"].map((label) => (
+              <button key={label} aria-pressed={tab === label} onClick={() => setTab(label)}>
+                {t(label)}
+              </button>
+            ))}
+          </nav>
+          {tab === "People you follow" && (
+            <>
+              <PersonSearch
+                tmdbKey={tmdbKey}
+                isFollowing={isFollowing}
+                onAdd={(p) => follow({ id: p.id, name: p.name, profile: p.profile, role: "any" })}
+              />
+              <section className="flex flex-col gap-3">
+                <h2 className="text-[20px] font-semibold tracking-tight text-ink">
+                  {t("People you follow")}
+                </h2>
+                {people.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-3">
+                    <input
+                      type="search"
+                      aria-label={t("Search followed people")}
+                      placeholder={t("Search followed people")}
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      className="min-w-0 rounded-lg bg-surface px-3 py-2"
+                    />
+                    <select
+                      aria-label={t("Role")}
+                      value={roleFilter}
+                      onChange={(e) => setRoleFilter(e.target.value)}
+                    >
+                      <option value="all">{t("All roles")}</option>
+                      <option value="Acting">{t("Actors")}</option>
+                      <option value="Directing">{t("Directors")}</option>
+                    </select>
+                    <select
+                      aria-label={t("Sort by")}
+                      value={sort}
+                      onChange={(e) => setSort(e.target.value)}
+                    >
+                      <option value="newest">{t("Recently added")}</option>
+                      <option value="name">{t("Name")}</option>
+                    </select>
+                  </div>
                 )}
-              </p>
-            ) : (
-              <ul className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-3">
-                {people.map((p) => (
-                  <PersonTile
-                    key={p.id}
-                    person={p}
-                    department={departmentLabel(details.get(p.id)?.knownForDepartment, t)}
-                    onOpen={() => openPerson(p.id)}
-                    onRole={(role) => setRole(p.id, role)}
-                    onRemove={() => unfollow(p.id)}
-                  />
-                ))}
-              </ul>
-            )}
-          </section>
-          {people.length > 0 && (
+                {people.length > 0 && (
+                  <div className="flex gap-2">
+                    {[true, false].map((value) => (
+                      <button
+                        key={String(value)}
+                        aria-pressed={gallery === value}
+                        className="rounded-lg px-3 py-1"
+                        onClick={() => setGallery(value)}
+                      >
+                        {value ? t("Grid") : t("List")}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {removed && (
+                  <div role="status">
+                    {removed.name} ·{" "}
+                    <button
+                      className="text-accent"
+                      onClick={() => {
+                        follow(removed);
+                        setRemoved(null);
+                      }}
+                    >
+                      {t("Undo")}
+                    </button>
+                  </div>
+                )}
+                {people.length > 0 && !visible.length && <p>{t("No matches")}</p>}
+                {people.length === 0 ? (
+                  <p className="text-[14px] text-ink-subtle">
+                    {t(
+                      "You aren't following anyone yet. Search above, or use Follow on a person's page.",
+                    )}
+                  </p>
+                ) : (
+                  <ul
+                    className={
+                      gallery
+                        ? "grid grid-cols-[repeat(auto-fill,minmax(min(100%,170px),1fr))] gap-3"
+                        : "grid gap-1"
+                    }
+                  >
+                    {visible.map((p) => (
+                      <PersonTile
+                        key={p.id}
+                        person={p}
+                        gallery={gallery}
+                        department={departmentLabel(details.get(p.id)?.knownForDepartment, t)}
+                        onOpen={() => openPerson(p.id)}
+                        onRole={(role) => setRole(p.id, role)}
+                        onRemove={() => {
+                          setRemoved(p);
+                          unfollow(p.id);
+                        }}
+                      />
+                    ))}
+                  </ul>
+                )}
+              </section>
+            </>
+          )}
+          {tab === "Activity" && (
             <section className="flex flex-col gap-6">
               <h2 className="text-[20px] font-semibold tracking-tight text-ink">
                 {t("Latest from people you follow")}
               </h2>
+              <select
+                aria-label={t("Person")}
+                className="self-start rounded-lg bg-elevated p-2"
+                value={selected}
+                onChange={(e) => setSelected(Number(e.target.value))}
+              >
+                <option value={0}>{t("All people")}</option>
+                {people.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {p.name}
+                  </option>
+                ))}
+              </select>
               {loading && credits.length === 0 ? (
                 <div className="flex min-h-24 items-center">
                   <Spinner />
@@ -381,18 +528,10 @@ export function FollowingView({ active = true }: { active?: boolean }) {
                   {t("TMDB lists no recent or upcoming titles for them.")}
                 </p>
               ) : (
-                <>
-                  <CreditRow
-                    title={t("Upcoming")}
-                    credits={latest.upcoming}
-                    scrollKey="following:upcoming"
-                  />
-                  <CreditRow
-                    title={t("Recently released")}
-                    credits={latest.recent}
-                    scrollKey="following:recent"
-                  />
-                </>
+                <div key={selected} className="grid gap-4 lg:grid-cols-2">
+                  <CreditRow title={t("Upcoming")} credits={latest.upcoming} />
+                  <CreditRow title={t("Recently released")} credits={latest.recent} />
+                </div>
               )}
               {failed > 0 && (
                 <p className="text-[13px] text-ink-subtle">
@@ -403,7 +542,14 @@ export function FollowingView({ active = true }: { active?: boolean }) {
               )}
             </section>
           )}
-          {tmdbKey &&
+          {tab === "People you might like" && tmdbKey && !suggestions && !suggestionsFailed && (
+            <Spinner />
+          )}
+          {tab === "People you might like" && tmdbKey && suggestions?.length === 0 && (
+            <p>{t("No matches")}</p>
+          )}
+          {tab === "People you might like" &&
+            tmdbKey &&
             (suggestionsFailed ? (
               <p className="text-[13px] text-ink-subtle">{t("TMDB didn't answer.")}</p>
             ) : (
@@ -412,7 +558,7 @@ export function FollowingView({ active = true }: { active?: boolean }) {
                 <Row
                   title={t("People you might like")}
                   headerDescription={
-                    people.length > 0
+                    suggestions.some((p) => p.workedWith)
                       ? t("Who the people you follow have worked with.")
                       : t("Directors and actors from what's trending this week.")
                   }
@@ -420,9 +566,11 @@ export function FollowingView({ active = true }: { active?: boolean }) {
                   shape="portrait"
                   scrollKey="following:suggestions"
                 >
-                  {suggestions.map((p) => (
-                    <PersonSuggestionCard key={p.id} person={p} />
-                  ))}
+                  {suggestions
+                    .filter((p) => !isFollowing(p.id))
+                    .map((p) => (
+                      <PersonSuggestionCard key={p.id} person={p} />
+                    ))}
                 </Row>
               )
             ))}

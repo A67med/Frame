@@ -47,7 +47,7 @@ export function releaseWindowParams(
       : { [`${field}.gte`]: addDays(today, -NEW_RELEASE_DAYS), [`${field}.lte`]: today };
   return {
     ...range,
-    sort_by: "popularity.desc",
+    sort_by: `${field}.${kind === "upcoming" ? "asc" : "desc"}`,
     include_adult: "false",
     ...(media === "movie"
       ? { with_release_type: kind === "upcoming" ? "2|3" : "2|3|4" }

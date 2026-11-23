@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BackToTop } from "@/components/back-to-top";
 import { FollowedPeopleChip } from "@/components/followed-people-chip";
-import { PersonSuggestionCard } from "@/components/person-suggestion-card";
+
 import { PickCard } from "@/components/pick-card";
-import { Row, ScrollRootContext } from "@/components/row";
+import { ScrollRootContext } from "@/components/row";
 import { Spinner } from "@/components/spinner";
 import { useAuth } from "@/lib/auth";
 import type { Meta } from "@/lib/cinemeta";
@@ -13,7 +13,7 @@ import { useFollowCredits } from "@/lib/follow-credits";
 import { useFollows } from "@/lib/follows";
 import { useT } from "@/lib/i18n";
 import { fetchForYou, type ForYouResult, type TasteInput } from "@/lib/radar/for-you";
-import { discoverPeople, type PersonHit } from "@/lib/radar/people";
+
 import {
   fetchReleases,
   fetchTrendingPopular,
@@ -152,6 +152,7 @@ function useTasteInput(authKey: string | null): TasteInput {
       return;
     }
     let cancelled = false;
+    setWatched([]);
     library(authKey)
       .then((items) => {
         if (cancelled) return;
@@ -180,6 +181,7 @@ function ForYouSection({ tmdbKey }: { tmdbKey: string }) {
   const { authKey } = useAuth();
   const { people } = useFollows();
   const { credits, loading: creditsLoading } = useFollowCredits(tmdbKey, people);
+  const { openMeta, setView } = useView();
   const taste = useTasteInput(authKey);
   const genres = settings.customCalendar.genres;
   const [result, setResult] = useState<ForYouResult | null>(null);
@@ -213,37 +215,166 @@ function ForYouSection({ tmdbKey }: { tmdbKey: string }) {
   } else if (result.items.length === 0) {
     body = (
       <RowMessage>
-        {result.hasSignals
-          ? t("Nothing new to recommend right now.")
-          : t("Follow people, rate titles or add to your watchlist to get recommendations.")}
+        <div className="grid gap-3">
+          <p>
+            {result.hasSignals
+              ? t("Nothing new to recommend right now.")
+              : t("Follow people, rate titles or add to your watchlist to get recommendations.")}
+          </p>
+          <button
+            type="button"
+            className="justify-self-start rounded-full bg-accent px-4 py-2 text-canvas"
+            onClick={() => setView("following")}
+          >
+            {t("Manage Following")}
+          </button>
+        </div>
       </RowMessage>
     );
   } else {
-    body = result.items.map((item) => (
-      <RadarCard
-        key={item.meta.id}
-        meta={item.meta}
-        people={item.people}
-        reason={
-          item.becauseOf
-            ? t("Because of {title}", { title: item.becauseOf })
-            : item.matchesGenres
-              ? t("Matches your genres")
-              : undefined
-        }
-      />
-    ));
+    const [lead, ...rest] = result.items;
+    body = (
+      <>
+        <button
+          type="button"
+          onClick={() => openMeta(lead.meta)}
+          className="relative isolate flex min-h-64 w-full flex-col justify-end overflow-hidden rounded-xl bg-surface p-7 text-start text-white"
+        >
+          {(lead.meta.background || lead.meta.poster) && (
+            <img
+              alt=""
+              src={lead.meta.background || lead.meta.poster}
+              className="absolute inset-0 -z-20 h-full w-full object-cover"
+            />
+          )}
+          <span className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/50 to-transparent" />
+          <strong className="max-w-xl font-display text-4xl">{lead.meta.name}</strong>
+          <span>
+            {lead.becauseOf
+              ? t("Because of {title}", { title: lead.becauseOf })
+              : lead.matchesGenres
+                ? t("Matches your genres")
+                : lead.people.map((p) => p.name).join(", ")}
+          </span>
+          <span className="mt-2 line-clamp-2 max-w-xl">{lead.meta.description}</span>
+        </button>
+        <div className="radar-grid">
+          {rest.map((item) => (
+            <RadarCard
+              key={item.meta.id}
+              meta={item.meta}
+              people={item.people}
+              reason={
+                item.becauseOf
+                  ? t("Because of {title}", { title: item.becauseOf })
+                  : item.matchesGenres
+                    ? t("Matches your genres")
+                    : undefined
+              }
+            />
+          ))}
+        </div>
+      </>
+    );
   }
   return (
-    <Row
-      title={t("For You")}
-      headerDescription={t("Picked from who you follow and what you watch, rate and save.")}
-      min={148}
-      shape="portrait"
-      scrollKey="radar:for-you"
-    >
+    <section className="grid gap-5">
+      <h2 className="text-2xl font-semibold">{t("For You")}</h2>
       {body}
-    </Row>
+    </section>
+  );
+}
+
+type MediaFilter = "all" | "movie" | "series";
+
+function MediaSelect({
+  value,
+  change,
+}: {
+  value: MediaFilter;
+  change: (next: MediaFilter) => void;
+}) {
+  const t = useT();
+  return (
+    <select
+      className="rounded-lg bg-elevated px-3 py-2"
+      aria-label={t("Media type")}
+      value={value}
+      onChange={(event) => change(event.target.value as MediaFilter)}
+    >
+      <option value="all">{t("All titles")}</option>
+      <option value="movie">{t("Movies")}</option>
+      <option value="series">{t("TV shows")}</option>
+    </select>
+  );
+}
+
+function Timeline({
+  items,
+  digital = false,
+  descending = false,
+  attribution,
+}: {
+  items: RadarItem[];
+  digital?: boolean;
+  descending?: boolean;
+  attribution?: Map<string, FollowAttribution[]>;
+}) {
+  const t = useT();
+  const { openMeta } = useView();
+  const groups = new Map<string, RadarItem[]>();
+  for (const item of items) {
+    if (!item.radarDate) continue;
+    const day = groups.get(item.radarDate) ?? [];
+    day.push(item);
+    groups.set(item.radarDate, day);
+  }
+  return (
+    <div className="flex flex-col">
+      {Array.from(groups.keys())
+        .sort((a, b) => (descending ? b.localeCompare(a) : a.localeCompare(b)))
+        .map((date) => (
+          <section
+            key={date}
+            className="grid gap-3 border-t border-edge-soft py-4 sm:grid-cols-[9rem_1fr]"
+          >
+            <time dateTime={date} className="font-display text-lg text-accent">
+              {fmtDate(date)}
+            </time>
+            <div className="grid gap-3">
+              {groups.get(date)!.map((item) => (
+                <div key={item.id}>
+                  <button
+                    type="button"
+                    onClick={() => openMeta(item)}
+                    className="flex w-full items-center gap-4 text-start hover:text-accent"
+                  >
+                    {item.poster && (
+                      <img
+                        alt=""
+                        loading="lazy"
+                        src={item.poster}
+                        className="h-16 w-11 rounded object-cover"
+                      />
+                    )}
+                    <span>
+                      <strong className="block">{item.name}</strong>
+                      <small>
+                        {digital
+                          ? t("Digital Releases") + " · " + t("Egypt")
+                          : item.type === "series"
+                            ? t("TV premiere")
+                            : t("Movie release")}
+                      </small>
+                    </span>
+                  </button>
+                  <FollowedPeopleChip people={attribution?.get(item.id) ?? []} />
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+    </div>
   );
 }
 
@@ -251,28 +382,30 @@ function TrendingSection({ tmdbKey }: { tmdbKey: string }) {
   const t = useT();
   const loadPage = useCallback((page: number) => fetchTrendingPopular(tmdbKey, page), [tmdbKey]);
   const s = usePagedSection(loadPage);
+  const [filter, setFilter] = useState<MediaFilter>("all");
+  const shown = s.items.filter((item) => filter === "all" || item.type === filter);
   return (
-    <Row
-      title={t("Trending / Popular")}
-      headerDescription={t("What everyone is watching right now, from TMDB.")}
-      headerRight={s.hasMore ? <ShowMore loading={s.loading} onClick={s.more} /> : null}
-      min={148}
-      shape="portrait"
-      scrollKey="radar:trending"
-      onEndReached={s.hasMore ? s.more : undefined}
-    >
-      {s.items.length > 0 ? (
-        s.items.map((m) => <RadarCard key={m.id} meta={m} />)
-      ) : s.loading ? (
-        <RowMessage>
-          <Spinner />
-        </RowMessage>
-      ) : s.error ? (
-        <RetryMessage onRetry={s.retry} />
-      ) : (
-        <RowMessage>{t("TMDB lists nothing here yet.")}</RowMessage>
+    <section className="grid gap-5">
+      <header className="flex items-center justify-between">
+        <h2 className="text-2xl font-semibold">{t("Trending / Popular")}</h2>
+        <MediaSelect value={filter} change={setFilter} />
+      </header>
+      {shown.length > 0 && (
+        <div className="radar-grid">
+          {shown.map((m) => (
+            <RadarCard key={m.id} meta={m} />
+          ))}
+        </div>
       )}
-    </Row>
+      {s.error ? (
+        <RetryMessage onRetry={s.retry} />
+      ) : s.loading ? (
+        <Spinner />
+      ) : (
+        !shown.length && <RowMessage>{t("TMDB lists nothing here yet.")}</RowMessage>
+      )}
+      {s.hasMore && !s.error && <ShowMore loading={s.loading} onClick={s.more} />}
+    </section>
   );
 }
 
@@ -322,72 +455,60 @@ function DigitalReleasesSection({ tmdbKey }: { tmdbKey: string }) {
     };
   }, [tmdbKey, region, month, peopleKey, attempt]);
   return (
-    <Row
-      title={t("Digital Releases")}
-      headerDescription={
-        <p className="max-w-prose text-[13px] leading-relaxed text-ink-subtle">
-          {t("Movies from your Following. Verified TMDB digital dates for {region} only.", {
-            region: t("Egypt"),
-          })}
-        </p>
-      }
-      headerRight={
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            aria-label={t("Previous month")}
-            onClick={() => moveMonth(-1)}
-            className="rounded-lg p-2 hover:bg-elevated"
-          >
-            <ChevronLeft size={18} className="dir-icon" />
-          </button>
-          <input
-            type="month"
-            aria-label={t("Release month")}
-            value={month}
-            onChange={(event) => {
-              if (/^\d{4}-\d{2}$/.test(event.target.value)) setMonth(event.target.value);
-            }}
-            className="rounded-lg bg-surface px-3 py-2 text-[13px] text-ink ring-1 ring-edge-soft"
-          />
-          <button
-            type="button"
-            aria-label={t("Next month")}
-            onClick={() => moveMonth(1)}
-            className="rounded-lg p-2 hover:bg-elevated"
-          >
-            <ChevronRight size={18} className="dir-icon" />
-          </button>
-        </div>
-      }
-      min={148}
-      shape="portrait"
-      scrollKey={`radar:digital:${region}:${month}`}
-    >
+    <section className="grid gap-4">
+      <h2 className="text-2xl font-semibold">
+        {t("Digital Releases")} · {t("Egypt")}
+      </h2>
+      <p>
+        {t("Movies from your Following. Verified TMDB digital dates for {region} only.", {
+          region: t("Egypt"),
+        })}
+      </p>
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          aria-label={t("Previous month")}
+          onClick={() => moveMonth(-1)}
+          className="rounded-lg p-2 hover:bg-elevated"
+        >
+          <ChevronLeft size={18} className="dir-icon" />
+        </button>
+        <input
+          type="month"
+          aria-label={t("Release month")}
+          value={month}
+          onChange={(event) => {
+            if (/^\d{4}-\d{2}$/.test(event.target.value)) setMonth(event.target.value);
+          }}
+          className="rounded-lg bg-surface px-3 py-2 text-[13px] text-ink ring-1 ring-edge-soft"
+        />
+        <button
+          type="button"
+          aria-label={t("Next month")}
+          onClick={() => moveMonth(1)}
+          className="rounded-lg p-2 hover:bg-elevated"
+        >
+          <ChevronRight size={18} className="dir-icon" />
+        </button>
+      </div>
       {loading ? (
         Array.from({ length: 6 }, (_, i) => (
           <div
             key={i}
             aria-label={i === 0 ? t("Loading") : undefined}
-            className="aspect-[2/3] rounded-lg bg-elevated motion-safe:animate-pulse"
+            className="h-12 rounded-lg bg-elevated motion-safe:animate-pulse"
           />
         ))
       ) : error ? (
         <RetryMessage onRetry={() => setAttempt((n) => n + 1)} />
       ) : items.length ? (
-        items.map((item) => (
-          <RadarCard
-            key={item.id}
-            meta={item}
-            people={item.people}
-            reason={`${fmtDate(item.radarDate!)} · ${region}`}
-          />
-        ))
+        <Timeline
+          digital
+          items={items}
+          attribution={new Map(items.map((item) => [item.id, item.people]))}
+        />
       ) : (
-        <div
-          style={{ gridColumn: "span 3" }}
-          className="flex min-h-40 max-w-full flex-col justify-center gap-3 text-[13px] leading-relaxed text-ink-subtle"
-        >
+        <div className="flex min-h-40 max-w-full flex-col justify-center gap-3 text-[13px] leading-relaxed text-ink-subtle">
           <p>
             {people.length
               ? t(
@@ -404,75 +525,7 @@ function DigitalReleasesSection({ tmdbKey }: { tmdbKey: string }) {
           </button>
         </div>
       )}
-    </Row>
-  );
-}
-
-type DiscoverFilter = "actors" | "directors";
-
-function DiscoverSection({ tmdbKey }: { tmdbKey: string }) {
-  const t = useT();
-  const { people: follows } = useFollows();
-  const [filter, setFilter] = useState<DiscoverFilter>("actors");
-  const [data, setData] = useState<{ actors: PersonHit[]; directors: PersonHit[] } | null>(null);
-  const [error, setError] = useState(false);
-  const [attempt, setAttempt] = useState(0);
-
-  useEffect(() => {
-    let cancelled = false;
-    setError(false);
-    setData(null);
-    // Following someone from this row keeps them on it, so the list doesn't jump.
-    discoverPeople(tmdbKey, new Set())
-      .then((next) => {
-        if (!cancelled) setData(next);
-      })
-      .catch(() => {
-        if (!cancelled) setError(true);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [tmdbKey, attempt]);
-
-  const followedAtLoad = useRef(new Set(follows.map((p) => p.id)));
-  const shown = (data?.[filter] ?? []).filter((p) => !followedAtLoad.current.has(p.id));
-
-  return (
-    <Row
-      title={t("Discover")}
-      headerDescription={t("Actors and directors worth a look. Open one for their filmography.")}
-      headerRight={
-        <div className="flex items-center gap-1.5">
-          {(["actors", "directors"] as const).map((id) => (
-            <button
-              key={id}
-              type="button"
-              aria-pressed={filter === id}
-              onClick={() => setFilter(id)}
-              className={`${PILL} ${filter === id ? "text-ink ring-accent" : "text-ink-subtle ring-edge-soft hover:text-ink"}`}
-            >
-              {id === "actors" ? t("Actors") : t("Directors")}
-            </button>
-          ))}
-        </div>
-      }
-      min={168}
-      shape="portrait"
-      scrollKey="radar:discover"
-    >
-      {shown.length > 0 ? (
-        shown.map((p) => <PersonSuggestionCard key={p.id} person={p} />)
-      ) : error ? (
-        <RetryMessage onRetry={() => setAttempt((n) => n + 1)} />
-      ) : data ? (
-        <RowMessage>{t("TMDB lists nothing here yet.")}</RowMessage>
-      ) : (
-        <RowMessage>
-          <Spinner />
-        </RowMessage>
-      )}
-    </Row>
+    </section>
   );
 }
 
@@ -484,45 +537,31 @@ function ReleasesSection({ tmdbKey }: { tmdbKey: string }) {
     [tmdbKey, kind],
   );
   const s = usePagedSection(loadPage);
+  const [filter, setFilter] = useState<MediaFilter>("all");
+  const { people } = useFollows();
+  const { credits } = useFollowCredits(tmdbKey, people);
+  const attribution = useMemo(() => new Map(credits.map((c) => [c.id, c.people])), [credits]);
+  const shown = s.items.filter((item) => filter === "all" || item.type === filter);
   return (
-    <Row
-      title={t("Upcoming / New Releases")}
-      headerDescription={t("Movies and series by their actual release date.")}
-      headerRight={
-        <div className="flex items-center gap-1.5">
-          {(["upcoming", "new"] as const).map((id) => (
-            <button
-              key={id}
-              type="button"
-              aria-pressed={kind === id}
-              onClick={() => setKind(id)}
-              className={`${PILL} ${kind === id ? "text-ink ring-accent" : "text-ink-subtle ring-edge-soft hover:text-ink"}`}
-            >
-              {id === "upcoming" ? t("Upcoming") : t("New")}
-            </button>
-          ))}
-          {s.hasMore && <ShowMore loading={s.loading} onClick={s.more} />}
-        </div>
-      }
-      min={148}
-      shape="portrait"
-      scrollKey={`radar:releases:${kind}`}
-      onEndReached={s.hasMore ? s.more : undefined}
-    >
-      {s.items.length > 0 ? (
-        s.items.map((m) => (
-          <RadarCard key={m.id} meta={m} reason={m.radarDate ? fmtDate(m.radarDate) : undefined} />
-        ))
-      ) : s.loading ? (
-        <RowMessage>
-          <Spinner />
-        </RowMessage>
-      ) : s.error ? (
+    <section className="grid gap-4">
+      <header className="flex flex-wrap items-center gap-3">
+        {(["upcoming", "new"] as const).map((id) => (
+          <button key={id} aria-pressed={kind === id} className={PILL} onClick={() => setKind(id)}>
+            {id === "new" ? t("Recently released") : t("Upcoming")}
+          </button>
+        ))}
+        <MediaSelect value={filter} change={setFilter} />
+      </header>
+      <Timeline items={shown} descending={kind === "new"} attribution={attribution} />
+      {s.error ? (
         <RetryMessage onRetry={s.retry} />
+      ) : s.loading ? (
+        <Spinner />
       ) : (
-        <RowMessage>{t("TMDB lists nothing here yet.")}</RowMessage>
+        !shown.length && <RowMessage>{t("TMDB lists nothing here yet.")}</RowMessage>
       )}
-    </Row>
+      {s.hasMore && !s.error && <ShowMore loading={s.loading} onClick={s.more} />}
+    </section>
   );
 }
 
@@ -531,6 +570,8 @@ export function RadarView({ active = true }: { active?: boolean }) {
   const { settings } = useSettings();
   const { openSettings, setView } = useView();
   const { people } = useFollows();
+  const [space, setSpace] = useState("For You");
+  const [digital, setDigital] = useState(false);
   const tmdbKey = settings.tmdbKey;
   const scrollRef = useRef<HTMLElement>(null);
   const [scrollEl, setScrollEl] = useState<HTMLElement | null>(null);
@@ -548,7 +589,7 @@ export function RadarView({ active = true }: { active?: boolean }) {
       className="relative h-full overflow-y-auto overflow-x-hidden bg-canvas"
     >
       <ScrollRootContext.Provider value={scrollEl}>
-        <div className="relative flex w-full flex-col gap-12 px-12 pb-32 pt-12">
+        <div className="relative flex w-full flex-col gap-6 px-5 md:px-12 pb-32 pt-12">
           <header className="frame-section-heading">
             <h1 className="text-[34px] font-semibold tracking-tight text-ink">{t("Radar")}</h1>
             <p className="mt-1 text-[14px] text-ink-subtle">
@@ -582,41 +623,45 @@ export function RadarView({ active = true }: { active?: boolean }) {
           ) : (
             <>
               <nav className="frame-radar-index" aria-label={t("Radar")}>
-                {[
-                  ["for-you", t("For You")],
-                  ["trending", t("Trending")],
-                  ["digital", t("Digital Releases")],
-                  ["discover", t("Discover")],
-                  ["releases", t("Upcoming / New Releases")],
-                ].map(([id, label]) => (
+                {["For You", "Releases", "Explore"].map((label) => (
                   <button
+                    key={label}
                     type="button"
-                    key={id}
-                    onClick={() =>
-                      scrollRef.current
-                        ?.querySelector(`#radar-${id}`)
-                        ?.scrollIntoView({ block: "start" })
-                    }
+                    aria-pressed={space === label}
+                    onClick={() => setSpace(label)}
                   >
-                    {label}
+                    {t(label)}
                   </button>
                 ))}
               </nav>
-              <section id="radar-for-you" className="frame-radar-section">
-                <ForYouSection tmdbKey={tmdbKey} />
-              </section>
-              <section id="radar-trending" className="frame-radar-section">
-                <TrendingSection tmdbKey={tmdbKey} />
-              </section>
-              <section id="radar-digital" className="frame-radar-section">
-                <DigitalReleasesSection tmdbKey={tmdbKey} />
-              </section>
-              <section id="radar-discover" className="frame-radar-section">
-                <DiscoverSection tmdbKey={tmdbKey} />
-              </section>
-              <section id="radar-releases" className="frame-radar-section">
-                <ReleasesSection tmdbKey={tmdbKey} />
-              </section>
+              {active &&
+                (space === "For You" ? (
+                  <ForYouSection tmdbKey={tmdbKey} />
+                ) : space === "Explore" ? (
+                  <TrendingSection tmdbKey={tmdbKey} />
+                ) : (
+                  <section className="grid gap-5">
+                    <div className="flex gap-3">
+                      {[false, true].map((value) => (
+                        <button
+                          key={String(value)}
+                          aria-pressed={digital === value}
+                          className={PILL}
+                          onClick={() => setDigital(value)}
+                        >
+                          {value
+                            ? t("Digital Releases") + " · " + t("Egypt")
+                            : t("Release calendar")}
+                        </button>
+                      ))}
+                    </div>
+                    {digital ? (
+                      <DigitalReleasesSection tmdbKey={tmdbKey} />
+                    ) : (
+                      <ReleasesSection tmdbKey={tmdbKey} />
+                    )}
+                  </section>
+                ))}
             </>
           )}
         </div>
