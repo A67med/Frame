@@ -52,7 +52,7 @@ const RadarCard = Object.assign(
         <PickCard meta={meta} reason={reason} />
         <small className="film-catalog-data" hidden>
           {[
-            meta.type === "series" ? t("TV show") : t("Movie"),
+            meta.type === "series" ? t("Series") : t("Movie"),
             meta.releaseInfo,
             meta.originalLanguage?.toUpperCase(),
           ]
