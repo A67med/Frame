@@ -105,3 +105,267 @@ html[data-theme-composition="zodiac"] .harbor-row-shell > div:first-child {
       box-shadow 220ms ease;
   }
 }
+
+/* Expanded rails use different destination groupings; collapsed rails keep their compact controls. */
+@media (min-width: 900px) {
+  html[data-frame-desktop][data-theme-composition="dune"]:has(
+      [data-frame-navigation][data-collapsed="false"]:not([aria-hidden="true"])
+    ) {
+    --frame-rail: clamp(150px, 13vw, 210px);
+    & [data-frame-navigation] nav {
+      padding: 32px 12px 16px 20px;
+      gap: 7px;
+      border-inline-start: 8px solid var(--color-elevated);
+    }
+    & [data-frame-navigation] [data-harbor-nav] {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 10px;
+      padding-inline: 8px;
+      border-radius: 0;
+    }
+    & [data-frame-navigation] [aria-current="page"] {
+      background: linear-gradient(105deg, var(--color-accent-soft) 88%, transparent 88%);
+    }
+  }
+  html[data-frame-desktop][data-theme-composition="la-la-land"]:has(
+      [data-frame-navigation][data-collapsed="false"]:not([aria-hidden="true"])
+    ) {
+    --frame-rail: 118px;
+    & [data-frame-navigation] {
+      padding: 16px 8px;
+      border: 0;
+      background: transparent;
+    }
+    & [data-frame-navigation] > div {
+      border-radius: 48px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px var(--color-edge-soft);
+      background: var(--color-surface) !important;
+    }
+    & [data-frame-navigation] nav {
+      gap: 6px;
+      padding-inline: 12px;
+    }
+    & [data-frame-navigation] [data-harbor-nav] {
+      border-radius: 32px;
+    }
+  }
+  html[data-frame-desktop][data-theme-composition="doomsday"]:has(
+      [data-frame-navigation][data-collapsed="false"]:not([aria-hidden="true"])
+    ) {
+    --frame-rail: 158px;
+    & [data-frame-navigation] nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-content: start;
+      gap: 3px;
+      padding: 6px;
+    }
+    & [data-frame-navigation] nav .frame-nav-divider {
+      grid-column: 1/-1;
+    }
+    & [data-frame-navigation] nav button {
+      min-height: 60px;
+      background: var(--color-elevated);
+      border-radius: 2px;
+    }
+  }
+  html[data-frame-desktop][data-theme-composition="zodiac"]:has(
+      [data-frame-navigation][data-collapsed="false"]:not([aria-hidden="true"])
+    ) {
+    --frame-rail: 144px;
+    & [data-frame-navigation] nav {
+      padding: 4px 10px;
+      gap: 0;
+    }
+    & [data-frame-navigation] nav button {
+      flex-direction: row;
+      justify-content: start;
+      gap: 8px;
+      min-height: 34px;
+      border-bottom: 1px solid var(--color-edge-soft);
+      border-radius: 0;
+    }
+    & [data-frame-navigation] nav svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+html[data-frame-desktop][data-theme-composition="dune"] {
+  &
+    :is(
+      .frame-section-heading,
+      .frame-library-heading,
+      [data-frame-page] .harbor-row-shell > div:first-child
+    ) {
+    border-inline-start: 6px solid var(--color-accent);
+    padding-inline-start: clamp(12px, 2vw, 36px);
+  }
+  & :is([data-frame-page], [data-frame-detail]) h1 {
+    font-size: clamp(36px, 5vw, 78px);
+    line-height: 1;
+  }
+  & [data-frame-page] .frame-feature {
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 21%);
+    align-items: end;
+  }
+  & .radar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(190px, 100%), 1fr));
+    column-gap: 22px;
+  }
+  & [data-frame-detail-body] {
+    border-inline-start: 8px solid var(--color-edge);
+    padding-inline-start: 3vw;
+  }
+}
+html[data-frame-desktop][data-theme-composition="la-la-land"] {
+  & :is(.frame-section-heading, .frame-library-heading) {
+    padding: 24px 5%;
+    border-radius: 48px 12px;
+    background: linear-gradient(120deg, var(--color-accent-soft), transparent);
+  }
+  & [data-frame-page] .frame-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  & [data-frame-page] .frame-feature > div:first-child {
+    border-radius: 36px 36px 80px 12px;
+    overflow: hidden;
+  }
+  & [data-frame-page] .frame-feature > :nth-child(2) {
+    position: relative;
+    align-self: flex-end;
+    max-width: 84%;
+    margin-block-start: -18px;
+    background: var(--color-surface);
+    border-radius: 18px;
+    padding: 10px;
+  }
+  & .radar-grid > :nth-child(even) {
+    padding-block-start: 22px;
+  }
+  & [data-frame-detail-body] {
+    border-radius: 40px 40px 0 0;
+    background: var(--color-surface);
+  }
+}
+html[data-frame-desktop][data-theme-composition="doomsday"] {
+  & :is(.frame-section-heading, .frame-library-heading) {
+    background: var(--color-surface);
+    padding: 20px;
+    border-top: 4px solid var(--color-accent);
+    box-shadow: inset 9px 0 var(--color-elevated);
+  }
+  & [data-frame-page] .frame-feature {
+    grid-template-columns: minmax(170px, 25%) minmax(0, 1fr);
+  }
+  & [data-frame-page] .frame-feature > :first-child {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  & [data-frame-page] .frame-feature > :nth-child(2) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  & .radar-grid {
+    gap: 4px;
+    background: var(--color-edge-soft);
+    padding: 4px;
+  }
+  & .radar-grid > div {
+    padding: 8px;
+    background: var(--color-surface);
+  }
+  & [data-frame-detail-body] {
+    border-block-start: 4px solid var(--color-accent);
+  }
+}
+html[data-frame-desktop][data-theme-composition="zodiac"] {
+  & :is(.frame-section-heading, .frame-library-heading) {
+    padding-block: 12px;
+    border-block: 3px double var(--color-edge);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  & [data-frame-page] .frame-feature {
+    grid-template-columns: minmax(0, 3fr) minmax(180px, 2fr);
+    gap: 1px;
+    background: var(--color-edge);
+  }
+  & .radar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(124px, 100%), 1fr));
+    gap: 14px 8px;
+  }
+  & [data-frame-detail-body] {
+    border-block: 3px double var(--color-edge);
+  }
+}
+@media (max-width: 700px) {
+  html[data-frame-desktop]:is(
+      [data-theme-composition="dune"],
+      [data-theme-composition="la-la-land"],
+      [data-theme-composition="doomsday"],
+      [data-theme-composition="zodiac"]
+    )
+    [data-frame-page]
+    .frame-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 1000px) {
+  html[data-frame-desktop][data-theme-composition="dune"] .frame-library-workspace {
+    grid-template-columns: minmax(158px, 20%) minmax(0, 1fr);
+  }
+  html[data-frame-desktop][data-theme-composition="dune"] .frame-library-nav {
+    padding-block-start: 28px;
+    border-inline-end: 4px double var(--color-edge);
+  }
+  html[data-frame-desktop][data-theme-composition="la-la-land"] .frame-library-workspace {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  html[data-frame-desktop][data-theme-composition="la-la-land"] .frame-library-nav {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    padding: 6px 14px;
+    justify-content: center;
+    border: 0;
+    border-radius: 26px;
+    background: var(--color-surface);
+  }
+  html[data-frame-desktop][data-theme-composition="doomsday"] .frame-library-workspace {
+    grid-template-columns: minmax(0, 1fr) 160px;
+  }
+  html[data-frame-desktop][data-theme-composition="doomsday"] .frame-library-nav {
+    grid-column: 2;
+    grid-row: 1;
+    background: var(--color-surface);
+    padding: 8px;
+    border-inline-start: 3px solid var(--color-accent);
+  }
+  html[data-frame-desktop][data-theme-composition="doomsday"] .frame-library-results {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  html[data-frame-desktop][data-theme-composition="zodiac"] .frame-library-workspace {
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 16px;
+  }
+  html[data-frame-desktop][data-theme-composition="zodiac"] .frame-library-nav button {
+    padding: 6px 4px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-edge-soft);
+  }
+}

@@ -14,6 +14,42 @@ export function ThemeThumbnail({ theme }: { theme: ThemePreset }) {
     background: "var(--color-canvas)",
     color: "var(--color-ink)",
   } as CSSProperties;
+  if (theme.id === "project-hail-mary") {
+    return (
+      <svg aria-hidden="true" viewBox="0 0 320 180" className="h-full w-full" style={style}>
+        <rect width="320" height="180" fill="var(--color-canvas)" />
+        <rect x="8" y="7" width="49" height="165" rx="14" fill="var(--color-surface)" />
+        <text x="16" y="25" fontSize="10" fill="var(--color-accent)">
+          Frame
+        </text>
+        {[39, 55, 71, 87, 103].map((y) => (
+          <g key={y}>
+            <circle cx="18" cy={y} r="3" fill="var(--color-accent)" />
+            <path d={`M26 ${y}h21`} stroke="var(--color-ink-muted)" />
+          </g>
+        ))}
+        <rect x="68" y="12" width="128" height="9" rx="5" fill="var(--color-elevated)" />
+        <rect x="68" y="30" width="242" height="88" rx="10" fill="var(--color-elevated)" />
+        <circle cx="262" cy="63" r="22" fill="var(--color-accent-soft)" />
+        <text x="80" y="82" fontSize="15" fill="var(--color-ink)">
+          Project Hail Mary
+        </text>
+        <rect x="80" y="94" width="35" height="10" rx="5" fill="var(--color-accent)" />
+        {[68, 118, 168, 218, 268].map((x) => (
+          <rect
+            key={x}
+            x={x}
+            y="128"
+            width="41"
+            height="47"
+            rx="5"
+            fill="var(--color-surface)"
+            stroke="var(--color-edge)"
+          />
+        ))}
+      </svg>
+    );
+  }
   return (
     <svg aria-hidden="true" viewBox="0 0 320 180" className="h-full w-full" style={style}>
       <rect width="320" height="180" fill="var(--color-canvas)" />
