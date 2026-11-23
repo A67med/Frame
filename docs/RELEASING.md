@@ -38,7 +38,7 @@ In GitHub **Settings → Rules → Rulesets**, create a branch ruleset targeting
 - Block force pushes and branch deletion. Do not allow bypasses unless required by an explicitly documented recovery process.
 - Do not prevent GitHub Actions from creating release tags, and do not enable rules that require the release workflow to push directly to `main` — it does not.
 
-Check that a small docs PR can pass the branch rules before treating them as finalized. Review [`AGENTS.md`](../AGENTS.md) for build and compatibility quirks.
+Check that a small docs PR can pass the branch rules before treating them as finalized.
 
 ## Recovery
 

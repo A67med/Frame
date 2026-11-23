@@ -132,3 +132,12 @@ dev.log*
 
 # Locally built macOS virtual microphone bundle.
 /native/macos/virtual-mic/build/
+
+# Private assistant instructions, configuration and project audit materials.
+AGENTS.md
+CLAUDE.md
+/.codex/
+/.claude/
+/.agent-local/
+/docs/project-audit/
+/frame-project-audit.zip

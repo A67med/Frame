@@ -24,7 +24,7 @@ Thanks for helping improve Frame. Frame is a local-first Windows desktop media a
    ```
 4. For an installer, run `pnpm tauri build --bundles nsis` after provisioning the required native dependencies.
 
-The full architecture and build boundaries are documented in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). See [AGENTS.md](AGENTS.md) for repository-specific development conventions and testing caveats.
+The full architecture and build boundaries are documented in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Pull requests
 
