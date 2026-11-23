@@ -2,8 +2,6 @@ import { useState } from "react";
 import { ThemeThumbnail } from "@/components/theme-thumbnail";
 import { selectableThemes, type ThemePreset } from "@/lib/theme";
 import { useT } from "@/lib/i18n";
-import { Fit } from "../custom-themes-section/community-store/market/fit";
-import { tokensFromPreset } from "../custom-themes-section/community-store/market/fit-palette";
 import { PaletteSeam } from "../custom-themes-section/community-store/market/palette-seam";
 
 export function PresetGallery({ onSeed }: { onSeed: (t: ThemePreset) => void }) {
@@ -32,12 +30,8 @@ export function PresetGallery({ onSeed }: { onSeed: (t: ThemePreset) => void }) 
             title={t(p.name)}
             className="group/card flex flex-col overflow-hidden rounded-md bg-canvas text-start outline-none transition-colors duration-200 hover:bg-raised focus-visible:ring-2 focus-visible:ring-accent"
           >
-            <div className="relative aspect-[16/10] overflow-hidden bg-raised">
-              {p.layout === "frame" ? (
-                <ThemeThumbnail theme={p} />
-              ) : (
-                <Fit kind="theme" tokens={tokensFromPreset(p)} cover={p.previewImage ?? null} />
-              )}
+            <div className="relative aspect-video w-full overflow-hidden bg-raised">
+              <ThemeThumbnail theme={p} />
               <div className="absolute inset-x-0 bottom-0">
                 <PaletteSeam swatch={p.swatch} />
               </div>

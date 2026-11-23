@@ -98,9 +98,14 @@ try {
   await checkFrame();
   await snapshot("default-studio");
   await studio().getByRole("button", { name: "Themes", exact: true }).click();
-  await studio().getByLabel("Find a theme").fill("Aurora");
+  for (const id of ["frame", "project-hail-mary", "la-la-land"]) {
+    const thumbnail = studio().locator(`img[data-built-in-preview="${id}"]`);
+    await thumbnail.waitFor();
+    assert.ok(await thumbnail.evaluate((image) => image.complete && image.naturalWidth > 0));
+  }
+  await studio().getByLabel("Find a theme").fill("La La Land");
   await studio()
-    .getByRole("button", { name: /^Aurora/ })
+    .getByRole("button", { name: /^La La Land/ })
     .click();
   await checkFrame();
   await studio().getByRole("button", { name: "Look", exact: true }).click();
