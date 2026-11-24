@@ -53,7 +53,6 @@ const catalogMO: Record<string, string> = {
   "Manage Servers": "सर्वर मैनेज करें",
   "Manage addon": "ऐडऑन मैनेज करें",
   "Manage connection": "कनेक्शन मैनेज करें",
-  "Manage eBook sources": "eBook स्रोत मैनेज करें",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "उन सभी जगहों को मैनेज करें जहाँ से Frame पढ़ सकता है, चाहे वे डिस्क पर मौजूद हों या वेब पर।",
   "Manage members and posts": "सदस्य और पोस्ट मैनेज करें",
@@ -65,11 +64,6 @@ const catalogMO: Record<string, string> = {
   "Manager": "मैनेजर",
   "Managers": "मैनेजर",
   "Manga": "मंगा",
-  "Manga adaptation": "मंगा रूपांतरण",
-  "Manga browse cache": "मांगा ब्राउज़ कैश",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "मंगा का अभी Frame के किसी टाइटल से मिलान नहीं हो सकता, इसलिए {n} आइटम छोड़ दिए गए।",
-  "Manga reader remote": "मांगा रीडर रिमोट",
   "Manic Heart": "बेचैन दिल",
   "Manifest URL": "मैनिफ़ेस्ट URL",
   "Manifest URL copied": "मैनिफ़ेस्ट URL कॉपी किया गया",
@@ -325,7 +319,6 @@ const catalogMO: Record<string, string> = {
   "My Watchlist": "मेरी वॉचलिस्ट",
   "My collection": "मेरा संग्रह",
   "My collections": "मेरे कलेक्शन",
-  "My eBooks": "मेरी eBooks",
   "My filter": "मेरा फ़िल्टर",
   "My layout": "मेरा लेआउट",
   "My library": "मेरी लाइब्रेरी",
@@ -508,7 +501,6 @@ const catalogMO: Record<string, string> = {
   "No PiP session. Closing.": "कोई PiP सेशन नहीं है। बंद किया जा रहा है।",
   "No Simkl history yet.": "अभी तक कोई Simkl हिस्ट्री नहीं है।",
   "No Simkl premieres this month": "इस महीने कोई Simkl प्रीमियर नहीं है",
-  "No Suwayomi server at this address": "इस पते पर कोई Suwayomi सर्वर नहीं है",
   "No Way Out": "निकलने का कोई रास्ता नहीं",
   "No Wi-Fi address yet. Other devices cannot reach this computer.":
     "अभी तक कोई Wi-Fi पता नहीं है। दूसरे डिवाइस इस कंप्यूटर तक नहीं पहुँच सकते।",
@@ -576,7 +568,6 @@ const catalogMO: Record<string, string> = {
   "No date": "कोई तारीख नहीं",
   "No debrid configured": "कोई डीब्रिड कॉन्फ़िगर नहीं है",
   "No description available.": "कोई विवरण उपलब्ध नहीं है।",
-  "No description is available for this eBook.": "इस eBook का कोई विवरण उपलब्ध नहीं है।",
   "No details available for this person.": "इस व्यक्ति के बारे में कोई जानकारी उपलब्ध नहीं है।",
   "No dimensions set. This filter matches every stream.":
     "कोई आयाम सेट नहीं है। यह फ़िल्टर हर स्ट्रीम से मेल खाता है।",
@@ -584,7 +575,6 @@ const catalogMO: Record<string, string> = {
   "No downloadable episode files were found in this season package. Pick another package.":
     "इस सीज़न पैकेज में डाउनलोड की जा सकने वाली कोई एपिसोड फ़ाइल नहीं मिली। कोई दूसरा पैकेज चुनें।",
   "No downloads yet": "अभी तक कोई डाउनलोड नहीं है",
-  "No eBooks found.": "कोई eBook नहीं मिली।",
   "No entries on your AniList lists yet.": "आपकी AniList सूचियों में अभी तक कोई प्रविष्टि नहीं है।",
   "No entries on your MyAnimeList lists yet.": "आपकी MyAnimeList सूचियों में अभी तक कोई प्रविष्टि नहीं है।",
   "No episodes available for this season.": "इस सीज़न के लिए कोई एपिसोड उपलब्ध नहीं है।",
@@ -695,8 +685,6 @@ const catalogMO: Record<string, string> = {
   "No recent activity yet": "अभी कोई हालिया गतिविधि नहीं",
   "No reminders yet. Use the clock on a show's page to get told about new episodes and seasons.":
     "अभी कोई रिमाइंडर नहीं। नए एपिसोड और सीज़न की सूचना पाने के लिए शो के पेज पर घड़ी का उपयोग करें।",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "अभी कोई रिपॉज़िटरी नहीं है। eBook एक्सटेंशन ब्राउज़ करने के लिए ऊपर एक रिपॉज़िटरी जोड़ें।",
   "No response": "कोई जवाब नहीं",
   "No results found.": "कोई नतीजा नहीं मिला।",
   "No reviews from your friends for this film.": "इस फ़िल्म के लिए आपके दोस्तों की कोई समीक्षा नहीं है।",
@@ -726,7 +714,6 @@ const catalogMO: Record<string, string> = {
   "No sources match your filter. Showing all sources.":
     "आपके फ़िल्टर से मेल खाने वाला कोई स्रोत नहीं। सभी स्रोत दिखाए जा रहे हैं।",
   "No status": "कोई स्टेटस नहीं",
-  "No story summary is available for this eBook.": "इस eBook के लिए कहानी का कोई सार उपलब्ध नहीं है।",
   "No streaming sources yet": "अभी कोई स्ट्रीमिंग स्रोत नहीं",
   "No streams match": "कोई स्ट्रीम मेल नहीं खाती",
   "No styling": "कोई स्टाइलिंग नहीं",
@@ -1043,8 +1030,6 @@ const catalogMO: Record<string, string> = {
   "One pick at a time, full screen, until something lands.":
     "एक बार में एक विकल्प, पूरी स्क्रीन पर, जब तक कुछ पसंद न आ जाए।",
   "One release": "एक रिलीज़",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "एक स्विच इस पेज की हर चीज़ चालू करता है: वेब ऐप, फ़ोन रिमोट और मंगा रीडर रिमोट।",
   "One switch serves Frame on your network. Scan a code below with your phone, or open an address on any device on the same Wi-Fi.":
     "एक स्विच आपके नेटवर्क पर Frame उपलब्ध कराता है। नीचे दिया गया कोड अपने फ़ोन से स्कैन करें या उसी Wi-Fi नेटवर्क से जुड़े किसी भी डिवाइस पर दिया गया पता खोलें।",
   "One-click community packs. Rulesets bring full badge sets with their own matching; art remaps only swap the pictures on Frame's built-in badges. Anything shared as a badges.json link on the Nuvio Discord or Reddit imports here too.":
@@ -1123,8 +1108,6 @@ const catalogMO: Record<string, string> = {
   "Open Trakt profile": "Trakt प्रोफ़ाइल खोलें",
   "Open Voyages": "यात्राएँ खोलें",
   "Open a folder": "फ़ोल्डर खोलें",
-  "Open a manga on Frame to control the reader from here.":
-    "यहाँ से रीडर को नियंत्रित करने के लिए Frame में कोई मंगा खोलें।",
   "Open a quick issue": "त्वरित समस्या दर्ज करें",
   "Open a terminal and run: brew install ffmpeg": "टर्मिनल खोलें और चलाएँ: brew install ffmpeg",
   "Open a terminal and run: winget install Gyan.FFmpeg":
@@ -1150,7 +1133,6 @@ const catalogMO: Record<string, string> = {
   "Open it in a regular browser, set it up there, then come back and paste the install link below.":
     "इसे सामान्य ब्राउज़र में खोलें, वहाँ सेटअप करें, फिर वापस आकर नीचे इंस्टॉल लिंक पेस्ट करें।",
   "Open library": "लाइब्रेरी खोलें",
-  "Open manga": "मंगा खोलें",
   "Open on AniList": "AniList पर खोलें",
   "Open on IMDb": "IMDb पर खोलें",
   "Open on Letterboxd": "Letterboxd पर खोलें",
@@ -1182,16 +1164,12 @@ const catalogMO: Record<string, string> = {
     "BotFather ने अभी जो बॉट बनाया है, उसे खोलें (वह आपको एक लिंक भेजता है)। उसे कोई भी मैसेज भेजें, ताकि उसे आपको जवाब भेजने की अनुमति मिल जाए।",
   "Open the cast menu and try this device again.": "कास्ट मेन्यू खोलें और इस डिवाइस को फिर से आज़माएँ।",
   "Open the cheat sheet": "चीट शीट खोलें",
-  "Open the editor to add the movies, shows, and manga that belong in this collection.":
-    "इस कलेक्शन में शामिल फ़िल्में, शो और मंगा जोड़ने के लिए एडिटर खोलें।",
   "Open the email TMDB sent to the address you registered with and press the activate button inside it. Check spam if it has not arrived.":
     "TMDB द्वारा आपके रजिस्टर्ड पते पर भेजा गया ईमेल खोलें और उसमें मौजूद एक्टिवेट बटन दबाएँ। अगर ईमेल नहीं आया है, तो स्पैम फ़ोल्डर देखें।",
   "Open the library, hit Share a theme, and your first publication shows up here with its review status, downloads, and version history.":
     "लाइब्रेरी खोलें, “थीम शेयर करें” दबाएँ और आपका पहला प्रकाशन उसकी समीक्षा की स्थिति, डाउनलोड और वर्ज़न इतिहास के साथ यहाँ दिखाई देगा।",
   "Open the queue": "क्यू खोलें",
   "Open the remote": "रिमोट खोलें",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "किसी भी eBook पर व्हील मेन्यू खोलें और शेल्फ़ में जोड़ें चुनें।",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "पेज पलटने, ज़ूम करने और जेस्चर से चैप्टर चुनने के लिए इस लिंक को उसी Wi-Fi से जुड़े फ़ोन पर खोलें। इस रीडर को खुला रखें।",
   "Open this page by scanning the code on your TV's setup screen.":
@@ -1269,8 +1247,6 @@ const catalogMO: Record<string, string> = {
   "Outline color": "आउटलाइन का रंग",
   "Outline thickness": "आउटलाइन की मोटाई",
   "Output device": "आउटपुट डिवाइस",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "100 से ज़्यादा सेल्फ़-होस्टेड ऐप: *arr स्टैक, debrid टूल, किताबें और ऑडियोबुक, और भी बहुत कुछ।",
   "Over the cap, the oldest files are deleted first.":
     "सीमा पार होने पर सबसे पुरानी फ़ाइलें पहले मिटाई जाती हैं।",
   "Overall Record": "कुल रिकॉर्ड",

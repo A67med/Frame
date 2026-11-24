@@ -40,9 +40,6 @@ const miscC: Record<string, string> = {
   "Set up Anime4K": "Anime4K'yı kur",
   "Set up Frame": "Frame'ı kur",
   "Set up a debrid": "Debrid hizmeti kur",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "Başlamak için okunabilir en az bir eKitap kaynağı ayarlayın. Meta veriler bir kitabı tanımlayabilir ancak Frame'ın kitabı açabilmesi için bir klasör, eklenti veya özel kaynak gerekir.",
-  "Set up eBooks": "eKitapları ayarla",
   "Set up my TV from this computer": "TV'mi bu bilgisayardan kur",
   "Set up your own Cloudflare Worker rather than borrowing this one.":
     "Bunu kullanmak yerine kendi Cloudflare Worker'ınızı kurun.",
@@ -341,7 +338,6 @@ const miscC: Record<string, string> = {
   "Start from a look": "Bir görünümden başla",
   "Start from this computer": "Bu bilgisayardan başlat",
   "Start import": "İçe aktarmayı başlat",
-  "Start of manga": "Manganın başlangıcı",
   "Start trailers with audio": "Fragmanları sesli başlat",
   "Start week on Monday": "Haftayı pazartesi günü başlat",
   "Started at {time}": "Başlangıç: {time}",
@@ -380,8 +376,6 @@ const miscC: Record<string, string> = {
   "Storage": "Depolama",
   "Storage is full. Clear Frame cache storage, then try saving again.":
     "Depolama alanı dolu. Frame önbelleğini temizleyip yeniden kaydetmeyi deneyin.",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Her eseri EPUB veya PDF dosyasıyla birlikte ayrı bir klasörde sakla",
   "Stories you love": "Sevdiğiniz hikâyeler",
   "Straight into the apps you already pay for.": "Doğrudan zaten ücretini ödediğiniz uygulamalara.",
   "Stream": "Yayın",
@@ -543,7 +537,6 @@ const miscC: Record<string, string> = {
     "Bu kod artık geçerli değil. Yeni kod için TV'nize bakın.",
   "That custom url is not available.": "Bu özel URL kullanılamıyor.",
   "That did not work. Check your details.": "İşlem başarısız oldu. Bilgilerinizi kontrol edin.",
-  "That does not look like a Spotify link.": "Bu, Spotify bağlantısına benzemiyor.",
   "That does not look like a YouTube link.": "Bu, YouTube bağlantısına benzemiyor.",
   "That file is {size}. Source images need to be under 16 MB before resizing.":
     "Bu dosya {size} boyutunda. Kaynak görüntüler yeniden boyutlandırılmadan önce 16 MB'tan küçük olmalıdır.",
@@ -588,8 +581,6 @@ const miscC: Record<string, string> = {
   "The critics' cut": "Eleştirmenlerin seçimi",
   "The dotted line is a flat squeeze of the whole range. A curve that stays high keeps midtones punchy and compresses the highlights late; a lower curve rolls off early and looks gentler.":
     "Noktalı çizgi, tüm aralığın eşit biçimde sıkıştırılmış hâlidir. Yüksekte kalan bir eğri orta tonları canlı tutar ve parlak alanları daha geç sıkıştırır; daha alçak bir eğri ise geçişi erkenden yumuşatır ve daha yumuşak görünür.",
-  "The eBook download was canceled.": "e-kitap indirme işlemi iptal edildi.",
-  "The eBook export was canceled.": "e-kitap dışa aktarma işlemi iptal edildi.",
   'The economy has "inflation". What\'s happening?': 'Ekonomide "enflasyon" var. Ne oluyor?',
   "The editor is a working copy of the player. Click any control on it to move, resize, restyle or hide that control.":
     "Düzenleyici, oynatıcının işlevsel bir kopyasıdır. Bir denetimi taşımak, yeniden boyutlandırmak, stilini değiştirmek veya gizlemek için üzerine tıklayın.",
@@ -687,9 +678,6 @@ const miscC: Record<string, string> = {
   "This comment can't be posted.": "Bu yorum gönderilemez.",
   "This computer": "Bu bilgisayar",
   "This device": "Bu cihaz",
-  "This eBook could not be exported": "Bu eKitap dışa aktarılamadı",
-  "This eBook is not connected to an installed source.":
-    "Bu e-kitap yüklü bir kaynağa bağlı değil.",
   "This file restores its {n} saved entries and replaces only those parts of your setup. Anything it does not contain stays exactly as it is.":
     "Bu dosya, kayıtlı {n} öğesini geri yükler ve kurulumunuzun yalnızca bu bölümlerini değiştirir. Dosyada bulunmayan her şey olduğu gibi kalır.",
   "This game couldn't load right now.": "Bu oyun şu anda yüklenemedi.",
@@ -720,7 +708,6 @@ const miscC: Record<string, string> = {
   "This phone cannot reach your TV": "Bu telefon TV'nize ulaşamıyor",
   "This playlist came back without any live channels.":
     "Bu oynatma listesinde canlı kanal bulunamadı.",
-  "This repository lists no eBook extensions.": "Bu depoda eKitap eklentisi yok.",
   "This screen stopped. Going back to Home usually clears it.":
     "Bu ekran yanıt vermiyor. Ana Sayfaya dönmek genellikle sorunu giderir.",
   "This session cannot refresh its token. Sign out and back in, or the TV will never see these changes.":
@@ -795,7 +782,6 @@ const miscC: Record<string, string> = {
   "Top Drama": "En İyi Dram Yapımları",
   "Top Fantasy": "En İyi Fantastik Yapımlar",
   "Top Horror": "En İyi Korku Yapımları",
-  "Top Manga": "En İyi Mangalar",
   "Top Mystery": "En İyi Gizem Yapımları",
   "Top People": "En İyi Kişiler",
   "Top Picks for You": "Size Özel Seçimler",
@@ -1058,7 +1044,6 @@ const miscC: Record<string, string> = {
   "Watching": "İzleniyor",
   "Watchlist ({n})": "İzleme Listesi ({n})",
   "Watchlist badge": "İzleme listesi rozeti",
-  "Ways to add an eBook source": "eKitap kaynağı ekleme yöntemleri",
   "We could not find a working stream": "Çalışan bir yayın bulamadık",
   "We need to check your age before you sail ahead. Three quick questions a working adult would know in their sleep. Get them all right and the adult shelf opens.":
     "Devam etmeden önce yaşınızı doğrulamamız gerekiyor. Çalışan her yetişkinin uykusunda bile yanıtlayabileceği üç kısa soru var. Hepsini doğru yanıtladığınızda yetişkin rafı açılır.",
@@ -1263,7 +1248,6 @@ const miscC: Record<string, string> = {
   "You're set.": "Her şey hazır.",
   "You've reached the end · {count} titles": "Sona ulaştınız · {count} yapım",
   "YouTube": "YouTube",
-  "YouTube, SoundCloud or Spotify link": "YouTube, SoundCloud veya Spotify bağlantısı",
   "Your Continue Watching, your watchlist and your addons, on this TV.":
     "İzlemeye Devam Et listeniz, İzleme Listeniz ve eklentileriniz bu TV'de.",
   "Your Continue Watching, your watchlist and your addons.":
@@ -1368,10 +1352,6 @@ const miscC: Record<string, string> = {
   "download error": "indirme hatası",
   "e.g. 1.35": "örn. 1.35",
   "e.g. 20": "örn. 20",
-  "eBook actions": "eKitap işlemleri",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "eKitap eklentileri Frame'ın yalıtılmış çalışma ortamını, HTTP köprüsünü ve HTML ayrıştırıcısını kullanır. Bu, manga eklentilerinin kullandığı korumalı alanla aynıdır. Yalnızca güvendiğiniz depoları ekleyin.",
-  "eBook source settings": "eKitap kaynağı ayarları",
   "eBooks": "e-Kitaplar",
   "edited": "düzenlendi",
   "episodes": "bölümler",

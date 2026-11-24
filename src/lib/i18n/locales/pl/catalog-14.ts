@@ -89,7 +89,6 @@ const catalog14: Record<string, string> = {
   "Top Drama": "Najlepsze dramaty",
   "Top Fantasy": "Najlepsze fantasy",
   "Top Horror": "Najlepsze horrory",
-  "Top Manga": "Najlepsze mangi",
   "Top Movies": "Najlepsze filmy",
   "Top Movies on MAL": "Najlepsze filmy na MAL",
   "Top Mystery": "Najlepsze kryminały",

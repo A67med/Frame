@@ -16,8 +16,6 @@ const catalog: Record<string, string> = {
   "Outline color": "Warna garis tepi",
   "Outline thickness": "Ketebalan garis tepi",
   "Output device": "Perangkat output",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "Lebih dari 100 aplikasi self-hosted: *arr stack, alat debrid, buku dan buku audio, dan banyak lagi.",
   "Over the cap, the oldest files are deleted first.":
     "Jika batas terlampaui, file terlama akan dihapus terlebih dahulu.",
   "Overall Record": "Rekor Keseluruhan",
@@ -269,8 +267,6 @@ const catalog: Record<string, string> = {
   "Pick it from the home view to follow.": "Pilih dari tampilan beranda untuk mengikutinya.",
   "Pick lists from your library to show them here":
     "Pilih daftar dari perpustakaan Anda untuk ditampilkan di sini",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "Pilih satu folder perpustakaan. Setiap subfolder adalah satu eBook. Masukkan babnya sebagai file TXT, Markdown, HTML, atau EPUB dan tambahkan gambar sampul jika diinginkan.",
   "Pick one of your themes to share.": "Pilih salah satu tema Anda untuk dibagikan.",
   "Pick one or many images. They collect in an Uploads set in your library. PNG, JPG, WebP, and GIF all work.":
     "Pilih satu atau beberapa gambar. Semuanya akan dikumpulkan dalam set Unggahan di perpustakaan Anda. PNG, JPG, WebP, dan GIF semuanya didukung.",
@@ -484,7 +480,6 @@ const catalog: Record<string, string> = {
   "Popular This Week": "Populer Minggu Ini",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Addon komunitas populer yang diurutkan berdasarkan bintang di direktori publik. Instal addon lainnya melalui URL di tab Jelajahi.",
-  "Popular eBooks": "eBook Populer",
   "Popular on": "Populer di",
   "Popular titles from book metadata": "Judul populer dari metadata buku",
   "Popular titles from the installed source": "Judul populer dari sumber yang diinstal",
@@ -525,8 +520,6 @@ const catalog: Record<string, string> = {
   "Power tools & diagnostics": "Perkakas canggih & diagnostik",
   "Power-user knob. Inject your own CSS, JS, and HTML into Frame. Lives in your local settings; nothing leaves your machine.":
     "Pengaturan untuk pengguna mahir. Sisipkan CSS, JS, dan HTML Anda sendiri ke Frame. Tersimpan di Pengaturan lokal Anda; tidak ada yang dikirim dari perangkat Anda.",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Mendukung semua yang ada di halaman ini: aplikasi web, remote ponsel, dan remote pembaca manga.",
   "Powers the Identify song button in the player.":
     "Mendukung tombol Identifikasi lagu di pemutar.",
   "Powers the Identify-song button in the player. Get a token at":
@@ -772,8 +765,6 @@ const catalog: Record<string, string> = {
   "Ranking source": "Sumber peringkat",
   "Ranking the best matches": "Mengurutkan kecocokan terbaik",
   "Rate": "Beri nilai",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Beri nilai pada film, acara, anime, dan manga untuk menyusun daftar penilaian Anda",
   "Rate on SIMKL": "Beri nilai di SIMKL",
   "Rate on stremio-addons.net": "Beri nilai di stremio-addons.net",
   "Rate this": "Beri nilai ini",
@@ -811,23 +802,17 @@ const catalog: Record<string, string> = {
     "Akses sumber HTTP dengan harbor.http(url, opts), sumber gRPC biner dengan harbor.grpc(url, protobufBytes, opts), dan uraikan HTML dengan harbor.parseHtml(html). Tidak ada fetch, DOM, atau penyimpanan di sandbox.",
   "Reaching your TV": "Menghubungi TV Anda",
   "Read": "Baca",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "Baca buku EPUB, teks, Markdown, dan HTML yang sudah ada di perangkat ini.",
   "Read Now": "Baca Sekarang",
   "Read chapter with Edge TTS": "Bacakan bab dengan Edge TTS",
-  "Read eBook files you already have": "Baca file eBook yang sudah Anda miliki",
   "Read from": "Baca dari",
   "Read from your phone": "Baca dari ponsel Anda",
   "Read full": "Baca lengkap",
   "Read here": "Baca di sini",
   "Read latest": "Baca terbaru",
-  "Read manga files you already have": "Baca file manga yang sudah Anda miliki",
-  "Read manga in Frame": "Baca manga di Frame",
   "Read more": "Baca selengkapnya",
   "Read now": "Baca sekarang",
   "Read on": "Baca di",
   "Read on this device": "Baca di perangkat ini",
-  "Read the Manga": "Baca Manga",
   "Read the complete chapter with Edge TTS": "Bacakan bab lengkap dengan Edge TTS",
   "Read the rest": "Baca sisanya",
   "Read titles, ids, and any poster/logo/backdrop already saved next to your files. Missing images are filled from TMDB.":
@@ -891,7 +876,6 @@ const catalog: Record<string, string> = {
     "Ubah warna semuanya, ganti font, ubah ukuran poster, dan pasang wallpaper.",
   "Recommendations are temporarily unavailable.": "Rekomendasi untuk sementara tidak tersedia.",
   "Recommended": "Direkomendasikan",
-  "Recommended eBooks": "eBook yang direkomendasikan",
   "Recommended for You": "Direkomendasikan untuk Anda",
   "Recommended for you": "Direkomendasikan untuk Anda",
   "Reconfigure": "Konfigurasi ulang",
@@ -931,10 +915,8 @@ const catalog: Record<string, string> = {
   "Reference quality, very heavy.": "Kualitas referensi, sangat berat.",
   "Refine": "Saring",
   "Refine search": "Saring pencarian",
-  "Reflowable eBook": "eBook dengan tata letak fleksibel",
   "Refresh": "Segarkan",
   "Refresh button": "Tombol segarkan",
-  "Refresh eBook source": "Segarkan sumber eBook",
   "Refresh extensions": "Segarkan ekstensi",
   "Refresh list": "Segarkan daftar",
   "Refresh playlist": "Segarkan playlist",

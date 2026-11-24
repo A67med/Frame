@@ -232,7 +232,6 @@ const catalog08: Record<string, string> = {
   "Start from this computer": "Avvia da questo computer",
   "Start here. The ones almost everyone has.": "Inizia da qui. Quelli che hanno quasi tutti.",
   "Start import": "Avvia importazione",
-  "Start of manga": "Inizio del manga",
   "Start or stop recording a GIF of the video (no subtitles). Saves to Pictures/Frame.":
     "Avvia o interrompi la registrazione di una GIF del video, senza sottotitoli. Viene salvata in Immagini/Frame.",
   "Start over": "Ricomincia",
@@ -331,8 +330,6 @@ const catalog08: Record<string, string> = {
     "Spazio di archiviazione esaurito. Svuota la cache di Frame, quindi riprova a salvare.",
   "Storage location": "Posizione di archiviazione",
   "Storage overview": "Panoramica dell'archiviazione",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Salva ogni titolo in una cartella separata con il relativo EPUB o PDF",
   "Stored as a small optimized webp.": "Salvato come piccolo file webp ottimizzato.",
   "Stored as a standalone EPG source. No channels are loaded for EPG-only entries; they're kept here for future attachment to existing playlists.":
     "Salvata come fonte EPG autonoma. Non viene caricato alcun canale per le voci solo EPG; restano qui per essere associate in futuro a playlist esistenti.",
@@ -688,10 +685,6 @@ const catalog08: Record<string, string> = {
     "Tocca la prima riga della sezione che vuoi correggere.",
   "Tap the genres you want more of. They steer the Top Picks row at the top of this page.":
     "Tocca i generi che vuoi vedere più spesso. Influenzano la sezione Scelti per te in cima a questa pagina.",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "Tocca il cuore su un film, una serie, un manga o un personaggio per salvarlo qui.",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "Tocca la stella su un film, una serie o un manga, oppure il cuore su un personaggio, per salvarlo qui.",
   "Tap to switch": "Tocca per cambiare",
   "Tap to switch. The pencil renames, recolors, or adds a PIN.":
     "Tocca per cambiare. La matita consente di rinominare, cambiare colore o aggiungere un PIN.",
@@ -751,7 +744,6 @@ const catalog08: Record<string, string> = {
     "Il codice non è più valido. Guarda la TV per trovarne uno nuovo.",
   "That custom url is not available.": "Questo URL personalizzato non è disponibile.",
   "That did not work. Check your details.": "Non ha funzionato. Controlla i dati inseriti.",
-  "That does not look like a Spotify link.": "Non sembra un link Spotify.",
   "That does not look like a YouTube link.": "Non sembra un link YouTube.",
   "That does not look like a repository URL": "Non sembra l'URL di un repository",
   "That doesn't look like an image URL": "Non sembra l'URL di un'immagine",
@@ -863,8 +855,6 @@ const catalog08: Record<string, string> = {
   "The dotted line is a flat squeeze of the whole range. A curve that stays high keeps midtones punchy and compresses the highlights late; a lower curve rolls off early and looks gentler.":
     "La linea tratteggiata rappresenta una compressione uniforme dell'intero intervallo. Una curva che resta alta mantiene incisivi i mezzitoni e comprime le alte luci più tardi; una curva più bassa le attenua prima e produce un effetto più delicato.",
   "The draw is not published yet.": "Il tabellone non è ancora stato pubblicato.",
-  "The eBook download was canceled.": "Il download dell'eBook è stato annullato.",
-  "The eBook export was canceled.": "L'esportazione dell'eBook è stata annullata.",
   'The economy has "inflation". What\'s happening?':
     "Nell'economia c'è inflazione. Che cosa sta succedendo?",
   "The editor is a working copy of the player. Click any control on it to move, resize, restyle or hide that control.":
@@ -1076,9 +1066,6 @@ const catalog08: Record<string, string> = {
   "This device": "Questo dispositivo",
   "This doesn't look like a Frame plugin repo. Frame expects a JSON file shaped { name, plugins: [ ... ] }.":
     "Questo non sembra un repository di plugin Frame. Frame richiede un file JSON con la struttura { name, plugins: [ ... ] }.",
-  "This eBook could not be exported": "Impossibile esportare questo eBook",
-  "This eBook is not connected to an installed source.":
-    "Questo eBook non è collegato a una fonte installata.",
   "This exact install, served as a web app. Open it on a phone, laptop or TV browser and it streams through this computer.":
     "Questa stessa installazione, resa disponibile come app web. Aprila nel browser di un telefono, portatile o TV per riprodurre in streaming tramite questo computer.",
   "This file has one audio track.": "Questo file contiene una sola traccia audio.",
@@ -1098,16 +1085,6 @@ const catalog08: Record<string, string> = {
     "Impossibile caricare il feed del gruppo. Riprova tra poco.",
   "This instance of Frame is made for desktop. Our standalone iOS and Android apps are coming soon, each with a bespoke, mobile-first experience built for its native platform.":
     "Questa versione di Frame è pensata per desktop. Le nostre app autonome per iOS e Android arriveranno presto, ciascuna con un'esperienza mobile su misura, progettata appositamente per la propria piattaforma nativa.",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "Questo è un repository Mangayomi, ma le sue fonti usano Dart o non sono fonti manga, quindi Frame non può importarle.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "Questo è un repository Mangayomi. Frame esegue nativamente le sue fonti JavaScript. Importale per aggiungerle alla tua libreria manga.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Questo è un repository Mangayomi. L'importazione nativa non è ancora supportata. Per accedere subito al catalogo più ampio, avvia un server Suwayomi e collegalo a Frame dalla sezione Server.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "Questo è un repository Paperback (iOS), che Frame non può usare. Per le fonti desktop, collega un server Suwayomi dalla sezione Server.",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Questo è un repository Tachiyomi / Mihon. Si tratta di estensioni Android (APK), quindi Frame non può eseguirle direttamente. Per usare queste fonti su desktop, avvia un server Suwayomi e collegalo a Frame dalla sezione Server.",
   "This is a metadata-based release estimate, not a measured timing score.":
     "Questa è una stima della data di uscita basata sui metadati, non un punteggio di sincronizzazione misurato.",
   "This is how a subtitle will look.": "Ecco come apparirà un sottotitolo.",
@@ -1155,8 +1132,6 @@ const catalog08: Record<string, string> = {
     "Questa playlist non contiene serie. Potrebbe includere solo canali in diretta oppure usare un accesso Xtream che rende disponibili le serie separatamente.",
   "This replaces your current Frame setup (theme, home layout, settings, addons, profiles, and more) with the {n} saved entries in this file. Your Stremio sign-in stays as is. Frame reloads when it finishes.":
     "Questa operazione sostituisce la configurazione attuale di Frame, inclusi tema, layout della Home, impostazioni, Add-on, profili e altro, con le {n} voci salvate nel file. L'accesso a Stremio resta invariato. Al termine, Frame si ricarica.",
-  "This repository lists no eBook extensions.":
-    "Questo repository non contiene estensioni per eBook.",
   "This score only appears on cards.": "Questo punteggio appare solo sulle schede.",
   "This screen stopped. Going back to Home usually clears it.":
     "Questa schermata si è bloccata. Di solito basta tornare alla Home per risolvere.",

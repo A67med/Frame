@@ -14,8 +14,6 @@ const catalog06: Record<string, string> = {
   "Open Trakt profile": "Apri il profilo Trakt",
   "Open Voyages": "Apri Voyages",
   "Open a folder": "Apri una cartella",
-  "Open a manga on Frame to control the reader from here.":
-    "Apri un manga su Frame per controllare da qui il lettore.",
   "Open a quick issue": "Apri una segnalazione rapida",
   "Open a terminal and run: brew install ffmpeg":
     "Apri un terminale ed esegui: brew install ffmpeg",
@@ -42,7 +40,6 @@ const catalog06: Record<string, string> = {
   "Open it in a regular browser, set it up there, then come back and paste the install link below.":
     "Aprilo in un normale browser, configuralo lì, poi torna qui e incolla sotto il link di installazione.",
   "Open library": "Apri raccolta",
-  "Open manga": "Apri manga",
   "Open on AniList": "Apri su AniList",
   "Open on IMDb": "Apri su IMDb",
   "Open on Letterboxd": "Apri su Letterboxd",
@@ -74,14 +71,10 @@ const catalog06: Record<string, string> = {
     "Apri il bot appena creato da BotFather (ti invia un link). Inviagli un messaggio qualsiasi per consentirgli di risponderti.",
   "Open the cast menu and try this device again.":
     "Apri il menu di trasmissione e riprova con questo dispositivo.",
-  "Open the editor to add the movies, shows, and manga that belong in this collection.":
-    "Apri l'editor per aggiungere i film, le serie e i manga che fanno parte di questa raccolta.",
   "Open the email TMDB sent to the address you registered with and press the activate button inside it. Check spam if it has not arrived.":
     "Apri l'email inviata da TMDB all'indirizzo con cui ti sei registrato e premi il pulsante di attivazione al suo interno. Se non è arrivata, controlla lo spam.",
   "Open the queue": "Apri la coda",
   "Open the remote": "Apri il telecomando",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "Apri il menu circolare di un eBook e scegli Aggiungi allo scaffale.",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "Apri questo link su un telefono connesso alla stessa rete Wi-Fi per sfogliare le pagine, usare lo zoom e scegliere i capitoli con i gesti. Tieni aperto questo lettore.",
   "Open this page by scanning the code on your TV's setup screen.":
@@ -150,8 +143,6 @@ const catalog06: Record<string, string> = {
   "Outline color": "Colore del bordo",
   "Outline thickness": "Spessore del bordo",
   "Output device": "Dispositivo di uscita",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "Oltre 100 app self-hosted: lo stack *arr, strumenti debrid, libri, audiolibri e molto altro.",
   "Over the cap, the oldest files are deleted first.":
     "Superato il limite, vengono eliminati prima i file meno recenti.",
   "Overall Record": "Bilancio complessivo",
@@ -395,8 +386,6 @@ const catalog06: Record<string, string> = {
   "Pick it from the home view to follow.": "Sceglilo dalla home per seguirlo.",
   "Pick lists from your library to show them here":
     "Scegli dalla libreria le liste da mostrare qui",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "Scegli una cartella della libreria. Ogni sottocartella corrisponde a un eBook. Inserisci al suo interno i capitoli come file TXT, Markdown, HTML o EPUB e, facoltativamente, aggiungi un'immagine di copertina.",
   "Pick one of your themes to share.": "Scegli uno dei tuoi temi da condividere.",
   "Pick one or many images. They collect in an Uploads set in your library. PNG, JPG, WebP, and GIF all work.":
     "Scegli una o più immagini. Verranno raccolte nel set Uploads della libreria. Sono supportati PNG, JPG, WebP e GIF.",
@@ -604,7 +593,6 @@ const catalog06: Record<string, string> = {
   "Popular This Week": "Popolari questa settimana",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Add-on della community più popolari, ordinati in base alle stelle della directory pubblica. Installa qualsiasi altro Add-on tramite URL nella scheda Esplora.",
-  "Popular eBooks": "eBook popolari",
   "Popular on": "Popolari su",
   "Popular titles from book metadata": "Titoli popolari in base ai metadati dei libri",
   "Popular titles from the installed source": "Titoli popolari dalla fonte installata",
@@ -644,8 +632,6 @@ const catalog06: Record<string, string> = {
   "Power tools & diagnostics": "Strumenti avanzati e diagnostica",
   "Power-user knob. Inject your own CSS, JS, and HTML into Frame. Lives in your local settings; nothing leaves your machine.":
     "Opzione per utenti esperti. Inserisci CSS, JS e HTML personalizzati in Frame. Restano nelle impostazioni locali, senza lasciare il dispositivo.",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Gestisce tutto ciò che trovi in questa pagina: l'app web, il telecomando sul telefono e quello del lettore manga.",
   "Powers the Identify song button in the player.":
     "Abilita il pulsante Identifica brano nel player.",
   "Practise law in court for them": "Rappresentarlo in tribunale come avvocato",
@@ -876,8 +862,6 @@ const catalog06: Record<string, string> = {
   "Ranking source": "Fonte della classifica",
   "Ranking the best matches": "Ordinamento delle corrispondenze migliori",
   "Rate": "Valuta",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Valuta film, serie, anime e manga per creare la tua raccolta di valutazioni",
   "Rate on SIMKL": "Valuta su SIMKL",
   "Rate on stremio-addons.net": "Valuta su stremio-addons.net",
   "Rate this": "Valuta questo contenuto",
@@ -911,23 +895,17 @@ const catalog06: Record<string, string> = {
   "Reach": "Portata",
   "Reaching your TV": "Connessione alla TV",
   "Read": "Leggi",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "Leggi libri EPUB, di testo, Markdown e HTML già presenti su questo dispositivo.",
   "Read Now": "Leggi ora",
   "Read chapter with Edge TTS": "Leggi il capitolo con Edge TTS",
-  "Read eBook files you already have": "Leggi i file eBook che possiedi già",
   "Read from": "Leggi da",
   "Read from your phone": "Leggi dal telefono",
   "Read full": "Leggi per intero",
   "Read here": "Leggi qui",
   "Read latest": "Leggi l'ultimo capitolo",
-  "Read manga files you already have": "Leggi i file manga che hai già",
-  "Read manga in Frame": "Leggi manga su Frame",
   "Read more": "Leggi altro",
   "Read now": "Leggi ora",
   "Read on": "Leggi su",
   "Read on this device": "Leggi su questo dispositivo",
-  "Read the Manga": "Leggi il manga",
   "Read the complete chapter with Edge TTS": "Leggi il capitolo completo con Edge TTS",
   "Read the rest": "Leggi il resto",
   "Read titles, ids, and any poster/logo/backdrop already saved next to your files. Missing images are filled from TMDB.":
@@ -990,7 +968,6 @@ const catalog06: Record<string, string> = {
   "Recommendations are temporarily unavailable.":
     "I consigli sono temporaneamente non disponibili.",
   "Recommended": "Consigliati",
-  "Recommended eBooks": "eBook consigliati",
   "Recommended for You": "Consigliati per te",
   "Recommended for you": "Consigliati per te",
   "Reconfigure": "Riconfigura",
@@ -1027,10 +1004,8 @@ const catalog06: Record<string, string> = {
   "Reference quality, very heavy.": "Qualità di riferimento, molto impegnativa.",
   "Refine": "Affina",
   "Refine search": "Affina la ricerca",
-  "Reflowable eBook": "eBook con impaginazione adattabile",
   "Refresh": "Aggiorna",
   "Refresh button": "Pulsante Aggiorna",
-  "Refresh eBook source": "Aggiorna la fonte eBook",
   "Refresh extensions": "Aggiorna Add-on",
   "Refresh list": "Aggiorna Lista",
   "Refresh playlist": "Aggiorna playlist",
@@ -1177,7 +1152,6 @@ const catalog06: Record<string, string> = {
     "Rimuove la scheda Anime e tutti i titoli anime da ogni riga, ovunque: Home, Scopri, Top 10 e cataloghi. L'animazione occidentale, come Pixar, resta visibile e puoi comunque trovare gli anime tramite la ricerca.",
   "Removes the Live TV tab from the sidebar.":
     "Rimuove la scheda TV in diretta dalla barra laterale.",
-  "Removes the Manga tab from the sidebar.": "Rimuove la scheda Manga dalla barra laterale.",
   "Removing": "Rimozione",
   "Removing...": "Rimozione...",
   "Removing…": "Rimozione…",

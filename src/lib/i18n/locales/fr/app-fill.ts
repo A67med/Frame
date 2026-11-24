@@ -6,7 +6,6 @@ const appFill: Record<string, string> = {
   "Action failed": "Échec de l’action",
   "Add a few friends and their watching, ratings, and favorites land here.":
     "Ajoutez quelques amis pour retrouver ici ce qu’ils regardent, leurs notes et leurs favoris.",
-  "Add a manga source": "Ajouter une source de mangas",
   "Add a movie or show to this list...": "Ajouter un film ou une série à cette liste...",
   "Add a TMDB key in Settings to see the cast, crew and recommendations for every title.":
     "Ajoutez une clé TMDB dans les paramètres pour voir la distribution, l’équipe technique et les recommandations de chaque titre.",
@@ -69,7 +68,6 @@ const appFill: Record<string, string> = {
   "Bottom start": "En bas au début",
   "Bring your own avatars into the library.": "Ajoutez vos propres avatars à la bibliothèque.",
   "Browse groups": "Parcourir les groupes",
-  "Browse manga": "Parcourir les mangas",
   "Browse sources": "Parcourir les sources",
   "Building your voyage": "Préparation de votre voyage",
   "by @{handle}": "par @{handle}",
@@ -95,7 +93,6 @@ const appFill: Record<string, string> = {
   "Confirm remove from history": "Confirmer la suppression de l’historique",
   "Connect a controller: every press and stick move shows up here, live.":
     "Connectez une manette : chaque pression et mouvement de stick s’affiche ici en temps réel.",
-  "Connect a Suwayomi server": "Connecter un serveur Suwayomi",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Connectez Trakt ou Simkl, ou commencez à regarder du contenu, et vos statistiques se créeront automatiquement.",
   "Connected to {name}": "Connecté à {name}",
@@ -143,7 +140,7 @@ const appFill: Record<string, string> = {
   "Custom code is too large.": "Le code personnalisé est trop volumineux.",
   "Custom HTML": "HTML personnalisé",
   "day streak": "jours consécutifs",
-  Delay: "Délai",
+  "Delay": "Délai",
   "Delete all": "Tout supprimer",
   "Delete list": "Supprimer la liste",
   "Delete this group": "Supprimer ce groupe",
@@ -166,7 +163,6 @@ const appFill: Record<string, string> = {
     "Modifiez votre profil et réorganisez-le à votre façon : choisissez une police et un arrière-plan, puis faites glisser vos cartes dans l’ordre souhaité.",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":
     "Les sous-titres intégrés changent de taille selon les titres ou affichent des cases vides ? Activez Utiliser mon style pour conserver une taille uniforme. Pour les cases, choisissez également Arabe sous Police.",
-  "Enable manga sources": "Activer les sources de mangas",
   "End voyage": "Terminer le voyage",
   "Enter a valid http(s):// server address": "Saisissez une adresse de serveur http(s):// valide",
   "Episode {n} airs {when}": "Diffusion de l’épisode {n} {when}",
@@ -183,7 +179,6 @@ const appFill: Record<string, string> = {
   "Extension repositories": "Dépôts d’extensions",
   "Favorite Anime": "Anime préférés",
   "Favorite Characters": "Personnages préférés",
-  "Favorite Manga": "Mangas préférés",
   "Favorite Movies": "Films préférés",
   "Favorite Shows": "Séries préférées",
   "Feature a theme": "Mettre un thème à l’honneur",
@@ -234,10 +229,6 @@ const appFill: Record<string, string> = {
     "Frame n’a pas pu analyser l’audio de cette source. Réessayez ou ajustez-le manuellement.",
   "Frame couldn't find a reliable timing correction for this subtitle.":
     "Frame n’a pas trouvé de correction de synchronisation fiable pour ces sous-titres.",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame n’héberge aucun manga ni aucune source. Connectez un serveur auto-hébergé que vous administrez, installez un plugin de source depuis un dépôt de confiance ou ouvrez un dossier que vous possédez déjà.",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame n’héberge aucun manga. Ajoutez un plugin de source depuis un dépôt de confiance, connectez votre propre serveur ou ouvrez un dossier local. Vous pouvez désactiver cette option à tout moment dans les paramètres.",
   "Frame Setup did not finish updating Frame. Nothing was changed.":
     "Le programme d’installation de Frame n’a pas terminé la mise à jour de Frame. Aucun changement n’a été effectué.",
   "Frame Voyages": "Voyages Frame",
@@ -283,8 +274,6 @@ const appFill: Record<string, string> = {
   "Jump to now": "Aller à maintenant",
   "Keep anyway": "Conserver quand même",
   "Keep controlling Frame in the background": "Continuer à contrôler Frame en arrière-plan",
-  "Keep going in the manga behind the anime you've been watching":
-    "Reprendre le manga là où s’arrête l’anime que vous regardiez",
   "Keep it": "Le conserver",
   "Keep picking": "Continuer à choisir",
   "Keep the original look, scaled by your size. It multiplies the built-in size, so different releases can still differ.":
@@ -372,7 +361,6 @@ const appFill: Record<string, string> = {
     "Aucun sous-titre trouvé. Lancez quand même la lecture, Frame continue à chercher pendant que vous regardez.",
   "No subtitles found. Try another title above, or adjust the season and episode.":
     "Aucun sous-titre trouvé. Essayez un autre titre ci-dessus ou modifiez la saison et l’épisode.",
-  "No Suwayomi server at this address": "Aucun serveur Suwayomi à cette adresse",
   "No timing change was needed. This subtitle already matches the audio.":
     "Aucun ajustement de synchronisation n’était nécessaire. Ce sous-titre correspond déjà à l’audio.",
   "No titles found in this collection.": "Aucun titre trouvé dans cette collection.",
@@ -398,7 +386,6 @@ const appFill: Record<string, string> = {
   "Only turn this off if you already have a metadata addon installed, such as AIOMetadata or AIOStreams. Without one, titles and collections can open completely blank. Cinemeta can go stale and show released episodes as TBA, which is the reason to replace it.":
     "Ne désactivez cette option que si vous avez déjà installé une extension de métadonnées, comme AIOMetadata ou AIOStreams. Sans cela, les titres et les collections peuvent s’ouvrir sur une page entièrement vide. Les données de Cinemeta peuvent ne plus être à jour et indiquer comme TBA des épisodes déjà sortis, d’où l’intérêt de le remplacer.",
   "Open in browser": "Ouvrir dans le navigateur",
-  "Open manga": "Ouvrir le manga",
   "Open stream in browser": "Ouvrir le flux dans le navigateur",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "Ouvrez ce lien sur un téléphone connecté au même réseau Wi-Fi pour tourner les pages, zoomer et choisir les chapitres avec des gestes. Gardez cette liseuse ouverte.",
@@ -436,9 +423,7 @@ const appFill: Record<string, string> = {
   "Quit Frame": "Quitter Frame",
   "Ranking the best matches": "Classement des meilleurs résultats",
   "Read from your phone": "Lire depuis votre téléphone",
-  "Read manga in Frame": "Lisez des mangas dans Frame",
   "Read more": "En savoir plus",
-  "Read the Manga": "Lire le manga",
   "Reading subtitles...": "Chargement des sous-titres...",
   "Reading the cast": "Chargement de la distribution",
   "Reading your search": "Analyse de votre recherche",
@@ -537,7 +522,7 @@ const appFill: Record<string, string> = {
   "Sleep at end": "Mise en veille à la fin",
   "Some copies of new releases have ads spliced into the video itself. This is experimental: the community marks where those ads are so others can skip them.":
     "Certaines copies de nouveautés contiennent des publicités directement insérées dans la vidéo. Cette fonction est expérimentale : la communauté indique où elles se trouvent pour permettre aux autres de les passer.",
-  soon: "bientôt",
+  "soon": "bientôt",
   "Sort episodes": "Trier les épisodes",
   "Source said": "La source a indiqué",
   "Sources cached in the background for the streams you are watching":
@@ -576,8 +561,6 @@ const appFill: Record<string, string> = {
   "Tap again to remove all {n} extensions": "Touchez à nouveau pour supprimer les {n} extensions",
   "Tap the first and last line of the section, then tap the line playing now and Sync from here.":
     "Touchez la première et la dernière ligne de la section, puis la ligne en cours de lecture et Synchroniser à partir d’ici.",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "Touchez l’étoile d’un film, d’une série ou d’un manga, ou le cœur d’un personnage, pour l’enregistrer ici.",
   "That does not look like a repository URL": "Cette URL ne semble pas être celle d’un dépôt",
   "That route wouldn't chart. Try a different direction.":
     "Impossible de tracer cet itinéraire. Essayez une autre direction.",
@@ -602,16 +585,6 @@ const appFill: Record<string, string> = {
     "Ce groupe n’a pas encore ajouté de description.",
   "This group's feed could not be loaded. Try again in a moment.":
     "Impossible de charger le fil de ce groupe. Réessayez dans quelques instants.",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "Ceci est un dépôt Mangayomi, mais ses sources utilisent Dart ou ne sont pas des sources de mangas. Frame ne peut donc pas les importer.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "Ceci est un dépôt Mangayomi. Frame exécute nativement ses sources JavaScript. Importez-les pour ajouter ces sources à votre bibliothèque de mangas.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Il s’agit d’un dépôt Mangayomi. L’importation native n’est pas encore prise en charge. Pour accéder dès aujourd’hui au catalogue le plus vaste, lancez un serveur Suwayomi et connectez-y Frame depuis la section Serveurs.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "Il s’agit d’un dépôt Paperback (iOS), que Frame ne peut pas utiliser. Pour les sources sur ordinateur, connectez un serveur Suwayomi depuis la section Serveurs.",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Il s’agit d’un dépôt Tachiyomi / Mihon. Ses extensions sont conçues pour Android (APK), Frame ne peut donc pas les exécuter directement. Pour utiliser ces sources sur ordinateur, lancez un serveur Suwayomi et connectez-y Frame depuis la section Serveurs.",
   "This is the primary profile": "Il s’agit du profil principal",
   "This list is full ({max} items)": "Cette liste est pleine ({max} éléments)",
   "This one also replaces Frame's bundled players and tools, so it installs through Frame Setup. Frame closes, the installer finishes, then Frame reopens.":
@@ -741,7 +714,7 @@ const appFill: Record<string, string> = {
   "{time} left": "{time} restantes",
   "“Cached” just means your addon thinks that file is already saved on your debrid, ready to play instantly. That flag isn’t always right: sometimes the file isn’t actually there yet. When that happens the source won’t start, or it plays a short broken clip. It’s not a Frame problem: pick another source, or give it a minute to finish caching and try again.":
     "« En cache » signifie simplement que votre extension pense que ce fichier est déjà enregistré sur votre service de débridage et peut être lu instantanément. Cette indication n’est pas toujours fiable : parfois, le fichier n’y est pas encore réellement. Dans ce cas, la source ne démarre pas ou ne lit qu’un court extrait défectueux. Ce n’est pas un problème lié à Frame : choisissez une autre source, ou attendez une minute que la mise en cache se termine, puis réessayez.",
-  Dismiss: "Ignorer",
+  "Dismiss": "Ignorer",
 };
 
 export default appFill;

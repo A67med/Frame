@@ -200,7 +200,6 @@ const catalog05: Record<string, string> = {
   "Favicon must be an https URL.": "Favicon musi być adresem URL https.",
   "Favorite Anime": "Ulubione anime",
   "Favorite Characters": "Ulubione postacie",
-  "Favorite Manga": "Ulubione mangi",
   "Favorite Movies": "Ulubione filmy",
   "Favorite Shows": "Ulubione seriale",
   "Favorite {channel}": "Dodaj {channel} do ulubionych",
@@ -280,7 +279,6 @@ const catalog05: Record<string, string> = {
     "Filtruj według typu po połączeniu źródeł. Pozostaw wszystkie włączone, aby wysyłać wszystko.",
   "Filter categories": "Filtruj kategorie",
   "Filter countries": "Filtruj kraje",
-  "Filter eBooks": "Filtruj e-booki",
   "Filter genres": "Filtruj gatunki",
   "Filter sources": "Filtruj źródła",
   "Filter tags...": "Filtruj tagi...",
@@ -357,8 +355,6 @@ const catalog05: Record<string, string> = {
   "Flat_Style": "Flat_Style",
   "Flip the switch above and the addresses and scan codes appear here.":
     "Włącz powyższy przełącznik, a pojawią się tutaj adresy i kody do zeskanowania.",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "Włącz powyższy przełącznik, a pojawią się tutaj adresy pilota na telefon i pilota czytnika mangi.",
   "Floating dock": "Pływający dok",
   "Floating orbs over the canvas.": "Unoszące się kule nad obszarem roboczym.",
   "Floats over the artwork": "Unosi się nad grafiką",

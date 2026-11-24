@@ -64,9 +64,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "P2P設定を適用中…",
   "Areas where data already exists let you choose how to combine it.":
     "すでにデータがある項目では、データの統合方法を選べます。",
-  Attachments: "添付ファイル",
-  Automatic: "自動",
-  Avatar: "アバター",
+  "Attachments": "添付ファイル",
+  "Automatic": "自動",
+  "Avatar": "アバター",
   "Awards cache": "受賞情報のキャッシュ",
   "Badge packs": "バッジパック",
   "Badge rules": "バッジのルール",
@@ -87,7 +87,7 @@ const settingsRefinements: Record<string, string> = {
     "名前付きフィルターを作成し、ソース選択画面で適用すると、多数のストリームから希望するものだけに絞り込めます。",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton は盗まれた機関車を取り戻すために旅立ちます。",
-  Canvas: "キャンバス",
+  "Canvas": "キャンバス",
   "Captions and quiet hints": "キャプションや控えめなヒント",
   "Cards need a TMDB key.": "カードにはTMDBキーが必要です。",
   "Cards need an MDBList key.": "カードにはMDBListキーが必要です。",
@@ -135,8 +135,6 @@ const settingsRefinements: Record<string, string> = {
     "次のエピソードを開始するタイミングと、視聴を続けているかFrameが確認するタイミングを選びます。",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Frameが字幕を検索する場所を選びます。有効なソースの結果をまとめ、重複を除いて表示します。",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "動画と電子書籍の保存先、およびフォルダーの整理方法を選びます。",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "既知の広告、分析、トラッキングサービスへのリクエストをブロックするか選びます。",
   "Choose which addon results appear when you pick a stream.":
@@ -291,8 +289,6 @@ const settingsRefinements: Record<string, string> = {
     "SVP のインストールを確認できませんでした。再試行してください。",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame はこの順序で字幕を探します。優先する言語を先頭にしてください。",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "他のデバイスでも Frame を利用できます。Web アプリ、スマートフォンのリモコン、漫画リーダーのリモコンがあります。",
   "Frame profile showing watch statistics": "視聴統計を表示したFrameプロフィール",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frameは独自のコミュニティサーバーを使用します。自分で運用するサーバーに変更することもできます。",
@@ -369,7 +365,7 @@ const settingsRefinements: Record<string, string> = {
     "Frame の画面がちらつく、またはカクつく場合を除き、自動のままにしてください。動画再生ではなくアプリのウィンドウを制御します。",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "debrid リンクが利用できない場合、このデバイスからのP2P再生を許可します。オフにするとローカルでのP2P再生を防ぎます。設定済みのリモートサーバーでは引き続き再生できます。",
-  Licence: "ライセンス",
+  "Licence": "ライセンス",
   "Licenses & attribution": "ライセンスとクレジット",
   "Lightens or darkens the whole picture.": "映像全体を明るく、または暗くします。",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -391,10 +387,10 @@ const settingsRefinements: Record<string, string> = {
     "キャッシュ済み、または debrid ライブラリ内にあると示されたストリームに一致します。",
   "Maximum memory used for buffered video.": "動画のバッファに使用するメモリの上限です。",
   "Maximum size (GB)": "最大サイズ (GB)",
-  Merge: "統合",
+  "Merge": "統合",
   "Minimize to preview (Ctrl/Cmd + P)": "最小化してプレビュー (Ctrl/Cmd + P)",
   "Minimum seeders": "最小シーダー数",
-  Motion: "モーション",
+  "Motion": "モーション",
   "Move earlier": "優先順位を上げる",
   "Move {language} earlier": "{language}の優先順位を上げる",
   "Move {name} down": "{name}を下に移動",
@@ -429,7 +425,7 @@ const settingsRefinements: Record<string, string> = {
     "任意です。追加の連絡が可能な場合は連絡先を入力し、公開クレジットを希望するか選んでください。",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "任意です。視聴時間の延長に使います。PIN がない場合、時間切れになったらプロフィールを切り替えてください。",
-  Pages: "ページ",
+  "Pages": "ページ",
   "Pause after several episodes and ask before continuing.":
     "数話の再生後に一時停止し、続行するか確認します。",
   "Pause preview": "プレビューを一時停止",
@@ -473,7 +469,7 @@ const settingsRefinements: Record<string, string> = {
   "Repair & diagnostics": "修復と診断",
   "Report something broken, or support the project.":
     "不具合の報告やプロジェクトの支援ができます。",
-  Required: "必須",
+  "Required": "必須",
   "Reset keyboard shortcuts?": "キーボードショートカットをリセットしますか？",
   "Reset shortcuts": "ショートカットをリセット",
   "Reset {setting}": "{setting}をリセット",
@@ -755,11 +751,11 @@ const settingsRefinements: Record<string, string> = {
     "サインイン、視聴履歴の記録サービス、リレーを設定します。",
   "Your {n} custom shortcuts will return to their defaults.":
     "{n} 個のカスタムショートカットを既定に戻します。",
-  code: "コード",
+  "code": "コード",
   "each poster": "各ポスター",
   "on hover": "マウスを重ねたとき",
   "poster image": "ポスター画像",
-  username: "ユーザー名",
+  "username": "ユーザー名",
   "will look on your TV.": "このように表示されます。",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app}はオープンソースです。既存の修正を探したり、見つけた問題の修正パッチを提供したりできます。",
@@ -774,8 +770,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds}秒",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "保存容量{quota}のうち{used}を使用中です。ダウンロードした動画やディスク上の他のファイルは含みません。",
-  "Public-domain books for the eBook library.":
-    "電子書籍ライブラリ向けのパブリックドメインの書籍。",
   "Searchable catalog for Project Gutenberg books.":
     "Project Gutenberg の書籍を検索できるカタログ。",
   "Game metadata, artwork and release dates.": "ゲームのメタデータ、画像、発売日。",

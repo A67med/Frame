@@ -259,15 +259,10 @@ const catalogGI: Record<string, string> = {
     "Frame आपके अपने मुफ़्त अकाउंट पर Cloudflare Worker बनाता है और URL सेव करता है।",
   "Frame curated": "Frame द्वारा चयनित",
   "Frame default": "Frame डिफ़ॉल्ट",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame किसी भी मंगा या स्रोत को होस्ट नहीं करता। खुद चलाया जा रहा सेल्फ़-होस्टेड सर्वर कनेक्ट करें, किसी भरोसेमंद रिपॉज़िटरी से स्रोत प्लगइन इंस्टॉल करें या अपने पास पहले से मौजूद फ़ोल्डर खोलें।",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame किसी मंगा को होस्ट नहीं करता। किसी भरोसेमंद रिपॉज़िटरी से स्रोत प्लगइन जोड़ें, अपना सर्वर कनेक्ट करें या लोकल फ़ोल्डर खोलें। आप इसे सेटिंग्स में कभी भी बंद कर सकते हैं।",
   "Frame double-checks with Stremio after saving, so a half-written order can't slip through.":
     "सेव करने के बाद Frame Stremio से दोबारा पुष्टि करता है, ताकि अधूरा सेव हुआ क्रम लागू न हो सके।",
   "Frame dropped {n} suspicious or mismatched result.": "Frame ने {n} संदिग्ध या बेमेल नतीजा हटा दिया।",
   "Frame dropped {n} suspicious or mismatched results.": "Frame ने {n} संदिग्ध या बेमेल नतीजे हटा दिए।",
-  "Frame eBook": "Frame eBook",
   "Frame finds intro and credits timing from AniSkip, TheIntroDB, and the file's own chapters, then shows a Skip button at the right moment.":
     "Frame, AniSkip, TheIntroDB और फ़ाइल के अपने चैप्टर से इंट्रो और क्रेडिट का समय ढूँढता है, फिर सही समय पर स्किप बटन दिखाता है।",
   "Frame found episode sources for {season}, but none of them is a single downloadable package. It can still fetch the episodes one at a time.":
@@ -516,7 +511,6 @@ const catalogGI: Record<string, string> = {
   "Hide from your picks": "आपकी पसंद से छिपाएँ",
   "Hide help": "मदद छिपाएँ",
   "Hide hidden episodes": "छिपे हुए एपिसोड छिपाएँ",
-  "Hide manga": "मांगा छिपाएँ",
   "Hide others' drawings": "दूसरों की बनाई ड्रॉइंग छिपाएँ",
   "Hide pack instructions": "पैक के निर्देश छिपाएँ",
   "Hide password": "पासवर्ड छिपाएँ",

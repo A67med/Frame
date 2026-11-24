@@ -302,8 +302,6 @@ const catalog03: Record<string, string> = {
     "I sottotitoli scaricati possono arrivare poco dopo l'inizio della riproduzione. Lascia disattivata questa opzione per mantenere il sottotitolo già visualizzato; attivala per passare al sottotitolo che corrisponde meglio alla lingua non appena viene caricato.",
   "Downloaded subtitles can arrive after playback starts. Frame switches from a temporary track when a stronger release match becomes available.":
     "I sottotitoli scaricati possono arrivare dopo l'inizio della riproduzione. Frame sostituisce la traccia temporanea quando diventa disponibile una corrispondenza migliore con la release.",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "I temi scaricati si gestiscono in Tema e aspetto. I download di video e manga si gestiscono nella pagina Download.",
   "Downloaded. Ready to install and restart.":
     "Scaricato. Pronto per l'installazione e il riavvio.",
   "Downloading shaders…": "Download degli shader in corso…",
@@ -387,8 +385,6 @@ const catalog03: Record<string, string> = {
   "EPG failed:": "Errore EPG:",
   "EPG fetch failed:": "Recupero EPG non riuscito:",
   "EPG source": "Fonte EPG",
-  "EPUB eBook": "eBook EPUB",
-  "EPUB saved": "EPUB salvato",
   "Each curve shows how much of the bright range it keeps before rolling off.":
     "Ogni curva mostra quanta parte della gamma luminosa conserva prima dell'attenuazione graduale.",
   "Each episode shows its IMDb rating, right on the still.":
@@ -462,7 +458,6 @@ const catalog03: Record<string, string> = {
   "Email or Discord": "Email o Discord",
   "Embed": "Incorpora",
   "Embed a YouTube video": "Incorpora un video di YouTube",
-  "Embed from Spotify": "Incorpora da Spotify",
   "Embed mpv inside Frame window": "Incorpora mpv nella finestra di Frame",
   "Embedded": "Incorporati",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":
@@ -491,7 +486,6 @@ const catalog03: Record<string, string> = {
   "Enable all": "Abilita tutto",
   "Enable controller": "Abilita il controller",
   "Enable injected ad skip": "Abilita il salto degli annunci inseriti",
-  "Enable manga sources": "Abilita le fonti manga",
   "Enable or disable rule": "Abilita o disabilita la regola",
   "Enable rule": "Abilita la regola",
   "Enable this to fetch Arabic descriptions for series and movies when available on TMDB.":
@@ -501,7 +495,6 @@ const catalog03: Record<string, string> = {
   "End": "Fine",
   "End ep": "Fine ep.",
   "End of episode": "Fine dell'episodio",
-  "End of manga": "Fine del manga",
   "End of next episode": "Fine dell'episodio successivo",
   "End voyage": "Termina il viaggio",
   "Ended": "Terminato",
@@ -748,7 +741,6 @@ const catalog03: Record<string, string> = {
   "Favorite": "Aggiungi ai preferiti",
   "Favorite Anime": "Anime preferiti",
   "Favorite Characters": "Personaggi preferiti",
-  "Favorite Manga": "Manga preferiti",
   "Favorite Movies": "Film preferiti",
   "Favorite Shows": "Serie preferite",
   "Favorite {channel}": "Aggiungi {channel} ai preferiti",
@@ -835,7 +827,6 @@ const catalog03: Record<string, string> = {
     "Filtra per tipo dopo l'unione delle fonti. Lasciali tutti attivi per inviare tutto.",
   "Filter categories": "Filtra categorie",
   "Filter countries": "Filtra paesi",
-  "Filter eBooks": "Filtra gli eBook",
   "Filter genres": "Filtra generi",
   "Filter sources": "Filtra fonti",
   "Filter tags...": "Filtra tag...",
@@ -914,8 +905,6 @@ const catalog03: Record<string, string> = {
   "Flat_Style": "Flat_Style",
   "Flip the switch above and the addresses and scan codes appear here.":
     "Attiva l'interruttore qui sopra per visualizzare qui gli indirizzi e i codici di scansione.",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "Attiva l'interruttore qui sopra per visualizzare qui gli indirizzi del telecomando sul telefono e di quello per il lettore manga.",
   "Floating dock": "Dock mobile",
   "Floating orbs over the canvas.": "Sfere fluttuanti sulla tela.",
   "Floats over the artwork": "Sovrapposto all'immagine",

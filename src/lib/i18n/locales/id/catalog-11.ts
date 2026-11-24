@@ -541,7 +541,6 @@ const catalog: Record<string, string> = {
     "Daftar tontonan berisi judul yang Anda simpan untuk nanti. Riwayat berisi semua yang telah Anda tonton. Lokal berisi file di komputer Anda.",
   "Watchlist only": "Hanya daftar tontonan",
   "Watchlist shows only saved titles": "Daftar tontonan hanya menampilkan judul tersimpan",
-  "Ways to add an eBook source": "Cara menambahkan sumber eBook",
   "We could not find a working stream": "Kami tidak dapat menemukan stream yang berfungsi",
   "We could not find anyone at @{handle}. The handle may have changed or the profile was removed.":
     "Kami tidak dapat menemukan siapa pun di @{handle}. Handle mungkin telah berubah atau profilnya telah dihapus.",

@@ -299,12 +299,7 @@ const uiFallback: Record<string, string> = {
   "Leaving only turns off experimental checks. Use Return to beta below to replace the experimental app.":
     "Leaving only turns off experimental checks. Use Return to beta below to replace the experimental app.",
   "Find on your sources": "Find on your sources",
-  "Search your manga sources": "Search your manga sources",
-  "Add a manga source first — a Suwayomi server, Mangayomi, a local folder, or a plugin — then pick the matching copy here.":
-    "Add a manga source first — a Suwayomi server, Mangayomi, a local folder, or a plugin — then pick the matching copy here.",
   "Searching your sources…": "Searching your sources…",
-  "No match on your extensions. Edit the query above or check the language filter in the manga tab.":
-    "No match on your extensions. Edit the query above or check the language filter in the manga tab.",
   "Everything from {name}": "Everything from {name}",
   "Filter, sort and search the full catalogue": "Filter, sort and search the full catalogue",
   "Launch": "Launch",
@@ -335,14 +330,12 @@ const uiFallback: Record<string, string> = {
     "Frame test message ({service}). If you can read this, it's wired up.",
   "Connect Discord or Telegram, or turn on desktop notifications, and Frame alerts you when something you follow is about to drop. Hit Send test to send yourself a sample first.":
     "Connect Discord or Telegram, or turn on desktop notifications, and Frame alerts you when something you follow is about to drop. Hit Send test to send yourself a sample first.",
-  "Manga sync": "Manga sync",
   "{title} · Chapter {chapter}": "{title} · Chapter {chapter}",
   "Reorder extensions": "Reorder extensions",
   "Reset order": "Reset order",
   "Filter sources...": "Filter sources...",
   "Scanlator": "Scanlator",
   "Resolving pages": "Resolving pages",
-  "Match manga": "Match manga",
   "Choose a match, or select None to skip": "Choose a match, or select None to skip",
   "Search title on {tracker}": "Search title on {tracker}",
   "Select this if you don't want to sync to {tracker}":
@@ -357,7 +350,6 @@ const uiFallback: Record<string, string> = {
   "Download page": "Download page",
   "Updating... ({n}/{total})": "Updating... ({n}/{total})",
   "Update all ({n})": "Update all ({n})",
-  "The lists you created, full of saved manga": "The lists you created, full of saved manga",
   "Show cursor": "Show cursor",
   "When off, the right stick no longer shows a cursor on screen. Focus navigation still works.":
     "When off, the right stick no longer shows a cursor on screen. Focus navigation still works.",
@@ -365,7 +357,6 @@ const uiFallback: Record<string, string> = {
   "The cursor fades away when you stop moving the stick. Move it again to bring it back.":
     "The cursor fades away when you stop moving the stick. Move it again to bring it back.",
   "{n} s": "{n} s",
-  "In the manga reader.": "In the manga reader.",
   "Choose whether the content advisory appears in full color or a restrained monochrome tone.":
     "Choose whether the content advisory appears in full color or a restrained monochrome tone.",
   "Content advisory theme": "Content advisory theme",
@@ -398,8 +389,6 @@ const uiFallback: Record<string, string> = {
     "A short hand-picked list, plus a box for pasting any badges.json link you were sent.",
   "A stream row in the play picker": "A stream row in the play picker",
   "API-Sports": "API-Sports",
-  "API-Sports key": "API-Sports key",
-  "API-Sports · leagues ESPN does not carry": "API-Sports · leagues ESPN does not carry",
   "Acknowledgements": "Acknowledgements",
   "Add a Discord or Telegram destination first. Rules need somewhere to send their alerts.":
     "Add a Discord or Telegram destination first. Rules need somewhere to send their alerts.",
@@ -419,8 +408,6 @@ const uiFallback: Record<string, string> = {
     "Adds a comments section to movie, show, and episode pages. No Trakt account needed to read them.",
   "Adds it to the top of your list, already switched on.":
     "Adds it to the top of your list, already switched on.",
-  "Adds the New York Times bestseller lists to the eBook page, on the hero and as a row, with rank and weeks on the list. Free key at":
-    "Adds the New York Times bestseller lists to the eBook page, on the hero and as a row, with rank and weeks on the list. Free key at",
   "Advanced: use an access token": "Advanced: use an access token",
   "Aggregator addons": "Aggregator addons",
   "All listed rules": "All listed rules",
@@ -556,10 +543,6 @@ const uiFallback: Record<string, string> = {
     "Downloaded and ready to use. Re-download to pick up a newer version from the author.",
   "Draws": "Draws",
   "Drew": "Drew",
-  "Each title gets its own folder holding its EPUB or PDF.":
-    "Each title gets its own folder holding its EPUB or PDF.",
-  "Egyptian, Qatari, Emirati and Korean football plus the KHL on the sports page.":
-    "Egyptian, Qatari, Emirati and Korean football plus the KHL on the sports page.",
   "ElfHosted plans": "ElfHosted plans",
   "Elsewhere": "Elsewhere",
   "Email address or Discord handle": "Email address or Discord handle",
@@ -604,8 +587,6 @@ const uiFallback: Record<string, string> = {
     "Files land in a folder named after the movie or series instead of loose in the download folder.",
   "Fills the screen, but the title bar and taskbar stay.":
     "Fills the screen, but the title bar and taskbar stay.",
-  "Fills the sports page where ESPN has no feed: Egyptian Premier League, Qatar Stars League, UAE Pro League, K League and the KHL, with lineups and live minutes. Free key at":
-    "Fills the sports page where ESPN has no feed: Egyptian Premier League, Qatar Stars League, UAE Pro League, K League and the KHL, with lineups and live minutes. Free key at",
   "Find a stream on a page": "Find a stream on a page",
   "Find streams": "Find streams",
   "Finish creating my account": "Finish creating my account",
@@ -799,8 +780,6 @@ const uiFallback: Record<string, string> = {
   "Narrow the list below by rule name or by the pattern text.":
     "Narrow the list below by rule name or by the pattern text.",
   "Navigation animations": "Navigation animations",
-  "Needs an API-Sports key. The free plan covers it.":
-    "Needs an API-Sports key. The free plan covers it.",
   "New releases": "New releases",
   "Next match": "Next match",
   "No fixtures on this day.": "No fixtures on this day.",
@@ -1368,15 +1347,10 @@ const uiFallback: Record<string, string> = {
   "Release to place": "Release to place",
   "{label} · Up Next": "{label} · Up Next",
   "Show more chapters ({n} remaining)": "Show more chapters ({n} remaining)",
-  "Star any manga and it takes over this screen.": "Star any manga and it takes over this screen.",
-  "Create your first manga list": "Create your first manga list",
-  "Group the manga you love. Reading now, backlog, all-time favorites.":
-    "Group the manga you love. Reading now, backlog, all-time favorites.",
   "Scan with your phone camera, or type the address below.":
     "Scan with your phone camera, or type the address below.",
   "Chapter hidden": "Chapter hidden",
   "Reading on phone": "Reading on phone",
-  "Your favorites and manga lists": "Your favorites and manga lists",
   "Horizontal strip": "Horizontal strip",
   "Reading direction": "Reading direction",
   "Hide pages": "Hide pages",
@@ -1553,18 +1527,12 @@ const uiFallback: Record<string, string> = {
   "A browser tab opened on AniList. Approve Frame there, then copy the token it shows (or the page address) and paste it below.":
     "A browser tab opened on AniList. Approve Frame there, then copy the token it shows (or the page address) and paste it below.",
   "Paste the token or page URL from AniList": "Paste the token or page URL from AniList",
-  "IGDB · Twitch client ID": "IGDB · Twitch client ID",
-  "IGDB · Twitch client secret": "IGDB · Twitch client secret",
   "Twitch client ID": "Twitch client ID",
   "Twitch client secret": "Twitch client secret",
-  "Game catalogs, details and completion times come from IGDB, which signs in with a Twitch app. Register one for free at":
-    "Game catalogs, details and completion times come from IGDB, which signs in with a Twitch app. Register one for free at",
   "Use any name, set the OAuth redirect URL to http://localhost, choose the Confidential client type, then copy the client ID and a new secret here.":
     "Use any name, set the OAuth redirect URL to http://localhost, choose the Confidential client type, then copy the client ID and a new secret here.",
   "Frame exchanges the ID and secret for a Twitch app token and keeps it until it expires. Without both, the Games catalog stays empty.":
     "Frame exchanges the ID and secret for a Twitch app token and keeps it until it expires. Without both, the Games catalog stays empty.",
-  "Add a Twitch client ID and secret in Settings > Library > Games to load the IGDB catalog.":
-    "Add a Twitch client ID and secret in Settings > Library > Games to load the IGDB catalog.",
   "Submit a theme": "Submit a theme",
   "Themes are added to the library by pull request. Export yours as a .harborstyle file and follow the guide to submit it.":
     "Themes are added to the library by pull request. Export yours as a .harborstyle file and follow the guide to submit it.",

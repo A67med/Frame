@@ -64,9 +64,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "P2P सेटिंग लागू हो रही है…",
   "Areas where data already exists let you choose how to combine it.":
     "जिन हिस्सों में पहले से डेटा मौजूद है, वहाँ आप चुन सकते हैं कि उसे कैसे मिलाना है।",
-  Attachments: "अटैचमेंट",
-  Automatic: "स्वचालित",
-  Avatar: "अवतार",
+  "Attachments": "अटैचमेंट",
+  "Automatic": "स्वचालित",
+  "Avatar": "अवतार",
   "Awards cache": "पुरस्कार कैश",
   "Badge packs": "बैज पैक",
   "Badge rules": "बैज के नियम",
@@ -87,7 +87,7 @@ const settingsRefinements: Record<string, string> = {
     "एक बार नाम वाला फ़िल्टर बनाएँ, फिर स्रोत चुनते समय उसे लागू करके लंबी स्ट्रीम सूची में सिर्फ़ मनचाहे परिणाम रखें।",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton अपनी चोरी हुई रेलगाड़ी का इंजन वापस लाने निकलते हैं।",
-  Canvas: "कैनवस",
+  "Canvas": "कैनवस",
   "Captions and quiet hints": "कैप्शन और हल्के संकेत",
   "Cards need a TMDB key.": "कार्ड के लिए TMDB कुंजी आवश्यक है।",
   "Cards need an MDBList key.": "कार्ड के लिए MDBList कुंजी आवश्यक है।",
@@ -131,8 +131,6 @@ const settingsRefinements: Record<string, string> = {
     "चुनें कि अगला एपिसोड कब शुरू हो और Frame कब पूछे कि आप अभी भी देख रहे हैं या नहीं।",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "चुनें कि Frame उपशीर्षक कहाँ खोजे। चालू स्रोतों के परिणाम एक साथ दिखते हैं और दोहराव हटा दिए जाते हैं।",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "चुनें कि वीडियो और ई-बुक कहाँ सहेजे जाएँ और उनके फ़ोल्डर कैसे व्यवस्थित हों।",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "चुनें कि ज्ञात विज्ञापन, विश्लेषण और ट्रैकिंग सेवाओं को भेजे जाने वाले अनुरोध रोके जाएँ या नहीं।",
   "Choose which addon results appear when you pick a stream.":
@@ -282,8 +280,6 @@ const settingsRefinements: Record<string, string> = {
     "Frame SVP की इंस्टॉलेशन नहीं जाँच सका। फिर कोशिश करें।",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame इस क्रम में उपशीर्षक खोजता है। पसंदीदा भाषा सबसे पहले रखें।",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "अपने दूसरे डिवाइसों पर Frame: वेब ऐप, फ़ोन रिमोट और मंगा रीडर रिमोट।",
   "Frame profile showing watch statistics": "देखने के आँकड़े दिखाने वाली Frame प्रोफ़ाइल",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame अपना कम्युनिटी सर्वर इस्तेमाल करता है। आप इसे अपने चलाए हुए सर्वर से भी जोड़ सकते हैं।",
@@ -358,7 +354,7 @@ const settingsRefinements: Record<string, string> = {
     "Frame का इंटरफ़ेस झिलमिलाए या अटके तभी इसे स्वचालित से बदलें। यह ऐप की विंडो नियंत्रित करता है, वीडियो प्लेबैक नहीं।",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "debrid लिंक उपलब्ध न होने पर Frame को इस डिवाइस से P2P के ज़रिए स्ट्रीम करने दें। स्थानीय P2P प्लेबैक रोकने के लिए बंद करें। कॉन्फ़िगर किया रिमोट सर्वर फिर भी उन्हें स्ट्रीम कर सकता है।",
-  Licence: "लाइसेंस",
+  "Licence": "लाइसेंस",
   "Licenses & attribution": "लाइसेंस और श्रेय",
   "Lightens or darkens the whole picture.": "पूरे चित्र को हल्का या गहरा करता है।",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -379,10 +375,10 @@ const settingsRefinements: Record<string, string> = {
     "कैश की हुई या आपकी debrid लाइब्रेरी में मौजूद चिह्नित स्ट्रीम से मिलान करें।",
   "Maximum memory used for buffered video.": "बफ़र किए वीडियो के लिए अधिकतम मेमोरी।",
   "Maximum size (GB)": "अधिकतम आकार (GB)",
-  Merge: "मर्ज करें",
+  "Merge": "मर्ज करें",
   "Minimize to preview (Ctrl/Cmd + P)": "प्रीव्यू के लिए छोटा करें (Ctrl/Cmd + P)",
   "Minimum seeders": "न्यूनतम सीडर",
-  Motion: "मोशन",
+  "Motion": "मोशन",
   "Move earlier": "प्राथमिकता बढ़ाएँ",
   "Move {language} earlier": "{language} की प्राथमिकता बढ़ाएँ",
   "Move {name} down": "{name} नीचे ले जाएँ",
@@ -417,7 +413,7 @@ const settingsRefinements: Record<string, string> = {
     "वैकल्पिक। आगे संपर्क की अनुमति हो तो अपना संपर्क विवरण दें और चुनें कि सार्वजनिक श्रेय चाहिए या नहीं।",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "वैकल्पिक। अधिक देखने का समय देने के लिए इस्तेमाल होता है। PIN के बिना समय पूरा होने पर प्रोफ़ाइल बदलें।",
-  Pages: "पेज",
+  "Pages": "पेज",
   "Pause after several episodes and ask before continuing.":
     "कुछ एपिसोड के बाद रोकें और आगे बढ़ने से पहले पूछें।",
   "Pause preview": "प्रीव्यू रोकें",
@@ -459,7 +455,7 @@ const settingsRefinements: Record<string, string> = {
     "शो दोबारा खोलने पर वहीं लौटें जहाँ छोड़ा था, एपिसोड सूची समेत।",
   "Repair & diagnostics": "सुधार और निदान",
   "Report something broken, or support the project.": "खराबी की रिपोर्ट करें या प्रोजेक्ट का समर्थन करें।",
-  Required: "ज़रूरी",
+  "Required": "ज़रूरी",
   "Reset keyboard shortcuts?": "कीबोर्ड शॉर्टकट रीसेट करें?",
   "Reset shortcuts": "शॉर्टकट रीसेट करें",
   "Reset {setting}": "{setting} रीसेट करें",
@@ -730,11 +726,11 @@ const settingsRefinements: Record<string, string> = {
     "आपका साइन-इन, देखने का रिकॉर्ड रखने वाली सेवाएँ और रिले।",
   "Your {n} custom shortcuts will return to their defaults.":
     "आपके {n} कस्टम शॉर्टकट डिफ़ॉल्ट पर लौट जाएँगे।",
-  code: "कोड",
+  "code": "कोड",
   "each poster": "हर पोस्टर",
   "on hover": "माउस रखने पर",
   "poster image": "पोस्टर का चित्र",
-  username: "उपयोगकर्ता नाम",
+  "username": "उपयोगकर्ता नाम",
   "will look on your TV.": "ऐसे दिखेंगे।",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} ओपन सोर्स है। मौजूदा सुधार देखें या मिली समस्या के लिए पैच का योगदान दें।",
@@ -749,7 +745,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} सेकंड",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "{quota} की संग्रहण सीमा में से {used} उपयोग हुआ है। डाउनलोड किए गए वीडियो और डिस्क की अन्य फ़ाइलें शामिल नहीं हैं।",
-  "Public-domain books for the eBook library.": "ईबुक लाइब्रेरी के लिए सार्वजनिक डोमेन की किताबें।",
   "Searchable catalog for Project Gutenberg books.":
     "Project Gutenberg की किताबों का खोजने योग्य कैटलॉग।",
   "Game metadata, artwork and release dates.": "गेम का मेटाडेटा, चित्र और रिलीज़ की तारीखें।",

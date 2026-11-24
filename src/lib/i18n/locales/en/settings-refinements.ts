@@ -67,9 +67,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "Applying P2P setting…",
   "Areas where data already exists let you choose how to combine it.":
     "Areas where data already exists let you choose how to combine it.",
-  Attachments: "Attachments",
-  Automatic: "Automatic",
-  Avatar: "Avatar",
+  "Attachments": "Attachments",
+  "Automatic": "Automatic",
+  "Avatar": "Avatar",
   "Awards cache": "Awards cache",
   "Badge packs": "Badge packs",
   "Badge rules": "Badge rules",
@@ -90,7 +90,7 @@ const settingsRefinements: Record<string, string> = {
     "Build a named filter once, then apply it in the source picker to trim a noisy stream list down to exactly what you want.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton sets off to recover his stolen locomotive.",
-  Canvas: "Canvas",
+  "Canvas": "Canvas",
   "Captions and quiet hints": "Captions and quiet hints",
   "Cards need a TMDB key.": "Cards need a TMDB key.",
   "Cards need an MDBList key.": "Cards need an MDBList key.",
@@ -137,8 +137,6 @@ const settingsRefinements: Record<string, string> = {
     "Choose when the next episode starts and when Frame checks that you are still watching.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "Choose where videos and eBooks are saved, and how their folders are organized.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "Choose whether to block requests to known advertising, analytics, and tracking services.",
   "Choose which addon results appear when you pick a stream.":
@@ -288,8 +286,6 @@ const settingsRefinements: Record<string, string> = {
     "Frame couldn't check the SVP installation. Try again.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame looks for subtitles in this order. Put your preferred language first.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "Frame on your other devices: the web app, the phone remote, and the manga reader remote.",
   "Frame profile showing watch statistics": "Frame profile showing watch statistics",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame uses its own community server. You can point it at a server you run yourself.",
@@ -366,7 +362,7 @@ const settingsRefinements: Record<string, string> = {
     "Leave this on Automatic unless Frame's interface flickers or stutters. This controls the app window, not video playback.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.",
-  Licence: "Licence",
+  "Licence": "Licence",
   "Licenses & attribution": "Licenses & attribution",
   "Lightens or darkens the whole picture.": "Lightens or darkens the whole picture.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -387,10 +383,10 @@ const settingsRefinements: Record<string, string> = {
     "Match streams marked as cached or already in your debrid library.",
   "Maximum memory used for buffered video.": "Maximum memory used for buffered video.",
   "Maximum size (GB)": "Maximum size (GB)",
-  Merge: "Merge",
+  "Merge": "Merge",
   "Minimize to preview (Ctrl/Cmd + P)": "Minimize to preview (Ctrl/Cmd + P)",
   "Minimum seeders": "Minimum seeders",
-  Motion: "Motion",
+  "Motion": "Motion",
   "Move earlier": "Move earlier",
   "Move {language} earlier": "Move {language} earlier",
   "Move {name} down": "Move {name} down",
@@ -425,7 +421,7 @@ const settingsRefinements: Record<string, string> = {
     "Optional. Leave your contact details if we may follow up, and choose whether you want public credit.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.",
-  Pages: "Pages",
+  "Pages": "Pages",
   "Pause after several episodes and ask before continuing.":
     "Pause after several episodes and ask before continuing.",
   "Pause preview": "Pause preview",
@@ -470,7 +466,7 @@ const settingsRefinements: Record<string, string> = {
   "Repair & diagnostics": "Repair & diagnostics",
   "Report something broken, or support the project.":
     "Report something broken, or support the project.",
-  Required: "Required",
+  "Required": "Required",
   "Reset keyboard shortcuts?": "Reset keyboard shortcuts?",
   "Reset shortcuts": "Reset shortcuts",
   "Reset {setting}": "Reset {setting}",
@@ -752,11 +748,11 @@ const settingsRefinements: Record<string, string> = {
     "Your sign-in, the services that track what you watch, and your relay.",
   "Your {n} custom shortcuts will return to their defaults.":
     "Your {n} custom shortcuts will return to their defaults.",
-  code: "code",
+  "code": "code",
   "each poster": "each poster",
   "on hover": "on hover",
   "poster image": "poster image",
-  username: "username",
+  "username": "username",
   "will look on your TV.": "will look on your TV.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.",
@@ -771,7 +767,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} seconds",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.",
-  "Public-domain books for the eBook library.": "Public-domain books for the eBook library.",
   "Searchable catalog for Project Gutenberg books.":
     "Searchable catalog for Project Gutenberg books.",
   "Game metadata, artwork and release dates.": "Game metadata, artwork and release dates.",

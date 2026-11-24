@@ -416,8 +416,6 @@ const catalog01: Record<string, string> = {
     "Dodaj kilka osób do znajomych, a informacje o tym, co oglądają, ich oceny i ulubione pojawią się tutaj.",
   "Add a list": "Dodaj listę",
   "Add a local folder": "Dodaj folder lokalny",
-  "Add a manga source": "Dodaj źródło mangi",
-  "Add a manga source to open these": "Dodaj źródło mangi, aby je otworzyć",
   "Add a movie or show to this list...": "Dodaj film lub serial do tej listy...",
   "Add a playlist": "Dodaj playlistę",
   "Add a profile for someone else and everyone keeps their own Continue Watching, watch history, and progress.":
@@ -500,8 +498,6 @@ const catalog01: Record<string, string> = {
   "Add to tile {n}": "Dodaj do kafelka {n}",
   "Add to your watchlist": "Dodaj do listy do obejrzenia",
   "Add to {name}": "Dodaj do {name}",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Dodaj zaufane źródła e-booków z repozytorium zgodnego z Frame.",
   "Add up to 6 screenshots so people can see your theme in action. Optional, but they sell it.":
     "Dodaj maksymalnie 6 zrzutów ekranu, aby pokazać motyw w działaniu. To opcjonalne, ale zwiększa zainteresowanie.",
   "Add up to {max} profiles. Enter your handle only, not the full link.":

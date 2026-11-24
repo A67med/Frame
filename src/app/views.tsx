@@ -86,28 +86,6 @@ export const BigPictureShell = lazy(() =>
   import("@/views/big-picture/bp-shell").then((m) => ({ default: m.BigPictureShell })),
 );
 
-// Pages Frame dropped. Their frames still parse (old links, saved stacks), so
-// landing on one goes home instead of showing an empty layer.
-export const REMOVED_PAGES = new Set<string>([
-  "anime",
-  "anime-award",
-  "calendar",
-  "kids",
-  "music",
-  "games",
-  "live",
-  "vod",
-  "sports",
-  "match-detail",
-  "manga",
-  "ebook",
-  "profile",
-  "feed",
-  "groups",
-  "group",
-  "list",
-]);
-
 export function useViewPreloader(tmdbKey: string) {
   const keyRef = useRef(tmdbKey);
   keyRef.current = tmdbKey;

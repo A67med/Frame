@@ -19,8 +19,6 @@ const profileFill: Record<string, string> = {
   "No Letterboxd lists shared yet": "Chưa chia sẻ danh sách Letterboxd nào",
   "Link Letterboxd and the films and lists you keep there show up right here.":
     "Liên kết Letterboxd để phim và danh sách bạn lưu ở đó xuất hiện ngay tại đây.",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "Nhấn vào biểu tượng trái tim trên phim, phim bộ, manga hoặc nhân vật bất kỳ để lưu vào đây.",
   "Your rating {n}/10": "Điểm bạn đánh giá: {n}/10",
   "Tap a star to rate": "Nhấn vào một ngôi sao để đánh giá",
   "Tap a star to change, then save": "Nhấn vào một ngôi sao để thay đổi, rồi lưu",
@@ -54,7 +52,7 @@ const profileFill: Record<string, string> = {
     "Frame đang gặp sự cố, hãy thử lại sau giây lát",
   "Move or hide your cards": "Di chuyển hoặc ẩn các thẻ",
   "Watch time": "Thời gian xem",
-  Lists: "Danh sách",
+  "Lists": "Danh sách",
   "Hero stats": "Thống kê nổi bật",
   "Choose which stats show in the row at the top of your profile":
     "Chọn số liệu thống kê hiển thị trong hàng ở đầu hồ sơ",
@@ -66,8 +64,6 @@ const profileFill: Record<string, string> = {
   "These cards run down your public profile. Set the order they appear in, and hide any you would rather keep to yourself.":
     "Các thẻ này được xếp dọc trên hồ sơ công khai. Hãy sắp xếp thứ tự xuất hiện và ẩn những thẻ bạn muốn giữ riêng tư.",
   "{count} of {total} showing": "Đang hiển thị {count}/{total}",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Đánh giá phim, phim bộ, anime và manga để tạo bộ sưu tập đánh giá",
   "{name}'s ratings": "Đánh giá của {name}",
   "No ratings yet": "Chưa có đánh giá",
   "Show spoiler": "Hiện nội dung tiết lộ",
@@ -75,7 +71,7 @@ const profileFill: Record<string, string> = {
   "No friends to show yet": "Chưa có bạn bè để hiển thị",
   "Online now": "Đang trực tuyến",
   "Show {count} more": "Hiện thêm {count}",
-  Owner: "Chủ sở hữu",
+  "Owner": "Chủ sở hữu",
   "Remove {alias}": "Xóa {alias}",
   "Could not join.": "Không thể tham gia.",
   "Could not leave.": "Không thể rời khỏi.",
@@ -217,8 +213,8 @@ const profileFill: Record<string, string> = {
   "{alias} keeps this private": "{alias} giữ mục này ở chế độ riêng tư",
   "This member has hidden their showcase, activity and friends from public view.":
     "Thành viên này đã ẩn nội dung trưng bày, hoạt động và bạn bè khỏi chế độ xem công khai.",
-  Finished: "Đã hoàn thành",
-  Rated: "Đã đánh giá",
+  "Finished": "Đã hoàn thành",
+  "Rated": "Đã đánh giá",
   "not in your library": "không có trong thư viện của bạn",
   "1 friend in common": "1 bạn chung",
   "{count} friends in common": "{count} bạn chung",

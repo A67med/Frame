@@ -61,8 +61,6 @@ const catalog07: Record<string, string> = {
   "Keep editing": "Kontynuuj edycję",
   "Keep frames for": "Zachowuj klatki przez",
   "Keep going": "Kontynuuj",
-  "Keep going in the manga behind the anime you've been watching":
-    "Czytaj dalej mangę, na której oparto oglądane przez Ciebie anime",
   "Keep it": "Zachowaj",
   "Keep it under 280 characters": "Nie przekraczaj 280 znaków",
   "Keep it up": "Tak trzymaj",
@@ -341,7 +339,6 @@ const catalog07: Record<string, string> = {
   "Loading chapter list…": "Wczytywanie listy rozdziałów…",
   "Loading chapter...": "Wczytywanie rozdziału...",
   "Loading chapter…": "Wczytywanie rozdziału…",
-  "Loading eBook…": "Wczytywanie e-booka…",
   "Loading environment details…": "Wczytywanie szczegółów środowiska…",
   "Loading episodes...": "Wczytywanie odcinków...",
   "Loading extensions...": "Wczytywanie rozszerzeń...",
@@ -438,8 +435,6 @@ const catalog07: Record<string, string> = {
     "Spójrz na telewizor. Jest już na nim wyświetlany nowy kod. Zeskanuj go.",
   "Look offline to others": "Pokazuj innym status offline",
   'Looking for "{q}"': "Wyszukiwanie „{q}”",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "Szukasz Frame w przeglądarce, pilota na telefon lub pilota czytnika mangi? Znajdziesz je teraz na stronie Piloty.",
   "Looking for peers…": "Wyszukiwanie peerów…",
   "Looking for sources": "Wyszukiwanie źródeł",
   "Looking for sources…": "Wyszukiwanie źródeł…",
@@ -521,7 +516,6 @@ const catalog07: Record<string, string> = {
   "Manage Servers": "Zarządzaj serwerami",
   "Manage addon": "Zarządzaj dodatkiem",
   "Manage connection": "Zarządzaj połączeniem",
-  "Manage eBook sources": "Zarządzaj źródłami e-booków",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "Zarządzaj wszystkimi miejscami, z których Frame może odczytywać treści, zarówno na dysku, jak i w internecie.",
   "Manage members and posts": "Zarządzaj członkami i postami",
@@ -532,11 +526,6 @@ const catalog07: Record<string, string> = {
     "Zarządzany Plex, Emby lub Jellyfin, uruchamiany w kilka minut, bez własnego sprzętu i Dockera.",
   "Manager": "Menedżer",
   "Managers": "Menedżerowie",
-  "Manga adaptation": "Adaptacja mangi",
-  "Manga browse cache": "Pamięć podręczna przeglądania mangi",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Mangi nie można jeszcze dopasować do tytułu w Frame, dlatego pominięto {n} tytułów.",
-  "Manga reader remote": "Pilot czytnika mangi",
   "Manic Heart": "Szalone serce",
   "Manifest URL": "Adres URL manifestu",
   "Manifest URL copied": "Skopiowano adres URL manifestu",

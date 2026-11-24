@@ -22,11 +22,7 @@ const catalog: Record<string, string> = {
   "Insecticide-treated nets. One of the most cost-effective interventions measured.":
     "Kelambu berinsektisida. Salah satu intervensi paling hemat biaya yang pernah diukur.",
   "It serves a web UI at {url}": "Menyediakan UI web di {url}",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "Manga > Siapkan sumber > Folder lokal, lalu pilih folder manga yang sudah Anda miliki (file CBZ atau folder berisi gambar).",
   "Native Title": "Judul Asli",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "Buka {url} di browser. Buka area Ekstensi / Jelajahi, tambahkan repositori sumber komunitas, lalu instal sumber yang Anda inginkan (tersedia ratusan). Suwayomi menggunakan repositori ekstensi yang sama dengan ekosistem Mihon / Tachiyomi.",
   "Press T to chat...": "Tekan T untuk mengobrol...",
   "Relay deployment requires the Cloudflare API, which is unavailable to browser clients. Use the desktop build to deploy a Worker, then enter the resulting URL below.":
     "Penerapan relai memerlukan Cloudflare API, yang tidak tersedia bagi klien browser. Gunakan versi desktop untuk menerapkan Worker, lalu masukkan URL yang dihasilkan di bawah ini.",
@@ -160,7 +156,6 @@ const catalog: Record<string, string> = {
   "Removes the Anime tab and every anime title from all rows everywhere: Home, Discover, Top 10, and catalogs. Western animation like Pixar is kept, and you can still find anime by searching.":
     "Menghapus tab Anime dan semua judul anime dari seluruh baris di mana pun: Beranda, Jelajahi, 10 Teratas, dan katalog. Animasi Barat seperti Pixar tetap ditampilkan, dan Anda masih dapat menemukan anime melalui pencarian.",
   "Removes the Live TV tab from the sidebar.": "Menghapus tab TV Langsung dari bilah samping.",
-  "Removes the Manga tab from the sidebar.": "Menghapus tab Manga dari bilah samping.",
   "Removing": "Menghapus",
   "Removing...": "Menghapus...",
   "Removing…": "Menghapus…",
@@ -614,7 +609,6 @@ const catalog: Record<string, string> = {
   "Saves your whole Frame setup to one file: theme, home layout, settings, addons, profiles, watchlist, player layouts, watch progress, and more. Your Stremio sign-in is left out on purpose.":
     "Menyimpan seluruh konfigurasi Frame Anda dalam satu file: tema, tata letak beranda, pengaturan, addon, profil, daftar tontonan, tata letak pemutar, progres tontonan, dan lainnya. Status masuk Stremio Anda sengaja tidak disertakan.",
   "Saving": "Menyimpan",
-  "Saving EPUB": "Menyimpan EPUB",
   "Saving GIF…": "Menyimpan GIF…",
   "Saving clip…": "Menyimpan klip…",
   "Saving now could overwrite them. Try again in a moment.":
@@ -709,7 +703,6 @@ const catalog: Record<string, string> = {
   "Search chapters": "Cari bab",
   "Search chapters...": "Cari bab...",
   "Search countries...": "Cari negara...",
-  "Search eBooks": "Cari eBook",
   "Search episodes": "Cari episode",
   "Search episodes across all seasons": "Cari episode di semua musim",
   "Search every collection on TMDB...": "Cari semua koleksi di TMDB...",
@@ -726,8 +719,6 @@ const catalog: Record<string, string> = {
   "Search languages": "Cari bahasa",
   "Search languages (Tamil, Telugu, ...)": "Cari bahasa (Tamil, Telugu, ...)",
   "Search movies": "Cari film",
-  "Search movies, shows, and manga to add": "Cari film, acara, dan manga untuk ditambahkan",
-  "Search movies, shows, anime, manga": "Cari film, acara, anime, manga",
   "Search movies, shows, people, genres, years...": "Cari film, acara, orang, genre, tahun...",
   "Search movies, shows, people...": "Cari film, acara, orang...",
   "Search on display": "Cari di layar",

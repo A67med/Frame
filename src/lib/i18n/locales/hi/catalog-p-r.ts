@@ -222,8 +222,6 @@ const catalogPR: Record<string, string> = {
     "प्रमाणीकरण का तरीका चुनें। सब कुछ आपके डिवाइस पर ही स्टोर होता है।",
   "Pick it from the home view to follow.": "फ़ॉलो करने के लिए इसे होम व्यू से चुनें।",
   "Pick lists from your library to show them here": "यहाँ दिखाने के लिए अपनी लाइब्रेरी से सूचियाँ चुनें",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "अपनी लाइब्रेरी का एक फ़ोल्डर चुनें। हर सबफ़ोल्डर एक eBook है। उसके अध्याय TXT, Markdown, HTML या EPUB फ़ाइलों के रूप में अंदर रखें और चाहें तो कवर इमेज भी जोड़ें।",
   "Pick one of your themes to share.": "शेयर करने के लिए अपनी थीम में से एक चुनें।",
   "Pick one or many images. They collect in an Uploads set in your library. PNG, JPG, WebP, and GIF all work.":
     "एक या कई इमेज चुनें। वे आपकी लाइब्रेरी में Uploads सेट में इकट्ठी होंगी। PNG, JPG, WebP, और GIF सभी काम करते हैं।",
@@ -433,7 +431,6 @@ const catalogPR: Record<string, string> = {
   "Popular This Week": "इस सप्ताह लोकप्रिय",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "सार्वजनिक डायरेक्टरी में मिले स्टार के अनुसार रैंक किए गए लोकप्रिय कम्युनिटी ऐडऑन। कोई और ऐडऑन इंस्टॉल करने के लिए ब्राउज़ टैब में उसका URL डालें।",
-  "Popular eBooks": "लोकप्रिय ई-बुक्स",
   "Popular on": "इस पर लोकप्रिय",
   "Popular titles from book metadata": "किताब के मेटाडेटा से लोकप्रिय शीर्षक",
   "Popular titles from the installed source": "इंस्टॉल किए गए स्रोत से लोकप्रिय शीर्षक",
@@ -474,8 +471,6 @@ const catalogPR: Record<string, string> = {
   "Power tools & diagnostics": "पावर टूल्स और डायग्नोस्टिक्स",
   "Power-user knob. Inject your own CSS, JS, and HTML into Frame. Lives in your local settings; nothing leaves your machine.":
     "पावर यूज़र के लिए सेटिंग। Frame में अपना CSS, JS और HTML इंजेक्ट करें। यह आपकी लोकल सेटिंग्स में रहता है; आपकी मशीन से कुछ भी बाहर नहीं जाता।",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "इस पेज की हर चीज़ को चलाता है: वेब ऐप, फ़ोन रिमोट और मंगा रीडर रिमोट।",
   "Powers the Identify song button in the player.": "प्लेयर में गाना पहचानें बटन को सक्षम करता है।",
   "Powers the Identify-song button in the player. Get a token at":
     "प्लेयर के “गाना पहचानें” बटन को काम करने देता है। टोकन यहाँ पाएँ",
@@ -717,8 +712,6 @@ const catalogPR: Record<string, string> = {
   "Ranking source": "रैंकिंग स्रोत",
   "Ranking the best matches": "सबसे अच्छे मिलान क्रम में लगाए जा रहे हैं",
   "Rate": "रेट करें",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "अपनी रेटिंग बनाने के लिए फ़िल्मों, शो, ऐनिमे और मंगा को रेट करें",
   "Rate on SIMKL": "SIMKL पर रेट करें",
   "Rate on stremio-addons.net": "stremio-addons.net पर रेट करें",
   "Rate this": "इसे रेट करें",
@@ -756,23 +749,17 @@ const catalogPR: Record<string, string> = {
     "HTTP स्रोतों तक harbor.http(url, opts) से पहुँचें, बाइनरी gRPC स्रोतों तक harbor.grpc(url, protobufBytes, opts) से पहुँचें और HTML को harbor.parseHtml(html) से पार्स करें। सैंडबॉक्स में fetch, DOM या स्टोरेज उपलब्ध नहीं है।",
   "Reaching your TV": "आपके TV से कनेक्ट किया जा रहा है",
   "Read": "पढ़ें",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "इस डिवाइस पर पहले से मौजूद EPUB, टेक्स्ट, Markdown और HTML किताबें पढ़ें।",
   "Read Now": "अभी पढ़ें",
   "Read chapter with Edge TTS": "Edge TTS से अध्याय पढ़वाएँ",
-  "Read eBook files you already have": "आपके पास पहले से मौजूद ई-बुक फ़ाइलें पढ़ें",
   "Read from": "यहाँ से पढ़ें",
   "Read from your phone": "अपने फ़ोन से पढ़ें",
   "Read full": "पूरा पढ़ें",
   "Read here": "यहाँ पढ़ें",
   "Read latest": "नवीनतम पढ़ें",
-  "Read manga files you already have": "अपनी मौजूदा मांगा फ़ाइलें पढ़ें",
-  "Read manga in Frame": "Frame में मांगा पढ़ें",
   "Read more": "और पढ़ें",
   "Read now": "अभी पढ़ें",
   "Read on": "इस पर पढ़ें",
   "Read on this device": "इस डिवाइस पर पढ़ें",
-  "Read the Manga": "मांगा पढ़ें",
   "Read the complete chapter with Edge TTS": "Edge TTS से पूरा अध्याय पढ़वाएँ",
   "Read the rest": "बाकी पढ़ें",
   "Read titles, ids, and any poster/logo/backdrop already saved next to your files. Missing images are filled from TMDB.":
@@ -835,7 +822,6 @@ const catalogPR: Record<string, string> = {
     "हर चीज़ का रंग बदलें, फ़ॉन्ट बदलें, पोस्टर का आकार बदलें, वॉलपेपर सेट करें।",
   "Recommendations are temporarily unavailable.": "सुझाव फ़िलहाल उपलब्ध नहीं हैं।",
   "Recommended": "सुझाए गए",
-  "Recommended eBooks": "सुझाई गई ई-बुक्स",
   "Recommended for You": "आपके लिए सुझाए गए",
   "Recommended for you": "आपके लिए सुझाए गए",
   "Reconfigure": "फिर से कॉन्फ़िगर करें",
@@ -875,10 +861,8 @@ const catalogPR: Record<string, string> = {
   "Reference quality, very heavy.": "रेफ़रेंस क्वालिटी, बहुत ज़्यादा संसाधन लेती है।",
   "Refine": "बेहतर करें",
   "Refine search": "खोज बेहतर करें",
-  "Reflowable eBook": "रीफ़्लो योग्य ई-बुक",
   "Refresh": "रिफ़्रेश करें",
   "Refresh button": "रिफ़्रेश बटन",
-  "Refresh eBook source": "ई-बुक स्रोत रीफ़्रेश करें",
   "Refresh extensions": "एक्सटेंशन रिफ़्रेश करें",
   "Refresh list": "सूची रिफ़्रेश करें",
   "Refresh playlist": "प्लेलिस्ट रिफ़्रेश करें",
@@ -1026,7 +1010,6 @@ const catalogPR: Record<string, string> = {
   "Removes the Anime tab and every anime title from all rows everywhere: Home, Discover, Top 10, and catalogs. Western animation like Pixar is kept, and you can still find anime by searching.":
     "एनीमे टैब और हर जगह सभी पंक्तियों से प्रत्येक एनीमे शीर्षक हटाता है: होम, डिस्कवर, टॉप 10 और कैटलॉग। Pixar जैसे पश्चिमी एनिमेशन बने रहते हैं और आप खोजकर अब भी एनीमे ढूँढ सकते हैं।",
   "Removes the Live TV tab from the sidebar.": "साइडबार से लाइव TV टैब हटाता है।",
-  "Removes the Manga tab from the sidebar.": "साइडबार से मंगा टैब हटाता है।",
   "Removing": "हटाया जा रहा है",
   "Removing...": "हटाया जा रहा है...",
   "Removing…": "हटाया जा रहा है…",

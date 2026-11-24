@@ -3,9 +3,9 @@ const surfaces5: Record<string, string> = {
   "Watching {n} streams at once": "Одновременный просмотр потоков: {n}",
   "Setting up Multiview": "Настройка многооконного режима",
   "Side by side": "Рядом",
-  Stacked: "Друг над другом",
-  Triple: "Тройной",
-  Quad: "Четверной",
+  "Stacked": "Друг над другом",
+  "Triple": "Тройной",
+  "Quad": "Четверной",
   "Fullscreen split view": "Разделённый полноэкранный режим",
   "Show controls": "Показать элементы управления",
   "Hide controls, full grid": "Скрыть элементы управления, развернуть сетку",
@@ -50,21 +50,21 @@ const surfaces5: Record<string, string> = {
     "Изменения этой темы ещё не сохранены. Если выйти сейчас, они будут потеряны.",
   "Keep editing": "Продолжить редактирование",
   "Click to edit": "Нажмите, чтобы изменить",
-  Tight: "Компактно",
-  Mid: "Средне",
-  Wide: "Широко",
+  "Tight": "Компактно",
+  "Mid": "Средне",
+  "Wide": "Широко",
   "Max {count} files.": "Не более {count} файлов.",
   "{name} is over 100 MB.": "Размер файла {name} превышает 100 МБ.",
   "{name} is not an image or video.": "{name} не является изображением или видео.",
   "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Up to {count} files, 100 MB each.":
     "PNG, JPG, WebP, GIF, MP4, WebM, MOV. До {count} файлов по 100 МБ каждый.",
-  M: "м",
-  D: "д",
-  H: "ч",
-  Y: "г",
+  "M": "м",
+  "D": "д",
+  "H": "ч",
+  "Y": "г",
   "Copy {label}": "Копировать {label}",
   "Casting to": "Трансляция на",
-  Transcoding: "Перекодирование",
+  "Transcoding": "Перекодирование",
   "−15s": "−15 с",
   "+15s": "+15 с",
   "Connecting to": "Подключение к",
@@ -77,13 +77,13 @@ const surfaces5: Record<string, string> = {
   "sketchy files": "подозрительные файлы",
   "cam rips": "экранные копии",
   "tiny stubs": "слишком маленькие заглушки",
-  oversized: "слишком большой размер",
+  "oversized": "слишком большой размер",
   "year mismatch": "неверный год",
   "wrong episode": "неверная серия",
   "season packs": "сборники сезонов",
   "scam metadata": "мошеннические метаданные",
   "dead torrents": "мёртвые торренты",
-  language: "язык",
+  "language": "язык",
   "trailers/extras": "трейлеры и допматериалы",
   "stub files": "файлы-заглушки",
   "wrong movie": "неверный фильм",
@@ -94,8 +94,8 @@ const surfaces5: Record<string, string> = {
   "No clean release has surfaced yet. This may be too new. Frame's filters dropped everything that came back as wrong-movie noise.":
     "Подходящих релизов пока нет. Возможно, новинка вышла совсем недавно. Фильтры Frame отсеяли все результаты как не относящиеся к нужному фильму.",
   "Create a custom filter": "Создать пользовательский фильтр",
-  Remux: "Ремукс",
-  Debrid: "Debrid",
+  "Remux": "Ремукс",
+  "Debrid": "Debrid",
   "{facet} filter: {value}": "Фильтр «{facet}»: {value}",
   "Close menu": "Закрыть меню",
   "{value} +{n}": "{value} +{n}",
@@ -191,7 +191,7 @@ const surfaces5: Record<string, string> = {
   "{count} wins": "{count} побед",
   "{count} nomination": "{count} номинация",
   "{count} nominations": "{count} номинаций",
-  Won: "Победитель",
+  "Won": "Победитель",
   "A standout this week.": "Выбор недели.",
   "Critics' Pick": "Выбор критиков",
   "Loved by reviewers today": "Сегодня в восторге у критиков",
@@ -205,7 +205,7 @@ const surfaces5: Record<string, string> = {
   "You're leaving Frame": "Вы покидаете Frame",
   "This link goes to an external site that Frame does not control or vouch for. Triple-check the address before you continue, and never enter your Frame password anywhere but Frame.":
     "Эта ссылка ведёт на внешний сайт, который Frame не контролирует и не гарантирует его надёжность. Трижды проверьте адрес, прежде чем продолжить, и вводите пароль Frame только в Frame.",
-  Destination: "Адрес назначения",
+  "Destination": "Адрес назначения",
   "Only continue if you fully trust this link":
     "Продолжайте, только если полностью доверяете этой ссылке",
   "Frame can open only HTTP or HTTPS destinations.":
@@ -224,7 +224,7 @@ const surfaces5: Record<string, string> = {
   "an addon": "дополнение",
   "a title": "название",
   "{name} wants you here": "{name} приглашает вас сюда",
-  Sure: "Хорошо",
+  "Sure": "Хорошо",
   "That does not look like a valid magnet link or infohash.":
     "Это не похоже на действительную magnet-ссылку или инфохеш.",
   "Your remote streaming server is not reachable. Check its address in Settings.":
@@ -265,29 +265,15 @@ const surfaces5: Record<string, string> = {
   "A local folder": "Локальная папка",
   "Advanced: build a plugin": "Для опытных: создайте плагин",
   "Also Known As": "Другие названия",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "Вернитесь в Frame и выберите «Манга > Настроить источник > Ваш сервер», затем вставьте адрес сервера, например {localUrl}. Если сервер работает на другом устройстве, укажите его IP-адрес в локальной сети, например {lanUrl}.",
   "Controller preview": "Предпросмотр контроллера",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "Не удалось сохранить этот шрифт. Возможно, файл повреждён или хранилище заполнено.",
-  "Download and run Suwayomi Server:": "Скачайте и запустите Suwayomi Server:",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Все источники, включённые в Suwayomi, затем появятся в Frame. Suwayomi обновляет расширения при изменениях на сайтах, поэтому они продолжают работать.",
-  "Everything else, through your own server (Suwayomi)":
-    "Все остальные источники через собственный сервер (Suwayomi)",
   "Expand {title} image": "Развернуть изображение «{title}»",
-  "Getting manga sources into Frame": "Добавление источников манги в Frame",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "Frame также поддерживает экспериментальную среду выполнения плагинов. Если вы хотите написать плагин источника, ознакомьтесь с файлом {path} в репозитории Frame. Устанавливайте плагины только из доверенных репозиториев.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame не поставляет мангу и скраперы, это приложение для чтения. Источники добавляете вы, а за их содержимое отвечают владельцы этих источников, а не Frame. Добавить источники можно двумя способами.",
   "Import failed": "Не удалось импортировать",
   "It serves a web UI at {url}": "Веб-интерфейс сервера доступен по адресу {url}",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "Откройте «Манга > Настроить источник > Локальная папка» и выберите папку с принадлежащей вам мангой: файлами CBZ или папками с изображениями.",
   "Native Title": "Оригинальное название",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "Откройте {url} в браузере. Перейдите в раздел «Расширения / Обзор», добавьте репозиторий источников сообщества, затем установите нужные источники, их доступны сотни. Suwayomi использует те же репозитории расширений, что и экосистема Mihon / Tachiyomi.",
   "SIMKL rating picker": "Выбор оценки SIMKL",
   "Sharing diagnostics": "Передача диагностических данных",
   "That font is {size} MB. Max is 4 MB.":
@@ -334,15 +320,15 @@ const surfaces5: Record<string, string> = {
   "Frame could not open your browser.": "Frame не удалось открыть браузер.",
   "Frame's peer-to-peer engine is warming up. This clears on its own in a few seconds, then Play works.":
     "P2P-движок Frame запускается. Через несколько секунд это сообщение исчезнет само, и воспроизведение станет доступно.",
-  Minus: "Минус",
+  "Minus": "Минус",
   "None of your debrid services could deliver a working file. Pick another stream.":
     "Ни один из ваших debrid-сервисов не смог предоставить рабочий файл. Выберите другой поток.",
   "None of your debrid services could resolve this stream. Try a different one.":
     "Ни один из ваших debrid-сервисов не смог обработать этот поток. Попробуйте другой.",
-  Plus: "Плюс",
+  "Plus": "Плюс",
   "Real-Debrid is refusing this download right now, which usually means its traffic or fair-use limit has been hit. Try again later, pick a different source, or use another debrid.":
     "Real-Debrid сейчас отклоняет эту загрузку. Обычно это означает, что исчерпан лимит трафика или добросовестного использования. Повторите попытку позже, выберите другой источник или используйте другой debrid-сервис.",
-  Recheck: "Проверить снова",
+  "Recheck": "Проверить снова",
   "Remote streaming server unreachable. Check the address in Settings > P2P & servers and that the server machine is online.":
     "Удалённый сервер потоковой передачи недоступен. Проверьте адрес в разделе «Настройки > P2P и серверы» и убедитесь, что компьютер с сервером включён и подключён к сети.",
   "Remote streaming server unreachable. Strict mode is on, so local fallback is disabled.":
@@ -395,8 +381,6 @@ const surfaces5: Record<string, string> = {
   "{name} returned an error ({code}).": "Сервис {name} вернул ошибку ({code}).",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "Добавьте столько серверов Jellyfin, Emby или Plex, сколько используете.",
-  "Add eBook sources from a repository you trust.":
-    "Добавляйте источники электронных книг из доверенного репозитория.",
   "All libraries": "Все библиотеки",
   "All servers": "Все серверы",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -428,16 +412,16 @@ const surfaces5: Record<string, string> = {
   "Connect server": "Подключить сервер",
   "Connecting to home servers…": "Подключение к домашним серверам…",
   "Connecting…": "Подключение…",
-  Connections: "Подключения",
+  "Connections": "Подключения",
   "Copy the X-Plex-Token value from the XML page URL.":
     "Скопируйте значение X-Plex-Token из URL XML-страницы.",
-  Disable: "Отключить",
+  "Disable": "Отключить",
   "Download media": "Скачать медиафайлы",
   "Download selected ({n})": "Скачать выбранное ({n})",
   "Edge voices need the Frame desktop app. Reading with the device voice.":
     "Для голосов Edge требуется приложение Frame для компьютера. Используется голос устройства.",
   "Edit home server": "Изменить домашний сервер",
-  Enrichment: "Дополнение метаданных",
+  "Enrichment": "Дополнение метаданных",
   "Every…": "Каждые…",
   "Featured book": "Рекомендуемая книга",
   "Frame does not host any books. Open a folder on this device, install a source extension, or connect your own server. Metadata can describe a book, but a source is what lets Frame open it.":
@@ -452,7 +436,7 @@ const surfaces5: Record<string, string> = {
   "How to find a Plex access token": "Как найти токен доступа Plex",
   "Loading your media server library…": "Загрузка библиотеки с медиасервера…",
   "Local Library": "Локальная библиотека",
-  Manual: "Вручную",
+  "Manual": "Вручную",
   "Media Servers": "Медиасерверы",
   "Media servers": "Медиасерверы",
   "No available episodes in this season.": "В этом сезоне нет доступных серий.",
@@ -471,7 +455,6 @@ const surfaces5: Record<string, string> = {
   "Prefer this device": "Предпочитать это устройство",
   "Preferred home server": "Предпочтительный домашний сервер",
   "Preparing narration audio": "Подготовка озвучивания",
-  "Read eBooks in Frame": "Читайте электронные книги в Frame",
   "Refresh interval in days": "Интервал обновления в днях",
   "Refresh policy": "Режим обновления",
   "Remove folder?": "Удалить папку?",
@@ -498,7 +481,7 @@ const surfaces5: Record<string, string> = {
   "Use access token — Advanced": "Использовать токен доступа: для опытных",
   "Waiting for Plex…": "Ожидание Plex…",
   "You haven’t connected a media server": "Вы ещё не подключили медиасервер",
-  days: "дней",
+  "days": "дней",
   "{n} episodes on home servers": "{n} серий на домашних серверах",
   "{n} episodes on home servers#one": "{n} серия на домашних серверах",
   "{n} episodes on home servers#few": "{n} серии на домашних серверах",

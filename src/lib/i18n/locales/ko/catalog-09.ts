@@ -142,9 +142,6 @@ const catalog09: Record<string, string> = {
   "Set up a Cloudflare relay for Watch Together": "함께 보기를 위한 Cloudflare 릴레이 설정",
   "Set up a debrid": "debrid 설정",
   "Set up a source": "소스 설정",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "시작하려면 읽을 수 있는 eBook 소스를 하나 이상 설정하세요. 메타데이터는 책의 정보를 제공하지만, Frame에서 책을 열려면 폴더, 확장 프로그램 또는 사용자 지정 소스가 필요합니다.",
-  "Set up eBooks": "eBook 설정",
   "Set up my TV from this computer": "이 컴퓨터에서 내 TV 설정",
   "Set up your own Cloudflare Worker rather than borrowing this one.":
     "이 Worker를 빌려 쓰는 대신 자체 Cloudflare Worker를 설정합니다.",
@@ -825,7 +822,6 @@ const catalog09: Record<string, string> = {
   "Start here. The ones almost everyone has.":
     "여기서 시작하세요. 거의 모두가 사용하는 애드온입니다.",
   "Start import": "가져오기 시작",
-  "Start of manga": "만화 시작",
   "Start or stop recording a GIF of the video (no subtitles). Saves to Pictures/Frame.":
     "자막 없이 동영상의 GIF 녹화를 시작하거나 중지합니다. Pictures/Frame에 저장됩니다.",
   "Start over": "처음부터 다시",
@@ -921,8 +917,6 @@ const catalog09: Record<string, string> = {
     "저장 공간이 가득 찼습니다. Frame 캐시 저장 공간을 비운 후 다시 저장해 보세요.",
   "Storage location": "저장 위치",
   "Storage overview": "저장 공간 개요",
-  "Store each title in its own folder with its EPUB or PDF":
-    "각 작품을 EPUB 또는 PDF와 함께 별도 폴더에 저장",
   "Stored as a small optimized webp.": "최적화된 작은 webp 파일로 저장됩니다.",
   "Stored as a standalone EPG source. No channels are loaded for EPG-only entries; they're kept here for future attachment to existing playlists.":
     "독립형 EPG 소스로 저장됩니다. EPG 전용 항목에서는 채널을 불러오지 않으며, 나중에 기존 재생목록에 연결할 수 있도록 여기에 보관됩니다.",

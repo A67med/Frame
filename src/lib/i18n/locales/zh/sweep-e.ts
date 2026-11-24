@@ -155,8 +155,6 @@ const sweepE: Record<string, string> = {
   "Reaching your TV": "正在连接你的电视",
   "Read": "读取",
   "Read {label}": "阅读 {label}",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "阅读此设备上已有的 EPUB、文本、Markdown 和 HTML 书籍。",
   "Read from": "阅读来源",
   "Read from your phone": "用手机阅读",
   "Read full": "阅读全文",
@@ -198,7 +196,6 @@ const sweepE: Record<string, string> = {
     "重新配色、更换字体、调整海报大小并设置壁纸。",
   "Recommendations are temporarily unavailable.": "推荐内容暂时不可用。",
   "Recommended": "推荐",
-  "Recommended eBooks": "推荐电子书",
   "Recommended for you": "为你推荐",
   "Recommended for You": "为你推荐",
   "Reconfigure": "重新配置",
@@ -582,7 +579,6 @@ const sweepE: Record<string, string> = {
   "Saves": "扑救",
   "Saving": "正在保存",
   "Saving clip…": "正在保存片段…",
-  "Saving EPUB": "正在保存 EPUB",
   "Saving GIF…": "正在保存 GIF…",
   "Saving now could overwrite them. Try again in a moment.":
     "现在保存可能会覆盖这些收藏。请稍后重试。",
@@ -737,7 +733,6 @@ const sweepE: Record<string, string> = {
   "Set up": "设置",
   "Set up a source": "设置内容源",
   "Set up Anime4K": "设置 Anime4K",
-  "Set up eBooks": "设置电子书",
   "Set up Frame": "设置 Frame",
   "Set up my TV from this computer": "从此电脑设置我的电视",
   "Set up your own Cloudflare Worker rather than borrowing this one.":

@@ -407,8 +407,6 @@ const catalog: Record<string, string> = {
   "Add to Shelf": "Agregar al Estante",
   "Add to tile {n}": "Agregar al mosaico {n}",
   "Add to your watchlist": "Agregar a tu lista de seguimiento",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Agrega fuentes de eBooks confiables desde un repositorio compatible con Frame.",
   "Add up to 6 screenshots so people can see your theme in action. Optional, but they sell it.":
     "Agrega hasta 6 capturas de pantalla para que la gente vea tu tema en acción. Es opcional, pero ayudan a convencer.",
   "Added to downloads": "Agregado a descargas",
@@ -504,7 +502,6 @@ const catalog: Record<string, string> = {
     "De vuelta en la página de la API, desplázate hasta el final. Copia el valor de API Key y pégalo en Frame. Frame lo guarda automáticamente.",
   "Back on TMDB, click your avatar in the top right and choose Settings from the menu.":
     "De vuelta en TMDB, haz clic en tu avatar arriba a la derecha y selecciona Configuración en el menú.",
-  "Back to eBook actions": "Volver a las acciones del eBook",
   "Back to editing": "Volver a la edición",
   "Back to home": "Volver al inicio",
   "Back to remote": "Volver al control remoto",
@@ -557,7 +554,6 @@ const catalog: Record<string, string> = {
   "Browse all {count} themes. Apply in one click.":
     "Explora los {count} temas. Aplícalos con un clic.",
   "Browse community": "Explorar la comunidad",
-  "Browse eBooks": "Explorar eBooks",
   "Browse files": "Explorar archivos",
   "Browsing {section}. Change section": "Explorando {section}. Cambiar de sección",
   "Browsing the theme library": "Explorando la biblioteca de temas",
@@ -567,7 +563,6 @@ const catalog: Record<string, string> = {
   "Build or import the updated theme first, then come back to push it as a new version.":
     "Primero crea o importa el tema actualizado y luego vuelve para publicarlo como una nueva versión.",
   "Build your own": "Crea el tuyo",
-  "Building EPUB": "Generando EPUB",
   "Button": "Botón",
   "Buttons": "Botones",
   "by {authors}": "de {authors}",
@@ -618,7 +613,6 @@ const catalog: Record<string, string> = {
     "Elige una voz de Edge TTS antes de generar el audio",
   "Choose another destination": "Elegir otro destino",
   "Choose API in the sidebar": "Elige API en la barra lateral",
-  "Choose eBook folder": "Elige la carpeta de eBooks",
   "Choose icon": "Elige un ícono",
   'Choose the "Less than $50k per year" tier.': 'Elige el nivel "Menos de $50 mil al año".',
   "Choose where to open this link": "Elige dónde abrir este enlace",
@@ -642,8 +636,6 @@ const catalog: Record<string, string> = {
     "Se bloqueó el acceso al portapapeles. Pega el enlace manualmente.",
   "Close cell": "Cerrar celda",
   "Close chapters": "Cerrar capítulos",
-  "Close eBook menu": "Cerrar menú del eBook",
-  "Close Manga selection": "Cerrar selección de manga",
   "Close menu": "Cerrar menú",
   "Close panel": "Cerrar panel",
   "Close studio": "Cerrar estudio",
@@ -695,8 +687,6 @@ const catalog: Record<string, string> = {
   "Could not find any peers for this torrent yet. It may be dead or very low on seeders.":
     "Aún no se encontraron pares para este torrent. Es posible que esté inactivo o tenga muy pocos seeders.",
   "Could not load comments.": "No se pudieron cargar los comentarios.",
-  "Could not load that eBook extension repository":
-    "No se pudo cargar ese repositorio de extensiones de eBooks",
   "Could not post your comment.": "No se pudo publicar tu comentario.",
   "Could not reach the bundle library.": "No se pudo acceder a la biblioteca de paquetes.",
   "Could not reach the theme library.": "No se pudo acceder a la biblioteca de temas.",
@@ -735,7 +725,6 @@ const catalog: Record<string, string> = {
     "Crear una carpeta con el nombre de la película o serie",
   "Create a free account to publish. No email required.":
     "Crea una cuenta gratuita para publicar. No se requiere correo electrónico.",
-  "Create folders for eBooks": "Crear carpetas para eBooks",
   "Critically acclaimed TV": "TV aclamada por la crítica",
   "Critics' Choice Awards": "Premios Critics' Choice",
   "Critics' Pick": "Elección de la crítica",
@@ -827,10 +816,6 @@ const catalog: Record<string, string> = {
   "DTS audio unsupported": "Audio DTS no compatible",
   "E-AC-3 unsupported": "E-AC-3 no compatible",
   "Easing tokens": "Tokens de transición",
-  "eBook actions": "Acciones de eBook",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "Las extensiones de eBook usan el worker aislado, el puente HTTP y el analizador HTML de Frame, el mismo entorno aislado que usan las extensiones de manga. Agrega solo repositorios en los que confíes.",
-  "eBook source settings": "Configuración de fuentes de eBook",
   "eBooks": "eBooks",
   "Edge TTS failed": "Falló TTS de Edge",
   "Edit the HTML and CSS by hand": "Editar el HTML y CSS manualmente",
@@ -839,7 +824,6 @@ const catalog: Record<string, string> = {
   "Enable": "Activar",
   "Enable {name}": "Activar {name}",
   "Enable Roku Network Access": "Activar acceso de red de Roku",
-  "End of manga": "Fin del manga",
   "Ending": "Final",
   "Ep {episode}": "Ep. {episode}",
   "Episode {number}": "Episodio {number}",
@@ -849,8 +833,6 @@ const catalog: Record<string, string> = {
   "Episodes and spoilers": "Episodios y spoilers",
   "Episodes that air after you add a series grab themselves":
     "Los episodios que se emitan después de agregar una serie se obtendrán automáticamente",
-  "EPUB eBook": "eBook EPUB",
-  "EPUB saved": "EPUB guardado",
   "Estimating…": "Estimando…",
   "EU-hosted, fast cache check. Same read-only usage as the others.":
     "Alojado en la UE, con verificación rápida de caché. Tiene el mismo uso de solo lectura que los demás.",
@@ -901,7 +883,6 @@ const catalog: Record<string, string> = {
   "Fills in where TMDB comes up empty (anime, older catalog). Free at":
     "Completa lo que falta en TMDB (anime y catálogo antiguo). Gratis en",
   "Film": "Película",
-  "Filter eBooks": "Filtrar eBooks",
   "Find a word or passage": "Buscar una palabra o pasaje",
   "Finish updating Frame": "Terminar de actualizar Frame",
   "first check pending": "primera comprobación pendiente",
@@ -980,7 +961,6 @@ const catalog: Record<string, string> = {
     "Frame descartó {n} resultado sospechoso o que no coincidía.",
   "Frame dropped {n} suspicious or mismatched results.":
     "Frame descartó {n} resultados sospechosos o que no coincidían.",
-  "Frame eBook": "Libro electrónico de Frame",
   "Frame found something at this address that looked like a Roku, but it didn't respond like one. The device may be offline or another product picked up the same broadcast.":
     "Frame encontró en esta dirección algo que parecía un Roku, pero no respondió como tal. Es posible que el dispositivo esté desconectado o que otro producto haya emitido la misma señal.",
   "Frame never hosts your books or source files.":
@@ -1203,7 +1183,6 @@ const catalog: Record<string, string> = {
   "Loading chapter": "Cargando capítulo",
   "Loading chapter list…": "Cargando lista de capítulos…",
   "Loading chapter…": "Cargando capítulo…",
-  "Loading eBook…": "Cargando eBook…",
   "Loading extensions…": "Cargando extensiones…",
   "Loading history": "Cargando historial",
   "Loading models…": "Cargando modelos…",
@@ -1225,10 +1204,8 @@ const catalog: Record<string, string> = {
   "Make sure the Roku is powered on and on the same Wi-Fi as your computer.":
     "Asegúrate de que el Roku esté encendido y conectado a la misma red Wi-Fi que tu computadora.",
   "MAL Score": "Puntuación de MAL",
-  "Manage eBook sources": "Administrar fuentes de eBooks",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "Administra todos los lugares desde los que Frame puede leer, ya sea en el disco o en la web.",
-  "Manga adaptation": "Adaptación de manga",
   "Mark all watched": "Marcar todo como visto",
   "Mark as Read": "Marcar como leído",
   "Mark as unwatched": "Marcar como no visto",
@@ -1265,7 +1242,6 @@ const catalog: Record<string, string> = {
   "Movies · {n}": "Películas · {n}",
   "mpv": "mpv",
   "Mute / Unmute": "Silenciar / Activar sonido",
-  "My eBooks": "Mis eBooks",
   "My layout": "Mi diseño",
   "MyAnimeList sync": "Sincronización con MyAnimeList",
   "Name each file after its slot": "Asigna a cada archivo el nombre de su espacio",
@@ -1319,9 +1295,6 @@ const catalog: Record<string, string> = {
   "No community themes yet. Be the first to share one.":
     "Aún no hay temas de la comunidad. Sé la primera persona en compartir uno.",
   "No custom code yet.": "Aún no hay código personalizado.",
-  "No description is available for this eBook.":
-    "No hay ninguna descripción disponible para este eBook.",
-  "No eBooks found.": "No se encontraron eBooks.",
   "No episodes to show here yet.": "Aún no hay episodios para mostrar aquí.",
   "No favorites yet. Star channels to pin them here.":
     "Aún no hay favoritos. Marca canales con una estrella para fijarlos aquí.",
@@ -1349,14 +1322,10 @@ const catalog: Record<string, string> = {
     "Aún no hay versiones anteriores. Tu próxima actualización iniciará el historial.",
   "No profile": "No hay perfil",
   "No published themes yet": "Aún no hay temas publicados",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "Aún no hay repositorios. Agrega uno arriba para explorar extensiones de eBooks.",
   "No saved passages yet.": "Aún no hay fragmentos guardados.",
   "No saved profiles yet.": "Aún no hay perfiles guardados.",
   "No series found": "No se encontró ninguna serie",
   "no sources returned anything": "ninguna fuente devolvió resultados",
-  "No story summary is available for this eBook.":
-    "No hay ningún resumen disponible para este eBook.",
   "No themes match your filter.": "Ningún tema coincide con tu filtro.",
   "No themes match your search.": "Ningún tema coincide con tu búsqueda.",
   "No themes to share yet": "Aún no hay temas para compartir",
@@ -1435,8 +1404,6 @@ const catalog: Record<string, string> = {
   "Open {site}": "Abrir {site}",
   "Open {type} adaptation: {title}": "Abrir adaptación de tipo {type}: {title}",
   "Open a folder": "Abrir una carpeta",
-  "Open a manga on Frame to control the reader from here.":
-    "Abre un manga en Frame para controlar el lector desde aquí.",
   "Open a terminal and run: brew install ffmpeg":
     "Abre una terminal y ejecuta: brew install ffmpeg",
   "Open a terminal and run: winget install Gyan.FFmpeg":
@@ -1460,8 +1427,6 @@ const catalog: Record<string, string> = {
   "Open the library, hit Share a theme, and your first publication shows up here with its review status, downloads, and version history.":
     "Abre la biblioteca, selecciona Compartir un tema y tu primera publicación aparecerá aquí con el estado de revisión, las descargas y el historial de versiones.",
   "Open the TMDB API page": "Abrir la página de la API de TMDB",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "Abre el menú circular de cualquier eBook y selecciona Agregar a la estantería.",
   "Open TheTVDB": "Abrir TheTVDB",
   "Open your account settings": "Abrir los ajustes de tu cuenta",
   "Opening": "Abriendo",
@@ -1520,8 +1485,6 @@ const catalog: Record<string, string> = {
   "Pick a z-index for your overlays that sits where you want it.":
     "Elige un z-index para que tus superposiciones aparezcan donde quieras.",
   "Pick art": "Elige una imagen",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "Elige una carpeta de biblioteca. Cada subcarpeta debe contener un eBook. Coloca sus capítulos dentro como archivos TXT, Markdown, HTML o EPUB y, si quieres, agrega una imagen de portada.",
   "Pick one of your themes to share.": "Elige uno de tus temas para compartirlo.",
   "Pick the theme with your latest changes. It becomes the new version.":
     "Elige el tema con tus cambios más recientes. Se convertirá en la nueva versión.",
@@ -1540,7 +1503,6 @@ const catalog: Record<string, string> = {
   "Please choose a PNG, SVG, JPG, or WebP image.": "Elige una imagen PNG, SVG, JPG o WebP.",
   "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Up to {count} files, 100 MB each.":
     "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Hasta {count} archivos de 100 MB cada uno.",
-  "Popular eBooks": "eBooks populares",
   "Popular titles from book metadata": "Títulos populares según los metadatos de libros",
   "Popular titles from the installed source": "Títulos populares de la fuente instalada",
   "Position {position}": "Posición {position}",
@@ -1606,9 +1568,6 @@ const catalog: Record<string, string> = {
     "Accede a fuentes HTTP con harbor.http(url, opts), a fuentes gRPC binarias con harbor.grpc(url, protobufBytes, opts) y analiza HTML con harbor.parseHtml(html). No hay fetch, DOM ni almacenamiento en el entorno aislado.",
   "reached {count} five-star ratings": "alcanzó {count} calificaciones de cinco estrellas",
   "Read chapter with Edge TTS": "Leer el capítulo con Edge TTS",
-  "Read eBook files you already have": "Leer archivos de eBook que ya tienes",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "Lee libros EPUB, de texto, Markdown y HTML que ya estén en este dispositivo.",
   "Read from": "Leer desde",
   "Read here": "Leer aquí",
   "Read on": "Seguir leyendo",
@@ -1630,7 +1589,6 @@ const catalog: Record<string, string> = {
   "Recognized at the {award}.": "Reconocido en los {award}.",
   "Recommendations are temporarily unavailable.":
     "Las recomendaciones no están disponibles temporalmente.",
-  "Recommended eBooks": "eBooks recomendados",
   "Reconnecting": "Reconectando",
   "Reconnecting to your computer": "Reconectando con tu computadora",
   "Reconnecting…": "Reconectando…",
@@ -1640,8 +1598,6 @@ const catalog: Record<string, string> = {
   "Redo (Ctrl/Cmd + Shift + Z)": "Rehacer (Ctrl/Cmd + Shift + Z)",
   "Reference": "Referencia",
   "Reference passage": "Pasaje de referencia",
-  "Reflowable eBook": "eBook reajustable",
-  "Refresh eBook source": "Actualizar fuente del eBook",
   "Refresh source": "Actualizar fuente",
   "Refusing the transaction": "Rechazar la transacción",
   "Release to add it to your library": "Suelta para agregarlo a tu biblioteca",
@@ -1758,7 +1714,6 @@ const catalog: Record<string, string> = {
   "Saved to this passage": "Guardado en este pasaje",
   "Saved to your favorites": "Guardado en tus favoritos",
   "Saved to your library.": "Guardado en tu biblioteca.",
-  "Saving EPUB": "Guardando EPUB",
   "Say a title, actor, or genre": "Di un título, actor o género",
   "Say it is for personal use": "Indica que es para uso personal",
   "scam metadata": "metadatos fraudulentos",
@@ -1780,7 +1735,6 @@ const catalog: Record<string, string> = {
   "Search {n} favorites#one": "Buscar en {n} favoritos",
   "Search chapter": "Buscar capítulo",
   "Search chapters": "Buscar capítulos",
-  "Search eBooks": "Buscar eBooks",
   'Search for "Media Assistant" (channel ID 782875, free).':
     'Busca "Media Assistant" (ID del canal: 782875, gratis).',
   "Search icons": "Buscar iconos",
@@ -1822,9 +1776,6 @@ const catalog: Record<string, string> = {
     "Se establecen en <html>. Úsalos para limitar los estilos a una opción específica de diseño, tarjeta o botón.",
   "Set on the root. Override any to swap typography.":
     "Se establecen en el elemento raíz. Sobrescribe cualquiera para cambiar la tipografía.",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "Configura al menos una fuente de eBooks compatible para comenzar. Los metadatos pueden describir un libro, pero Frame necesita una carpeta, una extensión o una fuente personalizada para abrirlo.",
-  "Set up eBooks": "Configurar eBooks",
   "Set your status": "Establece tu estado",
   "Sets streaming availability and the Now Playing release window. Pick a country and Frame offers to match the interface, metadata, subtitle, and audio languages to it.":
     "Establece la disponibilidad en streaming y el período de estrenos de En cartelera. Elige un país y Frame te ofrecerá adaptar a este los idiomas de la interfaz, los metadatos, los subtítulos y el audio.",
@@ -1923,7 +1874,6 @@ const catalog: Record<string, string> = {
   "Split the borrowed amount equally": "Dividir el monto prestado en partes iguales",
   "Stacked": "Apilado",
   "Start from": "Comenzar desde",
-  "Start of manga": "Inicio del manga",
   "Start Reading": "Empezar a leer",
   "Starting a probation period": "Comenzar un período de prueba",
   "Starting a show": "Iniciando una serie",
@@ -1938,8 +1888,6 @@ const catalog: Record<string, string> = {
   "Stop sample": "Detener muestra",
   "Storage is full. Clear Frame cache storage, then try saving again.":
     "El almacenamiento está lleno. Borra la caché de Frame e intenta guardar de nuevo.",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Guardar cada título en su propia carpeta junto con su EPUB o PDF",
   "Stories you love": "Historias que te encantan",
   "Stream offline": "Fuente sin conexión",
   "Stream Together": "Ver juntos",
@@ -2016,8 +1964,6 @@ const catalog: Record<string, string> = {
     "Las mejores películas y series de {genre}, actualizadas constantemente.",
   "The code from sign up": "El código del registro",
   "The cost of borrowing per year": "El costo anual de un préstamo",
-  "The eBook download was canceled.": "Se canceló la descarga del libro electrónico.",
-  "The eBook export was canceled.": "La exportación del eBook se canceló.",
   'The economy has "inflation". What\'s happening?':
     "La economía tiene «inflación». ¿Qué está pasando?",
   "The full annual amount upfront": "El monto anual total por adelantado",
@@ -2065,9 +2011,6 @@ const catalog: Record<string, string> = {
   "This collection has no titles to show yet.":
     "Esta colección todavía no tiene títulos para mostrar.",
   "This comment can't be posted.": "No se puede publicar este comentario.",
-  "This eBook could not be exported": "No se pudo exportar este eBook",
-  "This eBook is not connected to an installed source.":
-    "Este eBook no está conectado a una fuente instalada.",
   "This file isn't a Frame theme.": "Este archivo no es un tema de Frame.",
   "This file isn't a readable theme.": "Este archivo de tema no se puede leer.",
   "This game couldn't load right now.": "Este juego no pudo cargarse en este momento.",
@@ -2085,8 +2028,6 @@ const catalog: Record<string, string> = {
   "This PC": "Esta PC",
   "This playlist hasn't been loaded yet, or it has no channels.":
     "Esta lista de reproducción aún no se ha cargado o no tiene canales.",
-  "This repository lists no eBook extensions.":
-    "Este repositorio no incluye extensiones de eBooks.",
   "This site may not support Frame's temporary viewer. Retry the original link or open it in your browser.":
     "Es posible que este sitio no sea compatible con el visor temporal de Frame. Vuelve a intentar con el enlace original o ábrelo en tu navegador.",
   "This source did not provide any chapters.": "Esta fuente no proporcionó ningún capítulo.",
@@ -2249,7 +2190,6 @@ const catalog: Record<string, string> = {
   "Watch Live TV?": "¿Ver TV en vivo?",
   "Watching {n} streams at once": "Reproduciendo {n} fuentes a la vez",
   "Watching 1 stream at once": "Reproduciendo 1 fuente a la vez",
-  "Ways to add an eBook source": "Formas de agregar una fuente de eBooks",
   "We couldn't find what you were looking for. The wire got snipped: either the page moved, the addon's offline, or something glitched on our end.":
     "No encontramos lo que buscabas. Se cortó la conexión: puede que la página haya cambiado de lugar, el complemento esté fuera de línea o algo haya fallado de nuestro lado.",
   "We intend to keep this little footnote area unprofessional, unlike the rest of the project. We hope you enjoy!":
@@ -2373,7 +2313,6 @@ const catalog: Record<string, string> = {
   "Your shelf, your rules.": "Tu estante, tus reglas.",
   "Your theme": "Tu tema",
   "Your theme, in everyone's library": "Tu tema, en la biblioteca de todos",
-  "YouTube, SoundCloud or Spotify link": "Enlace de YouTube, SoundCloud o Spotify",
   "Z-index map": "Mapa de z-index",
   "Zipped themes aren't supported yet. Drop the theme file directly.":
     "Los temas comprimidos en ZIP aún no son compatibles. Suelta directamente el archivo del tema.",

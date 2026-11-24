@@ -291,8 +291,6 @@ const catalogAC: Record<string, string> = {
     "कुछ दोस्त जोड़ें और वे क्या देख रहे हैं, उनकी रेटिंग और पसंदीदा शीर्षक यहाँ दिखाई देंगे।",
   "Add a list": "एक सूची जोड़ें",
   "Add a local folder": "एक लोकल फ़ोल्डर जोड़ें",
-  "Add a manga source": "मंगा स्रोत जोड़ें",
-  "Add a manga source to open these": "इन्हें खोलने के लिए मंगा स्रोत जोड़ें",
   "Add a movie or show to this list...": "इस सूची में कोई फ़िल्म या शो जोड़ें...",
   "Add a playlist": "प्लेलिस्ट जोड़ें",
   "Add a profile for someone else and everyone keeps their own Continue Watching, watch history, and progress.":
@@ -374,8 +372,6 @@ const catalogAC: Record<string, string> = {
   "Add to watchlist": "वॉचलिस्ट में जोड़ें",
   "Add to your watchlist": "अपनी वॉचलिस्ट में जोड़ें",
   "Add to {name}": "{name} में जोड़ें",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Frame-संगत रिपॉज़िटरी से भरोसेमंद eBook स्रोत जोड़ें.",
   "Add up to 6 screenshots so people can see your theme in action. Optional, but they sell it.":
     "अधिकतम 6 स्क्रीनशॉट जोड़ें, ताकि लोग आपकी थीम को काम करते हुए देख सकें. यह वैकल्पिक है, लेकिन इनसे थीम अधिक आकर्षक लगती है.",
   "Add up to {max} profiles. Enter your handle only, not the full link.":
@@ -916,7 +912,6 @@ const catalogAC: Record<string, string> = {
   "Back to browse": "ब्राउज़ पर वापस जाएँ",
   "Back to collections": "कलेक्शन पर वापस जाएँ",
   "Back to details": "विवरण पर वापस जाएँ",
-  "Back to eBook actions": "eBook कार्रवाइयों पर वापस जाएँ",
   "Back to editing": "संपादन पर वापस जाएँ",
   "Back to home": "होम पर वापस जाएँ",
   "Back to library": "लाइब्रेरी पर वापस जाएँ",
@@ -1193,10 +1188,8 @@ const catalogAC: Record<string, string> = {
   "Browse channels": "चैनल ब्राउज़ करें",
   "Browse community": "कम्युनिटी ब्राउज़ करें",
   "Browse community themes": "कम्युनिटी थीम ब्राउज़ करें",
-  "Browse eBooks": "eBooks ब्राउज़ करें",
   "Browse files": "फ़ाइलें ब्राउज़ करें",
   "Browse groups": "ग्रुप ब्राउज़ करें",
-  "Browse manga": "मंगा ब्राउज़ करें",
   "Browse provider": "प्रोवाइडर ब्राउज़ करें",
   "Browse public groups": "सार्वजनिक ग्रुप ब्राउज़ करें",
   "Browse pull requests": "पुल रिक्वेस्ट ब्राउज़ करें",
@@ -1244,7 +1237,6 @@ const catalogAC: Record<string, string> = {
   "Build your own feed from actors, directors, and Trakt lists":
     "अभिनेताओं, निर्देशकों और Trakt सूचियों से अपनी फ़ीड बनाएँ",
   "Build your own palette": "अपना पैलेट बनाएँ",
-  "Building EPUB": "EPUB बनाया जा रहा है",
   "Building tonight's queue…": "आज रात का क्यू तैयार किया जा रहा है…",
   "Building your voyage": "आपकी यात्रा तैयार की जा रही है",
   "Built for desktop resolutions": "डेस्कटॉप रिज़ॉल्यूशन के लिए बनाया गया",
@@ -1464,7 +1456,6 @@ const catalogAC: Record<string, string> = {
   "Choose an avatar": "कोई अवतार चुनें",
   "Choose another destination": "कोई दूसरा गंतव्य चुनें",
   "Choose another source": "कोई दूसरा स्रोत चुनें",
-  "Choose eBook folder": "eBook फ़ोल्डर चुनें",
   "Choose file": "फ़ाइल चुनें",
   "Choose folder": "फ़ोल्डर चुनें",
   "Choose how Watch Together and the minimize, maximize, and close buttons look. Liquid glass replaces the clean transparent controls.":
@@ -1613,10 +1604,8 @@ const catalogAC: Record<string, string> = {
   "Clock style": "घड़ी की शैली",
   "Close": "बंद करें",
   "Close Frame?": "Frame बंद करें?",
-  "Close Manga selection": "मांगा चयन बंद करें",
   "Close cell": "सेल बंद करें",
   "Close chapters": "अध्याय बंद करें",
-  "Close eBook menu": "eBook मेन्यू बंद करें",
   "Close editor": "एडिटर बंद करें",
   "Close guide": "गाइड बंद करें",
   "Close image viewer": "इमेज व्यूअर बंद करें",
@@ -1768,7 +1757,6 @@ const catalogAC: Record<string, string> = {
   "Connect Trakt in settings first": "पहले सेटिंग्स में Trakt कनेक्ट करें",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Trakt या Simkl कनेक्ट करें, या देखना शुरू करें, और आपके आँकड़े अपने-आप बनने लगेंगे।",
-  "Connect a Suwayomi server": "Suwayomi सर्वर कनेक्ट करें",
   "Connect a controller: every press and stick move shows up here, live.":
     "कंट्रोलर कनेक्ट करें: हर बटन दबाना और स्टिक की हर हलचल यहाँ लाइव दिखाई देगी।",
   "Connect a debrid service (Real-Debrid, TorBox, AllDebrid) for instant HD without the wait.":
@@ -1834,8 +1822,6 @@ const catalogAC: Record<string, string> = {
   "Content advisory on start": "शुरू में कॉन्टेंट संबंधी चेतावनी",
   "Content advisory style": "कॉन्टेंट चेतावनी की शैली",
   "Content filters": "कॉन्टेंट फ़िल्टर",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "कॉन्टेंट फ़िल्टर (एनीमे / मंगा / लाइव TV / खेल / वयस्क कॉन्टेंट छिपाएँ)",
   "Contents": "विषय-सूची",
   "Continue": "जारी रखें",
   "Continue Reading": "पढ़ना जारी रखें",
@@ -1867,8 +1853,6 @@ const catalogAC: Record<string, string> = {
   "Contribute on GitHub": "GitHub पर योगदान दें",
   "Control bar": "कंट्रोल बार",
   "Control from your phone": "अपने फ़ोन से कंट्रोल करें",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "बड़ी स्क्रीन पर पढ़ते समय अपने फ़ोन से मंगा फ्लिपबुक को कंट्रोल करें: पेज पलटें, ज़ूम करें और मोड बदलें। पढ़ते समय रीडर में भी यह लिंक दिखता है।",
   "Control who can see your friends, activity, and stats.":
     "तय करें कि आपके दोस्त, गतिविधि और आँकड़े कौन देख सकता है।",
   "Controller connected": "कंट्रोलर कनेक्टेड",
@@ -1949,7 +1933,6 @@ const catalogAC: Record<string, string> = {
   "Could not load groups.": "ग्रुप लोड नहीं हो सके।",
   "Could not load results": "नतीजे लोड नहीं हो सके",
   "Could not load sources": "स्रोत लोड नहीं हो सके",
-  "Could not load that eBook extension repository": "वह eBook एक्सटेंशन रिपॉज़िटरी लोड नहीं की जा सकी",
   "Could not load that skin.": "वह स्किन लोड नहीं हो सकी।",
   "Could not load this playlist": "यह प्लेलिस्ट लोड नहीं हो सकी",
   "Could not load this profile": "यह प्रोफ़ाइल लोड नहीं हो सकी",
@@ -2153,7 +2136,6 @@ const catalogAC: Record<string, string> = {
   "Create a group": "ग्रुप बनाएँ",
   "Create a group to watch and share together.": "साथ देखने और शेयर करने के लिए ग्रुप बनाएँ।",
   "Create account": "अकाउंट बनाएँ",
-  "Create folders for eBooks": "eBooks के लिए फ़ोल्डर बनाएँ",
   "Create folders for movies and shows": "फ़िल्मों और शो के लिए फ़ोल्डर बनाएँ",
   "Create group": "ग्रुप बनाएँ",
   "Create lists in your library to feature them here": "अपनी लाइब्रेरी में सूचियाँ बनाकर उन्हें यहाँ दिखाएँ",

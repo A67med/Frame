@@ -6,8 +6,6 @@ const catalog10: Record<string, string> = {
   "Power tools & diagnostics": "Narzędzia zaawansowane i diagnostyka",
   "Power-user knob. Inject your own CSS, JS, and HTML into Frame. Lives in your local settings; nothing leaves your machine.":
     "Opcja dla zaawansowanych użytkowników. Wstrzykuj własny kod CSS, JS i HTML do Frame. Jest przechowywany w ustawieniach lokalnych, nic nie opuszcza Twojego urządzenia.",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Obsługuje wszystko na tej stronie: aplikację internetową, pilota na telefonie i pilota do czytnika mangi.",
   "Powers the Identify song button in the player.":
     "Obsługuje przycisk Rozpoznaj utwór w odtwarzaczu.",
   "Powers the Identify-song button in the player. Get a token at":
@@ -240,8 +238,6 @@ const catalog10: Record<string, string> = {
   "Ranked in the order you turn them on.": "Uszeregowane według kolejności włączania.",
   "Ranking the best matches": "Ustalanie kolejności najlepszych wyników",
   "Rate": "Oceń",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Oceniaj filmy, seriale, anime i mangi, aby utworzyć zestawienie swoich ocen",
   "Rate on SIMKL": "Oceń w SIMKL",
   "Rate on stremio-addons.net": "Oceń na stremio-addons.net",
   "Rate this": "Oceń",
@@ -279,23 +275,17 @@ const catalog10: Record<string, string> = {
     "Korzystaj ze źródeł HTTP za pomocą harbor.http(url, opts), z binarnych źródeł gRPC za pomocą harbor.grpc(url, protobufBytes, opts), a kod HTML analizuj za pomocą harbor.parseHtml(html). W piaskownicy nie są dostępne fetch, DOM ani pamięć masowa.",
   "Reaching your TV": "Łączenie z telewizorem",
   "Read": "Odczytaj",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "Czytaj książki w formatach EPUB, tekstowym, Markdown i HTML, które są już na tym urządzeniu.",
   "Read Now": "Czytaj teraz",
   "Read chapter with Edge TTS": "Czytaj rozdział za pomocą Edge TTS",
-  "Read eBook files you already have": "Czytaj pliki e-booków, które już masz",
   "Read from": "Czytaj z",
   "Read from your phone": "Czytaj na telefonie",
   "Read full": "Czytaj całość",
   "Read here": "Czytaj tutaj",
   "Read latest": "Czytaj najnowszy",
-  "Read manga files you already have": "Czytaj posiadane pliki mangi",
-  "Read manga in Frame": "Czytaj mangę w Frame",
   "Read more": "Czytaj więcej",
   "Read now": "Czytaj teraz",
   "Read on": "Czytaj na",
   "Read on this device": "Czytaj na tym urządzeniu",
-  "Read the Manga": "Czytaj mangę",
   "Read the complete chapter with Edge TTS": "Przeczytaj cały rozdział za pomocą Edge TTS",
   "Read the rest": "Czytaj dalej",
   "Read titles, ids, and any poster/logo/backdrop already saved next to your files. Missing images are filled from TMDB.":
@@ -354,7 +344,6 @@ const catalog10: Record<string, string> = {
     "Zmień kolory wszystkiego, czcionki i rozmiar plakatów oraz ustaw tapetę.",
   "Recommendations are temporarily unavailable.": "Rekomendacje są tymczasowo niedostępne.",
   "Recommended": "Polecane",
-  "Recommended eBooks": "Polecane e-booki",
   "Recommended for You": "Polecane dla Ciebie",
   "Recommended for you": "Polecane dla Ciebie",
   "Reconfigure": "Skonfiguruj ponownie",
@@ -391,10 +380,8 @@ const catalog10: Record<string, string> = {
   "Reference quality, very heavy.": "Jakość referencyjna, bardzo duże obciążenie.",
   "Refine": "Doprecyzuj",
   "Refine search": "Doprecyzuj wyszukiwanie",
-  "Reflowable eBook": "E-book z tekstem o zmiennym układzie",
   "Refresh": "Odśwież",
   "Refresh button": "Przycisk odświeżania",
-  "Refresh eBook source": "Odśwież źródło e-booków",
   "Refresh extensions": "Odśwież rozszerzenia",
   "Refresh list": "Odśwież listę",
   "Refresh playlist": "Odśwież playlistę",
@@ -526,7 +513,6 @@ const catalog10: Record<string, string> = {
   "Removes the Anime tab and every anime title from all rows everywhere: Home, Discover, Top 10, and catalogs. Western animation like Pixar is kept, and you can still find anime by searching.":
     "Usuwa kartę Anime i wszystkie tytuły anime ze wszystkich wierszy: na stronie głównej, w sekcji Odkrywaj, w Top 10 i katalogach. Zachodnie animacje, takie jak filmy Pixar, pozostają dostępne, a anime nadal można znaleźć za pomocą wyszukiwania.",
   "Removes the Live TV tab from the sidebar.": "Usuwa kartę Telewizja na żywo z paska bocznego.",
-  "Removes the Manga tab from the sidebar.": "Usuwa kartę Manga z paska bocznego.",
   "Removing": "Usuwanie",
   "Removing...": "Usuwanie...",
   "Removing…": "Usuwanie…",

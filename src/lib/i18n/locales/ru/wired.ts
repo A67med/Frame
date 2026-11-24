@@ -19,21 +19,18 @@ const wired: Record<string, string> = {
   "Theme studio": "Студия тем",
   "Untitled theme": "Тема без названия",
   "Undo (Ctrl/Cmd + Z)": "Отменить (Ctrl/Cmd + Z)",
-  Redo: "Повторить",
+  "Redo": "Повторить",
   "Redo (Ctrl/Cmd + Shift + Z)": "Повторить (Ctrl/Cmd + Shift + Z)",
   "Close studio": "Закрыть студию",
-  Button: "Кнопка",
+  "Button": "Кнопка",
   "Sample title": "Пример названия",
   "Panel surface": "Поверхность панели",
   "Secondary copy sits here.": "Здесь располагается дополнительный текст.",
-  Primary: "Основной",
-  Secondary: "Дополнительный",
+  "Primary": "Основной",
+  "Secondary": "Дополнительный",
   "Organize downloads into folders by movie or series name":
     "Раскладывать загрузки по папкам с названиями фильмов или сериалов",
-  eBooks: "Электронные книги",
-  "Create folders for eBooks": "Создавать папки для электронных книг",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Сохранять каждое название в отдельной папке с файлом EPUB или PDF",
+  "eBooks": "Электронные книги",
   "Default location": "Папка по умолчанию",
   "{deviceName} is an audio-only device. Frame can't transcode video to audio yet, so this device can only stream audio files. Pick a TV, Chromecast, or display-equipped device to stream video.":
     "Устройство {deviceName} поддерживает только звук. Frame пока не умеет преобразовывать видео в аудио, поэтому на это устройство можно транслировать только аудиофайлы. Для видео выберите телевизор, Chromecast или устройство с экраном.",
@@ -90,23 +87,15 @@ const wired: Record<string, string> = {
   "Loading {name}...": "Загрузка {name}...",
   "This game couldn't load right now.": "Сейчас не удалось загрузить эту игру.",
   "Open a folder": "Открыть папку",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "Читайте книги EPUB, текстовые, Markdown и HTML-файлы, уже сохранённые на этом устройстве.",
   "Install an extension": "Установить расширение",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Добавьте доверенные источники электронных книг из совместимого с Frame репозитория.",
   "Connect a source": "Подключить источник",
   "Bring a server-rendered library aboard with your own source configuration.":
     "Подключите библиотеку, которую отдаёт ваш сервер, с помощью собственной конфигурации источника.",
   "Frame reading room": "Читальный зал Frame",
   "Your shelf is": "Ваша полка",
   "ready for a story.": "ждёт новую историю.",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "Чтобы начать, настройте хотя бы один доступный для чтения источник электронных книг. Метаданные могут описать книгу, но открыть её Frame сможет только из папки, расширения или пользовательского источника.",
-  "Set up eBooks": "Настроить электронные книги",
   "Frame never hosts your books or source files.": "Frame не хранит ваши книги и исходные файлы.",
   "Reserved for your next book": "Место для вашей следующей книги",
-  "Ways to add an eBook source": "Способы добавить источник электронных книг",
   "Frame {version} downloaded but did not install on its own.":
     "Версия Frame {version} загружена, но не установилась автоматически.",
   "Mark as unwatched": "Отметить непросмотренным",
@@ -147,7 +136,7 @@ const wired: Record<string, string> = {
     "Скачайте и запустите установщик, чтобы завершить обновление. Если ошибка повторится, один раз запустите его от имени администратора.",
   "Restart to update": "Перезапустить для обновления",
   "Update ready": "Обновление готово",
-  History: "История",
+  "History": "История",
 };
 
 export default wired;

@@ -81,7 +81,7 @@ const profileFill: Record<string, string> = {
   "Favourite games": "Lieblingsspiele",
   "Favourite music": "Lieblingsmusik",
   "Featured lists": "Listen im Fokus",
-  Finished: "Beendet",
+  "Finished": "Beendet",
   "Game search needs an API key before it can run.":
     "Für die Spielesuche ist ein API-Schlüssel erforderlich.",
   "Frame is having trouble, try again in a moment":
@@ -107,7 +107,7 @@ const profileFill: Record<string, string> = {
   "Links are not allowed in comments": "Links sind in Kommentaren nicht erlaubt",
   "List full": "Liste ist voll",
   "List link": "Listenlink",
-  Lists: "Listen",
+  "Lists": "Listen",
   "Loading groups": "Gruppen werden geladen",
   "Manage connection": "Verbindung verwalten",
   "Move or hide your cards": "Karten verschieben oder ausblenden",
@@ -144,7 +144,7 @@ const profileFill: Record<string, string> = {
   "Open Simkl profile": "Simkl-Profil öffnen",
   "Open account settings": "Kontoeinstellungen öffnen",
   "Open {alias} profile": "Profil von {alias} öffnen",
-  Owner: "Eigentümer",
+  "Owner": "Eigentümer",
   "Pick a star rating first": "Wähle zuerst eine Sternebewertung",
   "Pick lists from your library to show them here":
     "Wähle Listen aus deiner Mediathek aus, um sie hier anzuzeigen.",
@@ -167,10 +167,8 @@ const profileFill: Record<string, string> = {
   "Profile background": "Profilhintergrund",
   "Profile cards": "Profilkarten",
   "Profile link": "Profillink",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Bewerte Filme, Serien, Anime und Manga, um deine Bewertungsliste aufzubauen",
   "Rate this": "Bewerten",
-  Rated: "Bewertet",
+  "Rated": "Bewertet",
   "Rating removed": "Bewertung entfernt",
   "Rating saved": "Bewertung gespeichert",
   "Ratings need a Frame account": "Für Bewertungen ist ein Frame-Konto erforderlich",
@@ -221,8 +219,6 @@ const profileFill: Record<string, string> = {
   "Stored as a small optimized webp.": "Als kleine, optimierte WebP-Datei gespeichert.",
   "Tap a star to change, then save": "Stern antippen, um die Bewertung zu ändern, dann speichern",
   "Tap a star to rate": "Tippe zum Bewerten auf einen Stern",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "Tippe bei einem Film, einer Serie, einem Manga oder einer Figur auf das Herz, um den Titel bzw. die Figur hier zu speichern.",
   "That image could not be read.": "Dieses Bild konnte nicht gelesen werden.",
   "That looks like spam, try rephrasing": "Das sieht nach Spam aus. Formuliere es anders.",
   "That's {max} artists. Remove one to add another.":

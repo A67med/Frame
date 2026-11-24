@@ -66,9 +66,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "Применение настройки P2P…",
   "Areas where data already exists let you choose how to combine it.":
     "В разделах, где уже есть данные, можно выбрать способ их объединения.",
-  Attachments: "Вложения",
-  Automatic: "Автоматически",
-  Avatar: "Аватар",
+  "Attachments": "Вложения",
+  "Automatic": "Автоматически",
+  "Avatar": "Аватар",
   "Awards cache": "Кэш наград",
   "Badge packs": "Наборы значков",
   "Badge rules": "Правила значков",
@@ -89,7 +89,7 @@ const settingsRefinements: Record<string, string> = {
     "Создайте именованный фильтр и применяйте его при выборе источника, чтобы сократить длинный список потоков до нужных вариантов.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton отправляется возвращать украденный локомотив.",
-  Canvas: "Фон",
+  "Canvas": "Фон",
   "Captions and quiet hints": "Подписи и ненавязчивые подсказки",
   "Cards need a TMDB key.": "Для карточек нужен ключ TMDB.",
   "Cards need an MDBList key.": "Для карточек нужен ключ MDBList.",
@@ -136,8 +136,6 @@ const settingsRefinements: Record<string, string> = {
     "Выберите, когда начинать следующую серию и когда спрашивать, продолжаете ли вы смотреть.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Выберите, где Frame ищет субтитры. Результаты включённых источников объединяются без дубликатов.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "Выберите, куда сохранять видео и электронные книги и как организовать их папки.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "Выберите, блокировать ли запросы к известным рекламным, аналитическим и отслеживающим сервисам.",
   "Choose which addon results appear when you pick a stream.":
@@ -290,8 +288,6 @@ const settingsRefinements: Record<string, string> = {
     "Frame не удалось проверить установку SVP. Повторите попытку.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame ищет субтитры в этом порядке. Поставьте предпочитаемый язык первым.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "Frame на других устройствах: веб-приложение, пульт на телефоне и пульт для чтения манги.",
   "Frame profile showing watch statistics": "Профиль Frame со статистикой просмотров",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame использует собственный сервер сообщества. Вы можете указать сервер, которым управляете сами.",
@@ -368,7 +364,7 @@ const settingsRefinements: Record<string, string> = {
     "Оставьте автоматический режим, если интерфейс Frame не мерцает и не дёргается. Эта настройка управляет окном приложения, а не воспроизведением видео.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "Разрешает Frame воспроизводить по P2P на этом устройстве, если ссылка debrid недоступна. Выключите для запрета локального P2P-воспроизведения. Настроенный удалённый сервер по-прежнему сможет их воспроизводить.",
-  Licence: "Лицензия",
+  "Licence": "Лицензия",
   "Licenses & attribution": "Лицензии и авторство",
   "Lightens or darkens the whole picture.": "Осветляет или затемняет всё изображение.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -389,10 +385,10 @@ const settingsRefinements: Record<string, string> = {
     "Выбирать потоки, отмеченные как кешированные или уже находящиеся в вашей библиотеке debrid.",
   "Maximum memory used for buffered video.": "Максимальный объём памяти для буферизации видео.",
   "Maximum size (GB)": "Максимальный размер (GB)",
-  Merge: "Объединить",
+  "Merge": "Объединить",
   "Minimize to preview (Ctrl/Cmd + P)": "Свернуть для предпросмотра (Ctrl/Cmd + P)",
   "Minimum seeders": "Минимум сидов",
-  Motion: "Движение",
+  "Motion": "Движение",
   "Move earlier": "Повысить приоритет",
   "Move {language} earlier": "Повысить приоритет языка: {language}",
   "Move {name} down": "Переместить «{name}» вниз",
@@ -427,7 +423,7 @@ const settingsRefinements: Record<string, string> = {
     "Необязательно. Оставьте контакты, если разрешаете нам уточнить детали, и выберите, хотите ли вы публичного упоминания.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "Необязательно. Используется для продления времени просмотра. Без PIN-кода по истечении времени нужно сменить профиль.",
-  Pages: "Страницы",
+  "Pages": "Страницы",
   "Pause after several episodes and ask before continuing.":
     "Приостанавливать после нескольких серий и спрашивать перед продолжением.",
   "Pause preview": "Приостановить предпросмотр",
@@ -472,7 +468,7 @@ const settingsRefinements: Record<string, string> = {
   "Repair & diagnostics": "Исправление и диагностика",
   "Report something broken, or support the project.":
     "Сообщите о неисправности или поддержите проект.",
-  Required: "Обязательно",
+  "Required": "Обязательно",
   "Reset keyboard shortcuts?": "Сбросить сочетания клавиш?",
   "Reset shortcuts": "Сбросить сочетания клавиш",
   "Reset {setting}": "Сбросить: {setting}",
@@ -755,11 +751,11 @@ const settingsRefinements: Record<string, string> = {
     "Вход в аккаунт, сервисы учёта просмотренного и ваш ретранслятор.",
   "Your {n} custom shortcuts will return to their defaults.":
     "Ваши настроенные сочетания клавиш ({n}) будут сброшены к значениям по умолчанию.",
-  code: "код",
+  "code": "код",
   "each poster": "каждый постер",
   "on hover": "при наведении",
   "poster image": "изображение постера",
-  username: "имя пользователя",
+  "username": "имя пользователя",
   "will look on your TV.": "на вашем телевизоре.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} — проект с открытым исходным кодом. Посмотрите готовые исправления или предложите своё решение найденной проблемы.",
@@ -775,8 +771,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} сек.",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "Использовано {used} из доступных {quota}. Скачанные видео и другие файлы на диске не учитываются.",
-  "Public-domain books for the eBook library.":
-    "Книги в общественном достоянии для библиотеки электронных книг.",
   "Searchable catalog for Project Gutenberg books.": "Каталог книг Project Gutenberg с поиском.",
   "Game metadata, artwork and release dates.": "Метаданные, изображения и даты выхода игр.",
   "Live scores, schedules and standings.":

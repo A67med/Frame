@@ -85,8 +85,6 @@ const settingsFill: Record<string, string> = {
   "Poster shine on hover": "ホバー時のポスター光沢効果",
   "A subtle tvOS style light sweep across a poster when you hover it. Off by default; the card lift stays either way.":
     "ポスターにカーソルを合わせると、tvOS風の控えめな光が流れます。初期設定ではオフです。カードが浮き上がる効果は、この設定にかかわらず維持されます。",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "ブラウザ版Frame、スマートフォンリモコン、マンガリーダーリモコンをお探しですか？これらは「リモコン」ページに移動しました。",
   "X-Ray (experimental)": "X-Ray（試験機能）",
   "Amazon-style X-Ray: open the cast while you watch and tap anyone for their bio and everything they have been in. On-device face matching to show who is on screen is coming next. Off by default.":
     "Amazon風のX-Rayです。視聴中にキャストを開き、人物をタップすると、プロフィールと出演作をすべて確認できます。画面に映っている人物を特定するデバイス上の顔照合機能も近日対応予定です。初期設定ではオフです。",
@@ -110,16 +108,9 @@ const settingsFill: Record<string, string> = {
     "リモコンはデスクトップアプリから提供されます。リンクを取得するには、パソコンのFrameでこの設定を開いてください。",
   "Frame on other devices": "ほかのデバイスでFrameを使う",
   "Serve Frame on your network": "ネットワーク上でFrameを公開",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "このページのすべての機能を1つのスイッチで有効にします。Webアプリ、スマートフォンリモコン、マンガリーダーリモコンが対象です。",
   "Phone remote": "スマートフォンリモコン",
   "Turns your phone into a remote for this computer: play, pause, seek, volume, and casting, all from the couch. Open the Wi-Fi address on your phone's browser.":
     "スマートフォンをこのパソコンのリモコンとして使えます。ソファから再生、一時停止、シーク、音量調整、キャストを操作できます。スマートフォンのブラウザでWi-Fiアドレスを開いてください。",
-  "Manga reader remote": "マンガリーダーリモコン",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "大画面でマンガを読みながら、スマートフォンでページ送り、ズーム、モード切り替えを操作できます。閲覧中はリーダーにもこのリンクが表示されます。",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "上のスイッチをオンにすると、スマートフォンリモコンとマンガリーダーリモコンのアドレスがここに表示されます。",
   "On a beta that's giving you trouble? Pick an earlier build below and run its installer over your current copy. Your library, settings, and downloads all stay put.":
     "ベータ版で問題が起きていますか？下から以前のビルドを選び、現在のアプリに上書きする形でインストーラーを実行してください。ライブラリ、設定、ダウンロードはすべてそのまま維持されます。",
   "While beta updates are on, Frame offers the newest build again on its next check. Turn beta updates off above to stay on an earlier one.":
@@ -131,7 +122,7 @@ const settingsFill: Record<string, string> = {
   "More picture shaders": "その他の映像シェーダー",
   "Neural upscalers, sharpeners, and HDR tone-mapping ported for mpv. Each is hosted by its author, not bundled with Frame. Download the ones you want; Frame chains them in the right order and applies them in the player.":
     "mpv向けに移植されたニューラルアップスケーラー、シャープ化、HDRトーンマッピングです。各ツールは作者が公開しており、Frameには同梱されていません。必要なものをダウンロードすると、Frameが正しい順序で連結してプレーヤーに適用します。",
-  Cleared: "消去済み",
+  "Cleared": "消去済み",
   "Sure?": "よろしいですか？",
   "Storage overview": "ストレージ概要",
   "Everything Frame saves lives on this computer. If space runs low, clear a cache below; Frame rebuilds them as you browse.":
@@ -145,7 +136,6 @@ const settingsFill: Record<string, string> = {
   "Stream picker cache": "ストリーム選択キャッシュ",
   "Remembered source lists per title. Clears stale results after changing addons or debrid.":
     "作品ごとに保存されたソース一覧です。アドオンやdebridを変更した後、古い結果を消去します。",
-  "Manga browse cache": "マンガ閲覧キャッシュ",
   "Cached chapter lists and browse pages. Downloads stay untouched.":
     "キャッシュされたチャプター一覧と閲覧ページです。ダウンロード済みデータには影響しません。",
   "Live TV caches": "ライブTVのキャッシュ",
@@ -157,8 +147,6 @@ const settingsFill: Record<string, string> = {
   "Continue Watching suggestions cache": "「視聴を続ける」の候補キャッシュ",
   "Resurface picks for the home rail. Rebuilds overnight.":
     "ホームの列に候補を再表示します。毎晩再作成されます。",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "ダウンロードしたテーマは「テーマと外観」で管理できます。動画とマンガのダウンロードは「ダウンロード」ページで管理できます。",
   "Pattern (e.g. \\bremux\\b)": "パターン（例: \\bremux\\b）",
   "Downloaded from community": "コミュニティからダウンロード済み",
   "Badge art packs you installed from the community store. Remove one to put its badges back to default.":
@@ -167,7 +155,7 @@ const settingsFill: Record<string, string> = {
   "Pack removed, badges back to default": "パックを削除し、バッジをデフォルトに戻しました",
   "Remove pack": "パックを削除",
   "View community badge packs": "コミュニティのバッジパックを表示",
-  packs: "パック",
+  "packs": "パック",
   "Any Stremio subtitle addons you have installed are searched here too.":
     "インストール済みのStremio字幕アドオンも検索対象になります。",
   "{count} installed. Add or remove them under Streaming sources.":
@@ -177,19 +165,19 @@ const settingsFill: Record<string, string> = {
   "Subtitle sources": "字幕ソース",
   "Frame searches every source you enable at the same time, then merges and de-duplicates the results into one clean list. Turn a source off to stop pulling from it.":
     "Frameは有効なすべてのソースを同時に検索し、結果を統合して重複のない1つの一覧にまとめます。取得を停止するには、そのソースをオフにしてください。",
-  OpenSubtitles: "OpenSubtitles",
+  "OpenSubtitles": "OpenSubtitles",
   "Frame's built-in OpenSubtitles search, on by default. If you install an OpenSubtitles addon, this steps aside automatically so your results are never duplicated.":
     "Frame内蔵のOpenSubtitles検索です。デフォルトでオンになっています。OpenSubtitlesアドオンをインストールすると、結果が重複しないよう内蔵検索は自動的に無効になります。",
-  Wyzie: "Wyzie",
+  "Wyzie": "Wyzie",
   "A fast community subtitle index. Off by default; turn it on for extra coverage on newer or niche releases.":
     "高速なコミュニティ字幕インデックスです。デフォルトではオフです。新作やニッチな作品の検索範囲を広げるにはオンにしてください。",
   "Subtitle addons": "字幕アドオン",
-  SUBDL: "SUBDL",
+  "SUBDL": "SUBDL",
   "A large multi-language subtitle database. Off until you add your free SUBDL API key.":
     "大規模な多言語字幕データベースです。無料のSUBDL APIキーを追加するまでオフになっています。",
   "Paste your SUBDL API key": "SUBDL APIキーを貼り付け",
   "Get a free key at subdl.com": "subdl.comで無料キーを取得",
-  Subsource: "Subsource",
+  "Subsource": "Subsource",
   "A community subtitle source. Off until you add your Subsource API key.":
     "コミュニティの字幕ソースです。Subsource APIキーを追加するまでオフになっています。",
   "Paste your Subsource API key": "Subsource APIキーを貼り付け",
@@ -198,8 +186,8 @@ const settingsFill: Record<string, string> = {
   "The languages above all obey your preferred subtitle language order, which lives in the Languages page.":
     "上記の言語にはすべて、「言語」ページで設定した字幕言語の優先順が適用されます。",
   "Open Languages": "「言語」を開く",
-  Quality: "画質",
-  Maximum: "最大",
+  "Quality": "画質",
+  "Maximum": "最大",
   "Resolution posters are decoded at. High is sized to your screen with headroom and looks identical to full res while using far less memory; Balanced saves the most; Maximum keeps original resolution.":
     "ポスターをデコードする解像度です。「高」は余裕を持たせて画面に合わせたサイズになり、フル解像度と同じ見た目でメモリ使用量を大幅に抑えます。「バランス」は最もメモリを節約し、「最大」は元の解像度を維持します。",
   "Poster dock magnification": "ポスター列のDock風拡大",
@@ -218,8 +206,8 @@ const settingsFill: Record<string, string> = {
   "Featured source": "注目コンテンツのソース",
   "What fills the hero. Trending is a fresh top list from Frame, refreshed through the day. Classic uses your own Home rows.":
     "ヒーローエリアに表示する内容です。「トレンド」はFrameが提供する最新の人気ランキングで、1日に何度も更新されます。「クラシック」は自分のホームの列を使用します。",
-  Classic: "クラシック",
-  Screensaver: "スクリーンセーバー",
+  "Classic": "クラシック",
+  "Screensaver": "スクリーンセーバー",
   "When Frame sits idle in the foreground, it drifts through cinematic backdrops with a clock and what's trending. Any movement or key brings you back. Off by default.":
     "Frameを前面で操作せずにいると、時計とトレンド情報を重ねた映画のような背景がゆっくり切り替わります。マウスなどを動かすかキーを押すと戻ります。デフォルトではオフです。",
   "Ambient screensaver": "アンビエントスクリーンセーバー",
@@ -246,7 +234,7 @@ const settingsFill: Record<string, string> = {
     "「一緒に観る」と、最小化、最大化、閉じるボタンの外観を選びます。リキッドガラスにすると、シンプルな透明コントロールが置き換わります。",
   "Clean transparent": "シンプルな透明",
   "Liquid glass": "リキッドガラス",
-  Filled: "塗りつぶし",
+  "Filled": "塗りつぶし",
   "Drag the window from anywhere": "どこをドラッグしてもウィンドウを移動",
   "Move Frame by dragging any empty space on a page, not just the top bar. Leave this off to keep clicks inside pages from nudging the window.":
     "上部バーだけでなく、ページ内の何もない場所をドラッグしてFrameを移動できます。ページ内をクリックしたときにウィンドウがずれないようにするには、オフのままにしてください。",
@@ -277,7 +265,7 @@ const settingsFill: Record<string, string> = {
   "True fullscreen covers the whole screen and hides the taskbar. Maximize fills the screen but keeps the taskbar and title bar, so you can still switch apps.":
     "全画面表示では画面全体を使用し、タスクバーを非表示にします。最大化では画面いっぱいに表示しつつ、タスクバーとタイトルバーを残すため、アプリを切り替えられます。",
   "True fullscreen": "全画面表示",
-  Maximize: "最大化",
+  "Maximize": "最大化",
   "Dual subtitles": "2言語字幕",
   "Show a second subtitle in another language at the same time. Handy when you are learning a language: keep the one you are learning as your main subtitle, and put your own language here.":
     "別の言語の字幕を同時にもう1つ表示します。語学学習に便利です。学習中の言語をメイン字幕にして、母語をこちらに設定してください。",
@@ -290,7 +278,7 @@ const settingsFill: Record<string, string> = {
   "Second line size": "第2字幕のサイズ",
   "Get your own": "自分用を入手",
   "Trial for ${n}": "${n}でお試し",
-  ElfHosted: "ElfHosted",
+  "ElfHosted": "ElfHosted",
   "Debridge is the part that finds you a working file. A TorBox and a Usenet account come with it, so you do not need to buy a debrid service separately. Already have Real-Debrid or AllDebrid? Plug it in instead.":
     "Debridgeは、再生可能なファイルを見つける機能です。TorBoxとUsenetのアカウントが付属するため、debridサービスを別途購入する必要はありません。すでにReal-DebridまたはAllDebridをお持ちなら、代わりに接続できます。",
   "No Docker, no server, nothing to configure.": "Dockerもサーバーも不要。設定も不要です。",
@@ -337,8 +325,6 @@ const settingsFill: Record<string, string> = {
     "レート上限が10倍で、ストリームプロキシを内蔵したプライベートStremioアドオン。月額$9から。",
   "Managed Plex, Emby, or Jellyfin, running in minutes with no hardware and no Docker.":
     "ハードウェアもDockerも不要で、数分で使い始められる管理済みのPlex、Emby、Jellyfin。",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "100種類以上のセルフホストアプリ。*arrスタック、debridツール、電子書籍、オーディオブックなど。",
   "Daily backups, automatic updates, and monitoring, all handled for you.":
     "毎日のバックアップ、自動更新、監視をすべてお任せできます。",
   "Month to month, cancel anytime, and you can try the whole thing for $1 for a week.":
@@ -351,7 +337,7 @@ const settingsFill: Record<string, string> = {
   "Badges for giving": "支援でもらえるバッジ",
   "Give to any charity below or subscribe to ElfHosted, and the badge lands on your profile.":
     "下記の慈善団体に寄付するかElfHostedを購読すると、プロフィールにバッジが付与されます。",
-  Charity: "チャリティー",
+  "Charity": "チャリティー",
   "For donating to a charity.": "慈善団体への寄付で獲得。",
   "Charity $100+": "チャリティー $100以上",
   "For giving more than $100 to charity.": "慈善団体への$100を超える寄付で獲得。",
@@ -400,9 +386,9 @@ const settingsFill: Record<string, string> = {
     "現在の動画が終了する予定の現地時刻を表示します。",
   "Clock size": "時計のサイズ",
   "Clock style": "時計のスタイル",
-  Minimal: "ミニマル",
-  Solid: "ソリッド",
-  Accent: "アクセント",
+  "Minimal": "ミニマル",
+  "Solid": "ソリッド",
+  "Accent": "アクセント",
   "Soft blur with a floating pill.": "フローティングピルに柔らかなぼかしを加えます。",
   "Time only, with a subtle shadow.": "時刻のみを控えめな影付きで表示します。",
   "High-contrast panel for busy scenes.": "動きの多いシーンでも見やすい高コントラストパネルです。",
@@ -428,12 +414,12 @@ const settingsFill: Record<string, string> = {
   "Finish setting up Frame": "Frameの設定を完了",
   "Get one free at {url}": "{url}で無料取得",
   "Getting a code ready…": "コードを準備中…",
-  Frame: "Frame",
+  "Frame": "Frame",
   "Frame needs a TMDB key for artwork, rows and collections. It is free.":
     "アートワーク、列、コレクションの表示にはTMDBキーが必要です。無料で取得できます。",
   "Frame plays IPTV from your own provider. Add a playlist and the guide fills in.":
     "Frameでは、ご契約中のプロバイダーのIPTVを再生できます。プレイリストを追加すると、番組表が表示されます。",
-  Interface: "インターフェース",
+  "Interface": "インターフェース",
   "Live TV playlists": "ライブTVプレイリスト",
   "Nothing connected yet. Scan a code with your phone.":
     "まだ何も接続されていません。スマートフォンでコードをスキャンしてください。",
@@ -446,9 +432,9 @@ const settingsFill: Record<string, string> = {
   "Save key": "キーを保存",
   "Scan with your phone to sign in without typing on the remote.":
     "スマートフォンでスキャンすると、リモコンで入力せずにログインできます。",
-  Screen: "画面",
+  "Screen": "画面",
   "Set up Live TV": "ライブTVを設定",
-  Setup: "設定",
+  "Setup": "設定",
   "Setup QR code": "設定用QRコード",
   "Signed in as {name}": "{name}としてログイン中",
   "Sync, themes and friends": "同期、テーマ、フレンド",

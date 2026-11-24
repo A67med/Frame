@@ -72,7 +72,7 @@ const settings: Record<string, string> = {
   "Active transfers": "Transferts actifs",
   "Ad, analytics, and tracking requests pass through untouched.":
     "Les requêtes publicitaires, d’analyse et de suivi transitent sans modification.",
-  Adaptive: "Adaptatif",
+  "Adaptive": "Adaptatif",
   "Adaptive Sharpen": "Accentuation adaptative",
   "Add a Discord or Telegram URL above before creating rules.":
     "Ajoutez ci-dessus une URL Discord ou Telegram avant de créer des règles.",
@@ -142,7 +142,7 @@ const settings: Record<string, string> = {
     "Mise à l’échelle en temps réel avec Anime4K, fluidification des mouvements et place de SVP. Toutes les améliorations d’image propres aux animes au même endroit.",
   "Anime4K shaders": "Shaders Anime4K",
   "Anime4K upscaling": "Mise à l’échelle Anime4K",
-  annoying: "agaçant",
+  "annoying": "agaçant",
   "Any badges.json link works: a raw gist, Pastebin, or repo file. Broken JSON gets auto-repaired.":
     "Tout lien badges.json fonctionne : gist brut, Pastebin ou fichier de dépôt. Le JSON invalide est réparé automatiquement.",
   "Any country": "Tous les pays",
@@ -172,7 +172,7 @@ const settings: Record<string, string> = {
   "Audio filter": "Filtre audio",
   "Augments AI picks with current web results before asking the model. Powered by":
     "Enrichit les suggestions de l’IA avec les résultats web actuels avant d’interroger le modèle. Avec la technologie de",
-  Authorized: "Autorisé",
+  "Authorized": "Autorisé",
   "Authorized on this device": "Autorisé sur cet appareil",
   "Auto (recommended)": "Automatique (recommandé)",
   "Auto next episode": "Passage automatique à l’épisode suivant",
@@ -186,7 +186,7 @@ const settings: Record<string, string> = {
   "Auto-skip stalled streams": "Ignorer automatiquement les flux bloqués",
   "Automatically play the next episode when the current one ends.":
     "Lire automatiquement l’épisode suivant à la fin de l’épisode en cours.",
-  AUTOMATIONS: "AUTOMATISATIONS",
+  "AUTOMATIONS": "AUTOMATISATIONS",
   "Autoplay trailer on detail pages":
     "Lire automatiquement la bande-annonce sur les pages de détails",
   "Award Icons": "Icônes de récompenses",
@@ -215,7 +215,7 @@ const settings: Record<string, string> = {
   "below. Send it": "ci-dessous. Envoyez-le",
   "Black bar": "Bande noire",
   "Block ads & trackers": "Bloquer les publicités et les traqueurs",
-  blocked: "bloqué",
+  "blocked": "bloqué",
   "Blur comments by default": "Flouter les commentaires par défaut",
   "Blur descriptions": "Flouter les descriptions",
   "Blur episode artwork, titles, and descriptions for episodes you have not watched yet, on both shows and anime. Hover an episode to peek.":
@@ -227,7 +227,7 @@ const settings: Record<string, string> = {
   "Blur titles": "Flouter les titres",
   "Blurs the hero image and stills on the episode detail page until you click reveal.":
     "Floute l’image principale et les images de l’épisode sur la page de détails jusqu’à ce que vous cliquiez pour les révéler.",
-  Bokeh: "Bokeh",
+  "Bokeh": "Bokeh",
   "Bokeh background": "Arrière-plan bokeh",
   "Bold text": "Texte en gras",
   "Boost SDR video toward HDR": "Rapprocher les vidéos SDR du HDR",
@@ -331,7 +331,7 @@ const settings: Record<string, string> = {
   "Color presets, custom backgrounds, and the font pair Frame renders in.":
     "Préréglages de couleurs, arrière-plans personnalisés et paire de polices utilisées par Frame.",
   "Color tokens": "Jetons de couleur",
-  Colors: "Couleurs",
+  "Colors": "Couleurs",
   "Come back here and hit {b1}. The Hello World can stay where it is. It's free and harmless.":
     "Revenez ici et appuyez sur {b1}. Le Hello World peut rester là où il est. Il est gratuit et sans danger.",
   "Comma-separated words. Audio or subtitle tracks whose name matches any of these are skipped during automatic selection. You can still pick them by hand in the player.":
@@ -342,7 +342,7 @@ const settings: Record<string, string> = {
   "Comments on episode/show pages are blurred until you reveal them, even if they are not tagged as spoilers.":
     "Les commentaires des pages d’épisode ou de série sont floutés jusqu’à ce que vous les affichiez, même s’ils ne sont pas signalés comme spoilers.",
   "Community sync server URL": "URL du serveur de synchronisation avec la communauté",
-  Compact: "Compact",
+  "Compact": "Compact",
   "Condensed shows a top pick, quality tiles, and a drawer. Stremio is a flat list grouped by addon, no scoring.":
     "Le mode condensé affiche une recommandation, des vignettes de qualité et un panneau. Stremio affiche une liste simple regroupée par extension, sans notation.",
   "Confirm clear": "Confirmer l’effacement",
@@ -407,7 +407,7 @@ const settings: Record<string, string> = {
     "Impossible de démarrer sur le port {WEB_PORT}. Une autre application l’utilise peut-être. Désactivez puis réactivez l’option pour réessayer.",
   "Couldn't start SVP Manager: {err}": "Impossible de démarrer SVP Manager : {err}",
   "Couldn't switch profile. {error}": "Impossible de changer de profil. {error}",
-  Countries: "Pays",
+  "Countries": "Pays",
   "Country release rule": "Règle de sortie par pays",
   "Cover Image URL": "URL de l’image de couverture",
   "Create Custom Token": "Créer un jeton personnalisé",
@@ -444,7 +444,7 @@ const settings: Record<string, string> = {
   "Cycle subtitles (alt)": "Changer de sous-titres (autre raccourci)",
   "Cycle through available subtitle tracks.": "Parcourir les pistes de sous-titres disponibles.",
   "Cycle subtitles backward": "Parcourir les sous-titres à rebours",
-  Developer: "Développeur",
+  "Developer": "Développeur",
   "Open search": "Ouvrir la recherche",
   "Open or close the search overlay.": "Ouvre ou ferme la recherche.",
   "Next room": "Section suivante",
@@ -648,7 +648,7 @@ const settings: Record<string, string> = {
   "Fanart.tv · logos and backdrops": "Fanart.tv · logos et arrière-plans",
   "Faster and quieter than P2P if you already pay for Usenet. Configure on the addon page, paste the manifest URL it returns.":
     "Plus rapide et plus discret que le P2P si vous payez déjà pour Usenet. Configurez-le sur la page de l’extension, puis collez l’URL du manifeste généré.",
-  favorites: "favoris",
+  "favorites": "favoris",
   "feature broken": "fonctionnalité défectueuse",
   "Fetches DuckDuckGo results and feeds top hits into the model prompt.":
     "Récupère les résultats de DuckDuckGo et intègre les meilleurs au prompt du modèle.",
@@ -823,7 +823,7 @@ const settings: Record<string, string> = {
     "Carrousel principal, Top 10, Tendances, Au cinéma et rangées par service.",
   "Hero carousel, Top 10, Trending, In Theaters, per-service rails. Addon catalogs append underneath, deduped.":
     "Carrousel principal, Top 10, Tendances, Au cinéma et rangées par service. Les catalogues des extensions sont ajoutés en dessous, sans doublons.",
-  hidden: "masqué",
+  "hidden": "masqué",
   "Hidden catalogs": "Catalogues masqués",
   "Hide adult content": "Masquer le contenu pour adultes",
   "Hide anime": "Masquer les anime",
@@ -831,7 +831,6 @@ const settings: Record<string, string> = {
   "Hide entire categories. Toggling these also removes the matching sidebar entries and rails.":
     "Masquez des catégories entières. Cela supprime également les entrées correspondantes de la barre latérale et les rangées associées.",
   "Hide Live TV": "Masquer la TV en direct",
-  "Hide manga": "Masquer les mangas",
   "Hide pack instructions": "Masquer les instructions de la sélection",
   "Hide subtitles when the player shrinks into the floating PiP window.":
     "Masquer les sous-titres lorsque le lecteur se réduit dans la fenêtre PiP flottante.",
@@ -891,7 +890,7 @@ const settings: Record<string, string> = {
     "HTML5 lit tout ce que WebView2 prend en charge. mpv gère le TrueHD, le DTS-HD, l’AV1, les conteneurs inhabituels et le HDR. Le mode Auto choisit selon la source.",
   "https://posters.example.com or a pattern with {id}":
     "https://posters.example.com ou un modèle avec {id}",
-  Huge: "Énorme",
+  "Huge": "Énorme",
   "I have my token": "J’ai mon jeton",
   "Icon only": "Icône uniquement",
   "If a stream hasn't started playing within 10 seconds (a dead source or an addon that's down), automatically try the next available stream. Off by default.":
@@ -930,7 +929,7 @@ const settings: Record<string, string> = {
   "Injected into a fixed-position layer above the app (pointer-events disabled by default). Wrap in a div with pointer-events:auto to make it interactive.":
     "Injecté dans un calque à position fixe au-dessus de l’application (pointer-events désactivé par défaut). Placez-le dans une div avec pointer-events:auto pour le rendre interactif.",
   "Inside the playback view.": "Dans la vue de lecture.",
-  Inspector: "Inspecteur",
+  "Inspector": "Inspecteur",
   "Install a pack": "Installer un pack",
   "Install failed": "Échec de l’installation",
   "Install SVP once (the free tier is enough). It bundles VapourSynth + svpflow; Frame reuses them, no extra setup.":
@@ -943,7 +942,7 @@ const settings: Record<string, string> = {
   "Installing...": "Installation...",
   "Interface language": "Langue de l’interface",
   "Interface scale": "Échelle de l’interface",
-  Internals: "Fonctionnement interne",
+  "Internals": "Fonctionnement interne",
   "Internet speed": "Vitesse de la connexion Internet",
   "Interpolates frames for smoother panning, best on anime. Needs a display refresh rate above the video's frame rate, and can stutter on weak GPUs. mpv only.":
     "Interpole des images pour fluidifier les panoramiques, particulièrement adapté aux anime. Nécessite un taux de rafraîchissement de l’écran supérieur à la fréquence d’images de la vidéo et peut provoquer des saccades sur les GPU peu puissants. mpv uniquement.",
@@ -1001,14 +1000,14 @@ const settings: Record<string, string> = {
     "La dernière source n’était finalement pas encore en cache sur votre service de débridage. Essai d’une autre source.",
   "Last synced {n}s ago.": "Dernière synchronisation il y a {n} s.",
   "Layout name": "Nom de la disposition",
-  Layouts: "Dispositions",
+  "Layouts": "Dispositions",
   "Lead with the show name instead of the episode title at the top of the player.":
     "Afficher en premier le nom de la série plutôt que le titre de l’épisode en haut du lecteur.",
   "Leave everything below it alone. Scroll down, click {b1}, then {b2}. Copy the long string it shows you (you only see it once) and bring it back here.":
     "Ne touchez à rien en dessous. Faites défiler vers le bas, cliquez sur {b1}, puis sur {b2}. Copiez la longue chaîne affichée (elle n’apparaît qu’une seule fois) et revenez ici.",
   "Leave the episode you are up to clear and only blur the ones after it.":
     "Laisser visible l’épisode où vous en êtes et ne flouter que les suivants.",
-  Legal: "Mentions légales",
+  "Legal": "Mentions légales",
   "Less bass": "Moins de basses",
   "Let your Discord friends see what you are watching, with the show poster and a live progress bar.":
     "Permettez à vos amis Discord de voir ce que vous regardez, avec l’affiche de la série et une barre de progression en direct.",
@@ -1082,7 +1081,7 @@ const settings: Record<string, string> = {
   "MDBList · Letterboxd and Trakt scores": "MDBList · Notes Letterboxd et Trakt",
   "Media type": "Type de média",
   "Media types": "Types de médias",
-  Medium: "Moyen",
+  "Medium": "Moyen",
   "Memory cap": "Limite de mémoire",
   "Metadata language": "Langue des métadonnées",
   "Metadata providers": "Fournisseurs de métadonnées",
@@ -1104,7 +1103,7 @@ const settings: Record<string, string> = {
   "Move to previous slot": "Déplacer vers l’emplacement précédent",
   "Movies you've finished and shows in progress leave the catalog rows. Continue Watching is never touched.":
     "Les films que vous avez terminés et les séries en cours disparaissent des rangées du catalogue. La section Continuer à regarder n’est jamais modifiée.",
-  mpv: "mpv",
+  "mpv": "mpv",
   "MPV (native, recommended)": "MPV (natif, recommandé)",
   "mpv on the desktop app, HTML5 in the browser. The right engine without thinking about it.":
     "mpv dans l’application de bureau, HTML5 dans le navigateur. Toujours le bon moteur, sans avoir à y penser.",
@@ -1124,7 +1123,7 @@ const settings: Record<string, string> = {
     "Intégré à Frame. Aucune extension RPDB ou de notes n’est nécessaire.",
   "Native webview playback. Smooth and integrated, but limited codec coverage.":
     "Lecture native dans la webview. Fluide et intégrée, mais avec une prise en charge limitée des codecs.",
-  NAVIGATION: "NAVIGATION",
+  "NAVIGATION": "NAVIGATION",
   "Never auto-select tracks containing":
     "Ne jamais sélectionner automatiquement les pistes contenant",
   "New layout": "Nouvelle mise en page",
@@ -1241,14 +1240,14 @@ const settings: Record<string, string> = {
   "Or just zip up images": "Ou créez simplement un fichier ZIP avec des images",
   "Or try one of ours": "Ou essayez l’un des nôtres",
   "or use one of our avatars": "ou utiliser l’un de nos avatars",
-  Other: "Autre",
+  "Other": "Autre",
   "Outline color": "Couleur du contour",
   "Outline thickness": "Épaisseur du contour",
   "Overlays your Letterboxd rating on catalog posters (when available).":
     "Superpose votre note Letterboxd aux affiches du catalogue, lorsqu’elle est disponible.",
   "Packs & import": "Packs et importation",
-  PANELS: "PANNEAUX",
-  Panels: "Cases",
+  "PANELS": "PANNEAUX",
+  "Panels": "Cases",
   "Paste an image URL (png, webp, svg)": "Collez l’URL d’une image (png, webp, svg)",
   "Paste it into Frame.": "Collez-le dans Frame.",
   "Paste JSON": "Coller le JSON",
@@ -1300,7 +1299,7 @@ const settings: Record<string, string> = {
   "Play button behavior": "Comportement du bouton de lecture",
   "Play mode": "Mode de lecture",
   "Play trailers in the hero": "Lire les bandes-annonces dans le bandeau principal",
-  PLAYBACK: "LECTURE",
+  "PLAYBACK": "LECTURE",
   "Player & quality": "Lecteur et qualité",
   "Player engine": "Moteur de lecture",
   "Player freezes after the second episode autoplays":
@@ -1371,7 +1370,7 @@ const settings: Record<string, string> = {
     "Recevez en avant-première des versions intégrant les tout derniers correctifs, avant leur arrivée dans la version stable. Les versions bêta peuvent comporter des défauts, désactivez cette option pour revenir à la version stable lors de la prochaine mise à jour.",
   "Recommended for You": "Recommandé pour vous",
   "Record GIF": "Enregistrer un GIF",
-  Recovery: "Récupération",
+  "Recovery": "Récupération",
   "Redeploy instructions": "Instructions de redéploiement",
   "Redeploy relay": "Redéployer le relais",
   "Redeploy to pick up the latest Watch Together fixes. The in-app banner clears once the new version is live.":
@@ -1410,7 +1409,6 @@ const settings: Record<string, string> = {
   "Removes the Anime tab and every anime title from all rows everywhere: Home, Discover, Top 10, and catalogs. Western animation like Pixar is kept, and you can still find anime by searching.":
     "Masque l’onglet Anime et tous les titres d’anime dans toutes les rangées : accueil, découverte, Top 10 et catalogues. Les productions d’animation occidentales comme Pixar restent affichées, et vous pouvez toujours trouver des animes par la recherche.",
   "Removes the Live TV tab from the sidebar.": "Masque l’onglet TV en direct de la barre latérale.",
-  "Removes the Manga tab from the sidebar.": "Masque l’onglet Manga de la barre latérale.",
   "Render subtitles in a heavier weight. Turn off to use your font's normal weight.":
     "Affiche les sous-titres avec une graisse plus forte. Désactivez cette option pour utiliser la graisse normale de votre police.",
   "Renders mpv inline so playback lives in Frame itself. Disable to open it in a separate window instead.":
@@ -1534,7 +1532,7 @@ const settings: Record<string, string> = {
   "Seek forward 30s": "Avancer de 30 s",
   "Seek to the beginning.": "Revenir au début.",
   "Seek to the last half second.": "Aller à la dernière demi-seconde.",
-  Seeking: "Déplacement",
+  "Seeking": "Déplacement",
   "Self-host": "Auto-hébergement",
   "Self-test": "Autotest",
   "Self-test is disabled while strict remote streaming is on. It downloads a small test file over peer-to-peer on this machine.":
@@ -1630,7 +1628,7 @@ const settings: Record<string, string> = {
   "Show your AniList profile picture as your Frame avatar.":
     "Afficher votre photo de profil AniList comme avatar Frame.",
   "Show {n} more addons": "Afficher {n} extensions supplémentaires",
-  shown: "affiché",
+  "shown": "affiché",
   "Shows your Letterboxd catalogs on the home page and a Letterboxd panel on film pages.":
     "Affiche vos catalogues Letterboxd sur la page d’accueil et un panneau Letterboxd sur les pages des films.",
   "Side rail": "Barre latérale",
@@ -1661,7 +1659,7 @@ const settings: Record<string, string> = {
     "L’emplacement commence à être chargé ({n}/{limit}). Il risque de déborder sur les écrans étroits.",
   "Slow or unstable connection": "Connexion lente ou instable",
   "Slow playback by 0.25x.": "Ralentir la lecture de 0,25x.",
-  Small: "Petit",
+  "Small": "Petit",
   "Smooth motion": "Fluidité des mouvements",
   "Smooth on weak PCs": "Fluide sur les PC peu puissants",
   "Smooth scrolling": "Défilement fluide",
@@ -1683,7 +1681,7 @@ const settings: Record<string, string> = {
   "Source:": "Source :",
   "Source: {code}. About 200 lines of JavaScript, no dependencies. Read it before deploying if you want to know what runs.":
     "Source : {code}. Environ 200 lignes de JavaScript, sans dépendances. Lisez-le avant le déploiement si vous voulez savoir ce qui s’exécute.",
-  SPEED: "VITESSE",
+  "SPEED": "VITESSE",
   "Speed down": "Réduire la vitesse",
   "Speed playback up by 0.25x.": "Augmenter la vitesse de lecture de 0.25x.",
   "Speed test": "Test de débit",
@@ -1722,7 +1720,7 @@ const settings: Record<string, string> = {
   "Stream torrents through Frame's own Rust peer-to-peer engine instead of the bundled Stremio Server. Falls back automatically if it can't connect. Status and a self-test live in the Local engine card below.":
     "Diffusez les torrents avec le moteur pair à pair Rust de Frame plutôt qu’avec le Stremio Server intégré. Le basculement est automatique s’il ne parvient pas à se connecter. L’état et un autotest se trouvent dans la carte Moteur local ci-dessous.",
   "Streamer release rule": "Règle de sortie du fournisseur du flux",
-  Streamers: "Fournisseurs de flux",
+  "Streamers": "Fournisseurs de flux",
   "Streaming catalogs": "Catalogues de streaming",
   "Streaming sources": "Sources de streaming",
   "Streams in these languages rank first. Toggle below to drop everything else.":
@@ -1794,7 +1792,7 @@ const settings: Record<string, string> = {
     "Telegram effectue les envois via un bot que vous créez. Il vous faut deux éléments : un",
   "Ten minutes of head start. Built for spotty Wi-Fi or a far-away server, at the cost of a longer wait before playback begins.":
     "Dix minutes d’avance. Conçu pour un Wi-Fi instable ou un serveur éloigné, au prix d’une attente plus longue avant le début de la lecture.",
-  Test: "Tester",
+  "Test": "Tester",
   "Test badge rules (Try it)": "Tester les règles des badges (Essayer)",
   "Test connection": "Tester la connexion",
   "Test failed": "Échec du test",
@@ -1909,7 +1907,7 @@ const settings: Record<string, string> = {
     "Le P2P est désactivé. Les flux non mis en cache ne seront pas lus, sauf s’ils proviennent d’un service de débridage ou d’un lien direct. Pour utiliser le P2P, désactivez cette option.",
   "Tracked people": "Personnes suivies",
   "Tracked person release rule": "Règle de sortie pour les personnes suivies",
-  TRACKS: "PISTES",
+  "TRACKS": "PISTES",
   "Trailer quality": "Qualité des bandes-annonces",
   "Trakt anticipated": "Les plus attendus sur Trakt",
   "Trakt anticipated picks up something": "Un titre devient très attendu sur Trakt",
@@ -1937,7 +1935,7 @@ const settings: Record<string, string> = {
   "TV guide": "Programme TV",
   "TV navigation": "Navigation TV",
   "TV navigation in player": "Navigation TV dans le lecteur",
-  tvOS: "tvOS",
+  "tvOS": "tvOS",
   "tvOS chrome": "interface tvOS",
   "Two paths: Frame handles the deploy for you, or you do it yourself with wrangler.":
     "Deux possibilités : Frame gère le déploiement pour vous, ou vous le faites vous-même avec wrangler.",
@@ -2002,7 +2000,7 @@ const settings: Record<string, string> = {
   "Verify it works": "Vérifier que cela fonctionne",
   "View all": "Tout afficher",
   "Vocal clarity": "Clarté des voix",
-  VOLUME: "VOLUME",
+  "VOLUME": "VOLUME",
   "Volume control": "Réglage du volume",
   "Wait before playing": "Attente avant lecture",
   "Wait for the upload to finish. The relay URL gets written to":
@@ -2038,7 +2036,7 @@ const settings: Record<string, string> = {
   "What to send": "Éléments à envoyer",
   "What you expected": "Ce à quoi vous vous attendiez",
   "Whatever your OS uses.": "Ce qu’utilise votre système d’exploitation.",
-  WHEN: "QUAND",
+  "WHEN": "QUAND",
   "When a flagged ad plays, a Skip button slides in so you jump straight past it.":
     "Lorsqu’une publicité signalée est diffusée, un bouton Ignorer apparaît pour passer directement à la suite.",
   "When a movie or episode starts, briefly show its Common Sense Media parental guide (violence, nudity, profanity, substances) with severity. Fades on its own.":

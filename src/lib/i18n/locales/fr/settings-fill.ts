@@ -21,7 +21,7 @@ const settingsFill: Record<string, string> = {
   "A subtle tvOS style light sweep across a poster when you hover it. Off by default; the card lift stays either way.":
     "Un discret reflet lumineux de style tvOS balaie l’affiche lorsque vous la survolez. Désactivé par défaut, le soulèvement de la carte reste actif dans tous les cas.",
   "Above the main line": "Au-dessus de la ligne principale",
-  Accent: "Couleur d’accentuation",
+  "Accent": "Couleur d’accentuation",
   "Accounts and TMDB": "Comptes et TMDB",
   "Add a TMDB key in Settings to identify the cast.":
     "Ajoutez une clé TMDB dans les paramètres pour identifier les membres de la distribution.",
@@ -67,7 +67,7 @@ const settingsFill: Record<string, string> = {
   "cancel anytime": "résiliable à tout moment",
   "Cash straight to people living in extreme poverty, no strings.":
     "De l’argent versé directement aux personnes vivant dans l’extrême pauvreté, sans condition.",
-  Charity: "Association caritative",
+  "Charity": "Association caritative",
   "Charity $100+": "Don de 100 $ ou plus",
   "Check the shared database first. When this exact subtitle has already been synced by someone else, yours snaps into place with no analysis.":
     "Consultez d’abord la base de données partagée. Si ce sous-titre précis a déjà été synchronisé par quelqu’un d’autre, le vôtre se cale automatiquement, sans aucune analyse.",
@@ -78,10 +78,10 @@ const settingsFill: Record<string, string> = {
     "Choisissez l’apparence de Regarder ensemble et des boutons Réduire, Agrandir et Fermer. L’effet verre liquide remplace les commandes transparentes épurées.",
   "Choose where you can grab Frame to drag it around your screen.":
     "Choisissez les zones par lesquelles vous pouvez saisir Frame pour le déplacer à l’écran.",
-  Classic: "Classique",
+  "Classic": "Classique",
   "Clean transparent": "Transparent épuré",
   "Clear caches": "Vider les caches",
-  Cleared: "Effacé",
+  "Cleared": "Effacé",
   "Clock format": "Format de l’heure",
   "Clock size": "Taille de l’horloge",
   "Clock style": "Style de l’horloge",
@@ -89,8 +89,6 @@ const settingsFill: Record<string, string> = {
   "Community sync server": "Serveur de synchronisation avec la communauté",
   "Connected: {list}": "Connecté : {list}",
   "Continue Watching suggestions cache": "Cache des suggestions de Reprendre la lecture",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Contrôlez la liseuse de mangas depuis votre téléphone tout en lisant sur grand écran : tournez les pages, zoomez et changez de mode. La liseuse affiche également ce lien pendant votre lecture.",
   "Could not reach TMDB. Check the connection.":
     "Impossible de joindre TMDB. Vérifiez la connexion.",
   "Custom model id (optional)": "Identifiant de modèle personnalisé (facultatif)",
@@ -107,15 +105,13 @@ const settingsFill: Record<string, string> = {
   "Download the desktop app to use shaders.":
     "Téléchargez l’application de bureau pour utiliser les shaders.",
   "Downloaded from community": "Téléchargé depuis la communauté",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "Les thèmes téléchargés sont gérés dans Thème et apparence. Les téléchargements de vidéos et de mangas sont gérés sur la page Téléchargements.",
   "Drag the window from anywhere": "Faites glisser la fenêtre depuis n’importe où",
   "Drift monitor": "Moniteur de dérive",
   "Dual subtitles": "Sous-titres doubles",
   "Each key above is an award ID. Any key you omit falls back to the default trophy (or a lower-priority pack). The full list of IDs is every award shown in the grid above.":
     "Chaque clé ci-dessus est un identifiant de récompense. Toute clé omise utilise le trophée par défaut (ou un pack moins prioritaire). La liste complète des identifiants correspond à toutes les récompenses affichées dans la grille ci-dessus.",
   "Edge margin": "Marge périphérique",
-  ElfHosted: "ElfHosted",
+  "ElfHosted": "ElfHosted",
   "Emergency medical care in crisis zones, independent of politics.":
     "Soins médicaux d’urgence dans les zones de crise, indépendamment de toute considération politique.",
   "Emergency medical care in crisis zones.": "Soins médicaux d’urgence dans les zones de crise.",
@@ -129,10 +125,8 @@ const settingsFill: Record<string, string> = {
     "Agrandir les cartes d’affiche lors de la navigation au clavier ou à la télécommande dans les rangées d’affiches, à l’aide d’illustrations larges préchargées.",
   "Expanding Cards": "Cartes extensibles",
   "Featured source": "Source à la une",
-  Filled: "Rempli",
+  "Filled": "Rempli",
   "Finish setting up Frame": "Terminer la configuration de Frame",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "Activez l’interrupteur ci-dessus pour afficher ici les adresses de la télécommande mobile et de celle du lecteur de mangas.",
   "Focused Card": "Carte sélectionnée",
   "Following addon order": "Respecter l’ordre des extensions",
   "For an active ElfHosted subscription.": "Pour un abonnement ElfHosted actif.",
@@ -162,7 +156,7 @@ const settingsFill: Record<string, string> = {
   "Glass tint": "Teinte du verre",
   "Groq runs open-source models on its LPU hardware with a generous free tier; every model listed below runs on the free tier.":
     "Groq exécute des modèles open source sur son matériel LPU et propose une offre gratuite généreuse ; tous les modèles ci-dessous sont disponibles avec cette offre.",
-  Frame: "Frame",
+  "Frame": "Frame",
   "Frame loads it automatically when a track in that language exists. You can also set or clear the second track for one video from the subtitle menu in the player.":
     "Frame le charge automatiquement lorsqu’une piste existe dans cette langue. Vous pouvez aussi définir ou supprimer la seconde piste pour une vidéo depuis le menu des sous-titres du lecteur.",
   "Frame needs a TMDB key for artwork, rows and collections. It is free.":
@@ -216,7 +210,7 @@ const settingsFill: Record<string, string> = {
     "Inclut Comet, MediaFusion, AIOStreams, StremThru, Jackettio et bien plus, ainsi que les comptes TorBox et Usenet. Pas de Docker, pas de serveur, pas de configuration.",
   "Insecticide-treated nets. One of the most cost-effective interventions measured.":
     "Moustiquaires imprégnées d’insecticide. L’une des interventions les plus rentables jamais évaluées.",
-  Interface: "Interface",
+  "Interface": "Interface",
   "It only runs when you tap that button, so it never costs anything unless you ask.":
     "Cette fonction ne s’exécute que lorsque vous appuyez sur ce bouton, elle ne coûte donc rien tant que vous ne la lancez pas.",
   "Keep Continue Watching private to each profile":
@@ -239,17 +233,13 @@ const settingsFill: Record<string, string> = {
   "Live TV caches": "Caches de TV en direct",
   "Live TV playlists": "Playlists de TV en direct",
   "Look any of them up on Charity Navigator": "Recherchez-les sur Charity Navigator",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "Vous cherchez Frame dans votre navigateur, la télécommande sur téléphone ou la télécommande du lecteur de mangas ? Elles se trouvent désormais sur la page Télécommandes.",
   "Manage subtitle addons in Streaming sources":
     "Gérer les extensions de sous-titres dans Sources de streaming",
   "Managed Plex, Emby, or Jellyfin, running in minutes with no hardware and no Docker.":
     "Plex, Emby ou Jellyfin entièrement géré, opérationnel en quelques minutes, sans matériel ni Docker.",
-  "Manga browse cache": "Cache de navigation des mangas",
-  "Manga reader remote": "Télécommande du lecteur de mangas",
-  Maximize: "Agrandir",
-  Maximum: "Maximum",
-  Minimal: "Minimal",
+  "Maximize": "Agrandir",
+  "Maximum": "Maximum",
+  "Minimal": "Minimal",
   "Month to month, cancel anytime, and you can try the whole thing for $1 for a week.":
     "Abonnement mensuel, résiliable à tout moment, avec accès à l’intégralité du service pendant une semaine pour 1 $.",
   "More picture shaders": "Plus de shaders d’image",
@@ -277,18 +267,14 @@ const settingsFill: Record<string, string> = {
     "Aucun appareil connecté pour le moment. Scannez un code avec votre téléphone.",
   "On a beta that's giving you trouble? Pick an earlier build below and run its installer over your current copy. Your library, settings, and downloads all stay put.":
     "Une version bêta vous pose problème ? Choisissez ci-dessous une version antérieure et lancez son programme d’installation par-dessus votre version actuelle. Votre bibliothèque, vos réglages et vos téléchargements restent intacts.",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Un seul interrupteur active tout sur cette page : l’application Web, la télécommande sur téléphone et celle du lecteur de mangas.",
   "One-off donation": "Don ponctuel",
   "Only show Continue Watching for the profile that's active. Each profile sees just its own progress, so what you watch stays hidden from the other profiles that share this Stremio account.":
     "N’afficher « Continuer la lecture » que pour le profil actif. Chaque profil ne voit que sa propre progression, afin que ce que vous regardez reste masqué aux autres profils qui partagent ce compte Stremio.",
   "Only start the P2P engine when needed": "Ne démarrer le moteur P2P qu’en cas de besoin",
   "Open Languages": "Ouvrir Langues",
-  OpenSubtitles: "OpenSubtitles",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "Plus de 100 applications auto-hébergées : la suite *arr, des outils de débridage, des livres et livres audio, et bien plus encore.",
+  "OpenSubtitles": "OpenSubtitles",
   "Pack removed, badges back to default": "Pack supprimé, badges par défaut rétablis",
-  packs: "packs",
+  "packs": "packs",
   "Parsed playlists, program guide, and series info. Re-downloads on next open.":
     "Playlists, guide des programmes et informations sur les séries analysés. Nouveau téléchargement à la prochaine ouverture.",
   "Paste your SUBDL API key": "Collez votre clé API SUBDL",
@@ -314,7 +300,7 @@ const settingsFill: Record<string, string> = {
   "Private mode": "Mode privé",
   "Private Stremio add-ons with 10x the rate limits and built-in stream proxying, from $9 a month.":
     "Extensions Stremio privées avec des limites de débit 10x supérieures et un proxy de streaming intégré, à partir de 9 $ par mois.",
-  Quality: "Qualité",
+  "Quality": "Qualité",
   "Raise this only if your TV cuts off the edges of the picture.":
     "Augmentez cette valeur uniquement si votre téléviseur rogne les bords de l’image.",
   "Rather not set any of this up?": "Vous préférez ne rien configurer ?",
@@ -336,15 +322,15 @@ const settingsFill: Record<string, string> = {
   "Scan who is on screen while playing": "Analyser les personnes à l’écran pendant la lecture",
   "Scan with your phone to sign in without typing on the remote.":
     "Scannez avec votre téléphone pour vous connecter sans rien saisir sur la télécommande.",
-  Screen: "Écran",
-  Screensaver: "Économiseur d’écran",
+  "Screen": "Écran",
+  "Screensaver": "Économiseur d’écran",
   "Second line size": "Taille de la deuxième ligne",
   "Second subtitle language": "Deuxième langue des sous-titres",
   "See what you get": "Voir ce que vous obtenez",
   "Serve Frame on your network": "Diffuser Frame sur votre réseau",
   "Set up Live TV": "Configurer la TV en direct",
   "Settings storage": "Stockage des paramètres",
-  Setup: "Configuration",
+  "Setup": "Configuration",
   "Setup QR code": "Code QR de configuration",
   "Short seek (Shift + arrows)": "Saut court (Shift + flèches)",
   "Short version: don't. Frame takes no donations and no cut of anything on this page.":
@@ -365,7 +351,7 @@ const settingsFill: Record<string, string> = {
   "Smooth motion runs on the bundled mpv engine in the Frame desktop app. It has no effect in the browser.":
     "La fluidité des mouvements repose sur le moteur mpv intégré à l’application de bureau Frame. Elle n’a aucun effet dans le navigateur.",
   "Soft blur with a floating pill.": "Flou doux avec une pastille flottante.",
-  Solid: "Uni",
+  "Solid": "Uni",
   "Sources Frame flagged as broken. Clear to give them another chance.":
     "Sources signalées comme défectueuses par Frame. Effacez la liste pour leur donner une nouvelle chance.",
   "Start after": "Démarrer après",
@@ -374,8 +360,8 @@ const settingsFill: Record<string, string> = {
   "Stream priority": "Priorité des flux",
   "Stremio Supporters get a special badge on their Frame profile.":
     "Les soutiens de Stremio reçoivent un badge spécial sur leur profil Frame.",
-  SUBDL: "SUBDL",
-  Subsource: "Sous-source",
+  "SUBDL": "SUBDL",
+  "Subsource": "Sous-source",
   "Subtitle addons": "Extensions de sous-titres",
   "Subtitle auto-sync": "Synchronisation automatique des sous-titres",
   "Subtitle sources": "Sources de sous-titres",
@@ -451,7 +437,7 @@ const settingsFill: Record<string, string> = {
     "Qui finance les serveurs et où faire un don si vous le souhaitez.",
   "with your @handle in the body so we can match it to your account.":
     "avec votre identifiant @handle dans le corps du message afin que nous puissions l’associer à votre compte.",
-  Wyzie: "Wyzie",
+  "Wyzie": "Wyzie",
   "X-Ray (experimental)": "X-Ray (expérimental)",
   "X-Ray needs a TMDB key": "X-Ray nécessite une clé TMDB",
   "X-Ray reads the cast and their photos from TMDB. Without a TMDB key there is no cast to match against. Add your free key under Library & metadata.":

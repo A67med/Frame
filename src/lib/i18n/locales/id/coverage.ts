@@ -415,8 +415,6 @@ const coverage: Record<string, string> = {
     "Tambahkan beberapa teman agar tontonan, penilaian, dan favorit mereka muncul di sini.",
   "Add a list": "Tambah daftar",
   "Add a local folder": "Tambah folder lokal",
-  "Add a manga source": "Tambah sumber manga",
-  "Add a manga source to open these": "Tambahkan sumber manga untuk membukanya",
   "Add a movie or show to this list...": "Tambahkan film atau acara ke daftar ini...",
   "Add a playlist": "Tambah playlist",
   "Add a profile for someone else and everyone keeps their own Continue Watching, watch history, and progress.":
@@ -733,7 +731,6 @@ const coverage: Record<string, string> = {
   "When the audio and subtitle use different languages, Frame compares a release-matched subtitle in the audio language. It only offers a fix unless every safety check is measured.":
     "Jika audio dan subtitle menggunakan bahasa berbeda, Frame membandingkan subtitle yang cocok dengan rilis dalam bahasa audio. Frame hanya menawarkan perbaikan kecuali semua pemeriksaan keamanan telah diukur.",
   "New York Times": "New York Times",
-  "Bestseller lists in the eBook section.": "Daftar buku terlaris di bagian eBook.",
   "New York Times · bestseller lists": "New York Times · daftar buku terlaris",
   "NYT Books API key": "Kunci API NYT Books",
   "Choose whether Frame prefers direct and debrid sources, peer-to-peer torrents, or shows both.":

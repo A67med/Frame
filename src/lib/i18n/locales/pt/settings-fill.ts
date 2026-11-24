@@ -92,8 +92,6 @@ const settingsFill: Record<string, string> = {
   "Poster shine on hover": "Brilho no pôster ao passar o mouse",
   "A subtle tvOS style light sweep across a poster when you hover it. Off by default; the card lift stays either way.":
     "Uma sutil passagem de luz no estilo tvOS sobre o pôster quando você passa o mouse. Desativado por padrão; a elevação do card permanece de qualquer forma.",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "Procurando o Frame no seu navegador, o controle remoto do celular ou o controle remoto do leitor de mangá? Eles foram movidos para a página Controles Remotos.",
   "X-Ray (experimental)": "X-Ray (experimental)",
   "Amazon-style X-Ray: open the cast while you watch and tap anyone for their bio and everything they have been in. On-device face matching to show who is on screen is coming next. Off by default.":
     "X-Ray no estilo Amazon: abra o elenco enquanto assiste e toque em qualquer pessoa para ver sua biografia e tudo em que já atuou. A correspondência facial no dispositivo para mostrar quem está na tela vem a seguir. Desativado por padrão.",
@@ -117,16 +115,9 @@ const settingsFill: Record<string, string> = {
     "Os controles remotos são fornecidos pelo aplicativo de desktop. Abra estas configurações no Frame do seu computador para obter os links.",
   "Frame on other devices": "Frame em outros dispositivos",
   "Serve Frame on your network": "Disponibilizar o Frame na sua rede",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Uma única chave ativa tudo nesta página: o aplicativo web, o controle pelo celular e o controle remoto do leitor de mangá.",
   "Phone remote": "Controle pelo celular",
   "Turns your phone into a remote for this computer: play, pause, seek, volume, and casting, all from the couch. Open the Wi-Fi address on your phone's browser.":
     "Transforma seu celular em um controle remoto para este computador: reproduzir, pausar, avançar, volume e transmissão, tudo do sofá. Abra o endereço de Wi-Fi no navegador do seu celular.",
-  "Manga reader remote": "Controle remoto do leitor de mangá",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Controle o flipbook de mangá pelo celular enquanto lê na tela grande: vire as páginas, use o zoom e alterne os modos. O leitor também mostra este link enquanto você lê.",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "Ligue a chave acima e os endereços do controle pelo celular e do controle do leitor de mangá aparecem aqui.",
   "On a beta that's giving you trouble? Pick an earlier build below and run its installer over your current copy. Your library, settings, and downloads all stay put.":
     "Está tendo problemas com uma versão beta? Escolha uma versão anterior abaixo e execute o instalador dela sobre a sua cópia atual. Sua biblioteca, configurações e downloads continuam onde estão.",
   "While beta updates are on, Frame offers the newest build again on its next check. Turn beta updates off above to stay on an earlier one.":
@@ -137,7 +128,7 @@ const settingsFill: Record<string, string> = {
   "More picture shaders": "Mais shaders de imagem",
   "Neural upscalers, sharpeners, and HDR tone-mapping ported for mpv. Each is hosted by its author, not bundled with Frame. Download the ones you want; Frame chains them in the right order and applies them in the player.":
     "Upscalers neurais, filtros de nitidez e mapeamento de tons HDR portados para o mpv. Cada um é hospedado pelo seu autor, não incluído no Frame. Baixe os que quiser; o Frame os encadeia na ordem certa e os aplica no player.",
-  Cleared: "Limpo",
+  "Cleared": "Limpo",
   "Sure?": "Tem certeza?",
   "Storage overview": "Visão geral do armazenamento",
   "Everything Frame saves lives on this computer. If space runs low, clear a cache below; Frame rebuilds them as you browse.":
@@ -151,7 +142,6 @@ const settingsFill: Record<string, string> = {
   "Stream picker cache": "Cache do seletor de streams",
   "Remembered source lists per title. Clears stale results after changing addons or debrid.":
     "Listas de fontes memorizadas por título. Limpa resultados desatualizados após alterar complementos ou debrid.",
-  "Manga browse cache": "Cache de navegação de mangá",
   "Cached chapter lists and browse pages. Downloads stay untouched.":
     "Listas de capítulos e páginas de navegação em cache. Os downloads permanecem intactos.",
   "Live TV caches": "Caches de TV ao vivo",
@@ -163,8 +153,6 @@ const settingsFill: Record<string, string> = {
   "Continue Watching suggestions cache": "Cache de sugestões de Continuar assistindo",
   "Resurface picks for the home rail. Rebuilds overnight.":
     "Traz de volta seleções para a faixa inicial. Reconstruído durante a noite.",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "Os temas baixados são gerenciados em Tema e aparência. Os downloads de vídeo e mangá são gerenciados na página Downloads.",
   "Pattern (e.g. \\bremux\\b)": "Padrão (ex. \\bremux\\b)",
   "Downloaded from community": "Baixados da comunidade",
   "Badge art packs you installed from the community store. Remove one to put its badges back to default.":
@@ -173,7 +161,7 @@ const settingsFill: Record<string, string> = {
   "Pack removed, badges back to default": "Pacote removido, emblemas restaurados ao padrão",
   "Remove pack": "Remover pacote",
   "View community badge packs": "Ver pacotes de emblemas da comunidade",
-  packs: "pacotes",
+  "packs": "pacotes",
   "Any Stremio subtitle addons you have installed are searched here too.":
     "Quaisquer complementos de legendas do Stremio que você tenha instalado também são pesquisados aqui.",
   "{count} installed. Add or remove them under Streaming sources.":
@@ -183,19 +171,19 @@ const settingsFill: Record<string, string> = {
   "Subtitle sources": "Fontes de legendas",
   "Frame searches every source you enable at the same time, then merges and de-duplicates the results into one clean list. Turn a source off to stop pulling from it.":
     "O Frame pesquisa ao mesmo tempo todas as fontes que você ativa, depois mescla os resultados e remove as duplicatas em uma única lista organizada. Desative uma fonte para parar de buscar resultados nela.",
-  OpenSubtitles: "OpenSubtitles",
+  "OpenSubtitles": "OpenSubtitles",
   "Frame's built-in OpenSubtitles search, on by default. If you install an OpenSubtitles addon, this steps aside automatically so your results are never duplicated.":
     "A busca de OpenSubtitles integrada ao Frame, ativada por padrão. Se você instalar um addon do OpenSubtitles, ela se desativa automaticamente para que seus resultados nunca sejam duplicados.",
-  Wyzie: "Wyzie",
+  "Wyzie": "Wyzie",
   "A fast community subtitle index. Off by default; turn it on for extra coverage on newer or niche releases.":
     "Um índice rápido de legendas da comunidade. Desativado por padrão; ative-o para ter cobertura extra em lançamentos mais recentes ou de nicho.",
   "Subtitle addons": "Addons de legendas",
-  SUBDL: "SUBDL",
+  "SUBDL": "SUBDL",
   "A large multi-language subtitle database. Off until you add your free SUBDL API key.":
     "Um grande banco de dados de legendas em vários idiomas. Desativado até você adicionar sua chave de API gratuita do SUBDL.",
   "Paste your SUBDL API key": "Cole sua chave de API do SUBDL",
   "Get a free key at subdl.com": "Obtenha uma chave gratuita em subdl.com",
-  Subsource: "Subsource",
+  "Subsource": "Subsource",
   "A community subtitle source. Off until you add your Subsource API key.":
     "Uma fonte de legendas da comunidade. Desativada até você adicionar sua chave de API do Subsource.",
   "Paste your Subsource API key": "Cole sua chave de API do Subsource",
@@ -205,8 +193,8 @@ const settingsFill: Record<string, string> = {
   "The languages above all obey your preferred subtitle language order, which lives in the Languages page.":
     "Todos os idiomas acima seguem sua ordem preferida de idiomas de legenda, que fica na página Idiomas.",
   "Open Languages": "Abrir Idiomas",
-  Quality: "Qualidade",
-  Maximum: "Máxima",
+  "Quality": "Qualidade",
+  "Maximum": "Máxima",
   "Resolution posters are decoded at. High is sized to your screen with headroom and looks identical to full res while using far less memory; Balanced saves the most; Maximum keeps original resolution.":
     "A resolução em que os pôsteres são decodificados. Alta é dimensionada para a sua tela com folga e parece idêntica à resolução total usando muito menos memória; Equilibrada é a que mais economiza; Máxima mantém a resolução original.",
   "Poster dock magnification": "Ampliação do dock de pôsteres",
@@ -225,8 +213,8 @@ const settingsFill: Record<string, string> = {
   "Featured source": "Fonte do destaque",
   "What fills the hero. Trending is a fresh top list from Frame, refreshed through the day. Classic uses your own Home rows.":
     "O que preenche o destaque. Em alta é uma nova lista dos mais populares do Frame, atualizada ao longo do dia. Clássico usa as suas próprias linhas da tela Início.",
-  Classic: "Clássico",
-  Screensaver: "Proteção de tela",
+  "Classic": "Clássico",
+  "Screensaver": "Proteção de tela",
   "When Frame sits idle in the foreground, it drifts through cinematic backdrops with a clock and what's trending. Any movement or key brings you back. Off by default.":
     "Quando o Frame fica ocioso em primeiro plano, ele desliza por cenários cinematográficos com um relógio e o que está em alta. Qualquer movimento ou tecla traz você de volta. Desativado por padrão.",
   "Ambient screensaver": "Proteção de tela ambiente",
@@ -253,7 +241,7 @@ const settingsFill: Record<string, string> = {
     "Escolha a aparência de Assistir juntos e dos botões minimizar, maximizar e fechar. O vidro líquido substitui os controles transparentes limpos.",
   "Clean transparent": "Transparente limpo",
   "Liquid glass": "Vidro líquido",
-  Filled: "Preenchido",
+  "Filled": "Preenchido",
   "Drag the window from anywhere": "Arrastar a janela de qualquer lugar",
   "Move Frame by dragging any empty space on a page, not just the top bar. Leave this off to keep clicks inside pages from nudging the window.":
     "Mova o Frame arrastando qualquer espaço vazio de uma página, não apenas a barra superior. Deixe desativado para evitar que cliques dentro das páginas movam a janela sem querer.",
@@ -284,7 +272,7 @@ const settingsFill: Record<string, string> = {
   "True fullscreen covers the whole screen and hides the taskbar. Maximize fills the screen but keeps the taskbar and title bar, so you can still switch apps.":
     "A tela cheia real ocupa toda a tela e oculta a barra de tarefas. Maximizar preenche a tela, mas mantém a barra de tarefas e a barra de título para você continuar alternando entre aplicativos.",
   "True fullscreen": "Tela cheia real",
-  Maximize: "Maximizar",
+  "Maximize": "Maximizar",
   "Dual subtitles": "Legendas duplas",
   "Show a second subtitle in another language at the same time. Handy when you are learning a language: keep the one you are learning as your main subtitle, and put your own language here.":
     "Mostra ao mesmo tempo uma segunda legenda em outro idioma. É útil ao aprender uma língua: mantenha o idioma que está estudando como legenda principal e escolha aqui o seu próprio idioma.",
@@ -297,7 +285,7 @@ const settingsFill: Record<string, string> = {
   "Second line size": "Tamanho da segunda linha",
   "Get your own": "Tenha o seu",
   "Trial for ${n}": "Teste por ${n}",
-  ElfHosted: "ElfHosted",
+  "ElfHosted": "ElfHosted",
   "Debridge is the part that finds you a working file. A TorBox and a Usenet account come with it, so you do not need to buy a debrid service separately. Already have Real-Debrid or AllDebrid? Plug it in instead.":
     "O Debridge encontra um arquivo que funcione. Ele inclui contas TorBox e Usenet, então você não precisa comprar um serviço de debrid separadamente. Já tem Real-Debrid ou AllDebrid? Conecte o seu.",
   "No Docker, no server, nothing to configure.":
@@ -345,8 +333,6 @@ const settingsFill: Record<string, string> = {
     "Add-ons privados do Stremio com 10x mais limites de requisições e proxy de streams embutido, a partir de $9 por mês.",
   "Managed Plex, Emby, or Jellyfin, running in minutes with no hardware and no Docker.":
     "Plex, Emby ou Jellyfin gerenciados, funcionando em minutos, sem hardware e sem Docker.",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "Mais de 100 apps auto-hospedados: o stack *arr, ferramentas de debrid, livros e audiolivros, e muito mais.",
   "Daily backups, automatic updates, and monitoring, all handled for you.":
     "Backups diários, atualizações automáticas e monitoramento, tudo cuidado por eles.",
   "Month to month, cancel anytime, and you can try the whole thing for $1 for a week.":
@@ -359,7 +345,7 @@ const settingsFill: Record<string, string> = {
   "Badges for giving": "Emblemas por contribuir",
   "Give to any charity below or subscribe to ElfHosted, and the badge lands on your profile.":
     "Doe para qualquer instituição abaixo ou assine a ElfHosted, e o emblema aparece no seu perfil.",
-  Charity: "Caridade",
+  "Charity": "Caridade",
   "For donating to a charity.": "Por doar para uma instituição de caridade.",
   "Charity $100+": "Caridade $100+",
   "For giving more than $100 to charity.": "Por doar mais de $100 para caridade.",
@@ -408,9 +394,9 @@ const settingsFill: Record<string, string> = {
     "Exibe o horário local em que o vídeo atual deve terminar.",
   "Clock size": "Tamanho do relógio",
   "Clock style": "Estilo do relógio",
-  Minimal: "Minimalista",
-  Solid: "Sólido",
-  Accent: "Destaque",
+  "Minimal": "Minimalista",
+  "Solid": "Sólido",
+  "Accent": "Destaque",
   "Soft blur with a floating pill.": "Desfoque suave em uma pílula flutuante.",
   "Time only, with a subtle shadow.": "Apenas o horário, com uma sombra sutil.",
   "High-contrast panel for busy scenes.": "Painel de alto contraste para cenas movimentadas.",
@@ -438,12 +424,12 @@ const settingsFill: Record<string, string> = {
   "Finish setting up Frame": "Conclua a configuração do Frame",
   "Get one free at {url}": "Obtenha uma gratuita em {url}",
   "Getting a code ready…": "Preparando um código…",
-  Frame: "Frame",
+  "Frame": "Frame",
   "Frame needs a TMDB key for artwork, rows and collections. It is free.":
     "O Frame precisa de uma chave do TMDB para artes, fileiras e coleções. Ela é gratuita.",
   "Frame plays IPTV from your own provider. Add a playlist and the guide fills in.":
     "O Frame reproduz IPTV do seu próprio provedor. Adicione uma playlist e o guia é preenchido.",
-  Interface: "Interface",
+  "Interface": "Interface",
   "Live TV playlists": "Playlists de TV ao vivo",
   "Nothing connected yet. Scan a code with your phone.":
     "Nada conectado ainda. Escaneie um código com o celular.",
@@ -456,9 +442,9 @@ const settingsFill: Record<string, string> = {
   "Save key": "Salvar chave",
   "Scan with your phone to sign in without typing on the remote.":
     "Escaneie com o celular para entrar sem digitar no controle.",
-  Screen: "Tela",
+  "Screen": "Tela",
   "Set up Live TV": "Configurar TV ao vivo",
-  Setup: "Configuração",
+  "Setup": "Configuração",
   "Setup QR code": "QR code de configuração",
   "Signed in as {name}": "Conectado como {name}",
   "Sync, themes and friends": "Sincronização, temas e amigos",

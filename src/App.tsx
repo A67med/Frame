@@ -87,7 +87,7 @@ import {
   findHotkeyMatch,
   shouldHandleGlobalKeyboardEvent,
 } from "@/lib/hotkeys";
-import { useView, type Frame, type View } from "@/app/navigation/view";
+import { REMOVED_PAGES, useView, type Frame, type View } from "@/app/navigation/view";
 import { ThemeChromeBridge } from "@/components/theme-chrome-bridge";
 import type { MetaType } from "@/lib/cinemeta";
 import { usePluginCataloguesAvailable } from "@/features/addons/streams/available";
@@ -136,7 +136,6 @@ import {
   PluginsView,
   QueueView,
   RadarView,
-  REMOVED_PAGES,
   ServiceView,
   Settings,
   Shows,

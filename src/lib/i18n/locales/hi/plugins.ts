@@ -87,8 +87,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "उस लिंक ने जवाब नहीं दिया।",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "यह प्लगइन रिपॉज़िटरी जैसा नहीं लगता। Frame को { name, plugins } या scrapers वाला प्रोवाइडर-स्क्रिप्ट मैनिफ़ेस्ट चाहिए।",
-  "This is a manga repository. Add it from the Manga page.":
-    "यह मांगा रिपॉज़िटरी है। इसे मांगा पेज से जोड़ें।",
   "Already added.": "पहले से जोड़ा गया है।",
   "Added {repo} with {count} providers.": "{repo} को {count} प्रोवाइडर के साथ जोड़ा गया।",
   "Your repositories": "आपकी रिपॉज़िटरी",
@@ -119,8 +117,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "{m} में से {n} ने जवाब दिया, {k} विफल",
   "Install all": "सभी इंस्टॉल करें",
   "Installing {done} of {total}": "{total} में से {done} इंस्टॉल हो रहे हैं",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "छोटी स्क्रिप्ट जो उन साइटों पर स्ट्रीम, मांगा और किताबें ढूँढती हैं जिन्हें Frame नहीं जानता, आपकी चुनी हुई रिपॉज़िटरी से इंस्टॉल की गईं।",
   "Remove all": "सभी हटाएँ",
 };
 

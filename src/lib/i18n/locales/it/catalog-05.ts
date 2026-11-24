@@ -84,8 +84,6 @@ const catalog05: Record<string, string> = {
     "Guarda la TV. Mostra già un nuovo codice. Scansiona quello.",
   "Look offline to others": "Mostrati offline agli altri",
   'Looking for "{q}"': 'Ricerca di "{q}"',
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "Cerchi Frame nel browser, il telecomando sul telefono o quello del lettore manga? Ora sono nella pagina Telecomandi.",
   "Looking for peers…": "Ricerca di peer…",
   "Looking for sources": "Ricerca delle fonti",
   "Looking for sources…": "Ricerca delle fonti…",
@@ -169,7 +167,6 @@ const catalog05: Record<string, string> = {
   "Manage Servers": "Gestisci server",
   "Manage addon": "Gestisci Add-on",
   "Manage connection": "Gestisci connessione",
-  "Manage eBook sources": "Gestisci fonti eBook",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "Gestisci tutte le posizioni da cui Frame può leggere, sul disco o sul web.",
   "Manage members and posts": "Gestisci membri e post",
@@ -182,11 +179,6 @@ const catalog05: Record<string, string> = {
   "Manager": "Responsabile",
   "Managers": "Responsabili",
   "Manga": "Manga",
-  "Manga adaptation": "Adattamento manga",
-  "Manga browse cache": "Cache di esplorazione dei manga",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Non è ancora possibile associare i manga a un titolo Frame, quindi {n} sono stati esclusi.",
-  "Manga reader remote": "Telecomando del lettore manga",
   "Manic Heart": "Cuore frenetico",
   "Manifest URL": "URL del manifest",
   "Manifest URL copied": "URL del manifest copiato",
@@ -434,7 +426,6 @@ const catalog05: Record<string, string> = {
   "My Watchlist": "La mia lista",
   "My collection": "La mia collezione",
   "My collections": "Le mie collezioni",
-  "My eBooks": "I miei eBook",
   "My filter": "Il mio filtro",
   "My layout": "Il mio layout",
   "My library": "La mia raccolta",
@@ -611,7 +602,6 @@ const catalog05: Record<string, string> = {
   "No PIN set.": "Nessun PIN impostato.",
   "No Simkl history yet.": "Ancora nessuna cronologia Simkl.",
   "No Simkl premieres this month": "Nessuna première Simkl questo mese",
-  "No Suwayomi server at this address": "Nessun server Suwayomi a questo indirizzo",
   "No Way Out": "Nessuna via d'uscita",
   "No Wi-Fi address yet. Other devices cannot reach this computer.":
     "Ancora nessun indirizzo Wi-Fi. Gli altri dispositivi non possono raggiungere questo computer.",
@@ -674,8 +664,6 @@ const catalog05: Record<string, string> = {
   "No date": "Nessuna data",
   "No debrid configured": "Nessun servizio debrid configurato",
   "No description available.": "Nessuna descrizione disponibile.",
-  "No description is available for this eBook.":
-    "Non è disponibile alcuna descrizione per questo eBook.",
   "No details available for this person.": "Nessun dettaglio disponibile su questa persona.",
   "No dimensions set. This filter matches every stream.":
     "Nessuna dimensione impostata. Questo filtro include tutti gli stream.",
@@ -683,7 +671,6 @@ const catalog05: Record<string, string> = {
   "No downloadable episode files were found in this season package. Pick another package.":
     "Nessun file di episodio scaricabile trovato nel pacchetto di questa stagione. Scegli un altro pacchetto.",
   "No downloads yet": "Ancora nessun download",
-  "No eBooks found.": "Nessun eBook trovato.",
   "No entries on your AniList lists yet.": "Ancora nessun elemento nelle tue liste AniList.",
   "No entries on your MyAnimeList lists yet.":
     "Ancora nessun elemento nelle tue liste MyAnimeList.",
@@ -793,8 +780,6 @@ const catalog05: Record<string, string> = {
   "No recent activity yet": "Ancora nessuna attività recente",
   "No reminders yet. Use the clock on a show's page to get told about new episodes and seasons.":
     "Ancora nessun promemoria. Usa l'orologio nella pagina di una serie per ricevere notifiche sui nuovi episodi e sulle nuove stagioni.",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "Ancora nessun repository. Aggiungine uno qui sopra per sfogliare gli Add-on per eBook.",
   "No response": "Nessuna risposta",
   "No results found.": "Nessun risultato trovato.",
   "No reviews from your friends for this film.":
@@ -826,8 +811,6 @@ const catalog05: Record<string, string> = {
   "No sources match your filter. Showing all sources.":
     "Nessuna fonte corrisponde al filtro. Vengono mostrate tutte le fonti.",
   "No status": "Nessuno stato",
-  "No story summary is available for this eBook.":
-    "Non è disponibile alcun riassunto della trama per questo eBook.",
   "No streaming sources yet": "Ancora nessuna fonte di streaming",
   "No streams match": "Nessuno stream corrisponde",
   "No styling": "Nessuno stile",
@@ -1131,8 +1114,6 @@ const catalog05: Record<string, string> = {
   "One pick at a time, full screen, until something lands.":
     "Una scelta alla volta, a schermo intero, finché non trovi quella giusta.",
   "One release": "Un'uscita",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Un solo interruttore attiva tutto in questa pagina: l'app web, il telecomando per telefono e quello per il lettore manga.",
   "One switch serves Frame on your network. Scan a code below with your phone, or open an address on any device on the same Wi-Fi.":
     "Un solo interruttore rende Frame disponibile sulla tua rete. Scansiona uno dei codici qui sotto con il telefono oppure apri un indirizzo su qualsiasi dispositivo connesso alla stessa rete Wi-Fi.",
   "One-click community packs. Rulesets bring full badge sets with their own matching; art remaps only swap the pictures on Frame's built-in badges. Anything shared as a badges.json link on the Nuvio Discord or Reddit imports here too.":

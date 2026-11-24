@@ -78,7 +78,6 @@ const catalog08: Record<string, string> = {
   "My Watchlist": "Moja lista do obejrzenia",
   "My collection": "Moja kolekcja",
   "My collections": "Moje kolekcje",
-  "My eBooks": "Moje e-booki",
   "My filter": "Mój filtr",
   "My layout": "Mój układ",
   "My library": "Moja biblioteka",
@@ -253,7 +252,6 @@ const catalog08: Record<string, string> = {
   "No PiP session. Closing.": "Brak sesji PiP. Zamykanie.",
   "No Simkl history yet.": "Brak historii Simkl.",
   "No Simkl premieres this month": "Brak premier w Simkl w tym miesiącu",
-  "No Suwayomi server at this address": "Pod tym adresem nie ma serwera Suwayomi",
   "No Way Out": "Bez wyjścia",
   "No Wi-Fi address yet. Other devices cannot reach this computer.":
     "Brak adresu Wi-Fi. Inne urządzenia nie mogą połączyć się z tym komputerem.",
@@ -321,7 +319,6 @@ const catalog08: Record<string, string> = {
   "No date": "Brak daty",
   "No debrid configured": "Nie skonfigurowano usługi debrid",
   "No description available.": "Brak dostępnego opisu.",
-  "No description is available for this eBook.": "Brak opisu tego e-booka.",
   "No details available for this person.": "Brak szczegółowych informacji o tej osobie.",
   "No dimensions set. This filter matches every stream.":
     "Nie ustawiono wymiarów. Ten filtr pasuje do każdego strumienia.",
@@ -329,7 +326,6 @@ const catalog08: Record<string, string> = {
   "No downloadable episode files were found in this season package. Pick another package.":
     "W tym pakiecie sezonu nie znaleziono plików odcinków do pobrania. Wybierz inny pakiet.",
   "No downloads yet": "Brak pobranych materiałów",
-  "No eBooks found.": "Nie znaleziono e-booków.",
   "No entries on your AniList lists yet.":
     "Na Twoich listach AniList nie ma jeszcze żadnych pozycji.",
   "No entries on your MyAnimeList lists yet.":
@@ -449,8 +445,6 @@ const catalog08: Record<string, string> = {
   "No recent activity yet": "Brak ostatniej aktywności",
   "No reminders yet. Use the clock on a show's page to get told about new episodes and seasons.":
     "Nie masz jeszcze przypomnień. Użyj ikony zegara na stronie serialu, aby otrzymywać powiadomienia o nowych odcinkach i sezonach.",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "Nie ma jeszcze żadnych repozytoriów. Dodaj repozytorium powyżej, aby przeglądać rozszerzenia e-booków.",
   "No response": "Brak odpowiedzi",
   "No results found.": "Nie znaleziono wyników.",
   "No reviews from your friends for this film.": "Żaden ze znajomych nie zrecenzował tego filmu.",
@@ -480,7 +474,6 @@ const catalog08: Record<string, string> = {
   "No sources match your filter. Showing all sources.":
     "Żadne źródła nie pasują do filtra. Wyświetlane są wszystkie źródła.",
   "No status": "Brak statusu",
-  "No story summary is available for this eBook.": "Brak streszczenia tej książki.",
   "No streaming sources yet": "Nie ma jeszcze źródeł strumieniowania",
   "No streams match": "Żadne strumienie nie pasują",
   "No styling": "Bez stylizacji",

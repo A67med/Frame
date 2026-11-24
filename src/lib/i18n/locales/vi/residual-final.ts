@@ -3,9 +3,9 @@ const residualFinal: Record<string, string> = {
   "Watching {n} streams at once": "Đang xem đồng thời {n} luồng",
   "Setting up Multiview": "Đang thiết lập chế độ xem nhiều luồng",
   "Side by side": "Cạnh nhau",
-  Stacked: "Xếp chồng",
-  Triple: "Ba ô",
-  Quad: "Bốn ô",
+  "Stacked": "Xếp chồng",
+  "Triple": "Ba ô",
+  "Quad": "Bốn ô",
   "Fullscreen split view": "Chế độ chia màn hình toàn màn hình",
   "Show controls": "Hiện điều khiển",
   "Hide controls, full grid": "Ẩn điều khiển, lưới toàn màn hình",
@@ -50,21 +50,21 @@ const residualFinal: Record<string, string> = {
   "Keep editing": "Tiếp tục chỉnh sửa",
   'Designing "{name}"': 'Đang thiết kế "{name}"',
   "Click to edit": "Nhấp để chỉnh sửa",
-  Tight: "Hẹp",
-  Mid: "Vừa",
-  Wide: "Rộng",
+  "Tight": "Hẹp",
+  "Mid": "Vừa",
+  "Wide": "Rộng",
   "Max {count} files.": "Tối đa {count} tệp.",
   "{name} is over 100 MB.": "{name} lớn hơn 100 MB.",
   "{name} is not an image or video.": "{name} không phải là hình ảnh hoặc video.",
   "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Up to {count} files, 100 MB each.":
     "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Tối đa {count} tệp, mỗi tệp 100 MB.",
-  M: "th",
-  D: "ng",
-  H: "g",
-  Y: "n",
+  "M": "th",
+  "D": "ng",
+  "H": "g",
+  "Y": "n",
   "Copy {label}": "Sao chép {label}",
   "Casting to": "Đang truyền tới",
-  Transcoding: "Đang chuyển mã",
+  "Transcoding": "Đang chuyển mã",
   "−15s": "−15 giây",
   "+15s": "+15 giây",
   "Connecting to": "Đang kết nối với",
@@ -78,13 +78,13 @@ const residualFinal: Record<string, string> = {
   "sketchy files": "tệp đáng ngờ",
   "cam rips": "bản quay lén",
   "tiny stubs": "tệp mồi cực nhỏ",
-  oversized: "quá lớn",
+  "oversized": "quá lớn",
   "year mismatch": "sai năm",
   "wrong episode": "sai tập",
   "season packs": "trọn bộ mùa",
   "scam metadata": "siêu dữ liệu lừa đảo",
   "dead torrents": "torrent không còn nguồn",
-  language: "ngôn ngữ",
+  "language": "ngôn ngữ",
   "trailers/extras": "trailer/nội dung bổ sung",
   "stub files": "tệp mồi",
   "wrong movie": "sai phim",
@@ -95,8 +95,8 @@ const residualFinal: Record<string, string> = {
   "No clean release has surfaced yet. This may be too new. Frame's filters dropped everything that came back as wrong-movie noise.":
     "Chưa có bản phát hành sạch nào xuất hiện. Nội dung này có thể còn quá mới. Bộ lọc của Frame đã loại bỏ mọi kết quả nhiễu không đúng phim.",
   "Create a custom filter": "Tạo bộ lọc tùy chỉnh",
-  Remux: "Remux",
-  Debrid: "Debrid",
+  "Remux": "Remux",
+  "Debrid": "Debrid",
   "{facet} filter: {value}": "Bộ lọc {facet}: {value}",
   "Close menu": "Đóng menu",
   "{value} +{n}": "{value} +{n}",
@@ -189,7 +189,7 @@ const residualFinal: Record<string, string> = {
   "{count} wins": "{count} giải thưởng",
   "{count} nomination": "{count} đề cử",
   "{count} nominations": "{count} đề cử",
-  Won: "Đoạt giải",
+  "Won": "Đoạt giải",
   "A standout this week.": "Nổi bật tuần này.",
   "Critics' Pick": "Lựa chọn của giới phê bình",
   "Loved by reviewers today": "Được giới phê bình yêu thích hôm nay",
@@ -203,7 +203,7 @@ const residualFinal: Record<string, string> = {
   "You're leaving Frame": "Bạn sắp rời Frame",
   "This link goes to an external site that Frame does not control or vouch for. Triple-check the address before you continue, and never enter your Frame password anywhere but Frame.":
     "Liên kết này dẫn đến một trang web bên ngoài mà Frame không kiểm soát hoặc bảo chứng. Hãy kiểm tra kỹ địa chỉ ba lần trước khi tiếp tục và tuyệt đối không nhập mật khẩu Frame ở bất kỳ đâu ngoài Frame.",
-  Destination: "Đích đến",
+  "Destination": "Đích đến",
   "Only continue if you fully trust this link":
     "Chỉ tiếp tục nếu bạn hoàn toàn tin tưởng liên kết này",
   "Frame can open only HTTP or HTTPS destinations.":
@@ -221,7 +221,7 @@ const residualFinal: Record<string, string> = {
   "an addon": "một tiện ích bổ sung",
   "a title": "một tựa phim",
   "{name} wants you here": "{name} muốn bạn đến đây",
-  Sure: "Đồng ý",
+  "Sure": "Đồng ý",
   "That does not look like a valid magnet link or infohash.":
     "Đây có vẻ không phải là liên kết magnet hoặc infohash hợp lệ.",
   "Your remote streaming server is not reachable. Check its address in Settings.":
@@ -262,29 +262,15 @@ const residualFinal: Record<string, string> = {
   "A local folder": "Thư mục cục bộ",
   "Advanced: build a plugin": "Nâng cao: tạo plugin",
   "Also Known As": "Còn được biết đến với tên",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "Quay lại Frame: Manga > Thiết lập nguồn > Máy chủ của bạn, rồi dán địa chỉ máy chủ (ví dụ {localUrl}, hoặc địa chỉ IP LAN nếu máy chủ chạy trên thiết bị khác, chẳng hạn {lanUrl}).",
   "Controller preview": "Xem trước tay cầm",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "Không thể lưu phông chữ đó. Phông chữ có thể không hợp lệ hoặc bộ nhớ đã đầy.",
-  "Download and run Suwayomi Server:": "Tải xuống và chạy Suwayomi Server:",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Mọi nguồn bạn bật trong Suwayomi đều sẽ xuất hiện trong Frame. Suwayomi luôn cập nhật các tiện ích mở rộng khi trang web thay đổi để chúng tiếp tục hoạt động.",
-  "Everything else, through your own server (Suwayomi)":
-    "Mọi nguồn khác, thông qua máy chủ riêng của bạn (Suwayomi)",
   "Expand {title} image": "Phóng to ảnh của {title}",
-  "Getting manga sources into Frame": "Thêm nguồn manga vào Frame",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "Frame cũng có môi trường chạy plugin thử nghiệm. Nếu muốn viết plugin nguồn, hãy xem {path} trong kho mã Frame. Chỉ cài đặt plugin từ những kho mã bạn tin cậy.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame không đi kèm manga hay trình thu thập dữ liệu nào. Đây là một ứng dụng đọc. Bạn tự thêm nguồn và nội dung trong các nguồn đó thuộc về bên vận hành nguồn, không phải Frame. Có hai cách để thêm nguồn.",
   "Import failed": "Nhập dữ liệu thất bại",
   "It serves a web UI at {url}": "Máy chủ cung cấp giao diện web tại {url}",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "Manga > Thiết lập nguồn > Thư mục cục bộ, rồi chọn một thư mục manga mà bạn đã sở hữu (tệp CBZ hoặc các thư mục chứa ảnh).",
   "Native Title": "Tên gốc",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "Mở {url} trong trình duyệt. Đi đến mục Extensions / Browse, thêm một kho nguồn cộng đồng, rồi cài đặt các nguồn bạn muốn (có hàng trăm nguồn). Suwayomi sử dụng cùng các kho tiện ích mở rộng với hệ sinh thái Mihon / Tachiyomi.",
   "Press T to chat...": "Nhấn T để trò chuyện...",
   "SIMKL rating picker": "Bộ chọn điểm SIMKL",
   "Sharing diagnostics": "Đang chia sẻ dữ liệu chẩn đoán",
@@ -312,11 +298,11 @@ const residualFinal: Record<string, string> = {
   "didn't see that coming": "Không ngờ tới luôn",
   "no way 😂": "Không thể nào 😂",
   "this scene is wild": "Cảnh này điên thật",
-  editing: "đang chỉnh sửa",
-  empty: "trống",
-  heard: "đã nghe",
-  of: "trên",
-  orig: "gốc",
+  "editing": "đang chỉnh sửa",
+  "empty": "trống",
+  "heard": "đã nghe",
+  "of": "trên",
+  "orig": "gốc",
   "Open the signed-in user's own Frame profile immediately when its handle is loaded. Returns true when navigation starts and false otherwise.":
     "Mở ngay hồ sơ Frame của chính người dùng đã đăng nhập khi tên định danh của họ được tải xong. Trả về true khi bắt đầu điều hướng và false trong các trường hợp còn lại.",
   "AI search failed.": "Tìm kiếm bằng AI thất bại.",
@@ -334,15 +320,15 @@ const residualFinal: Record<string, string> = {
   "Frame could not open your browser.": "Frame không thể mở trình duyệt của bạn.",
   "Frame's peer-to-peer engine is warming up. This clears on its own in a few seconds, then Play works.":
     "Công cụ ngang hàng của Frame đang khởi động. Trạng thái này sẽ tự hết sau vài giây, sau đó nút Phát sẽ hoạt động.",
-  Minus: "Dấu trừ",
+  "Minus": "Dấu trừ",
   "None of your debrid services could deliver a working file. Pick another stream.":
     "Không dịch vụ debrid nào của bạn có thể cung cấp tệp hoạt động. Hãy chọn luồng khác.",
   "None of your debrid services could resolve this stream. Try a different one.":
     "Không dịch vụ debrid nào của bạn có thể phân giải luồng này. Hãy thử luồng khác.",
-  Plus: "Dấu cộng",
+  "Plus": "Dấu cộng",
   "Real-Debrid is refusing this download right now, which usually means its traffic or fair-use limit has been hit. Try again later, pick a different source, or use another debrid.":
     "Real-Debrid hiện đang từ chối lượt tải xuống này, thường là do đã chạm giới hạn lưu lượng hoặc sử dụng hợp lý. Hãy thử lại sau, chọn nguồn khác hoặc dùng dịch vụ debrid khác.",
-  Recheck: "Kiểm tra lại",
+  "Recheck": "Kiểm tra lại",
   "Remote streaming server unreachable. Check the address in Settings > P2P & servers and that the server machine is online.":
     "Không thể kết nối đến máy chủ phát từ xa. Hãy kiểm tra địa chỉ trong Cài đặt > P2P và máy chủ, đồng thời bảo đảm máy chạy máy chủ đang trực tuyến.",
   "Remote streaming server unreachable. Strict mode is on, so local fallback is disabled.":
@@ -393,8 +379,6 @@ const residualFinal: Record<string, string> = {
   "{name} returned an error ({code}).": "{name} đã trả về lỗi ({code}).",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "Thêm tất cả máy chủ Jellyfin, Emby hoặc Plex mà bạn sử dụng.",
-  "Add eBook sources from a repository you trust.":
-    "Thêm nguồn eBook từ một kho mã mà bạn tin cậy.",
   "All libraries": "Tất cả thư viện",
   "All servers": "Tất cả máy chủ",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -426,16 +410,16 @@ const residualFinal: Record<string, string> = {
   "Connect server": "Kết nối máy chủ",
   "Connecting to home servers…": "Đang kết nối với máy chủ gia đình…",
   "Connecting…": "Đang kết nối…",
-  Connections: "Kết nối",
+  "Connections": "Kết nối",
   "Copy the X-Plex-Token value from the XML page URL.":
     "Sao chép giá trị X-Plex-Token từ URL của trang XML.",
-  Disable: "Tắt",
+  "Disable": "Tắt",
   "Download media": "Tải nội dung đa phương tiện",
   "Download selected ({n})": "Tải xuống mục đã chọn ({n})",
   "Edge voices need the Frame desktop app. Reading with the device voice.":
     "Giọng Edge cần ứng dụng Frame trên máy tính. Đang đọc bằng giọng nói của thiết bị.",
   "Edit home server": "Chỉnh sửa máy chủ gia đình",
-  Enrichment: "Bổ sung dữ liệu",
+  "Enrichment": "Bổ sung dữ liệu",
   "Every…": "Mỗi…",
   "Featured book": "Sách nổi bật",
   "Frame does not host any books. Open a folder on this device, install a source extension, or connect your own server. Metadata can describe a book, but a source is what lets Frame open it.":
@@ -450,7 +434,7 @@ const residualFinal: Record<string, string> = {
   "How to find a Plex access token": "Cách tìm token truy cập Plex",
   "Loading your media server library…": "Đang tải thư viện máy chủ đa phương tiện…",
   "Local Library": "Thư viện cục bộ",
-  Manual: "Thủ công",
+  "Manual": "Thủ công",
   "Media Servers": "Máy chủ đa phương tiện",
   "Media servers": "Máy chủ đa phương tiện",
   "No available episodes in this season.": "Không có tập nào khả dụng trong mùa này.",
@@ -469,7 +453,6 @@ const residualFinal: Record<string, string> = {
   "Prefer this device": "Ưu tiên thiết bị này",
   "Preferred home server": "Máy chủ gia đình ưu tiên",
   "Preparing narration audio": "Đang chuẩn bị âm thanh thuyết minh",
-  "Read eBooks in Frame": "Đọc eBook trong Frame",
   "Refresh interval in days": "Khoảng thời gian làm mới tính theo ngày",
   "Refresh policy": "Chính sách làm mới",
   "Remove folder?": "Gỡ thư mục?",
@@ -497,7 +480,7 @@ const residualFinal: Record<string, string> = {
   "Use access token — Advanced": "Dùng token truy cập - Nâng cao",
   "Waiting for Plex…": "Đang chờ Plex…",
   "You haven’t connected a media server": "Bạn chưa kết nối máy chủ đa phương tiện",
-  days: "ngày",
+  "days": "ngày",
   "{n} episodes on home servers": "{n} tập trên máy chủ gia đình",
   "{voice} could not be generated. {message}": "Không thể tạo giọng {voice}. {message}",
 };

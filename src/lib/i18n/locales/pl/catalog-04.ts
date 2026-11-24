@@ -27,7 +27,6 @@ const catalog04: Record<string, string> = {
   "Create a group": "Utwórz grupę",
   "Create a group to watch and share together.":
     "Utwórz grupę, aby wspólnie oglądać i udostępniać.",
-  "Create folders for eBooks": "Twórz foldery na e-booki",
   "Create folders for movies and shows": "Twórz foldery na filmy i seriale",
   "Create group": "Utwórz grupę",
   "Create lists in your library to feature them here":
@@ -499,8 +498,6 @@ const catalog04: Record<string, string> = {
     "Pobrane napisy mogą pojawić się chwilę po rozpoczęciu odtwarzania. Pozostaw tę opcję wyłączoną, aby zachować aktualnie wyświetlane napisy. Włącz ją, aby przełączyć się na najlepiej dopasowany język natychmiast po ich wczytaniu.",
   "Downloaded subtitles can arrive after playback starts. Frame switches from a temporary track when a stronger release match becomes available.":
     "Pobrane napisy mogą pojawić się już po rozpoczęciu odtwarzania. Frame zastępuje tymczasową ścieżkę, gdy dostępne stają się napisy lepiej dopasowane do wydania.",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "Pobranymi motywami można zarządzać w sekcji Motyw i wygląd. Pobranymi filmami i mangami można zarządzać na stronie Pobrane.",
   "Downloaded. Ready to install and restart.": "Pobrano. Można zainstalować i uruchomić ponownie.",
   "Downloading": "Pobieranie",
   "Downloading shaders…": "Pobieranie shaderów…",
@@ -591,8 +588,6 @@ const catalog04: Record<string, string> = {
   "EPG failed:": "Nie udało się wczytać EPG:",
   "EPG fetch failed:": "Nie udało się pobrać EPG:",
   "EPG source": "Źródło EPG",
-  "EPUB eBook": "E-book EPUB",
-  "EPUB saved": "Zapisano EPUB",
   "EU-hosted, fast cache check. Same read-only usage as the others.":
     "Hostowane w UE, szybkie sprawdzanie pamięci podręcznej. Takie samo użycie tylko do odczytu jak w pozostałych usługach.",
   "Each curve shows how much of the bright range it keeps before rolling off.":
@@ -666,7 +661,6 @@ const catalog04: Record<string, string> = {
   "Email or Discord": "E-mail lub Discord",
   "Embed": "Osadź",
   "Embed a YouTube video": "Osadź film z YouTube",
-  "Embed from Spotify": "Osadź ze Spotify",
   "Embed mpv inside Frame window": "Osadź mpv w oknie Frame",
   "Embedded": "Osadzono",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":
@@ -697,7 +691,6 @@ const catalog04: Record<string, string> = {
   "Enable all": "Włącz wszystko",
   "Enable controller": "Włącz kontroler",
   "Enable injected ad skip": "Włącz pomijanie wstrzykniętych reklam",
-  "Enable manga sources": "Włącz źródła mangi",
   "Enable or disable rule": "Włącz lub wyłącz regułę",
   "Enable rule": "Włącz regułę",
   "Enable this to fetch Arabic descriptions for series and movies when available on TMDB.":
@@ -707,7 +700,6 @@ const catalog04: Record<string, string> = {
   "End": "Koniec",
   "End ep": "Zakończ odc.",
   "End of episode": "Koniec odcinka",
-  "End of manga": "Koniec mangi",
   "End of next episode": "Koniec następnego odcinka",
   "End voyage": "Zakończ rejs",
   "Ended": "Zakończone",

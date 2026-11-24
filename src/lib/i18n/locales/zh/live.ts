@@ -64,8 +64,8 @@ const live: Record<string, string> = {
   "Switch to this playlist first": "请先切换到此播放列表",
   "M3U URL": "M3U URL",
   "Direct .m3u link": ".m3u 直链",
-  Xtream: "Xtream",
-  EPG: "EPG",
+  "Xtream": "Xtream",
+  "EPG": "EPG",
   "EPG URL (optional)": "EPG URL（可选）",
   "EPG fetch failed:": "EPG 获取失败：",
   "Stored as a standalone EPG source. No channels are loaded for EPG-only entries; they're kept here for future attachment to existing playlists.":
@@ -105,14 +105,7 @@ const live: Record<string, string> = {
   "Xtream credentials were left out of this backup.": "此备份不包含 Xtream 凭据。",
   "Adds a Playlists tab to the nav for your M3U and Xtream libraries.":
     "在导航栏中添加“播放列表”标签页，用于访问你的 M3U 和 Xtream 媒体库。",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "想找浏览器版 Frame、手机遥控器或漫画阅读器遥控器？它们已移至“遥控器”页面。",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "一个开关即可启用此页面的所有功能：Web 应用、手机遥控器和漫画阅读器遥控器。",
   "Phone remote": "手机遥控器",
-  "Manga reader remote": "漫画阅读器遥控器",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "打开上方开关后，手机遥控器和漫画阅读器遥控器的地址会显示在此处。",
   "Live TV caches": "直播电视缓存",
   "Expand poster cards during keyboard or remote navigation across poster rows, using preloaded wide artwork.":
     "使用键盘或遥控器浏览海报行时，使用预加载的宽幅图片展开海报卡片。",
@@ -142,9 +135,9 @@ const live: Record<string, string> = {
   "Film and television": "电影与电视",
   "Television's finest": "电视界最高荣誉",
   "Sports & live TV": "体育与电视直播",
-  Channel: "频道",
+  "Channel": "频道",
   "Live channel": "直播频道",
-  Playlist: "播放列表",
+  "Playlist": "播放列表",
   "Refresh playlist": "刷新播放列表",
   "This channel isn't responding": "此频道无响应",
   "Controller support": "控制器支持",
@@ -155,8 +148,6 @@ const live: Record<string, string> = {
     "M3U 链接或 Xtream Codes 登录信息。请在电视上输入，以便凭据仅保存在电视上。",
   "BAFTA Television": "英国电影和电视艺术学院电视奖",
   "Big Picture closes. Frame keeps running behind it.": "大屏模式关闭。Frame 继续在后台运行。",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "内容筛选（隐藏动画 / 漫画 / 电视直播 / 体育 / 成人内容）",
   "Controller connected": "手柄已连接",
   "Controller navigation on the TV": "在电视上使用手柄导航",
   "Couldn't load this playlist": "无法加载此播放列表",
@@ -226,8 +217,6 @@ const live: Record<string, string> = {
   "Controller cursor": "控制器光标",
   "Another program already holds this port, usually a Stremio server that is running on this machine. Frame tried its spare ports too. Stop that server, or leave it running and point Frame at it in Remote streaming server below.":
     "另一个程序已占用此端口，通常是此电脑上正在运行的 Stremio 服务器。Frame 也尝试了备用端口。请停止该服务器，或让其继续运行，并在下方的“远程流媒体服务器”中配置 Frame 使用该服务器。",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "为本页的所有功能提供支持：Web 应用、手机遥控器和漫画阅读器遥控器。",
   "Size of the controller on-screen keyboard.": "控制器屏幕键盘的大小。",
   "Search {n} EPG channels#one": "搜索 {n} 个 EPG 频道",
   "Search {n} EPG channels#few": "搜索 {n} 个 EPG 频道",
@@ -237,7 +226,7 @@ const live: Record<string, string> = {
     "电视直播无法在观影派对中同步，因此播放 {name} 会使你离开派对。其他人仍可一起继续观看。",
   "Back to remote": "返回遥控器",
   "Remote style": "遥控器样式",
-  Remote: "遥控器",
+  "Remote": "遥控器",
   "On your Roku remote, press Home.": "按 Roku 遥控器上的 Home 键。",
   'Search for "Media Assistant" (channel ID 782875, free).':
     "搜索“Media Assistant”（频道 ID 782875，免费）。",

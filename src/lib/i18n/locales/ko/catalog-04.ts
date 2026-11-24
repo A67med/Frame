@@ -88,7 +88,6 @@ const catalog04: Record<string, string> = {
   "Favorite": "즐겨찾기",
   "Favorite Anime": "좋아하는 애니메이션",
   "Favorite Characters": "좋아하는 캐릭터",
-  "Favorite Manga": "좋아하는 만화",
   "Favorite Movies": "좋아하는 영화",
   "Favorite Shows": "좋아하는 시리즈",
   "Favorite {channel}": "{channel} 즐겨찾기",
@@ -173,7 +172,6 @@ const catalog04: Record<string, string> = {
     "출처를 병합한 후 유형별로 필터링합니다. 모든 항목을 보내려면 전부 켜 두세요.",
   "Filter categories": "카테고리 필터링",
   "Filter countries": "국가 필터",
-  "Filter eBooks": "eBook 필터",
   "Filter genres": "장르 필터",
   "Filter sources": "소스 필터",
   "Filter tags...": "태그 필터링...",
@@ -251,8 +249,6 @@ const catalog04: Record<string, string> = {
   "Flat_Style": "Flat_Style",
   "Flip the switch above and the addresses and scan codes appear here.":
     "위 스위치를 켜면 여기에 주소와 스캔 코드가 표시됩니다.",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "위 스위치를 켜면 휴대폰 리모컨과 만화 리더 리모컨 주소가 여기에 표시됩니다.",
   "Floating dock": "플로팅 독",
   "Floating orbs over the canvas.": "캔버스 위에 떠다니는 구체입니다.",
   "Floats over the artwork": "아트워크 위에 띄우기",
@@ -676,17 +672,12 @@ const catalog04: Record<string, string> = {
     "Frame가 사용자의 무료 계정에 Cloudflare Worker를 만들고 URL을 저장합니다.",
   "Frame curated": "Frame 큐레이션",
   "Frame default": "Frame 기본값",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame는 만화나 소스를 호스팅하지 않습니다. 직접 운영하는 자체 호스팅 서버에 연결하거나, 신뢰하는 저장소에서 소스 플러그인을 설치하거나, 이미 보유한 폴더를 여세요.",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame는 만화를 호스팅하지 않습니다. 신뢰하는 저장소에서 소스 플러그인을 추가하거나, 자체 서버를 연결하거나, 로컬 폴더를 여세요. 설정에서 언제든지 이 기능을 끌 수 있습니다.",
   "Frame double-checks with Stremio after saving, so a half-written order can't slip through.":
     "Frame는 저장 후 Stremio에서 다시 확인하므로 순서가 일부만 저장되는 일이 없습니다.",
   "Frame dropped {n} suspicious or mismatched result.":
     "Frame가 의심스럽거나 일치하지 않는 결과 {n}개를 제외했습니다.",
   "Frame dropped {n} suspicious or mismatched results.":
     "Frame가 의심스럽거나 일치하지 않는 결과 {n}개를 제외했습니다.",
-  "Frame eBook": "Frame eBook",
   "Frame finds intro and credits timing from AniSkip, TheIntroDB, and the file's own chapters, then shows a Skip button at the right moment.":
     "Frame는 AniSkip, TheIntroDB 및 파일에 포함된 챕터에서 인트로와 엔딩 크레딧 구간을 찾아 적절한 순간에 건너뛰기 버튼을 표시합니다.",
   "Frame found episode sources for {season}, but none of them is a single downloadable package. It can still fetch the episodes one at a time.":
@@ -922,7 +913,6 @@ const catalog04: Record<string, string> = {
   "Hide from your picks": "추천에서 숨기기",
   "Hide help": "도움말 숨기기",
   "Hide hidden episodes": "숨긴 에피소드 감추기",
-  "Hide manga": "만화 숨기기",
   "Hide others' drawings": "다른 사람의 그림 숨기기",
   "Hide pack instructions": "팩 안내 숨기기",
   "Hide password": "비밀번호 숨기기",

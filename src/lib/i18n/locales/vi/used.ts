@@ -4,9 +4,8 @@ const used: Record<string, string> = {
   "A compact upright slider that boosts past 100 percent.":
     "Thanh trượt dọc nhỏ gọn, có thể tăng vượt mức 100 phần trăm.",
   "AI (Gemini)": "AI (Gemini)",
-  Accept: "Chấp nhận",
+  "Accept": "Chấp nhận",
   "Ad detected": "Đã phát hiện quảng cáo",
-  "Add a manga source to open these": "Thêm nguồn manga để mở các mục này",
   "Add tags (anime, horror, cozy...)": "Thêm thẻ (anime, kinh dị, thư giãn...)",
   "Add your TMDB key in Settings first": "Trước tiên, hãy thêm khóa TMDB trong Cài đặt",
   "Add your TMDB key in Settings to search.": "Hãy thêm khóa TMDB trong Cài đặt để tìm kiếm.",
@@ -14,7 +13,7 @@ const used: Record<string, string> = {
   "Airing now": "Đang phát sóng",
   "Any rating": "Mọi mức điểm",
   "Anyone can find and join from search": "Bất kỳ ai cũng có thể tìm và tham gia qua tìm kiếm",
-  AudD: "AudD",
+  "AudD": "AudD",
   "Auto-adjusts styled (ASS) subtitles so dialogue stays the same size across files, while keeping their colors, fonts, and sign placement.":
     "Tự động điều chỉnh phụ đề có định dạng (ASS) để lời thoại giữ cùng kích thước giữa các tệp, đồng thời giữ nguyên màu sắc, phông chữ và vị trí biển hiệu.",
   "Autoplay profile songs": "Tự động phát nhạc hồ sơ",
@@ -26,7 +25,7 @@ const used: Record<string, string> = {
   "Bulk upload is not live yet, sending one rating per second.":
     "Tính năng tải lên hàng loạt chưa hoạt động, hiện gửi một lượt đánh giá mỗi giây.",
   "Cancel import": "Hủy nhập",
-  Cancelling: "Đang hủy",
+  "Cancelling": "Đang hủy",
   "Checking SVP installation...": "Đang kiểm tra cài đặt SVP...",
   "Checking the local SVP and VapourSynth installation...":
     "Đang kiểm tra cài đặt SVP và VapourSynth trên máy...",
@@ -45,18 +44,18 @@ const used: Record<string, string> = {
   "Couldn't load this collection": "Không thể tải bộ sưu tập này",
   "Danish Cinema": "Điện ảnh Đan Mạch",
   "Danish Films": "Phim Đan Mạch",
-  Decline: "Từ chối",
+  "Decline": "Từ chối",
   "Dismiss notification": "Bỏ qua thông báo",
   "Drop your export here, or click to browse": "Thả tệp xuất vào đây hoặc nhấp để duyệt",
-  Earlier: "Trước đó",
-  End: "Kết thúc",
+  "Earlier": "Trước đó",
+  "End": "Kết thúc",
   "Explore the all-time greatest actors, directors and more":
     "Khám phá những diễn viên, đạo diễn vĩ đại nhất mọi thời đại và nhiều hơn nữa",
   "Failed to save": "Không thể lưu",
   "Featured order": "Thứ tự nổi bật",
-  Filmography: "Danh sách phim",
+  "Filmography": "Danh sách phim",
   "Find a group": "Tìm nhóm",
-  Found: "Đã tìm thấy",
+  "Found": "Đã tìm thấy",
   "French Films": "Phim Pháp",
   "Frequent Collaborators": "Cộng sự thường xuyên",
   "Friend requests": "Lời mời kết bạn",
@@ -97,7 +96,7 @@ const used: Record<string, string> = {
   "Imported {n} ratings from {name}": "Đã nhập {n} điểm đánh giá từ {name}",
   "Indian Cinema": "Điện ảnh Ấn Độ",
   "Indian Films": "Phim Ấn Độ",
-  Insert: "Chèn",
+  "Insert": "Chèn",
   "Install more shaders in Settings, Shaders to switch between them here.":
     "Cài đặt thêm shader trong Cài đặt, Shader để chuyển đổi giữa chúng tại đây.",
   "Installed and detected. Frame found the native svpflow plugins and VapourSynth script library.":
@@ -105,7 +104,7 @@ const used: Record<string, string> = {
   "Installed packs": "Gói đã cài đặt",
   "Installed shaders": "Shader đã cài đặt",
   "Invited by {name}": "Được {name} mời",
-  Invites: "Lời mời",
+  "Invites": "Lời mời",
   "Italian Cinema": "Điện ảnh Ý",
   "Italian Films": "Phim Ý",
   "Japanese Films": "Phim Nhật Bản",
@@ -115,10 +114,8 @@ const used: Record<string, string> = {
     "Các trình cài đặt còn sót lại từ những bản cập nhật trước, trailer đã lưu vào bộ nhớ đệm và tệp tạm dùng để truyền nội dung. Frame xóa các tệp cũ khi khởi chạy và chỉ giữ lại trình cài đặt gần nhất.",
   "Local storage is full, these ratings live on your account only.":
     "Bộ nhớ cục bộ đã đầy, các đánh giá này chỉ được lưu trên tài khoản của bạn.",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Hiện chưa thể đối chiếu manga với nội dung trên Frame, nên đã bỏ qua {n} mục.",
   "Mark all read": "Đánh dấu tất cả là đã đọc",
-  Minecraft: "Minecraft",
+  "Minecraft": "Minecraft",
   "Modern Russian Series": "Phim bộ Nga hiện đại",
   "Mute all profile songs": "Tắt tiếng tất cả nhạc hồ sơ",
   "Native 48/60fps motion through your Linux SVP and VapourSynth installation, rendered inside Frame's embedded player.":
@@ -132,7 +129,7 @@ const used: Record<string, string> = {
   "Nothing to preview yet.": "Chưa có nội dung để xem trước.",
   "Nothing was imported": "Không có nội dung nào được nhập",
   "Nothing was saved.": "Không có nội dung nào được lưu.",
-  Notification: "Thông báo",
+  "Notification": "Thông báo",
   "On by default: once you've watched every episode that has aired, the show leaves Continue Watching and returns when a new episode drops. Turn it off to keep caught-up shows on the row.":
     "Bật theo mặc định: sau khi bạn xem hết các tập đã phát sóng, phim bộ sẽ rời khỏi Xem tiếp và xuất hiện lại khi có tập mới. Tắt tùy chọn này để giữ các phim bộ đã xem kịp tiến độ trong hàng.",
   "Only people you add can join": "Chỉ những người bạn thêm mới có thể tham gia",
@@ -146,7 +143,7 @@ const used: Record<string, string> = {
   "Pick your language": "Chọn ngôn ngữ",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Các tiện ích bổ sung phổ biến của cộng đồng, được xếp hạng theo số sao trong thư mục công khai. Cài đặt tiện ích khác bằng URL trong thẻ Duyệt.",
-  Popularity: "Độ phổ biến",
+  "Popularity": "Độ phổ biến",
   "Portuguese-Language": "Tiếng Bồ Đào Nha",
   "Profile song": "Nhạc hồ sơ",
   "Profile songs": "Nhạc hồ sơ",
@@ -165,8 +162,7 @@ const used: Record<string, string> = {
   "Russian Films": "Phim điện ảnh Nga",
   "Russian Movies": "Phim Nga",
   "SVP is not supported by this Frame package.": "Gói Frame này không hỗ trợ SVP.",
-  "Search movies, shows, anime, manga": "Tìm phim điện ảnh, phim bộ, anime, manga",
-  Shaders: "Bộ đổ bóng",
+  "Shaders": "Bộ đổ bóng",
   "Show card": "Thẻ phim bộ",
   "Shows a small green dot on the player's subtitle button while a subtitle track is active. Turn it off if you would rather keep the controls clean.":
     "Hiển thị một chấm xanh nhỏ trên nút phụ đề của trình phát khi đang bật một rãnh phụ đề. Tắt tùy chọn này nếu bạn muốn giao diện điều khiển gọn hơn.",
@@ -174,7 +170,7 @@ const used: Record<string, string> = {
     "Trước tiên, hãy đăng nhập vào tài khoản Frame. Các đánh giá đã nhập sẽ được lưu vào hồ sơ của bạn.",
   "Skip ad": "Bỏ qua quảng cáo",
   "Skipped, not rated or not supported": "Đã bỏ qua, chưa đánh giá hoặc không được hỗ trợ",
-  Sort: "Sắp xếp",
+  "Sort": "Sắp xếp",
   "Soviet Classics": "Tác phẩm kinh điển Liên Xô",
   "Spanish-Language": "Tiếng Tây Ban Nha",
   "Start import": "Bắt đầu nhập",
@@ -188,14 +184,13 @@ const used: Record<string, string> = {
   "The all-time greats": "Những tác phẩm xuất sắc nhất mọi thời đại",
   "The server stopped responding, the rest stayed on this device.":
     "Máy chủ ngừng phản hồi, phần còn lại vẫn được lưu trên thiết bị này.",
-  Timer: "Hẹn giờ",
+  "Timer": "Hẹn giờ",
   "Top 100": "Top 100",
-  "Top Manga": "Manga hàng đầu",
   "IMDb Top": "Top IMDb",
   "Trending in Russian": "Thịnh hành bằng tiếng Nga",
   "User-made badge packs from the community store":
     "Các gói huy hiệu do người dùng tạo từ cửa hàng cộng đồng",
-  Vertical: "Dọc",
+  "Vertical": "Dọc",
   "View badges": "Xem huy hiệu",
   "Watch now": "Xem ngay",
   "Watch party": "Xem chung",
@@ -219,7 +214,7 @@ const used: Record<string, string> = {
   "and {count} more": "và {count} mục khác",
   "and {n} more": "và {n} mục khác",
   "avg rating {r} across {n} titles": "điểm trung bình {r} trên {n} tựa phim",
-  edited: "đã chỉnh sửa",
+  "edited": "đã chỉnh sửa",
   "from {source}": "từ {source}",
   "lead or co-lead of {n} acclaimed titles":
     "vai chính hoặc đồng chính trong {n} tựa phim được đánh giá cao",

@@ -549,7 +549,6 @@ const catalog11: Record<string, string> = {
     "관심 목록은 나중에 보려고 저장한 콘텐츠입니다. 기록은 시청한 모든 콘텐츠이며, 로컬은 컴퓨터에 있는 파일입니다.",
   "Watchlist only": "관심 목록만",
   "Watchlist shows only saved titles": "관심 목록에 저장된 작품만 표시",
-  "Ways to add an eBook source": "eBook 소스 추가 방법",
   "We could not find a working stream": "작동하는 스트림을 찾지 못했습니다",
   "We could not find anyone at @{handle}. The handle may have changed or the profile was removed.":
     "@{handle} 사용자를 찾을 수 없습니다. 핸들이 변경되었거나 프로필이 삭제되었을 수 있습니다.",
@@ -959,7 +958,6 @@ const catalog11: Record<string, string> = {
   "You've reached the end · {n} addons#one": "마지막입니다 · 애드온 {n}개#one",
   "You've sailed these waters dry.": "이 항로의 영화를 모두 둘러봤습니다.",
   "YouTube": "YouTube",
-  "YouTube, SoundCloud or Spotify link": "YouTube, SoundCloud 또는 Spotify 링크",
   "Your AniList": "내 AniList",
   "Your AniList is empty": "내 AniList가 비어 있음",
   "Your AniList: {name}": "내 AniList: {name}",

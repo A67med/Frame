@@ -3,12 +3,6 @@ import { lruSet } from "@/lib/cache";
 import { get, IMG } from "@/lib/providers/tmdb/tmdb-client";
 import type { BpBandArt } from "./use-bp-sections";
 
-// TheSportsDB permits hot-linking their artwork with credit and in the same
-// breath says "You cannot publish apps to an appstore unless you are a paid
-// subscriber." Big Picture is the Play Store shell, so the sports rung of the
-// Panel B ladder stays dark until js buys the subscription. Nobody flips this.
-export const BP_LIVE_SPORTS_ART = false;
-
 export const PANEL_DEBOUNCE_MS = 220;
 
 const QUERY_MAX = 300;

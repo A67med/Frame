@@ -726,7 +726,6 @@ const coverage: Record<string, string> = {
   "Back to top": "Wróć na górę",
   "Beta": "Beta",
   "Bookmarks": "Zakładki",
-  "Open manga": "Otwórz mangę",
   "Remove": "Usuń",
   "Slide {n}": "Slajd {n}",
   "Play": "Odtwórz",
@@ -775,29 +774,15 @@ const coverage: Record<string, string> = {
   "A local folder": "Folder lokalny",
   "Advanced: build a plugin": "Dla zaawansowanych: utwórz wtyczkę",
   "Also Known As": "Znany także jako",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "Wróć do Frame: Manga > Skonfiguruj źródło > Twój serwer i wklej adres swojego serwera (na przykład {localUrl} albo adres IP w sieci LAN, jeśli działa na innym komputerze, np. {lanUrl}).",
   "Controller preview": "Podgląd kontrolera",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "Nie udało się zapisać tej czcionki. Może być nieprawidłowa albo pamięć jest pełna.",
-  "Download and run Suwayomi Server:": "Pobierz i uruchom Suwayomi Server:",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Każde źródło włączone w Suwayomi pojawi się następnie w Frame. Suwayomi aktualizuje rozszerzenia po zmianach w witrynach, dzięki czemu nadal działają.",
-  "Everything else, through your own server (Suwayomi)":
-    "Wszystkie pozostałe źródła przez własny serwer (Suwayomi)",
   "Expand {title} image": "Powiększ obraz {title}",
-  "Getting manga sources into Frame": "Dodawanie źródeł mangi do Frame",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "Frame ma również eksperymentalne środowisko uruchomieniowe wtyczek. Jeśli chcesz napisać wtyczkę źródła, zobacz {path} w repozytorium Frame. Instaluj wtyczki tylko z zaufanych repozytoriów.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame nie zawiera mang ani mechanizmów pozyskiwania treści. Jest czytnikiem. To Ty dodajesz źródła, a ich zawartość należy do podmiotów, które nimi zarządzają, nie do Frame. Źródła można dodać na dwa sposoby.",
   "Import failed": "Import nie powiódł się",
   "It serves a web UI at {url}": "Udostępnia interfejs internetowy pod adresem {url}",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "Manga > Skonfiguruj źródło > Folder lokalny, a następnie wybierz folder z posiadaną mangą (pliki CBZ lub foldery z obrazami).",
   "Native Title": "Tytuł oryginalny",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "Otwórz {url} w przeglądarce. Przejdź do sekcji Rozszerzenia / Przeglądaj, dodaj repozytorium źródeł społecznościowych, a następnie zainstaluj wybrane źródła (dostępne są ich setki). Suwayomi korzysta z tych samych repozytoriów rozszerzeń co ekosystem Mihon / Tachiyomi.",
   "SIMKL rating picker": "Wybór oceny SIMKL",
   "Sharing diagnostics": "Udostępnianie danych diagnostycznych",
   "That font is {size} MB. Max is 4 MB.": "Ta czcionka ma {size} MB. Maksymalny rozmiar to 4 MB.",
@@ -907,8 +892,6 @@ const coverage: Record<string, string> = {
   "{name} returned an error ({code}).": "Usługa {name} zwróciła błąd ({code}).",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "Dodaj wszystkie używane serwery Jellyfin, Emby lub Plex.",
-  "Add eBook sources from a repository you trust.":
-    "Dodaj źródła e-booków z zaufanego repozytorium.",
   "All libraries": "Wszystkie biblioteki",
   "All servers": "Wszystkie serwery",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -983,7 +966,6 @@ const coverage: Record<string, string> = {
   "Prefer this device": "Preferuj to urządzenie",
   "Preferred home server": "Preferowany serwer domowy",
   "Preparing narration audio": "Przygotowywanie dźwięku narracji",
-  "Read eBooks in Frame": "Czytaj e-booki w Frame",
   "Refresh interval in days": "Częstotliwość odświeżania w dniach",
   "Refresh policy": "Zasady odświeżania",
   "Remove folder?": "Usunąć folder?",
@@ -1033,7 +1015,6 @@ const coverage: Record<string, string> = {
   "When the audio and subtitle use different languages, Frame compares a release-matched subtitle in the audio language. It only offers a fix unless every safety check is measured.":
     "Gdy dźwięk i napisy używają różnych języków, Frame porównuje napisy dopasowane do wydania w języku ścieżki dźwiękowej. Dopóki wszystkie kontrole bezpieczeństwa nie zostaną zmierzone, proponuje jedynie poprawkę.",
   "New York Times": "New York Times",
-  "Bestseller lists in the eBook section.": "Listy bestsellerów w sekcji eBooków.",
   "New York Times · bestseller lists": "New York Times · listy bestsellerów",
   "NYT Books API key": "Klucz API NYT Books",
   "Choose whether Frame prefers direct and debrid sources, peer-to-peer torrents, or shows both.":

@@ -302,10 +302,6 @@ const catalog10: Record<string, string> = {
   "Tap the first line of the section you want to fix.": "수정할 구간의 첫 번째 대사를 탭하세요.",
   "Tap the genres you want more of. They steer the Top Picks row at the top of this page.":
     "더 보고 싶은 장르를 탭하세요. 이 페이지 상단의 인기 추천 목록에 반영됩니다.",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "영화, 프로그램, 만화 또는 캐릭터에서 하트를 탭해 여기에 저장하세요.",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "영화, 시리즈 또는 만화의 별표나 캐릭터의 하트를 탭하면 여기에 저장됩니다.",
   "Tap to switch": "전환하려면 탭",
   "Tap to switch. The pencil renames, recolors, or adds a PIN.":
     "탭하여 전환하세요. 연필 아이콘으로 이름이나 색상을 바꾸거나 PIN을 추가할 수 있습니다.",
@@ -369,7 +365,6 @@ const catalog10: Record<string, string> = {
     "이 코드는 더 이상 유효하지 않습니다. TV에서 새 코드를 확인하세요.",
   "That custom url is not available.": "해당 사용자 지정 URL은 사용할 수 없습니다.",
   "That did not work. Check your details.": "처리하지 못했습니다. 입력한 정보를 확인하세요.",
-  "That does not look like a Spotify link.": "Spotify 링크가 아닌 것 같습니다.",
   "That does not look like a YouTube link.": "YouTube 링크가 아닌 것 같습니다.",
   "That does not look like a repository URL": "올바른 저장소 URL이 아닌 것 같습니다",
   "That does not look like a valid magnet link or infohash.":
@@ -480,8 +475,6 @@ const catalog10: Record<string, string> = {
   "The dotted line is a flat squeeze of the whole range. A curve that stays high keeps midtones punchy and compresses the highlights late; a lower curve rolls off early and looks gentler.":
     "점선은 전체 범위를 균일하게 압축한 것입니다. 높은 상태를 유지하는 곡선은 중간 톤의 선명함을 살리고 하이라이트를 나중에 압축하며, 낮은 곡선은 일찍 완만해져 더 부드럽게 보입니다.",
   "The draw is not published yet.": "대진표가 아직 공개되지 않았습니다.",
-  "The eBook download was canceled.": "eBook 다운로드가 취소되었습니다.",
-  "The eBook export was canceled.": "eBook 내보내기가 취소되었습니다.",
   "The editor is a working copy of the player. Click any control on it to move, resize, restyle or hide that control.":
     "편집기에는 플레이어의 작업용 사본이 표시됩니다. 컨트롤을 클릭하여 이동하거나 크기와 스타일을 바꾸거나 숨기세요.",
   "The end time has to be after the start.": "종료 시간은 시작 시간보다 뒤여야 합니다.",
@@ -695,9 +688,6 @@ const catalog10: Record<string, string> = {
   "This device": "이 기기",
   "This doesn't look like a Frame plugin repo. Frame expects a JSON file shaped { name, plugins: [ ... ] }.":
     "Frame 플러그인 저장소가 아닌 것 같습니다. Frame에는 { name, plugins: [ ... ] } 구조의 JSON 파일이 필요합니다.",
-  "This eBook could not be exported": "이 eBook을 내보낼 수 없습니다.",
-  "This eBook is not connected to an installed source.":
-    "이 eBook은 설치된 소스에 연결되어 있지 않습니다.",
   "This exact install, served as a web app. Open it on a phone, laptop or TV browser and it streams through this computer.":
     "현재 설치된 Frame를 그대로 웹 앱으로 제공합니다. 휴대폰, 노트북 또는 TV 브라우저에서 열면 이 컴퓨터를 통해 스트리밍됩니다.",
   "This file has one audio track.": "이 파일에는 오디오 트랙이 하나 있습니다.",
@@ -716,16 +706,6 @@ const catalog10: Record<string, string> = {
     "이 그룹의 피드를 불러올 수 없습니다. 잠시 후 다시 시도하세요.",
   "This instance of Frame is made for desktop. Our standalone iOS and Android apps are coming soon, each with a bespoke, mobile-first experience built for its native platform.":
     "이 Frame 버전은 데스크톱용입니다. 각 네이티브 플랫폼에 맞춰 모바일 중심으로 설계한 iOS 및 Android 전용 앱도 곧 출시됩니다.",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "Mangayomi 저장소이지만 소스가 Dart를 사용하거나 만화용이 아니므로 Frame에서 가져올 수 없습니다.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "Mangayomi 저장소입니다. Frame는 이 저장소의 JavaScript 소스를 네이티브로 실행합니다. 이 소스를 만화 라이브러리에 추가하려면 가져오세요.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Mangayomi 저장소입니다. 아직 네이티브 가져오기를 지원하지 않습니다. 현재 가장 방대한 카탈로그를 이용하려면 Suwayomi 서버를 실행한 후 서버 섹션에서 Frame에 연결하세요.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "Paperback(iOS) 저장소이므로 Frame에서 사용할 수 없습니다. 데스크톱 소스를 이용하려면 서버 섹션에서 Suwayomi 서버를 연결하세요.",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Tachiyomi / Mihon 저장소입니다. Android(APK) 확장 프로그램이므로 Frame에서 직접 실행할 수 없습니다. 데스크톱에서 이 소스를 사용하려면 Suwayomi 서버를 실행한 후 서버 섹션에서 Frame에 연결하세요.",
   "This is a metadata-based release estimate, not a measured timing score.":
     "측정된 타이밍 점수가 아닌 메타데이터 기반 릴리스 추정치입니다.",
   "This is how a subtitle will look.": "자막은 이렇게 표시됩니다.",
@@ -776,7 +756,6 @@ const catalog10: Record<string, string> = {
     "이 재생목록은 아직 로드되지 않았거나 채널이 없습니다.",
   "This replaces your current Frame setup (theme, home layout, settings, addons, profiles, and more) with the {n} saved entries in this file. Your Stremio sign-in stays as is. Frame reloads when it finishes.":
     "현재 Frame 설정(테마, 홈 레이아웃, 설정, 애드온, 프로필 등)을 이 파일에 저장된 항목 {n}개로 대체합니다. Stremio 로그인 정보는 그대로 유지됩니다. 완료되면 Frame가 다시 로드됩니다.",
-  "This repository lists no eBook extensions.": "이 저장소에는 eBook 확장 프로그램이 없습니다.",
   "This score only appears on cards.": "이 평점은 카드에만 표시됩니다.",
   "This screen stopped. Going back to Home usually clears it.":
     "이 화면이 중지되었습니다. 홈으로 돌아가면 대부분 해결됩니다.",
@@ -951,7 +930,6 @@ const catalog10: Record<string, string> = {
   "Top Drama": "인기 드라마",
   "Top Fantasy": "인기 판타지",
   "Top Horror": "인기 공포물",
-  "Top Manga": "인기 만화",
   "Top Movies": "최고의 영화",
   "Top Movies on MAL": "MAL 영화 인기 순위",
   "Top Mystery": "인기 미스터리",

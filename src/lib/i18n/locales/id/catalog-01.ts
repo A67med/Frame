@@ -485,7 +485,6 @@ const catalog: Record<string, string> = {
   "Browse channels": "Jelajahi saluran",
   "Browse community themes": "Jelajahi tema komunitas",
   "Browse groups": "Jelajahi grup",
-  "Browse manga": "Jelajahi manga",
   "Browse provider": "Jelajahi penyedia",
   "Browse public groups": "Jelajahi grup publik",
   "Browse pull requests": "Jelajahi pull request",

@@ -115,7 +115,7 @@ const settings: Record<string, string> = {
   "Active transfers": "Transferencias activas",
   "Ad, analytics, and tracking requests pass through untouched.":
     "Las solicitudes de anuncios, analítica y rastreo pasan sin cambios.",
-  Adaptive: "Adaptativo",
+  "Adaptive": "Adaptativo",
   "Adaptive Sharpen": "Nitidez adaptativa",
   "Add a Discord or Telegram URL above before creating rules.":
     "Agrega arriba una URL de Discord o Telegram antes de crear reglas.",
@@ -483,7 +483,7 @@ const settings: Record<string, string> = {
   "Cycle subtitles (alt)": "Alternar subtítulos (alternativo)",
   "Cycle through available subtitle tracks.": "Alterna entre las pistas de subtítulos disponibles.",
   "Cycle subtitles backward": "Cambiar subtítulos hacia atrás",
-  Developer: "Desarrollador",
+  "Developer": "Desarrollador",
   "Open search": "Abrir búsqueda",
   "Open or close the search overlay.": "Abre o cierra la búsqueda.",
   "Next room": "Sección siguiente",
@@ -869,7 +869,6 @@ const settings: Record<string, string> = {
   "Hide entire categories. Toggling these also removes the matching sidebar entries and rails.":
     "Oculta categorías completas. Al cambiar estas opciones, también se eliminan las entradas y filas correspondientes de la barra lateral.",
   "Hide Live TV": "Ocultar TV en vivo",
-  "Hide manga": "Ocultar manga",
   "Hide pack instructions": "Ocultar instrucciones de la colección",
   "Hide subtitles when the player shrinks into the floating PiP window.":
     "Ocultar los subtítulos cuando el reproductor se reduzca a la ventana flotante de PiP.",
@@ -1118,7 +1117,7 @@ const settings: Record<string, string> = {
   "mdblist api key": "clave de API de MDBList",
   "Media type": "Tipo de contenido",
   "Media types": "Tipos de contenido",
-  Medium: "Medio",
+  "Medium": "Medio",
   "Memory cap": "Límite de memoria",
   "Metadata language": "Idioma de los metadatos",
   "Metadata providers": "Proveedores de metadatos",
@@ -1403,7 +1402,7 @@ const settings: Record<string, string> = {
     "Recibe versiones anticipadas con las correcciones más recientes antes de que lleguen a la versión estable. Las versiones beta pueden tener algunos problemas; desactiva esta opción para volver a la versión estable en la próxima actualización.",
   "Recommended for You": "Recomendado para ti",
   "Record GIF": "Grabar GIF",
-  Recovery: "Recuperación",
+  "Recovery": "Recuperación",
   "Redeploy instructions": "Instrucciones para volver a implementar",
   "Redeploy relay": "Volver a implementar el relé",
   "Redeploy to pick up the latest Watch Together fixes. The in-app banner clears once the new version is live.":
@@ -1442,7 +1441,6 @@ const settings: Record<string, string> = {
   "Removes the Anime tab and every anime title from all rows everywhere: Home, Discover, Top 10, and catalogs. Western animation like Pixar is kept, and you can still find anime by searching.":
     "Quita la pestaña Anime y todos los títulos de anime de todas las filas: Inicio, Descubrir, Top 10 y catálogos. Se conserva la animación occidental, como Pixar, y aún puedes encontrar anime mediante la búsqueda.",
   "Removes the Live TV tab from the sidebar.": "Quita la pestaña TV en vivo de la barra lateral.",
-  "Removes the Manga tab from the sidebar.": "Quita la pestaña Manga de la barra lateral.",
   "Render subtitles in a heavier weight. Turn off to use your font's normal weight.":
     "Muestra los subtítulos con un trazo más grueso. Desactívalo para usar el grosor normal de la fuente.",
   "Renders mpv inline so playback lives in Frame itself. Disable to open it in a separate window instead.":
@@ -1690,7 +1688,7 @@ const settings: Record<string, string> = {
     "El espacio se está llenando ({n}/{limit}). Puede desbordarse en pantallas angostas.",
   "Slow or unstable connection": "Conexión lenta o inestable",
   "Slow playback by 0.25x.": "Reduce la velocidad de reproducción en 0,25x.",
-  Small: "Pequeño",
+  "Small": "Pequeño",
   "Smooth motion": "Movimiento fluido",
   "Smooth on weak PCs": "Fluido en computadoras poco potentes",
   "Smooth scrolling": "Desplazamiento suave",

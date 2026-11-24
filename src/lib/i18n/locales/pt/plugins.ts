@@ -94,8 +94,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "Esse link não respondeu.",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "Isto não parece um repositório de plugins. O Frame espera { name, plugins } ou um manifesto de scripts de provedor com scrapers.",
-  "This is a manga repository. Add it from the Manga page.":
-    "Este é um repositório de mangá. Adicione-o pela página de Mangá.",
   "Already added.": "Já adicionado.",
   "Added {repo} with {count} providers.": "{repo} adicionado com {count} provedores.",
   "Added {repo} with {count} providers.#one": "{repo} adicionado com {count} provedor.",
@@ -130,8 +128,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "{n} de {m} responderam, {k} falharam",
   "Install all": "Instalar tudo",
   "Installing {done} of {total}": "Instalando {done} de {total}",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "Pequenos scripts que encontram streams, mangás e livros em sites que o Frame não conhece, instalados de repositórios que você escolhe.",
   "Remove all": "Remover tudo",
 };
 

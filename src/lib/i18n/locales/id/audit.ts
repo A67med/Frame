@@ -235,15 +235,11 @@ const audit: Record<string, string> = {
     "Hubungkan akun Trakt Anda untuk melakukan scrobble pada pemutaran, menyinkronkan daftar tontonan, dan mendapatkan rekomendasi yang dipersonalisasi.",
   "Connection refused / DNS does not resolve": "Koneksi ditolak / resolusi DNS gagal",
   "Connection reset by server": "Koneksi diatur ulang oleh server",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "Filter konten (sembunyikan anime / manga / siaran langsung TV / olahraga / dewasa)",
   "Continue Watching first, then your addon catalogs in install order.":
     "Lanjutkan Menonton terlebih dahulu, lalu katalog addon Anda sesuai urutan pemasangan.",
   "Contrast Adaptive Sharpening": "Contrast Adaptive Sharpening",
   "Contrast Adaptive Sharpening (CAS)": "Contrast Adaptive Sharpening (CAS)",
   "Control from your phone": "Kendalikan dari ponsel Anda",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Kendalikan flipbook manga dari ponsel saat membaca di layar besar: balik halaman, perbesar, dan ganti mode. Pembaca juga menampilkan tautan ini saat Anda membaca.",
   "Copied. Paste it to your friend.": "Disalin. Tempelkan untuk teman Anda.",
   "Copy diagnostics grabs the engine status and your P2P settings as JSON, handy to paste into a bug report. The engine folder holds the DHT cache (dht.json) and active transfer data.":
     "Salin diagnostik mengambil status mesin dan pengaturan P2P Anda dalam format JSON, praktis untuk ditempelkan ke laporan bug. Folder mesin berisi cache DHT (dht.json) dan data transfer aktif.",
@@ -526,8 +522,6 @@ const audit: Record<string, string> = {
     "Frame mengenali ucapan dalam audio, lalu menggeser trek subtitle hingga keduanya selaras.",
   "Frame sends no telemetry. This also drops outbound ad, analytics, and tracker requests that addons or metadata providers try to make, before they leave your machine.":
     "Frame tidak mengirim telemetri. Opsi ini juga memblokir permintaan keluar untuk iklan, analitik, dan pelacak yang coba dikirim oleh addon atau penyedia metadata, sebelum permintaan tersebut meninggalkan komputer Anda.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame tidak menyertakan manga maupun scraper. Frame adalah aplikasi pembaca. Anda menyediakan sumbernya, dan isi sumber tersebut adalah milik pengelolanya, bukan Frame. Ada dua cara untuk menambahkan sumber.",
   "Frame will mark what you finish as watched on Simkl and sync your plan-to-watch list.":
     "Frame akan menandai tontonan yang Anda selesaikan sebagai sudah ditonton di Simkl dan menyinkronkan daftar tontonan yang Anda rencanakan.",
   "Frame's built-in OpenSubtitles search, on by default. If you install an OpenSubtitles addon, this steps aside automatically so your results are never duplicated.":
@@ -844,8 +838,6 @@ const audit: Record<string, string> = {
     "Hanya masukkan URL relay yang Anda kelola atau percayai. Relay hanya meneruskan pesan sinkronisasi Watch Together (putar, jeda, seek). Tidak ada hal lain yang melewatinya.",
   "Only my favorited channels": "Hanya saluran favorit saya",
   "Open Frame's settings outside playback.": "Buka pengaturan Frame di luar pemutaran.",
-  "Open a manga on Frame to control the reader from here.":
-    "Buka manga di Frame untuk mengontrol penampil manga dari sini.",
   "Open or close the live TV guide (live channels only).":
     "Buka atau tutup panduan TV siaran langsung (khusus saluran siaran langsung).",
   "Open or close the live TV recorder (live channels only).":
@@ -853,8 +845,6 @@ const audit: Record<string, string> = {
   "Open the Day": "Buka hari tersebut",
   "Open the cast menu and try this device again.":
     "Buka menu transmisi dan coba perangkat ini lagi.",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "Buka menu melingkar pada eBook apa pun, lalu pilih Tambahkan ke Rak.",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "Buka tautan ini di ponsel yang terhubung ke Wi-Fi yang sama untuk membalik halaman, memperbesar, dan memilih bab dengan gestur. Biarkan penampil ini tetap terbuka.",
   "Optional keys that unlock TMDB rails, baked-in poster ratings, fanart, and TVDB episode data.":
@@ -940,13 +930,10 @@ const audit: Record<string, string> = {
   "Raise subtitles": "Geser subtitle ke atas",
   "Raise this if an addon usually shows nothing until you hit refresh a few times.":
     "Naikkan ini jika addon biasanya tidak menampilkan apa pun sampai Anda menekan tombol segarkan beberapa kali.",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Beri nilai pada film, acara, anime, dan manga untuk menyusun daftar rating Anda",
   "Re-runs the welcome flow and clears every dismissed tip.":
     "Menjalankan ulang alur sambutan dan menghapus semua tip yang sebelumnya ditutup.",
   "Reaching your TV": "Menyambungkan ke TV Anda",
   "Read latest": "Baca yang terbaru",
-  "Read the Manga": "Baca manga",
   "Reading progress": "Progres membaca",
   "Reading settings": "Pengaturan membaca",
   "Ready when you are": "Siap saat Anda siap",
@@ -1227,7 +1214,6 @@ const audit: Record<string, string> = {
   "Starring a Favorite": "Dibintangi oleh salah satu favorit",
   "Start a room first.": "Buat ruang terlebih dahulu.",
   "Start anyway ({n} still loading)": "Mulai saja ({n} masih dimuat)",
-  "Start of manga": "Awal manga",
   "Start or stop recording a GIF of the video (no subtitles). Saves to Pictures/Frame.":
     "Mulai atau hentikan perekaman GIF video (tanpa subtitle). Disimpan ke Pictures/Frame.",
   "Start over": "Mulai dari awal",
@@ -1603,8 +1589,6 @@ const audit: Record<string, string> = {
   "checks any moment": "akan memeriksa sebentar lagi",
   "contains login credentials": "berisi kredensial login",
   "cosmetic, minor": "kosmetis, ringan",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "Ekstensi eBook menggunakan worker terisolasi, bridge HTTP, dan parser HTML Frame dalam sandbox yang sama dengan yang digunakan ekstensi Manga. Hanya tambahkan repositori yang Anda percayai.",
   "favorited": "ditambahkan ke favorit",
   "for higher rate limits; leave blank for the free anonymous tier.":
     "untuk batas jumlah permintaan yang lebih tinggi; biarkan kosong untuk paket anonim gratis.",

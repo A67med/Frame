@@ -165,8 +165,6 @@ const profileFill: Record<string, string> = {
   "Profile background": "Arrière-plan du profil",
   "Profile cards": "Cartes de profil",
   "Profile link": "Lien du profil",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Notez des films, des séries, des anime et des mangas pour constituer votre historique de notes",
   "Rate this": "Noter ceci",
   "Rating removed": "Note supprimée",
   "Rating saved": "Note enregistrée",
@@ -218,8 +216,6 @@ const profileFill: Record<string, string> = {
   "Stored as a small optimized webp.": "Stocké sous forme de petit fichier webp optimisé.",
   "Tap a star to change, then save": "Touchez une étoile pour modifier la note, puis enregistrez",
   "Tap a star to rate": "Touchez une étoile pour noter",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "Touchez le cœur d’un film, d’une série, d’un manga ou d’un personnage pour l’enregistrer ici.",
   "That image could not be read.": "Impossible de lire cette image.",
   "That looks like spam, try rephrasing": "Cela ressemble à du spam, essayez de reformuler",
   "That's {max} artists. Remove one to add another.":

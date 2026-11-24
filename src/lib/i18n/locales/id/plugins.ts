@@ -84,8 +84,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "Tautan itu tidak merespons.",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "Ini tidak tampak seperti repositori plugin. Frame mengharapkan { name, plugins } atau manifest skrip penyedia dengan scrapers.",
-  "This is a manga repository. Add it from the Manga page.":
-    "Ini repositori manga. Tambahkan dari halaman Manga.",
   "Already added.": "Sudah ditambahkan.",
   "Added {repo} with {count} providers.": "{repo} ditambahkan dengan {count} penyedia.",
   "Your repositories": "Repositori Anda",
@@ -116,8 +114,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "{n} dari {m} menjawab, {k} gagal",
   "Install all": "Pasang semua",
   "Installing {done} of {total}": "Memasang {done} dari {total}",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "Skrip kecil yang menemukan stream, manga, dan buku di situs yang tidak dikenal Frame, dipasang dari repositori pilihan Anda.",
   "Remove all": "Hapus semua",
 };
 

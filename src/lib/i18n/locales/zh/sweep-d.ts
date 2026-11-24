@@ -314,7 +314,6 @@ const sweepD: Record<string, string> = {
   "Muted text": "弱化文本",
   "My": "我的",
   "My collections": "我的合集",
-  "My eBooks": "我的电子书",
   "My filter": "我的筛选条件",
   "My lists": "我的列表",
   "My Lists": "我的列表",
@@ -467,7 +466,6 @@ const sweepD: Record<string, string> = {
   "No downloadable episode files were found in this season package. Pick another package.":
     "此整季资源包中未找到可下载的剧集文件。请选择其他资源包。",
   "No downloads yet": "暂无下载内容",
-  "No eBooks found.": "未找到电子书。",
   "No entries on your AniList lists yet.": "您的 AniList 列表中还没有条目。",
   "No entries on your MyAnimeList lists yet.": "您的 MyAnimeList 列表中还没有条目。",
   "No episodes available for this season.": "本季暂无可用剧集。",

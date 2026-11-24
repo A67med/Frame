@@ -123,9 +123,7 @@ const catalog02: Record<string, string> = {
   "Browse channels": "Esplora i canali",
   "Browse community": "Esplora la community",
   "Browse community themes": "Esplora i temi della community",
-  "Browse eBooks": "Esplora eBook",
   "Browse groups": "Esplora i gruppi",
-  "Browse manga": "Esplora i manga",
   "Browse provider": "Esplora il provider",
   "Browse public groups": "Esplora i gruppi pubblici",
   "Browse pull requests": "Esplora le pull request",
@@ -167,7 +165,6 @@ const catalog02: Record<string, string> = {
   "Build your own feed from actors, directors, and Trakt lists":
     "Crea il tuo feed da attori, registi e liste Trakt",
   "Build your own palette": "Crea la tua palette",
-  "Building EPUB": "Creazione EPUB",
   "Building tonight's queue…": "Preparazione della coda di stasera…",
   "Building your voyage": "Preparazione del tuo viaggio",
   "Built for desktop resolutions": "Progettato per risoluzioni desktop",
@@ -384,7 +381,6 @@ const catalog02: Record<string, string> = {
     "Scegli una voce Edge TTS prima di generare l'audio",
   "Choose an avatar": "Scegli un avatar",
   "Choose another source": "Scegli un'altra sorgente",
-  "Choose eBook folder": "Scegli la cartella degli eBook",
   "Choose file": "Scegli file",
   "Choose folder": "Scegli cartella",
   "Choose how Watch Together and the minimize, maximize, and close buttons look. Liquid glass replaces the clean transparent controls.":
@@ -530,9 +526,7 @@ const catalog02: Record<string, string> = {
   "Clock style": "Stile dell'orologio",
   "Close": "Chiudi",
   "Close Frame?": "Chiudere Frame?",
-  "Close Manga selection": "Chiudi la selezione manga",
   "Close chapters": "Chiudi i capitoli",
-  "Close eBook menu": "Chiudi il menu eBook",
   "Close editor": "Chiudi l'editor",
   "Close guide": "Chiudi la guida",
   "Close image viewer": "Chiudi il visualizzatore di immagini",
@@ -681,7 +675,6 @@ const catalog02: Record<string, string> = {
   "Connect Trakt in settings first": "Prima collega Trakt nelle Impostazioni",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Collega Trakt o Simkl oppure inizia a guardare qualcosa: le tue statistiche si aggiorneranno automaticamente.",
-  "Connect a Suwayomi server": "Collega un server Suwayomi",
   "Connect a controller: every press and stick move shows up here, live.":
     "Collega un controller: ogni pressione e movimento degli stick verrà mostrato qui in tempo reale.",
   "Connect a debrid service (Real-Debrid, TorBox, AllDebrid) for instant HD without the wait.":
@@ -745,8 +738,6 @@ const catalog02: Record<string, string> = {
   "Content advisory on start": "Avvertenza sui contenuti all'avvio",
   "Content advisory style": "Stile dell'avvertenza sui contenuti",
   "Content filters": "Filtri dei contenuti",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "Filtri dei contenuti (nascondi anime / manga / TV in diretta / sport / contenuti per adulti)",
   "Contents": "Indice",
   "Continue": "Continua",
   "Continue Reading": "Continua a leggere",
@@ -776,8 +767,6 @@ const catalog02: Record<string, string> = {
   "Contribute on GitHub": "Contribuisci su GitHub",
   "Control bar": "Barra dei comandi",
   "Control from your phone": "Controlla dal telefono",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Controlla il lettore manga dal telefono mentre leggi sul grande schermo: gira le pagine, usa lo zoom e cambia modalità. Durante la lettura, anche il lettore mostra questo link.",
   "Control who can see your friends, activity, and stats.":
     "Scegli chi può vedere i tuoi amici, le attività e le statistiche.",
   "Controller connected": "Controller collegato",
@@ -856,8 +845,6 @@ const catalog02: Record<string, string> = {
   "Could not load groups.": "Impossibile caricare i gruppi.",
   "Could not load results": "Impossibile caricare i risultati",
   "Could not load sources": "Impossibile caricare le fonti",
-  "Could not load that eBook extension repository":
-    "Impossibile caricare quel repository di estensioni eBook",
   "Could not load that skin.": "Impossibile caricare la skin.",
   "Could not load this playlist": "Impossibile caricare questa playlist",
   "Could not load this profile": "Impossibile caricare questo profilo",
@@ -1058,7 +1045,6 @@ const catalog02: Record<string, string> = {
   "Create a group to watch and share together.":
     "Crea un gruppo per guardare e condividere insieme.",
   "Create account": "Crea account",
-  "Create folders for eBooks": "Crea cartelle per gli eBook",
   "Create folders for movies and shows": "Crea cartelle per film e serie",
   "Create group": "Crea gruppo",
   "Create lists in your library to feature them here":

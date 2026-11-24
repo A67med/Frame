@@ -164,7 +164,6 @@ const catalogSU: Record<string, string> = {
   "Saves your whole Frame setup to one file: theme, home layout, settings, addons, profiles, watchlist, player layouts, watch progress, and more. Your Stremio sign-in is left out on purpose.":
     "आपका पूरा Frame सेटअप एक फ़ाइल में सेव करता है: थीम, होम लेआउट, सेटिंग्स, ऐडऑन, प्रोफ़ाइल, वॉचलिस्ट, प्लेयर लेआउट, वॉच प्रोग्रेस और बहुत कुछ। आपका Stremio साइन-इन जानबूझकर शामिल नहीं किया जाता।",
   "Saving": "सेव हो रहा है",
-  "Saving EPUB": "EPUB सेव किया जा रहा है",
   "Saving GIF…": "GIF सेव हो रही है…",
   "Saving clip…": "क्लिप सेव हो रही है…",
   "Saving now could overwrite them. Try again in a moment.":
@@ -256,7 +255,6 @@ const catalogSU: Record<string, string> = {
   "Search chapters": "अध्याय खोजें",
   "Search chapters...": "अध्याय खोजें...",
   "Search countries...": "देश खोजें...",
-  "Search eBooks": "ई-बुक खोजें",
   "Search episodes": "एपिसोड खोजें",
   "Search episodes across all seasons": "सभी सीज़न में एपिसोड खोजें",
   "Search every collection on TMDB...": "TMDB के सभी कलेक्शन में खोजें...",
@@ -273,8 +271,6 @@ const catalogSU: Record<string, string> = {
   "Search languages": "भाषाएँ खोजें",
   "Search languages (Tamil, Telugu, ...)": "भाषाएँ खोजें (तमिल, तेलुगु, ...)",
   "Search movies": "फ़िल्में खोजें",
-  "Search movies, shows, and manga to add": "जोड़ने के लिए फ़िल्में, शो और मंगा खोजें",
-  "Search movies, shows, anime, manga": "फ़िल्में, शो, ऐनिमे, मांगा खोजें",
   "Search movies, shows, people, genres, years...": "फ़िल्में, शो, लोग, जॉनर, साल खोजें...",
   "Search movies, shows, people...": "फ़िल्में, शो, लोग खोजें...",
   "Search on display": "डिस्प्ले पर खोजें",
@@ -494,9 +490,6 @@ const catalogSU: Record<string, string> = {
   "Set up a Cloudflare relay for Watch Together": "साथ में देखने के लिए Cloudflare रिले सेट अप करें",
   "Set up a debrid": "डीब्रिड सेट अप करें",
   "Set up a source": "सोर्स सेट अप करें",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "शुरू करने के लिए कम से कम एक ऐसा ई-बुक स्रोत सेट अप करें, जिससे किताबें पढ़ी जा सकें। मेटाडेटा किसी किताब का विवरण दे सकता है, लेकिन Frame उसे तभी खोल सकता है जब कोई फ़ोल्डर, एक्सटेंशन या कस्टम स्रोत हो।",
-  "Set up eBooks": "ई-बुक सेट अप करें",
   "Set up my TV from this computer": "इस कंप्यूटर से मेरा TV सेट अप करें",
   "Set up your own Cloudflare Worker rather than borrowing this one.":
     "इसे उधार लेने के बजाय अपना Cloudflare Worker सेट अप करें।",
@@ -1189,7 +1182,6 @@ const catalogSU: Record<string, string> = {
   "Start from this computer": "इस कंप्यूटर से शुरू करें",
   "Start here. The ones almost everyone has.": "यहाँ से शुरू करें। ये लगभग सभी के पास होते हैं।",
   "Start import": "इंपोर्ट शुरू करें",
-  "Start of manga": "मंगा की शुरुआत",
   "Start or stop recording a GIF of the video (no subtitles). Saves to Pictures/Frame.":
     "वीडियो की GIF रिकॉर्डिंग शुरू या बंद करें (सबटाइटल के बिना)। Pictures/Frame में सेव होती है।",
   "Start over": "फिर से शुरू करें",
@@ -1288,8 +1280,6 @@ const catalogSU: Record<string, string> = {
     "स्टोरेज भर गया है। Frame कैश स्टोरेज साफ़ करें, फिर दोबारा सेव करने की कोशिश करें।",
   "Storage location": "स्टोरेज स्थान",
   "Storage overview": "स्टोरेज की जानकारी",
-  "Store each title in its own folder with its EPUB or PDF":
-    "हर शीर्षक को उसके EPUB या PDF के साथ अलग फ़ोल्डर में रखें",
   "Stored as a small optimized webp.": "एक छोटी, ऑप्टिमाइज़ की गई webp फ़ाइल के रूप में स्टोर किया गया।",
   "Stored as a standalone EPG source. No channels are loaded for EPG-only entries; they're kept here for future attachment to existing playlists.":
     "अलग EPG स्रोत के रूप में स्टोर किया गया। सिर्फ़ EPG वाली प्रविष्टियों के लिए कोई चैनल लोड नहीं किया जाता; इन्हें भविष्य में मौजूदा प्लेलिस्ट से जोड़ने के लिए यहाँ रखा जाता है।",
@@ -1656,10 +1646,6 @@ const catalogSU: Record<string, string> = {
     "जिस सेक्शन को ठीक करना है, उसकी पहली पंक्ति पर टैप करें।",
   "Tap the genres you want more of. They steer the Top Picks row at the top of this page.":
     "जिन शैलियों की और सामग्री चाहते हैं, उन पर टैप करें। इनसे इस पेज के ऊपर मौजूद टॉप पिक्स पंक्ति तय होती है।",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "किसी भी फ़िल्म, शो, मांगा या किरदार को यहाँ सेव करने के लिए उस पर बने दिल को टैप करें।",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "किसी भी फ़िल्म, शो या मांगा पर बने स्टार या किसी किरदार पर बने दिल को टैप करके उसे यहाँ सेव करें।",
   "Tap to switch": "बदलने के लिए टैप करें",
   "Tap to switch. The pencil renames, recolors, or adds a PIN.":
     "बदलने के लिए टैप करें। पेंसिल से नाम या रंग बदला जा सकता है या PIN जोड़ा जा सकता है।",
@@ -1725,7 +1711,6 @@ const catalogSU: Record<string, string> = {
     "वह कोड अब मान्य नहीं है। नए कोड के लिए अपना TV देखें।",
   "That custom url is not available.": "यह कस्टम URL उपलब्ध नहीं है।",
   "That did not work. Check your details.": "यह काम नहीं किया। अपना विवरण जाँचें।",
-  "That does not look like a Spotify link.": "यह Spotify लिंक नहीं लगता।",
   "That does not look like a YouTube link.": "यह YouTube लिंक नहीं लगता।",
   "That does not look like a repository URL": "यह रिपॉज़िटरी URL नहीं लगता",
   "That does not look like a valid magnet link or infohash.":
@@ -1839,8 +1824,6 @@ const catalogSU: Record<string, string> = {
   "The dotted line is a flat squeeze of the whole range. A curve that stays high keeps midtones punchy and compresses the highlights late; a lower curve rolls off early and looks gentler.":
     "बिंदीदार रेखा पूरी रेंज को समान रूप से दबाती है। ऊपर बना रहने वाला कर्व मिडटोन को दमदार रखता है और हाइलाइट्स को देर से कंप्रेस करता है; नीचे रहने वाला कर्व जल्दी रोल ऑफ़ होता है और ज़्यादा सौम्य दिखता है।",
   "The draw is not published yet.": "ड्रॉ अभी प्रकाशित नहीं हुआ है।",
-  "The eBook download was canceled.": "eBook डाउनलोड रद्द कर दिया गया।",
-  "The eBook export was canceled.": "eBook एक्सपोर्ट रद्द कर दिया गया।",
   'The economy has "inflation". What\'s happening?': 'अर्थव्यवस्था में "महँगाई" है। क्या हो रहा है?',
   "The editor is a working copy of the player. Click any control on it to move, resize, restyle or hide that control.":
     "एडिटर प्लेयर की कार्यशील कॉपी है। किसी भी कंट्रोल को खिसकाने, उसका आकार बदलने, उसकी स्टाइल बदलने या उसे छिपाने के लिए उस पर क्लिक करें।",
@@ -2064,9 +2047,6 @@ const catalogSU: Record<string, string> = {
   "This device": "यह डिवाइस",
   "This doesn't look like a Frame plugin repo. Frame expects a JSON file shaped { name, plugins: [ ... ] }.":
     "यह Frame प्लगइन रेपो नहीं लगता। Frame को { name, plugins: [ ... ] } संरचना वाली JSON फ़ाइल चाहिए।",
-  "This eBook could not be exported": "यह eBook एक्सपोर्ट नहीं की जा सकी",
-  "This eBook is not connected to an installed source.":
-    "यह eBook किसी इंस्टॉल किए गए स्रोत से कनेक्ट नहीं है।",
   "This exact install, served as a web app. Open it on a phone, laptop or TV browser and it streams through this computer.":
     "यही इंस्टॉलेशन, वेब ऐप के रूप में उपलब्ध है। इसे फ़ोन, लैपटॉप या TV ब्राउज़र पर खोलें और यह इस कंप्यूटर के ज़रिए स्ट्रीम करेगा।",
   "This file has one audio track.": "इस फ़ाइल में एक ऑडियो ट्रैक है।",
@@ -2087,16 +2067,6 @@ const catalogSU: Record<string, string> = {
     "इस ग्रुप की फ़ीड लोड नहीं हो सकी। थोड़ी देर बाद फिर कोशिश करें।",
   "This instance of Frame is made for desktop. Our standalone iOS and Android apps are coming soon, each with a bespoke, mobile-first experience built for its native platform.":
     "Frame का यह संस्करण डेस्कटॉप के लिए बना है। हमारे स्टैंडअलोन iOS और Android ऐप जल्द आ रहे हैं, जिनमें उनके नेटिव प्लेटफ़ॉर्म के लिए खास तौर पर बनाया गया मोबाइल-फ़र्स्ट अनुभव होगा।",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "यह Mangayomi रेपो है, लेकिन इसके स्रोत Dart का उपयोग करते हैं या मंगा नहीं हैं, इसलिए Frame उन्हें इंपोर्ट नहीं कर सकता।",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "यह Mangayomi रेपो है। Frame इसके JavaScript स्रोतों को नेटिव रूप से चलाता है। इन स्रोतों को अपनी मंगा लाइब्रेरी में जोड़ने के लिए इंपोर्ट करें।",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "यह Mangayomi रेपो है। नेटिव इंपोर्ट अभी समर्थित नहीं है। अभी सबसे बड़ा कैटलॉग पाने के लिए Suwayomi सर्वर चलाएँ और सर्वर सेक्शन से Frame को उससे कनेक्ट करें।",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "यह Paperback (iOS) रेपो है, जिसका Frame उपयोग नहीं कर सकता। डेस्कटॉप स्रोतों के लिए सर्वर सेक्शन से Suwayomi सर्वर कनेक्ट करें।",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "यह Tachiyomi / Mihon रेपो है। ये Android (APK) एक्सटेंशन हैं, इसलिए Frame इन्हें सीधे नहीं चला सकता। डेस्कटॉप पर इन सोर्स का उपयोग करने के लिए Suwayomi सर्वर चलाएँ और सर्वर सेक्शन से Frame को उससे कनेक्ट करें।",
   "This is a metadata-based release estimate, not a measured timing score.":
     "यह मेटाडेटा पर आधारित रिलीज़ अनुमान है, मापा गया टाइमिंग स्कोर नहीं।",
   "This is how a subtitle will look.": "सबटाइटल ऐसा दिखेगा।",
@@ -2147,7 +2117,6 @@ const catalogSU: Record<string, string> = {
     "यह प्लेलिस्ट अभी लोड नहीं हुई है या इसमें कोई चैनल नहीं है।",
   "This replaces your current Frame setup (theme, home layout, settings, addons, profiles, and more) with the {n} saved entries in this file. Your Stremio sign-in stays as is. Frame reloads when it finishes.":
     "यह आपके मौजूदा Frame सेटअप (थीम, होम लेआउट, सेटिंग्स, ऐडऑन, प्रोफ़ाइल और अन्य) को इस फ़ाइल में सेव की गई {n} प्रविष्टियों से बदल देता है। आपका Stremio साइन-इन जस का तस रहता है। पूरा होने पर Frame रीलोड होता है।",
-  "This repository lists no eBook extensions.": "इस रिपॉज़िटरी में कोई eBook एक्सटेंशन सूचीबद्ध नहीं है।",
   "This score only appears on cards.": "यह स्कोर केवल कार्ड पर दिखाई देता है।",
   "This screen stopped. Going back to Home usually clears it.":
     "यह स्क्रीन रुक गई है। होम पर वापस जाने से आम तौर पर यह ठीक हो जाती है।",
@@ -2330,7 +2299,6 @@ const catalogSU: Record<string, string> = {
   "Top Drama": "शीर्ष ड्रामा",
   "Top Fantasy": "शीर्ष फ़ैंटेसी",
   "Top Horror": "शीर्ष हॉरर",
-  "Top Manga": "शीर्ष मांगा",
   "Top Movies": "शीर्ष फ़िल्में",
   "Top Movies on MAL": "MAL पर शीर्ष फ़िल्में",
   "Top Mystery": "शीर्ष मिस्ट्री",

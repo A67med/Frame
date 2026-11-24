@@ -6,9 +6,8 @@ const used: Record<string, string> = {
   "A compact upright slider that boosts past 100 percent.":
     "Компактный вертикальный ползунок с усилением выше 100 процентов.",
   "AI (Gemini)": "ИИ (Gemini)",
-  Accept: "Принять",
+  "Accept": "Принять",
   "Ad detected": "Обнаружена реклама",
-  "Add a manga source to open these": "Добавьте источник манги, чтобы открыть их",
   "Add tags (anime, horror, cozy...)": "Добавьте теги (аниме, ужасы, уют...)",
   "Add your TMDB key in Settings first": "Сначала добавьте ключ TMDB в Настройках",
   "Add your TMDB key in Settings to search.": "Добавьте ключ TMDB в Настройках, чтобы искать.",
@@ -16,7 +15,7 @@ const used: Record<string, string> = {
   "Airing now": "Выходит сейчас",
   "Any rating": "Любой рейтинг",
   "Anyone can find and join from search": "Любой может найти группу в поиске и вступить",
-  AudD: "AudD",
+  "AudD": "AudD",
   "Auto-adjusts styled (ASS) subtitles so dialogue stays the same size across files, while keeping their colors, fonts, and sign placement.":
     "Автоматически подгоняет стилизованные (ASS) субтитры, чтобы диалоги были одного размера во всех файлах, сохраняя их цвета, шрифты и расположение надписей.",
   "Autoplay profile songs": "Включать музыку профилей",
@@ -28,7 +27,7 @@ const used: Record<string, string> = {
   "Bulk upload is not live yet, sending one rating per second.":
     "Массовая отправка пока не работает, оценки уходят по одной в секунду.",
   "Cancel import": "Отменить импорт",
-  Cancelling: "Отменяем",
+  "Cancelling": "Отменяем",
   "Checking SVP installation...": "Проверка установки SVP...",
   "Checking the local SVP and VapourSynth installation...":
     "Проверка локальной установки SVP и VapourSynth...",
@@ -47,19 +46,19 @@ const used: Record<string, string> = {
   "Couldn't load this collection": "Не удалось загрузить подборку",
   "Danish Cinema": "Датское кино",
   "Danish Films": "Датские фильмы",
-  Decline: "Отклонить",
+  "Decline": "Отклонить",
   "Dismiss notification": "Скрыть уведомление",
   "Drop your export here, or click to browse":
     "Перетащите файл экспорта сюда или нажмите, чтобы выбрать",
-  Earlier: "Ранее",
-  End: "Конец",
+  "Earlier": "Ранее",
+  "End": "Конец",
   "Explore the all-time greatest actors, directors and more":
     "Изучите величайших актёров, режиссёров и не только",
   "Failed to save": "Не удалось сохранить",
   "Featured order": "Порядок в подборке",
-  Filmography: "Фильмография",
+  "Filmography": "Фильмография",
   "Find a group": "Найти группу",
-  Found: "Найдено",
+  "Found": "Найдено",
   "French Films": "Французские фильмы",
   "Frequent Collaborators": "Часто работает с",
   "Friend requests": "Запросы в друзья",
@@ -100,7 +99,7 @@ const used: Record<string, string> = {
   "Imported {n} ratings from {name}": "Импортировано {n} оценок из {name}",
   "Indian Cinema": "Индийское кино",
   "Indian Films": "Индийские фильмы",
-  Insert: "Вставить",
+  "Insert": "Вставить",
   "Install more shaders in Settings, Shaders to switch between them here.":
     "Установите больше шейдеров в Настройках, раздел «Шейдеры», чтобы переключаться между ними здесь.",
   "Installed and detected. Frame found the native svpflow plugins and VapourSynth script library.":
@@ -108,7 +107,7 @@ const used: Record<string, string> = {
   "Installed packs": "Установленные наборы",
   "Installed shaders": "Установленные шейдеры",
   "Invited by {name}": "Приглашение от {name}",
-  Invites: "Приглашения",
+  "Invites": "Приглашения",
   "Italian Cinema": "Итальянское кино",
   "Italian Films": "Итальянские фильмы",
   "Japanese Films": "Японские фильмы",
@@ -118,10 +117,8 @@ const used: Record<string, string> = {
     "Оставшиеся установщики от прошлых обновлений, кэш трейлеров и временные файлы трансляции. При запуске Frame удаляет старые, оставляя только самый свежий установщик.",
   "Local storage is full, these ratings live on your account only.":
     "Локальное хранилище заполнено, эти оценки хранятся только в аккаунте.",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Мангу пока нельзя сопоставить с названиями в Frame, поэтому {n} пропущено.",
   "Mark all read": "Отметить все прочитанными",
-  Minecraft: "Minecraft",
+  "Minecraft": "Minecraft",
   "Modern Russian Series": "Современные российские сериалы",
   "Mute all profile songs": "Отключить музыку профилей",
   "Native 48/60fps motion through your Linux SVP and VapourSynth installation, rendered inside Frame's embedded player.":
@@ -135,7 +132,7 @@ const used: Record<string, string> = {
   "Nothing to preview yet.": "Пока нечего показать.",
   "Nothing was imported": "Ничего не импортировано",
   "Nothing was saved.": "Ничего не сохранено.",
-  Notification: "Уведомление",
+  "Notification": "Уведомление",
   "On by default: once you've watched every episode that has aired, the show leaves Continue Watching and returns when a new episode drops. Turn it off to keep caught-up shows on the row.":
     "Включено по умолчанию: когда вы посмотрели все вышедшие серии, сериал уходит из «Продолжить просмотр» и вернётся с выходом новой серии. Отключите, чтобы такие сериалы оставались в строке.",
   "Only people you add can join": "Вступить могут только те, кого вы добавите",
@@ -150,7 +147,7 @@ const used: Record<string, string> = {
   "Pick your language": "Выберите язык",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Популярные дополнения сообщества, отсортированные по звёздам публичного каталога. Всё остальное устанавливайте по URL на вкладке «Каталог».",
-  Popularity: "Популярность",
+  "Popularity": "Популярность",
   "Portuguese-Language": "На португальском",
   "Profile song": "Музыка профиля",
   "Profile songs": "Музыка в профилях",
@@ -169,8 +166,7 @@ const used: Record<string, string> = {
   "Russian Films": "Фильмы России",
   "Russian Movies": "Российские фильмы",
   "SVP is not supported by this Frame package.": "Эта сборка Frame не поддерживает SVP.",
-  "Search movies, shows, anime, manga": "Поиск фильмов, сериалов, аниме, манги",
-  Shaders: "Шейдеры",
+  "Shaders": "Шейдеры",
   "Show card": "Показать карточку",
   "Shows a small green dot on the player's subtitle button while a subtitle track is active. Turn it off if you would rather keep the controls clean.":
     "Показывает небольшую зелёную точку на кнопке субтитров в плеере, когда дорожка субтитров активна. Выключите, если хотите, чтобы элементы управления оставались чистыми.",
@@ -178,7 +174,7 @@ const used: Record<string, string> = {
     "Сначала войдите в аккаунт Frame. Импортированные оценки сохраняются в вашем профиле.",
   "Skip ad": "Пропустить рекламу",
   "Skipped, not rated or not supported": "Пропущено: без оценки или не поддерживается",
-  Sort: "Сортировка",
+  "Sort": "Сортировка",
   "Soviet Classics": "Советская классика",
   "Spanish-Language": "На испанском",
   "Start import": "Начать импорт",
@@ -192,14 +188,13 @@ const used: Record<string, string> = {
   "The all-time greats": "Величайшие за все времена",
   "The server stopped responding, the rest stayed on this device.":
     "Сервер перестал отвечать, остальное осталось на этом устройстве.",
-  Timer: "Таймер",
+  "Timer": "Таймер",
   "Top 100": "Топ-100",
-  "Top Manga": "Топ манги",
   "IMDb Top": "Топ IMDb",
   "Trending in Russian": "Популярное на русском",
   "User-made badge packs from the community store":
     "Наборы значков от пользователей из магазина сообщества",
-  Vertical: "Вертикальный",
+  "Vertical": "Вертикальный",
   "View badges": "Открыть значки",
   "Watch now": "Смотреть сейчас",
   "Watch party": "Совместный просмотр",
@@ -223,7 +218,7 @@ const used: Record<string, string> = {
   "and {count} more": "и ещё {count}",
   "and {n} more": "и ещё {n}",
   "avg rating {r} across {n} titles": "средняя оценка {r} по {n} названиям",
-  edited: "изменено",
+  "edited": "изменено",
   "from {source}": "из {source}",
   "lead or co-lead of {n} acclaimed titles": "главные роли в {n} признанных названиях",
   "no rated titles yet": "пока нет оценённых названий",

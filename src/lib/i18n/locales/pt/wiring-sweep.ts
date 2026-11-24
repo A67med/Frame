@@ -32,24 +32,16 @@ const wiringSweep: Record<string, string> = {
   "Books you add to your shelf will appear here.":
     "Os livros que você adicionar à estante aparecerão aqui.",
   "Your shelf is waiting": "Sua estante espera por você",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "Abra o menu circular em qualquer eBook e escolha Adicionar à estante.",
   "Stories you love": "Histórias que você adora",
   "Continue your bookmarks": "Continue de onde marcou",
   "Resume from your saved reading position": "Retome da posição de leitura salva",
-  "Popular eBooks": "eBooks populares",
   "Popular titles from book metadata": "Títulos populares dos metadados de livros",
   "Shelves built from your installed source catalog":
     "Estantes criadas com o catálogo da sua fonte instalada",
   "{count} books saved": "{count} livros salvos",
   "Books you save will appear here": "Os livros que você salvar aparecerão aqui",
-  "Browse eBooks": "Explorar eBooks",
   "Installed sources": "Fontes instaladas",
-  "Search eBooks": "Pesquisar eBooks",
-  "Refresh eBook source": "Atualizar fonte de eBooks",
   "Refresh source": "Atualizar fonte",
-  "Manage eBook sources": "Gerenciar fontes de eBooks",
-  "Filter eBooks": "Filtrar eBooks",
   "Fiction": "Ficção",
   "Non-fiction": "Não ficção",
   "Hiatus": "Em hiato",
@@ -241,7 +233,6 @@ const wiringSweep: Record<string, string> = {
   "they/them": "elu/delu",
   "Location": "Localização",
   "Custom url": "URL personalizado",
-  "YouTube, SoundCloud or Spotify link": "Ligação do YouTube, SoundCloud ou Spotify",
   "Customize profile": "Personalizar perfil",
   "Custom font, page background, and a freeform HTML/CSS canvas":
     "Tipo de letra personalizado, fundo da página e uma área livre de HTML/CSS",
@@ -334,12 +325,8 @@ const wiringSweep: Record<string, string> = {
     "Mais antigos primeiro; toque para ordenar pelos mais recentes",
   "Reading {chapter}": "Lendo {chapter}",
   "of {total}": "de {total}",
-  "Start of manga": "Início do mangá",
-  "End of manga": "Fim do mangá",
   "Reconnecting to your computer": "Reconectando ao seu computador",
   "Reader closed on your computer": "O leitor foi fechado no seu computador",
-  "Open a manga on Frame to control the reader from here.":
-    "Abra um mangá no Frame para controlar o leitor por aqui.",
   "Your computer": "Seu computador",
   "Reconnecting": "Reconectando",
   "Read on this device": "Ler neste dispositivo",
@@ -382,24 +369,12 @@ const wiringSweep: Record<string, string> = {
     "Use sua chave de API para traduzir capítulos para o seu idioma. Obtenha uma chave em",
   "Folder": "Pasta",
   "Site": "Site",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "Selecione uma pasta da biblioteca. Cada subpasta corresponde a um eBook. Coloque os capítulos nela como arquivos TXT, Markdown, HTML ou EPUB e, se quiser, adicione uma imagem de capa.",
-  "My eBooks": "Meus eBooks",
-  "Choose eBook folder": "Escolher pasta de eBooks",
   "Folder selection is available in the Frame app":
     "A seleção de pastas está disponível no aplicativo Frame",
-  "Read eBook files you already have": "Leia arquivos de eBook que você já possui",
   "Enable {name}": "Ativar {name}",
   "Update repository": "Atualizar repositório",
   "Repository update failed.": "Falha ao atualizar o repositório.",
   "Loading extensions…": "Carregando extensões…",
-  "This repository lists no eBook extensions.": "Este repositório não contém extensões de eBook.",
-  "Could not load that eBook extension repository":
-    "Não foi possível carregar esse repositório de extensões de eBook",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "As extensões de eBook usam o processo isolado, a ponte HTTP e o analisador de HTML do Frame, o mesmo ambiente restrito usado pelas extensões de mangá. Adicione apenas repositórios em que você confia.",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "Ainda não há repositórios. Adicione um acima para explorar extensões de eBook.",
   "{count} connected": "{count} conectados",
   "Intelligence": "Inteligência",
   "Metadata & translation": "Metadados e tradução",
@@ -412,7 +387,6 @@ const wiringSweep: Record<string, string> = {
   "Repositories": "Repositórios",
   "Private reading collection": "Coleção de leitura privada",
   "Contents": "Sumário",
-  "eBook source settings": "Configurações das fontes de eBook",
   "Your shelf, your rules.": "Sua estante, suas regras.",
   "Frame never hosts your books.": "O Frame nunca hospeda seus livros.",
   "01 · Collection": "01 · Coleção",
@@ -430,7 +404,6 @@ const wiringSweep: Record<string, string> = {
   "Saved locally; AniList sync is pending":
     "Salvo localmente; a sincronização com o AniList está pendente",
   "{format} added to Downloads": "{format} adicionado a Downloads",
-  "This eBook could not be exported": "Não foi possível exportar este livro digital",
   "Continue Reading": "Continuar lendo",
   "Start Reading": "Começar a ler",
   "Book Details": "Detalhes do livro",
@@ -440,19 +413,13 @@ const wiringSweep: Record<string, string> = {
   "Bookmark": "Adicionar marcador",
   "Marked as read": "Marcado como lido",
   "Mark as Read": "Marcar como lido",
-  "Close eBook menu": "Fechar o menu do livro digital",
   "{title} actions": "Ações de {title}",
-  "eBook actions": "Ações do livro digital",
-  "Back to eBook actions": "Voltar às ações do livro digital",
   "Offline Reading": "Leitura offline",
   "Unknown author": "Autor desconhecido",
   "Book metadata": "Metadados do livro",
-  "No story summary is available for this eBook.":
-    "Não há resumo disponível para este livro digital.",
   "Open full details": "Abrir todos os detalhes",
   "Save every available chapter from {source} for offline reading.":
     "Salve todos os capítulos disponíveis de {source} para ler offline.",
-  "Reflowable eBook": "Livro digital com layout adaptável",
   "Print or save": "Imprimir ou salvar",
   "Progress, speed, remaining time, and cancellation are managed on Downloads.":
     "O progresso, a velocidade, o tempo restante e o cancelamento são gerenciados em Downloads.",

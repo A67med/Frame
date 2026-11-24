@@ -79,11 +79,11 @@ const personalization: Record<string, string> = {
   "Nothing tracked on Simkl yet": "Simkl'de henüz takip edilen bir içerik yok",
   "Nothing usable in that file": "Bu dosyada kullanılabilir bir şey yok",
   "Nothing yet": "Henüz bir şey yok",
-  Notifications: "Bildirimler",
+  "Notifications": "Bildirimler",
   "Now using": "Şu anda kullanılan",
   "Nudge the image to taste. Start with a one-tap look below, then fine-tune with the dials. Everything resets cleanly, so you can't break anything.":
     "Görüntüyü zevkinize göre ayarlayın. Önce aşağıdan tek dokunuşla bir görünüm seçin, ardından kaydırıcılarla ince ayar yapın. Her şey sorunsuzca sıfırlanabilir, bu yüzden hiçbir şeyi bozamazsınız.",
-  OK: "Tamam",
+  "OK": "Tamam",
   "OMDB daily budget": "OMDB günlük kotası",
   "OMDb · Rotten Tomatoes scores": "OMDb · Rotten Tomatoes puanları",
   "Off (use CPU)": "Kapalı (CPU'yu kullan)",
@@ -115,12 +115,10 @@ const personalization: Record<string, string> = {
     "Açık: Yerleşik satırlarla aynı içerikleri gösteren eklenti satırları, tek satırda birleştirilmek yerine ayrıca gösterilir.",
   "On: only titles you bookmarked. Off: also keeps the ones Stremio added when you hit play.":
     "Açık: Yalnızca yer imlerine eklediğiniz içerikler. Kapalı: Oynat'a bastığınızda Stremio'nun ekledikleri de tutulur.",
-  Onboarding: "Başlangıç rehberi",
+  "Onboarding": "Başlangıç rehberi",
   "One choice that sets how hard your computer works to make video look its best. Pick the one that matches your machine. Takes effect on the next thing you play.":
     "Videonun en iyi şekilde görünmesi için bilgisayarınızın ne kadar zorlanacağını tek bir seçimle belirleyin. Bilgisayarınıza uygun olanı seçin. Bir sonraki oynatmada uygulanır.",
   "One last thing on Cloudflare's side": "Cloudflare tarafında son bir işlem kaldı",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Tek bir anahtar bu sayfadaki her şeyi etkinleştirir: web uygulaması, telefon kumandası ve manga okuyucu kumandası.",
   "One-click community packs. Rulesets bring full badge sets with their own matching; art remaps only swap the pictures on Frame's built-in badges. Anything shared as a badges.json link on the Nuvio Discord or Reddit imports here too.":
     "Tek tıklamayla yüklenen topluluk paketleri. Kural setleri, kendi eşleştirmeleriyle birlikte eksiksiz rozet kümeleri sunar; görsel eşlemeleri ise yalnızca Frame'ın yerleşik rozetlerindeki resimleri değiştirir. Nuvio Discord veya Reddit'te badges.json bağlantısı olarak paylaşılan her şeyi buradan da içe aktarabilirsiniz.",
   "One-off donation": "Tek seferlik bağış",
@@ -153,7 +151,6 @@ const personalization: Record<string, string> = {
   "Open account settings": "Hesap ayarlarını aç",
   "Open in browser": "Tarayıcıda aç",
   "Open library": "Kitaplığı aç",
-  "Open manga": "Mangayı aç",
   "Open or close the episode panel.": "Bölüm panelini açın veya kapatın.",
   "Open or close the in-player stream switcher.":
     "Oynatıcı içindeki yayın seçiciyi açın veya kapatın.",
@@ -175,30 +172,28 @@ const personalization: Record<string, string> = {
   "Open userinfobot": "userinfobot'u aç",
   "Open {alias} profile": "{alias} profilini aç",
   "Open {title}": "{title} içeriğini aç",
-  OpenSubtitles: "OpenSubtitles",
+  "OpenSubtitles": "OpenSubtitles",
   "Optional keys that unlock TMDB rails, baked-in poster ratings, fanart, and TVDB episode data.":
     "TMDB raflarını, posterlere işlenmiş puanları, fanart görsellerini ve TVDB bölüm verilerini kullanıma açan isteğe bağlı anahtarlar.",
   "Optional overlays that appear over the video.":
     "Videonun üzerinde görünen isteğe bağlı katmanlar.",
   "Optional. TheIntroDB answers without a key, but a key raises your rate limit so timing keeps arriving when you binge. Get one at":
     "İsteğe bağlı. TheIntroDB anahtarsız da yanıt verir, ancak anahtar istek sınırınızı yükselttiği için art arda izlerken zamanlama bilgisi gelmeye devam eder. Şu adresten alabilirsiniz:",
-  Options: "Seçenekler",
+  "Options": "Seçenekler",
   "Or just zip up images": "Ya da görselleri ZIP dosyası yapın",
   "Or try one of ours": "Ya da bizimkilerden birini deneyin",
-  Original: "Orijinal",
-  Other: "Diğer",
+  "Original": "Orijinal",
+  "Other": "Diğer",
   "Outline color": "Kontur rengi",
   "Outline thickness": "Kontur kalınlığı",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "Kendi sunucunuzda barındırabileceğiniz 100'den fazla uygulama: *arr paketi, debrid araçları, kitaplar, sesli kitaplar ve daha fazlası.",
   "Overlays your Letterboxd rating on catalog posters (when available).":
     "Letterboxd puanınızı katalog afişlerinin üzerinde gösterir (varsa).",
-  Owner: "Grup sahibi",
-  PANELS: "PANELLER",
+  "Owner": "Grup sahibi",
+  "PANELS": "PANELLER",
   "PDF (print)": "PDF (yazdırma)",
-  PIN: "PIN",
+  "PIN": "PIN",
   "PIN-locked profiles": "PIN kilitli profiller",
-  PLAYBACK: "OYNATMA",
+  "PLAYBACK": "OYNATMA",
   "PNG, GIF, WebP, or SVG. Animated GIFs play.":
     "PNG, GIF, WebP veya SVG. Animasyonlu GIF'ler oynatılır.",
   "PNG, JPEG, WebP, or SVG (auto-shrunk if huge). Animated GIFs up to 2 MB play live.":
@@ -207,7 +202,7 @@ const personalization: Record<string, string> = {
     "PNG, JPG, WebP, GIF, MP4, WebM, MOV. En fazla 6 dosya, her biri 100 MB.",
   "Pack removed, badges back to default": "Paket kaldırıldı, rozetler varsayılana döndü",
   "Packs & import": "Paketler ve içe aktarma",
-  Panels: "Paneller",
+  "Panels": "Paneller",
   "Parsed playlists, program guide, and series info. Re-downloads on next open.":
     "İşlenmiş oynatma listeleri, program rehberi ve dizi bilgileri. Bir sonraki açılışta yeniden indirilir.",
   "Paste JSON": "JSON Yapıştır",
@@ -294,17 +289,17 @@ const personalization: Record<string, string> = {
     "Bu cihazdan erişilebildiğini doğrulamak için Worker'ınıza /health adresinden ping gönderir.",
   "Pinned to top": "En üste sabitlendi",
   "Plain text (.txt)": "Düz metin (.txt)",
-  Play: "Oynat",
+  "Play": "Oynat",
   "Play / pause": "Oynat / duraklat",
   "Play a short sound when changing the player volume. Off by default.":
     "Oynatıcı ses düzeyi değiştirildiğinde kısa bir ses çalar. Varsayılan olarak kapalıdır.",
   "Play button behavior": "Oynat düğmesinin davranışı",
   "Play mode": "Oynatma modu",
   "Play trailers in the hero": "Fragmanları öne çıkan alanda oynat",
-  Playback: "Oynatma",
+  "Playback": "Oynatma",
   "Playback pauses when the timer runs out. Works for movies too: one movie counts as one episode.":
     "Süre dolduğunda oynatma duraklatılır. Filmlerde de çalışır: Bir film, bir bölüm sayılır.",
-  Player: "Oynatıcı",
+  "Player": "Oynatıcı",
   "Player & quality": "Oynatıcı ve kalite",
   "Player engine": "Oynatıcı motoru",
   "Player freezes after the second episode autoplays":
@@ -322,10 +317,10 @@ const personalization: Record<string, string> = {
     "Frame'ı başka bir makinedeki yayın sunucusuna yönlendirin; örneğin bir ev sunucusundaki Stremio hizmetine. P2P yayınları bu makine yerine o makineden indirilir ve oynatılır.",
   "Point Frame at your self-hosted library to browse and install sources":
     "Kaynaklara göz atmak ve yüklemek için Frame'ı kendi barındırdığınız kütüphaneye bağlayın",
-  Popular: "Popüler",
+  "Popular": "Popüler",
   "Popular This Week": "Bu Haftanın Popülerleri",
   "Popular · AIO": "Popüler · AIO",
-  Poster: "Poster",
+  "Poster": "Poster",
   "Poster dock magnification": "Poster şeridi büyütme efekti",
   "Poster image quality": "Poster görüntü kalitesi",
   "Poster reset to default": "Varsayılan poster geri yüklendi",
@@ -347,7 +342,7 @@ const personalization: Record<string, string> = {
   "Press a key…": "Bir tuşa basın…",
   "Press buttons and move the sticks. This mirrors your controller in real time.":
     "Düğmelere basın ve çubukları hareket ettirin. Kumandanız burada gerçek zamanlı olarak gösterilir.",
-  Preview: "Önizleme",
+  "Preview": "Önizleme",
   "Preview state": "Önizleme durumu",
   "Preview unavailable. Click to open profile.":
     "Önizleme kullanılamıyor. Profili açmak için tıklayın.",
@@ -356,7 +351,7 @@ const personalization: Record<string, string> = {
   "Primary profile": "Birincil profil",
   "Priority applies once you have two or more stream addons.":
     "Öncelik, en az iki yayın eklentiniz olduğunda uygulanır.",
-  Privacy: "Gizlilik",
+  "Privacy": "Gizlilik",
   "Private Stremio add-ons with 10x the rate limits and built-in stream proxying, from $9 a month.":
     "Aylık $9'dan başlayan fiyatlarla, 10 kat daha yüksek istek sınırları ve yerleşik yayın proxy desteği sunan özel Stremio eklentileri.",
   "Private mode": "Özel mod",
@@ -364,13 +359,13 @@ const personalization: Record<string, string> = {
     "Özel mod (topluluk senkronizasyonuyla bağlantı kurulmaz)",
   "Probes the server's settings endpoint from this device.":
     "Bu cihazdan sunucunun ayarlar uç noktasını yoklar.",
-  Profile: "Profil",
+  "Profile": "Profil",
   "Profile background": "Profil arka planı",
   "Profile cards": "Profil kartları",
   "Profile link": "Profil bağlantısı",
   "Provide a JSON link or paste it directly.":
     "Bir JSON bağlantısı girin veya JSON'u doğrudan yapıştırın.",
-  Public: "Herkese Açık",
+  "Public": "Herkese Açık",
   "Public group": "Herkese açık grup",
   "Public groups": "Herkese açık gruplar",
   "Public mode uses just your username: watchlist, liked films, popular and Top 250. No password needed.":
@@ -394,10 +389,8 @@ const personalization: Record<string, string> = {
     "Sesi yükseltin (büyük adımlar için Shift tuşunu basılı tutun).",
   "Random avatar": "Rastgele avatar",
   "Ranking the best matches": "En iyi eşleşmeler sıralanıyor",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "Puanlarınızı oluşturmak için filmleri, dizileri, animeleri ve mangaları puanlayın",
   "Rate this": "Puan ver",
-  Rated: "Puan verdi",
+  "Rated": "Puan verdi",
   "Rather not set any of this up?": "Bunların hiçbirini kurmak istemiyor musunuz?",
   "Rating removed": "Puan kaldırıldı",
   "Rating saved": "Puan kaydedildi",
@@ -411,9 +404,7 @@ const personalization: Record<string, string> = {
   "Re-runs the welcome flow and clears every dismissed tip.":
     "Karşılama akışını yeniden çalıştırır ve kapattığınız tüm ipuçlarını sıfırlar.",
   "Read from your phone": "Telefonunuzdan okuyun",
-  "Read manga in Frame": "Frame'da manga okuyun",
   "Read more": "Devamını oku",
-  "Read the Manga": "Mangayı Oku",
   "Reading subtitles...": "Altyazılar okunuyor...",
   "Reading the cast": "Oyuncu kadrosu inceleniyor",
   "Reading your search": "Aramanız yorumlanıyor",
@@ -430,7 +421,7 @@ const personalization: Record<string, string> = {
   "Recent activity": "Son etkinlikler",
   "Recommended for You": "Size Önerilenler",
   "Record GIF": "GIF kaydet",
-  Recovery: "Kurtarma",
+  "Recovery": "Kurtarma",
   "Redeploy instructions": "Yeniden dağıtım talimatları",
   "Redeploy relay": "Aktarıcıyı yeniden dağıt",
   "Redeploy to pick up the latest Watch Together fixes. The in-app banner clears once the new version is live.":
@@ -439,11 +430,11 @@ const personalization: Record<string, string> = {
   "Refresh button": "Yenile düğmesi",
   "Refresh extensions": "Eklentileri yenile",
   "Refresh subtitles": "Altyazıları yenile",
-  Region: "Bölge",
+  "Region": "Bölge",
   "Region & language": "Bölge ve dil",
-  Reinstall: "Yeniden yükle",
+  "Reinstall": "Yeniden yükle",
   "Related Anime": "İlgili Animeler",
-  Relay: "Aktarıcı",
+  "Relay": "Aktarıcı",
   "Relay URL": "Aktarıcı URL'si",
   "Relay deployment requires the Cloudflare API, which is unavailable to browser clients. Use the desktop build to deploy a Worker, then enter the resulting URL below.":
     "Aktarıcı dağıtımı, tarayıcı istemcilerinde kullanılamayan Cloudflare API'sini gerektirir. Bir Worker dağıtmak için masaüstü sürümünü kullanın, ardından oluşan URL'yi aşağıya girin.",
@@ -462,7 +453,7 @@ const personalization: Record<string, string> = {
   "Relay version {version}. Update available.": "Aktarıcı sürümü {version}. Güncelleme mevcut.",
   "Reload source": "Kaynağı yeniden yükle",
   "Remaining only": "Yalnızca kalan",
-  Remap: "Yeniden eşle",
+  "Remap": "Yeniden eşle",
   "Remember last stream": "Son yayını hatırla",
   "Remembered source lists per title. Clears stale results after changing addons or debrid.":
     "Her içerik için hatırlanan kaynak listeleri. Eklentileri veya debrid hizmetini değiştirdikten sonra eski sonuçları temizler.",
@@ -505,7 +496,6 @@ const personalization: Record<string, string> = {
   "Removes the Anime tab and every anime title from all rows everywhere: Home, Discover, Top 10, and catalogs. Western animation like Pixar is kept, and you can still find anime by searching.":
     "Anime sekmesini ve tüm anime içeriklerini her yerdeki bütün satırlardan kaldırır: Ana Sayfa, Keşfet, İlk 10 ve kataloglar. Pixar gibi Batı animasyonları korunur ve animeleri aramayla bulmaya devam edebilirsiniz.",
   "Removes the Live TV tab from the sidebar.": "Canlı TV sekmesini kenar çubuğundan kaldırır.",
-  "Removes the Manga tab from the sidebar.": "Manga sekmesini kenar çubuğundan kaldırır.",
   "Removing...": "Kaldırılıyor...",
   "Rename list": "Listeyi yeniden adlandır",
   "Render subtitles in a heavier weight. Turn off to use your font's normal weight.":
@@ -515,14 +505,14 @@ const personalization: Record<string, string> = {
   "Repair anime library": "Anime kitaplığını onar",
   "Repair library": "Kitaplığı onar",
   "Repair now": "Şimdi onar",
-  Replace: "Değiştir",
+  "Replace": "Değiştir",
   "Replace the saved key": "Kayıtlı anahtarı değiştir",
   "Replay the walkthrough or unhide every dismissed tip in the app.":
     "Tanıtım turunu yeniden oynatın veya uygulamada kapattığınız tüm ipuçlarını tekrar gösterin.",
   "Replay walkthrough": "Tanıtımı yeniden oynat",
   "Report a Bug": "Hata bildir",
   "Report a bug": "Hata bildir",
-  Requirements: "Gereksinimler",
+  "Requirements": "Gereksinimler",
   "Reset Zoom": "Yakınlaştırmayı sıfırla",
   "Reset all": "Tümünü sıfırla",
   "Reset all ({count})": "Tümünü sıfırla ({count})",
@@ -559,7 +549,7 @@ const personalization: Record<string, string> = {
     "Bu listede daha yukarıda olan eklentilerin sonuçları önce gelir. Biri sonuç bulamazsa sıradaki devreye girer.",
   "Resurface picks for the home rail. Rebuilds overnight.":
     "Ana Sayfa şeridinde yeniden gösterilecek öneriler. Her gece yeniden oluşturulur.",
-  Retro: "Retro",
+  "Retro": "Retro",
   "Reveal the show or movie artwork.": "Dizi veya film görselini gösterin.",
   "Reveal the show or movie artwork. Off keeps the title but hides the poster.":
     "Dizi veya film görselini gösterin. Kapalıyken başlık gösterilir ancak afiş gizlenir.",
@@ -582,7 +572,7 @@ const personalization: Record<string, string> = {
   "Row titles": "Satır başlıkları",
   "Royal top bar": "Asil üst çubuk",
   "Rule notify channels": "Kuralın bildirim göndereceği kanallar",
-  Ruleset: "Kural seti",
+  "Ruleset": "Kural seti",
   "Run again": "Yeniden çalıştır",
   "Run self-test": "Öz sınamayı çalıştır",
   "Run speed test": "Hız testini çalıştır",
@@ -592,9 +582,9 @@ const personalization: Record<string, string> = {
   "Running the latest Watch Together protocol.": "En yeni Birlikte İzle protokolü çalışıyor.",
   "Runs in the app's WebView. You're modding your own client. No sandbox, no safety net. Errors land in the console.":
     "Uygulamanın WebView'ında çalışır. Kendi istemcinizi değiştiriyorsunuz. Korumalı alan veya koruyucu önlem yoktur. Hatalar konsola yazılır.",
-  SPEED: "HIZ",
+  "SPEED": "HIZ",
   "SSimSuperRes detail refinement": "SSimSuperRes ayrıntı iyileştirme",
-  SUBDL: "SUBDL",
+  "SUBDL": "SUBDL",
   "SUBDL subtitle source": "SUBDL altyazı kaynağı",
   "SVP (free)": "SVP (ücretsiz)",
   "SVP frame interpolation": "SVP kare ara değerleme",
@@ -604,7 +594,7 @@ const personalization: Record<string, string> = {
     "SVP dosyaları mevcut ancak VapourSynth motoru yüklenemiyor ({err}). Bunun nedeni genellikle eski bir VapourSynth girdisi veya eksik Microsoft VC++ çalışma zamanıdır. SVP'yi yeniden yükleyin ya da Microsoft'tan en yeni \"Visual C++ Redistributable (x64)\" paketini yükleyip Frame'ı yeniden açın.",
   "Safe to clear anytime. Nothing here touches your watch history, library, themes, or sign-ins.":
     "İstediğiniz zaman güvenle temizleyebilirsiniz. Buradaki hiçbir şey izleme geçmişinizi, kitaplığınızı, temalarınızı veya oturumlarınızı etkilemez.",
-  Saturation: "Doygunluk",
+  "Saturation": "Doygunluk",
   "Save a TMDB key in Library & metadata to turn on streaming catalogs.":
     "Yayın kataloglarını etkinleştirmek için Kütüphane ve meta veriler bölümüne bir TMDB anahtarı kaydedin.",
   "Save a debrid key above (TorBox, Real-Debrid, AllDebrid, Premiumize, or Debrid-Link) to enable this.":
@@ -650,9 +640,9 @@ const personalization: Record<string, string> = {
   "Schedule & options": "Program ve seçenekler",
   "Score badges on cards": "Kartlardaki puan rozetleri",
   "Score position": "Puan konumu",
-  Screen: "Ekran",
-  Screensaver: "Ekran koruyucu",
-  Screenshot: "Ekran görüntüsü",
+  "Screen": "Ekran",
+  "Screensaver": "Ekran koruyucu",
+  "Screenshot": "Ekran görüntüsü",
   "Screenshots and recordings": "Ekran görüntüleri ve kayıtlar",
   "Scrobble to Simkl": "Simkl'e scrobble gönder",
   "Scroll left": "Sola kaydır",
@@ -705,7 +695,7 @@ const personalization: Record<string, string> = {
   "Seek forward 30s": "30 sn ileri sar",
   "Seek to the beginning.": "Başlangıca gidin.",
   "Seek to the last half second.": "Son yarım saniyeye gidin.",
-  Seeking: "Sarma",
+  "Seeking": "Sarma",
   "Select a subtitle track to sync": "Senkronize edilecek altyazı parçasını seçin",
   "Self-host": "Kendiniz barındırın",
   "Self-test": "Öz sınama",
@@ -755,10 +745,10 @@ const personalization: Record<string, string> = {
   "Settings storage breakdown": "Ayarların kapladığı alanın dökümü",
   "Settings, Frame Relay, then": "Ayarlar, Frame Relay, ardından",
   "Settings, Frame Relay, then {kbd}.": "Ayarlar, Frame Aktarıcısı ve ardından {kbd}.",
-  Setup: "Kurulum",
+  "Setup": "Kurulum",
   "Setup QR code": "Kurulum QR kodu",
   "Setup copied to clipboard as JSON": "Ayarlar JSON olarak panoya kopyalandı",
-  Severity: "Önem derecesi",
+  "Severity": "Önem derecesi",
   "Shape the sound without touching your system EQ. Applies on the mpv engine; the HTML5 engine plays audio untouched.":
     "Sistem EQ'suna dokunmadan sesi şekillendirin. mpv motorunda uygulanır; HTML5 motoru sesi değiştirmeden oynatır.",
   "Shape your anime feed.": "Anime akışınızı şekillendirin.",
@@ -769,7 +759,7 @@ const personalization: Record<string, string> = {
     "İzlediklerinizi paylaşın, bir öneri bırakın veya bir izleme gecesi duyurun.",
   "Share your thoughts (optional)": "Düşüncelerinizi paylaşın (isteğe bağlı)",
   "Sharing your relay": "Aktarıcınızı paylaşma",
-  Sharpen: "Keskinlik",
+  "Sharpen": "Keskinlik",
   "Sharper lines and a little more pop.":
     "Daha keskin çizgiler ve biraz daha canlı bir görünüm sunar.",
   "Sharper lines and cleaner gradients on anime, in real time. Heaviest on the graphics card of everything here.":
@@ -878,7 +868,7 @@ const personalization: Record<string, string> = {
     "Kitaplığınızı, izleme ilerlemenizi ve eklentilerinizi eşitlemek için oturum açın.",
   "Sign out of Frame account": "Frame hesabından çıkış yap",
   "Signed in as {name}": "{name} olarak oturum açıldı",
-  Simkl: "Simkl",
+  "Simkl": "Simkl",
   "Single -1:12 label, both ends collapse.":
     "Tek bir -1:12 etiketi gösterilir; iki uçtaki etiketler birleşir.",
   "Single 00:23 label, both ends collapse.":
@@ -894,7 +884,7 @@ const personalization: Record<string, string> = {
   "Sleep at end": "Bitince uykuya geç",
   "Sleep at end of episode": "Bölüm sonunda duraklat",
   "Sleep timer in the top bar": "Üst çubukta uyku zamanlayıcısı",
-  Slider: "Kaydırıcı",
+  "Slider": "Kaydırıcı",
   "Slot is getting crowded ({n}/{limit}). May overflow on narrow screens.":
     "Yuva dolmaya başladı ({n}/{limit}). Dar ekranlarda taşabilir.",
   "Slow addons and P2P sources often need more than 10 seconds to start. Raise this if streams are being skipped before they get a fair chance.":
@@ -902,7 +892,7 @@ const personalization: Record<string, string> = {
   "Slow down a moment before posting again": "Tekrar paylaşmadan önce biraz bekleyin",
   "Slow or unstable connection": "Yavaş veya kararsız bağlantı",
   "Slow playback by 0.25x.": "Oynatma hızını 0.25x azaltın.",
-  Small: "Küçük",
+  "Small": "Küçük",
   "Smart resync with speech recognition": "Konuşma tanıma ile akıllı yeniden eşitleme",
   "Smooth motion": "Akıcı hareket",
   "Smooth motion runs on the bundled mpv engine in the Frame desktop app. It has no effect in the browser.":
@@ -917,7 +907,7 @@ const personalization: Record<string, string> = {
     "Metnin çevresinde yumuşak bir hale. Çoğu içerikte en temiz görünüm.",
   "Softer and dimmer, kinder for late-night watching.":
     "Daha yumuşak ve loş görüntüsüyle gece izlerken gözlerinizi daha az yorar.",
-  Solid: "Düz",
+  "Solid": "Düz",
   "Solid fill, no texture. Cleanest baseline.": "Düz dolgu, dokusuz. En sade temel görünüm.",
   "Some copies of new releases have ads spliced into the video itself. This is experimental: the community marks where those ads are so others can skip them.":
     "Yeni çıkan bazı yapımların kopyalarında videonun içine yerleştirilmiş reklamlar bulunur. Bu deneysel bir özelliktir: Topluluk, başkalarının atlayabilmesi için bu reklamların yerlerini işaretler.",
@@ -936,12 +926,12 @@ const personalization: Record<string, string> = {
   "Source:": "Kaynak:",
   "Source: {code}. About 200 lines of JavaScript, no dependencies. Read it before deploying if you want to know what runs.":
     "Kaynak: {code}. Bağımlılığı olmayan yaklaşık 200 satır JavaScript. Nelerin çalışacağını öğrenmek istiyorsanız dağıtmadan önce okuyun.",
-  Sources: "Kaynaklar",
+  "Sources": "Kaynaklar",
   "Sources Frame flagged as broken. Clear to give them another chance.":
     "Frame'ın bozuk olarak işaretlediği kaynaklar. Bir şans daha vermek için temizleyin.",
   "Sources cached in the background for the streams you are watching":
     "İzlediğiniz yayınların arka planda önbelleğe alınan kaynakları",
-  Speed: "Hız",
+  "Speed": "Hız",
   "Speed down": "Hızı azalt",
   "Speed playback up by 0.25x.": "Oynatma hızını 0.25x artırın.",
   "Speed test": "Hız testi",
@@ -950,7 +940,7 @@ const personalization: Record<string, string> = {
     "Yükleme göstergesi hiç kaybolmuyor ve oynatıcıda hiçbir şey yüklenmiyor.",
   "Spins up a tiny server on Cloudflare's free Workers tier. Stays online forever (or until you stop it). Friends connect by URL.":
     "Cloudflare'in ücretsiz Workers katmanında küçük bir sunucu kurar. Siz durdurana kadar sürekli çevrimiçi kalır. Arkadaşlarınız URL ile bağlanır.",
-  Spoilers: "Spoilerlar",
+  "Spoilers": "Spoilerlar",
   "Square looks best": "Kare en iyi görünür",
   "Square mark in the sidebar. Transparent PNG or SVG works best.":
     "Kenar çubuğundaki kare logo. Şeffaf PNG veya SVG en iyi sonucu verir.",
@@ -967,7 +957,7 @@ const personalization: Record<string, string> = {
   "Start typing to find people.": "Kişileri bulmak için yazmaya başlayın.",
   "Start voyage": "Yolculuğu başlat",
   "Start with these {count}": "Bu {count} filmle başla",
-  Starting: "Başlatılıyor",
+  "Starting": "Başlatılıyor",
   "Steer your Top Picks and hero toward what you love, and hide what you don't.":
     "En İyi Seçimler'i ve öne çıkanları sevdiklerinize göre yönlendirin, sevmediklerinizi gizleyin.",
   "Step back one frame and pause. Frame-accurate on mpv.":
@@ -978,7 +968,7 @@ const personalization: Record<string, string> = {
     "Videoya gömülü siyah şeritleri kırpmak için adım adım yakınlaştırın (Yakınlaştırma modu).",
   "Step zoom out to restore baked-in black bars (Zoom mode).":
     "Videoya gömülü siyah şeritleri geri getirmek için adım adım uzaklaştırın (Yakınlaştırma modu).",
-  Stepper: "Kademeli",
+  "Stepper": "Kademeli",
   "Steps to reproduce": "Yeniden oluşturma adımları",
   "Still off": "Hâlâ uyumsuz",
   "Still watching?": "Hâlâ izliyor musunuz?",
@@ -1002,8 +992,8 @@ const personalization: Record<string, string> = {
   "Stream torrents through Frame's own Rust peer-to-peer engine instead of the bundled Stremio Server. Falls back automatically if it can't connect. Status and a self-test live in the Local engine card below.":
     "Torrentleri paketle gelen Stremio Server yerine Frame'ın kendi Rust eşler arası motoruyla yayınlar. Bağlanamazsa otomatik olarak Stremio Server'a geri döner. Durum bilgisi ve öz sınama aşağıdaki Yerel motor kartındadır.",
   "Streamer release rule": "Yayıncı için yayın kuralı",
-  Streamers: "Yayın platformları",
-  Streaming: "Yayın",
+  "Streamers": "Yayın platformları",
+  "Streaming": "Yayın",
   "Streaming catalogs": "Yayın katalogları",
   "Streaming now": "Şu anda izleniyor",
   "Streaming sources": "Yayın kaynakları",
@@ -1011,7 +1001,7 @@ const personalization: Record<string, string> = {
     "Bu dillerdeki yayınlar ilk sıralarda yer alır. Diğerlerinin tümünü elemek için aşağıdaki seçeneği açın.",
   "Streams over {cap} Mbps will rank lower, even when cached.":
     "Önbelleğe alınmış olsa bile {cap} Mbps üzerindeki yayınlar daha alt sıralarda yer alır.",
-  Stremio: "Stremio",
+  "Stremio": "Stremio",
   "Stremio ID": "Stremio ID",
   "Stremio Supporters get a special badge on their Frame profile.":
     "Stremio Destekçileri, Frame profillerinde özel bir rozet kazanır.",
@@ -1025,10 +1015,10 @@ const personalization: Record<string, string> = {
   "Stremio's typeface. Geometric humanist sans.": "Stremio'nun yazı tipi. Geometrik hümanist sans.",
   "Stretch the featured hero edge to edge and taller, across every layout.":
     "Öne çıkan alanı tüm düzenlerde kenardan kenara uzatıp yükseltin.",
-  Strict: "Katı",
+  "Strict": "Katı",
   "Strong desktops with a dedicated graphics card":
     "Ayrı ekran kartlı güçlü masaüstü bilgisayarlar",
-  Structured: "Yapılandırılmış",
+  "Structured": "Yapılandırılmış",
   "Style the timeline at the bottom of the player. Swap the dot for a sticker, change the bar height, recolor it. Settings live-preview right here.":
     "Oynatıcının altındaki zaman çizelgesini özelleştirin. Noktayı bir çıkartmayla değiştirin, çubuğun yüksekliğini ve rengini ayarlayın. Ayarları burada canlı olarak önizleyebilirsiniz.",
   "Styled (ASS) subs keep their own font, color, and size. Truest to the release, but the size can vary a lot between files.":
@@ -1037,7 +1027,7 @@ const personalization: Record<string, string> = {
     "Biçimlendirilmiş (ASS) altyazılar kendi yazı tiplerini, renklerini ve efektlerini korur. Sürüme en sadık seçenek.",
   "Styled (ASS) subtitles": "Biçimlendirilmiş (ASS) altyazılar",
   "Submit bug report": "Hata raporu gönder",
-  Subsource: "Subsource",
+  "Subsource": "Subsource",
   "Subsource subtitle source": "Subsource altyazı kaynağı",
   "Subtitle addons": "Altyazı eklentileri",
   "Subtitle auto-sync": "Otomatik altyazı eşitleme",
@@ -1054,7 +1044,7 @@ const personalization: Record<string, string> = {
   "Subtle Apple-like sheen on the filled portion.": "Dolu bölümde Apple tarzı hafif bir parlaklık.",
   "Subtle audio feedback as you navigate and click. Off by default; pick a style to turn it on.":
     "Gezinirken ve tıklarken hafif sesli geri bildirim verir. Varsayılan olarak kapalıdır; açmak için bir stil seçin.",
-  Summary: "Özet",
+  "Summary": "Özet",
   "Summary needs at least 6 characters": "Özet en az 6 karakter olmalıdır",
   "Support ElfHosted or Stremio, or give to any charity below, and the badge lands on your profile.":
     "ElfHosted veya Stremio'yu destekleyin ya da aşağıdaki yardım kuruluşlarından birine bağış yapın; rozet profilinize eklenir.",
@@ -1067,7 +1057,7 @@ const personalization: Record<string, string> = {
   "Switch the menus and buttons to your language. Arabic flips the layout to right to left.":
     "Menüleri ve düğmeleri dilinize geçirin. Arapça, düzeni sağdan sola çevirir.",
   "Switch to {name}: {why}": "{name} seçeneğine geç: {why}",
-  Symptom: "Belirti",
+  "Symptom": "Belirti",
   "Sync across your devices": "Cihazlarınız arasında eşitleyin",
   "Sync from here": "Buradan eşitle",
   "Sync indicator": "Senkronizasyon göstergesi",
@@ -1097,17 +1087,17 @@ const personalization: Record<string, string> = {
   "TMDB is temporarily unavailable. Try your search again shortly.":
     "TMDB geçici olarak kullanılamıyor. Kısa süre sonra tekrar aramayı deneyin.",
   "TMDB · catalogs and rails": "TMDB · kataloglar ve raflar",
-  TRACKS: "PARÇALAR",
-  TV: "TV",
+  "TRACKS": "PARÇALAR",
+  "TV": "TV",
   "TV guide": "TV rehberi",
   "TV navigation": "TV ile gezinme",
   "TV navigation in player": "Oynatıcıda TV ile gezinme",
   "TV uses wide rounded cards with the logo on the art, like a TV home screen. Poster is the classic grid.":
     "TV, bir televizyon ana ekranındaki gibi görselin üzerinde logo bulunan geniş ve yuvarlatılmış kartlar kullanır. Poster ise klasik ızgara görünümüdür.",
-  Tags: "Etiketler",
+  "Tags": "Etiketler",
   "Takes about 10 seconds.": "Yaklaşık 10 saniye sürer.",
-  Tamil: "Tamilce",
-  Tap: "Aşağıdaki",
+  "Tamil": "Tamilce",
+  "Tap": "Aşağıdaki",
   "Tap a star to change, then save": "Değiştirmek için bir yıldıza dokunun, ardından kaydedin",
   "Tap a star to rate": "Puan vermek için bir yıldıza dokunun",
   "Tap again to delete {n} rules": "{n} kuralı silmek için tekrar dokunun",
@@ -1117,10 +1107,6 @@ const personalization: Record<string, string> = {
   "Tap again to reset {n} badges": "{n} rozeti sıfırlamak için tekrar dokunun",
   "Tap the first and last line of the section, then tap the line playing now and Sync from here.":
     "Bölümün ilk ve son satırına, ardından şu anda oynatılan satıra dokunun ve Buradan eşitle'yi seçin.",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "Herhangi bir film, dizi, manga veya karakteri buraya kaydetmek için kalp simgesine dokunun.",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "Buraya kaydetmek için herhangi bir film, dizi veya mangadaki yıldız simgesine ya da bir karakterdeki kalp simgesine tıklayın.",
   "Tap to switch": "Değiştirmek için dokunun",
   "Technical. IBM's open family.": "Teknik. IBM'in açık yazı tipi ailesi.",
   "Telegram bot": "Telegram botu",
@@ -1128,7 +1114,7 @@ const personalization: Record<string, string> = {
     "Telegram, oluşturduğun bir bot üzerinden gönderim yapar. İki şeye ihtiyacın var: bir",
   "Ten minutes of head start. Built for spotty Wi-Fi or a far-away server, at the cost of a longer wait before playback begins.":
     "On dakikalık ön yükleme. Kesintili Wi-Fi veya uzaktaki sunucular için tasarlandı; karşılığında oynatma daha geç başlar.",
-  Test: "Test et",
+  "Test": "Test et",
   "Test badge rules (Try it)": "Rozet kurallarını test et (Dene)",
   "Test connection": "Bağlantıyı test et",
   "Test failed": "Test başarısız",
@@ -1212,7 +1198,7 @@ const personalization: Record<string, string> = {
   "The yellow chip in the poster corner.": "Posterin köşesindeki sarı etiket.",
   "TheIntroDB · intro and credits timing": "TheIntroDB · intro ve jenerik zamanlamaları",
   "TheTVDB · episode data": "TheTVDB · bölüm verileri",
-  Theme: "Tema",
+  "Theme": "Tema",
   "Theme & appearance": "Tema ve görünüm",
   "Theme Library": "Tema Kitaplığı",
   "Theme cheat sheet": "Tema başvuru kılavuzu",
@@ -1235,16 +1221,6 @@ const personalization: Record<string, string> = {
   "This group has not written a description yet.": "Bu grup için henüz bir açıklama yazılmamış.",
   "This group's feed could not be loaded. Try again in a moment.":
     "Bu grubun akışı yüklenemedi. Birazdan tekrar deneyin.",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "Bu bir Mangayomi deposu, ancak kaynakları Dart kullanıyor ya da manga içeriği sunmuyor. Bu nedenle Frame bunları içe aktaramaz.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "Bu bir Mangayomi deposu. Frame, JavaScript kaynaklarını doğrudan çalıştırır. Bu kaynakları manga kütüphanenize eklemek için içe aktarın.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Bu bir Mangayomi deposu. Doğrudan içe aktarma henüz desteklenmiyor. Şu anda en geniş kataloğa erişmek için bir Suwayomi sunucusu çalıştırın ve Sunucular bölümünden Frame'ı bu sunucuya bağlayın.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "Bu, Frame'ın kullanamadığı bir Paperback (iOS) deposu. Masaüstü kaynaklarını kullanmak için Sunucular bölümünden Frame'ı bir Suwayomi sunucusuna bağlayın.",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Bu bir Tachiyomi / Mihon deposu. Bunlar Android (APK) eklentileri olduğundan Frame bunları doğrudan çalıştıramaz. Bu kaynakları masaüstünde kullanmak için bir Suwayomi sunucusu çalıştırın ve Sunucular bölümünden Frame'ı bu sunucuya bağlayın.",
   "This is the primary profile": "Bu, birincil profil",
   "This list is full ({max} items)": "Bu liste dolu ({max} öğe)",
   "This member has hidden their showcase, activity and friends from public view.":
@@ -1322,7 +1298,7 @@ const personalization: Record<string, string> = {
     "P2P devre dışı. Önbelleğe alınmamış yayınlar, bir debrid hizmetinden veya doğrudan bağlantıdan gelmedikçe oynatılmaz. P2P kullanmak için bunu kapatın.",
   "Tracked people": "Takip edilen kişiler",
   "Tracked person release rule": "Takip edilen kişi için yayın kuralı",
-  Tracks: "Parçalar",
+  "Tracks": "Parçalar",
   "Trailer quality": "Fragman kalitesi",
   "Trakt anticipated": "Trakt'ta merakla beklenenler",
   "Trakt anticipated picks up something":
@@ -1335,14 +1311,14 @@ const personalization: Record<string, string> = {
   "Translate series and movie posters to Arabic if available on TMDB":
     "TMDB'de varsa dizi ve film afişlerini Arapçaya çevir",
   "Translate titles": "Başlıkları çevir",
-  Trending: "Trendler",
+  "Trending": "Trendler",
   "Trending movies": "Trend filmler",
   "Trending on {site}": "{site} gündemindekiler",
   "Trending on {source}": "{source} üzerinde trend olanlar",
   "Trending shows": "Trend diziler",
   "Trending · Cinemeta": "Trendler · Cinemeta",
   "Trial for ${n}": "${n} karşılığında deneme",
-  Troubleshooting: "Sorun giderme",
+  "Troubleshooting": "Sorun giderme",
   "True black menus": "Gerçek siyah menüler",
   "True fullscreen": "Gerçek tam ekran",
   "True fullscreen covers the whole screen and hides the taskbar, but switching apps can flicker. Borderless window covers the same area with a frameless window, so alt-tab and overlays stay instant. Maximize fills the screen but keeps the taskbar and title bar.":
@@ -1388,13 +1364,13 @@ const personalization: Record<string, string> = {
     "Ne istediğinizi doğal dille yazın, model bulsun. Kendi API anahtarınızı kullanın.",
   "Type what you want in plain language and let a model find it. Bring your own OpenRouter key.":
     "Ne istediğinizi doğal dille yazın, model sizin için bulsun. Kendi OpenRouter anahtarınızı kullanın.",
-  Types: "Türler",
-  Typography: "Tipografi",
+  "Types": "Türler",
+  "Typography": "Tipografi",
   "URL cannot be empty": "URL boş olamaz",
   "URL is saved and ready to share.": "URL kaydedildi ve paylaşılmaya hazır.",
   "URL on r/Stremio or wherever your community lives. Other Frame users paste it into Settings, Frame Relay,":
     "URL'sini r/Stremio'da veya topluluğunuzun bulunduğu başka bir yerde paylaşın. Diğer Frame kullanıcıları bunu Ayarlar, Frame Relay bölümüne yapıştırabilir,",
-  Unavailable: "Kullanılamıyor",
+  "Unavailable": "Kullanılamıyor",
   "Unlike comment": "Yorum beğenisini kaldır",
   "Unlike list": "Liste beğenisini kaldır",
   "Unlimited Durable Object storage at $0.20 per million reads.":
@@ -1409,10 +1385,10 @@ const personalization: Record<string, string> = {
   "Update the clock every second.": "Saati her saniye güncelle.",
   "Update {name}": "{name} eklentisini güncelle",
   "Updated {when}": "Güncellendi: {when}",
-  Updates: "Güncellemeler",
+  "Updates": "Güncellemeler",
   "Updating separated settings per profile, which may have reset your theme and keys. Frame still has your old setup saved. Bring it back on this profile, then reload.":
     "Profil başına ayrı ayarlar güncelleniyor. Bu işlem temanızı ve anahtarlarınızı sıfırlamış olabilir. Eski yapılandırmanız Frame'da hâlâ kayıtlı. Bu profilde geri yükleyip yeniden yükleyin.",
-  Upload: "Yükle",
+  "Upload": "Yükle",
   "Upload a pattern to tile across the bar": "Çubuk boyunca döşenecek bir desen yükleyin",
   "Upload an image per award, or name your zip files after the ID shown under each one (tap to copy). Natural names work too, so best_soundtrack, movie_of_the_year, etc. still match.":
     "Her ödül için bir görsel yükleyin veya zip dosyalarınızı her ödülün altında gösterilen kimliğe göre adlandırın (kopyalamak için dokunun). Doğal adlar da kullanılabilir; yani best_soundtrack, movie_of_the_year vb. yine eşleşir.",
@@ -1462,7 +1438,7 @@ const personalization: Record<string, string> = {
   "Uses your theme's accent color.": "Temanızın vurgu rengini kullanır.",
   "Using AIOStreams or another aggregator addon? Its own sorting and filtering happen inside the addon before Frame ever sees the results, then Frame applies the stream filter and result order above on top. If results look thinner than expected, keep one side permissive: either relax the addon's internal filters or set Frame's stream filter to Balanced or Off.":
     "AIOStreams veya başka bir toplayıcı eklenti mi kullanıyorsunuz? Frame sonuçları görmeden önce eklentinin kendi sıralama ve filtreleme işlemleri uygulanır; ardından Frame yukarıdaki yayın filtresini ve sonuç sırasını bunların üzerine uygular. Sonuçlar beklenenden az görünüyorsa taraflardan birini esnek tutun: eklentinin dâhilî filtrelerini gevşetin veya Frame'ın yayın filtresini Dengeli ya da Kapalı olarak ayarlayın.",
-  VOLUME: "SES DÜZEYİ",
+  "VOLUME": "SES DÜZEYİ",
   "Variable timing corrected": "Değişken zamanlama düzeltildi",
   "Verified status": "Doğrulanma durumu",
   "Verify & connect": "Doğrula ve bağlan",
@@ -1472,10 +1448,10 @@ const personalization: Record<string, string> = {
   "View community badge packs": "Topluluk rozet paketlerini görüntüle",
   "View my profile": "Profilimi görüntüle",
   "Vocal clarity": "Vokal netliği",
-  Volume: "Ses düzeyi",
+  "Volume": "Ses düzeyi",
   "Volume control": "Ses denetimi",
   "Voyage complete": "Yolculuk tamamlandı",
-  WHEN: "ŞU DURUMDA",
+  "WHEN": "ŞU DURUMDA",
   "Wait before playing": "Oynatmadan önce bekleme",
   "Wait for the upload to finish. The relay URL gets written to":
     "Yüklemenin bitmesini bekleyin. Aktarıcı URL'si Frame ayarlarındaki",
@@ -1497,7 +1473,7 @@ const personalization: Record<string, string> = {
   "Watching for ad, analytics, and tracking requests. Frame itself sends zero telemetry.":
     "Reklam, analiz ve izleme istekleri takip ediliyor. Frame hiçbir telemetri verisi göndermez.",
   "Watching right now": "Şu anda izliyor",
-  Watchlist: "İzleme Listesi",
+  "Watchlist": "İzleme Listesi",
   "Watchlist bookmark": "İzleme Listesi yer imi",
   "Watchlist shows only saved titles": "İzleme listesinde yalnızca kaydedilen içerikleri göster",
   "We could not find anyone at @{handle}. The handle may have changed or the profile was removed.":
@@ -1508,7 +1484,7 @@ const personalization: Record<string, string> = {
   "Wear your Trakt profile picture across Frame instead of the default.":
     "Varsayılan profil resmi yerine Frame genelinde Trakt profil resminizi kullanın.",
   "Web build": "Web sürümü",
-  Webhooks: "Webhook'lar",
+  "Webhooks": "Webhook'lar",
   "Weekend watchlist": "Hafta sonu izleme listesi",
   "What actually happened": "Gerçekte ne oldu?",
   "What broke?": "Ne bozuldu?",
@@ -1595,7 +1571,7 @@ const personalization: Record<string, string> = {
   "Window title bar": "Pencere başlık çubuğu",
   "With the city surrounded, an unlikely alliance forms as a long-buried secret finally comes to light.":
     "Şehir kuşatma altındayken, uzun süredir gömülü kalan bir sırrın sonunda ortaya çıkmasıyla beklenmedik bir ittifak kurulur.",
-  Wordmark: "Yazı logosu",
+  "Wordmark": "Yazı logosu",
   "Worker crashed or hit memory limits": "Worker çöktü veya bellek sınırına ulaştı",
   "Worker deleted or URL wrong": "Worker silinmiş veya URL yanlış",
   "Workers Scripts": "Workers Scripts",
@@ -1605,7 +1581,7 @@ const personalization: Record<string, string> = {
   "Write something about yourself": "Kendiniz hakkında bir şeyler yazın",
   "Wrong username or password": "Kullanıcı adı veya parola yanlış",
   "Wrong year": "Yanlış yıl",
-  Wyzie: "Wyzie",
+  "Wyzie": "Wyzie",
   "X-Ray": "X-Ray",
   "X-Ray (experimental)": "X-Ray (deneysel)",
   "X-Ray needs a TMDB key": "X-Ray için TMDB anahtarı gerekli",
@@ -1696,18 +1672,18 @@ const personalization: Record<string, string> = {
   "addons synced": "eklentiler eşitlendi",
   "all channels": "tüm kanallar",
   "an unknown date": "bilinmeyen bir tarih",
-  and: "ve",
+  "and": "ve",
   "and confirms the worker is reachable and running a current version. A passing test means Watch Together rooms will connect.":
     "ve worker'a erişilebildiğini ve güncel bir sürümün çalıştığını doğrular. Test başarılı olursa Birlikte İzle odaları bağlanır.",
   "and your": "ve kendi",
-  anime: "anime",
-  annoying: "rahatsız edici",
+  "anime": "anime",
+  "annoying": "rahatsız edici",
   "app unusable": "uygulama kullanılamıyor",
   "as the scheme instead of": "protokolüyle yapıştırın; şu protokolü kullanmayın:",
-  auto: "otomatik",
+  "auto": "otomatik",
   "below. In Telegram, send him": "bağlantısına dokun. Telegram'da ona şunu gönder:",
   "below. Send it": "bağlantısına dokun. Şunu gönder:",
-  blocked: "engellendi",
+  "blocked": "engellendi",
   "bot token": "bot token'ı",
   "box above.": "kutusuna yapıştır.",
   "by @{handle}": "@{handle} tarafından",
@@ -1720,14 +1696,14 @@ const personalization: Record<string, string> = {
   "cosmetic, minor": "görsel, önemsiz",
   "created {when}": "{when} oluşturuldu",
   "day streak": "günlük seri",
-  favorites: "favoriler",
+  "favorites": "favoriler",
   "feature broken": "özellik çalışmıyor",
   "films, start to finish. Start another whenever you like.":
     "filmi baştan sona izlediniz. İstediğiniz zaman yeni bir yolculuğa başlayın.",
   "for higher rate limits; leave blank for the free anonymous tier.":
     "daha yüksek istek sınırları için; ücretsiz anonim katmanı kullanmak için boş bırakın.",
   "from the Frame repo into a new directory as": "dosyasını yeni bir dizine şu adla kopyalayın:",
-  hidden: "gizli",
+  "hidden": "gizli",
   "hours watched": "saat izlendi",
   "https:// API or site URL": "https:// API veya site URL'si",
   "https://posters.example.com or a pattern with {id}":
@@ -1740,7 +1716,7 @@ const personalization: Record<string, string> = {
   "languages. Home filters to these.": "dil. Ana sayfa bunlara göre filtrelenir.",
   "letterboxd.com/username/list/slug": "letterboxd.com/username/list/slug",
   "mdblist api key": "MDBList API anahtarı",
-  mpv: "mpv",
+  "mpv": "mpv",
   "mpv on the desktop app, HTML5 in the browser. The right engine without thinking about it.":
     "Masaüstü uygulamasında mpv, tarayıcıda HTML5. Düşünmenize gerek kalmadan doğru motor.",
   "name it Frame, hit": "Frame adını ver ve şuna bas:",
@@ -1750,26 +1726,26 @@ const personalization: Record<string, string> = {
   "on the left, then": "seçeneğine, ardından şuna tıkla:",
   "on the {themeName} theme.": "{themeName} temasında.",
   "or use one of our avatars": "veya avatarlarımızdan birini kullanın",
-  packs: "paket",
+  "packs": "paket",
   "permissions at": "şu adresten oluşturun:",
   "personal key": "kişisel anahtar",
   "returns JSON with the worker version. Used by the test button.":
     "worker sürümünü JSON olarak döndürür. Test düğmesi tarafından kullanılır.",
   "rpdb key": "RPDB anahtarı",
-  shown: "gösterildi",
-  skipped: "atlandı",
+  "shown": "gösterildi",
+  "skipped": "atlandı",
   "stremio:// links now open in the Stremio app. Frame will only install when you trigger it from inside Frame.":
     "stremio:// bağlantıları artık Stremio uygulamasında açılıyor. Frame yalnızca Frame içinden başlattığınızda yükleme yapacak.",
   "subdomain acts as the access token. There is no login.":
     "alt alan adı erişim anahtarı işlevi görür. Giriş gerekmez.",
   "subscriber API key": "abone API anahtarı",
   "to search now": "şimdi aramak için",
-  today: "bugün",
-  tvOS: "tvOS",
+  "today": "bugün",
+  "tvOS": "tvOS",
   "tvOS chrome": "tvOS arayüzü",
   "update available": "güncelleme mevcut",
   "v3 API key": "v3 API anahtarı",
-  visible: "görünür",
+  "visible": "görünür",
   "will be removed from Frame. Anything you've set to use it will fall back to Inter.":
     "Frame'dan kaldırılacak. Bunu kullanacak şekilde ayarladığınız her şey Inter'a geri dönecek.",
   "with a WebSocket upgrade: opens a Watch Together room. State is held in a Durable Object, no persistence beyond the active session.":

@@ -84,8 +84,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "Liên kết đó không phản hồi.",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "Đây có vẻ không phải kho lưu trữ plugin. Frame cần { name, plugins } hoặc một manifest tập lệnh nhà cung cấp có scrapers.",
-  "This is a manga repository. Add it from the Manga page.":
-    "Đây là kho lưu trữ manga. Hãy thêm từ trang Manga.",
   "Already added.": "Đã thêm rồi.",
   "Added {repo} with {count} providers.": "Đã thêm {repo} với {count} nhà cung cấp.",
   "Your repositories": "Kho lưu trữ của bạn",
@@ -116,8 +114,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "{n}/{m} đã phản hồi, {k} thất bại",
   "Install all": "Cài tất cả",
   "Installing {done} of {total}": "Đang cài {done}/{total}",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "Những tập lệnh nhỏ tìm luồng phát, manga và sách trên các trang mà Frame không biết, cài từ các kho lưu trữ bạn chọn.",
   "Remove all": "Gỡ tất cả",
 };
 

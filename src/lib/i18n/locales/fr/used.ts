@@ -3,10 +3,9 @@ const used: Record<string, string> = {
     "@{handle} sera retiré de vos amis. Vous pourrez l’ajouter à nouveau plus tard.",
   "A compact upright slider that boosts past 100 percent.":
     "Un curseur vertical compact qui permet de dépasser 100 %.",
-  Accept: "Accepter",
+  "Accept": "Accepter",
   "acclaimed titles": "titres salués par la critique",
   "Ad detected": "Publicité détectée",
-  "Add a manga source to open these": "Ajoutez une source de mangas pour les ouvrir",
   "Add a TMDB key to load rankings": "Ajoutez une clé TMDB pour charger les classements",
   "Add tags (anime, horror, cozy...)": "Ajouter des tags (anime, horreur, cocooning...)",
   "Add your TMDB key in Settings first": "Ajoutez d’abord votre clé TMDB dans les Paramètres",
@@ -23,7 +22,7 @@ const used: Record<string, string> = {
   "Any rating": "Toutes les notes",
   "Anyone can find and join from search":
     "Tout le monde peut trouver et rejoindre depuis la recherche",
-  AudD: "AudD",
+  "AudD": "AudD",
   "Auto-adjusts styled (ASS) subtitles so dialogue stays the same size across files, while keeping their colors, fonts, and sign placement.":
     "Ajuste automatiquement les sous-titres stylisés (ASS) pour que les dialogues conservent la même taille d’un fichier à l’autre, tout en préservant leurs couleurs, leurs polices et la position des indications.",
   "Autoplay profile songs": "Lire automatiquement les morceaux du profil",
@@ -40,7 +39,7 @@ const used: Record<string, string> = {
   "Bulk upload is not live yet, sending one rating per second.":
     "L’envoi groupé n’est pas encore disponible, une note est envoyée par seconde.",
   "Cancel import": "Annuler l’importation",
-  Cancelling: "Annulation",
+  "Cancelling": "Annulation",
   "Checking SVP installation...": "Vérification de l’installation de SVP...",
   "Checking the local SVP and VapourSynth installation...":
     "Vérification de l’installation locale de SVP et de VapourSynth...",
@@ -60,22 +59,22 @@ const used: Record<string, string> = {
   "Couldn't load this collection": "Impossible de charger cette collection",
   "Danish Cinema": "Cinéma danois",
   "Danish Films": "Films danois",
-  Decline: "Refuser",
-  Department: "Département",
+  "Decline": "Refuser",
+  "Department": "Département",
   "Dismiss notification": "Fermer la notification",
   "Down {n} this week": "En baisse de {n} cette semaine",
   "Drop your export here, or click to browse":
     "Déposez votre exportation ici, ou cliquez pour parcourir les fichiers",
-  Earlier: "Plus tôt",
-  edited: "modifié",
-  End: "Fin",
+  "Earlier": "Plus tôt",
+  "edited": "modifié",
+  "End": "Fin",
   "Explore the all-time greatest actors, directors and more":
     "Découvrez les plus grands acteurs, réalisateurs et autres artistes de tous les temps",
   "Failed to save": "Échec de l’enregistrement",
   "Featured order": "Ordre des contenus à la une",
-  Filmography: "Filmographie",
+  "Filmography": "Filmographie",
   "Find a group": "Trouver un groupe",
-  Found: "Trouvé",
+  "Found": "Trouvé",
   "French Films": "Films français",
   "Frequent Collaborators": "Collaborateurs fréquents",
   "Friend requests": "Demandes d’amis",
@@ -120,7 +119,7 @@ const used: Record<string, string> = {
   "Imported {n} ratings from {name}": "{n} notes importées depuis {name}",
   "Indian Cinema": "Cinéma indien",
   "Indian Films": "Films indiens",
-  Insert: "Insérer",
+  "Insert": "Insérer",
   "Install more shaders in Settings, Shaders to switch between them here.":
     "Installez d’autres shaders dans Paramètres, Shaders pour pouvoir les sélectionner ici.",
   "Installed and detected. Frame found the native svpflow plugins and VapourSynth script library.":
@@ -128,7 +127,7 @@ const used: Record<string, string> = {
   "Installed packs": "Packs installés",
   "Installed shaders": "Shaders installés",
   "Invited by {name}": "Invitation de {name}",
-  Invites: "Invitations",
+  "Invites": "Invitations",
   "Italian Cinema": "Cinéma italien",
   "Italian Films": "Films italiens",
   "Japanese Films": "Films japonais",
@@ -142,10 +141,8 @@ const used: Record<string, string> = {
   "Local storage is full, these ratings live on your account only.":
     "Le stockage local est plein, ces notes sont enregistrées uniquement sur votre compte.",
   "major awards": "récompenses majeures",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Les mangas ne peuvent pas encore être associés à un titre Frame, {n} ont donc été omis.",
   "Mark all read": "Tout marquer comme lu",
-  Minecraft: "Minecraft",
+  "Minecraft": "Minecraft",
   "Modern Russian Series": "Séries russes modernes",
   "Mute all profile songs": "Couper le son de toutes les musiques de profil",
   "Native 48/60fps motion through your Linux SVP and VapourSynth installation, rendered inside Frame's embedded player.":
@@ -165,7 +162,7 @@ const used: Record<string, string> = {
   "Nothing to preview yet.": "Aucun aperçu disponible pour le moment.",
   "Nothing was imported": "Rien n’a été importé",
   "Nothing was saved.": "Rien n’a été enregistré.",
-  Notification: "Notification",
+  "Notification": "Notification",
   "On by default: once you've watched every episode that has aired, the show leaves Continue Watching and returns when a new episode drops. Turn it off to keep caught-up shows on the row.":
     "Activé par défaut : une fois tous les épisodes diffusés regardés, la série quitte Reprendre la lecture et y revient à la sortie d’un nouvel épisode. Désactivez cette option pour conserver dans cette rangée les séries dont vous êtes à jour.",
   "Only people you add can join": "Seules les personnes que vous ajoutez peuvent participer",
@@ -182,7 +179,7 @@ const used: Record<string, string> = {
   "Pick your language": "Choisissez votre langue",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Extensions communautaires populaires, classées selon les étoiles de l’annuaire public. Installez toute autre extension par URL dans l’onglet Parcourir.",
-  Popularity: "Popularité",
+  "Popularity": "Popularité",
   "Portuguese-Language": "En portugais",
   "Profile song": "Musique du profil",
   "Profile songs": "Musiques de profil",
@@ -205,9 +202,8 @@ const used: Record<string, string> = {
   "Russian Drama": "Drames russes",
   "Russian Films": "Films russes",
   "Russian Movies": "Films russes",
-  SCORE: "NOTE",
-  "Search movies, shows, anime, manga": "Rechercher des films, des séries, des anime et des mangas",
-  Shaders: "Nuanceurs",
+  "SCORE": "NOTE",
+  "Shaders": "Nuanceurs",
   "Show card": "Afficher la fiche",
   "Showing last synced ranking": "Affichage du dernier classement synchronisé",
   "Shows a small green dot on the player's subtitle button while a subtitle track is active. Turn it off if you would rather keep the controls clean.":
@@ -218,7 +214,7 @@ const used: Record<string, string> = {
   "Skipped, not rated or not supported": "Ignoré, non noté ou non pris en charge",
   "Something went wrong reaching the ranking feed.":
     "Une erreur s’est produite lors de l’accès au fil de classement.",
-  Sort: "Trier",
+  "Sort": "Trier",
   "Soviet Classics": "Classiques soviétiques",
   "Spanish-Language": "En espagnol",
   "Start import": "Lancer l’importation",
@@ -232,9 +228,8 @@ const used: Record<string, string> = {
   "The all-time greats": "Les incontournables de tous les temps",
   "The server stopped responding, the rest stayed on this device.":
     "Le serveur a cessé de répondre, le reste est resté sur cet appareil.",
-  Timer: "Minuteur",
+  "Timer": "Minuteur",
   "Top 100": "Top 100",
-  "Top Manga": "Meilleurs mangas",
   "Top People": "Personnalités les mieux classées",
   "Trending and Top on TMDB read live data, which needs your own TMDB key.":
     "Les rubriques Tendances et Top sur TMDB utilisent des données en temps réel, ce qui nécessite votre propre clé TMDB.",
@@ -245,7 +240,7 @@ const used: Record<string, string> = {
   "Up {n} this week": "En hausse de {n} cette semaine",
   "User-made badge packs from the community store":
     "Packs de badges créés par les utilisateurs dans la boutique de la communauté",
-  Vertical: "Vertical",
+  "Vertical": "Vertical",
   "View badges": "Afficher les badges",
   "View {name}": "Afficher {name}",
   "wants to connect": "souhaite se connecter",

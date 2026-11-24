@@ -85,8 +85,6 @@ const settingsFill: Record<string, string> = {
   "Poster shine on hover": "Hiệu ứng sáng poster khi di chuột",
   "A subtle tvOS style light sweep across a poster when you hover it. Off by default; the card lift stays either way.":
     "Hiệu ứng ánh sáng lướt nhẹ kiểu tvOS trên poster khi bạn di chuột qua. Mặc định tắt; hiệu ứng nâng thẻ vẫn luôn được giữ nguyên.",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "Bạn đang tìm Frame trong trình duyệt, điều khiển từ xa trên điện thoại hoặc điều khiển từ xa cho trình đọc manga? Chúng đã được chuyển sang trang Điều khiển từ xa.",
   "X-Ray (experimental)": "X-Ray (thử nghiệm)",
   "Amazon-style X-Ray: open the cast while you watch and tap anyone for their bio and everything they have been in. On-device face matching to show who is on screen is coming next. Off by default.":
     "X-Ray kiểu Amazon: mở danh sách diễn viên khi đang xem và nhấn vào bất kỳ ai để xem tiểu sử cùng mọi tác phẩm họ từng tham gia. Tính năng đối chiếu khuôn mặt ngay trên thiết bị để cho biết ai đang xuất hiện trên màn hình sẽ sớm ra mắt. Mặc định tắt.",
@@ -110,16 +108,9 @@ const settingsFill: Record<string, string> = {
     "Các điều khiển từ xa do ứng dụng máy tính cung cấp. Mở phần cài đặt này trong Frame trên máy tính để lấy liên kết.",
   "Frame on other devices": "Frame trên thiết bị khác",
   "Serve Frame on your network": "Cung cấp Frame trên mạng của bạn",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Một công tắc bật mọi tính năng trên trang này: ứng dụng web, điều khiển từ xa bằng điện thoại và điều khiển từ xa cho trình đọc manga.",
   "Phone remote": "Điều khiển từ xa bằng điện thoại",
   "Turns your phone into a remote for this computer: play, pause, seek, volume, and casting, all from the couch. Open the Wi-Fi address on your phone's browser.":
     "Biến điện thoại thành điều khiển từ xa cho máy tính này: phát, tạm dừng, tua, chỉnh âm lượng và truyền nội dung, tất cả ngay từ ghế sofa. Mở địa chỉ Wi-Fi bằng trình duyệt trên điện thoại.",
-  "Manga reader remote": "Điều khiển từ xa cho trình đọc manga",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Điều khiển trình đọc manga dạng lật trang bằng điện thoại khi đọc trên màn hình lớn: lật trang, thu phóng và chuyển chế độ. Trình đọc cũng hiển thị liên kết này khi bạn đọc.",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "Bật công tắc phía trên để địa chỉ điều khiển từ xa bằng điện thoại và điều khiển từ xa cho trình đọc manga xuất hiện tại đây.",
   "On a beta that's giving you trouble? Pick an earlier build below and run its installer over your current copy. Your library, settings, and downloads all stay put.":
     "Bản beta đang gây lỗi? Chọn một bản dựng cũ hơn bên dưới rồi chạy trình cài đặt đè lên bản hiện tại. Thư viện, cài đặt và nội dung tải xuống vẫn được giữ nguyên.",
   "While beta updates are on, Frame offers the newest build again on its next check. Turn beta updates off above to stay on an earlier one.":
@@ -130,7 +121,7 @@ const settingsFill: Record<string, string> = {
   "More picture shaders": "Thêm shader hình ảnh",
   "Neural upscalers, sharpeners, and HDR tone-mapping ported for mpv. Each is hosted by its author, not bundled with Frame. Download the ones you want; Frame chains them in the right order and applies them in the player.":
     "Các trình nâng cấp độ phân giải bằng mạng nơ-ron, tăng độ nét và ánh xạ tông màu HDR được chuyển sang mpv. Mỗi shader do tác giả lưu trữ, không được tích hợp vào Frame. Hãy tải các shader bạn muốn; Frame sẽ xâu chuỗi chúng theo đúng thứ tự và áp dụng trong trình phát.",
-  Cleared: "Đã xóa",
+  "Cleared": "Đã xóa",
   "Sure?": "Chắc chứ?",
   "Storage overview": "Tổng quan bộ nhớ",
   "Everything Frame saves lives on this computer. If space runs low, clear a cache below; Frame rebuilds them as you browse.":
@@ -144,7 +135,6 @@ const settingsFill: Record<string, string> = {
   "Stream picker cache": "Bộ nhớ đệm trình chọn luồng",
   "Remembered source lists per title. Clears stale results after changing addons or debrid.":
     "Danh sách nguồn đã ghi nhớ theo từng tựa phim. Xóa các kết quả cũ sau khi thay đổi tiện ích bổ sung hoặc debrid.",
-  "Manga browse cache": "Bộ nhớ đệm duyệt manga",
   "Cached chapter lists and browse pages. Downloads stay untouched.":
     "Danh sách chương và trang duyệt đã lưu vào bộ nhớ đệm. Nội dung tải xuống không bị ảnh hưởng.",
   "Live TV caches": "Bộ nhớ đệm TV trực tiếp",
@@ -156,8 +146,6 @@ const settingsFill: Record<string, string> = {
   "Continue Watching suggestions cache": "Bộ nhớ đệm đề xuất Xem tiếp",
   "Resurface picks for the home rail. Rebuilds overnight.":
     "Đưa lại các nội dung đề xuất lên hàng nội dung trang chủ. Được tạo lại qua đêm.",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "Giao diện đã tải xuống được quản lý trong Giao diện & hiển thị. Video và manga tải xuống được quản lý trên trang Tải xuống.",
   "Pattern (e.g. \\bremux\\b)": "Mẫu (ví dụ: \\bremux\\b)",
   "Downloaded from community": "Đã tải từ cộng đồng",
   "Badge art packs you installed from the community store. Remove one to put its badges back to default.":
@@ -166,7 +154,7 @@ const settingsFill: Record<string, string> = {
   "Pack removed, badges back to default": "Đã xóa gói, huy hiệu đã trở về mặc định",
   "Remove pack": "Xóa gói",
   "View community badge packs": "Xem các gói huy hiệu cộng đồng",
-  packs: "gói",
+  "packs": "gói",
   "Any Stremio subtitle addons you have installed are searched here too.":
     "Mọi tiện ích bổ sung phụ đề Stremio bạn đã cài đặt cũng được tìm kiếm tại đây.",
   "{count} installed. Add or remove them under Streaming sources.":
@@ -176,19 +164,19 @@ const settingsFill: Record<string, string> = {
   "Subtitle sources": "Nguồn phụ đề",
   "Frame searches every source you enable at the same time, then merges and de-duplicates the results into one clean list. Turn a source off to stop pulling from it.":
     "Frame tìm kiếm đồng thời trong mọi nguồn bạn bật, sau đó hợp nhất và loại bỏ kết quả trùng lặp thành một danh sách gọn gàng. Tắt nguồn để ngừng lấy dữ liệu từ nguồn đó.",
-  OpenSubtitles: "OpenSubtitles",
+  "OpenSubtitles": "OpenSubtitles",
   "Frame's built-in OpenSubtitles search, on by default. If you install an OpenSubtitles addon, this steps aside automatically so your results are never duplicated.":
     "Tính năng tìm kiếm OpenSubtitles tích hợp của Frame, được bật theo mặc định. Nếu bạn cài đặt tiện ích bổ sung OpenSubtitles, tính năng này sẽ tự động nhường chỗ để kết quả không bao giờ bị trùng lặp.",
-  Wyzie: "Wyzie",
+  "Wyzie": "Wyzie",
   "A fast community subtitle index. Off by default; turn it on for extra coverage on newer or niche releases.":
     "Chỉ mục phụ đề cộng đồng tốc độ cao. Tắt theo mặc định; hãy bật để mở rộng phạm vi cho các bản phát hành mới hoặc kén người xem.",
   "Subtitle addons": "Tiện ích bổ sung phụ đề",
-  SUBDL: "SUBDL",
+  "SUBDL": "SUBDL",
   "A large multi-language subtitle database. Off until you add your free SUBDL API key.":
     "Cơ sở dữ liệu phụ đề đa ngôn ngữ quy mô lớn. Tắt cho đến khi bạn thêm khóa API SUBDL miễn phí.",
   "Paste your SUBDL API key": "Dán khóa API SUBDL của bạn",
   "Get a free key at subdl.com": "Nhận khóa miễn phí tại subdl.com",
-  Subsource: "Subsource",
+  "Subsource": "Subsource",
   "A community subtitle source. Off until you add your Subsource API key.":
     "Nguồn phụ đề cộng đồng. Tắt cho đến khi bạn thêm khóa API Subsource.",
   "Paste your Subsource API key": "Dán khóa API Subsource của bạn",
@@ -198,7 +186,7 @@ const settingsFill: Record<string, string> = {
   "The languages above all obey your preferred subtitle language order, which lives in the Languages page.":
     "Tất cả ngôn ngữ ở trên đều tuân theo thứ tự ngôn ngữ phụ đề ưu tiên của bạn, được thiết lập trên trang Ngôn ngữ.",
   "Open Languages": "Mở Ngôn ngữ",
-  Maximum: "Tối đa",
+  "Maximum": "Tối đa",
   "Resolution posters are decoded at. High is sized to your screen with headroom and looks identical to full res while using far less memory; Balanced saves the most; Maximum keeps original resolution.":
     "Độ phân giải dùng để giải mã áp phích. Cao điều chỉnh theo màn hình với một khoảng dư và trông giống hệt độ phân giải đầy đủ nhưng dùng ít bộ nhớ hơn nhiều; Cân bằng tiết kiệm nhất; Tối đa giữ nguyên độ phân giải gốc.",
   "Poster dock magnification": "Phóng đại áp phích kiểu thanh Dock",
@@ -217,8 +205,8 @@ const settingsFill: Record<string, string> = {
   "Featured source": "Nguồn nổi bật",
   "What fills the hero. Trending is a fresh top list from Frame, refreshed through the day. Classic uses your own Home rows.":
     "Nội dung hiển thị trong vùng nổi bật. Thịnh hành là danh sách hàng đầu mới nhất từ Frame, được cập nhật trong ngày. Cổ điển dùng các hàng Trang chủ của riêng bạn.",
-  Classic: "Cổ điển",
-  Screensaver: "Trình bảo vệ màn hình",
+  "Classic": "Cổ điển",
+  "Screensaver": "Trình bảo vệ màn hình",
   "When Frame sits idle in the foreground, it drifts through cinematic backdrops with a clock and what's trending. Any movement or key brings you back. Off by default.":
     "Khi Frame không hoạt động ở màn hình trước, ứng dụng sẽ lần lượt hiển thị các phông nền điện ảnh cùng đồng hồ và nội dung thịnh hành. Bất kỳ thao tác di chuyển hoặc phím nào cũng sẽ đưa bạn trở lại. Tắt theo mặc định.",
   "Ambient screensaver": "Trình bảo vệ màn hình sống động",
@@ -245,7 +233,7 @@ const settingsFill: Record<string, string> = {
     "Chọn giao diện cho Xem cùng nhau và các nút thu nhỏ, phóng to, đóng. Kính lỏng thay thế các nút điều khiển trong suốt, tối giản.",
   "Clean transparent": "Trong suốt gọn gàng",
   "Liquid glass": "Kính lỏng",
-  Filled: "Tô đầy",
+  "Filled": "Tô đầy",
   "Drag the window from anywhere": "Kéo cửa sổ từ bất kỳ đâu",
   "Move Frame by dragging any empty space on a page, not just the top bar. Leave this off to keep clicks inside pages from nudging the window.":
     "Di chuyển Frame bằng cách kéo bất kỳ vùng trống nào trên trang, không chỉ thanh trên cùng. Tắt tùy chọn này để thao tác nhấp trong trang không làm cửa sổ xê dịch.",
@@ -275,7 +263,7 @@ const settingsFill: Record<string, string> = {
   "True fullscreen covers the whole screen and hides the taskbar. Maximize fills the screen but keeps the taskbar and title bar, so you can still switch apps.":
     "Toàn màn hình thực sự phủ kín toàn bộ màn hình và ẩn thanh tác vụ. Phóng to lấp đầy màn hình nhưng vẫn giữ thanh tác vụ và thanh tiêu đề để bạn vẫn có thể chuyển ứng dụng.",
   "True fullscreen": "Toàn màn hình thực sự",
-  Maximize: "Phóng to",
+  "Maximize": "Phóng to",
   "Borderless window": "Cửa sổ không viền",
   "True fullscreen covers the whole screen and hides the taskbar, but switching apps can flicker. Borderless window covers the same area with a frameless window, so alt-tab and overlays stay instant. Maximize fills the screen but keeps the taskbar and title bar.":
     "Toàn màn hình thực sự phủ kín toàn bộ màn hình và ẩn thanh tác vụ, nhưng khi chuyển ứng dụng có thể bị nháy hình. Cửa sổ không viền phủ kín đúng vùng đó bằng một cửa sổ không khung, nhờ vậy alt-tab và các lớp phủ luôn hiện tức thì. Phóng to lấp đầy màn hình nhưng vẫn giữ thanh tác vụ và thanh tiêu đề.",
@@ -291,7 +279,7 @@ const settingsFill: Record<string, string> = {
   "Second line size": "Kích thước dòng thứ hai",
   "Get your own": "Dùng gói riêng",
   "Trial for ${n}": "Dùng thử với giá ${n}",
-  ElfHosted: "ElfHosted",
+  "ElfHosted": "ElfHosted",
   "Debridge is the part that finds you a working file. A TorBox and a Usenet account come with it, so you do not need to buy a debrid service separately. Already have Real-Debrid or AllDebrid? Plug it in instead.":
     "Debridge là thành phần tìm tệp hoạt động cho bạn. Gói này đi kèm tài khoản TorBox và Usenet, nên bạn không cần mua riêng dịch vụ debrid. Đã có Real-Debrid hoặc AllDebrid? Hãy kết nối dịch vụ đó để dùng thay thế.",
   "No Docker, no server, nothing to configure.":
@@ -340,8 +328,6 @@ const settingsFill: Record<string, string> = {
     "Các tiện ích bổ sung Stremio riêng tư với giới hạn tốc độ gấp 10 lần và proxy luồng tích hợp, từ $9 mỗi tháng.",
   "Managed Plex, Emby, or Jellyfin, running in minutes with no hardware and no Docker.":
     "Plex, Emby hoặc Jellyfin được quản lý, chạy chỉ sau vài phút mà không cần phần cứng hay Docker.",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "Hơn 100 ứng dụng tự lưu trữ: bộ *arr, công cụ debrid, sách, sách nói và nhiều nội dung khác.",
   "Daily backups, automatic updates, and monitoring, all handled for you.":
     "Sao lưu hằng ngày, cập nhật tự động và giám sát, tất cả đều được xử lý cho bạn.",
   "Month to month, cancel anytime, and you can try the whole thing for $1 for a week.":
@@ -354,7 +340,7 @@ const settingsFill: Record<string, string> = {
   "Badges for giving": "Huy hiệu đóng góp",
   "Give to any charity below or subscribe to ElfHosted, and the badge lands on your profile.":
     "Quyên góp cho bất kỳ tổ chức từ thiện nào bên dưới hoặc đăng ký ElfHosted để nhận huy hiệu trên hồ sơ.",
-  Charity: "Từ thiện",
+  "Charity": "Từ thiện",
   "For donating to a charity.": "Dành cho người quyên góp cho tổ chức từ thiện.",
   "Charity $100+": "Từ thiện $100+",
   "For giving more than $100 to charity.":
@@ -404,9 +390,9 @@ const settingsFill: Record<string, string> = {
     "Hiển thị giờ địa phương dự kiến video hiện tại sẽ kết thúc.",
   "Clock size": "Kích thước đồng hồ",
   "Clock style": "Kiểu đồng hồ",
-  Minimal: "Tối giản",
-  Solid: "Đặc",
-  Accent: "Màu nhấn",
+  "Minimal": "Tối giản",
+  "Solid": "Đặc",
+  "Accent": "Màu nhấn",
   "Soft blur with a floating pill.": "Làm mờ nhẹ với nút nổi dạng viên thuốc.",
   "Time only, with a subtle shadow.": "Chỉ hiển thị thời gian, kèm bóng đổ nhẹ.",
   "High-contrast panel for busy scenes.": "Bảng tương phản cao cho các cảnh nhiều chi tiết.",
@@ -433,12 +419,12 @@ const settingsFill: Record<string, string> = {
   "Finish setting up Frame": "Hoàn tất thiết lập Frame",
   "Get one free at {url}": "Nhận miễn phí tại {url}",
   "Getting a code ready…": "Đang chuẩn bị mã…",
-  Frame: "Frame",
+  "Frame": "Frame",
   "Frame needs a TMDB key for artwork, rows and collections. It is free.":
     "Frame cần khóa TMDB để tải hình ảnh, hàng và bộ sưu tập. Khóa này miễn phí.",
   "Frame plays IPTV from your own provider. Add a playlist and the guide fills in.":
     "Frame phát IPTV từ nhà cung cấp của bạn. Thêm danh sách phát để tự động điền lịch chương trình.",
-  Interface: "Giao diện",
+  "Interface": "Giao diện",
   "Live TV playlists": "Danh sách phát TV trực tiếp",
   "Nothing connected yet. Scan a code with your phone.":
     "Chưa có kết nối nào. Hãy quét mã bằng điện thoại.",
@@ -451,9 +437,9 @@ const settingsFill: Record<string, string> = {
   "Save key": "Lưu khóa",
   "Scan with your phone to sign in without typing on the remote.":
     "Quét bằng điện thoại để đăng nhập mà không cần nhập trên điều khiển từ xa.",
-  Screen: "Màn hình",
+  "Screen": "Màn hình",
   "Set up Live TV": "Thiết lập TV trực tiếp",
-  Setup: "Thiết lập",
+  "Setup": "Thiết lập",
   "Setup QR code": "Mã QR thiết lập",
   "Signed in as {name}": "Đã đăng nhập với tên {name}",
   "Sync, themes and friends": "Đồng bộ, chủ đề và bạn bè",

@@ -224,10 +224,6 @@ const catalog12: Record<string, string> = {
   "e.g. 1.35": "예: 1.35",
   "e.g. 20": "예: 20",
   "eBook": "eBook",
-  "eBook actions": "eBook 작업",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "eBook 확장 프로그램은 Manga 확장 프로그램과 동일한 샌드박스인 Frame의 격리된 워커, HTTP 브리지 및 HTML 파서를 사용합니다. 신뢰하는 저장소만 추가하세요.",
-  "eBook source settings": "eBook 소스 설정",
   "eBooks": "eBook",
   "edited": "수정됨",
   "end": "끝",

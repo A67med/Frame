@@ -17,7 +17,7 @@ const appFill: Record<string, string> = {
   "Adjusted timing by": "Đã điều chỉnh thời gian lệch",
   "Timing looks aligned": "Thời gian có vẻ đã khớp",
   "Variable timing corrected": "Đã sửa sai lệch thời gian biến đổi",
-  Delay: "Độ trễ",
+  "Delay": "Độ trễ",
   "Timing rate": "Tốc độ thời gian",
   "No timing change was needed. This subtitle already matches the audio.":
     "Không cần thay đổi thời gian. Phụ đề này đã khớp với âm thanh.",
@@ -60,7 +60,6 @@ const appFill: Record<string, string> = {
   "Genres you want more of": "Thể loại bạn muốn xem thêm",
   "Hide from your picks": "Ẩn khỏi nội dung đề xuất",
   "Hide anime I've already watched": "Ẩn anime tôi đã xem",
-  "Read the Manga": "Đọc manga",
   "Trending on {source}": "Đang thịnh hành trên {source}",
   "Know More": "Tìm hiểu thêm",
   "Maybe later": "Để sau",
@@ -125,7 +124,6 @@ const appFill: Record<string, string> = {
   "Drop images to add them": "Thả hình ảnh để thêm",
   "Import folder": "Nhập thư mục",
   "How packs work": "Cách hoạt động của các gói",
-  "Open manga": "Mở manga",
   "Removed from My List": "Đã xóa khỏi Danh sách của tôi",
   "Added to My List": "Đã thêm vào Danh sách của tôi",
   "Add to my list": "Thêm vào danh sách của tôi",
@@ -362,11 +360,8 @@ const appFill: Record<string, string> = {
   "List name": "Tên danh sách",
   "Favorite Characters": "Nhân vật yêu thích",
   "Favorite Anime": "Anime yêu thích",
-  "Favorite Manga": "Manga yêu thích",
   "Favorite Movies": "Phim điện ảnh yêu thích",
   "Favorite Shows": "Phim bộ yêu thích",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "Nhấn vào ngôi sao trên phim điện ảnh, phim bộ hoặc manga, hay trái tim trên nhân vật để lưu vào đây.",
   "Confirm remove from history": "Xác nhận xóa khỏi lịch sử",
   "Remove from history": "Xóa khỏi lịch sử",
   "Loading your history…": "Đang tải lịch sử…",
@@ -477,7 +472,6 @@ const appFill: Record<string, string> = {
   "This server lists no extensions": "Máy chủ này không có tiện ích mở rộng nào",
   "Update available": "Có bản cập nhật",
   "Wrong username or password": "Sai tên người dùng hoặc mật khẩu",
-  "No Suwayomi server at this address": "Không có máy chủ Suwayomi tại địa chỉ này",
   "This server responded but is not supported": "Máy chủ này đã phản hồi nhưng không được hỗ trợ",
   "Enter a valid http(s):// server address": "Nhập địa chỉ máy chủ http(s):// hợp lệ",
   "Could not save this server": "Không thể lưu máy chủ này",
@@ -485,7 +479,6 @@ const appFill: Record<string, string> = {
   "This server needs a username and password": "Máy chủ này yêu cầu tên người dùng và mật khẩu",
   "Connected to {name}": "Đã kết nối với {name}",
   "Add server": "Thêm máy chủ",
-  "Connect a Suwayomi server": "Kết nối máy chủ Suwayomi",
   "Point Frame at your self-hosted library to browse and install sources":
     "Kết nối Frame với thư viện tự lưu trữ để duyệt và cài đặt nguồn",
   "{n} / {max} lists": "{n} / {max} danh sách",
@@ -553,15 +546,7 @@ const appFill: Record<string, string> = {
   "Could not load sources": "Không thể tải nguồn",
   "No sources match your filter": "Không có nguồn nào khớp với bộ lọc",
   "Install an extension above to get sources": "Cài đặt một tiện ích mở rộng ở trên để nhận nguồn",
-  "Add a manga source": "Thêm nguồn manga",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame không lưu trữ manga hay bất kỳ nguồn nào. Hãy kết nối máy chủ tự lưu trữ do bạn vận hành, cài đặt plugin nguồn từ kho lưu trữ đáng tin cậy hoặc mở một thư mục có sẵn.",
   "Set up a source": "Thiết lập nguồn",
-  "Browse manga": "Duyệt manga",
-  "Read manga in Frame": "Đọc manga trong Frame",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame không lưu trữ manga. Hãy thêm plugin nguồn từ kho lưu trữ đáng tin cậy, kết nối máy chủ riêng hoặc mở thư mục cục bộ. Bạn có thể tắt tính năng này bất cứ lúc nào trong Cài đặt.",
-  "Enable manga sources": "Bật nguồn manga",
   "“Cached” just means your addon thinks that file is already saved on your debrid, ready to play instantly. That flag isn’t always right: sometimes the file isn’t actually there yet. When that happens the source won’t start, or it plays a short broken clip. It’s not a Frame problem: pick another source, or give it a minute to finish caching and try again.":
     "“Đã lưu vào bộ nhớ đệm” chỉ có nghĩa là tiện ích bổ sung cho rằng tệp đó đã được lưu trên dịch vụ debrid của bạn và có thể phát ngay. Chỉ báo này không phải lúc nào cũng chính xác: đôi khi tệp thực tế vẫn chưa có ở đó. Khi đó, nguồn sẽ không phát hoặc chỉ phát một đoạn ngắn bị lỗi. Đây không phải lỗi của Frame: hãy chọn nguồn khác hoặc đợi một phút để quá trình lưu vào bộ nhớ đệm hoàn tất rồi thử lại.",
   "On your disk": "Trên ổ đĩa của bạn",
@@ -597,8 +582,6 @@ const appFill: Record<string, string> = {
   "Could not load your themes": "Không thể tải chủ đề của bạn",
   "No approved themes yet": "Chưa có chủ đề nào được phê duyệt",
   "Because you watched": "Vì bạn đã xem",
-  "Keep going in the manga behind the anime you've been watching":
-    "Đọc tiếp manga nguyên tác của anime bạn đang xem",
   "You watched": "Bạn đã xem",
   "Download all": "Tải xuống tất cả",
   "Control from your phone": "Điều khiển bằng điện thoại",
@@ -609,22 +592,12 @@ const appFill: Record<string, string> = {
     "Không thể phát hiện địa chỉ Wi-Fi của bạn. Hãy kết nối máy tính này với Wi-Fi hoặc tìm liên kết điều khiển bằng điện thoại trong Cài đặt, Phát.",
   "Chapter finished": "Đã đọc xong chương",
   "Hidden sections": "Mục bị ẩn",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "Đây là kho Mangayomi, nhưng các nguồn trong đó dùng Dart hoặc không phải nguồn manga nên Frame không thể nhập.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "Đây là kho Mangayomi. Frame chạy trực tiếp các nguồn JavaScript trong đó. Nhập chúng để thêm các nguồn này vào thư viện manga của bạn.",
   "Imported {n} sources, {f} could not load": "Đã nhập {n} nguồn, không thể tải {f} nguồn",
   "Imported {n} sources": "Đã nhập {n} nguồn",
   "Import failed, try again": "Nhập không thành công, hãy thử lại",
   "Importing {done} of {total}": "Đang nhập {done}/{total}",
   "Import {n} JavaScript sources": "Nhập {n} nguồn JavaScript",
   "Import JavaScript sources": "Nhập nguồn JavaScript",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Đây là kho Tachiyomi / Mihon. Các tiện ích mở rộng này dành cho Android (APK), nên Frame không thể chạy trực tiếp. Để dùng các nguồn này trên máy tính, hãy chạy máy chủ Suwayomi rồi kết nối Frame với máy chủ đó trong mục Máy chủ.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Đây là kho Mangayomi. Tính năng nhập trực tiếp chưa được hỗ trợ. Để có danh mục lớn nhất hiện nay, hãy chạy máy chủ Suwayomi rồi kết nối Frame với máy chủ đó trong mục Máy chủ.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "Đây là kho Paperback (iOS) mà Frame không thể sử dụng. Để dùng nguồn trên máy tính, hãy kết nối máy chủ Suwayomi trong mục Máy chủ.",
   "This doesn't look like a Frame plugin repo. Frame expects a JSON file shaped { name, plugins: [ ... ] }.":
     "Đây có vẻ không phải là kho plugin Frame. Frame cần một tệp JSON có cấu trúc { name, plugins: [ ... ] }.",
   "Tap again to remove all {n} extensions": "Nhấn lại để xóa tất cả {n} tiện ích mở rộng",
@@ -723,7 +696,7 @@ const appFill: Record<string, string> = {
     "Frame đang đóng. Frame Setup sẽ hoàn tất cài đặt rồi mở lại ứng dụng.",
   "Frame Setup did not finish updating Frame. Nothing was changed.":
     "Frame Setup chưa hoàn tất cập nhật Frame. Không có gì thay đổi.",
-  Dismiss: "Bỏ qua",
+  "Dismiss": "Bỏ qua",
 };
 
 export default appFill;

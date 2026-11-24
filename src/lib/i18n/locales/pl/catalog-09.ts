@@ -48,8 +48,6 @@ const catalog09: Record<string, string> = {
   "One pick at a time, full screen, until something lands.":
     "Jedna propozycja naraz, na pełnym ekranie, aż coś przypadnie do gustu.",
   "One release": "Jedno wydanie",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Jeden przełącznik uruchamia wszystko na tej stronie: aplikację internetową, pilota na telefon i pilota czytnika mangi.",
   "One switch serves Frame on your network. Scan a code below with your phone, or open an address on any device on the same Wi-Fi.":
     "Jeden przełącznik udostępnia Frame w Twojej sieci. Zeskanuj poniższy kod telefonem lub otwórz adres na dowolnym urządzeniu w tej samej sieci Wi-Fi.",
   "One-click community packs. Rulesets bring full badge sets with their own matching; art remaps only swap the pictures on Frame's built-in badges. Anything shared as a badges.json link on the Nuvio Discord or Reddit imports here too.":
@@ -126,8 +124,6 @@ const catalog09: Record<string, string> = {
   "Open Trakt profile": "Otwórz profil Trakt",
   "Open Voyages": "Otwórz Rejsy",
   "Open a folder": "Otwórz folder",
-  "Open a manga on Frame to control the reader from here.":
-    "Otwórz mangę w Frame, aby sterować czytnikiem z tego urządzenia.",
   "Open a quick issue": "Szybko zgłoś problem",
   "Open a terminal and run: brew install ffmpeg": "Otwórz terminal i uruchom: brew install ffmpeg",
   "Open a terminal and run: winget install Gyan.FFmpeg":
@@ -182,16 +178,12 @@ const catalog09: Record<string, string> = {
   "Open the cast menu and try this device again.":
     "Otwórz menu przesyłania i ponownie wypróbuj to urządzenie.",
   "Open the cheat sheet": "Otwórz ściągawkę",
-  "Open the editor to add the movies, shows, and manga that belong in this collection.":
-    "Otwórz edytor, aby dodać filmy, seriale i mangi należące do tej kolekcji.",
   "Open the email TMDB sent to the address you registered with and press the activate button inside it. Check spam if it has not arrived.":
     "Otwórz wiadomość wysłaną przez TMDB na adres użyty podczas rejestracji i kliknij znajdujący się w niej przycisk aktywacji. Jeśli wiadomość nie dotarła, sprawdź folder ze spamem.",
   "Open the library, hit Share a theme, and your first publication shows up here with its review status, downloads, and version history.":
     "Otwórz bibliotekę i wybierz „Udostępnij motyw”. Pierwsza publikacja pojawi się tutaj wraz ze stanem weryfikacji, liczbą pobrań i historią wersji.",
   "Open the queue": "Otwórz kolejkę",
   "Open the remote": "Otwórz pilota",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "Otwórz menu kołowe dowolnego e-booka i wybierz „Dodaj do półki”.",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "Otwórz ten link na telefonie połączonym z tą samą siecią Wi-Fi, aby przewracać strony, powiększać i wybierać rozdziały gestami. Nie zamykaj tego czytnika.",
   "Open this page by scanning the code on your TV's setup screen.":
@@ -264,8 +256,6 @@ const catalog09: Record<string, string> = {
   "Outline color": "Kolor obrysu",
   "Outline thickness": "Grubość obrysu",
   "Output device": "Urządzenie wyjściowe",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "Ponad 100 aplikacji do samodzielnego hostowania: pakiet *arr, narzędzia debrid, książki, audiobooki i inne.",
   "Over the cap, the oldest files are deleted first.":
     "Po przekroczeniu limitu najstarsze pliki są usuwane jako pierwsze.",
   "Overall Record": "Bilans ogólny",
@@ -504,8 +494,6 @@ const catalog09: Record<string, string> = {
     "Wybierz tę pozycję w widoku głównym, aby ją obserwować.",
   "Pick lists from your library to show them here":
     "Wybierz listy ze swojej biblioteki, aby je tutaj wyświetlić",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "Wybierz jeden folder biblioteki. Każdy podfolder to jeden e-book. Umieść w nim rozdziały w plikach TXT, Markdown, HTML lub EPUB. Opcjonalnie możesz też dodać obraz okładki.",
   "Pick one of your themes to share.": "Wybierz jeden ze swoich motywów do udostępnienia.",
   "Pick one or many images. They collect in an Uploads set in your library. PNG, JPG, WebP, and GIF all work.":
     "Wybierz jeden lub wiele obrazów. Zostaną zebrane w zestawie Przesłane w twojej bibliotece. Obsługiwane są formaty PNG, JPG, WebP i GIF.",
@@ -711,7 +699,6 @@ const catalog09: Record<string, string> = {
   "Popular This Week": "Popularne w tym tygodniu",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Popularne dodatki społeczności uporządkowane według liczby gwiazdek w publicznym katalogu. Inne dodatki możesz zainstalować przez adres URL na karcie Przeglądaj.",
-  "Popular eBooks": "Popularne e-booki",
   "Popular on": "Popularne w serwisie",
   "Popular titles from book metadata": "Popularne tytuły z metadanych książek",
   "Popular titles from the installed source": "Popularne tytuły z zainstalowanego źródła",

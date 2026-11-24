@@ -178,22 +178,16 @@ const system: Record<string, string> = {
   "Could not reach this server": "无法连接此服务器",
   "This server lists no extensions": "此服务器未列出任何扩展",
   "Update available": "有可用更新",
-  "No Suwayomi server at this address": "此地址没有 Suwayomi 服务器",
   "This server responded but is not supported": "此服务器有响应，但不受支持",
   "Enter a valid http(s):// server address": "请输入有效的 http(s):// 服务器地址",
   "Could not save this server": "无法保存此服务器",
   "This server needs a username and password": "此服务器需要用户名和密码",
   "Add server": "添加服务器",
-  "Connect a Suwayomi server": "连接 Suwayomi 服务器",
   "1 file": "1 个文件",
   "Moved, but Frame couldn't confirm the result. Reload to see the current state.":
     "已移动，但 Frame 无法确认结果。请重新加载以查看当前状态。",
   "Install an extension above to get sources": "安装上方的扩展以获取内容源",
   "Import failed, try again": "导入失败，请重试",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "这是 Tachiyomi / Mihon 仓库。其中包含 Android (APK) 扩展，因此 Frame 无法直接运行。要在桌面端使用这些内容源，请运行 Suwayomi 服务器，然后在“服务器”部分将 Frame 连接到该服务器。",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "这是 Paperback (iOS) 仓库，Frame 无法使用。要在桌面端使用内容源，请在“服务器”部分连接 Suwayomi 服务器。",
   "This doesn't look like a Frame plugin repo. Frame expects a JSON file shaped { name, plugins: [ ... ] }.":
     "这似乎不是 Frame 插件仓库。Frame 需要结构为 { name, plugins: [ ... ] } 的 JSON 文件。",
   "https:// API or site URL": "https:// API 或网站 URL",

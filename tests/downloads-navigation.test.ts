@@ -36,6 +36,7 @@ function fixture(initial: any[]) {
   const rowScrollMem = { current: new Map([["home:popular", 560]]) };
   const names = [
     "STACK_MAX",
+    "REMOVED_PAGES",
     "pushFrame",
     "pop",
     "goForward",
@@ -72,6 +73,14 @@ function fixture(initial: any[]) {
   );
   return { ...nav, stackRef, scrollMem, rowScrollMem, forwardStackRef };
 }
+
+test("old links to retired sections open the home view", () => {
+  for (const page of ["music", "sports", "games", "manga", "ebook"]) {
+    const h = fixture([{ kind: "library" }]);
+    h.setView(page);
+    assert.deepEqual(h.stackRef.current, [{ kind: "home" }]);
+  }
+});
 
 test("Downloads returns to the previous detail with its page and row scroll memories intact", () => {
   const previous = [{ kind: "home" }, { kind: "meta", meta: { id: "movie" } }];

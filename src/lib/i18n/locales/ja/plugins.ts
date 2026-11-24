@@ -84,8 +84,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "そのリンクは応答しませんでした。",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "プラグインリポジトリではないようです。Frameは{ name, plugins }か、scrapersを含むプロバイダースクリプトのマニフェストを想定しています。",
-  "This is a manga repository. Add it from the Manga page.":
-    "これはマンガのリポジトリです。マンガページから追加してください。",
   "Already added.": "すでに追加されています。",
   "Added {repo} with {count} providers.": "{repo}を追加しました（プロバイダー{count}件）。",
   "Your repositories": "あなたのリポジトリ",
@@ -117,8 +115,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "{m}件中{n}件が応答、{k}件が失敗",
   "Install all": "すべてインストール",
   "Installing {done} of {total}": "{total}件中{done}件をインストール中",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "Frameが知らないサイトでストリーム、マンガ、本を探す小さなスクリプトです。あなたが選んだリポジトリからインストールします。",
   "Remove all": "すべて削除",
 };
 

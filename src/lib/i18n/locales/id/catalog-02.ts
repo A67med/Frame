@@ -54,7 +54,6 @@ const catalog: Record<string, string> = {
   "Connect Trakt in settings first": "Hubungkan Trakt di Pengaturan terlebih dahulu",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Hubungkan Trakt atau Simkl, atau mulai menonton, dan statistik Anda akan terisi otomatis.",
-  "Connect a Suwayomi server": "Hubungkan server Suwayomi",
   "Connect a controller: every press and stick move shows up here, live.":
     "Hubungkan pengontrol: setiap penekanan tombol dan gerakan stik akan langsung muncul di sini.",
   "Connect a debrid service (Real-Debrid, TorBox, AllDebrid) for instant HD without the wait.":
@@ -112,8 +111,6 @@ const catalog: Record<string, string> = {
   "Content advisory on start": "Peringatan konten saat mulai",
   "Content advisory style": "Gaya peringatan konten",
   "Content filters": "Filter konten",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "Filter konten (sembunyikan anime / manga / TV langsung / olahraga / dewasa)",
   "Continue": "Lanjutkan",
   "Continue Watching": "Lanjutkan Menonton",
   "Continue Watching at top": "Lanjutkan Menonton di bagian atas",
@@ -140,8 +137,6 @@ const catalog: Record<string, string> = {
   "Contribute on GitHub": "Berkontribusi di GitHub",
   "Control bar": "Bilah kontrol",
   "Control from your phone": "Kontrol dari ponsel Anda",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Kontrol flipbook manga dari ponsel saat membaca di layar besar: balik halaman, perbesar, dan ganti mode. Pembaca juga menampilkan tautan ini saat Anda membaca.",
   "Control who can see your friends, activity, and stats.":
     "Atur siapa yang dapat melihat teman, aktivitas, dan statistik Anda.",
   "Controller connected": "Pengontrol terhubung",
@@ -799,8 +794,6 @@ const catalog: Record<string, string> = {
     "Subtitle yang diunduh mungkin tersedia sesaat setelah pemutaran dimulai. Biarkan nonaktif untuk mempertahankan subtitle yang sedang ditampilkan; aktifkan untuk beralih ke bahasa yang paling cocok segera setelah dimuat.",
   "Downloaded subtitles can arrive after playback starts. Frame switches from a temporary track when a stronger release match becomes available.":
     "Subtitle yang diunduh mungkin tersedia setelah pemutaran dimulai. Frame akan beralih dari trek sementara saat tersedia subtitle yang lebih cocok dengan rilis.",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "Tema yang diunduh dikelola di Tema & tampilan. Unduhan video dan manga dikelola di halaman Unduhan.",
   "Downloaded. Ready to install and restart.": "Sudah diunduh. Siap diinstal dan dimulai ulang.",
   "Downloading speech model": "Mengunduh model ucapan",
   "Downloading speech model {pct}%": "Mengunduh model ucapan {pct}%",
@@ -944,7 +937,6 @@ const catalog: Record<string, string> = {
   "Email or Discord": "Email atau Discord",
   "Embed": "Sematkan",
   "Embed a YouTube video": "Sematkan video YouTube",
-  "Embed from Spotify": "Sematkan dari Spotify",
   "Embed mpv inside Frame window": "Sematkan mpv di dalam jendela Frame",
   "Embedded": "Tertanam",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":

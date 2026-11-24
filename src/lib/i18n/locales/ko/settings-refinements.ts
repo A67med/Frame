@@ -65,9 +65,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "P2P 설정 적용 중…",
   "Areas where data already exists let you choose how to combine it.":
     "이미 데이터가 있는 항목에서는 데이터를 결합하는 방법을 선택할 수 있습니다.",
-  Attachments: "첨부 파일",
-  Automatic: "자동",
-  Avatar: "아바타",
+  "Attachments": "첨부 파일",
+  "Automatic": "자동",
+  "Avatar": "아바타",
   "Awards cache": "수상 정보 캐시",
   "Badge packs": "배지 팩",
   "Badge rules": "배지 규칙",
@@ -88,7 +88,7 @@ const settingsRefinements: Record<string, string> = {
     "이름을 지정한 필터를 한 번 만들고 소스 선택기에 적용하여 복잡한 스트림 목록을 원하는 결과로 좁히세요.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton이 도둑맞은 기관차를 되찾으러 나섭니다.",
-  Canvas: "캔버스",
+  "Canvas": "캔버스",
   "Captions and quiet hints": "설명과 간단한 힌트",
   "Cards need a TMDB key.": "카드에는 TMDB 키가 필요합니다.",
   "Cards need an MDBList key.": "카드에는 MDBList 키가 필요합니다.",
@@ -135,8 +135,6 @@ const settingsRefinements: Record<string, string> = {
     "다음 에피소드가 시작되는 시점과 Frame가 계속 시청 중인지 확인하는 시점을 선택하세요.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Frame가 자막을 검색할 소스를 선택하세요. 활성화된 소스의 결과는 중복을 제거한 뒤 함께 표시됩니다.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "동영상과 전자책의 저장 위치 및 폴더 정리 방식을 선택하세요.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "알려진 광고, 분석, 추적 서비스로 보내는 요청을 차단할지 선택하세요.",
   "Choose which addon results appear when you pick a stream.":
@@ -286,8 +284,6 @@ const settingsRefinements: Record<string, string> = {
     "Frame가 SVP 설치를 확인하지 못했습니다. 다시 시도하세요.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame는 이 순서로 자막을 찾습니다. 선호하는 언어를 맨 위에 두세요.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "다른 기기에서 사용하는 Frame: 웹 앱, 휴대폰 리모컨, 만화 리더 리모컨.",
   "Frame profile showing watch statistics": "시청 통계가 표시된 Frame 프로필",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame는 자체 커뮤니티 서버를 사용합니다. 직접 운영하는 서버를 사용하도록 설정할 수도 있습니다.",
@@ -363,7 +359,7 @@ const settingsRefinements: Record<string, string> = {
     "Frame 인터페이스가 깜박이거나 끊기지 않는다면 자동으로 두세요. 동영상 재생이 아닌 앱 창에 적용되는 설정입니다.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "debrid 링크를 사용할 수 없을 때 Frame가 이 기기에서 P2P로 재생하도록 허용합니다. 끄면 로컬 P2P 재생을 막습니다. 설정한 원격 서버에서는 계속 재생할 수 있습니다.",
-  Licence: "라이선스",
+  "Licence": "라이선스",
   "Licenses & attribution": "라이선스 및 저작자 표시",
   "Lightens or darkens the whole picture.": "전체 화면을 밝게 하거나 어둡게 합니다.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -384,10 +380,10 @@ const settingsRefinements: Record<string, string> = {
     "캐시됨으로 표시되거나 debrid 라이브러리에 이미 있는 스트림과 일치합니다.",
   "Maximum memory used for buffered video.": "동영상 버퍼링에 사용할 최대 메모리입니다.",
   "Maximum size (GB)": "최대 크기 (GB)",
-  Merge: "병합",
+  "Merge": "병합",
   "Minimize to preview (Ctrl/Cmd + P)": "최소화하여 미리보기 (Ctrl/Cmd + P)",
   "Minimum seeders": "최소 시더 수",
-  Motion: "모션",
+  "Motion": "모션",
   "Move earlier": "우선순위 높이기",
   "Move {language} earlier": "{language} 우선순위 높이기",
   "Move {name} down": "{name} 아래로 이동",
@@ -422,7 +418,7 @@ const settingsRefinements: Record<string, string> = {
     "선택 사항입니다. 후속 연락을 받아도 된다면 연락처를 남기고 이름을 공개할지 선택하세요.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "선택 사항입니다. 시청 시간 연장에 사용합니다. PIN이 없으면 시간이 다 됐을 때 프로필을 전환하세요.",
-  Pages: "페이지",
+  "Pages": "페이지",
   "Pause after several episodes and ask before continuing.":
     "여러 에피소드 후 일시 정지하고 계속할지 확인합니다.",
   "Pause preview": "미리보기 일시 정지",
@@ -465,7 +461,7 @@ const settingsRefinements: Record<string, string> = {
     "프로그램을 다시 열면 에피소드 목록을 포함해 이전에 보던 위치로 돌아갑니다.",
   "Repair & diagnostics": "복구 및 진단",
   "Report something broken, or support the project.": "문제를 신고하거나 프로젝트를 후원하세요.",
-  Required: "필수",
+  "Required": "필수",
   "Reset keyboard shortcuts?": "키보드 단축키를 초기화할까요?",
   "Reset shortcuts": "단축키 초기화",
   "Reset {setting}": "{setting} 초기화",
@@ -744,11 +740,11 @@ const settingsRefinements: Record<string, string> = {
     "로그인, 시청 기록 서비스, 릴레이 설정입니다.",
   "Your {n} custom shortcuts will return to their defaults.":
     "사용자 지정 단축키 {n}개가 기본값으로 돌아갑니다.",
-  code: "코드",
+  "code": "코드",
   "each poster": "각 포스터",
   "on hover": "마우스를 올리면",
   "poster image": "포스터 이미지",
-  username: "사용자명",
+  "username": "사용자명",
   "will look on your TV.": "이렇게 표시됩니다.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app}은(는) 오픈 소스입니다. 기존 수정 사항을 찾아보거나 발견한 문제의 패치를 기여할 수 있습니다.",
@@ -764,7 +760,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds}초",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "저장 한도 {quota} 중 {used} 사용 중입니다. 다운로드한 동영상과 디스크의 다른 파일은 포함되지 않습니다.",
-  "Public-domain books for the eBook library.": "전자책 라이브러리를 위한 퍼블릭 도메인 도서.",
   "Searchable catalog for Project Gutenberg books.":
     "Project Gutenberg 도서를 검색할 수 있는 카탈로그.",
   "Game metadata, artwork and release dates.": "게임 메타데이터, 이미지 및 출시일.",

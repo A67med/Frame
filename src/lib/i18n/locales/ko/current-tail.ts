@@ -19,8 +19,6 @@ const currentTail: Record<string, string> = {
   "All topics": "모든 주제",
   "Also Known As": "다른 이름",
   "Audio not labeled": "오디오 정보 없음",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "Frame로 돌아가 만화 > 소스 설정 > 내 서버로 이동한 다음 서버 주소를 붙여 넣으세요. 예: {localUrl}. 다른 기기에서 실행 중이라면 LAN IP를 사용하세요. 예: {lanUrl}.",
   "Browsing the theme library": "테마 라이브러리 둘러보기",
   "Cache on {provider}": "{provider}에서 캐시",
   "Cached on {providers}": "{providers}에 캐시됨",
@@ -35,29 +33,23 @@ const currentTail: Record<string, string> = {
   "Couldn't save that font. It may be invalid, or storage is full.":
     "글꼴을 저장하지 못했습니다. 올바르지 않은 파일이거나 저장 공간이 부족할 수 있습니다.",
   "Create a custom filter": "사용자 지정 필터 만들기",
-  D: "D",
-  Debrid: "디브리드",
+  "D": "D",
+  "Debrid": "디브리드",
   'Designing "{name}"': '"{name}" 디자인 중',
   "Designing a theme": "테마 디자인하기",
   "Disc Source": "디스크 소스",
   "Double-click to unlink rows": "행 연결을 해제하려면 두 번 클릭",
-  "Download and run Suwayomi Server:": "Suwayomi Server를 다운로드하여 실행하세요:",
   "Drag or use arrow keys to resize columns": "드래그하거나 화살표 키로 열 크기 조절",
   "Drag or use arrow keys to resize rows": "드래그하거나 화살표 키로 행 크기 조절",
   "Drag to resize all four panels · Double-click to align rows":
     "드래그하여 패널 4개 크기 조절 · 행을 맞추려면 두 번 클릭",
   "Edit theme": "테마 편집",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Suwayomi에서 활성화한 모든 소스가 Frame에 표시됩니다. 사이트가 변경되면 Suwayomi가 확장 기능을 최신 상태로 유지하므로 계속 사용할 수 있습니다.",
-  "Everything else, through your own server (Suwayomi)":
-    "그 밖의 모든 소스는 내 서버(Suwayomi)로 이용",
   "Expand {title} image": "{title} 이미지 확대",
   "Failed to read session: {message}": "세션을 읽지 못했습니다: {message}",
   "Fullscreen split view": "전체 화면 분할 보기",
-  "Getting manga sources into Frame": "Frame에 만화 소스 추가하기",
   "Go to featured item {n}": "추천 항목 {n}(으)로 이동",
   "Great job!": "잘했어요!",
-  H: "H",
+  "H": "H",
   "Frame Relay Documentation": "Frame Relay 문서",
   "Frame Relay docs": "Frame Relay 문서",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
@@ -67,8 +59,6 @@ const currentTail: Record<string, string> = {
   "Frame queried 1 addon and got nothing back": "Frame가 애드온 1개에 요청했지만 결과가 없습니다",
   "Frame queried {n} addons and got nothing back":
     "Frame가 애드온 {n}개에 요청했지만 결과가 없습니다",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame에는 만화나 스크레이퍼가 포함되어 있지 않습니다. Frame는 리더이며, 소스는 사용자가 추가합니다. 소스의 콘텐츠에 대한 책임은 Frame가 아니라 해당 소스 운영자에게 있습니다. 소스를 추가하는 방법은 두 가지입니다.",
   "Frame test message ({service}). If you can read this, your webhook is wired up.":
     "Frame 테스트 메시지({service})입니다. 이 메시지가 보이면 웹후크가 정상적으로 연결된 것입니다.",
   "Hide all sources": "모든 소스 숨기기",
@@ -84,11 +74,9 @@ const currentTail: Record<string, string> = {
   "It serves a web UI at {url}": "{url}에서 웹 UI를 제공합니다",
   "Keep editing": "계속 편집",
   "Leave without saving?": "저장하지 않고 나가시겠어요?",
-  M: "M",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "만화 > 소스 설정 > 로컬 폴더로 이동한 다음 보유한 만화가 들어 있는 폴더를 선택하세요(CBZ 파일 또는 이미지 폴더).",
+  "M": "M",
   "Max {count} files.": "최대 {count}개 파일.",
-  Mid: "중간",
+  "Mid": "중간",
   'Most IPTV providers cap simultaneous streams per account (commonly 1–2). If a tile drops to "Stream offline" while others play, your provider may be throttling. Try closing a stream and retrying.':
     '대부분의 IPTV 제공업체는 계정당 동시 스트림 수를 제한합니다(보통 1~2개). 다른 타일은 재생되는데 특정 타일이 "스트림 오프라인"으로 바뀐다면 제공업체에서 제한했을 수 있습니다. 스트림 하나를 닫고 다시 시도하세요.',
   "Native Title": "원어 제목",
@@ -98,19 +86,17 @@ const currentTail: Record<string, string> = {
     "아직 적합한 릴리스가 없습니다. 너무 최신 작품일 수 있습니다. Frame 필터에서 다른 영화로 판단된 결과를 모두 제외했습니다.",
   "Not cached": "캐시되지 않음",
   "Not cached yet": "아직 캐시되지 않음",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "브라우저에서 {url}을(를) 여세요. Extensions / Browse 영역으로 이동하여 커뮤니티 소스 저장소를 추가한 다음 원하는 소스를 설치하세요. 수백 개의 소스를 이용할 수 있습니다. Suwayomi는 Mihon / Tachiyomi 생태계와 같은 확장 저장소를 사용합니다.",
   "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Up to {count} files, 100 MB each.":
     "PNG, JPG, WebP, GIF, MP4, WebM, MOV. 최대 {count}개, 파일당 100MB.",
   "Paused on": "일시 정지된 기기",
   "Playing on {device}. Change device": "{device}에서 재생 중. 기기 변경",
   "Press T to chat...": "채팅하려면 T를 누르세요...",
-  Quad: "4분할",
+  "Quad": "4분할",
   "Question {current} of {total}": "{total}문제 중 {current}번",
   "Queued on {provider}": "{provider}에서 대기 중",
   "Reach HTTP sources with harbor.http(url, opts), binary gRPC sources with harbor.grpc(url, protobufBytes, opts), and parse HTML with harbor.parseHtml(html). There is no fetch, DOM, or storage in the sandbox.":
     "HTTP 소스에는 harbor.http(url, opts), 바이너리 gRPC 소스에는 harbor.grpc(url, protobufBytes, opts)를 사용하고, HTML은 harbor.parseHtml(html)로 파싱하세요. 샌드박스에는 fetch, DOM, storage가 없습니다.",
-  Remux: "리먹스",
+  "Remux": "리먹스",
   "Resize columns": "열 크기 조절",
   "Resize rows": "행 크기 조절",
   "SIMKL rating picker": "SIMKL 평점 선택기",
@@ -122,7 +108,7 @@ const currentTail: Record<string, string> = {
   "Show controls": "컨트롤 표시",
   "Show {name}": "{name} 표시",
   "Side by side": "나란히",
-  Stacked: "위아래로",
+  "Stacked": "위아래로",
   "Stream Together": "함께 스트리밍",
   "Subtitle {number}": "자막 {number}",
   "Superstar!": "최고예요!",
@@ -145,18 +131,18 @@ const currentTail: Record<string, string> = {
   "This theme is missing a color ({color}).": "이 테마에 색상({color})이 없습니다.",
   "This theme is missing its colors.": "이 테마에 색상 정보가 없습니다.",
   "This theme's preview colors look invalid.": "이 테마의 미리보기 색상이 올바르지 않습니다.",
-  Tight: "좁게",
-  Transcoding: "트랜스코딩 중",
+  "Tight": "좁게",
+  "Transcoding": "트랜스코딩 중",
   "Tried IDs: {ids}": "시도한 ID: {ids}",
-  Triple: "3분할",
+  "Triple": "3분할",
   'Unsupported font type ".{extension}". Use TTF, OTF, WOFF, or WOFF2.':
     '지원하지 않는 글꼴 형식 ".{extension}"입니다. TTF, OTF, WOFF 또는 WOFF2를 사용하세요.',
   "Use a TTF, OTF, WOFF or WOFF2 file.": "TTF, OTF, WOFF 또는 WOFF2 파일을 사용하세요.",
   "Watching 1 stream at once": "스트림 1개 동시 시청 중",
   "Watching {n} streams at once": "스트림 {n}개 동시 시청 중",
   "Web Release": "웹 릴리스",
-  Wide: "넓게",
-  Y: "Y",
+  "Wide": "넓게",
+  "Y": "Y",
   "You got {score} of {total} right!": "{total}문제 중 {score}문제를 맞혔어요!",
   "Your changes to this theme aren't saved yet. They'll be lost if you leave now.":
     "이 테마의 변경 사항이 아직 저장되지 않았습니다. 지금 나가면 변경 사항이 사라집니다.",
@@ -165,9 +151,9 @@ const currentTail: Record<string, string> = {
   "cam rips": "캠 촬영본",
   "dead torrents": "시드가 없는 토렌트",
   "didn't see that coming": "그럴 줄은 몰랐어",
-  language: "언어",
+  "language": "언어",
   "no way 😂": "말도 안 돼 😂",
-  oversized: "용량이 지나치게 큼",
+  "oversized": "용량이 지나치게 큼",
   "scam metadata": "사기성 메타데이터",
   "season packs": "시즌 묶음",
   "sketchy files": "수상한 파일",
@@ -204,11 +190,11 @@ const currentTail: Record<string, string> = {
   "Unhandled promise rejection.": "처리되지 않은 Promise 거부입니다.",
   "User-Agent: {agent}": "User-Agent: {agent}",
   "Version: {version}": "버전: {version}",
-  editing: "편집 중",
-  empty: "비어 있음",
-  heard: "들음",
-  of: "중",
-  orig: "원본",
+  "editing": "편집 중",
+  "empty": "비어 있음",
+  "heard": "들음",
+  "of": "중",
+  "orig": "원본",
   "Open the signed-in user's own Frame profile immediately when its handle is loaded. Returns true when navigation starts and false otherwise.":
     "로그인한 사용자의 핸들이 불러와지는 즉시 해당 사용자의 Frame 프로필을 엽니다. 화면 이동이 시작되면 true를 반환하고, 그렇지 않으면 false를 반환합니다.",
   "AI search failed.": "AI 검색에 실패했습니다.",
@@ -225,15 +211,15 @@ const currentTail: Record<string, string> = {
   "Frame could not open your browser.": "Frame에서 브라우저를 열 수 없습니다.",
   "Frame's peer-to-peer engine is warming up. This clears on its own in a few seconds, then Play works.":
     "Frame의 P2P 엔진을 준비하고 있습니다. 몇 초 후 자동으로 완료되면 재생할 수 있습니다.",
-  Minus: "빼기",
+  "Minus": "빼기",
   "None of your debrid services could deliver a working file. Pick another stream.":
     "사용 중인 디브리드 서비스에서 재생 가능한 파일을 가져오지 못했습니다. 다른 스트림을 선택하세요.",
   "None of your debrid services could resolve this stream. Try a different one.":
     "사용 중인 디브리드 서비스에서 이 스트림을 처리하지 못했습니다. 다른 스트림을 사용하세요.",
-  Plus: "더하기",
+  "Plus": "더하기",
   "Real-Debrid is refusing this download right now, which usually means its traffic or fair-use limit has been hit. Try again later, pick a different source, or use another debrid.":
     "현재 Real-Debrid에서 이 다운로드를 거부하고 있습니다. 일반적으로 트래픽 또는 공정 사용 한도에 도달했을 때 발생합니다. 나중에 다시 시도하거나 다른 소스 또는 디브리드 서비스를 사용하세요.",
-  Recheck: "다시 확인",
+  "Recheck": "다시 확인",
   "Remote streaming server unreachable. Check the address in Settings > P2P & servers and that the server machine is online.":
     "원격 스트리밍 서버에 연결할 수 없습니다. 설정 > P2P 및 서버에서 주소를 확인하고 서버 컴퓨터가 온라인 상태인지 확인하세요.",
   "Remote streaming server unreachable. Strict mode is on, so local fallback is disabled.":
@@ -284,8 +270,6 @@ const currentTail: Record<string, string> = {
   "{name} returned an error ({code}).": "{name}에서 오류를 반환했습니다({code}).",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "사용 중인 Jellyfin, Emby 또는 Plex 서버를 원하는 만큼 추가하세요.",
-  "Add eBook sources from a repository you trust.":
-    "신뢰할 수 있는 저장소에서 전자책 소스를 추가하세요.",
   "All libraries": "모든 라이브러리",
   "All servers": "모든 서버",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -316,16 +300,16 @@ const currentTail: Record<string, string> = {
   "Connect server": "서버 연결",
   "Connecting to home servers…": "홈 서버에 연결 중…",
   "Connecting…": "연결 중…",
-  Connections: "연결",
+  "Connections": "연결",
   "Copy the X-Plex-Token value from the XML page URL.":
     "XML 페이지 URL에서 X-Plex-Token 값을 복사하세요.",
-  Disable: "사용 안 함",
+  "Disable": "사용 안 함",
   "Download media": "미디어 다운로드",
   "Download selected ({n})": "선택 항목 다운로드({n}개)",
   "Edge voices need the Frame desktop app. Reading with the device voice.":
     "Edge 음성을 사용하려면 Frame 데스크톱 앱이 필요합니다. 기기 음성으로 읽습니다.",
   "Edit home server": "홈 서버 편집",
-  Enrichment: "정보 보강",
+  "Enrichment": "정보 보강",
   "Every…": "매번…",
   "Featured book": "추천 도서",
   "Frame does not host any books. Open a folder on this device, install a source extension, or connect your own server. Metadata can describe a book, but a source is what lets Frame open it.":
@@ -340,7 +324,7 @@ const currentTail: Record<string, string> = {
   "How to find a Plex access token": "Plex 액세스 토큰을 찾는 방법",
   "Loading your media server library…": "미디어 서버 라이브러리 불러오는 중…",
   "Local Library": "로컬 라이브러리",
-  Manual: "수동",
+  "Manual": "수동",
   "Media Servers": "미디어 서버",
   "Media servers": "미디어 서버",
   "No available episodes in this season.": "이 시즌에는 시청할 수 있는 에피소드가 없습니다.",
@@ -359,7 +343,6 @@ const currentTail: Record<string, string> = {
   "Prefer this device": "이 기기 우선",
   "Preferred home server": "선호 홈 서버",
   "Preparing narration audio": "낭독 오디오 준비 중",
-  "Read eBooks in Frame": "Frame에서 전자책 읽기",
   "Refresh interval in days": "새로고침 간격(일)",
   "Refresh policy": "새로고침 정책",
   "Remove folder?": "폴더를 삭제할까요?",
@@ -386,7 +369,7 @@ const currentTail: Record<string, string> = {
   "Use access token — Advanced": "액세스 토큰 사용(고급)",
   "Waiting for Plex…": "Plex 대기 중…",
   "You haven’t connected a media server": "미디어 서버를 연결하지 않았습니다",
-  days: "일",
+  "days": "일",
   "{n} episodes on home servers": "홈 서버의 에피소드 {n}개",
   "{voice} could not be generated. {message}": "{voice} 음성을 생성할 수 없습니다. {message}",
 };

@@ -85,8 +85,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "Bu bağlantı yanıt vermedi.",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "Bu bir uzantı deposuna benzemiyor. Frame { name, plugins } ya da scrapers içeren bir sağlayıcı betiği manifest'i bekler.",
-  "This is a manga repository. Add it from the Manga page.":
-    "Bu bir manga deposu. Manga sayfasından ekleyin.",
   "Already added.": "Zaten eklendi.",
   "Added {repo} with {count} providers.": "{repo}, {count} sağlayıcıyla eklendi.",
   "Your repositories": "Depolarınız",
@@ -117,8 +115,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "{m} kaynaktan {n} tanesi yanıt verdi, {k} tanesi başarısız",
   "Install all": "Tümünü yükle",
   "Installing {done} of {total}": "{total} içinden {done} yükleniyor",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "Frame'ın bilmediği sitelerde yayın, manga ve kitap bulan, seçtiğiniz depolardan yüklenen küçük betikler.",
   "Remove all": "Tümünü kaldır",
 };
 

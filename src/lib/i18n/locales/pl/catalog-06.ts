@@ -56,17 +56,12 @@ const catalog06: Record<string, string> = {
     "Frame tworzy Cloudflare Worker na Twoim bezpłatnym koncie i zapisuje URL.",
   "Frame curated": "Selekcja Frame",
   "Frame default": "Domyślne ustawienie Frame",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame nie udostępnia żadnych mang ani źródeł. Połącz się z własnym serwerem, zainstaluj wtyczkę źródła z zaufanego repozytorium lub otwórz posiadany folder.",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame nie udostępnia żadnych mang. Dodaj wtyczkę źródła z zaufanego repozytorium, połącz się z własnym serwerem lub otwórz folder lokalny. Możesz to wyłączyć w dowolnym momencie w Ustawieniach.",
   "Frame double-checks with Stremio after saving, so a half-written order can't slip through.":
     "Po zapisaniu Frame ponownie sprawdza dane w Stremio, aby nie dopuścić do zapisania niepełnej kolejności.",
   "Frame dropped {n} suspicious or mismatched result.":
     "Frame odrzucił {n} podejrzany lub niedopasowany wynik.",
   "Frame dropped {n} suspicious or mismatched results.":
     "Frame odrzucił {n} podejrzanych lub niedopasowanych wyników.",
-  "Frame eBook": "E-book Frame",
   "Frame finds intro and credits timing from AniSkip, TheIntroDB, and the file's own chapters, then shows a Skip button at the right moment.":
     "Frame pobiera czasy czołówek i napisów końcowych z AniSkip, TheIntroDB oraz rozdziałów w pliku, a następnie w odpowiednim momencie wyświetla przycisk Pomiń.",
   "Frame found episode sources for {season}, but none of them is a single downloadable package. It can still fetch the episodes one at a time.":
@@ -299,7 +294,6 @@ const catalog06: Record<string, string> = {
   "Hide from nav": "Ukryj w nawigacji",
   "Hide help": "Ukryj pomoc",
   "Hide hidden episodes": "Ukryj ukryte odcinki",
-  "Hide manga": "Ukryj mangę",
   "Hide others' drawings": "Ukryj rysunki innych osób",
   "Hide pack instructions": "Ukryj instrukcje pakietu",
   "Hide preview": "Ukryj podgląd",

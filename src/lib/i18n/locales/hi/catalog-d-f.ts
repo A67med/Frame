@@ -331,8 +331,6 @@ const catalogDF: Record<string, string> = {
     "डाउनलोड किए गए सबटाइटल प्लेबैक शुरू होने के कुछ पल बाद आ सकते हैं। पहले से दिख रहे सबटाइटल को बनाए रखने के लिए इसे बंद रखें; लोड होते ही भाषा से सबसे बेहतर मेल खाने वाले सबटाइटल पर स्विच करने के लिए इसे चालू करें।",
   "Downloaded subtitles can arrive after playback starts. Frame switches from a temporary track when a stronger release match becomes available.":
     "डाउनलोड किए गए सबटाइटल प्लेबैक शुरू होने के बाद आ सकते हैं। रिलीज़ से बेहतर मेल खाने वाला सबटाइटल उपलब्ध होने पर Frame अस्थायी ट्रैक से उस पर स्विच कर देता है।",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "डाउनलोड की गई थीम्स को थीम और रूप-रंग में मैनेज किया जाता है। वीडियो और मंगा डाउनलोड को डाउनलोड पेज पर मैनेज किया जाता है।",
   "Downloaded. Ready to install and restart.": "डाउनलोड हो गया। इंस्टॉल और रीस्टार्ट के लिए तैयार।",
   "Downloading": "डाउनलोड हो रहा है",
   "Downloading shaders…": "शेडर डाउनलोड हो रहे हैं…",
@@ -421,8 +419,6 @@ const catalogDF: Record<string, string> = {
   "EPG failed:": "EPG विफल रहा:",
   "EPG fetch failed:": "EPG प्राप्त करना विफल रहा:",
   "EPG source": "EPG स्रोत",
-  "EPUB eBook": "EPUB eBook",
-  "EPUB saved": "EPUB सेव हो गया",
   "EU-hosted, fast cache check. Same read-only usage as the others.":
     "EU में होस्ट किया गया, तेज़ कैश जाँच। बाकी विकल्पों की तरह इसका इस्तेमाल भी सिर्फ़ रीड-ओनली है।",
   "Each curve shows how much of the bright range it keeps before rolling off.":
@@ -498,7 +494,6 @@ const catalogDF: Record<string, string> = {
   "Email or Discord": "ईमेल या Discord",
   "Embed": "एम्बेड करें",
   "Embed a YouTube video": "YouTube वीडियो एम्बेड करें",
-  "Embed from Spotify": "Spotify से एम्बेड करें",
   "Embed mpv inside Frame window": "Frame विंडो के अंदर mpv एम्बेड करें",
   "Embedded": "एम्बेड किया गया",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":
@@ -528,7 +523,6 @@ const catalogDF: Record<string, string> = {
   "Enable all": "सभी सक्षम करें",
   "Enable controller": "कंट्रोलर सक्षम करें",
   "Enable injected ad skip": "इंजेक्ट किए गए विज्ञापनों को स्किप करना सक्षम करें",
-  "Enable manga sources": "मंगा स्रोत सक्षम करें",
   "Enable or disable rule": "नियम सक्षम या अक्षम करें",
   "Enable rule": "नियम सक्षम करें",
   "Enable this to fetch Arabic descriptions for series and movies when available on TMDB.":
@@ -538,7 +532,6 @@ const catalogDF: Record<string, string> = {
   "End": "समाप्ति",
   "End ep": "अंतिम एपिसोड",
   "End of episode": "एपिसोड का अंत",
-  "End of manga": "मांगा समाप्त",
   "End of next episode": "अगले एपिसोड का अंत",
   "End voyage": "यात्रा समाप्त करें",
   "Ended": "समाप्त",
@@ -795,7 +788,6 @@ const catalogDF: Record<string, string> = {
   "Favorite": "पसंदीदा बनाएँ",
   "Favorite Anime": "पसंदीदा एनीमे",
   "Favorite Characters": "पसंदीदा पात्र",
-  "Favorite Manga": "पसंदीदा मांगा",
   "Favorite Movies": "पसंदीदा फ़िल्में",
   "Favorite Shows": "पसंदीदा शो",
   "Favorite {channel}": "{channel} को पसंदीदा बनाएँ",
@@ -884,7 +876,6 @@ const catalogDF: Record<string, string> = {
     "स्रोत मर्ज होने के बाद प्रकार के अनुसार फ़िल्टर करें। सब कुछ भेजने के लिए सभी को चालू रखें।",
   "Filter categories": "श्रेणियाँ फ़िल्टर करें",
   "Filter countries": "देश फ़िल्टर करें",
-  "Filter eBooks": "ई-बुक फ़िल्टर करें",
   "Filter genres": "शैलियाँ फ़िल्टर करें",
   "Filter sources": "स्रोत फ़िल्टर करें",
   "Filter tags...": "टैग फ़िल्टर करें...",
@@ -963,8 +954,6 @@ const catalogDF: Record<string, string> = {
   "Flat_Style": "फ़्लैट_स्टाइल",
   "Flip the switch above and the addresses and scan codes appear here.":
     "ऊपर का स्विच चालू करें और पते व स्कैन कोड यहाँ दिखाई देंगे।",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "ऊपर का स्विच चालू करें और फ़ोन रिमोट व मंगा रीडर रिमोट के पते यहाँ दिखाई देंगे।",
   "Floating dock": "फ़्लोटिंग डॉक",
   "Floating orbs over the canvas.": "कैनवास पर तैरते गोले।",
   "Floats over the artwork": "आर्टवर्क के ऊपर दिखाई देता है",
@@ -1160,10 +1149,6 @@ const catalogDF: Record<string, string> = {
   "e.g. 1.35": "जैसे 1.35",
   "e.g. 20": "जैसे 20",
   "eBook": "ई-बुक",
-  "eBook actions": "eBook कार्रवाइयाँ",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "eBook एक्सटेंशन Frame के अलग-थलग वर्कर, HTTP ब्रिज और HTML पार्सर का इस्तेमाल करते हैं। Manga एक्सटेंशन भी इसी सैंडबॉक्स का इस्तेमाल करते हैं। सिर्फ़ भरोसेमंद रिपॉज़िटरी जोड़ें।",
-  "eBook source settings": "eBook स्रोत की सेटिंग्स",
   "eBooks": "eBooks",
   "edited": "संपादित",
   "end": "अंत",

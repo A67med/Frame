@@ -1,13 +1,11 @@
 const wired: Record<string, string> = {
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Vertrauenswürdige eBook-Quellen aus einem Frame-kompatiblen Repository hinzufügen.",
   "Addon setup": "Add-on-Einrichtung",
   "Adds an Identify-song button to the player that recognizes the current music via AudD and shows a Now Playing card. Off by default; needs an AudD key below.":
     "Fügt im Wiedergabefenster die Schaltfläche „Titel erkennen“ hinzu, die die aktuelle Musik über AudD erkennt und eine „Läuft gerade“-Karte anzeigt. Standardmäßig deaktiviert; unten ist ein AudD-Schlüssel erforderlich.",
-  Bingeing: "Serienmarathon",
+  "Bingeing": "Serienmarathon",
   "Bring a server-rendered library aboard with your own source configuration.":
     "Binde eine serverseitig gerenderte Mediathek mit deiner eigenen Quellenkonfiguration ein.",
-  Button: "Schaltfläche",
+  "Button": "Schaltfläche",
   "Clip save failed": "Clip konnte nicht gespeichert werden",
   "Clip saved to {path}": "Clip unter {path} gespeichert",
   "Clipboard access was blocked. Paste the link manually.":
@@ -23,7 +21,6 @@ const wired: Record<string, string> = {
   "Connect a source": "Quelle verbinden",
   "Could not cast to {deviceName}.": "Übertragung an {deviceName} fehlgeschlagen.",
   "Couldn't reach this Roku": "Dieser Roku ist nicht erreichbar",
-  "Create folders for eBooks": "Ordner für eBooks erstellen",
   "Default location": "Standardspeicherort",
   "Display the artist and album under the title on the card.":
     "Künstler und Album unter dem Titel auf der Karte anzeigen.",
@@ -91,10 +88,8 @@ const wired: Record<string, string> = {
   "Paste the manifest URL, or click Install on the addon's configuration page above.":
     "Füge die Manifest-URL ein oder klicke oben auf der Konfigurationsseite des Add-ons auf „Installieren“.",
   "Picture and feel": "Bild und Darstellung",
-  Primary: "Primär",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "EPUB-, Text-, Markdown- und HTML-Bücher lesen, die bereits auf diesem Gerät gespeichert sind.",
-  Redo: "Wiederholen",
+  "Primary": "Primär",
+  "Redo": "Wiederholen",
   "Redo (Ctrl/Cmd + Shift + Z)": "Wiederholen (Ctrl/Cmd + Shift + Z)",
   "Reload original link": "Originallink neu laden",
   "Reserved for your next book": "Für dein nächstes Buch reserviert",
@@ -106,14 +101,11 @@ const wired: Record<string, string> = {
   "Screenshot saved to {path}": "Screenshot unter {path} gespeichert",
   'Search for "Media Assistant" (channel ID 782875, free).':
     "Suche nach „Media Assistant“ (Kanal-ID 782875, kostenlos).",
-  Secondary: "Sekundär",
+  "Secondary": "Sekundär",
   "Secondary copy sits here.": "Hier steht der Sekundärtext.",
   'Select "Control by mobile apps" and set Network access to "Default".':
     'Wähle "Steuerung durch mobile Apps" und setze Netzwerkzugriff auf "Standard".',
   "Services on the TV": "Dienste auf dem Fernseher",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "Richte zunächst mindestens eine Quelle ein, aus der E-Books gelesen werden können. Metadaten können ein Buch beschreiben, aber erst ein Ordner, eine Erweiterung oder eine benutzerdefinierte Quelle ermöglicht Frame, es zu öffnen.",
-  "Set up eBooks": "eBooks einrichten",
   "Setting up an addon": "Add-on wird eingerichtet",
   "Setup · {title}": "Einrichtung · {title}",
   "Show episode": "Folge anzeigen",
@@ -123,20 +115,17 @@ const wired: Record<string, string> = {
     "Rotierende Disc neben dem Titel mit einer kleinen Steuerleiste.",
   "Starting a show": "Eine Serie starten",
   "Still loading?": "Wird noch geladen?",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Jeden Titel mit seiner EPUB- oder PDF-Datei in einem eigenen Ordner speichern",
   "Theme studio": "Designstudio",
   "This game couldn't load right now.": "Dieses Spiel konnte gerade nicht geladen werden.",
   "This site may not support Frame's temporary viewer. Retry the original link or open it in your browser.":
     "Diese Website unterstützt möglicherweise Frames temporären Viewer nicht. Versuche es erneut mit dem ursprünglichen Link oder öffne ihn in deinem Browser.",
   "Undo (Ctrl/Cmd + Z)": "Rückgängig (Ctrl/Cmd + Z)",
   "Untitled theme": "Unbenanntes Design",
-  "Ways to add an eBook source": "Möglichkeiten, eine eBook-Quelle hinzuzufügen",
   "Your Roku is set to block control requests from apps on your network, so Frame can't reach it. This is a one-time setting on the Roku.":
     "Dein Roku blockiert Steuerungsanfragen von Apps in deinem Netzwerk, daher kann Frame ihn nicht erreichen. Diese Einstellung muss auf dem Roku nur einmal geändert werden.",
   "Your favorites": "Deine Favoriten",
   "Your shelf is": "Dein Regal ist",
-  eBooks: "E-Books",
+  "eBooks": "E-Books",
   "on Scratch": "auf Scratch",
   "ready for a story.": "bereit für eine Geschichte.",
   "stremio://… or https://…/manifest.json": "stremio://… oder https://…/manifest.json",

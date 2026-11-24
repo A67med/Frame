@@ -27,7 +27,6 @@ const catalog: Record<string, string> = {
   "My Watchlist": "Daftar Tontonan Saya",
   "My collection": "Koleksi saya",
   "My collections": "Koleksi saya",
-  "My eBooks": "eBook Saya",
   "My filter": "Filter saya",
   "My layout": "Tata letak saya",
   "My library": "Perpustakaan saya",
@@ -215,7 +214,6 @@ const catalog: Record<string, string> = {
   "No PiP session. Closing.": "Tidak ada sesi PiP. Menutup.",
   "No Simkl history yet.": "Belum ada riwayat Simkl.",
   "No Simkl premieres this month": "Tidak ada tayangan perdana Simkl bulan ini",
-  "No Suwayomi server at this address": "Tidak ada server Suwayomi di alamat ini",
   "No Way Out": "Tak Ada Jalan Keluar",
   "No Wi-Fi address yet. Other devices cannot reach this computer.":
     "Belum ada alamat Wi-Fi. Perangkat lain tidak dapat mengakses komputer ini.",
@@ -287,7 +285,6 @@ const catalog: Record<string, string> = {
   "No date": "Tidak ada tanggal",
   "No debrid configured": "Belum ada debrid yang dikonfigurasi",
   "No description available.": "Deskripsi tidak tersedia.",
-  "No description is available for this eBook.": "Deskripsi untuk eBook ini tidak tersedia.",
   "No details available for this person.": "Detail tentang orang ini tidak tersedia.",
   "No dimensions set. This filter matches every stream.":
     "Belum ada dimensi yang ditetapkan. Filter ini cocok dengan semua stream.",
@@ -295,7 +292,6 @@ const catalog: Record<string, string> = {
   "No downloadable episode files were found in this season package. Pick another package.":
     "Tidak ditemukan file episode yang dapat diunduh dalam paket musim ini. Pilih paket lain.",
   "No downloads yet": "Belum ada unduhan",
-  "No eBooks found.": "Tidak ditemukan eBook.",
   "No entries on your AniList lists yet.": "Belum ada entri dalam daftar AniList Anda.",
   "No entries on your MyAnimeList lists yet.": "Belum ada entri dalam daftar MyAnimeList Anda.",
   "No episodes available for this season.": "Tidak ada episode yang tersedia untuk musim ini.",
@@ -411,8 +407,6 @@ const catalog: Record<string, string> = {
   "No recent activity yet": "Belum ada aktivitas terbaru",
   "No reminders yet. Use the clock on a show's page to get told about new episodes and seasons.":
     "Belum ada pengingat. Gunakan ikon jam di halaman acara untuk mendapat pemberitahuan tentang episode dan musim baru.",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "Belum ada repositori. Tambahkan di atas untuk menelusuri ekstensi eBook.",
   "No response": "Tidak ada respons",
   "No results found.": "Hasil tidak ditemukan.",
   "No reviews from your friends for this film.": "Tidak ada ulasan dari teman Anda untuk film ini.",
@@ -442,8 +436,6 @@ const catalog: Record<string, string> = {
   "No sources match your filter. Showing all sources.":
     "Tidak ada sumber yang cocok dengan filter Anda. Menampilkan semua sumber.",
   "No status": "Tidak ada status",
-  "No story summary is available for this eBook.":
-    "Ringkasan cerita untuk eBook ini tidak tersedia.",
   "No streaming sources yet": "Belum ada sumber streaming",
   "No streams match": "Tidak ada stream yang cocok",
   "No styling": "Tanpa penataan gaya",
@@ -766,8 +758,6 @@ const catalog: Record<string, string> = {
   "One pick at a time, full screen, until something lands.":
     "Satu pilihan setiap kali, dalam layar penuh, sampai ada yang cocok.",
   "One release": "Satu rilis",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Satu sakelar mengaktifkan semua yang ada di halaman ini: aplikasi web, remote ponsel, dan remote pembaca manga.",
   "One switch serves Frame on your network. Scan a code below with your phone, or open an address on any device on the same Wi-Fi.":
     "Dengan satu sakelar, Frame tersedia di jaringan Anda. Pindai kode di bawah dengan ponsel, atau buka alamatnya di perangkat mana pun pada Wi-Fi yang sama.",
   "One-click community packs. Rulesets bring full badge sets with their own matching; art remaps only swap the pictures on Frame's built-in badges. Anything shared as a badges.json link on the Nuvio Discord or Reddit imports here too.":
@@ -848,8 +838,6 @@ const catalog: Record<string, string> = {
   "Open Trakt profile": "Buka profil Trakt",
   "Open Voyages": "Buka Voyages",
   "Open a folder": "Buka folder",
-  "Open a manga on Frame to control the reader from here.":
-    "Buka manga di Frame untuk mengontrol pembaca dari sini.",
   "Open a quick issue": "Buka laporan masalah singkat",
   "Open a terminal and run: brew install ffmpeg": "Buka terminal dan jalankan: brew install ffmpeg",
   "Open a terminal and run: winget install Gyan.FFmpeg":
@@ -875,7 +863,6 @@ const catalog: Record<string, string> = {
   "Open it in a regular browser, set it up there, then come back and paste the install link below.":
     "Buka di browser biasa, lakukan penyiapan di sana, lalu kembali dan tempel tautan penginstalan di bawah.",
   "Open library": "Buka perpustakaan",
-  "Open manga": "Buka manga",
   "Open on AniList": "Buka di AniList",
   "Open on IMDb": "Buka di IMDb",
   "Open on Letterboxd": "Buka di Letterboxd",
@@ -908,16 +895,12 @@ const catalog: Record<string, string> = {
   "Open the cast menu and try this device again.":
     "Buka menu transmisi dan coba lagi perangkat ini.",
   "Open the cheat sheet": "Buka lembar contekan",
-  "Open the editor to add the movies, shows, and manga that belong in this collection.":
-    "Buka editor untuk menambahkan film, acara, dan manga yang termasuk dalam koleksi ini.",
   "Open the email TMDB sent to the address you registered with and press the activate button inside it. Check spam if it has not arrived.":
     "Buka email yang dikirim TMDB ke alamat yang Anda daftarkan, lalu tekan tombol aktivasi di dalamnya. Periksa folder spam jika email belum diterima.",
   "Open the library, hit Share a theme, and your first publication shows up here with its review status, downloads, and version history.":
     "Buka perpustakaan, tekan Bagikan tema, dan publikasi pertama Anda akan muncul di sini beserta status ulasan, jumlah unduhan, dan riwayat versinya.",
   "Open the queue": "Buka antrean",
   "Open the remote": "Buka remote",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "Buka menu roda pada eBook apa pun, lalu pilih Tambahkan ke Rak.",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "Buka tautan ini di ponsel yang terhubung ke Wi-Fi yang sama untuk membalik halaman, memperbesar, dan memilih bab dengan gestur. Biarkan pembaca ini tetap terbuka.",
   "Open this page by scanning the code on your TV's setup screen.":

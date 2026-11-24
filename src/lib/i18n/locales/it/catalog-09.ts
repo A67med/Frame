@@ -40,7 +40,6 @@ const catalog09: Record<string, string> = {
   "Top Drama": "Migliori drammi",
   "Top Fantasy": "Migliori fantasy",
   "Top Horror": "Migliori horror",
-  "Top Manga": "Migliori manga",
   "Top Movies": "Migliori film",
   "Top Movies on MAL": "Migliori film su MAL",
   "Top Mystery": "Migliori gialli",
@@ -664,7 +663,6 @@ const catalog09: Record<string, string> = {
     "La Lista contiene ciò che hai salvato per dopo. La Cronologia include tutto ciò che hai visto. In Locale trovi i file sul computer.",
   "Watchlist only": "Solo Lista",
   "Watchlist shows only saved titles": "La Lista mostra solo i titoli salvati",
-  "Ways to add an eBook source": "Modi per aggiungere una fonte di eBook",
   "We could not find a working stream": "Non abbiamo trovato uno stream funzionante",
   "We could not find anyone at @{handle}. The handle may have changed or the profile was removed.":
     "Non abbiamo trovato nessuno con l'handle @{handle}. L'handle potrebbe essere cambiato o il profilo potrebbe essere stato rimosso.",
@@ -1097,7 +1095,6 @@ const catalog09: Record<string, string> = {
   "You've reached the end · {n} addons#one": "Hai raggiunto la fine · {n} Add-on#one",
   "You've sailed these waters dry.": "Hai esplorato ogni angolo di queste acque.",
   "YouTube": "YouTube",
-  "YouTube, SoundCloud or Spotify link": "Link YouTube, SoundCloud o Spotify",
   "Your AniList": "Il tuo AniList",
   "Your AniList is empty": "Il tuo AniList è vuoto",
   "Your AniList: {name}": "Il tuo AniList: {name}",

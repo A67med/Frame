@@ -27,6 +27,28 @@ import { consumeBack } from "../../lib/back-intercept";
 import { useSectionBackActive } from "../../lib/section-back";
 import type { SubtitleLoadMetadata } from "../../features/subtitles/types";
 
+// Pages Frame dropped. Their frames still parse (old links, saved stacks), so
+// landing on one goes home instead of showing an empty layer.
+export const REMOVED_PAGES = new Set<string>([
+  "anime",
+  "anime-award",
+  "calendar",
+  "kids",
+  "music",
+  "games",
+  "live",
+  "vod",
+  "sports",
+  "match-detail",
+  "manga",
+  "ebook",
+  "profile",
+  "feed",
+  "groups",
+  "group",
+  "list",
+]);
+
 export type View =
   | "home"
   | "settings"
@@ -247,7 +269,6 @@ export type ScrollSnapshot = {
 export type SettingsSection = SectionId;
 
 type ViewValue = {
-  openGames: () => void;
   view: View;
   setView: (v: View) => void;
   openSettings: (section?: SettingsSection) => void;
@@ -777,7 +798,8 @@ export function ViewProvider({ children }: { children: ReactNode }) {
   });
 
   const setView = useCallback(
-    (v: View) => {
+    (requested: View) => {
+      const v = REMOVED_PAGES.has(requested) ? "home" : requested;
       if (typeof window !== "undefined") {
         window.__harborProfiler?.recordNav(`view:${v}`);
       }
@@ -799,11 +821,6 @@ export function ViewProvider({ children }: { children: ReactNode }) {
           rowScrollMem.current.clear();
           return [{ kind: "home" }];
         }
-        if (v === "anime") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "anime" }];
-        }
         if (v === "discover") {
           scrollMem.current.clear();
           rowScrollMem.current.clear();
@@ -824,11 +841,6 @@ export function ViewProvider({ children }: { children: ReactNode }) {
           rowScrollMem.current.clear();
           return [{ kind: "addons" }];
         }
-        if (v === "calendar") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "calendar" }];
-        }
         if (v === "wrapped") {
           scrollMem.current.clear();
           rowScrollMem.current.clear();
@@ -848,21 +860,6 @@ export function ViewProvider({ children }: { children: ReactNode }) {
           rowScrollMem.current.clear();
           return [{ kind: "shows" }];
         }
-        if (v === "music") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "music" }];
-        }
-        if (v === "games") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "games" }];
-        }
-        if (v === "kids") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "kids" }];
-        }
         if (v === "library") {
           scrollMem.current.clear();
           rowScrollMem.current.clear();
@@ -872,31 +869,6 @@ export function ViewProvider({ children }: { children: ReactNode }) {
           scrollMem.current.clear();
           rowScrollMem.current.clear();
           return [{ kind: "collections-hub" }];
-        }
-        if (v === "live") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "live" }];
-        }
-        if (v === "sports") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "sports" }];
-        }
-        if (v === "vod") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "vod" }];
-        }
-        if (v === "manga") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "manga" }];
-        }
-        if (v === "ebook") {
-          scrollMem.current.clear();
-          rowScrollMem.current.clear();
-          return [{ kind: "ebook" }];
         }
         if (v === "people") {
           scrollMem.current.clear();
@@ -1117,10 +1089,6 @@ export function ViewProvider({ children }: { children: ReactNode }) {
     },
     [setNavStack],
   );
-
-  const openGames = useCallback(() => {
-    setNavStack((cur) => (cur.at(-1)?.kind === "games" ? cur : pushFrame(cur, { kind: "games" })));
-  }, [setNavStack]);
 
   const openEpisodeDetail = useCallback(
     (
@@ -1382,7 +1350,6 @@ export function ViewProvider({ children }: { children: ReactNode }) {
       episodeDetail,
       openEpisodeDetail,
       openQueue,
-      openGames,
       filter,
       openFilter,
       brands,
@@ -1456,7 +1423,6 @@ export function ViewProvider({ children }: { children: ReactNode }) {
       openEpisodeDetail,
       filter,
       brands,
-      openGames,
       stackKinds,
       awardType,
       homeResetTick,

@@ -93,8 +93,8 @@ const settings: Record<string, string> = {
   "API budget": "API kotası",
   "API key": "API anahtarı",
   "API token": "API belirteci",
-  AUTOMATIONS: "OTOMASYONLAR",
-  About: "Hakkında",
+  "AUTOMATIONS": "OTOMASYONLAR",
+  "About": "Hakkında",
   "About 200 lines of JavaScript, no dependencies. Read it before deploying if you want to know what runs.":
     "Yaklaşık 200 satır JavaScript'ten oluşur ve bağımlılığı yoktur. Nelerin çalıştığını öğrenmek istiyorsanız dağıtmadan önce okuyun.",
   "About AniList": "AniList hakkında",
@@ -105,17 +105,17 @@ const settings: Record<string, string> = {
   "About two minutes for the auto-deploy path.": "Otomatik dağıtım yolu için yaklaşık iki dakika.",
   "Above ratings": "Puanların üstünde",
   "Above the main line": "Ana satırın üstü",
-  Accent: "Vurgu",
+  "Accent": "Vurgu",
   "Accept request": "İsteği kabul et",
   "Accepting...": "Kabul ediliyor...",
-  Accessibility: "Erişilebilirlik",
-  Account: "Hesap",
+  "Accessibility": "Erişilebilirlik",
+  "Account": "Hesap",
   "Accounts and TMDB": "Hesaplar ve TMDB",
   "Action failed": "İşlem başarısız oldu",
   "Active transfers": "Etkin aktarımlar",
   "Ad, analytics, and tracking requests pass through untouched.":
     "Reklam, analiz ve izleme isteklerine müdahale edilmez.",
-  Adaptive: "Uyarlamalı",
+  "Adaptive": "Uyarlamalı",
   "Adaptive Sharpen": "Uyarlamalı Keskinleştirme",
   "Add Custom Source": "Özel Kaynak Ekle",
   "Add Source": "Kaynak Ekle",
@@ -134,7 +134,6 @@ const settings: Record<string, string> = {
     "Oyuncuları, ekibi ve ayrıntıları görmek için Ayarlar'a bir TMDB anahtarı ekleyin.",
   "Add a few friends and their watching, ratings, and favorites land here.":
     "Birkaç arkadaş ekleyin; izledikleri, puanları ve favorileri burada görünsün.",
-  "Add a manga source": "Manga kaynağı ekle",
   "Add a movie or show to this list...": "Bu listeye film veya dizi ekleyin...",
   "Add a review": "İnceleme ekle",
   "Add an M3U link or Xtream Codes login":
@@ -195,7 +194,7 @@ const settings: Record<string, string> = {
     "Fotoğraflarıyla birlikte tüm oyuncu kadrosunu görmek ve istediğiniz oyuncunun sayfasına gitmek için oynatıcıya bir X-Ray düğmesi ekler. Fotoğraflar ve filmografiler için TMDB anahtarı gerektirir.",
   "Adjusted timing by": "Zamanlama şu kadar ayarlandı:",
   "Advance Continue Watching to the next episode": "İzlemeye Devam Et'i sonraki bölüme ilerlet",
-  Advanced: "Gelişmiş",
+  "Advanced": "Gelişmiş",
   "Advanced (mpv.conf)": "Gelişmiş (mpv.conf)",
   "After 2": "2 bölüm sonra",
   "After 3": "3 bölüm sonra",
@@ -211,7 +210,7 @@ const settings: Record<string, string> = {
   "After you pick a source, show a subtitle picker so you can set the exact track and language before the video starts. Off by default, Frame keeps picking one for you automatically.":
     "Bir kaynak seçtikten sonra video başlamadan önce istediğiniz altyazı parçasını ve dili belirleyebilmeniz için altyazı seçiciyi gösterir. Varsayılan olarak kapalıdır; bu durumda Frame sizin için otomatik olarak altyazı seçmeye devam eder.",
   "After {n} episodes": "{n} bölüm sonra",
-  Aired: "Yayınlandı",
+  "Aired": "Yayınlandı",
   "All addons ({n})": "Tüm eklentiler ({n})",
   "All badges back to default": "Tüm rozetler varsayılana döndürüldü",
   "All custom rules removed": "Tüm özel kurallar kaldırıldı",
@@ -226,16 +225,16 @@ const settings: Record<string, string> = {
     "Cihaza aktarırken her zaman yeniden kodla (önerilir)",
   "Amazon-style X-Ray: open the cast while you watch and tap anyone for their bio and everything they have been in. On-device face matching to show who is on screen is coming next. Off by default.":
     "Amazon tarzı X-Ray: İzlerken oyuncu kadrosunu açın ve biyografisini ve yer aldığı tüm yapımları görmek için istediğiniz kişiye dokunun. Ekranda kimlerin olduğunu gösterecek cihaz içi yüz eşleştirme özelliği yakında geliyor. Varsayılan olarak kapalıdır.",
-  Ambience: "Atmosfer",
+  "Ambience": "Atmosfer",
   "Ambient screensaver": "Ortam ekran koruyucusu",
   "An API key is needed": "API anahtarı gerekiyor",
   "An award pack is a single JSON file plus the images it points to. Host both anywhere public (your own server, a GitHub repo, etc.) and share the JSON URL. Frame only stores the URLs you install, never the images.":
     "Ödül paketi, tek bir JSON dosyasından ve bu dosyanın işaret ettiği görsellerden oluşur. İkisini de herkese açık herhangi bir yerde (kendi sunucunuz, bir GitHub deposu vb.) barındırıp JSON URL'sini paylaşın. Frame görselleri değil, yalnızca yüklediğiniz URL'leri saklar.",
   "And for the naughty ones: browsing or rating an adult addon never shows on Discord.":
     "Yaramazlık yapanlar için de: Yetişkinlere yönelik bir eklentiye göz atmanız veya puan vermeniz Discord'da asla görünmez.",
-  AniList: "AniList",
+  "AniList": "AniList",
   "Animation speed": "Animasyon hızı",
-  Anime: "Anime",
+  "Anime": "Anime",
   "Anime is drawn on twos and threes, so fast pans can judder. Smoothing fills in the gaps so motion glides.":
     "Anime genellikle her çizimin iki veya üç kare gösterilmesiyle hazırlanır, bu yüzden hızlı kamera kaydırmaları takılabilir. Yumuşatma, aradaki boşlukları doldurarak hareketi akıcı hâle getirir.",
   "Anime leaves Home Continue Watching and stays in the Anime tab's own row.":
@@ -248,7 +247,7 @@ const settings: Record<string, string> = {
     "Anime4K ile gerçek zamanlı ölçek yükseltme, akıcı hareket ve SVP'nin kullanımı. Animeye özel tüm görüntü iyileştirmeleri tek bir yerde.",
   "Anime4K shaders": "Anime4K gölgelendiricileri",
   "Anime4K upscaling": "Anime4K görüntü yükseltme",
-  Anticipated: "Merakla beklenenler",
+  "Anticipated": "Merakla beklenenler",
   "Any Stremio subtitle addons you have installed are searched here too.":
     "Yüklediğiniz tüm Stremio altyazı eklentilerinde de burada arama yapılır.",
   "Any badges.json link works: a raw gist, Pastebin, or repo file. Broken JSON gets auto-repaired.":
@@ -272,9 +271,9 @@ const settings: Record<string, string> = {
   "App icon": "Uygulama simgesi",
   "App logo": "Uygulama logosu",
   "App storage": "Uygulama depolama alanı",
-  Appearance: "Görünüm",
-  Applied: "Uygulandı",
-  Apply: "Uygula",
+  "Appearance": "Görünüm",
+  "Applied": "Uygulandı",
+  "Apply": "Uygula",
   "Apply custom theme": "Özel temayı uygula",
   "Apply it, then nudge if it's off.": "Uygulayın, uyumsuzsa ince ayar yapın.",
   "Apply now": "Şimdi uygula",
@@ -289,14 +288,14 @@ const settings: Record<string, string> = {
   "Ask if you're still watching": "Hâlâ izleyip izlemediğimi sor",
   "Ask to resume or start over": "Devam edilsin mi, baştan mı başlansın diye sor",
   "Aspect ratio": "En-boy oranı",
-  Audience: "İzleyici",
-  Audio: "Ses",
+  "Audience": "İzleyici",
+  "Audio": "Ses",
   "Audio filter": "Ses filtresi",
   "Augments AI picks with current web results before asking the model. Powered by":
     "Modele sormadan önce yapay zekâ önerilerini güncel web sonuçlarıyla zenginleştirir. Altyapı:",
-  Authorized: "Yetkilendirildi",
+  "Authorized": "Yetkilendirildi",
   "Authorized on this device": "Bu cihazda yetkilendirildi",
-  Auto: "Otomatik",
+  "Auto": "Otomatik",
   "Auto (recommended)": "Otomatik (önerilen)",
   "Auto next episode": "Sonraki bölümü otomatik oynat",
   "Auto-apply audio-derived sync fixes":
@@ -312,7 +311,7 @@ const settings: Record<string, string> = {
   "Auto-sync subtitles": "Altyazıları otomatik eşitle",
   "Automatically play the next episode when the current one ends.":
     "Mevcut bölüm bittiğinde sonraki bölümü otomatik olarak oynatır.",
-  Automations: "Otomasyonlar",
+  "Automations": "Otomasyonlar",
   "Avatars display as squares, so square images fill the tile cleanly. Others are center-cropped.":
     "Avatarlar kare olarak görüntülenir, bu yüzden kare görseller kutucuğu düzgünce doldurur. Diğer görseller merkezden kırpılır.",
   "Average time": "Ortalama süre",
@@ -327,9 +326,9 @@ const settings: Record<string, string> = {
   "Back to relay": "Relay'e dön",
   "Back to results": "Sonuçlara dön",
   "Back to what's playing": "Şu anda oynatılana dön",
-  Backdrop: "Arka plan",
+  "Backdrop": "Arka plan",
   "Backdrop reset to default": "Varsayılan arka plan görseli geri yüklendi",
-  Background: "Arka plan",
+  "Background": "Arka plan",
   "Background color": "Arka plan rengi",
   "Background color must be a hex or rgb/hsl value.":
     "Arka plan rengi hex veya rgb/hsl biçiminde olmalıdır.",
@@ -346,7 +345,7 @@ const settings: Record<string, string> = {
   "Badge remaps": "Rozet eşlemeleri",
   "Badge updated": "Rozet güncellendi",
   "Badges for giving": "Destek rozetleri",
-  Balanced: "Dengeli",
+  "Balanced": "Dengeli",
   "Balanced (Mobius)": "Dengeli (Mobius)",
   "Bar color": "Çubuk rengi",
   "Bar height": "Çubuk yüksekliği",
@@ -356,7 +355,7 @@ const settings: Record<string, string> = {
   "Bass boost": "Bas güçlendirme",
   "Because you watched": "Bunu izlediğiniz için",
   "Below ratings": "Puanların altında",
-  Best: "En iyi",
+  "Best": "En iyi",
   "Best guess": "En iyi tahmin",
   "Best match": "En iyi eşleşme",
   "Black bar": "Siyah şerit",
@@ -374,7 +373,7 @@ const settings: Record<string, string> = {
   "Blur titles": "Başlıkları bulanıklaştır",
   "Blurs the hero image and stills on the episode detail page until you click reveal.":
     "Bölüm ayrıntıları sayfasındaki öne çıkan görseli ve bölüm karelerini, siz göstermek için tıklayana kadar bulanıklaştırır.",
-  Bokeh: "Bokeh",
+  "Bokeh": "Bokeh",
   "Bokeh background": "Bokeh arka planı",
   "Bold text": "Kalın metin",
   "Book search needs an API key before it can run.":
@@ -385,13 +384,13 @@ const settings: Record<string, string> = {
   "BotFather replies with a token like": "BotFather şuna benzer bir token ile yanıt verir:",
   "Both go in the boxes above. Frame builds the URL for you.":
     "İkisini de yukarıdaki kutulara gir. Frame URL'yi senin için oluşturur.",
-  Bottom: "Alt",
+  "Bottom": "Alt",
   "Bottom bar": "Alt çubuk",
   "Bottom end": "Sağ alt",
   "Bottom start": "Sol alt",
   "Box color": "Kutu rengi",
   "Brighten dark movies": "Karanlık filmleri aydınlat",
-  Brightness: "Parlaklık",
+  "Brightness": "Parlaklık",
   "Bring your Letterboxd watchlist, diary, liked films and lists into Frame via the Stremboxd bridge.":
     "Letterboxd İzleme Listenizi, günlüğünüzü, beğendiğiniz filmleri ve listelerinizi Stremboxd köprüsü üzerinden Frame'a aktarın.",
   "Bring your own avatars into the library.": "Kendi avatarlarınızı kütüphaneye ekleyin.",
@@ -399,7 +398,6 @@ const settings: Record<string, string> = {
     "Karşılama akışını yeniden başlatmadan, kapattığınız küçük uygulama içi ipuçlarını geri getirir.",
   "Browse ElfHosted": "ElfHosted'a göz atın",
   "Browse groups": "Gruplara göz at",
-  "Browse manga": "Mangalara göz at",
   "Browse pull requests": "Pull request'lere göz at",
   "Browse sources": "Kaynaklara göz at",
   "Budget exhausted, resets at midnight UTC.": "Kota tükendi, UTC gece yarısında sıfırlanır.",
@@ -425,7 +423,7 @@ const settings: Record<string, string> = {
   "By default, addon rails that duplicate the built-in ones (Trending, Popular, Top Rated, etc.) are merged so you don't see the same row twice. Turn this on to show every one, duplicates and all.":
     "Varsayılan olarak yerleşik raflarla aynı olan eklenti rafları (Trendler, Popüler, En Yüksek Puanlı vb.) birleştirilir, böylece aynı satırı iki kez görmezsiniz. Yinelenenler dahil tümünü göstermek için bunu açın.",
   "CLI.": "CLI.",
-  Cached: "Önbelleğe alınmış",
+  "Cached": "Önbelleğe alınmış",
   "Cached chapter lists and browse pages. Downloads stay untouched.":
     "Önbelleğe alınmış bölüm listeleri ve göz atma sayfaları. İndirmelere dokunulmaz.",
   "Cancel request": "İsteği iptal et",
@@ -435,20 +433,20 @@ const settings: Record<string, string> = {
   "Caps file size. Unknown sizes still pass.":
     "Dosya boyutunu sınırlar. Boyutu bilinmeyen dosyalar yine filtreden geçer.",
   "Card size": "Kart boyutu",
-  Cards: "Kartlar",
+  "Cards": "Kartlar",
   "Cash straight to people living in extreme poverty, no strings.":
     "Hiçbir koşul olmadan, aşırı yoksulluk içinde yaşayan insanlara doğrudan nakit yardımı.",
   "Catalogs to show": "Gösterilecek kataloglar",
   "Catch stremio:// install links inside Frame": "stremio:// yükleme bağlantılarını Frame'da aç",
-  Cause: "Neden",
-  Change: "Değiştir",
+  "Cause": "Neden",
+  "Change": "Değiştir",
   "Change banner": "Kapak görselini değiştir",
   "Change group photo": "Grup fotoğrafını değiştir",
   "Change photo": "Fotoğrafı değiştir",
   "Chapter finished": "Bölüm tamamlandı",
   "Chapter-finished hint": "Bölümün tamamlandığına dair ipucu",
   "Characters · {n}": "Karakterler · {n}",
-  Charity: "Hayırsever",
+  "Charity": "Hayırsever",
   "Charity $100+": "Hayırsever $100+",
   "Chat ID": "Sohbet kimliği",
   "Check for Updates": "Güncellemeleri denetle",
@@ -493,10 +491,10 @@ const settings: Record<string, string> = {
   "Choose which stats show in the row at the top of your profile":
     "Profilinizin üst kısmındaki satırda hangi istatistiklerin gösterileceğini seçin",
   "Choose your starting film": "Başlangıç filminizi seçin",
-  Cinematic: "Sinematik",
+  "Cinematic": "Sinematik",
   "Cinematic overlay": "Sinematik katman",
   "Claim your handle": "Kullanıcı adını al",
-  Classic: "Klasik",
+  "Classic": "Klasik",
   "Classic Stremio": "Klasik Stremio",
   "Classic. Was Frame's original pair.": "Klasik. Frame'ın özgün yazı tipi çiftidir.",
   "Clean modern. Sans across the board.": "Temiz ve modern. Her yerde sans.",
@@ -507,8 +505,8 @@ const settings: Record<string, string> = {
   "Clear all saved frames": "Kaydedilen tüm kareleri temizle",
   "Clear caches": "Önbellekleri temizle",
   "Clear status": "Durumu temizle",
-  Cleared: "Temizlendi",
-  Click: "Soldaki",
+  "Cleared": "Temizlendi",
+  "Click": "Soldaki",
   "Click any binding to rebind it. Press Esc while capturing to cancel. Letters ignore Shift (so K and Shift+K trigger the same action).":
     "Değiştirmek için herhangi bir tuş atamasına tıklayın. Atama sırasında iptal etmek için Esc tuşuna basın. Harflerde Shift dikkate alınmaz. Bu nedenle K ve Shift+K aynı eylemi tetikler.",
   "Click any control in the live preview to move, hide, or reorder it.":
@@ -538,14 +536,14 @@ const settings: Record<string, string> = {
     "Cloudflare, API token'larını yalnızca bir kez gösterir. Şimdi bir kopyasını kaydedin; aksi takdirde bu aktarıcıyı Frame'dan durdurma veya yeniden dağıtma olanağını kaybedersiniz.",
   "Cloudflare token form filled with name 'Frame Relay' and one permission row set to Account / Workers Scripts / Edit":
     "Adı 'Frame Relay' olan ve tek izin satırı Account / Workers Scripts / Edit şeklinde ayarlanmış Cloudflare belirteç formu",
-  Codec: "Kodek",
+  "Codec": "Kodek",
   "Codec filter": "Codec filtresi",
   "Collapse filters": "Filtreleri gizle",
   "Color & HDR": "Renk ve HDR",
   "Color presets, custom backgrounds, and the font pair Frame renders in.":
     "Renk ön ayarları, özel arka planlar ve Frame'ın kullandığı yazı tipi çifti.",
   "Color tokens": "Renk belirteçleri",
-  Colors: "Renkler",
+  "Colors": "Renkler",
   "Come back here and hit {b1}. The Hello World can stay where it is. It's free and harmless.":
     "Buraya dönüp {b1} seçeneğine tıklayın. Hello World olduğu yerde kalabilir. Ücretsizdir ve herhangi bir zararı yoktur.",
   "Comma-separated words. Audio or subtitle tracks whose name matches any of these are skipped during automatic selection. You can still pick them by hand in the player.":
@@ -557,15 +555,15 @@ const settings: Record<string, string> = {
   "Community sync": "Topluluk eşitlemesi",
   "Community sync server": "Topluluk eşitleme sunucusu",
   "Community sync server URL": "Topluluk senkronizasyon sunucusu URL'si",
-  Compact: "Kompakt",
-  Condensed: "Yoğun",
+  "Compact": "Kompakt",
+  "Condensed": "Yoğun",
   "Condensed shows a top pick, quality tiles, and a drawer. Stremio is a flat list grouped by addon, no scoring.":
     "Yoğun görünümde en iyi seçim, kalite kutucukları ve bir çekmece gösterilir. Stremio ise puanlama olmadan, eklentiye göre gruplandırılmış düz bir listedir.",
-  Confirm: "Onayla",
+  "Confirm": "Onayla",
   "Confirm clear": "Temizlemeyi onayla",
   "Confirm full reset": "Tam sıfırlamayı onayla",
   "Confirm remove from history": "Geçmişten kaldırmayı onayla",
-  Conflict: "Çakışma",
+  "Conflict": "Çakışma",
   "Connect / Verify": "Bağlan / Doğrula",
   "Connect AniList": "AniList'i bağla",
   "Connect Discord or Telegram and Frame posts a message when something you follow is about to drop. Hit Test to send yourself a sample first.":
@@ -576,7 +574,6 @@ const settings: Record<string, string> = {
   "Connect Trakt first.": "Önce Trakt'ı bağlayın.",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Trakt veya Simkl'yi bağlayın ya da izlemeye başlayın; istatistikleriniz kendiliğinden oluşsun.",
-  "Connect a Suwayomi server": "Bir Suwayomi sunucusuna bağlan",
   "Connect a controller: every press and stick move shows up here, live.":
     "Bir kumanda bağlayın: Her düğme basışı ve çubuk hareketi burada anında görünür.",
   "Connect your AniList account": "AniList hesabınızı bağlayın",
@@ -592,13 +589,13 @@ const settings: Record<string, string> = {
   "Connected to {name}": "{name} sunucusuna bağlanıldı",
   "Connected — {n} catalogs available": "Bağlandı, {n} katalog kullanılabilir",
   "Connected: {list}": "Bağlı: {list}",
-  Connection: "Bağlantı",
+  "Connection": "Bağlantı",
   "Connection refused / DNS does not resolve": "Bağlantı reddedildi / DNS çözümlenemiyor",
   "Consensus ranking": "Ortak sıralama",
   "Contact email or Discord": "İletişim e-postası veya Discord",
   "Contains spoilers": "Spoiler içeriyor",
   "Content filters": "İçerik filtreleri",
-  Continue: "Devam et",
+  "Continue": "Devam et",
   "Continue Watching suggestions cache": "İzlemeye Devam Et önerileri önbelleği",
   "Continue Watching, then your installed addons. Every catalog renders as its own row, install order, no dedup, no hero.":
     "Önce İzlemeye Devam Et, ardından yüklü eklentileriniz. Her katalog yükleme sırasına göre ayrı bir satırda gösterilir; yinelenenler kaldırılmaz ve öne çıkanlar yoktur.",
@@ -606,16 +603,14 @@ const settings: Record<string, string> = {
   "Continue voyage": "Yolculuğa devam et",
   "Continue watching": "İzlemeye devam et",
   "Continue your voyage": "Yolculuğunuza devam edin",
-  Contrast: "Kontrast",
+  "Contrast": "Kontrast",
   "Contribute on GitHub": "GitHub'da katkıda bulunun",
   "Control bar": "Denetim çubuğu",
   "Control from your phone": "Telefonunuzdan kontrol edin",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Büyük ekranda okurken manga okuyucuyu telefonunuzdan kontrol edin: sayfaları çevirin, yakınlaştırın ve modlar arasında geçiş yapın. Okuyucu, siz okurken bu bağlantıyı da gösterir.",
-  Controls: "Kontroller",
+  "Controls": "Kontroller",
   "Copied for Discord": "Discord için kopyalandı",
   "Copied. Paste it to your friend.": "Kopyalandı. Arkadaşınıza göndereceğiniz mesaja yapıştırın.",
-  Copy: "Kopyala",
+  "Copy": "Kopyala",
   "Copy Webhook URL": "Webhook URL'sini Kopyala",
   "Copy filename": "Dosya adını kopyala",
   "Copy for Discord": "Discord için kopyala",
@@ -626,7 +621,7 @@ const settings: Record<string, string> = {
   "Copy {label} handle": "{label} kullanıcı adını kopyala",
   "Corners keep it clear of subtitles along the bottom.":
     "Köşelere yerleştirildiğinde alttaki altyazıları kapatmaz.",
-  Costs: "Maliyetler",
+  "Costs": "Maliyetler",
   "Could not add member.": "Üye eklenemedi.",
   "Could not apply": "Uygulanamadı",
   "Could not build the backup file.": "Yedek dosyası oluşturulamadı.",
@@ -701,10 +696,10 @@ const settings: Record<string, string> = {
   "Couldn't start on port {WEB_PORT}. Another app may be using it; toggle off and on to retry.":
     "{WEB_PORT} bağlantı noktasında başlatılamadı. Başka bir uygulama bu bağlantı noktasını kullanıyor olabilir. Yeniden denemek için kapatıp açın.",
   "Couldn't switch profile. {error}": "Profil değiştirilemedi. {error}",
-  Countries: "Ülkeler",
+  "Countries": "Ülkeler",
   "Country release rule": "Ülke için yayın kuralı",
   "Cover Image URL": "Kapak Görseli URL'si",
-  Create: "Oluştur",
+  "Create": "Oluştur",
   "Create Custom Token": "Özel Belirteç Oluştur",
   "Create Frame account": "Frame hesabı oluştur",
   "Create Token": "Belirteç Oluştur",
@@ -721,12 +716,12 @@ const settings: Record<string, string> = {
   "Credit me in the release notes if this report leads to a fix.":
     "Bu bildirim bir düzeltmeye katkı sağlarsa sürüm notlarında bana teşekkür et.",
   "Crisp (anime & cartoons)": "Net (anime ve çizgi film)",
-  Critical: "Kritik",
+  "Critical": "Kritik",
   "Cross-referencing titles and episodes": "Başlıklar ve bölümler karşılaştırılıyor",
   "Crunch cards": "Crunch kartları",
   "Current show": "Geçerli dizi",
   "Current title": "Geçerli içerik",
-  Custom: "Özel",
+  "Custom": "Özel",
   "Custom CSS": "Özel CSS",
   "Custom HTML": "Özel HTML",
   "Custom HTML overlay": "Özel HTML katmanı",
@@ -754,7 +749,7 @@ const settings: Record<string, string> = {
   "Cycle subtitles": "Altyazılar arasında geçiş yap",
   "Cycle subtitles (alt)": "Altyazılar arasında geçiş yap (alternatif)",
   "Cycle subtitles backward": "Altyazıları geriye doğru değiştir",
-  Developer: "Geliştirici",
+  "Developer": "Geliştirici",
   "Open search": "Aramayı aç",
   "Open or close the search overlay.": "Aramayı açar veya kapatır.",
   "Next room": "Sonraki bölüm",
@@ -820,7 +815,7 @@ const settings: Record<string, string> = {
     "Varsayılan. Üstte en iyi seçim, kalite kutucukları ve Tüm Kaynaklar çekmecesi bulunur. Frame sonuçları puanlar ve sıralar.",
   "Defends privacy, free expression, and the open internet, in the courts and in the code.":
     "Hem mahkemelerde hem de yazılım alanında gizliliği, ifade özgürlüğünü ve açık interneti savunur.",
-  Delay: "Gecikme",
+  "Delay": "Gecikme",
   "Delete all": "Tümünü sil",
   "Delete comment": "Yorumu sil",
   "Delete group": "Grubu sil",
@@ -836,7 +831,7 @@ const settings: Record<string, string> = {
   "Delete {name}": "{name} öğesini sil",
   "Deletes every episode cached for this source":
     "Bu kaynak için önbelleğe alınan tüm bölümleri siler",
-  Deploy: "Dağıt",
+  "Deploy": "Dağıt",
   "Deploy a relay": "Aktarıcı dağıt",
   "Deploy a relay (desktop only)": "Aktarıcı dağıt (yalnızca masaüstü)",
   "Deploy mine instead": "Bunun yerine kendi aktarıcımı dağıt",
@@ -849,7 +844,7 @@ const settings: Record<string, string> = {
   "Diagnostics, manual overrides, things most users never need.":
     "Tanılama, elle geçersiz kılma seçenekleri ve çoğu kullanıcının hiç ihtiyaç duymayacağı ayarlar.",
   "Diagonal stripes across the fill, retro vibe.": "Dolgu boyunca çapraz çizgiler, retro bir hava.",
-  Diary: "Günlük",
+  "Diary": "Günlük",
   "Different subtitle version": "Farklı altyazı sürümü",
   "Dim overlay": "Karartma katmanı",
   "Direct P2P streaming": "Doğrudan P2P yayını",
@@ -861,7 +856,7 @@ const settings: Record<string, string> = {
   "Disabled while strict remote streaming is on":
     "Yalnızca uzak sunucu kullanımı açıkken devre dışıdır",
   "Discard changes": "Değişiklikleri iptal et",
-  Disconnect: "Bağlantıyı kes",
+  "Disconnect": "Bağlantıyı kes",
   "Disconnect Simkl? Syncing will stop until you reconnect.":
     "Simkl bağlantısı kesilsin mi? Yeniden bağlanana kadar eşitleme durur.",
   "Disconnect Trakt? Scrobbles and syncs will stop until you reconnect.":
@@ -885,7 +880,7 @@ const settings: Record<string, string> = {
   "Display what you are watching on your Discord profile, with the show poster and a live progress bar. Requires the Discord desktop app to be running.":
     "İzlediğiniz içeriği afişi ve canlı ilerleme çubuğuyla Discord profilinizde gösterin. Discord masaüstü uygulamasının çalışıyor olması gerekir.",
   "Distance from bottom": "Alttan uzaklık",
-  Documentation: "Belgeler",
+  "Documentation": "Belgeler",
   "Documentation: run your own relay": "Belgeler: Kendi aktarıcınızı çalıştırın",
   "Donating to Frame": "Frame'a bağış yapmak",
   "Done.": "Tamamlandı.",
@@ -905,8 +900,6 @@ const settings: Record<string, string> = {
   "Download this subtitle": "Bu altyazıyı indir",
   "Downloaded community badge packs": "İndirilen topluluk rozet paketleri",
   "Downloaded from community": "Topluluktan indirilenler",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "İndirilen temalar Tema ve görünüm bölümünden yönetilir. Video ve manga indirmeleri ise İndirilenler sayfasından yönetilir.",
   "Downloaded. Ready to install and restart.": "İndirildi. Yüklenip yeniden başlatılmaya hazır.",
   "Downloading speech model": "Konuşma modeli indiriliyor",
   "Downloading speech model {pct}%": "Konuşma modeli indiriliyor: {pct}%",
@@ -955,7 +948,7 @@ const settings: Record<string, string> = {
   "Editorial. Headline-strong display.": "Editoryal. Güçlü başlıklar için display yazı tipi.",
   "Elapsed and remaining": "Geçen ve kalan",
   "Elapsed only": "Yalnızca geçen",
-  ElfHosted: "ElfHosted",
+  "ElfHosted": "ElfHosted",
   "Email or Discord": "E-posta veya Discord",
   "Embed mpv inside Frame window": "mpv'yi Frame penceresine göm",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":
@@ -974,7 +967,6 @@ const settings: Record<string, string> = {
     "Oynatıcıda odakla gezinmeyi kullanmak için yukarıdaki TV ile gezinme seçeneğini etkinleştirin.",
   "Enable X-Ray": "X-Ray'i etkinleştir",
   "Enable all": "Tümünü etkinleştir",
-  "Enable manga sources": "Manga kaynaklarını etkinleştir",
   "Enable or disable rule": "Kuralı etkinleştir veya devre dışı bırak",
   "Enable rule": "Kuralı etkinleştir",
   "Enable this to fetch Arabic descriptions for series and movies when available on TMDB.":
@@ -1024,7 +1016,7 @@ const settings: Record<string, string> = {
   "Expanding Cards": "Genişleyen Kartlar",
   "Expected. Rooms recreate on next join.":
     "Bu beklenen bir durumdur. Bir sonraki katılımda odalar yeniden oluşturulur.",
-  Expired: "Süresi doldu",
+  "Expired": "Süresi doldu",
   "Export artwork": "Görselleri dışa aktar",
   "Export artwork sizes (Poster / Backdrop / Logo)":
     "Dışa aktarılan görsel boyutları (Poster / Arka plan / Logo)",
@@ -1037,7 +1029,7 @@ const settings: Record<string, string> = {
     "Tüm Frame kurulumunuzu tek bir dosyaya aktarın, ardından yeni bir bilgisayarda geri yükleyin veya yedek olarak saklayın. Stremio oturumunuz dışında her şey dâhildir.",
   "Extension repositories": "Eklenti depoları",
   "Extra large": "Çok büyük",
-  Failed: "Başarısız",
+  "Failed": "Başarısız",
   "Failed to fetch JSON": "JSON alınamadı",
   "Failed: {error}": "Başarısız: {error}",
   "Familiar Stremio button order.": "Tanıdık Stremio düğme sırası.",
@@ -1048,7 +1040,6 @@ const settings: Record<string, string> = {
     "Usenet'e zaten aboneyseniz P2P'den daha hızlıdır ve daha az dikkat çeker. Eklenti sayfasında yapılandırın ve döndürülen manifest URL'sini yapıştırın.",
   "Favorite Anime": "Favori Animeler",
   "Favorite Characters": "Favori Karakterler",
-  "Favorite Manga": "Favori Mangalar",
   "Favorite Movies": "Favori Filmler",
   "Favorite Shows": "Favori Diziler",
   "Favourite books": "Favori kitaplar",
@@ -1065,10 +1056,10 @@ const settings: Record<string, string> = {
   "Fewer episodes": "Daha az bölüm",
   "Files smaller than this are skipped when scanning a folder, so clips and samples stay out. Set to 0 to include everything.":
     "Bir klasör taranırken bu boyuttan küçük dosyalar atlanır, böylece klipler ve örnekler eklenmez. Her şeyi dâhil etmek için 0 olarak ayarlayın.",
-  Fill: "Doldur",
+  "Fill": "Doldur",
   "Fill the top of the form to look exactly like this:":
     "Formun üst kısmını tam olarak şöyle doldurun:",
-  Filled: "Dolu",
+  "Filled": "Dolu",
   "Film {n} of {total}": "{total} filmden {n}.",
   "Filmic (Hable)": "Sinematik (Hable)",
   "Filter by media type after the sources merge. Leave them all on to send everything.":
@@ -1096,22 +1087,20 @@ const settings: Record<string, string> = {
   "Finish setting up Frame": "Frame kurulumunu tamamlayın",
   "Finish the install above first. Flipping this on now won't do anything until Frame can find SVP's engine.":
     "Önce yukarıdaki kurulumu tamamlayın. Frame SVP'nin motorunu bulana kadar bunu şimdi açmanız hiçbir şeyi değiştirmez.",
-  Finished: "Bitirdi",
+  "Finished": "Bitirdi",
   "Finishing an anime episode updates your AniList progress. Forward only: it never lowers a count you already have.":
     "Bir anime bölümünü bitirdiğinizde AniList ilerlemeniz güncellenir. Yalnızca ileriye doğru işler; mevcut sayınızı asla düşürmez.",
-  Fit: "Sığdır",
-  Fix: "Çözüm",
+  "Fit": "Sığdır",
+  "Fix": "Çözüm",
   "Fix a section": "Bir bölümü düzelt",
   "Fix one section": "Tek bir bölümü düzelt",
   "Flags anime with an English dub. Also tags dub / sub / dual on stream sources.":
     "İngilizce dublajlı animeleri işaretler. Ayrıca yayın kaynaklarını dublaj / altyazı / çift ses olarak etiketler.",
-  Flat: "Düz",
+  "Flat": "Düz",
   "Flat cards": "Düz kartlar",
   "Flat list of sources grouped by addon, with a filter dropdown. No re-ranking. Closest match to the Stremio app's stream picker.":
     "Filtre açılır menüsüyle birlikte, eklentiye göre gruplandırılmış düz kaynak listesi. Yeniden sıralama yapılmaz. Stremio uygulamasının yayın seçicisine en yakın görünümdür.",
-  Flat_Style: "Flat_Style",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "Yukarıdaki anahtarı açtığınızda telefon kumandası ile manga okuyucu kumandasının adresleri burada görünür.",
+  "Flat_Style": "Flat_Style",
   "Floating dock": "Yüzen dock",
   "Floats over the artwork": "Görselin üzerinde yüzer",
   "Focus GIF URL": "Odaklanınca Gösterilen GIF URL'si",
@@ -1158,13 +1147,13 @@ const settings: Record<string, string> = {
     "%60 ve üzeri için taze domates, altı için ezik domates.",
   "Fresh tomatoes for 60% and up, splat for anything under.":
     "%60 ve üzeri için taze domates, altındaki puanlar için ezilmiş domates.",
-  Friends: "Arkadaşlar",
+  "Friends": "Arkadaşlar",
   "From any browser on your Wi-Fi": "Wi-Fi ağınızdaki herhangi bir tarayıcıdan",
   "From other devices on your Wi-Fi": "Wi-Fi ağınızdaki diğer cihazlardan",
   "From the very top of a detail page, keep scrolling up to open the trailer. Off by default.":
     "Ayrıntı sayfasının en üstündeyken yukarı kaydırmaya devam ederek fragmanı açın. Varsayılan olarak kapalıdır.",
   "Frost the top bar on scroll": "Kaydırırken üst çubuğu buzlu cam yap",
-  Full: "Tam",
+  "Full": "Tam",
   "Full details": "Tüm ayrıntılar",
   "Full hero banner": "Tam genişlikte öne çıkan afiş",
   "Full mode signs in with your Letterboxd password to also unlock your diary, friends activity and your personal ratings. Your password is sent only to Stremboxd to obtain a token — Frame never stores it.":
@@ -1184,7 +1173,7 @@ const settings: Record<string, string> = {
   "Generates a frame on the fly as you scrub the seek bar. Works on debrid streams and local files.":
     "İlerleme çubuğunda gezinirken anlık olarak bir kare oluşturur. Debrid yayınlarında ve yerel dosyalarda çalışır.",
   "Genre release rule": "Tür için yayın kuralı",
-  Genres: "Türler",
+  "Genres": "Türler",
   "Genres you want more of": "Daha çok görmek istediğiniz türler",
   "Gently magnify nearby posters as you move across a poster row, like a dock. Off by default.":
     "Bir poster satırında gezinirken yakındaki posterleri, uygulama rafına benzer biçimde hafifçe büyütür. Varsayılan olarak kapalıdır.",
@@ -1205,12 +1194,12 @@ const settings: Record<string, string> = {
     "Her puanın nerede gösterileceğini belirleyin: poster kartlarında, ayrıntı sayfasında veya her ikisinde. Her sütundaki anahtarı kullanın.",
   "Give to any charity below or subscribe to ElfHosted, and the badge lands on your profile.":
     "Aşağıdaki yardım kuruluşlarından birine bağış yapın veya ElfHosted'a abone olun; rozet profilinize eklenir.",
-  Glass: "Cam",
+  "Glass": "Cam",
   "Glass blur": "Cam bulanıklığı",
   "Glass cards": "Cam kartlar",
   "Glass opacity": "Cam opaklığı",
   "Glass tint": "Cam tonu",
-  Global: "Genel",
+  "Global": "Genel",
   "Good-looking video without working your machine hard. Leave it here unless you have a reason to change.":
     "Bilgisayarınızı fazla yormadan iyi görünen video sunar. Değiştirmeniz için bir neden yoksa bu ayarda bırakın.",
   "Got a theme a friend shared? Drop it in.": "Bir arkadaşınız tema mı paylaştı? Buraya bırakın.",
@@ -1231,7 +1220,7 @@ const settings: Record<string, string> = {
   "HDR in a separate window": "HDR'yi ayrı pencerede oynat",
   "HDR only": "Yalnızca HDR",
   "HDR-to-SDR tonemapping": "HDR'den SDR'ye ton eşleme",
-  HTML5: "HTML5",
+  "HTML5": "HTML5",
   "HTML5 (browser-based)": "HTML5 (tarayıcı tabanlı)",
   "HTML5 plays everything WebView2 supports. mpv handles TrueHD, DTS-HD, AV1, weird containers, and HDR. Auto picks based on the source.":
     "HTML5, WebView2'nin desteklediği her şeyi oynatır. mpv; TrueHD, DTS-HD, AV1, sıra dışı kapsayıcılar ve HDR'ı destekler. Otomatik, kaynağa göre seçim yapar.",
@@ -1240,7 +1229,7 @@ const settings: Record<string, string> = {
     "Yarım saatlik ön yükleme. Yalnızca çok kararsız bağlantılarda buna değer.",
   "Hand-tuned colors. Edit them in the section above.":
     "Özenle ayarlanmış renkler. Bunları yukarıdaki bölümden düzenleyin.",
-  Frame: "Frame",
+  "Frame": "Frame",
   "Frame Relay": "Frame Relay",
   "Frame Setup did not finish updating Frame. Nothing was changed.":
     "Frame Setup Frame güncellemesini tamamlayamadı. Hiçbir değişiklik yapılmadı.",
@@ -1265,10 +1254,6 @@ const settings: Record<string, string> = {
   "Frame couldn't find a reliable timing correction for this subtitle.":
     "Frame bu altyazı için güvenilir bir zamanlama düzeltmesi bulamadı.",
   "Frame curated": "Frame seçkisi",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame herhangi bir manga veya kaynak barındırmaz. Kendi barındırdığınız bir sunucuya bağlanın, güvendiğiniz bir depodan kaynak eklentisi yükleyin ya da mevcut bir klasörü açın.",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame herhangi bir manga barındırmaz. Güvendiğiniz bir depodan kaynak eklentisi ekleyin, kendi sunucunuza bağlanın veya yerel bir klasör açın. Bunu istediğiniz zaman Ayarlar'dan kapatabilirsiniz.",
   "Frame finds intro and credits timing from AniSkip, TheIntroDB, and the file's own chapters, then shows a Skip button at the right moment.":
     "Frame, intro ve jenerik zamanlamalarını AniSkip, TheIntroDB ve dosyanın kendi bölümlerinden bulur, ardından doğru anda Atla düğmesini gösterir.",
   "Frame identity": "Frame kimliği",
@@ -1359,7 +1344,7 @@ const settings: Record<string, string> = {
   "Health check returns 5xx": "Durum denetimi 5xx döndürüyor",
   "Health for {n} services below": "Aşağıdaki {n} hizmetin durumu",
   "Hello World": "Hello World",
-  Help: "Yardım",
+  "Help": "Yardım",
   "Hero carousel, Top 10, Trending, In Theaters, per-service rails.":
     "Öne çıkanlar döngüsü, İlk 10, Trendler, Vizyondakiler ve hizmete özel raflar.",
   "Hero carousel, Top 10, Trending, In Theaters, per-service rails. Addon catalogs append underneath, deduped.":
@@ -1378,7 +1363,6 @@ const settings: Record<string, string> = {
     "Kategorileri tamamen gizleyin. Bu seçenekleri açmak, eşleşen kenar çubuğu öğelerini ve içerik satırlarını da kaldırır.",
   "Hide from your picks": "Seçimlerinizden gizleyin",
   "Hide hidden episodes": "Gizli bölümleri gösterme",
-  "Hide manga": "Mangayı gizle",
   "Hide pack instructions": "Paket talimatlarını gizle",
   "Hide subtitles when the player shrinks into the floating PiP window.":
     "Oynatıcı yüzen PiP penceresine küçüldüğünde altyazıları gizler.",
@@ -1393,9 +1377,9 @@ const settings: Record<string, string> = {
     "Bölüm listelerinde spoiler içerebilecek bölüm ayrıntılarını, ilgili bölümleri izleyene kadar gizler.",
   "Hides streams with no detected preferred language. Multi-audio releases count as a match.":
     "Tercih edilen dillerden hiçbirinin algılanmadığı yayınları gizler. Çoklu ses içeren sürümler eşleşme sayılır.",
-  High: "Yüksek",
+  "High": "Yüksek",
   "High-contrast panel for busy scenes.": "Hareketli sahneler için yüksek kontrastlı panel.",
-  Hit: "Şuna bas:",
+  "Hit": "Şuna bas:",
   "Hit your daily quota? Use Frame's public relay, or host your own.":
     "Günlük kotanız mı doldu? Frame'ın herkese açık aktarıcısını kullanın veya kendi aktarıcınızı barındırın.",
   "Hitting Play jumps straight into playback with the best stream Frame finds.":
@@ -1412,7 +1396,7 @@ const settings: Record<string, string> = {
   "Home style (Frame curated / Classic Stremio)":
     "Ana sayfa stili (Frame seçkisi / Klasik Stremio)",
   "Home · Continue Watching": "Ana Sayfa · İzlemeye Devam Et",
-  Hotkeys: "Kısayol tuşları",
+  "Hotkeys": "Kısayol tuşları",
   "Hover a poster to peek at its rating, runtime, and synopsis without opening it.":
     "Bir posteri açmadan puanına, süresine ve özetine göz atmak için imleci üzerine getirin.",
   "Hover the speaker to reveal a horizontal slider.":
@@ -1446,7 +1430,7 @@ const settings: Record<string, string> = {
   "How the volume widget behaves on click and hover.":
     "Ses denetiminin tıklandığında ve üzerine gelindiğinde nasıl davranacağını belirler.",
   "How to make an award pack": "Ödül paketi oluşturma",
-  Huge: "Çok büyük",
+  "Huge": "Çok büyük",
   "I have my token": "Token'ım hazır",
   "Icon only": "Yalnızca simge",
   "Icon packs and single-award art from the community":
@@ -1486,7 +1470,7 @@ const settings: Record<string, string> = {
   "Image size": "Görsel boyutu",
   "Image too large. Keep badge files under 250 KB.":
     "Görsel çok büyük. Rozet dosyalarının boyutu 250 KB'ın altında olmalıdır.",
-  Import: "İçe aktar",
+  "Import": "İçe aktar",
   "Import JavaScript sources": "JavaScript kaynaklarını içe aktar",
   "Import a .zip pack": ".zip paketi içe aktar",
   "Import a Theme": "Temayı İçe Aktar",
@@ -1514,7 +1498,7 @@ const settings: Record<string, string> = {
   "Insecticide-treated nets. One of the most cost-effective interventions measured.":
     "Böcek ilacı uygulanmış cibinlikler. Etkinliği ölçülmüş en uygun maliyetli müdahalelerden biri.",
   "Inside the playback view.": "Oynatma görünümünde.",
-  Inspector: "İnceleyici",
+  "Inspector": "İnceleyici",
   "Install SVP once (the free tier is enough). It bundles VapourSynth + svpflow; Frame reuses them, no extra setup.":
     "SVP'yi bir kez yükleyin (ücretsiz paket yeterlidir). VapourSynth + svpflow birlikte gelir; Frame bunları yeniden kullanır, ek kurulum gerekmez.",
   "Install a Stremio addon and its catalogs show up here as poster rails, ready to browse.":
@@ -1530,11 +1514,11 @@ const settings: Record<string, string> = {
   "Installed via {label}": "{label} üzerinden yüklendi",
   "Installing. Frame will restart.": "Yükleniyor. Frame yeniden başlatılacak.",
   "Installing...": "Yükleniyor...",
-  Integrations: "Entegrasyonlar",
-  Interface: "Arayüz",
+  "Integrations": "Entegrasyonlar",
+  "Interface": "Arayüz",
   "Interface language": "Arayüz dili",
   "Interface scale": "Arayüz ölçeği",
-  Internals: "Dâhilî bileşenler",
+  "Internals": "Dâhilî bileşenler",
   "Internet speed": "İnternet hızı",
   "Interpolates frames for smoother panning, best on anime. Needs a display refresh rate above the video's frame rate, and can stutter on weak GPUs. mpv only.":
     "Daha akıcı kamera kaydırmaları için ara kareler oluşturur; en iyi sonucu animelerde verir. Ekran yenileme hızının videonun kare hızından yüksek olması gerekir ve zayıf GPU'larda takılabilir. Yalnızca mpv.",
@@ -1583,8 +1567,6 @@ const settings: Record<string, string> = {
   "Keep controlling Frame in the background": "Frame'ı arka planda kontrol etmeye devam et",
   "Keep downloading after you leave": "Uygulamadan çıktıktan sonra indirmeye devam et",
   "Keep frames for": "Kareleri saklama süresi",
-  "Keep going in the manga behind the anime you've been watching":
-    "İzlediğiniz animenin uyarlandığı mangadan devam edin",
   "Keep it": "Listede tut",
   "Keep it under 280 characters": "280 karakteri aşmayın",
   "Keep original": "Özgün biçimi koru",
@@ -1619,15 +1601,15 @@ const settings: Record<string, string> = {
   "KrigBilateral chroma upscaler": "KrigBilateral renk çözünürlüğü yükseltici",
   "Label the subfolders inside the folder you pick, and each one becomes its own set (like Heroes or Cats). Loose images in the folder go to Uploads.":
     "Seçtiğiniz klasördeki alt klasörleri adlandırın; her biri ayrı bir set olur (ör. Kahramanlar veya Kediler). Klasördeki bağımsız görseller Yüklemeler'e gider.",
-  Large: "Büyük",
-  Largest: "En büyük",
+  "Large": "Büyük",
+  "Largest": "En büyük",
   "Last source wasn't actually cached on your debrid yet. Trying another.":
     "Son kaynak debrid hizmetinizde henüz önbelleğe alınmamış. Başka bir kaynak deneniyor.",
   "Last synced {n}s ago.": "Son eşitleme {n} sn önce yapıldı.",
   "Last watched {when}": "Son izleme: {when}",
   "Late-night sci-fi crew": "Gece kuşu bilim kurgu ekibi",
   "Layout name": "Düzen adı",
-  Layouts: "Düzenler",
+  "Layouts": "Düzenler",
   "Lead with the show name instead of the episode title at the top of the player.":
     "Oynatıcının üst kısmında bölüm başlığı yerine dizi adını öne alın.",
   "Leave a comment. No links.": "Yorum yapın. Bağlantı eklemeyin.",
@@ -1638,7 +1620,7 @@ const settings: Record<string, string> = {
   "Leave group": "Gruptan ayrıl",
   "Leave the episode you are up to clear and only blur the ones after it.":
     "İzlemekte olduğunuz bölümü net bırakıp yalnızca sonrakileri bulanıklaştırır.",
-  Legal: "Yasal bilgiler",
+  "Legal": "Yasal bilgiler",
   "Less bass": "Daha az bas",
   "Let structural tiers auto-apply": "Yapısal katmanları otomatik uygula",
   "Let your Discord friends see what you are watching, with the show poster and a live progress bar.":
@@ -1676,7 +1658,7 @@ const settings: Record<string, string> = {
   "List name": "Liste adı",
   "List renamed": "Liste yeniden adlandırıldı",
   "List settings": "Liste ayarları",
-  Lists: "Listeler",
+  "Lists": "Listeler",
   "Live TV": "Canlı TV",
   "Live TV caches": "Canlı TV önbellekleri",
   "Live TV playlists": "Canlı TV oynatma listeleri",
@@ -1713,7 +1695,7 @@ const settings: Record<string, string> = {
   "Local engine address": "Yerel motor adresi",
   "Local playback preference (Ask / Play local / Stream)":
     "Yerel oynatma tercihi (Sor / Yerelden oynat / Yayınla)",
-  Logo: "Logo",
+  "Logo": "Logo",
   "Logo & app icon": "Logo ve uygulama simgesi",
   "Logo position": "Logo konumu",
   "Logo reset to default": "Varsayılan logo geri yüklendi",
@@ -1722,18 +1704,16 @@ const settings: Record<string, string> = {
   "Longest binge": "En uzun izleme maratonu",
   "Look any of them up on Charity Navigator":
     "Bunlardan herhangi birini Charity Navigator'da inceleyebilirsiniz",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "Tarayıcınızdaki Frame'ı, telefon kumandasını veya manga okuyucu kumandasını mı arıyorsunuz? Artık Kumandalar sayfasındalar.",
   "Looking for peers…": "Eşler aranıyor…",
   "Looking for sources": "Kaynaklar aranıyor",
   "Looking for who is on screen": "Ekrandaki kişiler aranıyor",
   "Looks right": "Doğru görünüyor",
-  Low: "Düşük",
+  "Low": "Düşük",
   "Lower volume (hold Shift for big steps).":
     "Sesi alçaltın (büyük adımlar için Shift tuşunu basılı tutun).",
   "Loyalties shatter as the survivors realize the enemy has been among them all along.":
     "Hayatta kalanlar düşmanın başından beri aralarında olduğunu fark edince bağlılıklar paramparça olur.",
-  MB: "MB",
+  "MB": "MB",
   "MDBList · Letterboxd and Trakt scores": "MDBList · Letterboxd ve Trakt puanları",
   "MPV (native, recommended)": "MPV (yerel, önerilen)",
   "Made with": "Şununla yapıldı:",
@@ -1748,15 +1728,13 @@ const settings: Record<string, string> = {
   "Make your own": "Kendiniz oluşturun",
   "Make your own in the Theme Studio, or import one a friend shared.":
     "Tema Stüdyosu'nda kendi temanızı oluşturun veya bir arkadaşınızın paylaştığı temayı içe aktarın.",
-  Manage: "Yönet",
+  "Manage": "Yönet",
   "Manage connection": "Bağlantıyı yönet",
   "Manage profiles": "Profilleri yönet",
   "Manage subtitle addons in Streaming sources":
     "Altyazı eklentilerini Yayın kaynakları bölümünde yönet",
   "Managed Plex, Emby, or Jellyfin, running in minutes with no hardware and no Docker.":
     "Donanım ve Docker gerektirmeden dakikalar içinde çalışan, yönetilen Plex, Emby veya Jellyfin.",
-  "Manga browse cache": "Manga gezinme önbelleği",
-  "Manga reader remote": "Manga okuyucu kumandası",
   "Manual deploy with wrangler": "wrangler ile manuel dağıtım",
   "Manual picker": "Elle seçim",
   "Maps HDR sources to SDR using bt.2446a. Recommended on SDR displays.":
@@ -1767,27 +1745,27 @@ const settings: Record<string, string> = {
   "Matching the details": "Ayrıntılar eşleştiriliyor",
   "Max scores per card": "Kart başına en fazla puan",
   "Max size (GB)": "Maksimum boyut (GB)",
-  Maximize: "Ekranı kapla",
-  Maximum: "Maksimum",
+  "Maximize": "Ekranı kapla",
+  "Maximum": "Maksimum",
   "Maximum quality": "En yüksek kalite",
   "Maximum volume boost": "Maksimum ses artışı",
   "Maybe later": "Belki daha sonra",
   "Media type": "Medya türü",
   "Media types": "Medya türleri",
-  Medium: "Orta",
+  "Medium": "Orta",
   "Memory cap": "Bellek sınırı",
-  Merged: "Birleştirilmiş",
+  "Merged": "Birleştirilmiş",
   "Metadata language": "Meta veri dili",
   "Metadata providers": "Meta veri sağlayıcıları",
   "Min seeders": "Minimum seeder sayısı",
-  Minimal: "Minimal",
+  "Minimal": "Minimal",
   "Minimum file size": "Minimum dosya boyutu",
   "Minimum file size (local scan)": "Minimum dosya boyutu (yerel tarama)",
   "Missing TMDB Key": "TMDB Anahtarı Eksik",
   "Mix surround sound down to stereo": "Çevresel sesi stereoya indirge",
-  Mode: "Mod",
-  Model: "Model",
-  Modern: "Modern",
+  "Mode": "Mod",
+  "Model": "Model",
+  "Modern": "Modern",
   "Modern (Spline)": "Modern (Spline)",
   "Month to month, cancel anytime, and you can try the whole thing for $1 for a week.":
     "Aylık ödeme yapın, istediğiniz zaman iptal edin ve tüm sistemi bir hafta boyunca $1 karşılığında deneyin.",
@@ -1815,7 +1793,7 @@ const settings: Record<string, string> = {
     "{n} eklenti Stremio hesabınıza taşındı. Artık oturum açtığınız her yerde eşitlenir.",
   "Moved, but Frame couldn't confirm the result. Reload to see the current state.":
     "Taşındı ancak Frame sonucu doğrulayamadı. Güncel durumu görmek için yeniden yükleyin.",
-  Movies: "Filmler",
+  "Movies": "Filmler",
   "Movies you've finished and shows in progress leave the catalog rows. Continue Watching is never touched.":
     "Bitirdiğiniz filmler ve izlemeyi sürdürdüğünüz diziler katalog satırlarından çıkar. İzlemeye Devam Et bölümüne dokunulmaz.",
   "Moving the window": "Pencereyi taşıma",
@@ -1834,8 +1812,8 @@ const settings: Record<string, string> = {
     "Anime içerikleri için MyAnimeList puanları. RPDB animeleri kapsamadığından bu özellik isteğe bağlıdır.",
   "MyAnimeList scores for anime titles. RPDB doesn't cover anime, so this stays optional.":
     "Anime yapımları için MyAnimeList puanları. RPDB animeyi kapsamadığından bu seçenek isteğe bağlıdır.",
-  NAVIGATION: "GEZİNME",
-  NEW: "YENİ",
+  "NAVIGATION": "GEZİNME",
+  "NEW": "YENİ",
   "NNEDI3 neural upscaler": "NNEDI3 nöral çözünürlük yükseltici",
   "Name (e.g. REMUX)": "Ad (ör. REMUX)",
   'Name each image file after its award ID and put them in a .zip, then use "Import a .zip pack" above. No JSON, no hosting needed. Frame matches each file to its award, stores it locally, resizes it, and skips anything it doesn\'t recognize.':
@@ -1845,7 +1823,7 @@ const settings: Record<string, string> = {
   "Native webview playback. Smooth and integrated, but limited codec coverage.":
     "Yerel web görünümünde oynatma. Akıcı ve tümleşik, ancak kodek desteği sınırlıdır.",
   "Native-style hybrid bar": "Yerel tarzda hibrit çubuk",
-  Navigation: "Gezinme",
+  "Navigation": "Gezinme",
   "Neural upscalers, sharpeners, and HDR tone-mapping ported for mpv. Each is hosted by its author, not bundled with Frame. Download the ones you want; Frame chains them in the right order and applies them in the player.":
     "mpv için uyarlanmış sinir ağı tabanlı çözünürlük yükselticiler, keskinleştiriciler ve HDR ton eşleme araçları. Her biri kendi geliştiricisi tarafından barındırılır ve Frame ile birlikte sunulmaz. İstediklerinizi indirin; Frame bunları doğru sırayla zincirleyip oynatıcıda uygular.",
   "Never auto-select tracks containing": "Şunları içeren parçaları asla otomatik seçme",
@@ -1871,7 +1849,6 @@ const settings: Record<string, string> = {
   "No Integrations option? You need the Manage Webhooks permission. Ask whoever owns the server.":
     "Entegrasyonlar seçeneği yok mu? Webhook'ları Yönet iznine ihtiyacınız var. Sunucu sahibinden isteyin.",
   "No Letterboxd lists shared yet": "Henüz paylaşılan Letterboxd listesi yok",
-  "No Suwayomi server at this address": "Bu adreste Suwayomi sunucusu yok",
   "No Way Out": "Çıkış Yok",
   "No affiliation, no referral links, and Frame gets nothing from these. They are just places where money goes further than it does here.":
     "Herhangi bir bağımız veya yönlendirme bağlantımız yok ve Frame bunlardan hiçbir şey almıyor. Bunlar yalnızca paranızın buraya kıyasla daha fazla fayda sağlayacağı yerler.",

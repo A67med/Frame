@@ -31,8 +31,6 @@ const wired: Record<string, string> = {
   "Add screenshot": "スクリーンショットを追加",
   "Add to Shelf": "本棚に追加",
   "Add to your watchlist": "ウォッチリストに追加",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Frame対応リポジトリから、信頼できるeBook配信元を追加します。",
   "Add up to 6 screenshots so people can see your theme in action. Optional, but they sell it.":
     "テーマの使用イメージが伝わるスクリーンショットを最大6枚追加できます。任意ですが、テーマの魅力をアピールできます。",
   "Added to Shelf": "本棚に追加しました",
@@ -73,7 +71,6 @@ const wired: Record<string, string> = {
     "TMDBに戻り、右上のアバターをクリックして、メニューから「Settings」を選択します。",
   "Back on the API page, scroll to the bottom. Copy the value under API Key and paste it into Frame. Frame saves it on its own.":
     "APIページに戻り、一番下までスクロールします。「API Key」の値をコピーしてFrameに貼り付けてください。Frameが自動的に保存します。",
-  "Back to eBook actions": "eBookの操作に戻る",
   "Back to editing": "編集に戻る",
   "Back to remote": "リモコンに戻る",
   "Badge pack": "バッジパック",
@@ -101,12 +98,10 @@ const wired: Record<string, string> = {
     "Frameの隔離された拡張機能ワーカーを介して、信頼できるソースパッケージを追加できます。",
   "Bring your own keys": "自分のキーを使用",
   "Browse community": "コミュニティを見る",
-  "Browse eBooks": "eBookを探す",
   "Browsing {section}. Change section": "{section}を閲覧中。セクションを変更",
   "Build one in the studio or import a theme file first, then come back to share it.":
     "まずスタジオで作成するかテーマファイルをインポートしてから、共有に戻ってください。",
   "Build your own": "自分で作成",
-  "Building EPUB": "EPUBを作成中",
   "Button": "ボタン",
   "Buttons": "ボタン",
   "CSS {css} · HTML {html} · JS {js}": "CSS {css}・HTML {html}・JS {js}",
@@ -130,7 +125,6 @@ const wired: Record<string, string> = {
   "Choose a custom tracker color": "トラッカーの色を選択",
   "Choose an Edge TTS voice before generating audio":
     "音声を生成する前にEdge TTSの音声を選択してください",
-  "Choose eBook folder": "eBookフォルダーを選択",
   "Choose icon": "アイコンを選択",
   "Choose which badges appear by your name, and their order":
     "名前の横に表示するバッジと、その順序を選択",
@@ -144,9 +138,7 @@ const wired: Record<string, string> = {
   "Clip saved to {path}": "クリップを{path}に保存しました",
   "Clipboard access was blocked. Paste the link manually.":
     "クリップボードへのアクセスがブロックされました。リンクを手動で貼り付けてください。",
-  "Close Manga selection": "マンガ選択を閉じる",
   "Close chapters": "章一覧を閉じる",
-  "Close eBook menu": "eBookメニューを閉じる",
   "Close panel": "パネルを閉じる",
   "Close studio": "スタジオを閉じる",
   "Close the cast menu and reopen it to rescan the network.":
@@ -177,8 +169,6 @@ const wired: Record<string, string> = {
     "よく使うカスタマイズ用の、コピーして使えるサンプルです。",
   "Could not cast to {deviceName}.": "{deviceName}にキャストできませんでした。",
   "Could not load comments.": "コメントを読み込めませんでした。",
-  "Could not load that eBook extension repository":
-    "そのeBook拡張機能リポジトリを読み込めませんでした",
   "Could not post your comment.": "コメントを投稿できませんでした。",
   "Could not reach the bundle library.": "バンドルライブラリに接続できませんでした。",
   "Could not reach the theme library.": "テーマライブラリに接続できませんでした。",
@@ -198,7 +188,6 @@ const wired: Record<string, string> = {
   "Create a folder by movie or series name": "映画名またはシリーズ名でフォルダーを作成",
   "Create a free account to publish. No email required.":
     "公開するには無料アカウントを作成してください。メールアドレスは不要です。",
-  "Create folders for eBooks": "電子書籍用フォルダーを作成",
   "Curated sets and sagas": "厳選シリーズ・サーガ",
   "Current password": "現在のパスワード",
   "Custom CSS is too large.": "カスタムCSSのサイズが大きすぎます。",
@@ -240,14 +229,11 @@ const wired: Record<string, string> = {
   "Drop the About and Custom labels so an embed fills the card cleanly.":
     "「概要」と「カスタム」のラベルを外し、埋め込みをカード全体にすっきり表示します。",
   "E-AC-3 unsupported": "E-AC-3は非対応です",
-  "EPUB eBook": "EPUB電子書籍",
-  "EPUB saved": "EPUBを保存しました",
   "Easing tokens": "イージングトークン",
   "Edge TTS failed": "Edge TTSに失敗しました",
   "Edit the HTML and CSS by hand": "HTMLとCSSを手動で編集",
   "Enable Roku Network Access": "Rokuのネットワークアクセスを有効化",
   "Enable {name}": "{name}を有効化",
-  "End of manga": "漫画の終わり",
   "Episode {number}": "第{number}話",
   "Episodes that air after you add a series grab themselves":
     "シリーズ追加後に放送されるエピソードを自動取得",
@@ -273,7 +259,6 @@ const wired: Record<string, string> = {
   "File is not a Frame layout profile.":
     "このファイルはFrameのレイアウトプロフィールではありません。",
   "Fill in the details, then Subscribe": "詳細を入力してから購読してください",
-  "Filter eBooks": "電子書籍を絞り込む",
   "Find a word or passage": "単語や文章を検索",
   "Finish updating Frame": "Frameのアップデートを完了",
   "Floating orbs over the canvas.": "キャンバス上に浮かぶオーブ。",
@@ -310,7 +295,6 @@ const wired: Record<string, string> = {
   "HTML and CSS are each capped at 16,384 characters.": "HTMLとCSSはそれぞれ16,384文字までです。",
   "Frame Reader": "Frame Reader",
   "Frame Staff": "Frameスタッフ",
-  "Frame eBook": "Frame eBook",
   "Frame found something at this address that looked like a Roku, but it didn't respond like one. The device may be offline or another product picked up the same broadcast.":
     "このアドレスでRokuらしきデバイスが見つかりましたが、Rokuとして応答しませんでした。デバイスがオフラインか、別の製品が同じブロードキャストに反応した可能性があります。",
   "Frame never hosts your books or source files.":
@@ -406,7 +390,6 @@ const wired: Record<string, string> = {
   "Loading book collections…": "書籍コレクションを読み込み中…",
   "Loading chapter": "チャプターを読み込み中",
   "Loading chapter list…": "チャプター一覧を読み込み中…",
-  "Loading eBook…": "eBookを読み込み中…",
   "Loading extensions…": "拡張機能を読み込み中…",
   "Loading models…": "モデルを読み込み中…",
   "Loading {hostname}": "{hostname}を読み込み中",
@@ -421,10 +404,8 @@ const wired: Record<string, string> = {
     "お気に入りのデザインができましたか？数クリックでコミュニティに共有して、ダウンロード数が増えていく様子を楽しみましょう。",
   "Make sure the Roku is powered on and on the same Wi-Fi as your computer.":
     "Rokuの電源が入っていて、パソコンと同じWi-Fiに接続されていることを確認してください。",
-  "Manage eBook sources": "eBookソースを管理",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "ディスク上でもWeb上でも、Frameが読み込めるすべての場所を管理します。",
-  "Manga adaptation": "漫画化",
   "Mark as Read": "既読にする",
   "Mark as unwatched": "未視聴にする",
   "Mark as watched": "視聴済みにする",
@@ -446,7 +427,6 @@ const wired: Record<string, string> = {
   "Most read right now": "今最も読まれている作品",
   "Mouse tracker": "マウストラッカー",
   "Mute / Unmute": "ミュート / ミュート解除",
-  "My eBooks": "マイeBook",
   "My layout": "マイレイアウト",
   "Name each file after its slot": "各ファイルにスロット名を付ける",
   "Name your files, drop them in, done.": "ファイル名を付けてドロップするだけ。",
@@ -473,8 +453,6 @@ const wired: Record<string, string> = {
   "No community themes yet. Be the first to share one.":
     "コミュニティテーマはまだありません。最初のテーマを共有しましょう。",
   "No custom code yet.": "カスタムコードはまだありません。",
-  "No description is available for this eBook.": "このeBookの説明はありません。",
-  "No eBooks found.": "eBookが見つかりません。",
   "No episodes to show here yet.": "表示できるエピソードはまだありません。",
   "No forms or popups. The canvas cannot navigate the page.":
     "フォームやポップアップはありません。キャンバスからページを移動することはできません。",
@@ -488,12 +466,9 @@ const wired: Record<string, string> = {
   "No notifications yet. Publish a theme and watch it climb.":
     "通知はまだありません。テーマを公開して、順位が上がるのを見守りましょう。",
   "No profile": "プロフィールなし",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "リポジトリはまだありません。上で追加すると、電子書籍の拡張機能を閲覧できます。",
   "No saved passages yet.": "保存した文章はまだありません。",
   "No saved profiles yet.": "保存したプロフィールはまだありません。",
   "No series found": "シリーズが見つかりません",
-  "No story summary is available for this eBook.": "この電子書籍のあらすじはありません。",
   "No themes match your search.": "検索に一致するテーマがありません。",
   "No themes to share yet": "共有できるテーマはまだありません",
   "Nom": "ノミネート",
@@ -533,8 +508,6 @@ const wired: Record<string, string> = {
     "「設定」、「システム」、「システムの詳細設定」の順に開きます。",
   "Open TheTVDB": "TheTVDBを開く",
   "Open a folder": "フォルダーを開く",
-  "Open a manga on Frame to control the reader from here.":
-    "Frameでマンガを開くと、ここからリーダーを操作できます。",
   "Open a terminal and run: brew install ffmpeg": "ターミナルを開いて実行: brew install ffmpeg",
   "Open a terminal and run: winget install Gyan.FFmpeg":
     "ターミナルを開いて実行: winget install Gyan.FFmpeg",
@@ -551,8 +524,6 @@ const wired: Record<string, string> = {
     "キャストメニューを開き、このデバイスでもう一度お試しください。",
   "Open the email TMDB sent to the address you registered with and press the activate button inside it. Check spam if it has not arrived.":
     "登録したメールアドレス宛にTMDBから届いたメールを開き、メール内の有効化ボタンを押してください。届いていない場合は迷惑メールフォルダーをご確認ください。",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "電子書籍のホイールメニューを開き、「本棚に追加」を選択します。",
   "Open your account settings": "アカウント設定を開く",
   "Open {name} profile": "{name}のプロフィールを開く",
   "Open {type} adaptation: {title}": "{type}版を開く: {title}",
@@ -586,8 +557,6 @@ const wired: Record<string, string> = {
   "Pick a z-index for your overlays that sits where you want it.":
     "オーバーレイが希望の位置に表示されるよう、z-indexを選択してください。",
   "Pick art": "アートを選択",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "ライブラリフォルダーを1つ選択してください。各サブフォルダーが1冊のeBookになります。その中に各章をTXT、Markdown、HTML、またはEPUBファイルで配置し、必要に応じて表紙画像を追加してください。",
   "Pick one of your themes to share.": "共有するテーマを1つ選択してください。",
   "Play trailer": "予告編を再生",
   "Play {voice} sample": "{voice}のサンプルを再生",
@@ -595,7 +564,6 @@ const wired: Record<string, string> = {
   "Player controls unlocked": "プレーヤー操作のロックを解除しました",
   "Please choose a PNG, SVG, JPG, or WebP image.":
     "PNG、SVG、JPG、またはWebP画像を選択してください。",
-  "Popular eBooks": "人気のeBook",
   "Popular titles from book metadata": "書籍メタデータに基づく人気作品",
   "Popular titles from the installed source": "インストール済みソースの人気作品",
   "Position {position}": "位置 {position}",
@@ -631,10 +599,7 @@ const wired: Record<string, string> = {
   "Rate this theme": "このテーマを評価",
   "Rate {count} stars": "{count}つ星で評価",
   "Re-sync from your Frame profile picture": "Frameのプロフィール画像から再同期",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "このデバイスにあるEPUB、テキスト、Markdown、HTML形式の書籍を読めます。",
   "Read chapter with Edge TTS": "Edge TTSで章を読み上げ",
-  "Read eBook files you already have": "お持ちのeBookファイルを読む",
   "Read from": "次から読む",
   "Read here": "ここで読む",
   "Read on": "次で読む",
@@ -650,15 +615,12 @@ const wired: Record<string, string> = {
   "Recipes": "レシピ",
   "Recognized at the {award}.": "{award}で評価されました。",
   "Recommendations are temporarily unavailable.": "おすすめは一時的に利用できません。",
-  "Recommended eBooks": "おすすめのeBook",
   "Reconnecting": "再接続中",
   "Reconnecting to your computer": "パソコンに再接続中",
   "Redo": "やり直す",
   "Redo (Ctrl/Cmd + Shift + Z)": "やり直す (Ctrl/Cmd + Shift + Z)",
   "Reference": "参考資料",
   "Reference passage": "参照箇所",
-  "Reflowable eBook": "リフロー型eBook",
-  "Refresh eBook source": "eBookソースを更新",
   "Refresh source": "ソースを更新",
   "Reload original link": "元のリンクを再読み込み",
   "Remote": "リモート",
@@ -729,12 +691,10 @@ const wired: Record<string, string> = {
   "Saved to this passage": "この文章位置を保存しました",
   "Saved to your favorites": "お気に入りに保存しました",
   "Saved to {service} as {status}": "{service}に{status}として保存しました",
-  "Saving EPUB": "EPUBを保存中",
   "Say it is for personal use": "個人利用と伝えてください",
   "Screenshot saved to {path}": "スクリーンショットを{path}に保存しました",
   "Search chapter": "チャプター内を検索",
   "Search chapters": "チャプターを検索",
-  "Search eBooks": "eBookを検索",
   'Search for "Media Assistant" (channel ID 782875, free).':
     "「Media Assistant」（チャンネルID 782875、無料）を検索してください。",
   "Search icons": "アイコンを検索",
@@ -758,9 +718,6 @@ const wired: Record<string, string> = {
     "<html>に設定します。特定のレイアウト、カード、ボタンの選択肢にスタイルの適用範囲を限定するために使用します。",
   "Set on the root. Override any to swap typography.":
     "ルートに設定します。任意の値を上書きして書体を変更できます。",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "まず、閲覧可能なeBookソースを1つ以上設定してください。メタデータは本の情報を記述できますが、Frameで本を開くにはフォルダー、拡張機能、またはカスタムソースが必要です。",
-  "Set up eBooks": "eBookを設定",
   "Set your status": "ステータスを設定",
   "Sets streaming availability and the Now Playing release window. Pick a country and Frame offers to match the interface, metadata, subtitle, and audio languages to it.":
     "ストリーミング配信状況と「上映中」の公開期間を設定します。国を選ぶと、Frameからインターフェース、メタデータ、字幕、音声の言語をその国に合わせるよう提案されます。",
@@ -817,7 +774,6 @@ const wired: Record<string, string> = {
     "タイトルの横でディスクが回転し、小さなコントロールバーが表示されます。",
   "Start Reading": "読書を始める",
   "Start from": "開始位置",
-  "Start of manga": "漫画の先頭",
   "Stay in party": "パーティーに残る",
   "Still loading?": "まだ読み込み中ですか？",
   "Stop auto-downloading": "自動ダウンロードを停止",
@@ -826,8 +782,6 @@ const wired: Record<string, string> = {
   "Stop {voice} sample": "{voice}のサンプル再生を停止",
   "Storage is full. Clear Frame cache storage, then try saving again.":
     "ストレージがいっぱいです。Frameのキャッシュストレージを消去してから、もう一度保存してください。",
-  "Store each title in its own folder with its EPUB or PDF":
-    "各作品をEPUBまたはPDFと一緒に個別のフォルダーへ保存",
   "Stories you love": "大好きな物語",
   "Strong": "強",
   "Style {selector} and the posters on the right update live. Hit Insert starter for a head start.":
@@ -868,8 +822,6 @@ const wired: Record<string, string> = {
   "The author submitted a new version that's in review. You're seeing the current published version until it's approved.":
     "作者が新しいバージョンを提出し、審査中です。承認されるまでは、現在公開中のバージョンが表示されます。",
   "The code from sign up": "登録時のコード",
-  "The eBook download was canceled.": "eBookのダウンロードはキャンセルされました。",
-  "The eBook export was canceled.": "eBookのエクスポートはキャンセルされました。",
   "The generated audio could not be played": "生成された音声を再生できませんでした",
   "The most-downloaded creators in the community.":
     "コミュニティで最も多くダウンロードされたクリエイター。",
@@ -884,9 +836,6 @@ const wired: Record<string, string> = {
   "This collection has no titles to show yet.":
     "このコレクションには、まだ表示できるタイトルがありません。",
   "This comment can't be posted.": "このコメントは投稿できません。",
-  "This eBook could not be exported": "このeBookをエクスポートできませんでした",
-  "This eBook is not connected to an installed source.":
-    "このeBookは、インストール済みのソースに接続されていません。",
   "This game couldn't load right now.": "現在、このゲームを読み込めません。",
   "This is the only time you'll see it. If you ever forget your password, this code is the only way back into your account. Store it somewhere safe.":
     "このコードが表示されるのは今回だけです。パスワードを忘れた場合、アカウントに再びアクセスする唯一の手段になります。安全な場所に保管してください。",
@@ -896,7 +845,6 @@ const wired: Record<string, string> = {
     "このレイアウトではアイコンのみ表示されるため、ラベルは表示されません。",
   "This layout shows icons only, so renaming is off here. Reorder and hide still apply.":
     "このレイアウトではアイコンのみ表示されるため、ここでは名前を変更できません。並べ替えと非表示の設定は引き続き適用されます。",
-  "This repository lists no eBook extensions.": "このリポジトリにはeBook拡張機能がありません。",
   "This site may not support Frame's temporary viewer. Retry the original link or open it in your browser.":
     "このサイトはFrameの一時ビューアーに対応していない可能性があります。元のリンクを再試行するか、ブラウザで開いてください。",
   "This source did not provide any chapters.": "このソースにはチャプターがありません。",
@@ -962,7 +910,6 @@ const wired: Record<string, string> = {
   "Want a badge that moves? Drop in a GIF up to 8 MB. Frame shrinks it down and converts it to a lightweight animated format so it stays crisp and loads fast. Keep it small and looping.":
     "動くバッジにしたい場合は、8 MBまでのGIFを追加してください。Frameが縮小して軽量なアニメーション形式に変換するため、鮮明さを保ちながらすばやく読み込めます。小さく、ループする画像がおすすめです。",
   "Watch Live TV?": "ライブTVを視聴しますか？",
-  "Ways to add an eBook source": "eBookソースを追加する方法",
   "Weak": "弱い",
   "Webtoon strip": "縦読みWebtoon",
   "What are you sharing?": "何を共有しますか？",
@@ -988,7 +935,6 @@ const wired: Record<string, string> = {
     "どちらを選んでもルームには残ります。ほかの人と視聴を続けるか、プレイヤーを閉じてください。",
   "You're editing the chrome by hand, so the visual builder stays out of your way.":
     "UIを手動で編集しているため、ビジュアルビルダーは表示されません。",
-  "YouTube, SoundCloud or Spotify link": "YouTube、SoundCloud、Spotifyのリンク",
   "Your HTML and CSS render inside a sandboxed frame, fully isolated from the rest of Frame. Write it like a tiny self-contained page. Font and page background are separate controls above, applied to the whole profile.":
     "HTMLとCSSはサンドボックス化されたフレーム内でレンダリングされ、Frameのほかの部分から完全に分離されます。小さな自己完結型ページとして記述してください。フォントとページ背景は上の個別コントロールで設定でき、プロフィール全体に適用されます。",
   "Your Roku is set to block control requests from apps on your network, so Frame can't reach it. This is a one-time setting on the Roku.":
@@ -1022,10 +968,6 @@ const wired: Record<string, string> = {
   "did not match a slot (rename it after the slot)":
     "スロットに一致しませんでした（スロット名に合わせて名前を変更してください）",
   "download error": "ダウンロードエラー",
-  "eBook actions": "電子書籍の操作",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "電子書籍拡張機能では、Frameの分離ワーカー、HTTPブリッジ、HTMLパーサーを使用します。これはマンガ拡張機能と同じサンドボックスです。信頼できるリポジトリのみ追加してください。",
-  "eBook source settings": "電子書籍ソース設定",
   "eBooks": "電子書籍",
   "episodes": "話",
   "example": "例",

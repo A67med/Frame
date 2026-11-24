@@ -2,16 +2,13 @@ import { ArrowLeft } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { useActiveKid } from "@/features/profiles/profiles";
 import { useView } from "@/app/navigation/view";
-import { useSectionBackActive } from "@/lib/section-back";
 
 export function BackChrome() {
   const { canGoBack, goBack, topKind, chromeHidden } = useView();
   const kid = useActiveKid();
   const t = useT();
-  const sectionBack = useSectionBackActive();
   if (!canGoBack || chromeHidden) return null;
   if (topKind === "picker") return null;
-  if (topKind === "games" && !sectionBack) return null;
   if (kid) {
     return (
       <button

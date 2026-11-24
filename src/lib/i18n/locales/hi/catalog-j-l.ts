@@ -72,8 +72,6 @@ const catalogJL: Record<string, string> = {
   "Keep editing": "एडिट करना जारी रखें",
   "Keep frames for": "फ़्रेम इतने समय तक रखें",
   "Keep going": "जारी रखें",
-  "Keep going in the manga behind the anime you've been watching":
-    "आप जो ऐनिमे देख रहे हैं, उसके आगे की कहानी मंगा में जारी रखें",
   "Keep it": "इसे रखें",
   "Keep it under 280 characters": "इसे 280 अक्षरों से कम रखें",
   "Keep it up": "ऐसे ही जारी रखें",
@@ -363,7 +361,6 @@ const catalogJL: Record<string, string> = {
   "Loading chapter list…": "अध्यायों की सूची लोड हो रही है…",
   "Loading chapter...": "चैप्टर लोड हो रहा है...",
   "Loading chapter…": "अध्याय लोड हो रहा है…",
-  "Loading eBook…": "eBook लोड हो रही है…",
   "Loading environment details…": "एनवायरनमेंट की जानकारी लोड हो रही है…",
   "Loading episode details...": "एपिसोड की जानकारी लोड हो रही है...",
   "Loading episodes...": "एपिसोड लोड हो रहे हैं...",
@@ -463,8 +460,6 @@ const catalogJL: Record<string, string> = {
     "अपने TV को देखें। उस पर पहले से एक नया कोड दिख रहा है। उसे स्कैन करें।",
   "Look offline to others": "दूसरों को ऑफ़लाइन दिखें",
   'Looking for "{q}"': '"{q}" खोज रहे हैं',
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "ब्राउज़र में Frame, फ़ोन रिमोट या मंगा रीडर रिमोट खोज रहे हैं? इन्हें रिमोट्स पेज पर ले जाया गया है।",
   "Looking for peers…": "पीयर खोजे जा रहे हैं…",
   "Looking for sources": "स्रोत खोजे जा रहे हैं",
   "Looking for sources…": "स्रोत खोजे जा रहे हैं…",

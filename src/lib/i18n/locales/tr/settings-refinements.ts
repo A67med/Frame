@@ -65,9 +65,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "P2P ayarı uygulanıyor…",
   "Areas where data already exists let you choose how to combine it.":
     "Zaten veri bulunan alanlarda verilerin nasıl birleştirileceğini seçebilirsin.",
-  Attachments: "Ekler",
-  Automatic: "Otomatik",
-  Avatar: "Avatar",
+  "Attachments": "Ekler",
+  "Automatic": "Otomatik",
+  "Avatar": "Avatar",
   "Awards cache": "Ödül önbelleği",
   "Badge packs": "Rozet paketleri",
   "Badge rules": "Rozet kuralları",
@@ -88,7 +88,7 @@ const settingsRefinements: Record<string, string> = {
     "Bir kez adlandırılmış filtre oluşturun, ardından kalabalık yayın listesini tam istediğiniz hâle getirmek için kaynak seçicide uygulayın.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton, çalınan lokomotifini geri almak için yola koyulur.",
-  Canvas: "Tuval",
+  "Canvas": "Tuval",
   "Captions and quiet hints": "Açıklamalar ve sade ipuçları",
   "Cards need a TMDB key.": "Kartlar için TMDB anahtarı gerekir.",
   "Cards need an MDBList key.": "Kartlar için MDBList anahtarı gerekir.",
@@ -136,8 +136,6 @@ const settingsRefinements: Record<string, string> = {
     "Sonraki bölümün ne zaman başlayacağını ve Frame'ın hâlâ izleyip izlemediğinizi ne zaman soracağını seçin.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Frame'ın altyazıları nerede arayacağını seçin. Etkin kaynakların sonuçları, yinelenenler kaldırılarak birlikte gösterilir.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "Videoların ve e-kitapların nereye kaydedileceğini ve klasörlerinin nasıl düzenleneceğini seçin.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "Bilinen reklam, analiz ve izleme hizmetlerine yapılan isteklerin engellenip engellenmeyeceğini seçin.",
   "Choose which addon results appear when you pick a stream.":
@@ -290,8 +288,6 @@ const settingsRefinements: Record<string, string> = {
     "Frame SVP kurulumunu denetleyemedi. Yeniden deneyin.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame altyazıları bu sırayla arar. Tercih ettiğiniz dili ilk sıraya koyun.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "Diğer cihazlarınızdaki Frame: web uygulaması, telefon kumandası ve manga okuyucu kumandası.",
   "Frame profile showing watch statistics": "İzleme istatistiklerini gösteren Frame profili",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame kendi topluluk sunucusunu kullanır. Bunun yerine kendin yönettiğin bir sunucuyu kullanacak şekilde ayarlayabilirsin.",
@@ -369,7 +365,7 @@ const settingsRefinements: Record<string, string> = {
     "Frame arayüzü titremiyor veya takılmıyorsa Otomatik olarak bırakın. Bu ayar video oynatmayı değil, uygulama penceresini etkiler.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "Debrid bağlantısı yoksa Frame'ın bu cihazdan P2P yayını yapmasına izin verin. Yerel P2P oynatmayı engellemek için kapatın. Yapılandırılmış bir uzak sunucu yine de yayınlayabilir.",
-  Licence: "Lisans",
+  "Licence": "Lisans",
   "Licenses & attribution": "Lisanslar ve atıflar",
   "Lightens or darkens the whole picture.": "Tüm görüntüyü aydınlatır veya karartır.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -392,10 +388,10 @@ const settingsRefinements: Record<string, string> = {
   "Maximum memory used for buffered video.":
     "Video arabelleği için kullanılabilecek en fazla bellek.",
   "Maximum size (GB)": "En büyük boyut (GB)",
-  Merge: "Birleştir",
+  "Merge": "Birleştir",
   "Minimize to preview (Ctrl/Cmd + P)": "Önizlemek için küçült (Ctrl/Cmd + P)",
   "Minimum seeders": "En az kaynak sayısı",
-  Motion: "Hareket",
+  "Motion": "Hareket",
   "Move earlier": "Öne taşı",
   "Move {language} earlier": "{language} dilini öne taşı",
   "Move {name} down": "{name} öğesini aşağı taşı",
@@ -430,7 +426,7 @@ const settingsRefinements: Record<string, string> = {
     "İsteğe bağlı. Sizinle iletişime geçmemize izin veriyorsanız iletişim bilgilerinizi bırakın ve adınızın herkese açık olarak belirtilmesini isteyip istemediğinizi seçin.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "İsteğe bağlı. Daha fazla izleme süresi vermek için kullanılır. PIN yoksa süre dolduğunda profil değiştirin.",
-  Pages: "Sayfalar",
+  "Pages": "Sayfalar",
   "Pause after several episodes and ask before continuing.":
     "Birkaç bölümden sonra duraklatıp devam etmeden önce sorun.",
   "Pause preview": "Önizlemeyi duraklat",
@@ -475,7 +471,7 @@ const settingsRefinements: Record<string, string> = {
   "Repair & diagnostics": "Onarım ve tanılama",
   "Report something broken, or support the project.":
     "Bir sorunu bildirin veya projeyi destekleyin.",
-  Required: "Gerekli",
+  "Required": "Gerekli",
   "Reset keyboard shortcuts?": "Klavye kısayolları sıfırlansın mı?",
   "Reset shortcuts": "Kısayolları sıfırla",
   "Reset {setting}": "{setting} ayarını sıfırla",
@@ -758,11 +754,11 @@ const settingsRefinements: Record<string, string> = {
     "Oturumunuz, izlediklerinizi takip eden hizmetler ve aktarımınız.",
   "Your {n} custom shortcuts will return to their defaults.":
     "{n} özel kısayolunuz varsayılanlarına dönecek.",
-  code: "kod",
+  "code": "kod",
   "each poster": "her afiş",
   "on hover": "üzerine gelince",
   "poster image": "poster görseli",
-  username: "kullanıcı adı",
+  "username": "kullanıcı adı",
   "will look on your TV.": "böyle görünecek.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} açık kaynaklıdır. Mevcut düzeltmelere göz atın veya bulduğunuz sorun için bir yama gönderin.",
@@ -778,7 +774,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} saniye",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "{quota} depolama sınırının {used} kadarı kullanılıyor. İndirilen videolar ve diskteki diğer dosyalar buna dahil değil.",
-  "Public-domain books for the eBook library.": "eKitap kütüphanesi için kamu malı kitaplar.",
   "Searchable catalog for Project Gutenberg books.":
     "Project Gutenberg kitaplarının aranabilir kataloğu.",
   "Game metadata, artwork and release dates.": "Oyun meta verileri, görselleri ve çıkış tarihleri.",

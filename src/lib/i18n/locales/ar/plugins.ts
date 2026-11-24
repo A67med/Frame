@@ -101,8 +101,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "لم يستجب هذا الرابط.",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "لا يبدو هذا مستودع مكوّنات إضافية. يتوقع Frame بنية { name, plugins } أو ملف manifest لسكربتات المزوّدين يحتوي على scrapers.",
-  "This is a manga repository. Add it from the Manga page.":
-    "هذا مستودع مانغا. أضفه من صفحة المانغا.",
   "These are compiled Android extensions (.cs3). Frame runs script plugins only, so they cannot be installed here.":
     "هذه إضافات أندرويد مُجمَّعة (.cs3). يشغّل Frame إضافات نصية برمجية فقط، لذا لا يمكن تثبيتها هنا.",
   "This is a Stremio addon manifest. Add it from the Addons page instead.":
@@ -145,8 +143,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "أجاب {n} من {m}، وأخفق {k}",
   "Install all": "تثبيت الكل",
   "Installing {done} of {total}": "جارٍ تثبيت {done} من {total}",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "سكربتات صغيرة تعثر على البثوث والمانغا والكتب في مواقع لا يعرفها Frame، تُثبَّت من مستودعات تختارها.",
   "Remove all": "إزالة الكل",
 };
 

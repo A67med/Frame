@@ -230,10 +230,6 @@ const catalog13: Record<string, string> = {
     "Stuknij pierwszy wiersz sekcji, którą chcesz poprawić.",
   "Tap the genres you want more of. They steer the Top Picks row at the top of this page.":
     "Wybierz gatunki, których chcesz widzieć więcej. Wpływają one na sekcję Najlepsze propozycje u góry tej strony.",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "Stuknij serce przy dowolnym filmie, serialu, mandze lub postaci, aby zapisać je tutaj.",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "Dotknij gwiazdki przy dowolnym filmie, serialu lub mandze albo serca przy postaci, aby zapisać je tutaj.",
   "Tap to switch": "Dotknij, aby przełączyć",
   "Tap to switch. The pencil renames, recolors, or adds a PIN.":
     "Dotknij, aby przełączyć. Ołówek pozwala zmienić nazwę lub kolor albo dodać kod PIN.",
@@ -299,7 +295,6 @@ const catalog13: Record<string, string> = {
     "Ten kod nie jest już ważny. Sprawdź nowy kod na telewizorze.",
   "That custom url is not available.": "Ten niestandardowy adres URL jest niedostępny.",
   "That did not work. Check your details.": "Nie udało się. Sprawdź podane dane.",
-  "That does not look like a Spotify link.": "To nie wygląda na link Spotify.",
   "That does not look like a YouTube link.": "To nie wygląda na link YouTube.",
   "That does not look like a repository URL": "To nie wygląda na adres URL repozytorium",
   "That does not look like a valid magnet link or infohash.":
@@ -413,8 +408,6 @@ const catalog13: Record<string, string> = {
   "The dotted line is a flat squeeze of the whole range. A curve that stays high keeps midtones punchy and compresses the highlights late; a lower curve rolls off early and looks gentler.":
     "Linia kropkowana oznacza równomierne ściśnięcie całego zakresu. Krzywa utrzymująca się wysoko zachowuje wyraziste półtony i późno kompresuje światła, a niższa krzywa łagodnie je wygasza wcześniej.",
   "The draw is not published yet.": "Drabinka nie została jeszcze opublikowana.",
-  "The eBook download was canceled.": "Pobieranie e-booka zostało anulowane.",
-  "The eBook export was canceled.": "Eksport e-booka został anulowany.",
   "The editor is a working copy of the player. Click any control on it to move, resize, restyle or hide that control.":
     "Edytor jest roboczą kopią odtwarzacza. Kliknij dowolny element sterujący, aby go przenieść, zmienić jego rozmiar lub styl albo go ukryć.",
   "The end time has to be after the start.":
@@ -639,9 +632,6 @@ const catalog13: Record<string, string> = {
   "This device": "To urządzenie",
   "This doesn't look like a Frame plugin repo. Frame expects a JSON file shaped { name, plugins: [ ... ] }.":
     "To nie wygląda na repozytorium wtyczek Frame. Frame oczekuje pliku JSON o strukturze { name, plugins: [ ... ] }.",
-  "This eBook could not be exported": "Nie udało się wyeksportować tego e-booka",
-  "This eBook is not connected to an installed source.":
-    "Ten e-book nie jest powiązany z zainstalowanym źródłem.",
   "This exact install, served as a web app. Open it on a phone, laptop or TV browser and it streams through this computer.":
     "Ta konkretna instalacja udostępniana jako aplikacja internetowa. Otwórz ją w przeglądarce na telefonie, laptopie lub telewizorze, aby przesyłać treści strumieniowo przez ten komputer.",
   "This file has one audio track.": "Ten plik ma jedną ścieżkę audio.",
@@ -660,16 +650,6 @@ const catalog13: Record<string, string> = {
     "Nie udało się wczytać kanału tej grupy. Spróbuj ponownie za chwilę.",
   "This instance of Frame is made for desktop. Our standalone iOS and Android apps are coming soon, each with a bespoke, mobile-first experience built for its native platform.":
     "Ta wersja Frame jest przeznaczona na komputery. Samodzielne aplikacje na iOS i Androida pojawią się wkrótce, każda z dopracowanym interfejsem projektowanym od podstaw z myślą o urządzeniach mobilnych i danej platformie.",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "To repozytorium Mangayomi, ale jego źródła używają języka Dart albo nie zawierają mang, dlatego Frame nie może ich zaimportować.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "To repozytorium Mangayomi. Frame natywnie obsługuje zawarte w nim źródła JavaScript. Zaimportuj je, aby dodać te źródła do swojej biblioteki mangi.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "To repozytorium Mangayomi. Import natywny nie jest jeszcze obsługiwany. Aby uzyskać obecnie największy katalog, uruchom serwer Suwayomi i połącz z nim Frame w sekcji Serwery.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "To repozytorium Paperback (iOS), z którego Frame nie może korzystać. Aby używać źródeł na komputerze, połącz serwer Suwayomi w sekcji Serwery.",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "To repozytorium Tachiyomi / Mihon. Zawiera rozszerzenia na Androida (APK), których Frame nie może uruchamiać bezpośrednio. Aby korzystać z tych źródeł na komputerze, uruchom serwer Suwayomi i połącz z nim Frame w sekcji Serwery.",
   "This is a metadata-based release estimate, not a measured timing score.":
     "To oszacowanie wydania oparte na metadanych, a nie zmierzona ocena synchronizacji.",
   "This is how a subtitle will look.": "Tak będą wyglądać napisy.",
@@ -721,8 +701,6 @@ const catalog13: Record<string, string> = {
     "Ta playlista nie została jeszcze wczytana lub nie zawiera kanałów.",
   "This replaces your current Frame setup (theme, home layout, settings, addons, profiles, and more) with the {n} saved entries in this file. Your Stremio sign-in stays as is. Frame reloads when it finishes.":
     "Spowoduje to zastąpienie obecnej konfiguracji Frame (motywu, układu strony głównej, ustawień, dodatków, profili i innych danych) zapisanymi w tym pliku wpisami w liczbie {n}. Logowanie do Stremio pozostanie bez zmian. Po zakończeniu Frame uruchomi się ponownie.",
-  "This repository lists no eBook extensions.":
-    "To repozytorium nie zawiera żadnych rozszerzeń e-booków.",
   "This score only appears on cards.": "Ta ocena pojawia się tylko na kartach.",
   "This screen stopped. Going back to Home usually clears it.":
     "Ten ekran przestał działać. Powrót do ekranu głównego zwykle rozwiązuje problem.",

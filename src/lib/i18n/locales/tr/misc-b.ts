@@ -396,7 +396,6 @@ const miscB: Record<string, string> = {
   "Loading book collections…": "Kitap koleksiyonları yükleniyor…",
   "Loading chapter": "Bölüm yükleniyor",
   "Loading chapter list…": "Bölüm listesi yükleniyor…",
-  "Loading eBook…": "eKitap yükleniyor…",
   "Loading extensions…": "Eklentiler yükleniyor…",
   "Loading friends' reviews…": "Arkadaşların yorumları yükleniyor…",
   "Loading models…": "Modeller yükleniyor…",
@@ -467,15 +466,11 @@ const miscB: Record<string, string> = {
     "Her şeyi büyütüp okumayı kolaylaştırın: kenar çubuğu, menüler, açılır pencereler ve tüm sayfalar.",
   "Make sure the Roku is powered on and on the same Wi-Fi as your computer.":
     "Roku'nun açık ve bilgisayarınızla aynı Wi-Fi ağına bağlı olduğundan emin olun.",
-  "Manage eBook sources": "eKitap kaynaklarını yönet",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "İster diskte ister web'de olsun, Frame'ın okuyabildiği tüm kaynakları yönetin.",
   "Manage members and posts": "Üyeleri ve gönderileri yönet",
   "Manager": "Yönetici",
   "Managers": "Yöneticiler",
-  "Manga adaptation": "Manga uyarlaması",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Mangalar henüz bir Frame içeriğiyle eşleştirilemediğinden {n} tanesi dışarıda bırakıldı.",
   "Manual offset": "Elle zaman kaydırma",
   "Maps HDR down to SDR with bt.2446a. Works on any display. Pick this if HDR looks washed-out or grey.":
     "HDR'yi bt.2446a ile SDR'ye dönüştürür. Tüm ekranlarda çalışır. HDR soluk veya gri görünüyorsa bunu seçin.",
@@ -567,7 +562,6 @@ const miscB: Record<string, string> = {
   "Muted text": "Soluk metin",
   "My": "Benimkiler",
   "My collection": "Koleksiyonum",
-  "My eBooks": "eKitaplarım",
   "My layout": "Düzenim",
   "My provider": "Sağlayıcım",
   "Mystery": "Gizem",
@@ -662,8 +656,6 @@ const miscB: Record<string, string> = {
   "No credits available": "Filmografi bilgisi yok",
   "No custom code yet.": "Henüz özel kod yok.",
   "No debrid configured": "Debrid yapılandırılmamış",
-  "No description is available for this eBook.": "Bu eKitap için açıklama bulunmuyor.",
-  "No eBooks found.": "eKitap bulunamadı.",
   "No entries on your AniList lists yet.": "AniList listelerinizde henüz kayıt yok.",
   "No entries on your MyAnimeList lists yet.": "MyAnimeList listelerinizde henüz kayıt yok.",
   "No episodes match your search": "Aramanızla eşleşen bölüm yok",
@@ -694,8 +686,6 @@ const miscB: Record<string, string> = {
   "No profile": "Profil yok",
   "No program info": "Program bilgisi yok",
   "No quality label": "Kalite etiketi yok",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "Henüz depo yok. eKitap eklentilerine göz atmak için yukarıdan bir depo ekleyin.",
   "No reviews from your friends for this film.":
     "Arkadaşlarınız bu film için henüz yorum yapmamış.",
   "No reviews yet.": "Henüz yorum yok.",
@@ -711,7 +701,6 @@ const miscB: Record<string, string> = {
   "No sources loaded for this title yet.": "Bu içerik için henüz kaynak yüklenmedi.",
   "No sources match your filter. Showing all sources.":
     "Filtrenizle eşleşen kaynak yok. Tüm kaynaklar gösteriliyor.",
-  "No story summary is available for this eBook.": "Bu eKitap için hikâye özeti bulunmuyor.",
   "No streaming sources yet": "Henüz yayın kaynağı yok",
   "No subtitle languages set": "Altyazı dili ayarlanmadı",
   "No telemetry, no servers, no bundled keys.":
@@ -859,8 +848,6 @@ const miscB: Record<string, string> = {
   "Open TheTVDB": "TheTVDB'yi aç",
   "Open Trakt profile": "Trakt profilini aç",
   "Open a folder": "Klasör aç",
-  "Open a manga on Frame to control the reader from here.":
-    "Okuyucuyu buradan kontrol etmek için Frame'da bir manga açın.",
   "Open a quick issue": "Hızlıca sorun bildir",
   "Open a terminal and run: brew install ffmpeg":
     "Bir terminal açıp şu komutu çalıştırın: brew install ffmpeg",
@@ -885,13 +872,9 @@ const miscB: Record<string, string> = {
   "Open the TMDB API page": "TMDB API sayfasını açın",
   "Open the cast menu and try this device again.":
     "Aktarma menüsünü açıp bu cihazı tekrar deneyin.",
-  "Open the editor to add the movies, shows, and manga that belong in this collection.":
-    "Bu koleksiyona film, dizi ve manga eklemek için düzenleyiciyi açın.",
   "Open the email TMDB sent to the address you registered with and press the activate button inside it. Check spam if it has not arrived.":
     "TMDB'nin kaydolurken kullandığınız adrese gönderdiği e-postayı açıp içindeki etkinleştirme düğmesine basın. Gelmediyse spam klasörünü kontrol edin.",
   "Open the remote": "Uzaktan kumandayı aç",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "Herhangi bir eKitapta dairesel menüyü açıp Kitaplığa Ekle'yi seçin.",
   "Open this page by scanning the code on your TV's setup screen.":
     "TV'nizin kurulum ekranındaki kodu tarayarak bu sayfayı açın.",
   "Open your account settings": "Hesap ayarlarınızı açın",
@@ -1050,8 +1033,6 @@ const miscB: Record<string, string> = {
     "Katmanlarınız için istediğiniz konuma denk gelen bir z-index seçin.",
   "Pick an avatar": "Bir avatar seçin",
   "Pick another source": "Başka bir kaynak seç",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "Bir kütüphane klasörü seçin. Her alt klasör bir eKitaptır. Bölümleri TXT, Markdown, HTML veya EPUB dosyaları olarak içine koyun ve dilerseniz bir kapak görseli ekleyin.",
   "Pick one of your themes to share.": "Paylaşmak için temalarınızdan birini seçin.",
   "Pick one. You can change it any time.": "Birini seçin. İstediğiniz zaman değiştirebilirsiniz.",
   "Pick the card that appears. Each tile previews the real thing.":
@@ -1138,7 +1119,6 @@ const miscB: Record<string, string> = {
   "Popular Manga": "Popüler Manga",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Herkese açık dizindeki yıldızlara göre sıralanan popüler topluluk eklentileri. Diğer eklentileri Göz At sekmesinden URL ile yükleyebilirsiniz.",
-  "Popular eBooks": "Popüler eKitaplar",
   "Popular on": "Şurada popüler:",
   "Popular titles from book metadata": "Kitap meta verilerinden popüler eserler",
   "Popular titles from the installed source": "Yüklü kaynaktaki popüler eserler",
@@ -1271,14 +1251,10 @@ const miscB: Record<string, string> = {
   "Re-sync from your Frame profile picture": "Frame'daki profil fotoğrafınızdan yeniden eşitle",
   "Reaching your TV": "TV'nize bağlanılıyor",
   "Read": "Oku",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "Bu cihazda bulunan EPUB, metin, Markdown ve HTML kitaplarını okuyun.",
   "Read chapter with Edge TTS": "Bölümü Edge TTS ile oku",
-  "Read eBook files you already have": "Elinizdeki eKitap dosyalarını okuyun",
   "Read from": "Okuma kaynağı",
   "Read full": "Tamamını oku",
   "Read here": "Burada oku",
-  "Read manga files you already have": "Elinizdeki manga dosyalarını okuyun",
   "Read on": "Okunacak cihaz",
   "Read on this device": "Bu cihazda oku",
   "Read the complete chapter with Edge TTS": "Bölümün tamamını Edge TTS ile oku",
@@ -1312,7 +1288,6 @@ const miscB: Record<string, string> = {
     "Her şeyi yeniden renklendirin, yazı tiplerini değiştirin, posterleri yeniden boyutlandırın ve duvar kâğıdı ayarlayın.",
   "Recommendations are temporarily unavailable.": "Öneriler geçici olarak kullanılamıyor.",
   "Recommended": "Önerilen",
-  "Recommended eBooks": "Önerilen eKitaplar",
   "Reconfigure": "Yeniden yapılandır",
   "Reconnecting": "Yeniden bağlanılıyor",
   "Reconnecting to your computer": "Bilgisayarınıza yeniden bağlanılıyor",
@@ -1327,8 +1302,6 @@ const miscB: Record<string, string> = {
   "Reference": "Referans",
   "Reference passage": "Referans pasajı",
   "Reference quality, very heavy.": "Referans kalitesi, çok ağır.",
-  "Reflowable eBook": "Yeniden akıtılabilir e-kitap",
-  "Refresh eBook source": "eKitap kaynağını yenile",
   "Refresh list": "Listeyi yenile",
   "Refresh playlist": "Oynatma listesini yenile",
   "Refresh source": "Kaynağı yenile",
@@ -1569,7 +1542,6 @@ const miscB: Record<string, string> = {
   "Saves the relay URL and your Cloudflare token to a file.":
     "Aktarma URL'sini ve Cloudflare tokenınızı bir dosyaya kaydeder.",
   "Saving": "Kaydediliyor",
-  "Saving EPUB": "EPUB kaydediliyor",
   "Saving clip…": "Klip kaydediliyor…",
   "Saving to your profile": "Profilinize kaydediliyor",
   "Say it is for personal use": "Kişisel kullanım için olduğunu belirtin",
@@ -1596,14 +1568,12 @@ const miscB: Record<string, string> = {
   "Search chapter": "Bölümde ara",
   "Search chapters": "Bölümlerde ara",
   "Search countries...": "Ülke ara...",
-  "Search eBooks": "eKitaplarda ara",
   "Search every source again": "Tüm kaynaklarda yeniden ara",
   'Search for "Media Assistant" (channel ID 782875, free).':
     '"Media Assistant"ı arayın (kanal kimliği 782875, ücretsiz).',
   "Search icons": "Simge ara",
   "Search languages": "Dil ara",
   "Search languages (Tamil, Telugu, ...)": "Dilleri ara (Tamilce, Teluguca, ...)",
-  "Search movies, shows, anime, manga": "Film, dizi, anime ve manga ara",
   "Search movies, shows, people, genres, years...": "Film, dizi, kişi, tür, yıl ara...",
   "Search themes": "Tema ara",
   "Search title": "Başlık ara",

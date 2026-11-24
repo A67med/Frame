@@ -67,9 +67,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "Aplicando configuração de P2P…",
   "Areas where data already exists let you choose how to combine it.":
     "Nas áreas que já contêm dados, você pode escolher como combiná-los.",
-  Attachments: "Anexos",
-  Automatic: "Automático",
-  Avatar: "Avatar",
+  "Attachments": "Anexos",
+  "Automatic": "Automático",
+  "Avatar": "Avatar",
   "Awards cache": "Cache de prêmios",
   "Badge packs": "Pacotes de selos",
   "Badge rules": "Regras de selos",
@@ -90,7 +90,7 @@ const settingsRefinements: Record<string, string> = {
     "Crie um filtro com nome e aplique no seletor de fontes para reduzir a lista de streams ao que você procura.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton parte para recuperar sua locomotiva roubada.",
-  Canvas: "Fundo",
+  "Canvas": "Fundo",
   "Captions and quiet hints": "Legendas e dicas discretas",
   "Cards need a TMDB key.": "Os cartões precisam de uma chave do TMDB.",
   "Cards need an MDBList key.": "Os cartões precisam de uma chave do MDBList.",
@@ -136,8 +136,6 @@ const settingsRefinements: Record<string, string> = {
     "Escolha quando começa o próximo episódio e quando o Frame verifica se você ainda está assistindo.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Escolha onde o Frame busca legendas. Os resultados das fontes ativas aparecem juntos, sem duplicatas.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "Escolha onde salvar vídeos e eBooks e como organizar as pastas.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "Escolha se deseja bloquear solicitações a serviços conhecidos de publicidade, análise e rastreamento.",
   "Choose which addon results appear when you pick a stream.":
@@ -293,8 +291,6 @@ const settingsRefinements: Record<string, string> = {
     "O Frame não conseguiu verificar a instalação do SVP. Tente novamente.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "O Frame busca legendas nesta ordem. Coloque seu idioma preferido primeiro.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "O Frame nos seus outros dispositivos: aplicativo web, controle pelo celular e controle do leitor de mangás.",
   "Frame profile showing watch statistics":
     "Perfil do Frame com estatísticas de conteúdo assistido",
   "Frame uses its own community server. You can point it at a server you run yourself.":
@@ -372,7 +368,7 @@ const settingsRefinements: Record<string, string> = {
     "Mantenha Automático, a menos que a interface do Frame pisque ou trave. Isso controla a janela do aplicativo, não a reprodução de vídeo.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "Permita que o Frame transmita por P2P deste dispositivo quando não houver link debrid. Desative para impedir a reprodução P2P local. Um servidor remoto configurado ainda pode transmiti-los.",
-  Licence: "Licença",
+  "Licence": "Licença",
   "Licenses & attribution": "Licenças e créditos",
   "Lightens or darkens the whole picture.": "Clareia ou escurece toda a imagem.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -393,10 +389,10 @@ const settingsRefinements: Record<string, string> = {
     "Selecione streams marcados como em cache ou já presentes na sua biblioteca debrid.",
   "Maximum memory used for buffered video.": "Memória máxima usada pelo vídeo em buffer.",
   "Maximum size (GB)": "Tamanho máximo (GB)",
-  Merge: "Mesclar",
+  "Merge": "Mesclar",
   "Minimize to preview (Ctrl/Cmd + P)": "Minimizar para visualizar (Ctrl/Cmd + P)",
   "Minimum seeders": "Mínimo de seeders",
-  Motion: "Movimento",
+  "Motion": "Movimento",
   "Move earlier": "Mover para cima",
   "Move {language} earlier": "Priorizar {language}",
   "Move {name} down": "Mover {name} para baixo",
@@ -431,7 +427,7 @@ const settingsRefinements: Record<string, string> = {
     "Opcional. Deixe um contato se pudermos pedir mais informações e escolha se deseja receber créditos públicos.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "Opcional. Usado para liberar mais tempo de exibição. Sem PIN, troque de perfil quando o tempo acabar.",
-  Pages: "Páginas",
+  "Pages": "Páginas",
   "Pause after several episodes and ask before continuing.":
     "Pause após vários episódios e peça confirmação para continuar.",
   "Pause preview": "Pausar prévia",
@@ -475,7 +471,7 @@ const settingsRefinements: Record<string, string> = {
     "Reabra uma série na posição em que você parou, incluindo a lista de episódios.",
   "Repair & diagnostics": "Reparo e diagnóstico",
   "Report something broken, or support the project.": "Relate um problema ou apoie o projeto.",
-  Required: "Obrigatório",
+  "Required": "Obrigatório",
   "Reset keyboard shortcuts?": "Redefinir atalhos de teclado?",
   "Reset shortcuts": "Redefinir atalhos",
   "Reset {setting}": "Redefinir {setting}",
@@ -759,11 +755,11 @@ const settingsRefinements: Record<string, string> = {
     "Seu acesso, os serviços que registram o que você assiste e seu relay.",
   "Your {n} custom shortcuts will return to their defaults.":
     "Seus {n} atalhos personalizados voltarão aos valores padrão.",
-  code: "código",
+  "code": "código",
   "each poster": "cada pôster",
   "on hover": "ao passar o cursor",
   "poster image": "imagem do pôster",
-  username: "nome de usuário",
+  "username": "nome de usuário",
   "will look on your TV.": "vão ficar na sua TV.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "O {app} tem código aberto. Veja as correções existentes ou contribua com uma para o problema que encontrou.",
@@ -779,8 +775,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} segundos",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "{used} usados de uma cota de {quota}. Vídeos baixados e outros arquivos no disco não estão incluídos.",
-  "Public-domain books for the eBook library.":
-    "Livros de domínio público para a biblioteca de eBooks.",
   "Searchable catalog for Project Gutenberg books.":
     "Catálogo pesquisável dos livros do Project Gutenberg.",
   "Game metadata, artwork and release dates.": "Metadados, imagens e datas de lançamento de jogos.",

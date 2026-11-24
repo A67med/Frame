@@ -65,9 +65,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "جارٍ تطبيق إعداد P2P…",
   "Areas where data already exists let you choose how to combine it.":
     "يمكنك اختيار كيفية دمج البيانات في الأقسام التي تحتوي على بيانات مسبقًا.",
-  Attachments: "المرفقات",
-  Automatic: "تلقائي",
-  Avatar: "الصورة الرمزية",
+  "Attachments": "المرفقات",
+  "Automatic": "تلقائي",
+  "Avatar": "الصورة الرمزية",
   "Awards cache": "ذاكرة التخزين المؤقت للجوائز",
   "Badge packs": "حزم الشارات",
   "Badge rules": "قواعد الشارات",
@@ -88,7 +88,7 @@ const settingsRefinements: Record<string, string> = {
     "أنشئ فلترًا باسم، ثم طبّقه في منتقي المصادر لتقتصر قائمة البث على ما تريده.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "ينطلق Buster Keaton لاستعادة قاطرته المسروقة.",
-  Canvas: "الخلفية",
+  "Canvas": "الخلفية",
   "Captions and quiet hints": "التسميات والتلميحات الخفيفة",
   "Cards need a TMDB key.": "تتطلّب البطاقات مفتاح TMDB.",
   "Cards need an MDBList key.": "تتطلّب البطاقات مفتاح MDBList.",
@@ -133,8 +133,6 @@ const settingsRefinements: Record<string, string> = {
     "اختر متى تبدأ الحلقة التالية ومتى يتحقّق Frame من استمرار المشاهدة.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "اختر أين يبحث Frame عن الترجمة. تظهر نتائج المصادر المفعّلة معًا بعد إزالة التكرارات.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "اختر مكان حفظ الفيديوهات والكتب الإلكترونية وطريقة تنظيم مجلداتها.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "اختر ما إذا كنت تريد حظر الطلبات إلى خدمات الإعلانات والتحليلات والتتبّع المعروفة.",
   "Choose which addon results appear when you pick a stream.":
@@ -282,8 +280,6 @@ const settingsRefinements: Record<string, string> = {
     "تعذّر على Frame التحقّق من تثبيت SVP. حاول مجددًا.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "يبحث Frame عن الترجمات بهذا الترتيب. ضع لغتك المفضّلة أولًا.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "Frame على أجهزتك الأخرى: تطبيق الويب، والتحكم عبر الهاتف، والتحكم بقارئ المانغا.",
   "Frame profile showing watch statistics": "ملف شخصي في Frame يعرض إحصاءات المشاهدة",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "يستخدم Frame خادم المجتمع الخاص به. يمكنك توجيهه إلى خادم تديره بنفسك.",
@@ -358,7 +354,7 @@ const settingsRefinements: Record<string, string> = {
     "اتركه على تلقائي ما لم تومض واجهة Frame أو تتقطّع. يتحكّم هذا في نافذة التطبيق، لا في تشغيل الفيديو.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "اسمح لـ Frame بالبث عبر P2P من هذا الجهاز عند عدم توفّر رابط debrid. أوقفه لمنع تشغيل P2P محليًا. يظل بإمكان خادم بعيد مهيّأ بثّها.",
-  Licence: "الترخيص",
+  "Licence": "الترخيص",
   "Licenses & attribution": "التراخيص ونسب الأعمال",
   "Lightens or darkens the whole picture.": "يفتح الصورة بأكملها أو يغمّقها.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -379,10 +375,10 @@ const settingsRefinements: Record<string, string> = {
     "مطابقة البث المحدد بأنه مخزّن مؤقتًا أو موجود بالفعل في مكتبة debrid لديك.",
   "Maximum memory used for buffered video.": "الحد الأقصى للذاكرة المستخدمة لتخزين الفيديو مؤقتًا.",
   "Maximum size (GB)": "الحجم الأقصى (GB)",
-  Merge: "دمج",
+  "Merge": "دمج",
   "Minimize to preview (Ctrl/Cmd + P)": "تصغير للمعاينة (Ctrl/Cmd + P)",
   "Minimum seeders": "الحد الأدنى للموزّعين",
-  Motion: "الحركة",
+  "Motion": "الحركة",
   "Move earlier": "رفع الأولوية",
   "Move {language} earlier": "رفع أولوية {language}",
   "Move {name} down": "نقل {name} لأسفل",
@@ -417,7 +413,7 @@ const settingsRefinements: Record<string, string> = {
     "اختياري. اترك بيانات الاتصال إذا كنت تسمح لنا بالمتابعة، واختر إن كنت تريد ذكر اسمك علنًا.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "اختياري. يُستخدم للسماح بوقت مشاهدة إضافي. دون رمز PIN، بدّل الملف الشخصي عند انتهاء الوقت.",
-  Pages: "الصفحات",
+  "Pages": "الصفحات",
   "Pause after several episodes and ask before continuing.":
     "أوقف التشغيل مؤقتًا بعد عدة حلقات واسأل قبل المتابعة.",
   "Pause preview": "إيقاف المعاينة مؤقتًا",
@@ -459,7 +455,7 @@ const settingsRefinements: Record<string, string> = {
     "أعد فتح المسلسل عند الموضع الذي تركته فيه، بما في ذلك قائمة حلقاته.",
   "Repair & diagnostics": "الإصلاح والتشخيص",
   "Report something broken, or support the project.": "أبلغ عن خلل أو ادعم المشروع.",
-  Required: "مطلوب",
+  "Required": "مطلوب",
   "Reset keyboard shortcuts?": "إعادة ضبط اختصارات لوحة المفاتيح؟",
   "Reset shortcuts": "إعادة ضبط الاختصارات",
   "Reset {setting}": "إعادة ضبط {setting}",
@@ -734,11 +730,11 @@ const settingsRefinements: Record<string, string> = {
     "تسجيل دخولك وخدمات تتبّع مشاهداتك ومرحل الاتصال الخاص بك.",
   "Your {n} custom shortcuts will return to their defaults.":
     "ستعود اختصاراتك المخصصة وعددها {n} إلى إعداداتها الافتراضية.",
-  code: "الكود",
+  "code": "الكود",
   "each poster": "كل ملصق",
   "on hover": "عند تمرير المؤشر",
   "poster image": "صورة الملصق",
-  username: "اسم المستخدم",
+  "username": "اسم المستخدم",
   "will look on your TV.": "على تلفزيونك.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} مفتوح المصدر. اطّلع على الإصلاحات المتاحة أو ساهم بإصلاح للمشكلة التي واجهتها.",
@@ -753,7 +749,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} ثانية",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "المستخدم {used} من مساحة تخزين قدرها {quota}. لا يشمل ذلك تنزيلات الفيديو أو الملفات الأخرى على القرص.",
-  "Public-domain books for the eBook library.": "كتب من الملكية العامة لمكتبة الكتب الإلكترونية.",
   "Searchable catalog for Project Gutenberg books.": "فهرس قابل للبحث لكتب Project Gutenberg.",
   "Game metadata, artwork and release dates.": "بيانات الألعاب وصورها وتواريخ إصدارها.",
   "Live scores, schedules and standings.": "النتائج المباشرة والجداول والترتيب.",
@@ -786,7 +781,7 @@ const settingsRefinements: Record<string, string> = {
   "Click to choose": "انقر للاختيار",
   "Default drifts through backdrops from what's trending. Boat plays a hand drawn illustration. Custom plays your own videos, GIFs, or images.":
     "يعرض الافتراضي خلفيات من المحتوى الرائج. يعرض القارب رسماً يدوياً. يعرض المخصص مقاطع الفيديو أو صور GIF أو الصور التي تختارها.",
-  Boat: "قارب",
+  "Boat": "قارب",
   "Your screensavers": "شاشات التوقف الخاصة بك",
   "Add videos, GIFs, or images from this computer. Videos loop with the sound off, and everything fills the screen.":
     "أضف مقاطع فيديو أو صور GIF أو صوراً من هذا الجهاز. تتكرر مقاطع الفيديو دون صوت، ويملأ المحتوى الشاشة.",
@@ -794,9 +789,9 @@ const settingsRefinements: Record<string, string> = {
     "لم تُضف شيئاً بعد. تظهر شاشة التوقف الافتراضية حتى تضيف محتوى.",
   "Add video, GIF, or image": "إضافة فيديو أو صورة GIF أو صورة",
   "Try it now": "جرّب الآن",
-  GIF: "GIF",
+  "GIF": "GIF",
   "{kind} · In use": "{kind} · قيد الاستخدام",
-  Use: "استخدام",
+  "Use": "استخدام",
   "Previous season": "الموسم السابق",
   "Next season": "الموسم التالي",
   "Speed pop-up": "نافذة السرعة",

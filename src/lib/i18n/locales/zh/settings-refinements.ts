@@ -62,9 +62,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "正在应用 P2P 设置…",
   "Areas where data already exists let you choose how to combine it.":
     "对于已有数据的部分，你可以选择如何合并。",
-  Attachments: "附件",
-  Automatic: "自动",
-  Avatar: "头像",
+  "Attachments": "附件",
+  "Automatic": "自动",
+  "Avatar": "头像",
   "Awards cache": "奖项缓存",
   "Badge packs": "徽章包",
   "Badge rules": "徽章规则",
@@ -85,7 +85,7 @@ const settingsRefinements: Record<string, string> = {
     "创建并命名筛选器，然后在来源选择器中应用，将繁杂的播放列表缩减为你想要的结果。",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton 出发去找回被盗的机车。",
-  Canvas: "画布",
+  "Canvas": "画布",
   "Captions and quiet hints": "说明文字和轻提示",
   "Cards need a TMDB key.": "卡片需要 TMDB 密钥。",
   "Cards need an MDBList key.": "卡片需要 MDBList 密钥。",
@@ -129,8 +129,6 @@ const settingsRefinements: Record<string, string> = {
     "选择下一集何时开始，以及 Frame 何时确认你是否仍在观看。",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "选择 Frame 搜索字幕的来源。已启用来源的结果会合并显示，并去除重复项。",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "选择视频和电子书的保存位置，以及文件夹的组织方式。",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "选择是否阻止向已知广告、分析和跟踪服务发出的请求。",
   "Choose which addon results appear when you pick a stream.": "选择挑选播放源时显示哪些扩展结果。",
@@ -273,8 +271,6 @@ const settingsRefinements: Record<string, string> = {
   "Frame couldn't check the SVP installation. Try again.": "Frame 无法检查 SVP 安装。请重试。",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame 按此顺序查找字幕。请将首选语言放在最前面。",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "在其他设备上使用 Frame：网页版、手机遥控器和漫画阅读器遥控器。",
   "Frame profile showing watch statistics": "显示观看统计的 Frame 个人资料",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame 使用自己的社区服务器。你也可以将其设置为使用自行运行的服务器。",
@@ -346,7 +342,7 @@ const settingsRefinements: Record<string, string> = {
     "除非 Frame 界面闪烁或卡顿，否则保持自动。此项控制应用窗口，不影响视频播放。",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "debrid 链接不可用时，允许 Frame 从此设备通过 P2P 播放。关闭可阻止本地 P2P 播放。已配置的远程服务器仍可播放。",
-  Licence: "许可证",
+  "Licence": "许可证",
   "Licenses & attribution": "许可证与署名",
   "Lightens or darkens the whole picture.": "使整个画面变亮或变暗。",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -367,10 +363,10 @@ const settingsRefinements: Record<string, string> = {
     "匹配标记为已缓存或已在 debrid 媒体库中的播放源。",
   "Maximum memory used for buffered video.": "缓冲视频可使用的最大内存。",
   "Maximum size (GB)": "最大大小 (GB)",
-  Merge: "合并",
+  "Merge": "合并",
   "Minimize to preview (Ctrl/Cmd + P)": "最小化以预览 (Ctrl/Cmd + P)",
   "Minimum seeders": "最少做种人数",
-  Motion: "动态效果",
+  "Motion": "动态效果",
   "Move earlier": "提高优先级",
   "Move {language} earlier": "提高{language}的优先级",
   "Move {name} down": "下移{name}",
@@ -404,7 +400,7 @@ const settingsRefinements: Record<string, string> = {
     "可选。如允许我们后续联系，请留下联系方式，并选择是否公开署名。",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "可选。用于延长观看时间。未设置 PIN 时，时间用尽后需切换个人资料。",
-  Pages: "页面",
+  "Pages": "页面",
   "Pause after several episodes and ask before continuing.": "连续播放数集后暂停，并询问是否继续。",
   "Pause preview": "暂停预览",
   "Pick the playback engine and aspect, shape the audio, and set how episodes skip and advance.":
@@ -443,7 +439,7 @@ const settingsRefinements: Record<string, string> = {
     "重新打开剧集时，恢复到上次离开的位置，包括分集列表。",
   "Repair & diagnostics": "修复与诊断",
   "Report something broken, or support the project.": "报告故障，或支持本项目。",
-  Required: "必填",
+  "Required": "必填",
   "Reset keyboard shortcuts?": "重置键盘快捷键？",
   "Reset shortcuts": "重置快捷键",
   "Reset {setting}": "重置{setting}",
@@ -705,11 +701,11 @@ const settingsRefinements: Record<string, string> = {
     "登录、观看记录服务和中继。",
   "Your {n} custom shortcuts will return to their defaults.":
     "你的 {n} 个自定义快捷键将恢复为默认值。",
-  code: "代码",
+  "code": "代码",
   "each poster": "每张海报",
   "on hover": "悬停时",
   "poster image": "海报图片",
-  username: "用户名",
+  "username": "用户名",
   "will look on your TV.": "在电视上的显示效果。",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} 是开源软件。你可以查找现有修复，或为发现的问题贡献补丁。",
@@ -724,7 +720,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} 秒",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "存储配额为 {quota}，已使用 {used}。不包括下载的视频和磁盘上的其他文件。",
-  "Public-domain books for the eBook library.": "电子书库中的公版图书。",
   "Searchable catalog for Project Gutenberg books.": "可搜索的 Project Gutenberg 图书目录。",
   "Game metadata, artwork and release dates.": "游戏元数据、图片和发行日期。",
   "Live scores, schedules and standings.": "实时比分、赛程和积分榜。",

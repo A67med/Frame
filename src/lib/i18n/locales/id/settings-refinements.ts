@@ -66,9 +66,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "Menerapkan pengaturan P2P…",
   "Areas where data already exists let you choose how to combine it.":
     "Untuk bagian yang sudah memiliki data, Anda dapat memilih cara menggabungkannya.",
-  Attachments: "Lampiran",
-  Automatic: "Otomatis",
-  Avatar: "Avatar",
+  "Attachments": "Lampiran",
+  "Automatic": "Otomatis",
+  "Avatar": "Avatar",
   "Awards cache": "Cache penghargaan",
   "Badge packs": "Paket lencana",
   "Badge rules": "Aturan lencana",
@@ -89,7 +89,7 @@ const settingsRefinements: Record<string, string> = {
     "Buat filter bernama sekali, lalu terapkan di pemilih sumber untuk menyaring daftar stream yang ramai sesuai keinginan Anda.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton berangkat untuk merebut kembali lokomotifnya yang dicuri.",
-  Canvas: "Kanvas",
+  "Canvas": "Kanvas",
   "Captions and quiet hints": "Keterangan dan petunjuk pelengkap",
   "Cards need a TMDB key.": "Kartu memerlukan kunci TMDB.",
   "Cards need an MDBList key.": "Kartu memerlukan kunci MDBList.",
@@ -136,8 +136,6 @@ const settingsRefinements: Record<string, string> = {
     "Pilih kapan episode berikutnya dimulai dan kapan Frame memastikan Anda masih menonton.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Pilih tempat Frame mencari subtitle. Hasil dari sumber aktif ditampilkan bersama tanpa duplikat.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "Pilih lokasi penyimpanan video dan eBook, serta susunan foldernya.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "Pilih apakah permintaan ke layanan iklan, analitik, dan pelacakan yang dikenal akan diblokir.",
   "Choose which addon results appear when you pick a stream.":
@@ -291,8 +289,6 @@ const settingsRefinements: Record<string, string> = {
     "Frame tidak dapat memeriksa instalasi SVP. Coba lagi.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame mencari subtitle dalam urutan ini. Tempatkan bahasa pilihan Anda di urutan pertama.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "Frame di perangkat lain: aplikasi web, remote ponsel, dan remote pembaca manga.",
   "Frame profile showing watch statistics": "Profil Frame yang menampilkan statistik tontonan",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame menggunakan server komunitasnya sendiri. Anda dapat mengarahkannya ke server yang Anda kelola sendiri.",
@@ -371,7 +367,7 @@ const settingsRefinements: Record<string, string> = {
     "Biarkan pada Otomatis kecuali antarmuka Frame berkedip atau tersendat. Ini mengatur jendela aplikasi, bukan pemutaran video.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "Izinkan Frame melakukan streaming melalui P2P dari perangkat ini jika tautan debrid tidak tersedia. Nonaktifkan untuk mencegah pemutaran P2P lokal. Server jarak jauh yang dikonfigurasi tetap dapat melakukan streaming.",
-  Licence: "Lisensi",
+  "Licence": "Lisensi",
   "Licenses & attribution": "Lisensi & atribusi",
   "Lightens or darkens the whole picture.": "Mencerahkan atau menggelapkan seluruh gambar.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -392,10 +388,10 @@ const settingsRefinements: Record<string, string> = {
     "Cocokkan stream yang ditandai sudah di-cache atau sudah ada di pustaka debrid Anda.",
   "Maximum memory used for buffered video.": "Memori maksimum untuk menyimpan buffer video.",
   "Maximum size (GB)": "Ukuran maksimum (GB)",
-  Merge: "Gabungkan",
+  "Merge": "Gabungkan",
   "Minimize to preview (Ctrl/Cmd + P)": "Minimalkan untuk melihat pratinjau (Ctrl/Cmd + P)",
   "Minimum seeders": "Seeder minimum",
-  Motion: "Gerakan",
+  "Motion": "Gerakan",
   "Move earlier": "Naikkan prioritas",
   "Move {language} earlier": "Prioritaskan {language}",
   "Move {name} down": "Pindahkan {name} ke bawah",
@@ -430,7 +426,7 @@ const settingsRefinements: Record<string, string> = {
     "Opsional. Tinggalkan informasi kontak jika Anda bersedia dihubungi, lalu pilih apakah nama Anda boleh dicantumkan secara publik.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "Opsional. Digunakan untuk menambah waktu menonton. Tanpa PIN, ganti profil saat waktu habis.",
-  Pages: "Halaman",
+  "Pages": "Halaman",
   "Pause after several episodes and ask before continuing.":
     "Jeda setelah beberapa episode dan minta konfirmasi sebelum melanjutkan.",
   "Pause preview": "Jeda pratinjau",
@@ -474,7 +470,7 @@ const settingsRefinements: Record<string, string> = {
     "Buka kembali serial di posisi terakhir Anda, termasuk daftar episodenya.",
   "Repair & diagnostics": "Perbaikan & diagnostik",
   "Report something broken, or support the project.": "Laporkan masalah atau dukung proyek ini.",
-  Required: "Wajib",
+  "Required": "Wajib",
   "Reset keyboard shortcuts?": "Reset pintasan keyboard?",
   "Reset shortcuts": "Reset pintasan",
   "Reset {setting}": "Atur ulang {setting}",
@@ -756,11 +752,11 @@ const settingsRefinements: Record<string, string> = {
     "Akun Anda, layanan pencatat tontonan, dan relay Anda.",
   "Your {n} custom shortcuts will return to their defaults.":
     "{n} pintasan khusus Anda akan kembali ke default.",
-  code: "kode",
+  "code": "kode",
   "each poster": "setiap poster",
   "on hover": "saat kursor diarahkan",
   "poster image": "gambar poster",
-  username: "nama pengguna",
+  "username": "nama pengguna",
   "will look on your TV.": "akan terlihat di TV Anda.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} bersifat sumber terbuka. Lihat perbaikan yang tersedia atau kirim patch untuk masalah yang Anda temukan.",
@@ -775,7 +771,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} detik",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "{used} terpakai dari jatah penyimpanan {quota}. Unduhan video dan berkas lain di disk tidak termasuk.",
-  "Public-domain books for the eBook library.": "Buku domain publik untuk pustaka eBook.",
   "Searchable catalog for Project Gutenberg books.":
     "Katalog buku Project Gutenberg yang dapat dicari.",
   "Game metadata, artwork and release dates.": "Metadata, gambar, dan tanggal rilis gim.",

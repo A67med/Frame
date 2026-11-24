@@ -17,21 +17,18 @@ const wired: Record<string, string> = {
   "Theme studio": "Estúdio de temas",
   "Untitled theme": "Tema sem título",
   "Undo (Ctrl/Cmd + Z)": "Desfazer (Ctrl/Cmd + Z)",
-  Redo: "Refazer",
+  "Redo": "Refazer",
   "Redo (Ctrl/Cmd + Shift + Z)": "Refazer (Ctrl/Cmd + Shift + Z)",
   "Close studio": "Fechar estúdio",
-  Button: "Botão",
+  "Button": "Botão",
   "Sample title": "Título de exemplo",
   "Panel surface": "Superfície do painel",
   "Secondary copy sits here.": "O texto secundário aparece aqui.",
-  Primary: "Primário",
-  Secondary: "Secundário",
+  "Primary": "Primário",
+  "Secondary": "Secundário",
   "Organize downloads into folders by movie or series name":
     "Organizar downloads em pastas pelo nome do filme ou da série",
-  eBooks: "Livros digitais",
-  "Create folders for eBooks": "Criar pastas para livros digitais",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Armazenar cada título em sua própria pasta com o arquivo EPUB ou PDF",
+  "eBooks": "Livros digitais",
   "Default location": "Local padrão",
   "{deviceName} is an audio-only device. Frame can't transcode video to audio yet, so this device can only stream audio files. Pick a TV, Chromecast, or display-equipped device to stream video.":
     "{deviceName} é um dispositivo somente de áudio. O Frame ainda não converte vídeo em áudio, então este dispositivo só pode transmitir arquivos de áudio. Escolha uma TV, um Chromecast ou outro dispositivo com tela para transmitir vídeo.",
@@ -83,24 +80,16 @@ const wired: Record<string, string> = {
   "Loading {name}...": "Carregando {name}...",
   "This game couldn't load right now.": "Não foi possível carregar este jogo agora.",
   "Open a folder": "Abrir uma pasta",
-  "Read EPUB, text, Markdown, and HTML books already on this device.":
-    "Leia livros em EPUB, texto, Markdown e HTML que já estão neste dispositivo.",
   "Install an extension": "Instalar uma extensão",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Adicione fontes confiáveis de livros digitais por um repositório compatível com o Frame.",
   "Connect a source": "Conectar uma fonte",
   "Bring a server-rendered library aboard with your own source configuration.":
     "Conecte uma biblioteca fornecida por servidor usando sua própria configuração de fonte.",
   "Frame reading room": "Sala de leitura do Frame",
   "Your shelf is": "Sua estante está",
   "ready for a story.": "pronta para uma história.",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "Configure ao menos uma fonte de livros digitais para começar. Os metadados podem descrever um livro, mas o Frame precisa de uma pasta, extensão ou fonte personalizada para abri-lo.",
-  "Set up eBooks": "Configurar livros digitais",
   "Frame never hosts your books or source files.":
     "O Frame nunca hospeda seus livros nem os arquivos das fontes.",
   "Reserved for your next book": "Reservado para seu próximo livro",
-  "Ways to add an eBook source": "Formas de adicionar uma fonte de livros digitais",
   "Frame {version} downloaded but did not install on its own.":
     "O Frame {version} foi baixado, mas não foi instalado automaticamente.",
   "Mark as unwatched": "Marcar como não assistido",
@@ -142,7 +131,7 @@ const wired: Record<string, string> = {
   "Restart to update": "Reiniciar para atualizar",
   "Update ready": "Atualização pronta",
   "Big Picture": "Modo Big Picture",
-  Dismiss: "Dispensar",
+  "Dismiss": "Dispensar",
   "Download installer": "Baixar instalador",
   "Install and reopen": "Instalar e reabrir",
   "Frame is closing. Frame Setup will finish and reopen it.":
@@ -152,7 +141,7 @@ const wired: Record<string, string> = {
   "Picture and feel": "Imagem e experiência",
   "Getting around the TV": "Navegação na TV",
   "Starting a show": "Ao iniciar um título",
-  Bingeing: "Maratona",
+  "Bingeing": "Maratona",
   "Player controls on the TV": "Controles do player na TV",
   "Episodes and spoilers": "Episódios e spoilers",
   "Languages on the TV": "Idiomas na TV",

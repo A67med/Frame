@@ -6,11 +6,6 @@ const catalog06: Record<string, string> = {
   "Manager": "관리자",
   "Managers": "관리자",
   "Manga": "만화",
-  "Manga adaptation": "만화 각색",
-  "Manga browse cache": "만화 탐색 캐시",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "만화는 아직 Frame 작품과 연결할 수 없어 {n}개를 제외했습니다.",
-  "Manga reader remote": "만화 리더 리모컨",
   "Manic Heart": "광란의 심장",
   "Manifest URL": "매니페스트 URL",
   "Manifest URL copied": "매니페스트 URL이 복사되었습니다",
@@ -259,7 +254,6 @@ const catalog06: Record<string, string> = {
   "My Watchlist": "내 관심 목록",
   "My collection": "내 컬렉션",
   "My collections": "내 컬렉션",
-  "My eBooks": "내 eBook",
   "My filter": "내 필터",
   "My layout": "내 레이아웃",
   "My library": "내 라이브러리",
@@ -436,7 +430,6 @@ const catalog06: Record<string, string> = {
   "No PIN set.": "설정된 PIN이 없습니다.",
   "No Simkl history yet.": "아직 Simkl 시청 기록이 없습니다.",
   "No Simkl premieres this month": "이번 달 Simkl 공개 예정작 없음",
-  "No Suwayomi server at this address": "이 주소에 Suwayomi 서버가 없습니다",
   "No Way Out": "출구 없음",
   "No Wi-Fi address yet. Other devices cannot reach this computer.":
     "아직 Wi-Fi 주소가 없습니다. 다른 기기에서 이 컴퓨터에 연결할 수 없습니다.",
@@ -502,7 +495,6 @@ const catalog06: Record<string, string> = {
   "No date": "날짜 없음",
   "No debrid configured": "Debrid가 설정되지 않음",
   "No description available.": "설명이 없습니다.",
-  "No description is available for this eBook.": "이 eBook의 설명이 없습니다.",
   "No details available for this person.": "이 인물의 상세 정보가 없습니다.",
   "No dimensions set. This filter matches every stream.":
     "설정된 규격이 없습니다. 이 필터는 모든 스트림과 일치합니다.",
@@ -510,7 +502,6 @@ const catalog06: Record<string, string> = {
   "No downloadable episode files were found in this season package. Pick another package.":
     "이 시즌 패키지에서 다운로드 가능한 에피소드 파일을 찾지 못했습니다. 다른 패키지를 선택하세요.",
   "No downloads yet": "아직 다운로드 없음",
-  "No eBooks found.": "eBook을 찾지 못했습니다.",
   "No entries on your AniList lists yet.": "아직 AniList 목록에 항목이 없습니다.",
   "No entries on your MyAnimeList lists yet.": "아직 MyAnimeList 목록에 항목이 없습니다.",
   "No episodes available for this season.": "이 시즌에는 시청 가능한 에피소드가 없습니다.",
@@ -625,8 +616,6 @@ const catalog06: Record<string, string> = {
   "No recent activity yet": "아직 최근 활동이 없습니다",
   "No reminders yet. Use the clock on a show's page to get told about new episodes and seasons.":
     "아직 알림이 없습니다. 프로그램 페이지에서 시계 아이콘을 눌러 새 에피소드와 시즌 알림을 받으세요.",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "아직 저장소가 없습니다. 위에서 저장소를 추가하여 eBook 확장 프로그램을 둘러보세요.",
   "No response": "응답 없음",
   "No results found.": "검색 결과가 없습니다.",
   "No reviews from your friends for this film.": "이 영화에 대한 친구의 리뷰가 없습니다.",
@@ -656,7 +645,6 @@ const catalog06: Record<string, string> = {
   "No sources match your filter. Showing all sources.":
     "필터와 일치하는 소스가 없습니다. 모든 소스를 표시합니다.",
   "No status": "상태 없음",
-  "No story summary is available for this eBook.": "이 eBook에는 줄거리 요약이 없습니다.",
   "No streaming sources yet": "아직 스트리밍 소스 없음",
   "No streams match": "일치하는 스트림 없음",
   "No styling": "스타일 없음",

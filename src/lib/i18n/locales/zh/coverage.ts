@@ -168,7 +168,6 @@ const coverage: Record<string, string> = {
   "Set up a Cloudflare relay for Watch Together": "为一起看设置 Cloudflare 中继",
   "The credentials in the URL are wrong. Edit the playlist and double check the username and password against what your provider sent.":
     "URL 中的凭据错误。请编辑播放列表，并仔细核对提供商发送的用户名和密码。",
-  "Hide manga": "隐藏漫画",
   "The host did not respond. The URL may have expired (many providers rotate domains), the server is down, or your network is blocking it. Contact your provider for an updated URL.":
     "主机未响应。URL 可能已过期（许多提供商会更换域名）、服务器已宕机，或你的网络阻止了连接。请联系提供商索取更新后的 URL。",
   "Confirm your current PIN to remove the lock.": "确认当前 PIN 以解除锁定。",
@@ -229,7 +228,6 @@ const coverage: Record<string, string> = {
   "Redeploy to pick up the latest Watch Together fixes. The in-app banner clears once the new version is live.":
     "请重新部署以获取最新的“一起看”修复。新版本上线后，应用内横幅会自动消失。",
   "The playlist server actively refused the connection.": "播放列表服务器主动拒绝了连接。",
-  "Removes the Manga tab from the sidebar.": "从侧边栏移除漫画标签页。",
   "Server URL": "服务器 URL",
   "no tab locks": "没有锁定的标签页",
   "common.cancel": "取消",
@@ -600,29 +598,15 @@ const coverage: Record<string, string> = {
     "使用上方搜索添加影片，或在任意电影或剧集页面点击“添加到列表”。",
   "Advanced: build a plugin": "高级：开发插件",
   "Also Known As": "又名",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "返回 Frame：进入“漫画 > 设置来源 > 你的服务器”，然后粘贴服务器地址（例如 {localUrl}；如果服务器运行在另一台设备上，则粘贴局域网 IP，例如 {lanUrl}）。",
   "Controller preview": "手柄预览",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "无法保存该字体。字体可能无效，或存储空间已满。",
-  "Download and run Suwayomi Server:": "下载并运行 Suwayomi Server：",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "你在 Suwayomi 中启用的每个来源随后都会显示在 Frame 中。网站发生变化时，Suwayomi 会更新扩展，因此它们可以继续使用。",
-  "Everything else, through your own server (Suwayomi)":
-    "其他所有来源均通过你自己的服务器（Suwayomi）",
   "Expand {title} image": "放大 {title} 图片",
-  "Getting manga sources into Frame": "将漫画来源添加到 Frame",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "Frame 还提供实验性插件运行时。如果你想编写来源插件，请查看 Frame 仓库中的 {path}。请仅安装来自可信仓库的插件。",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame 不附带任何漫画或抓取器，它只是阅读器。你需要自行提供来源；这些来源包含的内容归运行来源的人员所有，与 Frame 无关。添加来源有两种方式。",
   "Import failed": "导入失败",
   "It serves a web UI at {url}": "它会在 {url} 提供 Web 界面",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "进入“漫画 > 设置来源 > 本地文件夹”，然后选择一个包含你已拥有漫画的文件夹（CBZ 文件或图片文件夹）。",
   "Native Title": "原文标题",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "在浏览器中打开 {url}。进入“扩展 / 浏览”区域，添加社区来源仓库，然后安装所需来源（有数百个可用）。Suwayomi 使用与 Mihon / Tachiyomi 生态相同的扩展仓库。",
   "Press T to chat...": "按 T 键聊天…",
   "SIMKL rating picker": "SIMKL 评分选择器",
   "Sharing diagnostics": "共享诊断信息",
@@ -733,7 +717,6 @@ const coverage: Record<string, string> = {
   "{name} returned an error ({code}).": "{name} 返回错误（{code}）。",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "添加你使用的所有 Jellyfin、Emby 或 Plex 服务器。",
-  "Add eBook sources from a repository you trust.": "从你信任的仓库添加电子书来源。",
   "All libraries": "所有媒体库",
   "All servers": "所有服务器",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -807,7 +790,6 @@ const coverage: Record<string, string> = {
   "Prefer this device": "优先使用此设备",
   "Preferred home server": "首选家庭服务器",
   "Preparing narration audio": "正在准备朗读音频",
-  "Read eBooks in Frame": "在 Frame 中阅读电子书",
   "Refresh interval in days": "刷新间隔（天）",
   "Refresh policy": "刷新策略",
   "Remove folder?": "移除文件夹？",
@@ -855,7 +837,6 @@ const coverage: Record<string, string> = {
   "When the audio and subtitle use different languages, Frame compares a release-matched subtitle in the audio language. It only offers a fix unless every safety check is measured.":
     "当音频和字幕使用不同语言时，Frame 会与音频语言中匹配同一发行版本的字幕进行比较。除非所有安全检查都已完成测量，否则只会提供修正建议。",
   "New York Times": "New York Times",
-  "Bestseller lists in the eBook section.": "eBook 区域中的畅销书榜单。",
   "New York Times · bestseller lists": "New York Times · 畅销书榜单",
   "NYT Books API key": "NYT Books API 密钥",
   "Choose whether Frame prefers direct and debrid sources, peer-to-peer torrents, or shows both.":

@@ -4,10 +4,9 @@ const used: Record<string, string> = {
   "A compact upright slider that boosts past 100 percent.":
     "Ein kompakter vertikaler Regler, der über 100 Prozent hinaus verstärkt.",
   "AI (Gemini)": "KI (Gemini)",
-  Accept: "Akzeptieren",
+  "Accept": "Akzeptieren",
   "Ad detected": "Werbung erkannt",
   "Add a TMDB key to load rankings": "Füge einen TMDB-Schlüssel hinzu, um Ranglisten zu laden",
-  "Add a manga source to open these": "Manga-Quelle hinzufügen, um diese zu öffnen",
   "Add tags (anime, horror, cozy...)": "Tags hinzufügen (Anime, Horror, gemütlich...)",
   "Add your TMDB key in Settings first":
     "Füge zuerst deinen TMDB-Schlüssel in den Einstellungen hinzu",
@@ -21,7 +20,7 @@ const used: Record<string, string> = {
   "Any rating": "Beliebige Bewertung",
   "Anyone can find and join from search":
     "Jeder kann die Gruppe über die Suche finden und beitreten",
-  AudD: "AudD",
+  "AudD": "AudD",
   "Auto-adjusts styled (ASS) subtitles so dialogue stays the same size across files, while keeping their colors, fonts, and sign placement.":
     "Passt formatierte Untertitel (ASS) automatisch so an, dass Dialoge in allen Dateien gleich groß bleiben, während Farben, Schriftarten und die Platzierung von Schildern erhalten bleiben.",
   "Autoplay profile songs": "Profilsongs automatisch abspielen",
@@ -37,7 +36,7 @@ const used: Record<string, string> = {
   "Bulk upload is not live yet, sending one rating per second.":
     "Der Massenupload ist noch nicht verfügbar, daher wird eine Bewertung pro Sekunde gesendet.",
   "Cancel import": "Import abbrechen",
-  Cancelling: "Wird abgebrochen",
+  "Cancelling": "Wird abgebrochen",
   "Checking SVP installation...": "SVP-Installation wird überprüft...",
   "Checking the local SVP and VapourSynth installation...":
     "Lokale SVP- und VapourSynth-Installation wird geprüft...",
@@ -57,21 +56,21 @@ const used: Record<string, string> = {
   "Couldn't load this collection": "Diese Sammlung konnte nicht geladen werden",
   "Danish Cinema": "Dänisches Kino",
   "Danish Films": "Dänische Filme",
-  Decline: "Ablehnen",
-  Department: "Abteilung",
+  "Decline": "Ablehnen",
+  "Department": "Abteilung",
   "Dismiss notification": "Benachrichtigung schließen",
   "Down {n} this week": "Diese Woche um {n} Plätze gefallen",
   "Drop your export here, or click to browse":
     "Ziehe deinen Export hierher oder klicke, um eine Datei auszuwählen",
-  Earlier: "Früher",
-  End: "Ende",
+  "Earlier": "Früher",
+  "End": "Ende",
   "Explore the all-time greatest actors, directors and more":
     "Entdecke die größten Schauspieler, Regisseure und weitere Filmschaffende aller Zeiten",
   "Failed to save": "Speichern fehlgeschlagen",
   "Featured order": "Reihenfolge der Highlights",
-  Filmography: "Filmografie",
+  "Filmography": "Filmografie",
   "Find a group": "Gruppe suchen",
-  Found: "Gefunden",
+  "Found": "Gefunden",
   "French Films": "Französische Filme",
   "Frequent Collaborators": "Häufige Mitwirkende",
   "Friend requests": "Freundschaftsanfragen",
@@ -115,7 +114,7 @@ const used: Record<string, string> = {
   "Imported {n} ratings from {name}": "{n} Bewertungen von {name} importiert",
   "Indian Cinema": "Indisches Kino",
   "Indian Films": "Indische Filme",
-  Insert: "Einfügen",
+  "Insert": "Einfügen",
   "Install more shaders in Settings, Shaders to switch between them here.":
     "Installiere unter Einstellungen > Shader weitere Shader, um hier zwischen ihnen zu wechseln.",
   "Installed and detected. Frame found the native svpflow plugins and VapourSynth script library.":
@@ -123,7 +122,7 @@ const used: Record<string, string> = {
   "Installed packs": "Installierte Pakete",
   "Installed shaders": "Installierte Shader",
   "Invited by {name}": "Von {name} eingeladen",
-  Invites: "Einladungen",
+  "Invites": "Einladungen",
   "Italian Cinema": "Italienisches Kino",
   "Italian Films": "Italienische Filme",
   "Japanese Films": "Japanische Filme",
@@ -133,10 +132,8 @@ const used: Record<string, string> = {
     "Übrig gebliebene Installationsprogramme früherer Updates, zwischengespeicherte Trailer und temporäre Dateien für die Übertragung auf andere Geräte. Frame löscht beim Start alte Dateien und behält nur das neueste Installationsprogramm.",
   "Local storage is full, these ratings live on your account only.":
     "Der lokale Speicher ist voll. Diese Bewertungen werden nur in deinem Konto gespeichert.",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Manga können noch keinem Frame-Titel zugeordnet werden, daher wurden {n} ausgelassen.",
   "Mark all read": "Alle als gelesen markieren",
-  Minecraft: "Minecraft",
+  "Minecraft": "Minecraft",
   "Modern Russian Series": "Moderne russische Serien",
   "Mute all profile songs": "Alle Profilsongs stummschalten",
   "Native 48/60fps motion through your Linux SVP and VapourSynth installation, rendered inside Frame's embedded player.":
@@ -155,7 +152,7 @@ const used: Record<string, string> = {
   "Nothing to preview yet.": "Noch keine Vorschau verfügbar.",
   "Nothing was imported": "Nichts wurde importiert",
   "Nothing was saved.": "Es wurde nichts gespeichert.",
-  Notification: "Benachrichtigung",
+  "Notification": "Benachrichtigung",
   "On by default: once you've watched every episode that has aired, the show leaves Continue Watching and returns when a new episode drops. Turn it off to keep caught-up shows on the row.":
     "Standardmäßig aktiviert: Sobald du alle bisher ausgestrahlten Folgen angesehen hast, wird die Serie aus „Weiterschauen“ entfernt und kehrt bei Erscheinen einer neuen Folge zurück. Schalte dies aus, damit Serien, bei denen du auf dem neuesten Stand bist, in der Reihe bleiben.",
   "Only people you add can join": "Nur von dir hinzugefügte Personen können beitreten",
@@ -171,7 +168,7 @@ const used: Record<string, string> = {
   "Pick your language": "Deine Sprache auswählen",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "Beliebte Community-Add-ons, sortiert nach den Sternbewertungen des öffentlichen Verzeichnisses. Alles Weitere kannst du per URL im Tab „Entdecken“ installieren.",
-  Popularity: "Beliebtheit",
+  "Popularity": "Beliebtheit",
   "Portuguese-Language": "Portugiesischsprachig",
   "Profile song": "Profilsong",
   "Profile songs": "Profilsongs",
@@ -193,11 +190,10 @@ const used: Record<string, string> = {
   "Russian Drama": "Russische Dramen",
   "Russian Films": "Russische Filme",
   "Russian Movies": "Russische Filme",
-  SCORE: "PUNKTZAHL",
+  "SCORE": "PUNKTZAHL",
   "SVP is not supported by this Frame package.":
     "SVP wird von diesem Frame-Paket nicht unterstützt.",
-  "Search movies, shows, anime, manga": "Filme, Serien, Anime und Manga suchen",
-  Shaders: "Shader",
+  "Shaders": "Shader",
   "Show card": "Karte anzeigen",
   "Showing last synced ranking": "Zuletzt synchronisierte Rangliste wird angezeigt",
   "Shows a small green dot on the player's subtitle button while a subtitle track is active. Turn it off if you would rather keep the controls clean.":
@@ -208,7 +204,7 @@ const used: Record<string, string> = {
   "Skipped, not rated or not supported": "Übersprungen, nicht bewertet oder nicht unterstützt",
   "Something went wrong reaching the ranking feed.":
     "Beim Abrufen des Ranking-Feeds ist ein Fehler aufgetreten.",
-  Sort: "Sortieren",
+  "Sort": "Sortieren",
   "Soviet Classics": "Sowjetische Klassiker",
   "Spanish-Language": "Spanischsprachig",
   "Start import": "Import starten",
@@ -223,9 +219,8 @@ const used: Record<string, string> = {
   "The all-time greats": "Die Besten aller Zeiten",
   "The server stopped responding, the rest stayed on this device.":
     "Der Server antwortete nicht mehr, der Rest blieb auf diesem Gerät.",
-  Timer: "Timer",
+  "Timer": "Timer",
   "Top 100": "Top 100",
-  "Top Manga": "Beste Manga",
   "Top People": "Top-Persönlichkeiten",
   "Trending and Top on TMDB read live data, which needs your own TMDB key.":
     "„Trending“ und „Top“ auf TMDB verwenden Live-Daten, für die du einen eigenen TMDB-Schlüssel benötigst.",
@@ -234,7 +229,7 @@ const used: Record<string, string> = {
   "Up {n} this week": "Diese Woche um {n} Plätze gestiegen",
   "User-made badge packs from the community store":
     "Von Nutzern erstellte Abzeichenpakete aus dem Community-Store",
-  Vertical: "Vertikal",
+  "Vertical": "Vertikal",
   "View badges": "Abzeichen anzeigen",
   "View {name}": "{name} anzeigen",
   "Watch now": "Jetzt ansehen",
@@ -263,7 +258,7 @@ const used: Record<string, string> = {
   "and {count} more": "und {count} weitere",
   "and {n} more": "und {n} weitere",
   "avg rating {r} across {n} titles": "Ø-Bewertung {r} bei {n} Titeln",
-  edited: "bearbeitet",
+  "edited": "bearbeitet",
   "from {source}": "von {source}",
   "lead or co-lead of {n} acclaimed titles":
     "Hauptrolle oder gleichberechtigte Hauptrolle in {n} gefeierten Titeln",

@@ -251,8 +251,6 @@ const catalog01: Record<string, string> = {
     "친구를 추가하면 친구의 시청 내역, 평점, 즐겨찾기가 여기에 표시됩니다.",
   "Add a list": "목록 하나 추가",
   "Add a local folder": "로컬 폴더 추가",
-  "Add a manga source": "만화 소스 추가",
-  "Add a manga source to open these": "이 항목을 열려면 만화 소스를 추가하세요",
   "Add a movie or show to this list...": "이 목록에 영화 또는 시리즈 추가...",
   "Add a playlist": "재생목록 추가",
   "Add a profile for someone else and everyone keeps their own Continue Watching, watch history, and progress.":
@@ -334,8 +332,6 @@ const catalog01: Record<string, string> = {
   "Add to watchlist": "관심 목록에 추가",
   "Add to your watchlist": "관심 목록에 추가",
   "Add to {name}": "{name}에 추가",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Frame 호환 저장소에서 신뢰할 수 있는 eBook 소스를 추가합니다.",
   "Add up to 6 screenshots so people can see your theme in action. Optional, but they sell it.":
     "스크린샷을 최대 6장 추가하여 테마가 적용된 모습을 보여 주세요. 선택 사항이지만 테마를 돋보이게 합니다.",
   "Add up to {max} profiles. Enter your handle only, not the full link.":
@@ -861,7 +857,6 @@ const catalog01: Record<string, string> = {
   "Back to browse": "탐색으로 돌아가기",
   "Back to collections": "컬렉션으로 돌아가기",
   "Back to details": "상세 정보로 돌아가기",
-  "Back to eBook actions": "eBook 작업으로 돌아가기",
   "Back to editing": "편집으로 돌아가기",
   "Back to home": "홈으로 돌아가기",
   "Back to library": "라이브러리로 돌아가기",

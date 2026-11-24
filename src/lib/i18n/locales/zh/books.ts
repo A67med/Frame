@@ -14,13 +14,11 @@ const books: Record<string, string> = {
   "Customize each award": "自定义每个奖项",
   "Finds anime saved under a movie or series id (which breaks Continue Watching and Trakt) and removes just those so they re-add correctly.":
     "查找保存在电影或剧集 ID 下的动漫（这会导致“继续观看”和 Trakt 异常），并仅移除这些条目，以便正确重新添加。",
-  "Hide manga": "隐藏漫画",
   "How to make an award pack": "如何制作奖项包",
   "Live web (Jina Reader)": "实时网页（Jina Reader）",
   "No issues found. Your anime library looks clean.": "未发现问题。你的动漫媒体库一切正常。",
   "Removes the Anime tab and every anime title from all rows everywhere: Home, Discover, Top 10, and catalogs. Western animation like Pixar is kept, and you can still find anime by searching.":
     "移除动漫标签页，并从首页、发现、Top 10 和目录等所有位置的各行中移除全部动漫内容。Pixar 等欧美动画会保留，你仍可通过搜索找到动漫。",
-  "Removes the Manga tab from the sidebar.": "从侧边栏移除漫画标签页。",
   "Repair anime library": "修复动漫媒体库",
   "Show DUB badge on anime cards": "在动漫卡片上显示 DUB 徽章",
   "Show a laurel award tab on winning titles, like Netflix. Replaces the corner award chip and sits centered so it clears the rating and watchlist pills. Pick where it sits below.":
@@ -83,48 +81,23 @@ const books: Record<string, string> = {
     "剧集和动漫的分集编排方式。默认使用 TVDB：无需密钥即可提供动漫爱好者需要的篇章顺序、DVD 顺序和绝对顺序。TMDB 则保留普通的首播顺序。无论选择哪种方式，所有单集的播放和已观看标记都不受影响。",
   "Turns the season button into a full panel: order tabs (Aired, DVD, Absolute, and any the show has) plus a season table with air-date ranges and episode counts. On by default for anime through Frame's TVDB service, no key needed. Add your own TVDB key to use it for regular shows too.":
     "将季按钮变成完整面板，其中包含顺序标签页（首播、DVD、绝对顺序以及该剧提供的任何其他顺序）和显示播出日期范围及集数的季表格。通过 Frame 的 TVDB 服务，此功能默认对动漫开启且无需密钥。添加你自己的 TVDB 密钥后，也可用于普通剧集。",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "在大屏幕上阅读时，用手机控制漫画翻页阅读器：翻页、缩放和切换模式。阅读期间，阅读器也会显示此链接。",
-  "Manga browse cache": "漫画浏览缓存",
   "Cached chapter lists and browse pages. Downloads stay untouched.":
     "缓存的章节列表和浏览页面。不会影响下载内容。",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "点按任意电影、剧集、漫画或角色上的爱心，即可保存到这里。",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "为电影、剧集、动漫和漫画评分，创建你的评分记录",
   "Search for a book": "搜索书籍",
   "Could not reach the book database": "无法连接书籍数据库",
   "Book search needs an API key before it can run.": "需要先设置 API 密钥才能搜索书籍。",
   "Tune anime": "调整动漫偏好",
   "Shape your anime feed.": "定制你的动漫推荐。",
   "Hide anime I've already watched": "隐藏我已看过的动漫",
-  "Read the Manga": "阅读漫画",
-  "Open manga": "打开漫画",
   "Reading your search": "正在理解你的搜索内容",
   "Favorite Anime": "最喜欢的动漫",
-  "Favorite Manga": "最喜欢的漫画",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "点按电影、剧集或漫画上的星标，或角色上的心形图标，即可保存到这里。",
   "Manga": "漫画",
   "Related Anime": "相关动漫",
   "Add anime to your MyAnimeList and they show up here, grouped by status and ready to edit.":
     "将动画添加到 MyAnimeList 后，它们会按状态分组显示在这里，并可随时编辑。",
-  "Add a manga source": "添加漫画源",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame 不托管任何漫画或内容源。你可以连接自己运行的自托管服务器、从信任的仓库安装源插件，或打开已有的文件夹。",
-  "Browse manga": "浏览漫画",
-  "Read manga in Frame": "在 Frame 中阅读漫画",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame 不托管任何漫画。你可以从信任的仓库添加源插件、连接自己的服务器，或打开本地文件夹。你可以随时在“设置”中关闭此功能。",
-  "Enable manga sources": "启用漫画源",
-  "Keep going in the manga behind the anime you've been watching": "继续阅读你所看动画的原作漫画",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "在连接同一 Wi-Fi 的手机上打开此链接，即可使用手势翻页、缩放和选择章节。请保持此阅读器打开。",
   "Chapter finished": "本章已读完",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "这是 Mangayomi 仓库，但其中的内容源使用 Dart 或并非漫画源，因此 Frame 无法导入。",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "这是 Mangayomi 仓库。Frame 可原生运行其中的 JavaScript 内容源。导入后即可将这些内容源添加到你的漫画库。",
   "Reading subtitles...": "正在读取字幕…",
   "Chapter-finished hint": "章节结束提示",
   "Open in Anime": "在动漫中打开",
@@ -149,8 +122,6 @@ const books: Record<string, string> = {
   "Anime sources are usually richer through Torrentio's anime config or AIOStreams. Make sure one is installed in Stremio.":
     "通过 Torrentio 的动漫配置或 AIOStreams，通常可以找到更多动漫资源。请确保已在 Stremio 中安装其中一个。",
   "Browse by Award": "按奖项浏览",
-  "Open the editor to add the movies, shows, and manga that belong in this collection.":
-    "打开编辑器，添加属于此合集的电影、剧集和漫画。",
   "No data shipped for this award yet. Re-run": "此奖项尚无随附数据。请重新运行",
   "No data shipped for this award yet.": "此奖项尚无随附数据。",
   "Add a TMDB key in Settings to unlock posters and the artists behind this award.":
@@ -211,13 +182,8 @@ const books: Record<string, string> = {
   "the chapter number": "话数",
   "the reader.": "阅读器。",
   "{n} chapter": "{n} 话",
-  "Add a manga source to open these": "添加漫画源以打开这些内容",
   "Add tags (anime, horror, cozy...)": "添加标签（动漫、恐怖、治愈等）",
   "Award winner": "获奖者",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "漫画目前无法与 Frame 作品匹配，因此有 {n} 部漫画未导入。",
-  "Search movies, shows, anime, manga": "搜索电影、剧集、动漫、漫画",
-  "Top Manga": "漫画排行榜",
   "{award} winner": "{award} 得主",
   "{n} {award} wins": "获得 {n} 次 {award}",
   "{wins} major award wins, {noms} nominations": "获得 {wins} 项重要奖项和 {noms} 项提名",
@@ -255,7 +221,6 @@ const books: Record<string, string> = {
   "New Face Award": "新人奖",
   "Only on anime": "仅限动漫",
   "Popular Manga": "热门漫画",
-  "Read manga files you already have": "阅读已有的漫画文件",
   "Reading this device": "正在读取此设备",
   "Restore + upscale. The best all-rounder for most anime.":
     "修复并放大。适合大多数动画的最佳全能方案。",
@@ -272,7 +237,6 @@ const books: Record<string, string> = {
   "{n} award wins": "获奖 {n} 次",
   "{n} {award}": "{n} 个{award}",
   "{n} {award}s": "{n} 个{award}",
-  "Search movies, shows, and manga to add": "搜索电影、剧集和漫画并添加",
   "Nothing to send. All {n} watchlist items are anime, which Trakt can't track.#one":
     "没有可发送的内容。片单中的 {n} 个条目全是动漫，Trakt 无法追踪。",
   "Nothing to send. All {n} watchlist items are anime, which Trakt can't track.#few":
@@ -294,21 +258,11 @@ const books: Record<string, string> = {
   "Latest chapter": "最新章节",
   "Hugo Award Winners": "雨果奖获奖作品",
   "Nebula Award Winners": "星云奖获奖作品",
-  "The eBook download was canceled.": "已取消下载电子书。",
-  "Frame eBook": "Frame 电子书",
-  "This eBook is not connected to an installed source.": "此电子书未关联到已安装的来源。",
   "Loading chapter list…": "正在加载章节列表…",
-  "EPUB eBook": "EPUB 电子书",
-  "The eBook export was canceled.": "已取消导出电子书。",
   "Download a movie, episode, or eBook and it will appear here with its progress and offline status.":
     "下载电影、剧集或电子书后，它会显示在此处，并展示下载进度和离线状态。",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "从 Frame 兼容仓库添加可信的电子书来源。",
   "Frame reading room": "Frame 阅览室",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "请至少设置一个可读取的电子书来源。元数据可以描述图书，但只有文件夹、扩展或自定义来源才能让 Frame 打开图书。",
   "Reserved for your next book": "留给你的下一本书",
-  "Ways to add an eBook source": "添加电子书来源的方式",
   "Add a Google Books API key for book titles, covers, authors, and descriptions. Wikidata works automatically as the final metadata fallback.":
     "添加 Google Books API 密钥，以获取书名、封面、作者和简介。Wikidata 会自动作为最后的元数据备用来源。",
   "Translation runs when a chapter opens and keeps the original if a request fails or is truncated.":
@@ -316,36 +270,19 @@ const books: Record<string, string> = {
   "DeepSeek chapter translation": "DeepSeek 章节翻译",
   "Sends only the chapter you open to DeepSeek. Volumes, chapters, and metadata stay unchanged.":
     "仅将你打开的章节发送给 DeepSeek。卷、章节和元数据均不会更改。",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "选择一个书库文件夹。每个子文件夹代表一本电子书，其中可放入 TXT、Markdown、HTML 或 EPUB 格式的章节文件，也可选择添加封面图片。",
-  "Choose eBook folder": "选择电子书文件夹",
-  "Read eBook files you already have": "阅读你已有的电子书文件",
-  "This repository lists no eBook extensions.": "此仓库中没有电子书扩展。",
-  "Could not load that eBook extension repository": "无法加载该电子书扩展仓库",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "电子书扩展使用 Frame 的隔离式 Worker、HTTP 桥接和 HTML 解析器，与漫画扩展使用相同的沙盒。请仅添加你信任的仓库。",
-  "No repositories yet. Add one above to browse eBook extensions.":
-    "暂无仓库。请在上方添加仓库以浏览电子书扩展。",
   "Connect books you own, trusted reading sources, and metadata services. Frame keeps the shelf coherent while every source stays under your control.":
     "连接你拥有的图书、可信的阅读来源和元数据服务。Frame 会保持书架井然有序，而所有来源始终由你掌控。",
   "Private reading collection": "私人阅读收藏",
-  "eBook source settings": "电子书来源设置",
   "Shape the metadata and reading language Frame uses without changing your original files.":
     "设置 Frame 使用的元数据和阅读语言，而不更改原始文件。",
   "{count} chapter": "{count} 章",
-  "This eBook could not be exported": "无法导出此电子书",
   "Continue Reading": "继续阅读",
   "Start Reading": "开始阅读",
   "Book Details": "图书详情",
-  "Close eBook menu": "关闭电子书菜单",
-  "eBook actions": "电子书操作",
-  "Back to eBook actions": "返回电子书操作",
   "Offline Reading": "离线阅读",
   "Book metadata": "图书元数据",
-  "No story summary is available for this eBook.": "此电子书暂无故事简介。",
   "Save every available chapter from {source} for offline reading.":
     "保存 {source} 中所有可用章节以供离线阅读。",
-  "Reflowable eBook": "可重排电子书",
   "Chapter {chapter}": "第 {chapter} 章",
   "Chapter": "章节",
   "Search chapter": "搜索章节",
@@ -361,12 +298,8 @@ const books: Record<string, string> = {
   "Book Series": "丛书",
   "Award Winners": "获奖作品",
   "Loading book collections…": "正在加载图书合集…",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "打开任意电子书的轮盘菜单，然后选择“添加到书架”。",
   "Resume from your saved reading position": "从已保存的阅读位置继续",
   "Popular titles from book metadata": "图书元数据中的热门作品",
-  "Refresh eBook source": "刷新电子书源",
-  "Manage eBook sources": "管理电子书源",
   "A remarkable book for your shelf": "一本值得珍藏于书架的佳作",
   "Open featured book": "打开精选图书",
   "Previous featured book": "上一本精选图书",
@@ -375,21 +308,13 @@ const books: Record<string, string> = {
   "Reading progress": "阅读进度",
   "Complete book": "已读完",
   "Ch. {chapter}": "第 {chapter} 章",
-  "Manga adaptation": "漫画改编作品",
-  "Close Manga selection": "关闭漫画选择界面",
-  "Loading eBook…": "正在加载电子书…",
-  "No description is available for this eBook.": "此电子书暂无简介。",
   "This chapter could not be loaded.": "无法加载此章节。",
   "Most popular, critically acclaimed, award winners and more": "热门作品、口碑佳作、获奖作品等",
   "Loading chapter": "正在加载章节",
   "Book flip": "书籍翻页",
   "{chapter} · page {page}": "{chapter} · 第{page}页",
   "Reading {chapter}": "正在阅读 {chapter}",
-  "Start of manga": "漫画开头",
-  "End of manga": "漫画结尾",
   "Reader closed on your computer": "电脑上的阅读器已关闭",
-  "Open a manga on Frame to control the reader from here.":
-    "在 Frame 中打开漫画，即可从这里控制阅读器。",
   "Recognized at the {award}.": "获得 {award} 认可。",
   "Jina Reader": "Jina Reader",
   "GPU shaders that sharpen lines and clean up gradients on anime as it plays. Pick a mode, Frame handles the shaders.":

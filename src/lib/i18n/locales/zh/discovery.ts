@@ -297,8 +297,6 @@ const discovery: Record<string, string> = {
   "Trending on {site}": "{site} 热门内容",
   "Browse sources": "浏览内容源",
   "No lists to show": "没有可显示的列表",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "这是 Mangayomi 仓库。目前尚不支持原生导入。要使用目前最丰富的内容目录，请运行 Suwayomi 服务器，然后在“服务器”部分将 Frame 连接到该服务器。",
   "Search {name}": "搜索 {name}",
   "Show filters": "显示筛选条件",
   "Pin the catalogs you want up top, hide the ones you never open, and reorder your pinned rails. Your browse view updates instantly.":
@@ -642,10 +640,7 @@ const discovery: Record<string, string> = {
   "Show them anyway": "仍然显示",
   "Title (optional)": "标题（可选）",
   "No collections were found in the installed source catalog.": "已安装书源的目录中未找到合集。",
-  "Popular eBooks": "热门电子书",
   "Shelves built from your installed source catalog": "根据已安装书源的目录创建的书架",
-  "Browse eBooks": "浏览电子书",
-  "Search eBooks": "搜索电子书",
   "Featured books · Metadata picks": "精选图书 · 元数据推荐",
   "Featured pick": "精选推荐",
   "This source returned no chapters for this title.": "此书源未返回该作品的任何章节。",
@@ -674,8 +669,6 @@ const discovery: Record<string, string> = {
     "让整页背景完整显示，不受顶部封面遮挡。",
   "Organize downloads into folders by movie or series name":
     "按电影或剧集名称将下载内容整理到文件夹中",
-  "Store each title in its own folder with its EPUB or PDF":
-    "将每部作品及其 EPUB 或 PDF 分别存入单独的文件夹",
   "Spinning disc beside the title with a small control bar.": "标题旁显示旋转唱片和小型控制栏。",
   "Display the artist and album under the title on the card.": "在卡片标题下方显示艺人和专辑。",
   "Search themes": "搜索主题",

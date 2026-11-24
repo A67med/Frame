@@ -636,8 +636,6 @@ const coverage: Record<string, string> = {
   "Posters": "पोस्टर",
   "Posting": "पोस्ट किया जा रहा है",
   "Posts": "पोस्ट",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "इस पेज की हर चीज़ को चलाता है: वेब ऐप, फ़ोन रिमोट और मंगा रीडर रिमोट।",
   "Practise law in court for them": "उनके लिए अदालत में वकालत करें",
   "Pre-paying the last month's rent": "अंतिम महीने का किराया पहले से चुकाना",
   "Preferring": "प्राथमिकता दी जा रही है",
@@ -740,7 +738,6 @@ const coverage: Record<string, string> = {
   "Search": "खोजें",
   "Search Frame": "Frame में खोजें",
   "Search all sources again": "सभी स्रोतों में फिर से खोजें",
-  "Search movies, shows, and manga to add": "जोड़ने के लिए फ़िल्में, शो और मंगा खोजें",
   "Searching": "खोज जारी है",
   "Season": "सीज़न",
   "Seasons": "सीज़न",
@@ -1198,29 +1195,15 @@ const coverage: Record<string, string> = {
   "A local folder": "लोकल फ़ोल्डर",
   "Advanced: build a plugin": "उन्नत: प्लगइन बनाएँ",
   "Also Known As": "अन्य नाम",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "Frame में वापस जाएँ: मंगा > स्रोत सेट अप करें > आपका सर्वर, और अपने सर्वर का पता पेस्ट करें (जैसे {localUrl}, या अगर सर्वर किसी दूसरे कंप्यूटर पर चल रहा है तो उसका LAN IP, जैसे {lanUrl})।",
   "Controller preview": "कंट्रोलर का प्रीव्यू",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "उस फ़ॉन्ट को सेव नहीं किया जा सका। वह अमान्य हो सकता है या स्टोरेज भर गया है।",
-  "Download and run Suwayomi Server:": "Suwayomi Server डाउनलोड करके चलाएँ:",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Suwayomi में चालू किया गया हर स्रोत फिर Frame में दिखाई देता है। किसी साइट में बदलाव होने पर Suwayomi उसके एक्सटेंशन को अपडेट रखता है, इसलिए वे काम करते रहते हैं।",
-  "Everything else, through your own server (Suwayomi)":
-    "बाकी सभी स्रोत, अपने सर्वर (Suwayomi) के ज़रिए",
   "Expand {title} image": "{title} की तस्वीर बड़ी करें",
-  "Getting manga sources into Frame": "Frame में मंगा स्रोत जोड़ना",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "Frame में प्रयोगात्मक प्लगइन रनटाइम भी है। अगर आप स्रोत प्लगइन लिखना चाहते हैं, तो Frame रिपॉज़िटरी में {path} देखें। केवल भरोसेमंद रिपॉज़िटरी के प्लगइन ही इंस्टॉल करें।",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame मंगा या स्क्रैपर उपलब्ध नहीं कराता। यह केवल रीडर है। स्रोत आप जोड़ते हैं और उनमें मौजूद सामग्री उन्हें चलाने वालों की है, Frame की नहीं। स्रोत जोड़ने के दो तरीके हैं।",
   "Import failed": "इम्पोर्ट विफल रहा",
   "It serves a web UI at {url}": "इसकी वेब UI {url} पर उपलब्ध है",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "मंगा > स्रोत सेट अप करें > लोकल फ़ोल्डर पर जाएँ और अपने पास मौजूद मंगा का फ़ोल्डर चुनें (CBZ फ़ाइलें या तस्वीरों के फ़ोल्डर)।",
   "Native Title": "मूल शीर्षक",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "{url} को ब्राउज़र में खोलें। एक्सटेंशन / ब्राउज़ सेक्शन में जाकर कोई कम्युनिटी स्रोत रिपॉज़िटरी जोड़ें, फिर अपने मनचाहे स्रोत इंस्टॉल करें (सैकड़ों उपलब्ध हैं)। Suwayomi उन्हीं एक्सटेंशन रिपॉज़िटरी का उपयोग करता है जिनका Mihon / Tachiyomi इकोसिस्टम करता है।",
   "Override": "ओवरराइड",
   "Press T to chat...": "चैट के लिए T दबाएँ...",
   "SIMKL rating picker": "SIMKL रेटिंग चुनने का कंट्रोल",
@@ -1326,7 +1309,6 @@ const coverage: Record<string, string> = {
   "{name} returned an error ({code}).": "{name} ने एक गड़बड़ी लौटाई ({code})।",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "आप जितने Jellyfin, Emby या Plex सर्वर इस्तेमाल करते हैं, सभी जोड़ें।",
-  "Add eBook sources from a repository you trust.": "किसी भरोसेमंद रिपॉज़िटरी से eBook स्रोत जोड़ें।",
   "All libraries": "सभी लाइब्रेरी",
   "All servers": "सभी सर्वर",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -1400,7 +1382,6 @@ const coverage: Record<string, string> = {
   "Prefer this device": "इस डिवाइस को प्राथमिकता दें",
   "Preferred home server": "पसंदीदा होम सर्वर",
   "Preparing narration audio": "वाचन ऑडियो तैयार किया जा रहा है",
-  "Read eBooks in Frame": "Frame में eBook पढ़ें",
   "Refresh interval in days": "रीफ़्रेश अंतराल, दिनों में",
   "Refresh policy": "रीफ़्रेश नीति",
   "Remove folder?": "फ़ोल्डर हटाएँ?",
@@ -1449,7 +1430,6 @@ const coverage: Record<string, string> = {
   "When the audio and subtitle use different languages, Frame compares a release-matched subtitle in the audio language. It only offers a fix unless every safety check is measured.":
     "जब ऑडियो और उपशीर्षक अलग भाषाओं में हों, Frame ऑडियो की भाषा में उसी रिलीज़ से मेल खाने वाले उपशीर्षक की तुलना करता है। सभी सुरक्षा जाँच मापे जाने तक यह केवल सुधार का सुझाव देता है।",
   "New York Times": "New York Times",
-  "Bestseller lists in the eBook section.": "eBook अनुभाग में बेस्टसेलर सूचियाँ।",
   "New York Times · bestseller lists": "New York Times · बेस्टसेलर सूचियाँ",
   "NYT Books API key": "NYT Books API कुंजी",
   "Choose whether Frame prefers direct and debrid sources, peer-to-peer torrents, or shows both.":

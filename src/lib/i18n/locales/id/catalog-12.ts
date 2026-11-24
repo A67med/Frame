@@ -5,7 +5,6 @@ const catalog: Record<string, string> = {
   "You've reached the end · {n} addons#one": "Anda telah mencapai akhir · {n} addon#one",
   "You've sailed these waters dry.": "Anda sudah mengarungi perairan ini hingga kering.",
   "YouTube": "YouTube",
-  "YouTube, SoundCloud or Spotify link": "Tautan YouTube, SoundCloud, atau Spotify",
   "Your AniList": "AniList Anda",
   "Your AniList is empty": "AniList Anda kosong",
   "Your AniList: {name}": "AniList Anda: {name}",
@@ -308,10 +307,6 @@ const catalog: Record<string, string> = {
   "e.g. 1.35": "mis. 1.35",
   "e.g. 20": "mis. 20",
   "eBook": "eBook",
-  "eBook actions": "tindakan eBook",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "Ekstensi eBook menggunakan worker terisolasi, bridge HTTP, dan parser HTML Frame, sandbox yang sama dengan yang digunakan ekstensi Manga. Hanya tambahkan repositori yang Anda percayai.",
-  "eBook source settings": "pengaturan sumber eBook",
   "eBooks": "eBook",
   "edited": "diedit",
   "end": "akhir",

@@ -491,8 +491,6 @@ const coverage: Record<string, string> = {
   "Posters": "Affiches",
   "Posting": "Publication",
   "Posts": "Publications",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "Alimente tout ce qui se trouve sur cette page : l’application web, la télécommande sur téléphone et la télécommande du lecteur de mangas.",
   "Practise law in court for them": "Exercer le droit au tribunal pour leur compte",
   "Pre-paying the last month's rent": "Payer à l’avance le loyer du dernier mois",
   "Preferring": "Préférence en cours",
@@ -581,8 +579,6 @@ const coverage: Record<string, string> = {
   "Search": "Rechercher",
   "Search all sources again": "Relancer la recherche dans toutes les sources",
   "Search Frame": "Rechercher sur Frame",
-  "Search movies, shows, and manga to add":
-    "Rechercher des films, des séries et des mangas à ajouter",
   "Searching": "Recherche en cours",
   "Season": "Saison",
   "Seasons": "Saisons",
@@ -858,29 +854,15 @@ const coverage: Record<string, string> = {
   "A local folder": "Un dossier local",
   "Advanced: build a plugin": "Avancé : développer un plugin",
   "Also Known As": "Autres titres",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "De retour dans Frame, ouvrez Manga > Configurer une source > Votre serveur, puis collez l’adresse de votre serveur (par exemple {localUrl}, ou son adresse IP locale s’il fonctionne sur une autre machine, comme {lanUrl}).",
   "Controller preview": "Aperçu de la manette",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "Impossible d’enregistrer cette police. Elle est peut-être non valide ou l’espace de stockage est plein.",
-  "Download and run Suwayomi Server:": "Téléchargez et lancez Suwayomi Server :",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Chaque source activée dans Suwayomi apparaît ensuite dans Frame. Suwayomi maintient ses extensions à jour lorsque les sites changent afin qu’elles continuent de fonctionner.",
-  "Everything else, through your own server (Suwayomi)":
-    "Tout le reste, via votre propre serveur (Suwayomi)",
   "Expand {title} image": "Agrandir l’image de {title}",
-  "Getting manga sources into Frame": "Ajouter des sources de mangas à Frame",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "Frame comprend aussi un environnement expérimental pour les plugins. Pour développer un plugin de source, consultez {path} dans le dépôt de Frame. N’installez que des plugins provenant de dépôts auxquels vous faites confiance.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame ne fournit ni mangas ni extracteurs de contenu. C’est un lecteur : vous ajoutez vos propres sources, et leur contenu relève de leurs responsables, pas de Frame. Il existe deux façons d’ajouter des sources.",
   "Import failed": "Échec de l’importation",
   "It serves a web UI at {url}": "Il fournit une interface web à l’adresse {url}",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "Ouvrez Manga > Configurer une source > Dossier local, puis choisissez un dossier contenant des mangas que vous possédez déjà (fichiers CBZ ou dossiers d’images).",
   "Native Title": "Titre original",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "Ouvrez {url} dans un navigateur. Accédez à la section Extensions / Parcourir, ajoutez un dépôt communautaire de sources, puis installez les sources souhaitées (des centaines sont disponibles). Suwayomi utilise les mêmes dépôts d’extensions que l’écosystème Mihon / Tachiyomi.",
   "SIMKL rating picker": "Sélecteur de note SIMKL",
   "Sharing diagnostics": "Partage des diagnostics",
   "That font is {size} MB. Max is 4 MB.":
@@ -992,8 +974,6 @@ const coverage: Record<string, string> = {
   "{name} returned an error ({code}).": "{name} a renvoyé une erreur ({code}).",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "Ajoutez autant de serveurs Jellyfin, Emby ou Plex que vous en utilisez.",
-  "Add eBook sources from a repository you trust.":
-    "Ajoutez des sources d’eBooks provenant d’un dépôt auquel vous faites confiance.",
   "All libraries": "Toutes les bibliothèques",
   "All servers": "Tous les serveurs",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -1070,7 +1050,6 @@ const coverage: Record<string, string> = {
   "Prefer this device": "Préférer cet appareil",
   "Preferred home server": "Serveur personnel préféré",
   "Preparing narration audio": "Préparation de la narration audio",
-  "Read eBooks in Frame": "Lire des eBooks dans Frame",
   "Refresh interval in days": "Intervalle d’actualisation en jours",
   "Refresh policy": "Politique d’actualisation",
   "Remove folder?": "Supprimer le dossier ?",
@@ -1121,7 +1100,6 @@ const coverage: Record<string, string> = {
   "When the audio and subtitle use different languages, Frame compares a release-matched subtitle in the audio language. It only offers a fix unless every safety check is measured.":
     "Lorsque l’audio et les sous-titres utilisent des langues différentes, Frame compare un sous-titre correspondant à la version dans la langue audio. Frame propose seulement une correction tant que chaque contrôle de sécurité n’a pas été mesuré.",
   "New York Times": "New York Times",
-  "Bestseller lists in the eBook section.": "Listes de best-sellers dans la section eBook.",
   "New York Times · bestseller lists": "New York Times · listes de best-sellers",
   "NYT Books API key": "Clé API NYT Books",
   "Choose whether Frame prefers direct and debrid sources, peer-to-peer torrents, or shows both.":

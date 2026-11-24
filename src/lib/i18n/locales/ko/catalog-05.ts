@@ -499,8 +499,6 @@ const catalog05: Record<string, string> = {
   "Keep controlling Frame in the background": "백그라운드에서도 Frame 계속 제어",
   "Keep downloading after you leave": "나간 후에도 다운로드 계속",
   "Keep frames for": "프레임 보관 기간",
-  "Keep going in the manga behind the anime you've been watching":
-    "시청 중인 애니메이션의 원작 만화를 계속 읽어 보세요",
   "Keep it": "유지",
   "Keep it under 280 characters": "280자 이내로 작성하세요",
   "Keep it up": "잘하고 있어요",
@@ -784,7 +782,6 @@ const catalog05: Record<string, string> = {
   "Loading chapter list…": "챕터 목록 불러오는 중…",
   "Loading chapter...": "챕터 불러오는 중...",
   "Loading chapter…": "챕터 불러오는 중…",
-  "Loading eBook…": "eBook 불러오는 중…",
   "Loading environment details…": "환경 세부 정보 불러오는 중…",
   "Loading episodes...": "에피소드 불러오는 중...",
   "Loading extensions...": "확장 프로그램을 불러오는 중...",
@@ -881,8 +878,6 @@ const catalog05: Record<string, string> = {
     "TV를 확인하세요. 이미 새 코드가 표시되고 있습니다. 해당 코드를 스캔하세요.",
   "Look offline to others": "다른 사람에게 오프라인으로 표시",
   'Looking for "{q}"': '"{q}" 검색 중',
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "브라우저용 Frame, 휴대폰 리모컨 또는 만화 리더 리모컨을 찾고 계신가요? 이제 리모컨 페이지에서 이용할 수 있습니다.",
   "Looking for peers…": "피어 찾는 중…",
   "Looking for sources": "소스 찾는 중",
   "Looking for sources…": "소스 찾는 중…",
@@ -961,7 +956,6 @@ const catalog05: Record<string, string> = {
   "Manage Servers": "서버 관리",
   "Manage addon": "애드온 관리",
   "Manage connection": "연결 관리",
-  "Manage eBook sources": "eBook 소스 관리",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "디스크나 웹 등 Frame에서 읽을 수 있는 모든 위치를 관리하세요.",
   "Manage members and posts": "멤버 및 게시물 관리",

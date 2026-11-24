@@ -84,7 +84,6 @@ const plugins: Record<string, string> = {
   "That link did not answer.": "该链接没有响应。",
   "This does not look like a plugin repository. Frame expects { name, plugins } or a provider-script manifest with scrapers.":
     "这看起来不像脚本插件仓库。Frame 需要 { name, plugins }，或者包含 scrapers 的提供源脚本清单。",
-  "This is a manga repository. Add it from the Manga page.": "这是漫画仓库。请在漫画页面添加。",
   "Already added.": "已经添加过了。",
   "Added {repo} with {count} providers.": "已添加 {repo}，包含 {count} 个提供源。",
   "Your repositories": "你的仓库",
@@ -114,8 +113,6 @@ const plugins: Record<string, string> = {
   "{n} of {m} answered, {k} failed": "{m} 个中有 {n} 个已响应，{k} 个失败",
   "Install all": "全部安装",
   "Installing {done} of {total}": "正在安装 {done}/{total}",
-  "Small scripts that find streams, manga and books on sites Frame does not know about, installed from repositories you choose.":
-    "在 Frame 不了解的网站上查找播放源、漫画和书籍的小脚本，从你选择的仓库安装。",
   "Remove all": "全部移除",
 };
 

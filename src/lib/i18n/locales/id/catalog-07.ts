@@ -8,16 +8,9 @@ const catalog: Record<string, string> = {
   "A local folder": "Folder lokal",
   "Advanced: build a plugin": "Lanjutan: buat plugin",
   "Also Known As": "Juga Dikenal Sebagai",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "Kembali ke Frame: Manga > Siapkan sumber > Server Anda, lalu tempel alamat server Anda (misalnya {localUrl}, atau IP LAN Anda jika dijalankan di perangkat lain, misalnya {lanUrl}).",
   "Controller preview": "Pratinjau pengontrol",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "Font tersebut tidak dapat disimpan. Font mungkin tidak valid, atau penyimpanan penuh.",
-  "Download and run Suwayomi Server:": "Unduh dan jalankan Suwayomi Server:",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Setiap sumber yang Anda aktifkan di Suwayomi kemudian akan muncul di Frame. Suwayomi terus memperbarui ekstensinya saat situs berubah, sehingga tetap berfungsi.",
-  "Everything else, through your own server (Suwayomi)":
-    "Semua yang lain, melalui server Anda sendiri (Suwayomi)",
   "Expand {title} image": "Perbesar gambar {title}",
   "France": "Prancis",
   "Franchise": "Waralaba",
@@ -178,7 +171,6 @@ const catalog: Record<string, string> = {
     "Dapatkan hosting untuk {name}, plus {n} addon lainnya.",
   "Getting a code ready…": "Menyiapkan kode…",
   "Getting around the TV": "Menjelajahi TV",
-  "Getting manga sources into Frame": "Menambahkan sumber manga ke Frame",
   "Ghibli Magic": "Keajaiban Ghibli",
   "Gilded Trophies": "Trofi Bersepuh",
   "Girl": "Gadis",
@@ -379,17 +371,12 @@ const catalog: Record<string, string> = {
     "Frame membuat Cloudflare Worker di akun gratis Anda sendiri dan menyimpan URL-nya.",
   "Frame curated": "Pilihan kurasi Frame",
   "Frame default": "Bawaan Frame",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame tidak menghosting manga atau sumber apa pun. Hubungkan server yang Anda hosting sendiri, instal plugin sumber dari repositori tepercaya, atau buka folder yang sudah Anda miliki.",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame tidak menghosting manga apa pun. Tambahkan plugin sumber dari repositori tepercaya, hubungkan server Anda sendiri, atau buka folder lokal. Anda dapat menonaktifkannya kapan saja di Pengaturan.",
   "Frame double-checks with Stremio after saving, so a half-written order can't slip through.":
     "Frame memeriksa ulang dengan Stremio setelah menyimpan, sehingga urutan yang baru tertulis sebagian tidak akan lolos.",
   "Frame dropped {n} suspicious or mismatched result.":
     "Frame menyingkirkan {n} hasil yang mencurigakan atau tidak cocok.",
   "Frame dropped {n} suspicious or mismatched results.":
     "Frame menyingkirkan {n} hasil yang mencurigakan atau tidak cocok.",
-  "Frame eBook": "eBook Frame",
   "Frame finds intro and credits timing from AniSkip, TheIntroDB, and the file's own chapters, then shows a Skip button at the right moment.":
     "Frame menemukan waktu intro dan kredit dari AniSkip, TheIntroDB, serta bab dalam file, lalu menampilkan tombol Lewati pada saat yang tepat.",
   "Frame found episode sources for {season}, but none of them is a single downloadable package. It can still fetch the episodes one at a time.":
@@ -463,8 +450,6 @@ const catalog: Record<string, string> = {
     "Frame tidak mengirim telemetri. Opsi ini juga memblokir permintaan iklan, analitik, dan pelacak keluar yang coba dibuat oleh addon atau penyedia metadata sebelum meninggalkan komputer Anda.",
   "Frame ships a neutral trophy for every award. Install an icon pack or upload your own image per award to make them yours. Packs are hosted by whoever makes them, so the artwork is theirs, not bundled with Frame.":
     "Frame menyediakan trofi netral untuk setiap penghargaan. Instal paket ikon atau unggah gambar Anda sendiri untuk setiap penghargaan agar sesuai selera Anda. Paket dihosting oleh pembuatnya, jadi gambar tersebut milik mereka dan tidak disertakan dalam Frame.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "Frame tidak menyertakan manga maupun scraper. Frame adalah pembaca. Anda menyediakan sumbernya, dan isi sumber tersebut adalah milik pengelolanya, bukan Frame. Ada dua cara untuk menambahkan sumber.",
   "Frame shows your AniList lists on the Anime page and keeps your progress in sync.":
     "Frame menampilkan daftar AniList Anda di halaman Anime dan menjaga progres Anda tetap tersinkron.",
   "Frame signed you up but returned no session. Try signing in instead.":
@@ -643,7 +628,6 @@ const catalog: Record<string, string> = {
   "Hide from your picks": "Sembunyikan dari pilihan Anda",
   "Hide help": "Sembunyikan bantuan",
   "Hide hidden episodes": "Sembunyikan episode tersembunyi",
-  "Hide manga": "Sembunyikan manga",
   "Hide others' drawings": "Sembunyikan gambar orang lain",
   "Hide pack instructions": "Sembunyikan petunjuk paket",
   "Hide password": "Sembunyikan kata sandi",

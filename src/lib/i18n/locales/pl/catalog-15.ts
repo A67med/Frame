@@ -7,7 +7,6 @@ const catalog15: Record<string, string> = {
   "Watchlist only": "Tylko lista do obejrzenia",
   "Watchlist shows only saved titles":
     "Wyświetlane są tylko tytuły zapisane na liście do obejrzenia",
-  "Ways to add an eBook source": "Sposoby dodawania źródła e-booków",
   "We could not find a working stream": "Nie udało się znaleźć działającego strumienia",
   "We could not find anyone at @{handle}. The handle may have changed or the profile was removed.":
     "Nie udało się znaleźć nikogo pod nazwą @{handle}. Nazwa użytkownika mogła się zmienić lub profil został usunięty.",
@@ -407,7 +406,6 @@ const catalog15: Record<string, string> = {
   "You've hidden the one catalog that matched.": "Jedyny pasujący katalog jest ukryty.",
   "You've sailed these waters dry.": "Nie ma już tu nic do odkrycia.",
   "YouTube": "YouTube",
-  "YouTube, SoundCloud or Spotify link": "Link do YouTube, SoundCloud lub Spotify",
   "Your AniList": "Twoje AniList",
   "Your AniList is empty": "Twój AniList jest pusty",
   "Your AniList: {name}": "Twój AniList: {name}",
@@ -658,10 +656,6 @@ const catalog15: Record<string, string> = {
   "drag to position": "przeciągnij, aby ustawić położenie",
   "e.g. 1.35": "np. 1,35",
   "e.g. 20": "np. 20",
-  "eBook actions": "Działania e-booka",
-  "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
-    "Rozszerzenia e-booków korzystają z izolowanego procesu roboczego Frame, mostu HTTP i parsera HTML, czyli tej samej piaskownicy co rozszerzenia mangi. Dodawaj tylko zaufane repozytoria.",
-  "eBook source settings": "Ustawienia źródeł e-booków",
   "eBooks": "e-booki",
   "edited": "edytowano",
   "end": "koniec",

@@ -22,9 +22,6 @@ const catalog: Record<string, string> = {
   "Set up a Cloudflare relay for Watch Together": "Siapkan relay Cloudflare untuk Nonton Bersama",
   "Set up a debrid": "Siapkan debrid",
   "Set up a source": "Siapkan sumber",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "Siapkan setidaknya satu sumber eBook yang dapat dibaca untuk memulai. Metadata dapat mendeskripsikan buku, tetapi folder, ekstensi, atau sumber khususlah yang memungkinkan Frame membukanya.",
-  "Set up eBooks": "Siapkan eBook",
   "Set up my TV from this computer": "Siapkan TV saya dari komputer ini",
   "Set up your own Cloudflare Worker rather than borrowing this one.":
     "Siapkan Cloudflare Worker Anda sendiri daripada meminjam yang ini.",
@@ -734,8 +731,6 @@ const catalog: Record<string, string> = {
   "Start here. The ones almost everyone has.":
     "Mulai di sini. Pilihan yang dimiliki hampir semua orang.",
   "Start import": "Mulai impor",
-  "Start of manga":
-    "Mulai atau hentikan perekaman GIF video (tanpa subtitle). Disimpan ke Pictures/Frame.",
   "Start or stop recording a GIF of the video (no subtitles). Saves to Pictures/Frame.":
     "Mulai dari awal",
   "Start over": "Mulai pemutaran",
@@ -835,8 +830,6 @@ const catalog: Record<string, string> = {
     "Penyimpanan penuh. Bersihkan penyimpanan cache Frame, lalu coba simpan lagi.",
   "Storage location": "Lokasi penyimpanan",
   "Storage overview": "Ringkasan penyimpanan",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Simpan setiap judul dalam folder tersendiri bersama EPUB atau PDF-nya",
   "Stored as a small optimized webp.": "Disimpan sebagai webp kecil yang dioptimalkan.",
   "Stored as a standalone EPG source. No channels are loaded for EPG-only entries; they're kept here for future attachment to existing playlists.":
     "Disimpan sebagai sumber EPG mandiri. Tidak ada saluran yang dimuat untuk entri khusus EPG; entri ini disimpan di sini untuk ditautkan ke playlist yang ada nanti.",

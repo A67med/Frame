@@ -170,10 +170,8 @@ const catalog02: Record<string, string> = {
   "Browse channels": "채널 탐색",
   "Browse community": "커뮤니티 둘러보기",
   "Browse community themes": "커뮤니티 테마 둘러보기",
-  "Browse eBooks": "eBook 둘러보기",
   "Browse files": "파일 찾아보기",
   "Browse groups": "그룹 둘러보기",
-  "Browse manga": "만화 둘러보기",
   "Browse provider": "제공업체 탐색",
   "Browse public groups": "공개 그룹 둘러보기",
   "Browse pull requests": "풀 리퀘스트 찾아보기",
@@ -219,7 +217,6 @@ const catalog02: Record<string, string> = {
   "Build your own feed from actors, directors, and Trakt lists":
     "배우, 감독, Trakt 목록으로 나만의 피드 만들기",
   "Build your own palette": "나만의 팔레트 만들기",
-  "Building EPUB": "EPUB 생성 중",
   "Building tonight's queue…": "오늘 밤의 대기열 구성 중…",
   "Building your voyage": "여정 구성 중",
   "Built for desktop resolutions": "데스크톱 해상도에 최적화",
@@ -431,7 +428,6 @@ const catalog02: Record<string, string> = {
   "Choose an avatar": "아바타 선택",
   "Choose another destination": "다른 대상 선택",
   "Choose another source": "다른 소스 선택",
-  "Choose eBook folder": "eBook 폴더 선택",
   "Choose file": "파일 선택",
   "Choose folder": "폴더 선택",
   "Choose how Watch Together and the minimize, maximize, and close buttons look. Liquid glass replaces the clean transparent controls.":
@@ -579,10 +575,8 @@ const catalog02: Record<string, string> = {
   "Clock style": "시계 스타일",
   "Close": "닫기",
   "Close Frame?": "Frame를 닫으시겠습니까?",
-  "Close Manga selection": "만화 선택 닫기",
   "Close cell": "셀 닫기",
   "Close chapters": "챕터 닫기",
-  "Close eBook menu": "eBook 메뉴 닫기",
   "Close editor": "편집기 닫기",
   "Close guide": "가이드 닫기",
   "Close image viewer": "이미지 뷰어 닫기",
@@ -717,7 +711,6 @@ const catalog02: Record<string, string> = {
   "Connect Trakt in settings first": "먼저 설정에서 Trakt를 연결하세요.",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Trakt 또는 Simkl을 연결하거나 시청을 시작하면 통계가 자동으로 쌓입니다.",
-  "Connect a Suwayomi server": "Suwayomi 서버 연결",
   "Connect a controller: every press and stick move shows up here, live.":
     "컨트롤러를 연결하세요. 모든 버튼 입력과 스틱 움직임이 여기에 실시간으로 표시됩니다.",
   "Connect a debrid service (Real-Debrid, TorBox, AllDebrid) for instant HD without the wait.":
@@ -776,8 +769,6 @@ const catalog02: Record<string, string> = {
   "Content advisory on start": "시작 시 콘텐츠 주의 사항",
   "Content advisory style": "콘텐츠 주의 정보 스타일",
   "Content filters": "콘텐츠 필터",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "콘텐츠 필터 (애니메이션 / 만화 / 실시간 TV / 스포츠 / 성인물 숨기기)",
   "Contents": "목차",
   "Continue": "계속",
   "Continue Reading": "계속 읽기",
@@ -809,8 +800,6 @@ const catalog02: Record<string, string> = {
   "Contribute on GitHub": "GitHub에서 기여하기",
   "Control bar": "컨트롤 바",
   "Control from your phone": "휴대폰으로 제어",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "큰 화면으로 만화를 읽는 동안 휴대폰으로 플립북을 제어할 수 있습니다. 페이지 넘기기, 확대/축소, 모드 전환을 지원합니다. 읽는 중에도 리더에 이 링크가 표시됩니다.",
   "Control who can see your friends, activity, and stats.":
     "친구, 활동 및 통계를 볼 수 있는 사람을 관리하세요.",
   "Controller connected": "컨트롤러 연결됨",
@@ -889,8 +878,6 @@ const catalog02: Record<string, string> = {
   "Could not load groups.": "그룹을 불러올 수 없습니다.",
   "Could not load results": "결과를 불러오지 못했습니다",
   "Could not load sources": "소스를 불러오지 못했습니다",
-  "Could not load that eBook extension repository":
-    "해당 eBook 확장 프로그램 저장소를 불러오지 못했습니다.",
   "Could not load that skin.": "해당 스킨을 불러오지 못했습니다.",
   "Could not load this playlist": "이 재생목록을 불러올 수 없습니다",
   "Could not load this profile": "이 프로필을 불러올 수 없습니다",

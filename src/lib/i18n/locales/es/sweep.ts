@@ -417,8 +417,6 @@ const sweep: Record<string, string> = {
   "Content": "Contenido",
   "CONTENT": "CONTENIDO",
   "Content Advisory": "Advertencia de contenido",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "Filtros de contenido (ocultar anime / manga / TV en vivo / deportes / contenido para adultos)",
   "Continue Watching first, then your addon catalogs in install order.":
     "Primero Seguir viendo y luego los catálogos de tus complementos, en orden de instalación.",
   "Continue with Discord": "Continuar con Discord",
@@ -579,7 +577,6 @@ const sweep: Record<string, string> = {
   "ElegantFin": "ElegantFin",
   "Elevated": "Elevado",
   "Embed a YouTube video": "Insertar un video de YouTube",
-  "Embed from Spotify": "Insertar desde Spotify",
   "Emmy": "Emmy",
   "End of episode": "Fin del episodio",
   "End of next episode": "Fin del siguiente episodio",
@@ -1349,7 +1346,6 @@ const sweep: Record<string, string> = {
   "RAVU Lite": "RAVU Lite",
   "Re-download": "Volver a descargar",
   "Reaching your TV": "Conectando con tu TV",
-  "Read manga files you already have": "Leer archivos de manga que ya tienes",
   "Read the rest": "Leer el resto",
   "Reading this device": "Leyendo este dispositivo",
   "Ready to play": "Listo para reproducir",
@@ -1699,7 +1695,6 @@ const sweep: Record<string, string> = {
   "That code is no longer valid. Look at your TV for a new one.":
     "Ese código ya no es válido. Mira tu TV para obtener uno nuevo.",
   "That did not work. Check your details.": "Eso no funcionó. Revisa tus datos.",
-  "That does not look like a Spotify link.": "No parece un enlace de Spotify.",
   "That does not look like a YouTube link.": "No parece un enlace de YouTube.",
   "That Frame is on the network but is not answering, so it cannot be driven.":
     "Ese Frame está en la red, pero no responde, por lo que no se puede controlar.",

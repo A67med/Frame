@@ -155,7 +155,6 @@ const catalogVZ: Record<string, string> = {
     "वॉचलिस्ट में वे शीर्षक हैं जिन्हें आपने बाद में देखने के लिए सेव किया है। इतिहास में वह सब कुछ है जो आपने देखा है। लोकल में आपके कंप्यूटर की फ़ाइलें हैं।",
   "Watchlist only": "सिर्फ़ वॉचलिस्ट",
   "Watchlist shows only saved titles": "वॉचलिस्ट में सिर्फ़ सेव किए गए शीर्षक दिखते हैं",
-  "Ways to add an eBook source": "eBook स्रोत जोड़ने के तरीके",
   "We could not find a working stream": "हमें कोई चलने वाली स्ट्रीम नहीं मिली",
   "We could not find anyone at @{handle}. The handle may have changed or the profile was removed.":
     "हमें @{handle} पर कोई नहीं मिला। शायद हैंडल बदल गया है या प्रोफ़ाइल हटा दी गई है।",
@@ -595,7 +594,6 @@ const catalogVZ: Record<string, string> = {
   "You've reached the end · {n} addons#one": "आप अंत तक पहुँच गए हैं · {n} ऐडऑन",
   "You've sailed these waters dry.": "आपने इन समंदरों का कोना-कोना छान लिया है।",
   "YouTube": "YouTube",
-  "YouTube, SoundCloud or Spotify link": "YouTube, SoundCloud या Spotify लिंक",
   "Your AniList": "आपका AniList",
   "Your AniList is empty": "आपका AniList खाली है",
   "Your AniList: {name}": "आपका AniList: {name}",

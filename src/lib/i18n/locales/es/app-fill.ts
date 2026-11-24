@@ -29,7 +29,6 @@ const appFill: Record<string, string> = {
   "Action failed": "La acción falló",
   "Add a few friends and their watching, ratings, and favorites land here.":
     "Agrega algunos amigos y aquí aparecerán lo que ven, sus calificaciones y sus favoritos.",
-  "Add a manga source": "Agregar una fuente de manga",
   "Add a movie or show to this list...": "Agregar una película o serie a esta lista...",
   "Add a TMDB key in Settings to see the cast, crew and recommendations for every title.":
     "Agrega una clave de TMDB en Configuración para ver el elenco, el equipo y las recomendaciones de cada título.",
@@ -92,7 +91,6 @@ const appFill: Record<string, string> = {
   "Bottom start": "Inicio inferior",
   "Bring your own avatars into the library.": "Integra tus propios avatares en la biblioteca.",
   "Browse groups": "Explorar grupos",
-  "Browse manga": "Explorar manga",
   "Browse sources": "Explorar fuentes",
   "Building your voyage": "Preparando tu viaje",
   "by @{handle}": "de @{handle}",
@@ -116,7 +114,6 @@ const appFill: Record<string, string> = {
   "Confirm remove from history": "Confirmar eliminación del historial",
   "Connect a controller: every press and stick move shows up here, live.":
     "Conecta un control: cada botón que presiones y cada movimiento de las palancas aparecerán aquí en tiempo real.",
-  "Connect a Suwayomi server": "Conectar un servidor Suwayomi",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Conecta Trakt o Simkl, o comienza a ver contenido, y tus estadísticas se generarán automáticamente.",
   "Connected to {name}": "Conectado a {name}",
@@ -186,7 +183,6 @@ const appFill: Record<string, string> = {
     "Edita y reorganiza tu perfil a tu manera: elige una fuente y un fondo, y arrastra las tarjetas al orden que prefieras.",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":
     "¿Los subtítulos integrados cambian de tamaño entre títulos o muestran cuadros vacíos? Cambia a Usar mi estilo para mantener un tamaño uniforme. Para los cuadros, selecciona también Árabe en Fuente.",
-  "Enable manga sources": "Activar fuentes de manga",
   "End voyage": "Fin del viaje",
   "Enter a valid http(s):// server address": "Ingresa una dirección de servidor http(s):// válida",
   "Episode {n} airs {when}": "El episodio {n} se emite {when}",
@@ -202,7 +198,6 @@ const appFill: Record<string, string> = {
   "Extension repositories": "Repositorios de extensiones",
   "Favorite Anime": "Anime favorito",
   "Favorite Characters": "Personajes favoritos",
-  "Favorite Manga": "Manga favorito",
   "Favorite Movies": "Películas favoritas",
   "Favorite Shows": "Series favoritas",
   "Feature a theme": "Destacar un tema",
@@ -253,10 +248,6 @@ const appFill: Record<string, string> = {
     "Frame no pudo analizar el audio de esta fuente. Inténtalo de nuevo o ajústalo manualmente.",
   "Frame couldn't find a reliable timing correction for this subtitle.":
     "Frame no pudo encontrar un ajuste de sincronización confiable para este subtítulo.",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame no aloja ningún manga ni ninguna fuente. Conecta un servidor autoalojado que administres, instala un complemento de fuentes desde un repositorio de confianza o abre una carpeta que ya tengas.",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame no aloja ningún manga. Agrega un complemento de fuentes desde un repositorio de confianza, conecta tu propio servidor o abre una carpeta local. Puedes desactivar esta opción en cualquier momento desde Configuración.",
   "Frame is closing. Frame Setup will finish and reopen it.":
     "Frame se está cerrando. El instalador de Frame terminará el proceso y volverá a abrirlo.",
   "Frame Setup did not finish updating Frame. Nothing was changed.":
@@ -304,8 +295,6 @@ const appFill: Record<string, string> = {
   "Jump to now": "Ir al momento actual",
   "Keep anyway": "Conservar de todos modos",
   "Keep controlling Frame in the background": "Seguir controlando Frame en segundo plano",
-  "Keep going in the manga behind the anime you've been watching":
-    "Seguir avanzando en el manga después del anime que has estado viendo",
   "Keep it": "Conservarlo",
   "Keep picking": "Seguir eligiendo",
   "Keep the original look, scaled by your size. It multiplies the built-in size, so different releases can still differ.":
@@ -394,7 +383,6 @@ const appFill: Record<string, string> = {
     "No se encontraron subtítulos. Inicia de todos modos; Frame seguirá buscando mientras miras.",
   "No subtitles found. Try another title above, or adjust the season and episode.":
     "No se encontraron subtítulos. Prueba con otro título arriba o ajusta la temporada y el episodio.",
-  "No Suwayomi server at this address": "No hay ningún servidor de Suwayomi en esta dirección",
   "No timing change was needed. This subtitle already matches the audio.":
     "No fue necesario ajustar la sincronización. Estos subtítulos ya coinciden con el audio.",
   "No titles found in this collection.": "No se encontraron títulos en esta colección.",
@@ -420,7 +408,6 @@ const appFill: Record<string, string> = {
     "Desactiva esto únicamente si ya tienes instalado un complemento de metadatos, como AIOMetadata o AIOStreams. Sin uno, los títulos y las colecciones pueden aparecer completamente vacíos. Los datos de Cinemeta pueden quedar desactualizados y mostrar como TBA episodios ya estrenados, por lo que conviene reemplazarlo.",
   "Open {title}": "Abrir {title}",
   "Open in browser": "Abrir en el navegador",
-  "Open manga": "Abrir manga",
   "Open stream in browser": "Abrir fuente en el navegador",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "Abre este enlace en un teléfono conectado a la misma red Wi-Fi para pasar páginas, hacer zoom y elegir capítulos con gestos. Mantén abierto este lector.",
@@ -457,9 +444,7 @@ const appFill: Record<string, string> = {
   "Quit Frame": "Salir de Frame",
   "Ranking the best matches": "Ordenando las mejores coincidencias",
   "Read from your phone": "Leer desde tu teléfono",
-  "Read manga in Frame": "Leer manga en Frame",
   "Read more": "Leer más",
-  "Read the Manga": "Leer el manga",
   "Reading subtitles...": "Leyendo subtítulos...",
   "Reading the cast": "Leyendo el elenco",
   "Reading your search": "Interpretando tu búsqueda",
@@ -594,8 +579,6 @@ const appFill: Record<string, string> = {
   "Tap again to remove all {n} extensions": "Toca de nuevo para quitar las {n} extensiones",
   "Tap the first and last line of the section, then tap the line playing now and Sync from here.":
     "Toca la primera y la última línea de la sección, luego toca la línea que se reproduce ahora y selecciona Sincronizar desde aquí.",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "Toca la estrella de cualquier película, serie o manga, o el corazón de un personaje, para guardarlo aquí.",
   "That does not look like a repository URL": "No parece una URL de repositorio",
   "That route wouldn't chart. Try a different direction.":
     "Esa ruta no se pudo trazar. Prueba otra dirección.",
@@ -619,16 +602,6 @@ const appFill: Record<string, string> = {
   "This group has not written a description yet.": "Este grupo aún no ha escrito una descripción.",
   "This group's feed could not be loaded. Try again in a moment.":
     "No se pudo cargar el feed de este grupo. Inténtalo de nuevo en un momento.",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "Este es un repositorio de Mangayomi, pero sus fuentes usan Dart o no son de manga, así que Frame no puede importarlas.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "Este es un repositorio de Mangayomi. Frame ejecuta sus fuentes JavaScript de forma nativa. Impórtalas para agregar estas fuentes a tu biblioteca de manga.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Este es un repositorio de Mangayomi. La importación nativa aún no es compatible. Para acceder hoy al catálogo más amplio, ejecuta un servidor Suwayomi y conecta Frame desde la sección Servidores.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "Este es un repositorio de Paperback (iOS), que Frame no puede usar. Para obtener fuentes en computadoras, conecta un servidor Suwayomi desde la sección Servidores.",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Este es un repositorio de Tachiyomi / Mihon. Estas son extensiones de Android (APK), así que Frame no puede ejecutarlas directamente. Para usar estas fuentes en computadoras, ejecuta un servidor Suwayomi y conecta Frame desde la sección Servidores.",
   "This is the primary profile": "Este es el perfil principal",
   "This list is full ({max} items)": "Esta lista está llena ({max} elementos)",
   "This one also replaces Frame's bundled players and tools, so it installs through Frame Setup. Frame closes, the installer finishes, then Frame reopens.":
@@ -730,7 +703,7 @@ const appFill: Record<string, string> = {
   "Your watch year": "Tu año de visualización",
   "Zoom In": "Acercar",
   "Zoom Out": "Alejar",
-  Dismiss: "Descartar",
+  "Dismiss": "Descartar",
 };
 
 export default appFill;

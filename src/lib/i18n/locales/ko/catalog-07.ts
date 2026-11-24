@@ -17,8 +17,6 @@ const catalog07: Record<string, string> = {
   "One pick at a time, full screen, until something lands.":
     "마음에 드는 작품이 나올 때까지 한 번에 하나씩 전체 화면으로 보여 줍니다.",
   "One release": "릴리스 1개",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "이 스위치 하나로 이 페이지의 모든 기능을 켭니다. 웹 앱, 휴대폰 리모컨, 만화 리더 리모컨이 모두 포함됩니다.",
   "One switch serves Frame on your network. Scan a code below with your phone, or open an address on any device on the same Wi-Fi.":
     "스위치 하나로 네트워크에서 Frame를 제공합니다. 아래 코드를 휴대폰으로 스캔하거나 같은 Wi-Fi에 연결된 기기에서 주소를 여세요.",
   "One-click community packs. Rulesets bring full badge sets with their own matching; art remaps only swap the pictures on Frame's built-in badges. Anything shared as a badges.json link on the Nuvio Discord or Reddit imports here too.":
@@ -95,8 +93,6 @@ const catalog07: Record<string, string> = {
   "Open Trakt profile": "Trakt 프로필 열기",
   "Open Voyages": "Voyages 열기",
   "Open a folder": "폴더 열기",
-  "Open a manga on Frame to control the reader from here.":
-    "여기에서 리더를 제어하려면 Frame에서 만화를 여세요.",
   "Open a quick issue": "빠르게 문제 신고",
   "Open a terminal and run: brew install ffmpeg":
     "터미널을 열고 다음을 실행하세요: brew install ffmpeg",
@@ -123,7 +119,6 @@ const catalog07: Record<string, string> = {
   "Open it in a regular browser, set it up there, then come back and paste the install link below.":
     "일반 브라우저에서 열어 설정한 다음, 돌아와 아래에 설치 링크를 붙여넣으세요.",
   "Open library": "라이브러리 열기",
-  "Open manga": "만화 열기",
   "Open on IMDb": "IMDb에서 열기",
   "Open on Letterboxd": "Letterboxd에서 열기",
   "Open on computer": "컴퓨터에서 열기",
@@ -152,16 +147,12 @@ const catalog07: Record<string, string> = {
     "BotFather가 방금 만든 봇을 여세요. BotFather가 링크를 보내 줍니다. 봇이 답장을 보낼 수 있도록 아무 메시지나 보내세요.",
   "Open the cast menu and try this device again.": "전송 메뉴를 열고 이 기기로 다시 시도하세요.",
   "Open the cheat sheet": "요약표 열기",
-  "Open the editor to add the movies, shows, and manga that belong in this collection.":
-    "편집기를 열어 이 컬렉션에 포함할 영화, 시리즈, 만화를 추가하세요.",
   "Open the email TMDB sent to the address you registered with and press the activate button inside it. Check spam if it has not arrived.":
     "등록한 주소로 TMDB에서 보낸 이메일을 열고 안에 있는 활성화 버튼을 누르세요. 이메일이 오지 않았다면 스팸함을 확인하세요.",
   "Open the library, hit Share a theme, and your first publication shows up here with its review status, downloads, and version history.":
     "라이브러리를 열고 테마 공유를 누르면 첫 게시물이 심사 상태, 다운로드 수, 버전 기록과 함께 여기에 표시됩니다.",
   "Open the queue": "대기열 열기",
   "Open the remote": "리모컨 열기",
-  "Open the wheel menu on any eBook and choose Add to Shelf.":
-    "eBook에서 휠 메뉴를 열고 서재에 추가를 선택하세요.",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
     "같은 Wi-Fi에 연결된 휴대폰에서 이 링크를 여세요. 제스처로 페이지를 넘기고 확대하거나 챕터를 선택할 수 있습니다. 이 리더는 계속 열어 두세요.",
   "Open this page by scanning the code on your TV's setup screen.":
@@ -235,8 +226,6 @@ const catalog07: Record<string, string> = {
   "Outline color": "외곽선 색상",
   "Outline thickness": "외곽선 두께",
   "Output device": "출력 기기",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "*arr 스택, 디브리드 도구, 도서와 오디오북 등 100개 이상의 셀프 호스팅 앱을 제공합니다.",
   "Over the cap, the oldest files are deleted first.":
     "한도를 초과하면 가장 오래된 파일부터 삭제됩니다.",
   "Overall Record": "통산 전적",
@@ -473,8 +462,6 @@ const catalog07: Record<string, string> = {
   "Pick it from the home view to follow.": "홈 화면에서 선택하여 팔로우하세요.",
   "Pick lists from your library to show them here":
     "라이브러리에서 여기에 표시할 목록을 선택하세요",
-  "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
-    "라이브러리 폴더 하나를 선택하세요. 각 하위 폴더가 eBook 한 권입니다. 그 안에 챕터를 TXT, Markdown, HTML 또는 EPUB 파일로 넣고, 원하는 경우 표지 이미지를 추가하세요.",
   "Pick one of your themes to share.": "공유할 테마를 선택하세요.",
   "Pick one or many images. They collect in an Uploads set in your library. PNG, JPG, WebP, and GIF all work.":
     "이미지를 하나 이상 선택하세요. 선택한 이미지는 라이브러리의 Uploads 세트에 모입니다. PNG, JPG, WebP 및 GIF를 지원합니다.",
@@ -681,7 +668,6 @@ const catalog07: Record<string, string> = {
   "Popular This Week": "이번 주 인기작",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "공개 디렉터리의 별점순 인기 커뮤니티 애드온입니다. 그 밖의 애드온은 둘러보기 탭에서 URL로 설치하세요.",
-  "Popular eBooks": "인기 eBook",
   "Popular on": "인기 플랫폼",
   "Popular titles from book metadata": "도서 메타데이터 기반 인기 작품",
   "Popular titles from the installed source": "설치된 소스의 인기 도서",
@@ -721,8 +707,6 @@ const catalog07: Record<string, string> = {
   "Power tools & diagnostics": "고급 도구 및 진단",
   "Power-user knob. Inject your own CSS, JS, and HTML into Frame. Lives in your local settings; nothing leaves your machine.":
     "고급 사용자용 기능입니다. 자체 CSS, JS, HTML을 Frame에 삽입할 수 있습니다. 로컬 설정에 저장되며 컴퓨터 외부로 전송되지 않습니다.",
-  "Powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "이 페이지의 웹 앱, 휴대폰 리모컨, 만화 리더 리모컨을 모두 구동합니다.",
   "Powers the Identify song button in the player.": "플레이어의 곡 식별 버튼을 작동시킵니다.",
   "Powers the Identify-song button in the player. Get a token at":
     "플레이어의 노래 식별 버튼을 활성화합니다. 다음에서 토큰 받기",
@@ -954,8 +938,6 @@ const catalog07: Record<string, string> = {
   "Ranked in the order you turn them on.": "활성화한 순서대로 정렬됩니다.",
   "Ranking the best matches": "가장 적합한 결과 정렬 중",
   "Rate": "평가",
-  "Rate movies, shows, anime, and manga to build your ratings":
-    "영화, 프로그램, 애니메이션 및 만화를 평가해 평점 목록을 만드세요",
   "Rate on SIMKL": "SIMKL에서 평가",
   "Rate on stremio-addons.net": "stremio-addons.net에서 평가",
   "Rate this": "평가하기",

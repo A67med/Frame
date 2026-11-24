@@ -140,13 +140,8 @@ const catalog04: Record<string, string> = {
     "Frame crea un Cloudflare Worker sul tuo account gratuito e salva l'URL.",
   "Frame curated": "Selezionato da Frame",
   "Frame default": "Predefinito di Frame",
-  "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
-    "Frame non ospita manga né sorgenti. Collega un server self-hosted gestito da te, installa un plugin sorgente da un repository affidabile oppure apri una cartella che possiedi già.",
-  "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
-    "Frame non ospita manga. Aggiungi un plugin sorgente da un repository affidabile, collega il tuo server oppure apri una cartella locale. Puoi disattivare questa funzione in qualsiasi momento nelle Impostazioni.",
   "Frame double-checks with Stremio after saving, so a half-written order can't slip through.":
     "Dopo il salvataggio, Frame verifica di nuovo con Stremio, così non può essere applicato un ordinamento scritto solo in parte.",
-  "Frame eBook": "eBook Frame",
   "Frame finds intro and credits timing from AniSkip, TheIntroDB, and the file's own chapters, then shows a Skip button at the right moment.":
     "Frame ricava i tempi della sigla iniziale e dei titoli di coda da AniSkip, TheIntroDB e dai capitoli del file, poi mostra il pulsante Salta al momento giusto.",
   "Frame found episode sources for {season}, but none of them is a single downloadable package. It can still fetch the episodes one at a time.":
@@ -378,7 +373,6 @@ const catalog04: Record<string, string> = {
   "Hide from your picks": "Nascondi dai tuoi suggerimenti",
   "Hide help": "Nascondi aiuto",
   "Hide hidden episodes": "Nascondi episodi nascosti",
-  "Hide manga": "Nascondi manga",
   "Hide others' drawings": "Nascondi i disegni degli altri",
   "Hide pack instructions": "Nascondi istruzioni del pacchetto",
   "Hide password": "Nascondi password",
@@ -948,8 +942,6 @@ const catalog04: Record<string, string> = {
   "Keep downloading after you leave": "Continua a scaricare anche dopo l'uscita",
   "Keep frames for": "Mantieni i fotogrammi per",
   "Keep going": "Continua",
-  "Keep going in the manga behind the anime you've been watching":
-    "Continua il manga dal punto successivo a quello raggiunto nell'anime che stai guardando",
   "Keep it": "Tienilo",
   "Keep it under 280 characters": "Non superare i 280 caratteri",
   "Keep it up": "Continua così",
@@ -1234,7 +1226,6 @@ const catalog04: Record<string, string> = {
   "Loading chapter": "Caricamento del capitolo",
   "Loading chapter list…": "Caricamento dell'elenco dei capitoli…",
   "Loading chapter...": "Caricamento del capitolo...",
-  "Loading eBook…": "Caricamento dell'eBook…",
   "Loading environment details…": "Caricamento dei dettagli dell'ambiente…",
   "Loading episode details...": "Caricamento dei dettagli dell'episodio...",
   "Loading episodes...": "Caricamento degli episodi...",

@@ -425,7 +425,6 @@ const catalog07: Record<string, string> = {
   "Saves your whole Frame setup to one file: theme, home layout, settings, addons, profiles, watchlist, player layouts, watch progress, and more. Your Stremio sign-in is left out on purpose.":
     "Salva l'intera configurazione di Frame in un unico file: tema, layout della Home, impostazioni, Add-on, profili, Lista, layout del player, avanzamento di visione e altro. L'accesso a Stremio viene escluso intenzionalmente.",
   "Saving": "Salvataggio",
-  "Saving EPUB": "Salvataggio dell'EPUB",
   "Saving GIF…": "Salvataggio GIF…",
   "Saving clip…": "Salvataggio clip…",
   "Saving now could overwrite them. Try again in a moment.":
@@ -517,7 +516,6 @@ const catalog07: Record<string, string> = {
   "Search chapters": "Cerca nei capitoli",
   "Search chapters...": "Cerca capitoli...",
   "Search countries...": "Cerca paesi...",
-  "Search eBooks": "Cerca eBook",
   "Search episodes": "Cerca episodi",
   "Search episodes across all seasons": "Cerca episodi in tutte le stagioni",
   "Search every collection on TMDB...": "Cerca in tutte le raccolte su TMDB...",
@@ -534,8 +532,6 @@ const catalog07: Record<string, string> = {
   "Search languages": "Cerca lingue",
   "Search languages (Tamil, Telugu, ...)": "Cerca lingue (Tamil, Telugu, ...)",
   "Search movies": "Cerca film",
-  "Search movies, shows, and manga to add": "Cerca film, serie e manga da aggiungere",
-  "Search movies, shows, anime, manga": "Cerca film, serie, anime e manga",
   "Search movies, shows, people, genres, years...": "Cerca film, serie, persone, generi, anni...",
   "Search movies, shows, people...": "Cerca film, serie, persone...",
   "Search rules by name or pattern…": "Cerca regole per nome o schema…",
@@ -747,9 +743,6 @@ const catalog07: Record<string, string> = {
     "Configura un relay Cloudflare per Guarda insieme",
   "Set up a debrid": "Configura un servizio debrid",
   "Set up a source": "Configura una fonte",
-  "Set up at least one readable eBook source to begin. Metadata can describe a book, but a folder, extension, or custom source is what lets Frame open it.":
-    "Per iniziare, configura almeno una fonte eBook leggibile. I metadati possono descrivere un libro, ma Frame può aprirlo solo tramite una cartella, un'estensione o una fonte personalizzata.",
-  "Set up eBooks": "Configura gli eBook",
   "Set up my TV from this computer": "Configura la mia TV da questo computer",
   "Set up your own Cloudflare Worker rather than borrowing this one.":
     "Configura il tuo Cloudflare Worker invece di usare questo.",

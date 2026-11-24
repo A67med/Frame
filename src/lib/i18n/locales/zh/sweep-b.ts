@@ -173,7 +173,6 @@ const sweepB: Record<string, string> = {
   "Build identity. Useful when filing a bug report.": "版本标识。提交错误报告时很有用。",
   "Build your own": "打造属于你的",
   "Build your own palette": "创建自己的配色方案",
-  "Building EPUB": "正在生成 EPUB",
   "Building your voyage": "正在规划航程",
   "Built for desktop resolutions": "专为桌面端分辨率设计",
   "Built into Frame": "Frame 内置",
@@ -686,7 +685,6 @@ const sweepB: Record<string, string> = {
   "Create": "创建",
   "Create a group": "创建小组",
   "Create Custom Token": "创建自定义令牌",
-  "Create folders for eBooks": "为电子书创建文件夹",
   "Create folders for movies and shows": "为电影和剧集创建文件夹",
   "Create group": "创建群组",
   "Create one": "创建账号",
@@ -1104,7 +1102,6 @@ const sweepB: Record<string, string> = {
   "Email": "电子邮箱",
   "Email or Discord": "电子邮件或 Discord",
   "Embed": "嵌入",
-  "Embed from Spotify": "嵌入 Spotify 内容",
   "Embedded": "内嵌",
   "Embedded track": "内嵌轨道",
   "Emergency medical care in crisis zones, independent of politics.":

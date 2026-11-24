@@ -198,8 +198,6 @@ const catalog: Record<string, string> = {
   "Keep editing": "Lanjutkan mengedit",
   "Keep frames for": "Simpan frame selama",
   "Keep going": "Lanjutkan",
-  "Keep going in the manga behind the anime you've been watching":
-    "Lanjutkan membaca manga setelah bagian anime yang Anda tonton",
   "Keep it": "Pertahankan",
   "Keep it under 280 characters": "Batasi hingga 280 karakter",
   "Keep it up": "Pertahankan",
@@ -494,7 +492,6 @@ const catalog: Record<string, string> = {
   "Loading chapter list…": "Memuat daftar bab…",
   "Loading chapter...": "Memuat bab...",
   "Loading chapter…": "Memuat bab…",
-  "Loading eBook…": "Memuat eBook…",
   "Loading environment details…": "Memuat detail lingkungan…",
   "Loading episode details...": "Memuat detail episode...",
   "Loading episodes...": "Memuat episode...",
@@ -596,8 +593,6 @@ const catalog: Record<string, string> = {
     "Lihat TV Anda. Kode baru sudah ditampilkan. Pindai kode tersebut.",
   "Look offline to others": "Tampil offline bagi orang lain",
   'Looking for "{q}"': 'Mencari "{q}"',
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "Mencari Frame di browser, remote ponsel, atau remote pembaca manga? Semuanya dipindahkan ke halaman Remote.",
   "Looking for peers…": "Mencari peer…",
   "Looking for sources": "Mencari sumber",
   "Looking for sources…": "Mencari sumber…",
@@ -680,7 +675,6 @@ const catalog: Record<string, string> = {
   "Manage Servers": "Kelola Server",
   "Manage addon": "Kelola addon",
   "Manage connection": "Kelola koneksi",
-  "Manage eBook sources": "Kelola sumber eBook",
   "Manage every place Frame can read from, whether it lives on disk or across the web.":
     "Kelola semua lokasi yang dapat dibaca Frame, baik di disk maupun di web.",
   "Manage members and posts": "Kelola anggota dan postingan",
@@ -692,11 +686,6 @@ const catalog: Record<string, string> = {
   "Manager": "Pengelola",
   "Managers": "Para pengelola",
   "Manga": "Manga",
-  "Manga adaptation": "Adaptasi manga",
-  "Manga browse cache": "Cache penelusuran manga",
-  "Manga cannot be matched to a Frame title yet, so {n} were left out.":
-    "Manga belum dapat dicocokkan dengan judul Frame, jadi {n} tidak disertakan.",
-  "Manga reader remote": "Remote pembaca manga",
   "Manic Heart": "Manic Heart",
   "Manifest URL": "URL Manifes",
   "Manifest URL copied": "URL Manifes disalin",

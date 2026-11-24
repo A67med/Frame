@@ -38,7 +38,7 @@ const playback: Record<string, string> = {
   "Audio codec": "音频编解码器",
   "Audio track": "音轨",
   "Cancel autoplay": "取消自动播放",
-  Cast: "投屏",
+  "Cast": "投屏",
   "Cast to a device": "投屏到设备",
   "Couldn't load that subtitle file. Try another.": "无法加载该字幕文件。请尝试其他文件。",
   "Does this stream look right?": "此视频流看起来正常吗？",
@@ -92,7 +92,7 @@ const playback: Record<string, string> = {
   "Resize subtitle menu": "调整字幕菜单大小",
   "Subtitle details": "字幕详情",
   "Open subtitle details": "打开字幕详情",
-  Quality: "质量",
+  "Quality": "质量",
   "Couldn't save the synced subtitle. Try again.": "无法保存已同步的字幕。请重试。",
   "Connect any IPTV provider. Channels are sorted by category, EPG is pulled automatically when your provider supplies it, and playback runs through native libmpv.":
     "可连接任意 IPTV 提供商。频道按分类排序；如果提供商提供 EPG，系统会自动获取；播放则通过原生 libmpv 进行。",
@@ -111,7 +111,7 @@ const playback: Record<string, string> = {
   "Subsource subtitle source": "Subsource 字幕源",
   "Auto-apply audio-derived sync fixes": "自动应用基于音频的同步修正",
   "Poster image quality": "海报图片质量",
-  Codec: "编解码器",
+  "Codec": "编解码器",
   "Only streams already in your debrid library.": "仅显示已在你的 debrid 库中的播放源。",
   "Excludes direct and debrid streams with no seeders.": "排除没有做种者的直链和 debrid 播放源。",
   "No dimensions set. This filter matches every stream.":
@@ -193,7 +193,7 @@ const playback: Record<string, string> = {
     "Frame 查找并解析可播放视频流的方式。Debrid 密钥和插件安装均在此处管理。",
   "Which audio and subtitle languages rank first in stream lists.":
     "视频流列表中优先显示的音频和字幕语言。",
-  Playback: "播放",
+  "Playback": "播放",
   "Debrid services": "Debrid 服务",
   "Debrid-Link API key": "Debrid-Link API 密钥",
   "Stream safety filter": "播放源安全筛选",
@@ -217,8 +217,8 @@ const playback: Record<string, string> = {
     "直接从 Easynews 搜索并播放。无需 Debrid，只需 Easynews 登录信息。",
   "Use your operating system's native title bar and window buttons instead of Frame's built-in ones. Handy if the in-app buttons ever feel out of reach, like during playback.":
     "使用操作系统的原生标题栏和窗口按钮，而非 Frame 内置的标题栏和按钮。应用内按钮难以触及时会很方便，例如播放期间。",
-  PLAYBACK: "播放",
-  VOLUME: "音量",
+  "PLAYBACK": "播放",
+  "VOLUME": "音量",
   "Open Frame's settings outside playback.": "在播放界面外打开 Frame 设置。",
   "Frame will scrobble your playback to Trakt and sync your watchlist.":
     "Frame 会向 Trakt 上报你的播放记录，并同步片单。",
@@ -241,7 +241,7 @@ const playback: Record<string, string> = {
   "Trailer quality": "预告片画质",
   "How sharp the trailer is when you hit the preview button. Auto picks from your connection speed. 1080p and Best merge separate video and audio with the bundled ffmpeg, so they take a beat longer to start.":
     "点击预览按钮时预告片的清晰度。“自动”会根据你的网速选择。1080p 和“最佳”会使用内置 ffmpeg 合并独立的视频和音频，因此启动时间会稍长。",
-  Audio: "音频",
+  "Audio": "音频",
   "Shape the sound without touching your system EQ. Applies on the mpv engine; the HTML5 engine plays audio untouched.":
     "无需调整系统均衡器即可调整音效。适用于 mpv 引擎；HTML5 引擎会原样播放音频。",
   "Maximum volume boost": "最大音量增益",
@@ -249,7 +249,7 @@ const playback: Record<string, string> = {
     "设置音量条可超过 100% 的最大增益。较高的设置可能会非常响。",
   "Where Frame saves videos when you hit Download in the player. Pick any folder, including one on a different drive.":
     "设置在播放器中点击“下载”时 Frame 保存视频的位置。可选择任意文件夹，包括其他驱动器上的文件夹。",
-  mpv: "mpv",
+  "mpv": "mpv",
   "Player & quality": "播放器与画质",
   "Pick the playback engine and which quality chips show up on cards.":
     "选择播放引擎以及卡片上显示的画质标签。",
@@ -266,9 +266,9 @@ const playback: Record<string, string> = {
   "Volume control": "音量控制",
   "How the volume widget behaves on click and hover.": "设置点击或悬停时音量控件的行为。",
   "Click toggles mute. Wheel scrolls volume.": "点击可切换静音。滚动滚轮可调节音量。",
-  Player: "播放器",
+  "Player": "播放器",
   "Inside the playback view.": "在播放界面中。",
-  Volume: "音量",
+  "Volume": "音量",
   "Close player": "关闭播放器",
   "Exit playback and return to the previous view.": "退出播放并返回上一界面。",
   "Play / pause": "播放/暂停",
@@ -466,8 +466,6 @@ const playback: Record<string, string> = {
   "Remembered source lists per title. Clears stale results after changing addons or debrid.":
     "按片名保存的播放源列表。更改插件或 debrid 服务后，可清除其中的过期结果。",
   "Dead stream marks": "失效播放源标记",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "已下载的主题可在“主题与外观”中管理。视频和漫画下载可在“下载”页面管理。",
   "Any Stremio subtitle addons you have installed are searched here too.":
     "这里也会搜索你已安装的所有 Stremio 字幕插件。",
   "None installed yet. Add Stremio subtitle addons under Streaming sources.":
@@ -504,8 +502,6 @@ const playback: Record<string, string> = {
     "为你运行 {n} 个插件，并包含 Debridge：附带 TorBox 和 Usenet 账户，无需另购 debrid 服务。",
   "Private Stremio add-ons with 10x the rate limits and built-in stream proxying, from $9 a month.":
     "私有 Stremio 插件，速率限制提高 10 倍并内置播放流代理，每月 $9 起。",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "超过 100 款自托管应用：*arr 套件、debrid 工具、图书和有声书等。",
   "Keep your local time visible during fullscreen playback and choose how it looks.":
     "全屏播放时持续显示本地时间，并选择其外观。",
   "The clock appears with the player controls.": "时钟会与播放器控件一同显示。",
@@ -674,7 +670,7 @@ const playback: Record<string, string> = {
     "在 Frame 内播放 HDR 内容，控件悬浮在视频上方。字幕会渲染在视频上。如果控制栏未显示，请按 Esc 或使用独立窗口。",
   "Low-level knobs for the peer-to-peer engine, plus quick ways to grab debug info when a stream misbehaves.":
     "点对点引擎的底层参数，以及视频流异常时快速获取调试信息的方式。",
-  Pause: "暂停",
+  "Pause": "暂停",
   "Peers, speed and progress while a torrent streams. Sits clear of the exit button, top left.":
     "流式播放种子时显示对等节点、速度和进度。位于左上角，避开退出按钮。",
   "Pick a source once and Frame keeps playing the rest of that season from the same release, no re-picking. Works best with a debrid season pack. Skipped for anime.":
@@ -709,7 +705,7 @@ const playback: Record<string, string> = {
     "部分枪版和新发布的盗录版本会将广告直接拼接到视频中。社区标记后会显示“跳过”按钮。你也可以举报发现的广告以供审核。默认关闭。",
   "Start trailers with audio": "播放预告片时开启声音",
   "Stay in fullscreen after closing the player": "关闭播放器后保持全屏",
-  Stream: "播放源",
+  "Stream": "播放源",
   "Stream / addons": "播放源/插件",
   "Stream / addons instead": "改用播放源/插件",
   "Stream cache": "播放缓存",
@@ -718,7 +714,7 @@ const playback: Record<string, string> = {
   "Stream torrents straight from Frame's built-in engine when you have no debrid set up, or a torrent isn't cached. This connects to peers over your own connection. Turn off to only ever play debrid and direct links.":
     "未设置 debrid 服务或种子尚未缓存时，直接使用 Frame 内置引擎播放种子。这会通过你的网络直接连接其他对等节点。关闭后将仅播放 debrid 和直链。",
   "Streaming quality": "播放画质",
-  Subtitle: "字幕",
+  "Subtitle": "字幕",
   "Subtitle sync": "字幕同步",
   "Needs an external subtitle": "需要外挂字幕",
   "SVP is already handling frame interpolation. Turn off SVP below to use this instead. Running both delays the audio.":
@@ -884,7 +880,7 @@ const playback: Record<string, string> = {
   "Save video clip": "保存视频片段",
   "Searching works without a key. A key lets Frame line subtitles up with the audio automatically.":
     "无需密钥即可搜索。添加密钥后，Frame 可自动将字幕与音频同步。",
-  Seek: "跳转",
+  "Seek": "跳转",
   "Show every stream, with no quality preference applied.": "显示所有视频流，不应用任何画质偏好。",
   "Show the player controls when you pause or resume using the keyboard. Turn off to keep them hidden so they do not cover subtitles.":
     "使用键盘暂停或继续播放时显示播放器控件。关闭后控件将保持隐藏，以免遮挡字幕。",
@@ -946,7 +942,7 @@ const playback: Record<string, string> = {
   "Which subtitle languages, in order?": "字幕语言及其优先顺序？",
   "X-Ray (cast on screen)": "X-Ray（屏幕上的演员）",
   "Your debrid service can't process this right now.": "你的 debrid 服务目前无法处理此请求。",
-  debrid: "debrid",
+  "debrid": "debrid",
   "mpv.conf": "mpv.conf",
   "Choose where subtitle timing feedback appears and how large it is.":
     "选择字幕时间调整反馈的显示位置和大小。",
@@ -1015,7 +1011,7 @@ const playback: Record<string, string> = {
   "Roku changed its OS to block the built-in Media Player from accepting video from other apps. Media Assistant is a free channel built to take over that job. One-time install on your Roku and casting works.":
     "Roku 更改了操作系统，导致内置 Media Player 无法接收其他应用发送的视频。Media Assistant 是一个免费频道，可接替这一功能。只需在 Roku 上安装一次，即可正常投屏。",
   "Could not cast to {deviceName}.": "无法投屏到 {deviceName}。",
-  Video: "视频",
+  "Video": "视频",
   "Images and video from https or data URLs.": "来自 https 或 data URL 的图片和视频。",
   "Sets streaming availability and the Now Playing release window. Pick a country and Frame offers to match the interface, metadata, subtitle, and audio languages to it.":
     "用于设置流媒体可用性和“正在热映”的上映时间范围。选择国家/地区后，Frame 会提示将界面、元数据、字幕和音频语言与之匹配。",
@@ -1047,7 +1043,7 @@ const playback: Record<string, string> = {
     "我们最初将它作为自用客户端。我们非常喜爱 {service}，希望用自己的方式诠释这个几乎每天都在使用的协议。它起初只是一个简洁易用的播放器，随着朋友们也开始使用，逐渐发展出更多功能：一起观看、即点即播等等。",
   "Same read-only usage as Real-Debrid. Also lets you queue uncached sources from the play picker.":
     "与 Real-Debrid 相同，仅进行只读操作。还可让您从播放选择器中将未缓存的来源加入队列。",
-  Recovery: "故障恢复",
+  "Recovery": "故障恢复",
   "Reload source": "重新加载片源",
   "Re-open the stream you are watching and pick it back up where you left off.":
     "重新打开正在观看的视频流，并从中断处继续播放。",
@@ -1064,9 +1060,9 @@ const playback: Record<string, string> = {
   "The streaming server didn't come back up.": "流媒体服务器未能恢复运行。",
   "Streaming server restarted.": "流媒体服务器已重启。",
   "Buffer size": "缓冲区大小",
-  Small: "小",
-  Medium: "中",
-  Adaptive: "自适应",
+  "Small": "小",
+  "Medium": "中",
+  "Adaptive": "自适应",
   "Reads ahead": "预读时长",
   "Memory cap": "内存上限",
   "Wait before playing": "播放前等待",

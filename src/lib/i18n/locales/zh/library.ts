@@ -802,7 +802,6 @@ const library: Record<string, string> = {
   "{label} · {n} collection#few": "{label} · {n} 个合集",
   "Download and run the installer to finish updating. If it keeps failing, run it as administrator once.":
     "下载并运行安装程序以完成更新。如果仍然失败，请尝试以管理员身份运行一次。",
-  "EPUB saved": "EPUB 已保存",
   "Add a series to auto-download": "添加剧集以自动下载",
   "Auto-download": "自动下载",
   "download error": "下载错误",

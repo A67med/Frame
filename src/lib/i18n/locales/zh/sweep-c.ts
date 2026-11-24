@@ -149,7 +149,6 @@ const sweepC: Record<string, string> = {
     "来源合并后按类型筛选。全部开启即可发送所有内容。",
   "Filter categories": "筛选分类",
   "Filter countries": "筛选国家/地区",
-  "Filter eBooks": "筛选电子书",
   "Filter genres": "筛选类型",
   "Filter sources": "筛选内容源",
   "Filter tags...": "筛选标签…",

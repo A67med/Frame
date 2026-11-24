@@ -228,7 +228,6 @@ const miscA: Record<string, string> = {
   "Add a TMDB key to load rankings": "Sıralamaları yüklemek için TMDB anahtarı ekleyin",
   "Add a display name first. It is the name shown on your profile.":
     "Önce bir görünen ad ekleyin. Bu ad profilinizde gösterilir.",
-  "Add a manga source to open these": "Bunları açmak için bir manga kaynağı ekleyin",
   "Add a playlist": "Oynatma listesi ekle",
   "Add a profile for someone else and everyone keeps their own Continue Watching, watch history, and progress.":
     "Başka biri için profil ekleyin; herkesin İzlemeye Devam Et listesi, izleme geçmişi ve ilerlemesi ayrı kalsın.",
@@ -253,8 +252,6 @@ const miscA: Record<string, string> = {
   "Add to a page": "Bir sayfaya ekle",
   "Add to watchlist": "İzleme listesine ekle",
   "Add to {name}": "{name} listesine ekle",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Frame'la uyumlu bir depodan güvenilir eKitap kaynakları ekleyin.",
   "Add up to 6 screenshots so people can see your theme in action. Optional, but they sell it.":
     "İnsanların temanızı kullanılırken görebilmesi için en fazla 6 ekran görüntüsü ekleyin. İsteğe bağlıdır ama ilgi çekmesini sağlar.",
   "Add up to {max} tags so people can find this in the community.":
@@ -476,7 +473,6 @@ const miscA: Record<string, string> = {
   "Back on the API page, scroll to the bottom. Copy the value under API Key and paste it into Frame. Frame saves it on its own.":
     "API sayfasına dönüp en alta kaydırın. API Key altındaki değeri kopyalayıp Frame'a yapıştırın. Frame bunu otomatik olarak kaydeder.",
   "Back to collections": "Koleksiyonlara dön",
-  "Back to eBook actions": "eKitap işlemlerine dön",
   "Back to editing": "Düzenlemeye dön",
   "Back to remote": "Kumandaya dön",
   "Back to the window?": "Pencereye dönülsün mü?",
@@ -611,7 +607,6 @@ const miscA: Record<string, string> = {
   "Browse channels": "Kanallara göz at",
   "Browse community": "Topluluğa göz at",
   "Browse community themes": "Topluluk temalarına göz atın",
-  "Browse eBooks": "eKitaplara Göz At",
   "Browse public groups": "Herkese açık gruplara göz at",
   "Browse streams manually": "Yayınlara elle göz at",
   "Browsing {section}. Change section": "{section} bölümüne göz atılıyor. Bölümü değiştir",
@@ -630,7 +625,6 @@ const miscA: Record<string, string> = {
     "Önce stüdyoda bir tema oluşturun veya bir tema dosyası içe aktarın, ardından paylaşmak için buraya dönün.",
   "Build your own": "Kendi canlı",
   "Build your own palette": "Kendi paletinizi oluşturun",
-  "Building EPUB": "EPUB oluşturuluyor",
   "Built for desktop resolutions": "Masaüstü çözünürlükleri için tasarlandı",
   "Built from IMDb's public datasets. Career ratings volume.":
     "IMDb'nin herkese açık veri kümelerinden oluşturuldu. Kariyer boyunca aldığı değerlendirme sayısı.",
@@ -727,7 +721,6 @@ const miscA: Record<string, string> = {
     "Çevrimdışı kaydetmek için bir kaynak seçin. İlerlemeyi İndirilenler sayfasından takip edebilirsiniz.",
   "Choose an Edge TTS voice before generating audio":
     "Ses oluşturmadan önce bir Edge TTS sesi seçin",
-  "Choose eBook folder": "eKitap klasörü seç",
   "Choose how far the keyboard arrows and player seek buttons jump.":
     "Klavye oklarının ve oynatıcıdaki sarma düğmelerinin kaçar saniye atlayacağını seçin.",
   "Choose icon": "Simge seç",
@@ -779,9 +772,7 @@ const miscA: Record<string, string> = {
   "Clipboard access was blocked. Paste the link manually.":
     "Pano erişimi engellendi. Bağlantıyı elle yapıştırın.",
   "Close Frame?": "Frame kapatılsın mı?",
-  "Close Manga selection": "Manga seçimini kapat",
   "Close chapters": "Bölüm listesini kapat",
-  "Close eBook menu": "eKitap menüsünü kapat",
   "Close editor": "Düzenleyiciyi kapat",
   "Close image viewer": "Görsel görüntüleyiciyi kapat",
   "Close match to host": "Oturum sahibiyle yakın eşleşme",
@@ -877,8 +868,6 @@ const miscA: Record<string, string> = {
   "Content advisory": "İçerik uyarısı",
   "Content advisory on start": "Başlangıçta içerik uyarısı",
   "Content advisory style": "İçerik uyarısı stili",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "İçerik filtreleri (anime / manga / canlı TV / spor / yetişkin içeriklerini gizle)",
   "Contents": "İçindekiler",
   "Continue Reading": "Okumaya Devam Et",
   "Continue Watching first, then your addon catalogs in install order.":
@@ -921,7 +910,6 @@ const miscA: Record<string, string> = {
   "Could not find this title on AniList.": "Bu içerik AniList'te bulunamadı.",
   "Could not identify this title on Trakt.": "Bu içerik Trakt'ta tanımlanamadı.",
   "Could not load comments.": "Yorumlar yüklenemedi.",
-  "Could not load that eBook extension repository": "Bu eKitap eklentisi deposu yüklenemedi",
   "Could not load that skin.": "Bu kaplama yüklenemedi.",
   "Could not post your comment.": "Yorumunuz gönderilemedi.",
   "Could not reach Frame. Check your phone's connection and try again.":
@@ -993,7 +981,6 @@ const miscA: Record<string, string> = {
   "Create a free account to publish. No email required.":
     "Yayınlamak için ücretsiz hesap oluşturun. E-posta gerekmez.",
   "Create account": "Hesap oluştur",
-  "Create folders for eBooks": "e-Kitaplar için klasörler oluştur",
   "Create one": "Hesap oluşturun",
   "Create thread": "Konu oluştur",
   "Create your account": "Hesabınızı oluşturun",
@@ -1192,8 +1179,6 @@ const miscA: Record<string, string> = {
   "Dutch": "Felemenkçe",
   "E-AC-3 unsupported": "E-AC-3 desteklenmiyor",
   "ED": "ED",
-  "EPUB eBook": "EPUB e-kitap",
-  "EPUB saved": "EPUB kaydedildi",
   "Each curve shows how much of the bright range it keeps before rolling off.":
     "Her eğri, parlak aralığın yumuşak geçişe başlamadan önce ne kadarını koruduğunu gösterir.",
   "Each shader is hosted by its author, not bundled with Frame. Download the ones you want; Frame chains them in the right order and applies them in the player.":
@@ -1223,7 +1208,6 @@ const miscA: Record<string, string> = {
   "Elevated": "Yükseltilmiş",
   "Email": "E-posta",
   "Embed a YouTube video": "YouTube videosu yerleştir",
-  "Embed from Spotify": "Spotify'dan içerik yerleştir",
   "Emmy": "Emmy",
   "Emmys": "Emmys",
   "Empty — click to add filters": "Boş. Filtre eklemek için tıklayın",
@@ -1234,7 +1218,6 @@ const miscA: Record<string, string> = {
   "Enabled": "Etkin",
   "End": "End",
   "End of episode": "Bölüm sonu",
-  "End of manga": "Manganın sonu",
   "End of next episode": "Sonraki bölümün sonu",
   "Ending": "Kapanış",
   "Ends at": "Bitiş saati",
@@ -1386,7 +1369,6 @@ const miscA: Record<string, string> = {
     "Filmografiler TMDB'den alınır. Bu sayfayı doldurmak için Kurulum'a bir anahtar ekleyin.",
   "Filmography": "Filmografi",
   "Filter by name or title": "Ada veya yapıta göre filtrele",
-  "Filter eBooks": "eKitapları filtrele",
   "Filters": "Filtreler",
   "Filters off · still empty": "Filtreler kapalı · hâlâ boş",
   "Find a group": "Grup bul",
@@ -1598,7 +1580,6 @@ const miscA: Record<string, string> = {
   "Frame creates a Cloudflare Worker on your own free account and saves the URL.":
     "Frame, kendi ücretsiz hesabınızda bir Cloudflare Worker oluşturur ve URL'yi kaydeder.",
   "Frame default": "Frame varsayılanı",
-  "Frame eBook": "Frame e-kitap",
   "Frame found something at this address that looked like a Roku, but it didn't respond like one. The device may be offline or another product picked up the same broadcast.":
     "Frame bu adreste Roku'ya benzeyen bir cihaz buldu ancak cihaz bir Roku gibi yanıt vermedi. Cihaz çevrimdışı olabilir veya aynı yayını başka bir ürün algılamış olabilir.",
   "Frame identity (avatar / color)": "Frame kimliği (avatar / renk)",

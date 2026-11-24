@@ -529,7 +529,6 @@ const catalog12: Record<string, string> = {
   "Start from this computer": "Zacznij na tym komputerze",
   "Start here. The ones almost everyone has.": "Zacznij tutaj. Te dodatki ma prawie każdy.",
   "Start import": "Rozpocznij import",
-  "Start of manga": "Początek mangi",
   "Start or stop recording a GIF of the video (no subtitles). Saves to Pictures/Frame.":
     "Rozpocznij lub zatrzymaj nagrywanie obrazu do pliku GIF (bez napisów). Plik zostanie zapisany w folderze Obrazy/Frame.",
   "Start over": "Zacznij od nowa",
@@ -621,8 +620,6 @@ const catalog12: Record<string, string> = {
     "Pamięć jest pełna. Wyczyść pamięć podręczną Frame, a następnie spróbuj zapisać ponownie.",
   "Storage location": "Lokalizacja przechowywania",
   "Storage overview": "Przegląd pamięci",
-  "Store each title in its own folder with its EPUB or PDF":
-    "Przechowuj każdy tytuł w osobnym folderze wraz z plikiem EPUB lub PDF",
   "Stored as a small optimized webp.": "Zapisano jako mały, zoptymalizowany plik webp.",
   "Stored as a standalone EPG source. No channels are loaded for EPG-only entries; they're kept here for future attachment to existing playlists.":
     "Zapisano jako niezależne źródło EPG. W przypadku wpisów zawierających tylko EPG nie są wczytywane żadne kanały. Źródła te pozostają tutaj, aby można je było później dołączyć do istniejących playlist.",

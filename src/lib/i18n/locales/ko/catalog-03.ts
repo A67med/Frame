@@ -165,7 +165,6 @@ const catalog03: Record<string, string> = {
   "Create a group": "그룹 만들기",
   "Create a group to watch and share together.": "함께 시청하고 공유할 그룹을 만들어 보세요.",
   "Create account": "계정 만들기",
-  "Create folders for eBooks": "eBook용 폴더 만들기",
   "Create folders for movies and shows": "영화 및 시리즈용 폴더 만들기",
   "Create group": "그룹 만들기",
   "Create lists in your library to feature them here":
@@ -643,8 +642,6 @@ const catalog03: Record<string, string> = {
     "다운로드한 자막은 재생이 시작된 후 잠시 뒤에 도착할 수 있습니다. 현재 표시 중인 자막을 유지하려면 이 설정을 끄고, 자막이 로드되는 즉시 가장 적합한 언어로 전환하려면 켜세요.",
   "Downloaded subtitles can arrive after playback starts. Frame switches from a temporary track when a stronger release match becomes available.":
     "다운로드 자막은 재생 시작 후 도착할 수 있습니다. 릴리스와 더 잘 일치하는 자막이 제공되면 Frame가 임시 트랙에서 해당 자막으로 전환합니다.",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "다운로드한 테마는 테마 및 화면 설정에서 관리합니다. 동영상과 만화 다운로드는 다운로드 페이지에서 관리합니다.",
   "Downloaded. Ready to install and restart.":
     "다운로드되었습니다. 설치 후 다시 시작할 준비가 되었습니다.",
   "Downloading": "다운로드 중",
@@ -729,8 +726,6 @@ const catalog03: Record<string, string> = {
   "EPG failed:": "EPG 실패:",
   "EPG fetch failed:": "EPG 가져오기 실패:",
   "EPG source": "EPG 소스",
-  "EPUB eBook": "EPUB eBook",
-  "EPUB saved": "EPUB 저장됨",
   "EU-hosted, fast cache check. Same read-only usage as the others.":
     "EU에서 호스팅되며 캐시 확인이 빠릅니다. 다른 서비스와 동일한 읽기 전용 방식으로 사용됩니다.",
   "Each curve shows how much of the bright range it keeps before rolling off.":
@@ -803,7 +798,6 @@ const catalog03: Record<string, string> = {
   "Email or Discord": "이메일 또는 Discord",
   "Embed": "임베드",
   "Embed a YouTube video": "YouTube 동영상 삽입",
-  "Embed from Spotify": "Spotify에서 삽입",
   "Embed mpv inside Frame window": "Frame 창 안에 mpv 삽입",
   "Embedded": "내장",
   "Embedded subtitles changing size between titles, or showing empty boxes? Switch to Use my style for a consistent size. For boxes, also choose Arabic under Font.":
@@ -833,7 +827,6 @@ const catalog03: Record<string, string> = {
   "Enable all": "모두 활성화",
   "Enable controller": "컨트롤러 활성화",
   "Enable injected ad skip": "삽입 광고 건너뛰기 사용",
-  "Enable manga sources": "만화 소스 활성화",
   "Enable or disable rule": "규칙 활성화 또는 비활성화",
   "Enable rule": "규칙 활성화",
   "Enable this to fetch Arabic descriptions for series and movies when available on TMDB.":
@@ -843,7 +836,6 @@ const catalog03: Record<string, string> = {
   "End": "끝",
   "End ep": "에피소드 종료",
   "End of episode": "에피소드 종료",
-  "End of manga": "만화 끝",
   "End of next episode": "다음 에피소드 종료",
   "End voyage": "여정 종료",
   "Ended": "종영",

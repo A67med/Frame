@@ -158,29 +158,15 @@ const audit: Record<string, string> = {
   "A local folder": "مجلد محلي",
   "Advanced: build a plugin": "متقدم: إنشاء إضافة",
   "Also Known As": "يُعرف أيضًا باسم",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "ارجع إلى Frame ثم انتقل إلى «المانغا > إعداد مصدر > خادمك»، والصق عنوان الخادم، مثل {localUrl}، أو عنوان IP على الشبكة المحلية إذا كان يعمل على جهاز آخر، مثل {lanUrl}.",
   "Controller preview": "معاينة جهاز التحكم",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "تعذّر حفظ هذا الخط. قد يكون غير صالح أو قد تكون مساحة التخزين ممتلئة.",
-  "Download and run Suwayomi Server:": "نزّل Suwayomi Server وشغّله:",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "سيظهر في Frame كل مصدر تفعّله في Suwayomi. ويحدّث Suwayomi إضافاته عند تغيّر المواقع لتستمر في العمل.",
-  "Everything else, through your own server (Suwayomi)":
-    "كل المصادر الأخرى عبر خادمك الخاص (Suwayomi)",
   "Expand {title} image": "تكبير صورة {title}",
-  "Getting manga sources into Frame": "إضافة مصادر المانغا إلى Frame",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "يتضمن Frame أيضًا بيئة تشغيل تجريبية للإضافات. إذا أردت كتابة إضافة مصدر، فراجع {path} في مستودع Frame. لا تثبّت إلا إضافات من مستودعات تثق بها.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "لا يأتي Frame بأي مانغا أو أدوات كشط، فهو قارئ فقط. أنت تضيف المصادر، ومحتوى تلك المصادر يخص الجهات التي تديرها لا Frame. توجد طريقتان لإضافة المصادر.",
   "Import failed": "فشل الاستيراد",
   "It serves a web UI at {url}": "يوفّر واجهة ويب على {url}",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "انتقل إلى «المانغا > إعداد مصدر > مجلد محلي»، ثم اختر مجلد مانغا تملكه بالفعل، سواء كان يحتوي ملفات CBZ أو مجلدات صور.",
   "Native Title": "العنوان الأصلي",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "افتح {url} في متصفح. انتقل إلى قسم «الإضافات / تصفّح»، وأضف مستودع مصادر مجتمعيًا، ثم ثبّت المصادر التي تريدها، فهناك مئات المصادر. يستخدم Suwayomi مستودعات الإضافات نفسها في منظومة Mihon / Tachiyomi.",
   "SIMKL rating picker": "منتقي تقييم SIMKL",
   "Sharing diagnostics": "مشاركة بيانات التشخيص",
   "That font is {size} MB. Max is 4 MB.": "حجم هذا الخط {size} ميغابايت. الحد الأقصى 4 ميغابايت.",
@@ -282,7 +268,6 @@ const audit: Record<string, string> = {
   "{name} returned an error ({code}).": "أعادت خدمة {name} خطأً ({code}).",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "أضف كل خوادم Jellyfin أو Emby أو Plex التي تستخدمها.",
-  "Add eBook sources from a repository you trust.": "أضف مصادر الكتب الإلكترونية من مستودع تثق به.",
   "All libraries": "كل المكتبات",
   "All servers": "كل الخوادم",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -356,7 +341,6 @@ const audit: Record<string, string> = {
   "Prefer this device": "تفضيل هذا الجهاز",
   "Preferred home server": "الخادم المنزلي المفضّل",
   "Preparing narration audio": "جارٍ تجهيز صوت السرد",
-  "Read eBooks in Frame": "قراءة الكتب الإلكترونية في Frame",
   "Refresh interval in days": "الفاصل الزمني للتحديث بالأيام",
   "Refresh policy": "سياسة التحديث",
   "Remove folder?": "إزالة المجلد؟",

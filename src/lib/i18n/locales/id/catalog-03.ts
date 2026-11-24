@@ -72,8 +72,6 @@ const catalog: Record<string, string> = {
   "Add to Shelf": "Tambahkan ke Rak",
   "Add to tile {n}": "Tambahkan ke ubin {n}",
   "Add to your watchlist": "Tambahkan ke daftar tontonan Anda",
-  "Add trusted eBook sources from a Frame-compatible repository.":
-    "Tambahkan sumber eBook tepercaya dari repositori yang kompatibel dengan Frame.",
   "Add up to 6 screenshots so people can see your theme in action. Optional, but they sell it.":
     "Tambahkan hingga 6 tangkapan layar agar orang dapat melihat tema Anda saat digunakan. Opsional, tetapi dapat membuatnya lebih menarik.",
   "Added to Frame": "Ditambahkan ke Frame",
@@ -141,7 +139,6 @@ const catalog: Record<string, string> = {
   "BAFTA Awards": "Penghargaan BAFTA",
   "BAFTA Television Awards": "Penghargaan Televisi BAFTA",
   "Back on display": "Kembali ditampilkan",
-  "Back to eBook actions": "Kembali ke tindakan eBook",
   "Back to editing": "Kembali mengedit",
   "Back to home": "Kembali ke beranda",
   "Back to remote": "Kembali ke remote",
@@ -185,7 +182,6 @@ const catalog: Record<string, string> = {
   "Browse all {count} themes. Apply in one click.":
     "Jelajahi semua {count} tema. Terapkan dengan sekali klik.",
   "Browse community": "Jelajahi komunitas",
-  "Browse eBooks": "Jelajahi eBook",
   "Browse files": "Jelajahi file",
   "Browsing the theme library": "Menjelajahi perpustakaan tema",
   "Browsing {section}. Change section": "Menjelajahi {section}. Ubah bagian",
@@ -195,7 +191,6 @@ const catalog: Record<string, string> = {
   "Build or import the updated theme first, then come back to push it as a new version.":
     "Buat atau impor tema yang diperbarui terlebih dahulu, lalu kembali untuk mengirimkannya sebagai versi baru.",
   "Build your own": "Buat sendiri",
-  "Building EPUB": "Membuat EPUB",
   "Button": "Tombol",
   "Buttons": "Tombol",
   "CSS {css} · HTML {html} · JS {js}": "CSS {css} · HTML {html} · JS {js}",
@@ -225,7 +220,6 @@ const catalog: Record<string, string> = {
   "Choose a custom tracker color": "Pilih warna pelacak khusus",
   "Choose an Edge TTS voice before generating audio": "Pilih suara Edge TTS sebelum membuat audio",
   "Choose another destination": "Pilih tujuan lain",
-  "Choose eBook folder": "Pilih folder eBook",
   "Choose icon": "Pilih ikon",
   'Choose the "Less than $50k per year" tier.': 'Pilih tingkat "Kurang dari $50k per tahun".',
   "Choose where to open this link": "Pilih tempat untuk membuka tautan ini",
@@ -243,10 +237,8 @@ const catalog: Record<string, string> = {
   "Clip saved to {path}": "Klip disimpan ke {path}",
   "Clipboard access was blocked. Paste the link manually.":
     "Akses papan klip diblokir. Tempel tautan secara manual.",
-  "Close Manga selection": "Tutup pilihan Manga",
   "Close cell": "Tutup sel",
   "Close chapters": "Tutup bab",
-  "Close eBook menu": "Tutup menu eBook",
   "Close menu": "Tutup menu",
   "Close panel": "Tutup panel",
   "Close studio": "Tutup studio",
@@ -287,8 +279,6 @@ const catalog: Record<string, string> = {
   "Could not find any peers for this torrent yet. It may be dead or very low on seeders.":
     "Belum ada peer yang ditemukan untuk torrent ini. Torrent mungkin sudah mati atau seedernya sangat sedikit.",
   "Could not load comments.": "Tidak dapat memuat komentar.",
-  "Could not load that eBook extension repository":
-    "Tidak dapat memuat repositori ekstensi eBook tersebut",
   "Could not post your comment.": "Tidak dapat mengirim komentar Anda.",
   "Could not reach the bundle library.": "Tidak dapat mengakses perpustakaan bundel.",
   "Could not reach the theme library.": "Tidak dapat mengakses perpustakaan tema.",
@@ -322,7 +312,6 @@ const catalog: Record<string, string> = {
   "Create a folder by movie or series name": "Buat folder berdasarkan nama film atau serial",
   "Create a free account to publish. No email required.":
     "Buat akun gratis untuk menerbitkan. Tidak perlu email.",
-  "Create folders for eBooks": "Buat folder untuk eBook",
   "Critically acclaimed TV": "TV dengan pujian kritikus",
   "Critics' Choice Awards": "Critics' Choice Awards",
   "Critics' Pick": "Pilihan Kritikus",
@@ -394,8 +383,6 @@ const catalog: Record<string, string> = {
   "Drop the About and Custom labels so an embed fills the card cleanly.":
     "Hapus label Tentang dan Kustom agar sematan memenuhi kartu dengan rapi.",
   "E-AC-3 unsupported": "E-AC-3 tidak didukung",
-  "EPUB eBook": "eBook EPUB",
-  "EPUB saved": "EPUB disimpan",
   "EU-hosted, fast cache check. Same read-only usage as the others.":
     "Dihosting di UE, dengan pemeriksaan cache cepat. Penggunaan baca-sajanya sama seperti yang lain.",
   "Easing tokens": "Token easing",
@@ -423,7 +410,6 @@ const catalog: Record<string, string> = {
   "Enable all": "Aktifkan semua",
   "Enable controller": "Aktifkan pengontrol",
   "Enable injected ad skip": "Aktifkan pelewatan iklan sisipan",
-  "Enable manga sources": "Aktifkan sumber manga",
   "Enable or disable rule": "Aktifkan atau nonaktifkan aturan",
   "Enable rule": "Aktifkan aturan",
   "Enable this to fetch Arabic descriptions for series and movies when available on TMDB.":
@@ -433,7 +419,6 @@ const catalog: Record<string, string> = {
   "End": "Akhir",
   "End ep": "Ep akhir",
   "End of episode": "Akhir episode",
-  "End of manga": "Akhir manga",
   "End of next episode": "Akhir episode berikutnya",
   "End voyage": "Akhiri perjalanan",
   "Ended": "Berakhir",
@@ -691,7 +676,6 @@ const catalog: Record<string, string> = {
   "Favorite": "Favorit",
   "Favorite Anime": "Anime Favorit",
   "Favorite Characters": "Karakter Favorit",
-  "Favorite Manga": "Manga Favorit",
   "Favorite Movies": "Film Favorit",
   "Favorite Shows": "Acara Favorit",
   "Favorite {channel}": "{channel} Favorit",
@@ -780,7 +764,6 @@ const catalog: Record<string, string> = {
     "Filter berdasarkan jenis setelah sumber digabungkan. Biarkan semuanya aktif untuk mengirim semua konten.",
   "Filter categories": "Filter kategori",
   "Filter countries": "Filter negara",
-  "Filter eBooks": "Filter eBook",
   "Filter genres": "Filter genre",
   "Filter sources": "Filter sumber",
   "Filter tags...": "Filter tag...",
@@ -859,8 +842,6 @@ const catalog: Record<string, string> = {
   "Flat_Style": "Gaya_Datar",
   "Flip the switch above and the addresses and scan codes appear here.":
     "Aktifkan sakelar di atas dan alamat serta kode pemindaian akan muncul di sini.",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "Aktifkan sakelar di atas dan alamat remote ponsel serta remote pembaca manga akan muncul di sini.",
   "Floating dock": "Dok mengambang",
   "Floating orbs over the canvas.": "Bola-bola mengambang di atas kanvas.",
   "Floats over the artwork": "Mengambang di atas gambar",

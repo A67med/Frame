@@ -644,7 +644,6 @@ const coverage: Record<string, string> = {
   "When the audio and subtitle use different languages, Frame compares a release-matched subtitle in the audio language. It only offers a fix unless every safety check is measured.":
     "오디오와 자막의 언어가 다르면 Frame는 같은 릴리스에 맞는 오디오 언어 자막과 비교합니다. 모든 안전 검사가 측정되지 않으면 수정안을 제안만 합니다.",
   "New York Times": "New York Times",
-  "Bestseller lists in the eBook section.": "eBook 섹션의 베스트셀러 목록입니다.",
   "New York Times · bestseller lists": "New York Times · 베스트셀러 목록",
   "NYT Books API key": "NYT Books API 키",
   "Choose whether Frame prefers direct and debrid sources, peer-to-peer torrents, or shows both.":

@@ -99,7 +99,6 @@ const catalog03: Record<string, string> = {
   "Choose an avatar": "Wybierz awatar",
   "Choose another destination": "Wybierz inne miejsce docelowe",
   "Choose another source": "Wybierz inne źródło",
-  "Choose eBook folder": "Wybierz folder e-booków",
   "Choose file": "Wybierz plik",
   "Choose folder": "Wybierz folder",
   "Choose how Watch Together and the minimize, maximize, and close buttons look. Liquid glass replaces the clean transparent controls.":
@@ -244,10 +243,8 @@ const catalog03: Record<string, string> = {
   "Clock format": "Format czasu",
   "Clock size": "Rozmiar zegara",
   "Clock style": "Styl zegara",
-  "Close Manga selection": "Zamknij wybór mangi",
   "Close cell": "Zamknij panel",
   "Close chapters": "Bliskie rozdziały",
-  "Close eBook menu": "Zamknij menu e-booka",
   "Close editor": "Zamknij edytor",
   "Close guide": "Zamknij program",
   "Close image viewer": "Zamknij przeglądarkę obrazów",
@@ -379,7 +376,6 @@ const catalog03: Record<string, string> = {
   "Connect Trakt in settings first": "Najpierw połącz z Trakt w ustawieniach",
   "Connect Trakt or Simkl, or start watching, and your stats will build themselves.":
     "Połącz Trakt lub Simkl albo zacznij oglądać, a statystyki zaczną tworzyć się automatycznie.",
-  "Connect a Suwayomi server": "Połącz serwer Suwayomi",
   "Connect a controller: every press and stick move shows up here, live.":
     "Podłącz kontroler: każde naciśnięcie przycisku i wychylenie drążka pojawi się tutaj na żywo.",
   "Connect a debrid service (Real-Debrid, TorBox, AllDebrid) for instant HD without the wait.":
@@ -438,8 +434,6 @@ const catalog03: Record<string, string> = {
   "Content advisory": "Ostrzeżenie dotyczące treści",
   "Content advisory on start": "Ostrzeżenie o treści przy uruchomieniu",
   "Content filters": "Filtry treści",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "Filtry treści (ukrywanie anime / mangi / telewizji na żywo / sportu / treści dla dorosłych)",
   "Contents": "Spis treści",
   "Continue Reading": "Kontynuuj czytanie",
   "Continue Watching": "Oglądaj dalej",
@@ -469,8 +463,6 @@ const catalog03: Record<string, string> = {
   "Contribute on GitHub": "Współtwórz na GitHubie",
   "Control bar": "Pasek sterowania",
   "Control from your phone": "Steruj z telefonu",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "Steruj czytnikiem mangi z telefonu podczas czytania na dużym ekranie: zmieniaj strony, powiększaj i przełączaj tryby. Czytnik również wyświetla to łącze podczas czytania.",
   "Control who can see your friends, activity, and stats.":
     "Określ, kto może zobaczyć Twoich znajomych, aktywność i statystyki.",
   "Controller connected": "Kontroler jest połączony",
@@ -548,8 +540,6 @@ const catalog03: Record<string, string> = {
   "Could not load groups.": "Nie udało się wczytać grup.",
   "Could not load results": "Nie udało się wczytać wyników",
   "Could not load sources": "Nie udało się wczytać źródeł",
-  "Could not load that eBook extension repository":
-    "Nie udało się wczytać tego repozytorium rozszerzeń e-booków",
   "Could not load that skin.": "Nie udało się wczytać tej skórki.",
   "Could not load this playlist": "Nie udało się wczytać tej playlisty",
   "Could not load this profile": "Nie udało się wczytać tego profilu",

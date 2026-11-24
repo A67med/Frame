@@ -328,8 +328,6 @@ const sweep: Record<string, string> = {
   "Contender": "مرشّح",
   "Contenders": "المرشّحون",
   "Content": "المحتوى",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "مرشّحات المحتوى (إخفاء الأنمي / المانغا / البث المباشر / الرياضة / محتوى البالغين)",
   "Continue Watching first, then your addon catalogs in install order.":
     "«متابعة المشاهدة» أولاً، ثم كتالوجات الإضافات بترتيب التثبيت.",
   "Continue with Discord": "المتابعة عبر Discord",
@@ -476,7 +474,6 @@ const sweep: Record<string, string> = {
   "ElegantFin": "ElegantFin",
   "Elevated": "مرتفع",
   "Embed a YouTube video": "تضمين فيديو من YouTube",
-  "Embed from Spotify": "تضمين من Spotify",
   "Emmy": "إيمي",
   "End of episode": "نهاية الحلقة",
   "End of next episode": "نهاية الحلقة التالية",
@@ -1176,7 +1173,6 @@ const sweep: Record<string, string> = {
   "Rated": "مُقيَّمة",
   "Re-download": "إعادة التنزيل",
   "Reaching your TV": "الوصول إلى تلفزيونك",
-  "Read manga files you already have": "اقرأ ملفات المانغا الموجودة لديك",
   "Read the rest": "قراءة الباقي",
   "Reading this device": "القراءة من هذا الجهاز",
   "Ready to play": "جاهز للتشغيل",
@@ -1512,7 +1508,6 @@ const sweep: Record<string, string> = {
   "That code is no longer valid. Look at your TV for a new one.":
     "لم يعد هذا الرمز صالحًا. انظر إلى التلفزيون للحصول على رمز جديد.",
   "That did not work. Check your details.": "لم ينجح ذلك. تحقق من بياناتك.",
-  "That does not look like a Spotify link.": "لا يبدو هذا رابط Spotify.",
   "That does not look like a YouTube link.": "لا يبدو هذا رابط YouTube.",
   "That is five. Deselect one to swap it out.": "هذه خمسة. ألغِ تحديد أحدها للاستبدال.",
   'That looks like the v4 Read Access Token. Frame needs the shorter "API Key (v3 auth)" from the same page.':

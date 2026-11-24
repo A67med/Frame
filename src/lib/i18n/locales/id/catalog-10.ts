@@ -216,10 +216,6 @@ const catalog: Record<string, string> = {
     "Ketuk baris pertama pada bagian yang ingin Anda perbaiki.",
   "Tap the genres you want more of. They steer the Top Picks row at the top of this page.":
     "Ketuk genre yang ingin lebih sering Anda lihat. Pilihan ini mengarahkan baris Pilihan Teratas di bagian atas halaman ini.",
-  "Tap the heart on any movie, show, manga, or character to save it here.":
-    "Ketuk ikon hati pada film, acara, manga, atau karakter untuk menyimpannya di sini.",
-  "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
-    "Ketuk ikon bintang pada film, acara, atau manga, atau ikon hati pada karakter, untuk menyimpannya di sini.",
   "Tap to switch": "Ketuk untuk beralih",
   "Tap to switch. The pencil renames, recolors, or adds a PIN.":
     "Ketuk untuk beralih. Ikon pensil dapat mengganti nama, mengubah warna, atau menambahkan PIN.",
@@ -286,7 +282,6 @@ const catalog: Record<string, string> = {
     "Kode itu sudah tidak valid. Lihat TV Anda untuk mendapatkan kode baru.",
   "That custom url is not available.": "URL khusus itu tidak tersedia.",
   "That did not work. Check your details.": "Tidak berhasil. Periksa detail Anda.",
-  "That does not look like a Spotify link.": "Itu sepertinya bukan tautan Spotify.",
   "That does not look like a YouTube link.": "Itu sepertinya bukan tautan YouTube.",
   "That does not look like a repository URL": "Itu sepertinya bukan URL repositori",
   "That does not look like a valid magnet link or infohash.":
@@ -403,8 +398,6 @@ const catalog: Record<string, string> = {
   "The dotted line is a flat squeeze of the whole range. A curve that stays high keeps midtones punchy and compresses the highlights late; a lower curve rolls off early and looks gentler.":
     "Garis putus-putus menunjukkan pemampatan merata di seluruh rentang. Kurva yang tetap tinggi mempertahankan ketegasan midtone dan baru memampatkan highlight di akhir; kurva yang lebih rendah meredam lebih awal dan terlihat lebih lembut.",
   "The draw is not published yet.": "Hasil undian belum dipublikasikan.",
-  "The eBook download was canceled.": "Pengunduhan eBook dibatalkan.",
-  "The eBook export was canceled.": "Ekspor eBook dibatalkan.",
   'The economy has "inflation". What\'s happening?':
     'Ekonomi mengalami "inflasi". Apa yang terjadi?',
   "The editor is a working copy of the player. Click any control on it to move, resize, restyle or hide that control.":
@@ -632,9 +625,6 @@ const catalog: Record<string, string> = {
   "This device": "Perangkat ini",
   "This doesn't look like a Frame plugin repo. Frame expects a JSON file shaped { name, plugins: [ ... ] }.":
     "Ini tampaknya bukan repo plugin Frame. Frame mengharapkan file JSON dengan format { name, plugins: [ ... ] }.",
-  "This eBook could not be exported": "eBook ini tidak dapat diekspor",
-  "This eBook is not connected to an installed source.":
-    "eBook ini tidak terhubung ke sumber yang terpasang.",
   "This exact install, served as a web app. Open it on a phone, laptop or TV browser and it streams through this computer.":
     "Instalasi yang sama persis ini disajikan sebagai aplikasi web. Buka di browser ponsel, laptop, atau TV, lalu stream akan dialirkan melalui komputer ini.",
   "This file has one audio track.": "File ini memiliki satu trek audio.",
@@ -655,16 +645,6 @@ const catalog: Record<string, string> = {
     "Feed grup ini tidak dapat dimuat. Coba lagi sebentar lagi.",
   "This instance of Frame is made for desktop. Our standalone iOS and Android apps are coming soon, each with a bespoke, mobile-first experience built for its native platform.":
     "Versi Frame ini dibuat untuk desktop. Aplikasi mandiri kami untuk iOS dan Android akan segera hadir, masing-masing dengan pengalaman khusus yang mengutamakan perangkat seluler dan dirancang untuk platform native-nya.",
-  "This is a Mangayomi repo, but its sources use Dart or are not manga, so Frame can't import them.":
-    "Ini adalah repo Mangayomi, tetapi sumbernya menggunakan Dart atau bukan manga, sehingga Frame tidak dapat mengimpornya.",
-  "This is a Mangayomi repo. Frame runs its JavaScript sources natively. Import them to add these sources to your manga library.":
-    "Ini adalah repo Mangayomi. Frame menjalankan sumber JavaScript-nya secara native. Impor untuk menambahkan sumber ini ke perpustakaan manga Anda.",
-  "This is a Mangayomi repo. Native import isn't supported yet. For the largest catalog today, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Ini adalah repo Mangayomi. Impor native belum didukung. Untuk mendapatkan katalog terbesar saat ini, jalankan server Suwayomi dan hubungkan Frame melalui bagian Server.",
-  "This is a Paperback (iOS) repo, which Frame can't use. For desktop sources, connect a Suwayomi server from the Servers section.":
-    "Ini adalah repo Paperback (iOS) yang tidak dapat digunakan Frame. Untuk sumber desktop, hubungkan server Suwayomi melalui bagian Server.",
-  "This is a Tachiyomi / Mihon repo. Those are Android (APK) extensions, so Frame can't run them directly. To use these sources on desktop, run a Suwayomi server and connect Frame to it from the Servers section.":
-    "Ini adalah repo Tachiyomi / Mihon. Keduanya merupakan ekstensi Android (APK), sehingga Frame tidak dapat menjalankannya secara langsung. Untuk menggunakan sumber ini di desktop, jalankan server Suwayomi dan hubungkan Frame melalui bagian Server.",
   "This is a metadata-based release estimate, not a measured timing score.":
     "Ini adalah perkiraan rilis berdasarkan metadata, bukan skor waktu yang diukur.",
   "This is how a subtitle will look.": "Begini tampilan subtitle.",
@@ -718,7 +698,6 @@ const catalog: Record<string, string> = {
     "Daftar putar ini belum dimuat, atau tidak memiliki saluran.",
   "This replaces your current Frame setup (theme, home layout, settings, addons, profiles, and more) with the {n} saved entries in this file. Your Stremio sign-in stays as is. Frame reloads when it finishes.":
     "Ini mengganti penyiapan Frame Anda saat ini (tema, tata letak beranda, pengaturan, addon, profil, dan lainnya) dengan {n} entri tersimpan dalam file ini. Status login Stremio Anda tetap sama. Frame dimuat ulang setelah selesai.",
-  "This repository lists no eBook extensions.": "Repositori ini tidak mencantumkan ekstensi eBook.",
   "This score only appears on cards.": "Skor ini hanya muncul pada kartu.",
   "This screen stopped. Going back to Home usually clears it.":
     "Layar ini terhenti. Kembali ke Beranda biasanya mengatasinya.",
@@ -904,7 +883,6 @@ const catalog: Record<string, string> = {
   "Top Drama": "Drama Teratas",
   "Top Fantasy": "Fantasi Teratas",
   "Top Horror": "Horor Teratas",
-  "Top Manga": "Manga Teratas",
   "Top Movies": "Film Teratas",
   "Top Movies on MAL": "Film Teratas di MAL",
   "Top Mystery": "Misteri Teratas",

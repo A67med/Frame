@@ -3,9 +3,9 @@ const wiringSweep4: Record<string, string> = {
   "Watching {n} streams at once": "Assistindo a {n} transmissões por vez",
   "Setting up Multiview": "Configurando o Multiview",
   "Side by side": "Lado a lado",
-  Stacked: "Empilhado",
-  Triple: "Triplo",
-  Quad: "Quádruplo",
+  "Stacked": "Empilhado",
+  "Triple": "Triplo",
+  "Quad": "Quádruplo",
   "Fullscreen split view": "Visualização dividida em tela cheia",
   "Show controls": "Mostrar controles",
   "Hide controls, full grid": "Ocultar controles, grade completa",
@@ -50,21 +50,21 @@ const wiringSweep4: Record<string, string> = {
     "Suas alterações neste tema ainda não foram salvas. Elas serão perdidas se você sair agora.",
   "Keep editing": "Continuar editando",
   "Click to edit": "Clique para editar",
-  Tight: "Compacto",
-  Mid: "Médio",
-  Wide: "Amplo",
+  "Tight": "Compacto",
+  "Mid": "Médio",
+  "Wide": "Amplo",
   "Max {count} files.": "Máximo de {count} arquivos.",
   "{name} is over 100 MB.": "{name} tem mais de 100 MB.",
   "{name} is not an image or video.": "{name} não é uma imagem nem um vídeo.",
   "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Up to {count} files, 100 MB each.":
     "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Até {count} arquivos, com 100 MB cada.",
-  M: "M",
-  D: "D",
-  H: "H",
-  Y: "A",
+  "M": "M",
+  "D": "D",
+  "H": "H",
+  "Y": "A",
   "Copy {label}": "Copiar {label}",
   "Casting to": "Transmitindo para",
-  Transcoding: "Transcodificando",
+  "Transcoding": "Transcodificando",
   "−15s": "−15s",
   "+15s": "+15s",
   "Connecting to": "Conectando a",
@@ -78,13 +78,13 @@ const wiringSweep4: Record<string, string> = {
   "sketchy files": "arquivos suspeitos",
   "cam rips": "gravações de câmera",
   "tiny stubs": "arquivos incompletos minúsculos",
-  oversized: "grandes demais",
+  "oversized": "grandes demais",
   "year mismatch": "ano incorreto",
   "wrong episode": "episódio incorreto",
   "season packs": "pacotes de temporada",
   "scam metadata": "metadados fraudulentos",
   "dead torrents": "torrents inativos",
-  language: "idioma",
+  "language": "idioma",
   "trailers/extras": "trailers/conteúdos extras",
   "stub files": "arquivos incompletos",
   "wrong movie": "filme incorreto",
@@ -95,8 +95,8 @@ const wiringSweep4: Record<string, string> = {
   "No clean release has surfaced yet. This may be too new. Frame's filters dropped everything that came back as wrong-movie noise.":
     "Ainda não apareceu nenhum lançamento confiável. Talvez seja novo demais. Os filtros do Frame descartaram todos os resultados por não corresponderem ao filme.",
   "Create a custom filter": "Criar um filtro personalizado",
-  Remux: "Remux",
-  Debrid: "Debrid",
+  "Remux": "Remux",
+  "Debrid": "Debrid",
   "{facet} filter: {value}": "Filtro de {facet}: {value}",
   "Close menu": "Fechar menu",
   "{value} +{n}": "{value} +{n}",
@@ -191,7 +191,7 @@ const wiringSweep4: Record<string, string> = {
   "{count} wins": "{count} vitórias",
   "{count} nomination": "{count} indicação",
   "{count} nominations": "{count} indicações",
-  Won: "Venceu",
+  "Won": "Venceu",
   "A standout this week.": "Um destaque desta semana.",
   "Critics' Pick": "Escolha da crítica",
   "Loved by reviewers today": "Adorado pelos críticos hoje",
@@ -205,7 +205,7 @@ const wiringSweep4: Record<string, string> = {
   "You're leaving Frame": "Você está saindo do Frame",
   "This link goes to an external site that Frame does not control or vouch for. Triple-check the address before you continue, and never enter your Frame password anywhere but Frame.":
     "Este link leva a um site externo que o Frame não controla nem endossa. Confira o endereço três vezes antes de continuar e nunca digite sua senha do Frame fora do Frame.",
-  Destination: "Destino",
+  "Destination": "Destino",
   "Only continue if you fully trust this link": "Só continue se confiar plenamente neste link",
   "Frame can open only HTTP or HTTPS destinations.":
     "O Frame só pode abrir destinos HTTP ou HTTPS.",
@@ -222,7 +222,7 @@ const wiringSweep4: Record<string, string> = {
   "an addon": "um complemento",
   "a title": "um título",
   "{name} wants you here": "{name} quer você aqui",
-  Sure: "Claro",
+  "Sure": "Claro",
   "That does not look like a valid magnet link or infohash.":
     "Isso não parece ser um link magnet ou infohash válido.",
   "Your remote streaming server is not reachable. Check its address in Settings.":
@@ -263,29 +263,15 @@ const wiringSweep4: Record<string, string> = {
   "A local folder": "Uma pasta local",
   "Advanced: build a plugin": "Avançado: criar um plugin",
   "Also Known As": "Também conhecido como",
-  "Back in Frame: Manga > Set up a source > Your server, and paste your server address (for example {localUrl}, or your LAN IP if it runs on another machine, e.g. {lanUrl}).":
-    "De volta ao Frame, acesse Mangá > Configurar uma fonte > Seu servidor e cole o endereço do servidor (por exemplo, {localUrl}, ou o IP da rede local se ele estiver em outro dispositivo, como {lanUrl}).",
   "Controller preview": "Pré-visualização do controle",
   "Couldn't save that font. It may be invalid, or storage is full.":
     "Não foi possível salvar essa fonte. Ela pode ser inválida ou o armazenamento pode estar cheio.",
-  "Download and run Suwayomi Server:": "Baixe e execute o Suwayomi Server:",
-  "Every source you enable in Suwayomi then shows up in Frame. Suwayomi keeps its extensions updated when a site changes, so they keep working.":
-    "Todas as fontes ativadas no Suwayomi aparecem no Frame. O Suwayomi mantém as extensões atualizadas quando um site muda, para que elas continuem funcionando.",
-  "Everything else, through your own server (Suwayomi)":
-    "Todo o resto, por meio do seu próprio servidor (Suwayomi)",
   "Expand {title} image": "Ampliar imagem de {title}",
-  "Getting manga sources into Frame": "Como adicionar fontes de mangá ao Frame",
   "Frame also has an experimental plugin runtime. If you want to write a source plugin, see {path} in the Frame repository. Only install plugins from repositories you trust.":
     "O Frame também tem um ambiente experimental para plugins. Se quiser criar um plugin de fonte, consulte {path} no repositório do Frame. Instale apenas plugins de repositórios confiáveis.",
-  "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
-    "O Frame não inclui mangás nem scrapers. Ele é um leitor. Você fornece as fontes, e o conteúdo delas pertence a quem as administra, não ao Frame. Há duas formas de adicionar fontes.",
   "Import failed": "Falha na importação",
   "It serves a web UI at {url}": "Ele disponibiliza uma interface web em {url}",
-  "Manga > Set up a source > Local folder, and choose a folder of manga you already own (CBZ files or folders of images).":
-    "Mangá > Configurar uma fonte > Pasta local e escolha uma pasta de mangás que você já possui (arquivos CBZ ou pastas de imagens).",
   "Native Title": "Título original",
-  "Open {url} in a browser. Go to the Extensions / Browse area, add a community source repository, then install the sources you want (hundreds are available). Suwayomi uses the same extension repos the Mihon / Tachiyomi ecosystem does.":
-    "Abra {url} em um navegador. Acesse a área Extensões / Explorar, adicione um repositório comunitário de fontes e instale as fontes desejadas (há centenas disponíveis). O Suwayomi usa os mesmos repositórios de extensões do ecossistema Mihon / Tachiyomi.",
   "SIMKL rating picker": "Seletor de avaliação do SIMKL",
   "Sharing diagnostics": "Compartilhamento de diagnósticos",
   "That font is {size} MB. Max is 4 MB.": "Essa fonte tem {size} MB. O máximo é 4 MB.",
@@ -330,15 +316,15 @@ const wiringSweep4: Record<string, string> = {
   "Frame could not open your browser.": "O Frame não conseguiu abrir o navegador.",
   "Frame's peer-to-peer engine is warming up. This clears on its own in a few seconds, then Play works.":
     "O mecanismo peer-to-peer do Frame está iniciando. Isso se resolve sozinho em alguns segundos; depois, a reprodução funcionará.",
-  Minus: "Menos",
+  "Minus": "Menos",
   "None of your debrid services could deliver a working file. Pick another stream.":
     "Nenhum dos seus serviços de debrid conseguiu fornecer um arquivo válido. Escolha outro stream.",
   "None of your debrid services could resolve this stream. Try a different one.":
     "Nenhum dos seus serviços de debrid conseguiu resolver este stream. Tente outro.",
-  Plus: "Mais",
+  "Plus": "Mais",
   "Real-Debrid is refusing this download right now, which usually means its traffic or fair-use limit has been hit. Try again later, pick a different source, or use another debrid.":
     "O Real-Debrid está recusando este download agora, o que geralmente significa que o limite de tráfego ou de uso justo foi atingido. Tente novamente mais tarde, escolha outra fonte ou use outro serviço de debrid.",
-  Recheck: "Verificar novamente",
+  "Recheck": "Verificar novamente",
   "Remote streaming server unreachable. Check the address in Settings > P2P & servers and that the server machine is online.":
     "O servidor de streaming remoto não está acessível. Verifique o endereço em Configurações > P2P e servidores e se o computador do servidor está online.",
   "Remote streaming server unreachable. Strict mode is on, so local fallback is disabled.":
@@ -389,8 +375,6 @@ const wiringSweep4: Record<string, string> = {
   "{name} returned an error ({code}).": "O {name} retornou um erro ({code}).",
   "Add as many Jellyfin, Emby, or Plex servers as you use.":
     "Adicione quantos servidores Jellyfin, Emby ou Plex você usar.",
-  "Add eBook sources from a repository you trust.":
-    "Adicione fontes de livros digitais de um repositório confiável.",
   "All libraries": "Todas as bibliotecas",
   "All servers": "Todos os servidores",
   "Applied separately to each connection. Cached titles remain available when a server is offline.":
@@ -422,16 +406,16 @@ const wiringSweep4: Record<string, string> = {
   "Connect server": "Conectar servidor",
   "Connecting to home servers…": "Conectando aos servidores domésticos…",
   "Connecting…": "Conectando…",
-  Connections: "Conexões",
+  "Connections": "Conexões",
   "Copy the X-Plex-Token value from the XML page URL.":
     "Copie o valor de X-Plex-Token da URL da página XML.",
-  Disable: "Desativar",
+  "Disable": "Desativar",
   "Download media": "Baixar mídia",
   "Download selected ({n})": "Baixar selecionados ({n})",
   "Edge voices need the Frame desktop app. Reading with the device voice.":
     "As vozes do Edge exigem o aplicativo Frame para desktop. Lendo com a voz do dispositivo.",
   "Edit home server": "Editar servidor doméstico",
-  Enrichment: "Enriquecimento",
+  "Enrichment": "Enriquecimento",
   "Every…": "A cada…",
   "Featured book": "Livro em destaque",
   "Frame does not host any books. Open a folder on this device, install a source extension, or connect your own server. Metadata can describe a book, but a source is what lets Frame open it.":
@@ -446,7 +430,7 @@ const wiringSweep4: Record<string, string> = {
   "How to find a Plex access token": "Como encontrar um token de acesso do Plex",
   "Loading your media server library…": "Carregando a biblioteca do seu servidor de mídia…",
   "Local Library": "Biblioteca local",
-  Manual: "Manual",
+  "Manual": "Manual",
   "Media Servers": "Servidores de mídia",
   "Media servers": "Servidores de mídia",
   "No available episodes in this season.": "Nenhum episódio disponível nesta temporada.",
@@ -465,7 +449,6 @@ const wiringSweep4: Record<string, string> = {
   "Prefer this device": "Preferir este dispositivo",
   "Preferred home server": "Servidor doméstico preferido",
   "Preparing narration audio": "Preparando o áudio da narração",
-  "Read eBooks in Frame": "Leia livros digitais no Frame",
   "Refresh interval in days": "Intervalo de atualização em dias",
   "Refresh policy": "Política de atualização",
   "Remove folder?": "Remover pasta?",
@@ -494,7 +477,7 @@ const wiringSweep4: Record<string, string> = {
   "Use access token — Advanced": "Usar token de acesso (avançado)",
   "Waiting for Plex…": "Aguardando o Plex…",
   "You haven’t connected a media server": "Você ainda não conectou um servidor de mídia",
-  days: "dias",
+  "days": "dias",
   "{n} episodes on home servers": "{n} episódios em servidores domésticos",
   "{voice} could not be generated. {message}": "Não foi possível gerar {voice}. {message}",
 };

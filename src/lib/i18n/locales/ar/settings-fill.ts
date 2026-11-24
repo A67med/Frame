@@ -90,8 +90,6 @@ const settingsFill: Record<string, string> = {
   "A subtle tvOS style light sweep across a poster when you hover it. Off by default; the card lift stays either way.":
     "تمريرة ضوء خفيفة بأسلوب tvOS عبر الملصق عند التمرير عليه. مُعطّل افتراضيًا؛ ويبقى ارتفاع البطاقة في كلتا الحالتين.",
   ", {hiddenCount} hidden": ", {hiddenCount} مخفية",
-  "Looking for Frame in your browser, the phone remote, or the manga reader remote? They moved to the Remotes page.":
-    "هل تبحث عن Frame في متصفّحك، أو أداة التحكّم عن بُعد بالهاتف، أو أداة التحكّم عن بُعد بقارئ المانغا؟ لقد انتقلت إلى صفحة أدوات التحكّم عن بُعد.",
   "X-Ray (experimental)": "X-Ray (تجريبي)",
   "Amazon-style X-Ray: open the cast while you watch and tap anyone for their bio and everything they have been in. On-device face matching to show who is on screen is coming next. Off by default.":
     "X-Ray بأسلوب Amazon: افتح قائمة طاقم العمل أثناء المشاهدة وانقر على أي شخص لعرض سيرته وكل ما شارك فيه. وتأتي لاحقًا مطابقة الوجوه على الجهاز لإظهار مَن يظهر على الشاشة. مُعطّلة افتراضيًا.",
@@ -118,16 +116,9 @@ const settingsFill: Record<string, string> = {
     "يوفّر تطبيق سطح المكتب أجهزة التحكم عن بُعد. افتح هذه الإعدادات في Frame على حاسوبك للحصول على الروابط.",
   "Frame on other devices": "Frame على الأجهزة الأخرى",
   "Serve Frame on your network": "إتاحة Frame على شبكتك",
-  "One switch powers everything on this page: the web app, the phone remote, and the manga reader remote.":
-    "مفتاح واحد يشغّل كل شيء في هذه الصفحة: تطبيق الويب، وجهاز التحكم عبر الهاتف، وجهاز التحكم في قارئ المانغا.",
   "Phone remote": "جهاز تحكم عبر الهاتف",
   "Turns your phone into a remote for this computer: play, pause, seek, volume, and casting, all from the couch. Open the Wi-Fi address on your phone's browser.":
     "يحوّل هاتفك إلى جهاز تحكم عن بُعد لهذا الحاسوب: التشغيل والإيقاف المؤقت والتنقل ومستوى الصوت والبث، كل ذلك من الأريكة. افتح عنوان Wi-Fi في متصفّح هاتفك.",
-  "Manga reader remote": "جهاز تحكم في قارئ المانغا",
-  "Control the manga flipbook from your phone while reading on the big screen: turn pages, zoom, and switch modes. The reader also shows this link while you read.":
-    "تحكّم في دفتر تقليب المانجا من هاتفك أثناء القراءة على الشاشة الكبيرة: قلّب الصفحات، وكبّر، وبدّل الأوضاع. يعرض القارئ هذا الرابط أيضًا أثناء قراءتك.",
-  "Flip the switch above and the phone remote and manga reader remote addresses appear here.":
-    "فعّل المفتاح أعلاه وستظهر هنا عناوين جهاز التحكم عبر الهاتف وجهاز التحكم بقارئ المانجا.",
   "On a beta that's giving you trouble? Pick an earlier build below and run its installer over your current copy. Your library, settings, and downloads all stay put.":
     "هل تواجه مشكلة في إصدار تجريبي؟ اختر إصدارًا أقدم أدناه وشغّل مثبّته فوق نسختك الحالية. تبقى مكتبتك وإعداداتك وتنزيلاتك جميعها كما هي.",
   "While beta updates are on, Frame offers the newest build again on its next check. Turn beta updates off above to stay on an earlier one.":
@@ -138,7 +129,7 @@ const settingsFill: Record<string, string> = {
   "More picture shaders": "المزيد من تظليلات الصورة",
   "Neural upscalers, sharpeners, and HDR tone-mapping ported for mpv. Each is hosted by its author, not bundled with Frame. Download the ones you want; Frame chains them in the right order and applies them in the player.":
     "أدوات رفع الدقّة العصبية وأدوات زيادة الحدّة ومعالجة تدرّج ألوان HDR منقولة إلى mpv. كل منها مستضاف من مؤلّفه وغير مضمّن مع Frame. نزّل ما تريده منها؛ يسلسلها Frame بالترتيب الصحيح ويطبّقها في المشغّل.",
-  Cleared: "تم المسح",
+  "Cleared": "تم المسح",
   "Sure?": "هل أنت متأكد؟",
   "Storage overview": "نظرة عامة على التخزين",
   "Everything Frame saves lives on this computer. If space runs low, clear a cache below; Frame rebuilds them as you browse.":
@@ -152,7 +143,6 @@ const settingsFill: Record<string, string> = {
   "Stream picker cache": "ذاكرة منتقي البثّ المؤقتة",
   "Remembered source lists per title. Clears stale results after changing addons or debrid.":
     "قوائم المصادر المحفوظة لكل عنوان. تُمسح النتائج القديمة بعد تغيير الإضافات أو debrid.",
-  "Manga browse cache": "ذاكرة تصفّح المانجا المؤقتة",
   "Cached chapter lists and browse pages. Downloads stay untouched.":
     "قوائم الفصول وصفحات التصفّح المخزّنة مؤقتًا. تبقى التنزيلات دون مساس.",
   "Live TV caches": "ذاكرة التخزين المؤقتة للتلفزيون المباشر",
@@ -164,8 +154,6 @@ const settingsFill: Record<string, string> = {
   "Continue Watching suggestions cache": "ذاكرة اقتراحات متابعة المشاهدة المؤقتة",
   "Resurface picks for the home rail. Rebuilds overnight.":
     "يُعيد إظهار المختارات في الشريط الرئيسي. يُعاد بناؤها ليلًا.",
-  "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.":
-    "تُدار السمات المُنزَّلة في السمة والمظهر. وتُدار تنزيلات الفيديو والمانجا في صفحة التنزيلات.",
   "Pattern (e.g. \\bremux\\b)": "النمط (مثل \\bremux\\b)",
   "Downloaded from community": "المُنزَّلة من المجتمع",
   "Badge art packs you installed from the community store. Remove one to put its badges back to default.":
@@ -174,7 +162,7 @@ const settingsFill: Record<string, string> = {
   "Pack removed, badges back to default": "تمت إزالة الحزمة، وعادت الشارات إلى الوضع الافتراضي",
   "Remove pack": "إزالة الحزمة",
   "View community badge packs": "عرض حزم شارات المجتمع",
-  packs: "حزم",
+  "packs": "حزم",
   "Any Stremio subtitle addons you have installed are searched here too.":
     "يتم البحث هنا أيضًا في أي إضافات ترجمة من Stremio قمت بتثبيتها.",
   "{count} installed. Add or remove them under Streaming sources.":
@@ -184,19 +172,19 @@ const settingsFill: Record<string, string> = {
   "Subtitle sources": "مصادر الترجمة",
   "Frame searches every source you enable at the same time, then merges and de-duplicates the results into one clean list. Turn a source off to stop pulling from it.":
     "يبحث Frame في كل مصدر تُفعّله في الوقت نفسه، ثم يدمج النتائج ويزيل المكرّر منها في قائمة واحدة مرتّبة. عطِّل أي مصدر لإيقاف جلب النتائج منه.",
-  OpenSubtitles: "OpenSubtitles",
+  "OpenSubtitles": "OpenSubtitles",
   "Frame's built-in OpenSubtitles search, on by default. If you install an OpenSubtitles addon, this steps aside automatically so your results are never duplicated.":
     "بحث OpenSubtitles المدمج في Frame، مفعّل افتراضيًا. إذا ثبّتَ إضافة OpenSubtitles، يتنحّى هذا البحث تلقائيًا حتى لا تتكرّر نتائجك أبدًا.",
-  Wyzie: "Wyzie",
+  "Wyzie": "Wyzie",
   "A fast community subtitle index. Off by default; turn it on for extra coverage on newer or niche releases.":
     "فهرس ترجمة سريع من المجتمع. معطّل افتراضيًا؛ فعّله للحصول على تغطية إضافية للإصدارات الأحدث أو المتخصّصة.",
   "Subtitle addons": "إضافات الترجمة",
-  SUBDL: "SUBDL",
+  "SUBDL": "SUBDL",
   "A large multi-language subtitle database. Off until you add your free SUBDL API key.":
     "قاعدة بيانات ترجمة كبيرة متعدّدة اللغات. معطّلة حتى تُضيف مفتاح API المجاني الخاص بـ SUBDL.",
   "Paste your SUBDL API key": "الصِق مفتاح API الخاص بـ SUBDL",
   "Get a free key at subdl.com": "احصل على مفتاح مجاني من subdl.com",
-  Subsource: "Subsource",
+  "Subsource": "Subsource",
   "A community subtitle source. Off until you add your Subsource API key.":
     "مصدر ترجمة من المجتمع. معطّل حتى تُضيف مفتاح API الخاص بـ Subsource.",
   "Paste your Subsource API key": "الصِق مفتاح API الخاص بـ Subsource",
@@ -205,8 +193,8 @@ const settingsFill: Record<string, string> = {
   "The languages above all obey your preferred subtitle language order, which lives in the Languages page.":
     "تتبع جميع اللغات المذكورة أعلاه ترتيب لغات الترجمة المفضّل لديك، الموجود في صفحة اللغات.",
   "Open Languages": "فتح اللغات",
-  Quality: "الجودة",
-  Maximum: "القصوى",
+  "Quality": "الجودة",
+  "Maximum": "القصوى",
   "Resolution posters are decoded at. High is sized to your screen with headroom and looks identical to full res while using far less memory; Balanced saves the most; Maximum keeps original resolution.":
     "الدقة التي يُفكّ بها ترميز الملصقات. «عالية» تُضبط على مقاس شاشتك مع هامش وتبدو مطابقة للدقة الكاملة مع استهلاك ذاكرة أقل بكثير؛ «متوازنة» هي الأكثر توفيرًا؛ «القصوى» تحافظ على الدقة الأصلية.",
   "Poster dock magnification": "تكبير رصيف الملصقات",
@@ -225,9 +213,9 @@ const settingsFill: Record<string, string> = {
   "Featured source": "مصدر المحتوى المميّز",
   "What fills the hero. Trending is a fresh top list from Frame, refreshed through the day. Classic uses your own Home rows.":
     "ما يملأ الواجهة المميّزة. «الرائج» قائمة جديدة بأبرز العناوين من Frame، تتجدّد على مدار اليوم. «الكلاسيكي» يستخدم صفوفك الخاصّة في الصفحة الرئيسية.",
-  Trakt: "Trakt",
-  Classic: "الكلاسيكي",
-  Screensaver: "شاشة التوقّف",
+  "Trakt": "Trakt",
+  "Classic": "الكلاسيكي",
+  "Screensaver": "شاشة التوقّف",
   "When Frame sits idle in the foreground, it drifts through cinematic backdrops with a clock and what's trending. Any movement or key brings you back. Off by default.":
     "عندما يبقى Frame خاملًا في المقدّمة، ينساب عبر خلفيّات سينمائية مع ساعة وما هو رائج. أي حركة أو ضغطة مفتاح تُعيدك. معطّل افتراضيًا.",
   "Ambient screensaver": "شاشة التوقّف المحيطية",
@@ -254,7 +242,7 @@ const settingsFill: Record<string, string> = {
     "اختر مظهر «المشاهدة معًا» وأزرار التصغير والتكبير والإغلاق. يحل الزجاج السائل محل عناصر التحكم الشفافة النظيفة.",
   "Clean transparent": "شفاف ونظيف",
   "Liquid glass": "الزجاج السائل",
-  Filled: "ممتلئ",
+  "Filled": "ممتلئ",
   "Drag the window from anywhere": "سحب النافذة من أي مكان",
   "Move Frame by dragging any empty space on a page, not just the top bar. Leave this off to keep clicks inside pages from nudging the window.":
     "حرّك Frame بسحب أي مساحة فارغة في الصفحة، وليس الشريط العلوي فقط. اترك هذا معطّلاً لمنع النقرات داخل الصفحات من تحريك النافذة عن غير قصد.",
@@ -284,7 +272,7 @@ const settingsFill: Record<string, string> = {
   "True fullscreen covers the whole screen and hides the taskbar. Maximize fills the screen but keeps the taskbar and title bar, so you can still switch apps.":
     "ملء الشاشة الحقيقي يغطّي الشاشة بالكامل ويُخفي شريط المهام. أما التكبير فيملأ الشاشة مع الإبقاء على شريط المهام وشريط العنوان، لتتمكّن من التنقّل بين التطبيقات.",
   "True fullscreen": "ملء شاشة حقيقي",
-  Maximize: "تكبير",
+  "Maximize": "تكبير",
   "Dual subtitles": "ترجمة مزدوجة",
   "Show a second subtitle in another language at the same time. Handy when you are learning a language: keep the one you are learning as your main subtitle, and put your own language here.":
     "اعرض ترجمة ثانية بلغة أخرى في الوقت نفسه. مفيد عند تعلّم لغة جديدة: اجعل اللغة التي تتعلّمها هي الترجمة الأساسية، وضع لغتك الأم هنا.",
@@ -297,7 +285,7 @@ const settingsFill: Record<string, string> = {
   "Second line size": "حجم السطر الثاني",
   "Get your own": "احصل على نسختك",
   "Trial for ${n}": "جرّبه بـ ${n}",
-  ElfHosted: "ElfHosted",
+  "ElfHosted": "ElfHosted",
   "Debridge is the part that finds you a working file. A TorBox and a Usenet account come with it, so you do not need to buy a debrid service separately. Already have Real-Debrid or AllDebrid? Plug it in instead.":
     "Debridge هو الجزء الذي يجد لك ملفًا يعمل. ويأتي معه حساب TorBox وحساب Usenet، فلا تحتاج إلى شراء خدمة debrid منفصلة. ولديك Real-Debrid أو AllDebrid؟ اربطه بدلًا من ذلك.",
   "No Docker, no server, nothing to configure.": "بلا Docker، بلا خادم، ولا شيء لإعداده.",
@@ -344,8 +332,6 @@ const settingsFill: Record<string, string> = {
     "إضافات Stremio خاصة بحدود طلبات أعلى بعشرة أضعاف ووسيط بث مدمج، ابتداءً من 9$ شهرياً.",
   "Managed Plex, Emby, or Jellyfin, running in minutes with no hardware and no Docker.":
     "خوادم Plex أو Emby أو Jellyfin مُدارة، تعمل خلال دقائق دون عتاد ودون Docker.",
-  "Over 100 self-hosted apps: the *arr stack, debrid tools, books and audiobooks, and more.":
-    "أكثر من 100 تطبيق ذاتي الاستضافة: حزمة ‎*arr وأدوات debrid والكتب والكتب الصوتية والمزيد.",
   "Daily backups, automatic updates, and monitoring, all handled for you.":
     "نسخ احتياطي يومي وتحديثات تلقائية ومراقبة، كل ذلك يُدار نيابةً عنك.",
   "Month to month, cancel anytime, and you can try the whole thing for $1 for a week.":
@@ -357,7 +343,7 @@ const settingsFill: Record<string, string> = {
   "Badges for giving": "شارات مقابل العطاء",
   "Give to any charity below or subscribe to ElfHosted, and the badge lands on your profile.":
     "تبرّع لأي جمعية خيرية أدناه أو اشترك في ElfHosted، وستظهر الشارة في ملفك الشخصي.",
-  Charity: "خيري",
+  "Charity": "خيري",
   "For donating to a charity.": "لتبرّعك لجمعية خيرية.",
   "Charity $100+": "خيري $100+",
   "For giving more than $100 to charity.": "لتبرّعك بأكثر من 100$ للأعمال الخيرية.",
@@ -405,9 +391,9 @@ const settingsFill: Record<string, string> = {
     "عرض التوقيت المحلي المتوقع لانتهاء الفيديو الحالي.",
   "Clock size": "حجم الساعة",
   "Clock style": "نمط الساعة",
-  Minimal: "بسيط",
-  Solid: "صلب",
-  Accent: "لون مميز",
+  "Minimal": "بسيط",
+  "Solid": "صلب",
+  "Accent": "لون مميز",
   "Soft blur with a floating pill.": "ضبابية ناعمة داخل شارة عائمة.",
   "Time only, with a subtle shadow.": "الوقت فقط، مع ظل خفيف.",
   "High-contrast panel for busy scenes.": "لوحة عالية التباين للمشاهد المزدحمة.",
@@ -433,12 +419,12 @@ const settingsFill: Record<string, string> = {
   "Finish setting up Frame": "أكمل إعداد Frame",
   "Get one free at {url}": "احصل على مفتاح مجاني من {url}",
   "Getting a code ready…": "جارٍ تجهيز رمز…",
-  Frame: "Frame",
+  "Frame": "Frame",
   "Frame needs a TMDB key for artwork, rows and collections. It is free.":
     "يحتاج Frame إلى مفتاح TMDB للصور والصفوف والمجموعات، وهو مجاني.",
   "Frame plays IPTV from your own provider. Add a playlist and the guide fills in.":
     "يشغّل Frame بث IPTV من مزوّدك الخاص. أضف قائمة تشغيل ليمتلئ الدليل.",
-  Interface: "الواجهة",
+  "Interface": "الواجهة",
   "Live TV playlists": "قوائم تشغيل البث التلفزيوني المباشر",
   "Nothing connected yet. Scan a code with your phone.": "لا يوجد اتصال بعد. امسح رمزًا بهاتفك.",
   "Phone setup is off": "إعداد الهاتف متوقف",
@@ -450,9 +436,9 @@ const settingsFill: Record<string, string> = {
   "Save key": "حفظ المفتاح",
   "Scan with your phone to sign in without typing on the remote.":
     "امسح بهاتفك لتسجيل الدخول دون الكتابة بجهاز التحكم.",
-  Screen: "الشاشة",
+  "Screen": "الشاشة",
   "Set up Live TV": "إعداد البث التلفزيوني المباشر",
-  Setup: "الإعداد",
+  "Setup": "الإعداد",
   "Setup QR code": "رمز QR للإعداد",
   "Signed in as {name}": "مسجّل الدخول باسم {name}",
   "Sync, themes and friends": "المزامنة والسمات والأصدقاء",

@@ -331,8 +331,6 @@ const sweep: Record<string, string> = {
   "Contender": "Kandidat",
   "Contenders": "Anwärter",
   "Content": "Inhalt",
-  "Content filters (hide anime / manga / live tv / sports / adult)":
-    "Inhaltsfilter (Anime / Manga / Live-TV / Sport / nicht jugendfreie Inhalte ausblenden)",
   "Continue Watching first, then your addon catalogs in install order.":
     "Zuerst „Weiterschauen“, danach deine Add-on-Kataloge in Installationsreihenfolge.",
   "Continue with Discord": "Mit Discord fortfahren",
@@ -476,7 +474,6 @@ const sweep: Record<string, string> = {
   "ElegantFin": "ElegantFin",
   "Elevated": "Erhöht",
   "Embed a YouTube video": "YouTube-Video einbetten",
-  "Embed from Spotify": "Von Spotify einbetten",
   "Emmy": "Emmy",
   "End of episode": "Ende der Folge",
   "End of next episode": "Ende der nächsten Folge",
@@ -1165,7 +1162,6 @@ const sweep: Record<string, string> = {
     "Nach der Reihenfolge sortiert, in der du sie aktivierst.",
   "Re-download": "Erneut herunterladen",
   "Reaching your TV": "Verbindung zu deinem TV wird hergestellt",
-  "Read manga files you already have": "Bereits vorhandene Manga-Dateien lesen",
   "Read the rest": "Rest lesen",
   "Reading this device": "Dieses Gerät wird eingelesen",
   "Ready to play": "Wiedergabebereit",
@@ -1487,7 +1483,6 @@ const sweep: Record<string, string> = {
   "That code is no longer valid. Look at your TV for a new one.":
     "Dieser Code ist nicht mehr gültig. Auf deinem Fernseher findest du einen neuen.",
   "That did not work. Check your details.": "Das hat nicht funktioniert. Prüfe deine Angaben.",
-  "That does not look like a Spotify link.": "Das sieht nicht nach einem Spotify-Link aus.",
   "That does not look like a YouTube link.": "Das sieht nicht nach einem YouTube-Link aus.",
   "That is five. Deselect one to swap it out.":
     "Damit sind es fünf. Wähle eines ab, um es auszutauschen.",

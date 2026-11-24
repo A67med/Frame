@@ -65,9 +65,9 @@ const settingsRefinements: Record<string, string> = {
   "Applying P2P setting…": "Đang áp dụng cài đặt P2P…",
   "Areas where data already exists let you choose how to combine it.":
     "Ở những phần đã có dữ liệu, bạn có thể chọn cách kết hợp chúng.",
-  Attachments: "Tệp đính kèm",
-  Automatic: "Tự động",
-  Avatar: "Ảnh đại diện",
+  "Attachments": "Tệp đính kèm",
+  "Automatic": "Tự động",
+  "Avatar": "Ảnh đại diện",
   "Awards cache": "Bộ nhớ đệm giải thưởng",
   "Badge packs": "Gói huy hiệu",
   "Badge rules": "Quy tắc huy hiệu",
@@ -88,7 +88,7 @@ const settingsRefinements: Record<string, string> = {
     "Tạo bộ lọc có tên một lần, rồi áp dụng trong bộ chọn nguồn để thu gọn danh sách luồng dài về đúng những gì bạn muốn.",
   "Buster Keaton sets off to recover his stolen locomotive.":
     "Buster Keaton lên đường lấy lại đầu máy xe lửa bị đánh cắp.",
-  Canvas: "Nền chính",
+  "Canvas": "Nền chính",
   "Captions and quiet hints": "Chú thích và gợi ý phụ",
   "Cards need a TMDB key.": "Thẻ cần khóa TMDB.",
   "Cards need an MDBList key.": "Thẻ cần khóa MDBList.",
@@ -135,8 +135,6 @@ const settingsRefinements: Record<string, string> = {
     "Chọn khi nào tập tiếp theo bắt đầu và khi nào Frame kiểm tra bạn còn đang xem không.",
   "Choose where Frame searches for subtitles. Results from enabled sources appear together, with duplicates removed.":
     "Chọn nơi Frame tìm phụ đề. Kết quả từ các nguồn đã bật được gộp lại và loại bỏ trùng lặp.",
-  "Choose where videos and eBooks are saved, and how their folders are organized.":
-    "Chọn nơi lưu video và sách điện tử, cùng cách sắp xếp thư mục.",
   "Choose whether to block requests to known advertising, analytics, and tracking services.":
     "Chọn có chặn yêu cầu đến các dịch vụ quảng cáo, phân tích và theo dõi đã biết hay không.",
   "Choose which addon results appear when you pick a stream.":
@@ -287,8 +285,6 @@ const settingsRefinements: Record<string, string> = {
     "Frame không thể kiểm tra bản cài đặt SVP. Hãy thử lại.",
   "Frame looks for subtitles in this order. Put your preferred language first.":
     "Frame tìm phụ đề theo thứ tự này. Đặt ngôn ngữ bạn muốn ở đầu.",
-  "Frame on your other devices: the web app, the phone remote, and the manga reader remote.":
-    "Frame trên các thiết bị khác: ứng dụng web, điều khiển bằng điện thoại và điều khiển trình đọc manga.",
   "Frame profile showing watch statistics": "Hồ sơ Frame hiển thị thống kê xem",
   "Frame uses its own community server. You can point it at a server you run yourself.":
     "Frame dùng máy chủ cộng đồng riêng. Bạn có thể đổi sang máy chủ do chính mình vận hành.",
@@ -365,7 +361,7 @@ const settingsRefinements: Record<string, string> = {
     "Giữ ở Tự động trừ khi giao diện Frame nhấp nháy hoặc giật. Cài đặt này điều khiển cửa sổ ứng dụng, không ảnh hưởng đến phát video.",
   "Let Frame stream over P2P from this device when a debrid link is unavailable. Turn off to prevent local P2P playback. A configured remote server can still stream them.":
     "Cho phép Frame phát qua P2P từ thiết bị này khi không có liên kết debrid. Tắt để ngăn phát P2P cục bộ. Máy chủ từ xa đã cấu hình vẫn có thể phát chúng.",
-  Licence: "Giấy phép",
+  "Licence": "Giấy phép",
   "Licenses & attribution": "Giấy phép và ghi công",
   "Lightens or darkens the whole picture.": "Làm sáng hoặc tối toàn bộ hình ảnh.",
   "List the steps that lead to the problem, starting from when you open Frame.":
@@ -386,10 +382,10 @@ const settingsRefinements: Record<string, string> = {
     "Lọc luồng được đánh dấu đã lưu đệm hoặc đã có trong thư viện debrid của bạn.",
   "Maximum memory used for buffered video.": "Bộ nhớ tối đa dùng để lưu đệm video.",
   "Maximum size (GB)": "Dung lượng tối đa (GB)",
-  Merge: "Hợp nhất",
+  "Merge": "Hợp nhất",
   "Minimize to preview (Ctrl/Cmd + P)": "Thu nhỏ để xem trước (Ctrl/Cmd + P)",
   "Minimum seeders": "Số người chia sẻ tối thiểu",
-  Motion: "Chuyển động",
+  "Motion": "Chuyển động",
   "Move earlier": "Tăng ưu tiên",
   "Move {language} earlier": "Tăng ưu tiên cho {language}",
   "Move {name} down": "Chuyển {name} xuống",
@@ -424,7 +420,7 @@ const settingsRefinements: Record<string, string> = {
     "Không bắt buộc. Để lại thông tin liên hệ nếu bạn đồng ý để chúng tôi trao đổi thêm, và chọn có muốn được ghi công công khai hay không.",
   "Optional. Used to allow more watch time. Without a PIN, switch profiles when time is up.":
     "Không bắt buộc. Dùng để cho phép xem thêm. Nếu không có mã PIN, hãy đổi hồ sơ khi hết giờ.",
-  Pages: "Trang",
+  "Pages": "Trang",
   "Pause after several episodes and ask before continuing.":
     "Tạm dừng sau vài tập và hỏi trước khi tiếp tục.",
   "Pause preview": "Tạm dừng xem trước",
@@ -468,7 +464,7 @@ const settingsRefinements: Record<string, string> = {
     "Mở lại chương trình ở vị trí bạn đã dừng, kể cả danh sách tập.",
   "Repair & diagnostics": "Sửa chữa và chẩn đoán",
   "Report something broken, or support the project.": "Báo lỗi hoặc hỗ trợ dự án.",
-  Required: "Bắt buộc",
+  "Required": "Bắt buộc",
   "Reset keyboard shortcuts?": "Đặt lại phím tắt?",
   "Reset shortcuts": "Đặt lại phím tắt",
   "Reset {setting}": "Đặt lại {setting}",
@@ -748,11 +744,11 @@ const settingsRefinements: Record<string, string> = {
     "Đăng nhập, các dịch vụ theo dõi nội dung bạn xem và chuyển tiếp của bạn.",
   "Your {n} custom shortcuts will return to their defaults.":
     "{n} phím tắt tùy chỉnh sẽ trở về mặc định.",
-  code: "mã",
+  "code": "mã",
   "each poster": "từng áp phích",
   "on hover": "khi di chuột lên",
   "poster image": "ảnh áp phích",
-  username: "tên người dùng",
+  "username": "tên người dùng",
   "will look on your TV.": "hiển thị như thế này trên TV.",
   "{app} is open source. Browse existing fixes or contribute a patch for the problem you found.":
     "{app} là phần mềm nguồn mở. Xem các bản sửa lỗi hiện có hoặc đóng góp bản vá cho vấn đề bạn gặp.",
@@ -768,8 +764,6 @@ const settingsRefinements: Record<string, string> = {
   "{seconds} seconds": "{seconds} giây",
   "{used} used within a {quota} storage allowance. Video downloads and other files on disk are not included.":
     "Đã dùng {used} trong hạn mức lưu trữ {quota}. Không bao gồm video đã tải và các tệp khác trên ổ đĩa.",
-  "Public-domain books for the eBook library.":
-    "Sách thuộc phạm vi công cộng cho thư viện sách điện tử.",
   "Searchable catalog for Project Gutenberg books.":
     "Danh mục sách Project Gutenberg có thể tìm kiếm.",
   "Game metadata, artwork and release dates.": "Siêu dữ liệu, hình ảnh và ngày phát hành trò chơi.",
