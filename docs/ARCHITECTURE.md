@@ -1,98 +1,50 @@
-# Frame Architecture Guide
+# Frame architecture
 
-Frame is a desktop media application built with **Tauri 2**, **React 19**, **TypeScript**, **Rust**, and **libmpv**. **Windows 10/11 x64 is the only currently supported release target**; some macOS, Linux, and TV-related source remains for compatibility or development, but is not distributed as a supported desktop release. Frame originated as an independent fork of Harbor (`crazyrabbit0/harbor`) and maintains full MIT license attribution (`LICENSE`, `src-tauri/THIRD-PARTY-NOTICES.txt`) while evolving independently at `A67med/frame`.
+Frame runs on Windows 10/11 x64. The WebView2 interface renders the library and controls. Rust handles filesystem access, native windows and libmpv. A browser preview is available for interface development. It cannot verify native playback, Windows message handling or the installer.
 
----
+## From folder to screen
 
-## 1. Repository Layout
+1. The Local tab under `src/features/library/views/library/local-tab/` collects a folder and scan options. Its Rust endpoint, `harbor_scan_folder`, lives in `src-tauri/src/features/library/scan.rs`.
+2. The library associates results with titles and episodes. Metadata providers enrich those records when configured. A missing network service must leave a local file playable.
+3. Navigation pushes a detail or player frame. The player chooses the local file or a video source and invokes the native playback bridge. React listens for playback and track events so the controls reflect what mpv actually did.
+4. Progress and history are associated with the current profile. Changing directories in the source tree does not change the names of saved keys, files or IPC commands.
 
-```text
-frame/
-├── .github/workflows/       # CI, Windows x64 release workflow, Flatpak & dependency checks
-├── android-extension-compat/# Capstan extension bridge source & documentation (used on desktop)
-├── crates/                  # Modular internal Rust libraries
-│   ├── frame-core/          # Pure-Rust stream parser, trust filter & scoring engine (formerly harbor-core)
-│   └── frame-install-recovery/ # Atomic stage/commit/restore installer transaction crate
-├── data/                    # Static JSON feeds, curated logos & community theme catalog
-├── docs/                    # Architecture guide, cleanup audit, sunset notes & compatibility matrix
-├── flatpak/                 # Flathub/Flatpak packaging metadata
-├── i18n/                    # Locale translation dictionaries (Crowdin integration)
-├── native/macos/virtual-mic/ # CoreAudio virtual microphone source; stable driver identity
-├── public/                  # Static assets, avatars, and bundled runtime scripts
-├── scripts/                 # Asset setup, build helpers, validators & diagnostic utilities
-├── src/                     # React 19 + TypeScript frontend
-│   ├── app/                 # App shell: view registry, layer lifecycle, UI scaling & background runners
-│   ├── chrome/              # Window titlebar chrome, navigation rails & controls
-│   ├── components/          # Reusable UI primitives & feature-scoped components
-│   ├── hooks/               # Shared React hooks
-│   ├── lib/                 # Framework-independent stores, provider clients & streaming pipeline
-│   ├── views/               # Page-level views (player, settings, big-picture, collections, etc.)
-│   ├── App.tsx              # Root provider tree & layered navigation mount
-│   ├── main.tsx             # Desktop/browser application entry point
-│   └── main-tv.tsx          # TV / Android entry point (`index-tv.html`, `chrome87` syntax floor)
-├── src-tauri/               # Tauri 2 Rust native core
-│   ├── capabilities/        # Tauri window and plugin permission manifests
-│   ├── icons/               # App icons and installer brand assets
-│   ├── resources/           # Bundled runtime resources (e.g. ad blockers)
-│   ├── src/                 # Native commands, libmpv bindings, media controls, web server, launch args
-│   ├── vendor/              # Vendored dependencies (harbor-udfread, leveldb-sys, librqbit, etc.)
-│   ├── Cargo.toml           # Native desktop crate manifest (`frame`)
-│   └── tauri.conf.json      # Bundle identity (`io.github.abdallahkattriah-sketch.frame`)
-├── tests/                   # Node `--test` test suite
-└── tools/                   # Standalone auxiliary tools (PokemonEngine, android-p2p-probe)
-```
+## Frontend ownership
 
----
+| Area                                                    | Where to start                                                                                                                                                                                       |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Startup and global providers                            | `src/main.tsx`, `src/App.tsx` and `src/app/providers/`                                                                                                                                               |
+| Navigation stack, view registry and retained layers     | `src/app/navigation/view.tsx`, `src/app/views.tsx` and `src/app/layer-lifecycle.ts`                                                                                                                  |
+| Library, watchlist, collections, profiles and discovery | Corresponding directories under `src/features/`. The Local tab owns scan presentation and progress.                                                                                                  |
+| Player and subtitles                                    | `src/views/player.tsx` composes the interface. `src/features/player/engine/` owns playback coordination. `src/features/subtitles/` owns subtitle preparation, selection support and synchronization. |
+| Providers and add-ons                                   | `src/features/metadata/`, `src/features/addons/` and service clients under `src/lib/providers/`. The add-on runtime owns its worker and provider compatibility code.                                 |
+| Settings and themes                                     | `src/views/settings/` renders panels. Searchable options live in `src/features/settings/search/`. Theme code is under `src/features/themes/` and the existing theme modules in `src/lib/`.           |
+| Network and persistence                                 | `src/infrastructure/networking/safe-fetch.ts` selects the HTTP transport. `src/infrastructure/persistence/file-store.ts` connects settings to native file persistence.                               |
+| Shared interface                                        | `src/components/`, `src/hooks/` and `src/chrome/` contain shared controls, behavior and window chrome. `src/index.css` includes the selectors custom themes depend on.                               |
 
-## 2. Responsibilities & Boundaries
+Navigation uses Frame’s own stack. Focus, activation and history restoration have distinct behavior. Keep those semantics when opening pages from keyboard, gamepad, file associations or a deep link.
 
-### 2.1 Frontend Architecture (`src/`)
+## Native ownership
 
-- **App Shell (`src/app/`)**: Extracted from `App.tsx` into modular subsystems:
-  - `views.tsx`: Layered view stack registry and lazy component loader.
-  - `layer-lifecycle.ts`: Keep-alive view management, idle frame eviction, and deep-link parsing.
-  - `ui-scale.ts`: High-DPI scaling bounds and viewport listener.
-  - `runners.tsx`: Global background runners (auto-sync, watch party floater, update notifications).
-- **Navigation**: Uses a custom frame/view stack in `src/lib/view.tsx` rather than a standard URL router.
-- **Data Transport**: Outbound HTTP requests from React use `safeFetch` (`src/lib/safe-fetch.ts`), which routes through Tauri's native command (`harbor_fetch`) on desktop to avoid browser CORS restrictions.
-- **Themes & Styling**: Built on TailwindCSS v4 with custom CSS in `src/index.css`. Theme definitions use `.framestyle` and `.harborstyle` formats parsed by `src/lib/harborstyle.ts`.
+| Area                 | Implementation                                                                                                                                                                                                                                                                    |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tauri lifecycle      | `src-tauri/src/lib.rs` assembles plugins, registers commands and manages process-wide state and shutdown.                                                                                                                                                                         |
+| Video engine         | `src-tauri/src/features/playback/mpv.rs` owns the native session and its event handling. Disk cache policy is in `features/playback/cache.rs`.                                                                                                                                    |
+| Subtitles            | `features/subtitles/` handles credential lookup, downloading, unpacking and extracting subtitle tracks.                                                                                                                                                                           |
+| Library and profiles | `features/library/scan.rs` walks local media. `features/profiles/` owns settings storage and staged migration from the previous application identifier.                                                                                                                           |
+| Windows integration  | `platform/windows/webview.rs` provides WebView2-specific commands. `main_window.rs` owns startup, focus and maximize handling. `video_viewport.rs` positions the native child window and restores its geometry. Taskbar, deep links and media controls share this Windows module. |
+| Updates              | `features/installer/handoff.rs` and `crates/frame-install-recovery/` coordinate installer handoff and rollback. The NSIS hooks and Tauri configuration define the installer contract.                                                                                             |
 
-### 2.2 Native Tauri Backend (`src-tauri/`)
+Paths beginning with `features/` or `platform/` in this table are relative to `src-tauri/src/`. Tauri command names cross a process boundary. Moving the Rust function must preserve its registered name and argument shape.
 
-- **Native Host (`src-tauri/src/lib.rs`)**: Initializes Tauri plugins, managed state, system tray, window geometry, startup routines, and command registrations.
-- **Launch Arguments (`src-tauri/src/launch_args.rs`)**: Owns CLI media file detection, pending startup file consumption, and OS `stremio://` deep-link registration.
-- **Media Engine (`src-tauri/src/mpv.rs`)**: Direct C bindings to `libmpv-2.dll` controlling playback state, audio tracks, and hardware acceleration.
-- **Stream Ranking (`crates/frame-core`)**: Pure-Rust stream parsing, scoring, and trust filtering invoked natively via `streams_run_pipeline`.
+## Runtime dependencies
 
----
+The Windows bundle includes libmpv, mpv, FFmpeg, ffprobe, yt-dlp, fonts and VC runtime files. Setup scripts stage these inputs before packaging. Desktop extension support uses the JVM bridge in `android-extension-compat/` and Capstan. `crates/frame-core/` provides native stream parsing and ranking. The TypeScript pipeline also supports browser-side fallback.
 
-## 3. Compatibility Invariants
+## Validation
 
-Detailed in [docs/LEGACY-COMPATIBILITY.md](file:///E:/PROJECTS/Frame/docs/LEGACY-COMPATIBILITY.md):
+Use `pnpm run typecheck` and `pnpm test` for the interface. The Node test loader resolves application aliases and browser imports. Use `cargo check --locked --manifest-path src-tauri/Cargo.toml` and the Cargo test suites for Rust. Put the fetched libmpv DLL on PATH when running the native test executable.
 
-- **Local Storage Keys**: `harbor.*` keys must remain unchanged to preserve user settings, watch progress, and addon configurations.
-- **Theme Selectors**: `.harbor-*` CSS classes and `data-harbor-*` attributes are part of the external theme API and must not be renamed.
-- **IPC Command Aliases**: Any new command must keep its legacy `harbor_*` alias registered.
-- **Installer Recovery**: `crates/frame-install-recovery` checks for both `frame.exe` and `harbor.exe` to enable smooth upgrades from previous versions.
+Build the x64 NSIS package and run its bundle verifier before testing installation. Use an isolated Windows account for playback, scanner, persistence and upgrade tests. Check a real audio/video file, alternate tracks, seeking, subtitles and resume after restarting the application. A frontend build alone exercises none of those native paths.
 
----
-
-## 4. Build, Check & Test Commands
-
-```bash
-# Typecheck frontend (never use tsc -b for typechecks)
-node ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json
-
-# Run frontend tests
-node --experimental-loader ./scripts/node-test-loader.mjs --test tests/*.test.ts tests/*.test.mjs
-
-# Run a single test
-node --experimental-loader ./scripts/node-test-loader.mjs --test tests/<name>.test.ts
-
-# Repository hygiene check
-node scripts/check-repo-hygiene.mjs
-
-# Settings & search validators
-node scripts/check-settings.mjs
-node scripts/check-settings-search.mjs
-```
+[Windows setup and installer commands](../README.md#development) · [Compatibility contracts](LEGACY-COMPATIBILITY.md) · [Release process](RELEASING.md)

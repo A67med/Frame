@@ -10,7 +10,7 @@ Thanks for helping improve Frame. Frame is a local-first Windows desktop media a
 
 ## Development on Windows
 
-1. Install Node.js, pnpm, Rust with the Windows MSVC toolchain, CMake, and Git Bash. Some extension tooling also requires a JDK.
+1. Install Node.js, pnpm, Rust for x86_64-pc-windows-msvc, Visual Studio C++ Build Tools with the x64 compiler and Windows SDK, CMake, Git Bash and a JDK 17 or newer with jmods for Capstan.
 2. Clone the repository and run:
    ```sh
    pnpm install
@@ -21,8 +21,11 @@ Thanks for helping improve Frame. Frame is a local-first Windows desktop media a
    ```sh
    pnpm run typecheck
    pnpm test
+   cargo fmt --manifest-path src-tauri/Cargo.toml --check
+   cargo check --locked --manifest-path src-tauri/Cargo.toml
+   cargo test --locked --manifest-path src-tauri/Cargo.toml
    ```
-4. For an installer, run `pnpm tauri build --bundles nsis` after provisioning the required native dependencies.
+4. For an installer, run `pnpm tauri build --bundles nsis` and verify its staged files with `node scripts/verify-windows-bundle.mjs --require-capstan`. On Windows the native tests need `src-tauri/libmpv` on PATH.
 
 The full architecture and build boundaries are documented in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 

@@ -1,97 +1,93 @@
 <div align="center">
 
-<img src="docs/media/showcase/frame.jpg" width="920" alt="Frame, a home for your movies and shows. The Default desktop shows its navigation rail, featured movie and trending picks.">
+<img src="src-tauri/icons/128x128.png" width="72" alt="Frame logo">
 
 # Frame
 
-**A local-first Windows desktop app for organizing and watching the movies and TV shows you keep on your own drives.**
+**Your movies and TV shows, on your own drives.**
 
-<a href="https://github.com/A67med/Frame/releases/latest"><img src="docs/media/showcase/download.png" width="310" alt="Download Frame for Windows x64, latest stable release"></a>
+Frame brings your folders, watch history and collections into a Windows desktop library. Open a local video, pick your audio and subtitles, and resume the next episode where you left it.
 
-Windows 10 / 11 · x64 · Signed in-app updates
+[**Download for Windows x64**](https://github.com/A67med/Frame/releases/latest) · [Library](#your-library) · [Playback](#in-the-player) · [Themes](#theme-studio) · [Development](#development)
 
-[Explore the app](#inside-frame) · [Browse themes](#cinematic-themes) · [Get Frame](#get-frame) · [Build from source](#build-from-source)
+[![Frame Home showing a featured film and the navigation rail](docs/media/showcase/frame.jpg)](docs/media/showcase/frame.jpg)
+
+[![Windows 10 and 11 x64](https://img.shields.io/badge/Windows%2010%20%2F%2011-x64-335c82)](#install)
+[![Playback engine libmpv](https://img.shields.io/badge/playback-libmpv-623b73)](#in-the-player)
+[![MIT license](https://img.shields.io/badge/license-MIT-406252)](LICENSE)
 
 </div>
 
-## Inside Frame
+## Your library
 
-### From discovery to playback
+Open **My Library → Local** and add a folder of films or episodes. Watchlist keeps the titles you plan to see, History keeps the ones you started, and Collections lets you group titles yourself. Profiles keep viewing histories separate on a shared computer.
 
-Bring your local movies and episodes together in Frame, then browse Home, Discover and search to organize titles in My Library, Watchlist or Collections. Playback uses **libmpv**, with subtitles, resume and picture-in-picture. Online metadata, optional Stremio add-ons and tracking integrations can extend the experience; your local video files stay on your drive.
-
-### Discover, follow, and organize
-
-- **Radar** brings together personalized For You picks, weekly trends, popular movies and shows, and a release calendar. Digital Releases shows verified Egyptian dates and credits the people you follow.
-- **Following** gives actors and directors their own workspace. Search for people, choose which roles to follow, and see their recent and upcoming work.
-- **Global Search** surfaces a top match and keeps recent queries. **My Library** adds clearer filters, sorting, and empty states for saved titles and watch history.
-
-| Radar                                                                                                                         | Following                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| <img src="docs/media/showcase/radar.jpg" width="450" alt="Frame Radar, with access to TMDB-powered discovery and Following."> | <img src="docs/media/showcase/following.jpg" width="450" alt="Following workspace with People, Activity, and suggestions."> |
-
-<img src="docs/media/showcase/library.jpg" width="920" alt="My Library with tabs for Watchlist, History, Local media, and saved lists.">
-
-## Cinematic themes
-
-| Default                                             | Project Hail Mary                                                                                              | La La Land                                                                                                            |
-| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Editorial typography and a compact navigation rail. | [Rounded floating navigation](docs/media/showcase/project-hail-mary.jpg) with slate panels and amber controls. | Indigo surfaces, gold accents, italic serif titles, and a floating bottom dock that stays in place while you edit it. |
-
-<img src="docs/media/showcase/collection.jpg" width="920" alt="The three built-in theme cards with miniature screenshots of Default, Project Hail Mary, and La La Land.">
-
-<img src="docs/media/showcase/la-la-land.jpg" width="920" alt="La La Land Home with indigo surfaces, an italic headline, and its floating bottom navigation dock.">
-
-### Design your own
-
-Open **Settings → Appearance → Your themes** to get to Theme Studio. Preview colors, typography, layout and spacing as you work. Save your own themes or import and export `.framestyle` files. **Recently Added** keeps previously selected background images available for reuse across sessions.
-
-<img src="docs/media/showcase/studio.jpg" width="920" alt="Theme Studio's built-in collection showing three application previews while editing a theme.">
-
-## Get Frame
-
-**[Download the latest Windows x64 installer](https://github.com/A67med/Frame/releases/latest)**. The installer bundles playback dependencies. Frame checks GitHub for cryptographically signed in-app updates.
-
-### Quick start
-
-1. Install and open Frame on Windows 10 or 11 (x64).
-2. Add your own movies or episodes using Frame's local media/library controls. Your video files stay on your device.
-3. Optionally connect TMDB for richer discovery and follow-up metadata, or enable other integrations from Settings.
-
-Frame is a **desktop app, not a streaming subscription service**. Metadata and optional integrations can contact their respective online services; local media playback does not require uploading your files.
+[![My Library with Watchlist, History, Local and Lists](docs/media/showcase/library.jpg)](docs/media/showcase/library.jpg)
 
 <details>
-<summary><strong>Set up metadata and optional integrations</strong></summary>
+<summary><strong>Explore discovery and following</strong></summary>
 
-Add a TMDB API key in **Settings → Sources & library → Library & metadata** to enable Radar and Following metadata. Digital Releases depends on TMDB’s Egyptian records, which can be incomplete. You can connect Stremio or trackers from Settings and pair an optional phone remote under **Sources & library → P2P & servers**.
+Connect TMDB in Settings to browse Radar, look up cast and directors, and follow their upcoming work. Digital Releases uses verified digital dates for Egypt. Movies and TV series, including anime, can also use optional metadata, tracker and video add-on integrations.
 
-Use **Backup & restore** to export your settings and app data. Video files stay on your drive.
+| Radar                                                                                             | Following                                                                                                   |
+| ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [![Discovery and release calendar](docs/media/showcase/radar.jpg)](docs/media/showcase/radar.jpg) | [![People and activity in Following](docs/media/showcase/following.jpg)](docs/media/showcase/following.jpg) |
 
 </details>
 
-## Build from source
+## In the player
+
+Open a video from the local library or Windows Explorer. The desktop player uses libmpv for decoding, seeking and track changes. Select an embedded audio track, load a subtitle file, adjust its timing or switch to picture-in-picture. Resume and episode history belong to the active profile.
 
 <details>
-<summary><strong>Windows prerequisites and commands</strong></summary>
+<summary><strong>See the playback controls</strong></summary>
 
-Install Node.js, pnpm, Rust, the Windows MSVC toolchain, CMake and Git Bash. Java extension tooling also requires a JDK.
+[![Player controls paused on a generated test clip](docs/media/showcase/windows-player.jpg)](docs/media/showcase/windows-player.jpg)
 
-```sh
-pnpm install
+Captured in Frame on Windows with a generated H.264 test clip playing through embedded libmpv. The timeline, audio tracks and subtitle controls are visible.
+
+</details>
+
+## Theme Studio
+
+Start with a preset, then open **Settings → Appearance → Your themes** to change colors, typography, spacing and navigation. Export a composition as a `.framestyle` file to use it on another installation. Existing `.harborstyle` themes remain readable.
+
+| Project Hail Mary                                                                                                  | La La Land                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| [![Project Hail Mary theme](docs/media/showcase/project-hail-mary.jpg)](docs/media/showcase/project-hail-mary.jpg) | [![La La Land theme](docs/media/showcase/la-la-land.jpg)](docs/media/showcase/la-la-land.jpg) |
+
+[![Theme Studio editing the Project Hail Mary palette](docs/media/showcase/studio.jpg)](docs/THEME-STUDIO.md)
+
+## Install
+
+1. On Windows 10 or 11 x64, open the [latest release](https://github.com/A67med/Frame/releases/latest) and download the x64 setup executable.
+2. Run the installer under the Windows account that will use Frame. The installer includes the native media engine and its sidecars. The interface runs in Microsoft Edge WebView2.
+3. Open Frame and choose a media folder. Enable online metadata or add-ons in Settings if you want them.
+
+Frame checks for signed updates. For an existing installation, use Settings’ backup and restore controls to keep a portable copy of your configuration.
+
+## Development
+
+The interface is React and TypeScript. Tauri connects it to Rust for folder scanning, playback, subtitles and Windows integration. The Capstan extension bridge runs on the desktop for compatible video sources.
+
+<details>
+<summary><strong>Build the Windows x64 application</strong></summary>
+
+Install Node.js 24, the pnpm version in `package.json`, stable Rust for `x86_64-pc-windows-msvc`, Visual Studio C++ Build Tools with the Windows SDK, CMake, Git Bash and a JDK for extension tooling.
+
+```powershell
+pnpm install --frozen-lockfile
 pnpm run setup
-pnpm tauri dev
+pnpm run typecheck
+pnpm test
+pnpm tauri build --target x86_64-pc-windows-msvc --bundles nsis
+node scripts/verify-windows-bundle.mjs --require-capstan
 ```
 
-Run `pnpm run typecheck` and `pnpm test` to check changes. Use `pnpm tauri build --bundles nsis` to create an installer under `src-tauri/target/release/bundle/nsis/`.
+The installer is written to `src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/`. For development, `pnpm tauri dev` starts the native host and interface together. Use a separate Windows test account when exercising upgrades or changing persistent settings.
 
 </details>
 
-<div align="center">
+[Architecture](docs/ARCHITECTURE.md) · [Theme Studio](docs/THEME-STUDIO.md) · [Contribution guide](CONTRIBUTING.md) · [Release process](docs/RELEASING.md) · [Report an issue](https://github.com/A67med/Frame/issues) · [Security](SECURITY.md)
 
-**Tauri 2 · React · TypeScript · Rust · libmpv**
-
-[Releases](https://github.com/A67med/Frame/releases) · [Report an issue](https://github.com/A67med/Frame/issues) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Architecture](docs/ARCHITECTURE.md) · [MIT License](LICENSE)
-
-<sub>Application screenshots use a demo profile. Film artwork and metadata are supplied by TMDB and other catalog providers.</sub>
-
-</div>
+Frame builds on the original Harbor project. The application is distributed under the [MIT license](LICENSE). Bundled components retain their [third-party notices](src-tauri/THIRD-PARTY-NOTICES.txt). Product screenshots use a demo profile. Artwork belongs to its respective rights holders.

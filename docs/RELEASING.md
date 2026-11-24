@@ -22,7 +22,7 @@ Frame publishes a signed **Tauri in-app updater** artifact and a Windows 10/11 x
    pnpm test
    ```
 
-4. Review the version change in all five files: `package.json`, `src-tauri/tauri.conf.json`, `src-tauri/Cargo.toml`, `src-tauri/Cargo.lock`, and `flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml`.
+4. Review the version change in the four version files: `package.json`, `src-tauri/tauri.conf.json`, `src-tauri/Cargo.toml`, and `src-tauri/Cargo.lock`.
 5. Add `docs/releases/v0.4.10.md` with a clear, user-facing changelog. If omitted, `scripts/release-notes.mjs` generates notes from conventional commit subjects.
 6. Open a pull request and await required checks/review. Merge into `main` only after validation.
 7. Follow [Release (Windows x64)](https://github.com/A67med/Frame/actions/workflows/tauri-build.yml). Its prepare job checks all version files, ensures the release is not already published, and verifies any existing tag matches the branch head. The Windows job builds and signs; the publish job creates the release and updater manifest.
