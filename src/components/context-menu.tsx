@@ -1,18 +1,24 @@
+import { setNavEditMode } from "@/chrome/nav-edit-mode";
+import {
+  NAV_ITEMS,
+  effectiveNavOrder,
+  moveNavItem,
+  resetNavCustomization,
+  toggleNavHidden,
+} from "@/chrome/nav-items";
+import { Eye, Pencil } from "lucide-react";
 import {
   ArrowDown,
   ArrowDownToLine,
   ArrowLeft,
   ArrowUp,
-  BookOpen,
   Bookmark,
   BookmarkCheck,
-  Check,
   CheckCheck,
   ClipboardPaste,
   Copy,
   Download,
   ExternalLink,
-  Eye,
   EyeOff,
   Heart,
   Info,
@@ -20,12 +26,10 @@ import {
   Magnet,
   Maximize,
   Navigation,
-  Pencil,
   RotateCcw,
   Share2,
   UserPlus,
   Wallpaper,
-  X,
 } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useActiveAddon } from "@/lib/active-addon";
@@ -44,8 +48,8 @@ import { t as translate, useT } from "@/lib/i18n";
 import { usePlayerActions } from "@/lib/player-actions";
 import { useTogether } from "@/lib/together/provider";
 import type { ParticipantLocation } from "@/lib/together/protocol";
-import { useView } from "@/lib/view";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { useView } from "@/app/navigation/view";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { markMetaWatched, unmarkMetaWatched } from "@/lib/mark-watched";
 import { useMetaWatched } from "@/lib/watched-flag";
 import { useTmdbImdbId } from "@/lib/providers/tmdb";
@@ -54,29 +58,8 @@ import { toggleAutoDownload, useIsAutoDownloaded } from "@/lib/auto-download";
 import { clearTitleBackdrop, getTitleBackdrop, setTitleBackdrop } from "@/lib/title-backdrop";
 import { MyListSubmenu } from "./context-menu/my-list-submenu";
 import { useSettings } from "@/lib/settings";
-import {
-  NAV_ITEMS,
-  effectiveNavOrder,
-  moveNavItem,
-  resetNavCustomization,
-  toggleNavHidden,
-} from "@/chrome/nav-items";
-import { setNavEditMode, useNavEditMode } from "@/chrome/nav-edit-mode";
-import { useProfiles } from "@/lib/profiles";
-import { useIsMangaFavorite, useMangaFavorites } from "@/lib/manga-favorites";
-import {
-  recordMangaChapterRead,
-  removeMangaChapterRead,
-  removeMangaProgressEntry,
-  useMangaProgressEntry,
-  useReadMangaChapterIds,
-} from "@/lib/manga-progress";
-import { addMangaBookmark, removeMangaBookmark, useMangaBookmarks } from "@/lib/manga-bookmarks";
-import { downloadChapter } from "@/lib/manga-downloads";
-import { requestMangaChapterRead, setMangaReadIntent } from "@/lib/manga/read-intent";
-import { mangaLists } from "@/lib/manga-lists";
-import { mangaChapters } from "@/lib/manga/api";
-import { resolveReaderChapters } from "@/lib/manga/chapter-identity";
+
+import { useNavEditMode } from "@/chrome/nav-edit-mode";
 
 const MENU_WIDTH = 220;
 const SUBTITLE_MENU_WIDTH = 360;
@@ -111,7 +94,6 @@ export function ContextMenu() {
   const { state, close, open } = useContextMenu();
   const {
     openMeta,
-    openManga,
     setView,
     openQueue,
     openPicker,
@@ -121,8 +103,6 @@ export function ContextMenu() {
     openSettings,
     meta: currentMeta,
     personId,
-    mangaId,
-    ebookId,
     topKind,
     player,
   } = useView();
@@ -148,18 +128,6 @@ export function ContextMenu() {
   const navEditing = useNavEditMode();
   const commitNav = (next: typeof appSettings.navCustomization) =>
     updateSettings({ navCustomization: next });
-
-  const mangaCard = state?.target.kind === "manga" ? state.target : null;
-  const mangaContinue = state?.target.kind === "manga-continue" ? state.target : null;
-  const mangaChapter = state?.target.kind === "manga-chapter" ? state.target : null;
-  const menuMangaId = mangaCard?.id ?? mangaContinue?.entry.id ?? mangaChapter?.mangaId;
-  const { activeId } = useProfiles();
-  const pid = activeId ?? "default";
-  const { toggle: toggleMangaFav } = useMangaFavorites();
-  const isMangaFav = useIsMangaFavorite(menuMangaId ?? "");
-  const cardProgress = useMangaProgressEntry(menuMangaId);
-  const chapterBookmarks = useMangaBookmarks(mangaChapter?.mangaId);
-  const readChapterIds = useReadMangaChapterIds(mangaChapter?.mangaId);
 
   const shareLink = (type: string, id: string) => {
     void copyText(shareDeepLink(type, id)).then((ok) => {
@@ -200,16 +168,6 @@ export function ContextMenu() {
         open(e, { kind: "person", id: personId });
         return;
       }
-      if (topKind === "manga") {
-        e.preventDefault();
-        if (mangaId) open(e, { kind: "manga", id: mangaId });
-        return;
-      }
-      if (topKind === "ebook" && ebookId) {
-        e.preventDefault();
-        open(e, { kind: "ebook", id: ebookId });
-        return;
-      }
       if (e.target instanceof HTMLElement && e.target.closest("[data-person-card]")) return;
       const backdropEl =
         e.target instanceof HTMLElement ? e.target.closest("[data-title-backdrop]") : null;
@@ -241,7 +199,7 @@ export function ContextMenu() {
     };
     document.addEventListener("contextmenu", handler);
     return () => document.removeEventListener("contextmenu", handler);
-  }, [open, currentMeta, menuMeta, topKind, activeAddon, personId, mangaId, ebookId]);
+  }, [open, currentMeta, menuMeta, topKind, activeAddon, personId]);
 
   useEffect(() => {
     if (!state) return;
@@ -641,82 +599,6 @@ export function ContextMenu() {
         onClick={() => shareLink("person", String(target.id))}
       />,
     );
-  } else if (state.target.kind === "manga") {
-    const target = state.target;
-    const resumeEntry = cardProgress && cardProgress.id === target.id ? cardProgress : null;
-    if (resumeEntry) {
-      const resumeLabel = resumeEntry.chapterNumber
-        ? t("Resume Ch. {n}", { n: resumeEntry.chapterNumber })
-        : t("Resume reading");
-      items.push(
-        <Item
-          key="manga-resume"
-          icon={<RotateCcw size={14} strokeWidth={2} />}
-          label={resumeLabel}
-          onClick={() => {
-            setMangaReadIntent(resumeEntry);
-            openManga(resumeEntry.id);
-            close();
-          }}
-          accent
-        />,
-      );
-    } else {
-      items.push(
-        <Item
-          key="manga-start"
-          icon={<BookOpen size={14} strokeWidth={2} />}
-          label={t("Start reading")}
-          onClick={() => {
-            close();
-            void (async () => {
-              try {
-                const chs = await mangaChapters(target.id);
-                const first = resolveReaderChapters(chs)[0] ?? chs[0];
-                if (first) requestMangaChapterRead(target.id, first.id);
-              } catch {}
-              openManga(target.id);
-            })();
-          }}
-          accent
-        />,
-      );
-    }
-    items.push(
-      <Item
-        key="manga-details"
-        icon={<Info size={14} strokeWidth={2} />}
-        label={t("View details")}
-        onClick={() => {
-          openManga(target.id);
-          close();
-        }}
-      />,
-    );
-    items.push(
-      <Item
-        key="manga-favorite"
-        icon={<Heart size={14} strokeWidth={2} fill={isMangaFav ? "currentColor" : "none"} />}
-        label={isMangaFav ? t("Favorited") : t("Favorite")}
-        onClick={() => {
-          toggleMangaFav({ id: target.id, title: target.title, cover: target.cover });
-          close();
-        }}
-        accent={isMangaFav}
-      />,
-      <MyListSubmenu
-        key="manga-list"
-        item={{ id: target.id, type: "manga", name: target.title, poster: target.cover }}
-        store={mangaLists}
-        onClose={close}
-      />,
-      <Item
-        key="share-manga"
-        icon={<Share2 size={14} strokeWidth={2} />}
-        label={t("Share as link")}
-        onClick={() => shareLink("manga", target.id)}
-      />,
-    );
   } else if (state.target.kind === "nav") {
     const target = state.target;
     const navItem = target.itemId ? NAV_ITEMS.find((it) => it.id === target.itemId) : undefined;
@@ -823,130 +705,7 @@ export function ContextMenu() {
         }}
       />,
     );
-  } else if (state.target.kind === "manga-continue") {
-    const entry = state.target.entry;
-    const resumeLabel = entry.chapterNumber
-      ? t("Resume Ch. {n}", { n: entry.chapterNumber })
-      : t("Resume reading");
-    items.push(
-      <Item
-        key="continue-resume"
-        icon={<RotateCcw size={14} strokeWidth={2} />}
-        label={resumeLabel}
-        onClick={() => {
-          setMangaReadIntent(entry);
-          openManga(entry.id);
-          close();
-        }}
-        accent
-      />,
-      <Item
-        key="continue-details"
-        icon={<Info size={14} strokeWidth={2} />}
-        label={t("View details")}
-        onClick={() => {
-          openManga(entry.id);
-          close();
-        }}
-      />,
-      <Item
-        key="continue-remove"
-        icon={<X size={14} strokeWidth={2} />}
-        label={t("Remove from continue reading")}
-        onClick={() => {
-          removeMangaProgressEntry(pid, entry.id);
-          close();
-        }}
-      />,
-      <Item
-        key="share-continue"
-        icon={<Share2 size={14} strokeWidth={2} />}
-        label={t("Share as link")}
-        onClick={() => shareLink("manga", entry.id)}
-      />,
-    );
-  } else if (state.target.kind === "manga-chapter") {
-    const target = state.target;
-    const chapter = target.chapter;
-    const chapterLabel =
-      chapter.chapter == null ? t("Oneshot") : t("Chapter {n}", { n: chapter.chapter });
-    const existingBookmark = chapterBookmarks.find((bm) => bm.chapterId === chapter.id);
-    const isRead = chapter.serverRead === true || readChapterIds.has(chapter.id);
-    items.push(
-      <Item
-        key="chapter-read"
-        icon={<BookOpen size={14} strokeWidth={2} />}
-        label={t("Read {label}", { label: chapterLabel })}
-        onClick={() => {
-          requestMangaChapterRead(target.mangaId, chapter.id);
-          openManga(target.mangaId);
-          close();
-        }}
-        accent
-      />,
-      <Item
-        key="chapter-bookmark"
-        icon={
-          existingBookmark ? (
-            <BookmarkCheck size={14} strokeWidth={2} />
-          ) : (
-            <Bookmark size={14} strokeWidth={2} />
-          )
-        }
-        label={existingBookmark ? t("Bookmarked") : t("Bookmark")}
-        onClick={() => {
-          if (existingBookmark) removeMangaBookmark(pid, existingBookmark.id);
-          else
-            addMangaBookmark(pid, {
-              mangaId: target.mangaId,
-              title: target.mangaTitle ?? "",
-              cover: target.mangaCover,
-              chapterId: chapter.id,
-              chapterNumber: chapter.chapter,
-              chapterLabel,
-              page: 1,
-              totalPages: 1,
-            });
-          close();
-        }}
-        accent={!!existingBookmark}
-      />,
-      <Item
-        key="chapter-download"
-        icon={<Download size={14} strokeWidth={2} />}
-        label={t("Download chapter")}
-        onClick={() => {
-          void downloadChapter(target.mangaId, chapter.id, {
-            title: target.mangaTitle,
-            cover: target.mangaCover,
-            chapter: chapter.chapter,
-          });
-          close();
-        }}
-      />,
-      <Item
-        key="chapter-read-flag"
-        icon={isRead ? <EyeOff size={14} strokeWidth={2} /> : <Check size={14} strokeWidth={2} />}
-        label={isRead ? t("Mark as unread") : t("Mark as read")}
-        onClick={() => {
-          if (isRead) removeMangaChapterRead(pid, target.mangaId, chapter.id);
-          else recordMangaChapterRead(pid, target.mangaId, chapter.id);
-          close();
-        }}
-        accent={isRead}
-      />,
-    );
-  } else if (state.target.kind === "ebook") {
-    const target = state.target;
-    items.push(
-      <Item
-        key="share-ebook"
-        icon={<Share2 size={14} strokeWidth={2} />}
-        label={t("Share as link")}
-        onClick={() => shareLink("ebook", target.id)}
-      />,
-    );
-  } else {
+  } else if (state.target.kind === "edit") {
     const { element, selection } = state.target;
     const canCopy = selection.length > 0;
     const canPaste = element != null;

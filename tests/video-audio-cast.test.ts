@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { VideoAudioCast } from "../src/lib/player/video-audio-cast.ts";
-import type { PlayerBridge, PlayerSnapshot } from "../src/lib/player/bridge.ts";
+import { VideoAudioCast } from "../src/features/player/engine/video-audio-cast.ts";
+import type { PlayerBridge, PlayerSnapshot } from "../src/features/player/engine/bridge.ts";
 import type { CastDeviceInfo } from "../src/lib/cast.ts";
 import {
   claimCastSession,

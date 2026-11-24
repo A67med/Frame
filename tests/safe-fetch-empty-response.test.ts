@@ -4,7 +4,7 @@ import test from "node:test";
 import ts from "typescript";
 
 function nativeFetch(status: number, body = "") {
-  const source = readFileSync("src/lib/safe-fetch.ts", "utf8");
+  const source = readFileSync("src/infrastructure/networking/safe-fetch.ts", "utf8");
   const ast = ts.createSourceFile("safe-fetch.ts", source, ts.ScriptTarget.Latest, true);
   const functions = ast.statements.filter(
     (node) =>

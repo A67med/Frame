@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { fetchEpisodeList, nextUnwatchedAfter } from "@/lib/series-episodes";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { getEpisodeProgress } from "@/lib/episode-progress";
 import {
   loadSimklProgress,
@@ -34,7 +34,7 @@ import { parseKitsuId } from "@/lib/providers/kitsu";
 import { franchiseDedupKey } from "@/lib/providers/jikan";
 import { useSettings } from "@/lib/settings";
 import { isCwDismissed, useCwDismissVersion } from "@/lib/cw-dismiss";
-import { anyProfileSharesStremioWith, useProfiles } from "@/lib/profiles";
+import { anyProfileSharesStremioWith, useProfiles } from "@/features/profiles/profiles";
 import { listLocalCw } from "@/lib/local-cw";
 import { localToLibraryItem } from "@/lib/continue-watching";
 

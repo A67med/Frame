@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { usePluginCataloguesAvailable } from "@/lib/streams/plugins/available";
+import { usePluginCataloguesAvailable } from "@/features/addons/streams/available";
 import { Puzzle, Radar, UserCheck } from "lucide-react";
 import { NavGlyph } from "@/components/icons/nav-glyph";
 import { NavLottie } from "@/components/icons/nav-lottie";
@@ -22,7 +22,7 @@ import { SettingsIcon } from "@/components/icons/settings-icon";
 import { TvIcon } from "@/components/icons/tv-icon";
 import { DownloadsNavIcon } from "@/chrome/downloads-nav-icon";
 import type { LockableTab } from "@/lib/parental";
-import type { View } from "@/lib/view";
+import type { View } from "@/app/navigation/view";
 
 export type NavItemId =
   | "home"

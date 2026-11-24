@@ -9,7 +9,7 @@ import { useT } from "@/lib/i18n";
 import { useSearch } from "@/lib/search-context";
 import { useSettings } from "@/lib/settings";
 import { getThemeById } from "@/lib/theme";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { close, minimize, toggleMaximize } from "@/lib/window";
 
 const IS_TAURI = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;

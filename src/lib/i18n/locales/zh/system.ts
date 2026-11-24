@@ -4,7 +4,7 @@ const system: Record<string, string> = {
   "Cache buffering": "缓存缓冲",
   "Couldn't open this file": "无法打开此文件",
   "Failed: {message}": "失败：{message}",
-  File: "文件",
+  "File": "文件",
   "Load file": "加载文件",
   "Same file": "同一文件",
   'This file is in OneDrive. If "Files On-Demand" is on, the file is a cloud placeholder until it\'s downloaded. Right-click it in Explorer and pick':
@@ -50,7 +50,7 @@ const system: Record<string, string> = {
   "mdblist api key": "MDBList API 密钥",
   "Export your entire Frame setup to a single file, then restore it on a new computer or keep it as a backup.":
     "将整个 Frame 配置导出为单个文件，以便在新电脑上恢复或留作备份。",
-  Privacy: "隐私",
+  "Privacy": "隐私",
   "Stremio install links": "Stremio 安装链接",
   "Frame catches stremio:// install links so the configure-and-install flow stays inside the app.":
     "Frame 会接管 stremio:// 安装链接，让配置和安装流程都在应用内完成。",
@@ -85,7 +85,7 @@ const system: Record<string, string> = {
   "Connection refused / DNS does not resolve": "连接被拒绝 / DNS 无法解析",
   "Token name can be anything. The permission row must be exactly {b1} + {b2} + {b3}.":
     "令牌名称可随意填写。权限行必须严格设置为 {b1} + {b2} + {b3}。",
-  Failed: "失败",
+  "Failed": "失败",
   "Frame checks harbor.site for new versions and installs them in place. Nothing installs until you choose to, and a dismissed update never nags you again.":
     "Frame 会在 harbor.site 上检查新版本并就地安装更新。只有在你选择后才会安装，忽略的更新也不会再次提醒。",
   "Frame checks its GitHub releases for new versions and installs them in place. Nothing installs until you choose to, and a dismissed update never nags you again.":
@@ -93,7 +93,7 @@ const system: Record<string, string> = {
   "Export your entire Frame setup to a single file, then restore it on a new computer or keep it as a backup. Everything is included except your Stremio sign-in.":
     "将完整的 Frame 配置导出为单个文件，以便在新电脑上恢复或留作备份。除 Stremio 登录信息外，其他内容均会包含。",
   "Server address": "服务器地址",
-  Connection: "连接",
+  "Connection": "连接",
   "Relay needs update": "中继需要更新",
   "Server reachable": "服务器可访问",
   "Test failed": "测试失败",
@@ -155,7 +155,7 @@ const system: Record<string, string> = {
   "Update the clock every second.": "每秒更新时钟。",
   "Could not reach TMDB. Check the connection.": "无法连接 TMDB。请检查网络连接。",
   "Phone setup is off": "手机设置已关闭",
-  Setup: "设置",
+  "Setup": "设置",
   "Setup QR code": "设置用二维码",
   "TMDB API key": "TMDB API 密钥",
   "Turn on phone setup": "启用手机设置",
@@ -169,7 +169,7 @@ const system: Record<string, string> = {
   "An API key is needed": "需要 API 密钥",
   "Check your connection and try again.": "请检查网络连接后重试。",
   "Could not update showcase": "无法更新展示作品",
-  Reload: "重新加载",
+  "Reload": "重新加载",
   "This server is too old to add repos from Frame": "此服务器版本过旧，无法通过 Frame 添加仓库",
   "The server could not load that repository": "服务器无法加载该仓库",
   "Action failed": "操作失败",
@@ -214,14 +214,14 @@ const system: Record<string, string> = {
   "Manifest URL": "清单 URL",
   "Configure on the addon's setup page": "在插件设置页面中配置",
   "Or paste the install link manually": "或手动粘贴安装链接",
-  Install: "安装",
+  "Install": "安装",
   "Install addon": "安装插件",
-  Update: "更新",
+  "Update": "更新",
   "Open setup page": "打开设置页面",
   "https://...manifest.json or stremio://...": "https://...manifest.json 或 stremio://...",
   "Export as file": "导出为文件",
   "Import from file...": "从文件导入...",
-  Error: "错误",
+  "Error": "错误",
   "update.ready": "更新已可安装",
   "update.installing": "正在安装更新",
   "update.downloading": "正在下载更新",
@@ -280,7 +280,7 @@ const system: Record<string, string> = {
   "Identify every file by its name and pull fresh titles and artwork from TMDB.":
     "根据文件名识别每个文件，并从 TMDB 获取最新标题和图片。",
   "Lock to season server": "锁定到本季服务器",
-  Network: "电视网",
+  "Network": "电视网",
   "OpenRouter API key (sk-or-...)": "OpenRouter API 密钥（sk-or-...）",
   "Same file as host": "与主机使用相同文件",
   "Server couldn't start:": "服务器无法启动：",
@@ -291,33 +291,9 @@ const system: Record<string, string> = {
   "unknown error": "未知错误",
   "Your network blocks UDP, so DHT is offline, but HTTPS trackers are reachable over TCP. Streams can still find peers, they may just take a little longer to start.":
     "你的网络阻止了 UDP，因此 DHT 已离线，但仍可通过 TCP 访问 HTTPS Tracker。播放源仍可找到对等节点，只是可能需要更长时间才能开始播放。",
-  "Everything else, via your own server": "其余所有内容均通过你自己的服务器获取",
-  "Install it in Extensions": "在“扩展”中安装",
-  "Page failed to load": "页面加载失败",
-  "Paste your repo.json URL into Extensions above, then install. That is how you bring any site's sources back.":
-    "将 repo.json URL 粘贴到上方的“扩展”中，然后安装。这样即可重新添加任意网站的来源。",
-  "Plugins run sandboxed in an isolated worker with no access to your files, accounts, or the rest of Frame. What a plugin scrapes is between you and the site it targets. Only install plugins from repositories you trust.":
-    "插件在隔离的工作线程沙盒中运行，无法访问您的文件、账号或 Frame 的其他部分。插件抓取什么内容是您与目标网站之间的事。请仅安装来自可信仓库的插件。",
-  "Prefer a server? Run every source through your own Suwayomi and point Frame at it":
-    "更喜欢使用服务器？通过您自己的 Suwayomi 运行所有来源，并让 Frame 连接到该服务器",
-  "Put your plugin file and a repo.json manifest on any static HTTPS host: GitHub Pages, a raw gist, an object store, your own server.":
-    "将插件文件和 repo.json 清单放到任意静态 HTTPS 主机上，例如 GitHub Pages、原始 gist、对象存储或您自己的服务器。",
-  "Reach the network with harbor.http(url, opts) and parse HTML with harbor.parseHtml(html). There is no fetch, DOM, or storage in the sandbox.":
-    "使用 harbor.http(url, opts) 访问网络，并使用 harbor.parseHtml(html) 解析 HTML。沙盒中没有 fetch、DOM 或存储功能。",
-  "Run your own server": "运行自己的服务器",
   "Setup .txt": "设置说明 .txt",
   "Storage location": "存储位置",
   "Update plugin": "更新插件",
-  "Works on plain server-rendered HTML. Sites that build the page with JavaScript, or hide data inside scripts, need a plugin instead.":
-    "适用于普通的服务器端渲染 HTML。使用 JavaScript 构建页面或将数据隐藏在脚本中的网站则需要插件。",
-  "Write a scraper for any site, host it, and install it like any other plugin":
-    "为任意网站编写抓取器，将其托管后像其他插件一样安装",
-  "Write one JavaScript file": "编写一个 JavaScript 文件",
-  "on your machine, install the sources you want inside it (hundreds are available), then add its address (like":
-    "在您的设备上安装所需来源（有数百个可用），然后添加其地址（例如",
-  "under Your server above. Everything you enable there shows up here.":
-    "位于上方的“您的服务器”下。您在那里启用的所有内容都会显示在这里。",
-  "update to v{version}": "更新至 v{version}",
   "Click to choose a different file": "点击选择其他文件",
   "Failed to save": "保存失败",
   "The server stopped responding, the rest stayed on this device.":
@@ -331,7 +307,7 @@ const system: Record<string, string> = {
   "Auto follows your connection speed.": "自动模式会根据你的连接速度调整。",
   "Both devices need to be on the same Wi-Fi network, and some guest networks block devices from seeing each other.":
     "两台设备需要连接到同一 Wi-Fi 网络，部分访客网络会阻止设备相互发现。",
-  Cache: "缓存",
+  "Cache": "缓存",
   "Cache folder": "缓存文件夹",
   "Change server": "更换服务器",
   "Checking your connection": "正在检查网络连接",
@@ -393,15 +369,15 @@ const system: Record<string, string> = {
   "Privacy & tracker blocking": "隐私和跟踪器拦截",
   "Private mode stops all contact with this server in either direction.":
     "隐私模式会阻止与此服务器之间的所有双向通信。",
-  SETUP: "设置",
+  "SETUP": "设置",
   "Saves the relay URL and your Cloudflare token to a file.":
     "将中继 URL 和你的 Cloudflare 令牌保存到文件。",
   'Select "Request an API key" and pick Developer.': "选择“申请 API 密钥”，然后选择“开发者”。",
-  Server: "服务器",
+  "Server": "服务器",
   "Server and privacy": "服务器与隐私",
   "Setup progress": "设置进度",
   "Sign in with a server, username and password": "使用服务器、用户名和密码登录",
-  Storage: "存储",
+  "Storage": "存储",
   "Streaming server": "流媒体服务器",
   "TMDB API key (v3)": "TMDB API 密钥（v3）",
   "TMDB API key, v3 auth": "TMDB API 密钥，v3 身份验证",
@@ -528,7 +504,7 @@ const system: Record<string, string> = {
   "Sign-in failed.": "登录失败。",
   "Sharing your diagnostics for issue #{ticket}. Your session tokens, API keys, and passwords are removed before anything leaves your device.":
     "正在分享问题 #{ticket} 的诊断信息。任何数据离开设备前，都会移除会话令牌、API 密钥和密码。",
-  Crash: "崩溃",
+  "Crash": "崩溃",
   "Previous native crash": "上次原生崩溃",
   "Something blew up while rendering. Reload to recover, or send us the technical detail.":
     "渲染时出了问题。请重新加载以恢复，或向我们发送技术详情。",

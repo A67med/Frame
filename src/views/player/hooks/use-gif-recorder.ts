@@ -7,9 +7,9 @@ import {
   formatStamp,
   joinPath,
   safeName,
-} from "@/lib/player/capture-path";
+} from "@/features/player/engine/capture-path";
 import type { FrameGrabToast } from "./use-frame-grab";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 export type GifState = "idle" | "recording" | "encoding";
 

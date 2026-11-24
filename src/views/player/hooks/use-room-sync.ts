@@ -1,10 +1,10 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackBuffered, getPlaybackPosition } from "@/lib/player/playback-clock";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
+import { getPlaybackBuffered, getPlaybackPosition } from "@/features/player/engine/playback-clock";
 import type { PartialSyncState } from "@/lib/together/provider";
 import type { RoomSnapshot } from "@/lib/together/client";
 import type { SourceDescriptor, SyncState } from "@/lib/together/protocol";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import type { RoomCommand } from "@/lib/together/protocol";
 import {
   HOST_HEARTBEAT_MS,

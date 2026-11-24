@@ -107,7 +107,7 @@ async function xtreamFetchText(url: string, parentSignal?: AbortSignal): Promise
           } as unknown as RequestInit);
         } catch (e) {
           if (!/scope|not allowed/i.test(String(e))) throw e;
-          const { safeFetch } = await import("@/lib/safe-fetch");
+          const { safeFetch } = await import("@/infrastructure/networking/safe-fetch");
           res = await safeFetch(url, {
             signal,
             headers: { "User-Agent": XTREAM_UA, Accept: "application/json, */*" },

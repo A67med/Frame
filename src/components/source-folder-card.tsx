@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import type { SourceFolder } from "@/lib/custom-sources";
 import { useAuth } from "@/lib/auth";
 import { createAddonCatalogFetcher, gatherCatalogAddons } from "@/lib/addons";

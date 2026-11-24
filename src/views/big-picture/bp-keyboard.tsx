@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Delete, Space, X } from "lucide-react";
-import { isAndroid } from "@/lib/platform";
 import { SFX } from "@/lib/sfx";
 import { useBpT } from "./bp-i18n";
 
@@ -71,8 +70,6 @@ export function BpKeyboard({
   const [symbols, setSymbols] = useState(false);
   const t = useBpT();
   const rows = symbols ? SYMBOLS : LETTERS;
-
-  if (isAndroid()) return null;
 
   return (
     <div dir="ltr" className="flex flex-col gap-[clamp(5px,0.7vh,9px)]">

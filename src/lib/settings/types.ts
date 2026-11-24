@@ -6,8 +6,11 @@ import type { SourceRow } from "@/lib/custom-sources";
 import type { CustomStreamFilter } from "@/lib/streams/custom-filters";
 import type { SyncIndicatorPosition } from "@/lib/sync-toast-position";
 import type { FullscreenClockFormat, FullscreenClockStyle } from "@/lib/local-time";
-import type { SubtitleOffsetPosition, SubtitleOffsetSize } from "@/lib/player/subtitle-offset";
-import type { BufferSizeId } from "@/lib/player/buffer-profile";
+import type {
+  SubtitleOffsetPosition,
+  SubtitleOffsetSize,
+} from "@/features/player/engine/subtitle-offset";
+import type { BufferSizeId } from "@/features/player/engine/buffer-profile";
 import type { UiLanguage } from "@/lib/i18n/languages";
 import type { DisplaySelection } from "@/lib/monitors";
 
@@ -442,13 +445,8 @@ export type Settings = {
   songIdAiKey: string;
   songIdAiModel: string;
   aiSearchKey: string;
-  steamSearchShortcut: boolean;
-  gameAgeRatingAgency: "ESRB" | "PEGI";
   igdbClientId: string;
   igdbClientSecret: string;
-  gameArtworkSelection: "first" | "random" | "manual";
-  gameArtworkScreenshots: boolean;
-  gameArtworkCoverIcon: boolean;
   aiSearchModel: string;
   aiSearchProvider: "openrouter" | "groq";
   aiGroqKey: string;
@@ -735,7 +733,6 @@ export type Settings = {
   iptvForceProxy: boolean;
   iptvEpgOffsetHours: number;
   sidebarCollapsed: boolean;
-  showQuickGameLibrary: boolean;
   gamesOpenInLibrary: boolean;
   wrappedButton: boolean;
   libraryHero: boolean;

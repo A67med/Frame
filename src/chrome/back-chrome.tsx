@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { useT } from "@/lib/i18n";
-import { useActiveKid } from "@/lib/profiles";
-import { useView } from "@/lib/view";
+import { useActiveKid } from "@/features/profiles/profiles";
+import { useView } from "@/app/navigation/view";
 import { useSectionBackActive } from "@/lib/section-back";
 
 export function BackChrome() {

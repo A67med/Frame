@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import type { PlayInvite } from "@/lib/together/protocol";
-import type { PlayerSrc, PlayEpisode } from "@/lib/view";
+import type { PlayerSrc, PlayEpisode } from "@/app/navigation/view";
 import { isAddonNativeMeta, type Meta } from "@/lib/cinemeta";
 import type { Settings } from "@/lib/settings";
 import type { DebridStore } from "@/lib/debrid/types";
 import { fetchAdjacentEpisodes } from "@/lib/series-episodes";
 import { isEpisodeHidden } from "@/lib/hidden-episodes";
-import { findLocalEpisode, localShowEpisodes } from "@/lib/local-library";
-import { isLocalUrl } from "@/lib/player/local-url";
-import { localPlayerSrc } from "@/views/library/local-tab/show-group";
+import { findLocalEpisode, localShowEpisodes } from "@/features/library/local-library";
+import { isLocalUrl } from "@/features/player/engine/local-url";
+import { localPlayerSrc } from "@/features/library/views/library/local-tab/show-group";
 import { completedDownloadFor } from "@/lib/download/downloads-store";
 import { downloadPlayerSrc } from "@/lib/download/player-src";
 

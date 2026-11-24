@@ -168,7 +168,7 @@ function checkPlatform(dir, triple) {
 
 /*
  * A unix launcher without its exec bit cannot start. Windows carries no such bit, so a runtime
- * cross staged there arrives without one and src-tauri/src/capstan/locate.rs restores it on the
+ * cross staged there arrives without one and src-tauri/src/features/addons/capstan/locate.rs restores it on the
  * way to spawn. Everywhere else it is set here, where the staging machine can still do it.
  */
 export function markLaunchers(runtimeDir, target, log) {

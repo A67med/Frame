@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { SFX } from "@/lib/sfx";
 import { BpEpisodeCard } from "./detail/bp-episode-card";
 import { BP_DETAIL_HEADING } from "./detail/bp-detail-chrome";

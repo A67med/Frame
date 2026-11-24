@@ -2,7 +2,7 @@ import { useThemePreview } from "@/lib/theme-preview";
 import { useEffect, useMemo, useState } from "react";
 import { useSettings } from "@/lib/settings";
 import { getThemeById } from "@/lib/theme";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { scanTheme } from "@/lib/theme-scan";
 import { subscribeCustomThemes, type CustomTheme } from "@/lib/custom-themes";
 

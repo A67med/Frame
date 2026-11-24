@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "プラグイン",
-  Repositories: "リポジトリ",
+  "Plugins": "プラグイン",
+  "Repositories": "リポジトリ",
   "Installed plugins": "インストール済みのプラグイン",
   "Plugin repositories": "プラグインリポジトリ",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -29,8 +29,8 @@ const plugins: Record<string, string> = {
     "リポジトリを追加してから、使いたいプロバイダーをインストールしてください。ここに表示されます。",
   "Add a repository": "リポジトリを追加",
   "Movies and series": "映画とシリーズ",
-  Script: "スクリプト",
-  Verified: "検証済み",
+  "Script": "スクリプト",
+  "Verified": "検証済み",
   "v{version} available": "v{version}が利用可能",
   "Paused after {n} failures. Turn it back on to try again.":
     "{n}回失敗したため一時停止しました。再試行するには、もう一度オンにしてください。",
@@ -52,7 +52,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "{repo}のv{version}、{when}にインストール。",
   "Update to v{version}": "v{version}に更新",
   "Revert to v{version}": "v{version}に戻す",
-  Reaches: "接続先",
+  "Reaches": "接続先",
   "Any public website. This plugin did not say which sites it uses.":
     "すべての公開サイト。このプラグインは使用するサイトを申告していません。",
   "Seen so far: {hosts}": "これまでの接続先: {hosts}",
@@ -100,7 +100,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "削除して{count}件をアンインストールしますか？",
   "Could not reach this repository. Installed plugins keep working.":
     "このリポジトリに接続できませんでした。インストール済みのプラグインは引き続き動作します。",
-  "This repository lists no plugins.": "このリポジトリにはプラグインがありません。",
   "This repository is not for stream plugins.":
     "このリポジトリはストリームプラグイン用ではありません。",
   "Not a stream plugin: it exports no getStreams or streams function.":

@@ -1,13 +1,16 @@
 import { useCallback, useMemo, useRef, useSyncExternalStore } from "react";
 import { useHeroLogos } from "@/components/anime-hero/use-hero-logos";
-import { usePlaybackBufferedGated, usePlaybackPositionGated } from "@/lib/player/playback-clock";
+import {
+  usePlaybackBufferedGated,
+  usePlaybackPositionGated,
+} from "@/features/player/engine/playback-clock";
 import type { RemoteEpisodeRef, RemoteSnapshot, RemoteSourceInfo } from "@/lib/remote/protocol";
 import {
   buildRemoteSnapshot,
   dispatchRemoteCommand,
   subscribeRemoteSession,
 } from "@/lib/remote/session";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { useSettings } from "@/lib/settings";
 
 export type BpPlayback = {

@@ -10,8 +10,8 @@ import {
   originalLanguageFromFind,
   resolveOriginalLanguage,
   usableOriginalLanguage,
-} from "../src/lib/player/original-audio.ts";
-import { pickBestTrack } from "../src/lib/subtitles/language.ts";
+} from "../src/features/player/engine/original-audio.ts";
+import { pickBestTrack } from "../src/features/subtitles/language.ts";
 
 test("original language normalizes codes and ignores TMDB's no-language marker", () => {
   assert.equal(usableOriginalLanguage("JA"), "ja");

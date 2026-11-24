@@ -1,9 +1,9 @@
 import { addonBasesForOrigin, type Addon } from "@/lib/addons";
 import { isAddonNativeMeta, type Meta } from "@/lib/cinemeta";
 import type { DebridStore } from "@/lib/debrid/types";
-import { readPlayback } from "@/lib/playback-history";
+import { readPlayback } from "@/features/player/history";
 import type { Settings } from "@/lib/settings";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { resolveAddonRanks } from "./addon-priority";
 import { animeAbsoluteFromScopedId } from "./anime-identity-core";
 import type { PipelineInput } from "./pipeline";
@@ -13,7 +13,7 @@ import {
   pluginAddonById,
   pluginIdFromCatalogueBase,
   pluginsForAddon,
-} from "./plugins/addon";
+} from "../../features/addons/streams/addon";
 import { unverifiedAnimeSeasonId } from "./stream-ids";
 import type { Stream } from "./types";
 

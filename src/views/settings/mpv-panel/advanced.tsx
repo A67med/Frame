@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { RowNote, Section } from "../shared";
-import { compileMpvOptions, validateMpvOptions } from "@/lib/player/mpv-tuning";
+import { compileMpvOptions, validateMpvOptions } from "@/features/player/engine/mpv-tuning";
 
 export function AdvancedMpvSection() {
   const { settings, update } = useSettings();

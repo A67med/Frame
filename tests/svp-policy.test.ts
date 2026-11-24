@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { isAnimeMedia, isSvpActiveForMedia } from "../src/lib/player/svp-policy.ts";
+import { isAnimeMedia, isSvpActiveForMedia } from "../src/features/player/engine/svp-policy.ts";
 
 const baseSettings = {
   playerSvp: true,

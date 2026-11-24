@@ -18,7 +18,7 @@ import type { Meta } from "@/lib/cinemeta";
 import { activeDownloadFor, cancelDownload, useDownloads } from "@/lib/download/downloads-store";
 import type { LibraryItem } from "@/lib/stremio";
 import { useSettings } from "@/lib/settings";
-import { useInWatchlist, toggleWatchlist } from "@/lib/watchlist";
+import { useInWatchlist, toggleWatchlist } from "@/features/watchlist/watchlist";
 import { useIsFavorite, useMediaFavorites } from "@/lib/media-favorites";
 import { markMovieWatched, unmarkMovieWatched } from "@/lib/mark-watched";
 import {

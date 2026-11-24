@@ -3,7 +3,7 @@ import type { ComponentProps } from "react";
 import { ClipChooser } from "@/components/player/clip-chooser";
 import { GifRecordPill } from "@/components/player/gif-record-pill";
 import { QuickTools } from "@/components/player/quick-tools";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { SkipPillContainer } from "./skip-pill-container";
 import type { useClipRecorder } from "./hooks/use-clip-recorder";
 import type { useGifRecorder } from "./hooks/use-gif-recorder";

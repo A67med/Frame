@@ -1,5 +1,5 @@
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import type { SharedCrewFilm } from "@/lib/providers/wikidata-graph";
 import { GraphPanel, GraphPanelRow, useAnchor } from "./graph-panel";
 

@@ -2,7 +2,7 @@ import { AwardLogo, laurelColorFor } from "@/components/icons/award-logo";
 import { Laurel } from "@/components/icons/laurel";
 import { useT } from "@/lib/i18n";
 import type { AwardType } from "@/lib/providers/wikidata";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { Row } from "./row";
 
 const AWARDS: Array<{ type: AwardType; name: string; sub: string }> = [

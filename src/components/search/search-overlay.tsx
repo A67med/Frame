@@ -9,7 +9,7 @@ import { useT } from "@/lib/i18n";
 import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import type { Meta } from "@/lib/cinemeta";
 import { useSearch } from "@/lib/search-context";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { MOVIE_GENRES, TV_GENRES } from "@/lib/feed/tags";
 import { EmptyState } from "./empty-state";
 import { TopMatch } from "./top-match";

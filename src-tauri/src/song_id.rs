@@ -28,11 +28,6 @@ pub async fn recognize_now_playing(
         let wav = pcm_to_wav(&pcm, sample_rate, channels, bits)?;
         audd_recognize(wav, api_token).await
     }
-    #[cfg(not(windows))]
-    {
-        let _ = (api_token, seconds);
-        Err("Song identification is only supported on Windows for now".into())
-    }
 }
 
 #[tauri::command]
@@ -51,11 +46,6 @@ pub async fn recognize_now_playing_ai(
         ensure_audible(&pcm)?;
         let wav = pcm_to_wav(&pcm, sample_rate, channels, bits)?;
         crate::song_id_gemini::recognize(wav, api_key, model).await
-    }
-    #[cfg(not(windows))]
-    {
-        let _ = (api_key, model, seconds);
-        Err("Song identification is only supported on Windows for now".into())
     }
 }
 

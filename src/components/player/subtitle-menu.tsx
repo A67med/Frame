@@ -7,21 +7,21 @@ import {
   modalOverlayEmitState,
   modalOverlayOpen,
 } from "@/lib/modal-overlay";
-import { openStyleBar } from "@/lib/player/sub-presets";
-import { setSecondarySub } from "@/lib/player/secondary-sub";
+import { openStyleBar } from "@/features/player/engine/sub-presets";
+import { setSecondarySub } from "@/features/player/engine/secondary-sub";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
-import { wasLimitReached } from "@/lib/subtitles/limit-signal";
-import { wasPendingSub } from "@/lib/subtitles/pending-subs";
-import { bindSubtitleDownloadAuth } from "@/lib/subtitles/provider-auth";
-import type { SubtitleLoadMetadata } from "@/lib/subtitles/types";
+import { wasLimitReached } from "@/features/subtitles/limit-signal";
+import { wasPendingSub } from "@/features/subtitles/pending-subs";
+import { bindSubtitleDownloadAuth } from "@/features/subtitles/provider-auth";
+import type { SubtitleLoadMetadata } from "@/features/subtitles/types";
 import { MenuBody } from "./subtitle-menu/menu-body";
 import { ResizableSubtitlePanel } from "./subtitle-menu/resizable-panel";
 import { useSubtitleContext } from "./subtitle-menu/subtitle-context-store";
 import type { SubtitleMenuProps } from "./subtitle-menu/types";
 import { buildOverlayState } from "./subtitle-menu/utils";
 import { Tooltip } from "./transport/tooltip";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 
 export type { SubtitleMenuProps } from "./subtitle-menu/types";
 

@@ -5,7 +5,7 @@ import { Row } from "@/components/row";
 import { useContextMenu } from "@/lib/context-menu";
 import { creditToMeta, type PersonCredit } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function FilmRow({
   title,

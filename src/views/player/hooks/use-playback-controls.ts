@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, type RefObject } from "react";
 import type { CastDeviceInfo } from "@/lib/cast";
-import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
+import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
 import { writePlayerPrefs } from "@/lib/player-prefs";
 import {
   rememberedFromChoice,
@@ -9,10 +9,10 @@ import {
   subtitleSourceIsLocal,
   writeRememberedSub,
   type SubChoiceInput,
-} from "@/lib/subtitles/subtitle-memory";
-import { hasImportedSubTitle } from "@/lib/player/imported-subs";
+} from "@/features/subtitles/subtitle-memory";
+import { hasImportedSubTitle } from "@/features/player/engine/imported-subs";
 import type { RoomCommand } from "@/lib/together/protocol";
-import { cacheSelectedSubtitle } from "@/lib/subtitles/selected-subtitle-cache";
+import { cacheSelectedSubtitle } from "@/features/subtitles/selected-subtitle-cache";
 import { notifyMediaSeeked } from "@/lib/media-session";
 
 const SEEK_ACCUM_WINDOW_MS = 700;

@@ -6,13 +6,13 @@ import {
   subscribeBrowseCatalogs,
   type BrowseCatalog,
 } from "@/lib/catalog-browse";
-import { isExtensionCatalogueBase, subscribeStreamPlugins } from "@/lib/streams/plugins";
+import { isExtensionCatalogueBase, subscribeStreamPlugins } from "@/features/addons/streams";
 import {
   searchPlugins,
   searchPluginPage,
   type PluginSearchGroup,
-} from "@/lib/streams/plugins/extension/search";
-import { useView } from "@/lib/view";
+} from "@/features/addons/streams/extension/search";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { useContentDrag } from "@/lib/window-drag";
 import { FeedShelf } from "@/components/feed-shelf";

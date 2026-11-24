@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { MAL_AUTHORIZE_URL, MAL_TOKEN_URL } from "./config";
 import { extractMalCode, extractMalState } from "./code-input";
 import { malClientId } from "./credentials";

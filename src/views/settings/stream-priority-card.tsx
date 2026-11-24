@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { resolveAddonLogo } from "@/components/addon-logo";
 import { HoverTooltip } from "@/components/hover-tooltip";
 import type { Addon } from "@/lib/addons";
-import { hostOf, moveItem } from "@/lib/addons-store/reorder";
+import { hostOf, moveItem } from "@/features/addons/catalog/reorder";
 import { useAuth } from "@/lib/auth";
 import { useT } from "@/lib/i18n";
 import { useSettings, type StreamPriorityEntry } from "@/lib/settings";
@@ -13,8 +13,8 @@ import {
   SectionCard,
   SkeletonRows,
   type OrganizeEntry,
-} from "@/views/addons/organize/section-card";
-import { useDragList } from "@/views/addons/organize/use-drag-list";
+} from "@/features/addons/views/addons/organize/section-card";
+import { useDragList } from "@/features/addons/views/addons/organize/use-drag-list";
 import { useAddons } from "@/views/play-picker/use-addons";
 
 const MAX_ENTRIES = 64;

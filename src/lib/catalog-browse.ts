@@ -12,7 +12,7 @@ import {
   isExtensionCatalogueBase,
   refreshExtensionCatalogues,
   subscribeExtensionCatalogues,
-} from "./streams/plugins";
+} from "../features/addons/streams";
 
 const NON_CONTENT = new Set(["addon_catalog"]);
 

@@ -20,8 +20,8 @@ import {
   type CastSubStyle,
   type TranscodeProfile,
 } from "@/lib/cast";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
-import { VideoAudioCast } from "@/lib/player/video-audio-cast";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
+import { VideoAudioCast } from "@/features/player/engine/video-audio-cast";
 import {
   claimCastSession,
   ownsCastSession,

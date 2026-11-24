@@ -2,11 +2,11 @@ import { ArrowDownToLine, CalendarClock, Check, Download, SlidersHorizontal } fr
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { toggleAutoDownload, useIsAutoDownloaded } from "@/lib/auto-download";
 import { pendingSeasonEpisodes } from "@/lib/download/season-download";
 import { useDownloads } from "@/lib/download/downloads-store";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { HoverTooltip } from "@/components/hover-tooltip";
 import { useT } from "@/lib/i18n";
 

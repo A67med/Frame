@@ -7,8 +7,6 @@ const audit: Record<string, string> = {
   "1 title needs review — help us identify it.": "1 judul perlu ditinjau; bantu kami mengenalinya.",
   "10k+": "10k+",
   "10ms CPU time per request.": "10ms waktu CPU per permintaan.",
-  "4. Paging + search tokens": "4. Token paginasi + pencarian",
-  "6. How to find a selector": "6. Cara menemukan selektor",
   "A / Cross": "A / Cross",
   "A Cloudflare Worker on your own account that hosts your Watch Together rooms.":
     "Cloudflare Worker di akun Anda sendiri yang menghosting ruang Watch Together Anda.",
@@ -53,7 +51,7 @@ const audit: Record<string, string> = {
   "AMD FSR upscaler": "Upscaler AMD FSR",
   "AMD FidelityFX Super Resolution. A fast spatial upscaler that fires when the video is smaller than the window. A great default for live action where Anime4K is the wrong tool.":
     "AMD FidelityFX Super Resolution. Upscaler spasial cepat yang aktif saat video lebih kecil daripada jendela. Pilihan default yang sangat baik untuk video live action ketika Anime4K bukan alat yang tepat.",
-  AWAY: "SEDANG PERGI",
+  "AWAY": "SEDANG PERGI",
   "Academy Award": "Academy Award",
   "Academy Awards": "Academy Awards",
   "Acclaimed across critics and audiences": "Dipuji oleh kritikus dan penonton",
@@ -90,7 +88,7 @@ const audit: Record<string, string> = {
   "After you pick a source, show a subtitle picker so you can set the exact track and language before the video starts. Off by default, Frame keeps picking one for you automatically.":
     "Setelah Anda memilih sumber, tampilkan pemilih subtitle agar Anda dapat menentukan trek dan bahasa sebelum video dimulai. Dinonaktifkan secara default; Frame akan tetap memilihkannya secara otomatis.",
   "Airing Now": "Sedang Tayang",
-  Aligned: "Selaras",
+  "Aligned": "Selaras",
   "Aligned here": "Selaras di sini",
   "All badges back to default": "Semua lencana dikembalikan ke pengaturan bawaan",
   "All playlists": "Semua daftar putar",
@@ -119,7 +117,7 @@ const audit: Record<string, string> = {
     "Berlaku saat Anda memutar sesuatu. Gambar hanya akan tampak berubah ketika ukuran video sedang disesuaikan.",
   "Apply SVP to": "Terapkan SVP pada",
   "Art Direction": "Tata Artistik",
-  Ascending: "Urutan naik",
+  "Ascending": "Urutan naik",
   "Ask a grown-up before you close.": "Tanya orang dewasa sebelum menutup.",
   "Asks first: carry on, or start over.":
     "Menanyakan terlebih dahulu: lanjutkan atau mulai dari awal.",
@@ -160,7 +158,7 @@ const audit: Record<string, string> = {
   "Best match": "Paling cocok",
   "Better match": "Lebih cocok",
   "Beyond Hollywood": "Di Luar Hollywood",
-  Bingeing: "Menonton secara maraton",
+  "Bingeing": "Menonton secara maraton",
   "Bingeing on the TV": "Menonton secara maraton di TV",
   "Blue Dragon": "Blue Dragon",
   "Blur up": "Buram bertahap",
@@ -171,14 +169,13 @@ const audit: Record<string, string> = {
   "Book flip": "Membalik buku",
   "Bookmark corner": "Sudut penanda buku",
   "Bookmark which page": "Halaman mana yang ingin ditandai",
-  Bookmarks: "Penanda buku",
+  "Bookmarks": "Penanda buku",
   "Boost SDR video toward HDR": "Tingkatkan video SDR agar mendekati HDR",
   "Bottom end": "Akhir bawah",
   "Bring a server-rendered library aboard with your own source configuration.":
     "Hubungkan perpustakaan yang dirender oleh server dengan konfigurasi sumber Anda sendiri.",
   "Bring trusted source packages aboard through Frame’s isolated extension worker.":
     "Tambahkan paket sumber tepercaya melalui worker ekstensi Frame yang terisolasi.",
-  "Bring your own extensions": "Gunakan ekstensi Anda sendiri",
   "British Independent Film Awards": "British Independent Film Awards",
   "British TV's biggest night": "Malam terbesar di TV Britania",
   "British Television": "Televisi Britania",
@@ -206,12 +203,11 @@ const audit: Record<string, string> = {
   "Captions in your language": "Subtitle dalam bahasa Anda",
   "Captions, eyebrows.": "Teks keterangan, teks pengantar.",
   "Card overlays": "Overlay kartu",
-  Cause: "Penyebab",
+  "Cause": "Penyebab",
   "Ch {n}": "Bab {n}",
   "Ch. {n}": "Bab {n}",
   "Change the order addons are tried in": "Ubah urutan addon yang dicoba",
   "Chinese (Donghua)": "Bahasa Tionghoa (Donghua)",
-  "Choose a page to bookmark": "Pilih halaman untuk ditandai",
   "Choose how far the keyboard arrows and player seek buttons jump.":
     "Pilih seberapa jauh tombol panah keyboard dan tombol seek pemutar melompat.",
   "Choose where subtitle timing feedback appears and how large it is.":
@@ -273,7 +269,6 @@ const audit: Record<string, string> = {
   "Country release rule": "Aturan rilis berdasarkan negara",
   "Create Token": "Buat token",
   "Create a custom filter": "Buat filter kustom",
-  "Critically Acclaimed": "Dipuji Kritikus",
   "Critically acclaimed TV": "Tayangan TV yang dipuji kritikus",
   "Cross-referencing titles and episodes": "Mencocokkan judul dan episode",
   "Crunchyroll (detail logo)": "Crunchyroll (logo terperinci)",
@@ -300,7 +295,7 @@ const audit: Record<string, string> = {
   "Cycle subtitles (alt)": "Ganti subtitle (alt)",
   "Cycle through available subtitle tracks.": "Beralih di antara trek subtitle yang tersedia.",
   "Cycle subtitles backward": "Ganti subtitel mundur",
-  Developer: "Pengembang",
+  "Developer": "Pengembang",
   "Open search": "Buka pencarian",
   "Open or close the search overlay.": "Buka atau tutup pencarian.",
   "Next room": "Bagian berikutnya",
@@ -349,7 +344,7 @@ const audit: Record<string, string> = {
   "Delete after I finish watching": "Hapus setelah saya selesai menonton",
   "Denoise then restore. Balanced cleanup and detail.":
     "Kurangi noise, lalu pulihkan. Pembersihan seimbang dengan detail yang tetap terjaga.",
-  Deploy: "Deploy",
+  "Deploy": "Deploy",
   "Deploy a relay": "Deploy relay",
   "Deploy a relay (desktop only)": "Deploy relay (khusus desktop)",
   "Deploy mine instead": "Deploy milik saya sebagai gantinya",
@@ -368,8 +363,6 @@ const audit: Record<string, string> = {
     "Tampilkan bilah progres langsung yang menunjukkan seberapa jauh judul telah diputar.",
   "Display the raw release filename under each source in the condensed picker. Off keeps rows compact.":
     "Tampilkan nama file rilis asli di bawah setiap sumber dalam pemilih ringkas. Saat dinonaktifkan, baris tetap ringkas.",
-  "Do it once on a browse page, once on a series page, once in the reader.":
-    "Lakukan sekali di halaman jelajah, sekali di halaman serial, dan sekali di tampilan baca.",
   "Documentary & Discovery": "Dokumenter & Eksplorasi",
   "Does this stream look right?": "Apakah tampilan stream ini sudah benar?",
   "Donating to Frame": "Berdonasi untuk Frame",
@@ -381,7 +374,7 @@ const audit: Record<string, string> = {
   "Downloading {pct}%  ·  cancel": "Sedang mengunduh {pct}%  ·  batal",
   "Downloading {pct}% · cancel": "Sedang mengunduh {pct}% · batal",
   "Downmix surround to stereo": "Downmix audio surround ke stereo",
-  Draw: "Gambar",
+  "Draw": "Gambar",
   "Drop a wallpaper behind the app. The dim slider keeps text readable.":
     "Pasang wallpaper di belakang aplikasi. Penggeser peredupan menjaga teks tetap mudah dibaca.",
   "Drop in art at any resolution. Frame resizes and compresses anything oversized for you, so nothing gets skipped for being too big. Square PNGs with a transparent background look best.":
@@ -390,20 +383,17 @@ const audit: Record<string, string> = {
     "Taruh tangkapan layar atau rekaman layar, atau klik untuk menelusuri",
   "Drop-in chapters and long arcs for the post-dinner stretch.":
     "Bab lepas dan alur panjang untuk bersantai setelah makan malam.",
-  Dropped: "Terlewat",
+  "Dropped": "Terlewat",
   "Dropped (decode / vo)": "Terlewat (decode / vo)",
   "Earn badges and they will appear here to feature":
     "Raih lencana, lalu lencana tersebut akan ditampilkan di sini",
-  "Eisner Award Winners": "Pemenang Eisner Award",
   "Elapsed and remaining": "Waktu yang telah berlalu dan waktu yang tersisa",
   "Emergency medical care in crisis zones, independent of politics.":
     "Perawatan medis darurat di zona krisis, tanpa keterikatan politik.",
-  Emmys: "Emmys",
+  "Emmys": "Emmys",
   "Engine status and your P2P settings as JSON, ready to paste into a bug report.":
     "Status mesin dan pengaturan P2P Anda dalam format JSON, siap ditempelkan ke laporan bug.",
   "English (default)": "Inggris (bawaan)",
-  "Enter a name and a valid https:// URL.": "Masukkan nama dan URL https:// yang valid.",
-  "Enter a valid http(s):// URL": "Masukkan URL http(s):// yang valid",
   "Enter an FPS from 1 to 240.": "Masukkan FPS dari 1 hingga 240.",
   "Enter your username and the recovery key you saved. We'll set a new password and sign you in.":
     "Masukkan nama pengguna dan kunci pemulihan yang Anda simpan. Kami akan membuat kata sandi baru lalu otomatis memasukkan Anda ke akun.",
@@ -451,7 +441,7 @@ const audit: Record<string, string> = {
     "Menyelesaikan episode anime akan memperbarui progres AniList Anda. Hanya bertambah: jumlah yang sudah ada tidak akan pernah dikurangi.",
   "Finishing an anime episode updates your MyAnimeList progress. Forward only: it never lowers a count you already have.":
     "Menyelesaikan episode anime akan memperbarui progres MyAnimeList Anda. Hanya bertambah: jumlah yang sudah ada tidak akan pernah dikurangi.",
-  Finnish: "Bahasa Finlandia",
+  "Finnish": "Bahasa Finlandia",
   "Flat list of sources grouped by addon, with a filter dropdown. No re-ranking. Closest match to the Stremio app's stream picker.":
     "Daftar datar sumber yang dikelompokkan menurut addon, dengan menu tarik-turun untuk memfilter. Tanpa pemeringkatan ulang. Paling mirip dengan pemilih stream di aplikasi Stremio.",
   "For laptop speakers and headphones. Movies mixed for 5.1 or 7.1 surround can sound hollow or have quiet dialogue on two speakers. This folds them down properly.":
@@ -538,8 +528,6 @@ const audit: Record<string, string> = {
     "Frame tidak mengirim telemetri. Opsi ini juga memblokir permintaan keluar untuk iklan, analitik, dan pelacak yang coba dikirim oleh addon atau penyedia metadata, sebelum permintaan tersebut meninggalkan komputer Anda.",
   "Frame ships no manga and no scrapers. It is a reader. You bring the sources, and what those sources contain belongs to whoever runs them, not to Frame. There are two ways to add sources.":
     "Frame tidak menyertakan manga maupun scraper. Frame adalah aplikasi pembaca. Anda menyediakan sumbernya, dan isi sumber tersebut adalah milik pengelolanya, bukan Frame. Ada dua cara untuk menambahkan sumber.",
-  "Frame ships the engine, not the sites. You write a short JSON config that describes a site with CSS selectors, and Frame reads the site with them. Nothing is bundled: point it only at sites you have the right to read.":
-    "Frame menyediakan mesinnya, bukan situsnya. Anda menulis konfigurasi JSON singkat yang menjelaskan situs dengan pemilih CSS, lalu Frame membaca situs dengan pemilih tersebut. Tidak ada yang disertakan: arahkan hanya ke situs yang berhak Anda baca.",
   "Frame will mark what you finish as watched on Simkl and sync your plan-to-watch list.":
     "Frame akan menandai tontonan yang Anda selesaikan sebagai sudah ditonton di Simkl dan menyinkronkan daftar tontonan yang Anda rencanakan.",
   "Frame's built-in OpenSubtitles search, on by default. If you install an OpenSubtitles addon, this steps aside automatically so your results are never duplicated.":
@@ -557,7 +545,7 @@ const audit: Record<string, string> = {
     "Perhatian: {keys} dapat memuat skrip eksternal atau membuat pemutar Anda dapat diakses dari jaringan. Pertahankan hanya jika Anda benar-benar tahu fungsinya.",
   'Heads-up: a few addons (like AIOStatus) don\'t pre-fill from the URL. If the form loads blank, paste the existing manifest URL into their "Import from URL" field to restore your settings.':
     'Perhatian: beberapa addon (seperti AIOStatus) tidak otomatis mengisi data dari URL. Jika formulir dimuat dalam keadaan kosong, tempel URL manifes yang ada ke kolom "Import from URL" untuk memulihkan pengaturan Anda.',
-  Health: "Kondisi",
+  "Health": "Kondisi",
   "Health check returns 5xx": "Pemeriksaan kondisi mengembalikan 5xx",
   "Health for {n} service": "Kondisi {n} layanan",
   "Health for {n} service#few": "Kondisi {n} layanan#few",
@@ -571,8 +559,6 @@ const audit: Record<string, string> = {
   "Hello World": "Hello World",
   "Hide subtitles when the player shrinks into the floating PiP window.":
     "Sembunyikan subtitle saat pemutar mengecil ke jendela PiP mengambang.",
-  "Hide the top and bottom bars while reading. Arrows, page number, and bookmark stay; the bars return when your cursor reaches the screen edge.":
-    "Sembunyikan bilah atas dan bawah saat membaca. Panah, nomor halaman, dan penanda halaman tetap terlihat; bilah akan muncul kembali saat kursor mencapai tepi layar.",
   "Hide until the next episode airs, or keep showing a countdown to when it drops.":
     "Sembunyikan hingga episode berikutnya tayang, atau tetap tampilkan hitung mundur menuju waktu tayangnya.",
   "Hides streams with no detected preferred language. Multi-audio releases count as a match.":
@@ -582,10 +568,9 @@ const audit: Record<string, string> = {
   "His Comedy": "Karya Komedinya",
   "Hit your daily quota? Use Frame's public relay, or host your own.":
     "Kuota harian habis? Gunakan relay publik Frame, atau host relay Anda sendiri.",
-  Hits: "Populer",
+  "Hits": "Populer",
   "Holdover Picks": "Pilihan yang Masih Tayang",
   "Horror & Supernatural": "Horor & Supranatural",
-  "Host it with a repo.json": "Host menggunakan repo.json",
   "Hover a band to inspect a pillar": "Arahkan kursor ke rentang untuk memeriksa pilar",
   "How Frame Rank works": "Cara kerja Frame Rank",
   "How Frame finds and resolves playable streams. Debrid keys and addon installs live here.":
@@ -600,7 +585,7 @@ const audit: Record<string, string> = {
     "Tampilan Anda di Watch Together, sesi, dan obrolan. Profil ini menjadi identitas tambahan di atas akun Stremio Anda.",
   "Identifies the song with Google Gemini (free tier, no usage cap). Get a key at":
     "Mengidentifikasi lagu dengan Google Gemini (paket gratis, tanpa batas penggunaan). Dapatkan kunci di",
-  Idle: "Idle",
+  "Idle": "Idle",
   "Idle for now": "Idle untuk saat ini",
   "If a stream hasn't started playing in time (a dead source or an addon that's down), automatically try the next available stream. Off by default.":
     "Jika stream belum mulai diputar dalam waktu yang ditentukan (sumber mati atau addon tidak aktif), coba stream berikutnya yang tersedia secara otomatis. Nonaktif secara default.",
@@ -617,8 +602,6 @@ const audit: Record<string, string> = {
   "Image too large. Keep badge files under 250 KB.":
     "Gambar terlalu besar. Pastikan ukuran file lencana kurang dari 250 KB.",
   "Images and video from https or data URLs.": "Gambar dan video dari URL https atau URL data.",
-  "Implement the MangaProvider object: popular, search, detail, chapters, pageUrls, and optional tags. Nothing else.":
-    "Implementasikan objek MangaProvider: popular, search, detail, chapters, pageUrls, dan tags opsional. Jangan implementasikan yang lain.",
   "Implement the {provider} object: popular, search, detail, chapters, {contentMethod}, and optional tags. Nothing else.":
     "Implementasikan objek {provider}: popular, search, detail, chapters, {contentMethod}, dan tags opsional. Jangan implementasikan yang lain.",
   "Imported and now playing": "Telah diimpor dan kini diputar",
@@ -632,14 +615,14 @@ const audit: Record<string, string> = {
   "Info modal": "Dialog informasi",
   "Inherit their property automatically": "Mewarisi harta mereka secara otomatis",
   "Injected ad skip (experimental)": "Pelewatan iklan yang disisipkan (eksperimental)",
-  Inspector: "Pemeriksa",
+  "Inspector": "Pemeriksa",
   "Installed and detected. Frame found the native svpflow plugins and VapourSynth script library.":
     "Terinstal dan terdeteksi. Frame menemukan plugin native svpflow dan perpustakaan skrip VapourSynth.",
   "Installing and ordering addons on the TV. Addon lists already travel with your account, so install here and the TV picks them up.":
     "Menginstal dan mengurutkan addon di TV. Daftar addon sudah tersinkronisasi dengan akun Anda, jadi instal di sini dan TV akan otomatis memuatnya.",
   "Instant Play: clicking Play queues the next stream automatically.":
     "Pemutaran Instan: mengeklik Putar akan otomatis mengantrekan stream berikutnya.",
-  Internals: "Komponen internal",
+  "Internals": "Komponen internal",
   "Interpolation invents frames between the drawn ones, so a pan travels in many small moves instead of a few big jumps.":
     "Interpolasi menciptakan frame di antara frame yang digambar, sehingga gerakan kamera berlangsung melalui banyak gerakan kecil, bukan beberapa lompatan besar.",
   "Interrupted: re-download to finish": "Terputus: unduh ulang hingga selesai",
@@ -680,7 +663,7 @@ const audit: Record<string, string> = {
     "Menjaga memori web tetap hidup. Frame akan lebih miskin tanpanya.",
   "Kept. Your TV gets your account when you continue.":
     "Disimpan. Akun Anda akan ditambahkan ke TV saat Anda melanjutkan.",
-  Korean: "Bahasa Korea",
+  "Korean": "Bahasa Korea",
   "Label the subfolders inside the folder you pick, and each one becomes its own set (like Heroes or Cats). Loose images in the folder go to Uploads.":
     "Beri label pada subfolder di dalam folder yang Anda pilih, lalu masing-masing akan menjadi set tersendiri (seperti Pahlawan atau Kucing). Gambar yang tidak berada dalam subfolder akan masuk ke Unggah.",
   "Landmark winners in science fiction and fantasy":
@@ -746,7 +729,7 @@ const audit: Record<string, string> = {
     "Memuat gambar episode beresolusi penuh (asli), bukan gambar w300 yang lebih ringan. Nonaktifkan untuk koneksi lambat atau perangkat kelas bawah.",
   "Loads more of the video ahead of time before playing. Smoother on weak connections, uses a little more memory and takes a moment longer to start.":
     "Memuat lebih banyak bagian video terlebih dahulu sebelum diputar. Pemutaran lebih lancar pada koneksi yang buruk, tetapi menggunakan sedikit lebih banyak memori dan memerlukan waktu sedikit lebih lama untuk dimulai.",
-  Locale: "Bahasa dan wilayah",
+  "Locale": "Bahasa dan wilayah",
   "Lock to season server": "Kunci ke server musim",
   "Logo reset to default": "Logo dikembalikan ke kondisi bawaan",
   "Long Balls": "Umpan Panjang",
@@ -780,8 +763,7 @@ const audit: Record<string, string> = {
   "Multi-view": "Multi-view",
   "Mute / Unmute": "Bisukan / Aktifkan suara",
   "Mute or unmute audio.": "Bisukan atau aktifkan suara.",
-  "Mute page-turn sound": "Bisukan suara saat membalik halaman",
-  My: "Milik Saya",
+  "My": "Milik Saya",
   "NVIDIA Image Scaling. A light spatial upscaler and sharpener, an alternative to FSR that runs well on any GPU.":
     "NVIDIA Image Scaling. Peningkat resolusi spasial sekaligus penajam yang ringan, sebagai alternatif FSR yang berjalan lancar di GPU apa pun.",
   "Native 48/60fps motion through your Linux SVP and VapourSynth installation, rendered inside Frame's embedded player.":
@@ -794,7 +776,7 @@ const audit: Record<string, string> = {
   "Never auto-select tracks containing": "Jangan pernah memilih secara otomatis trek yang memuat",
   "Never contact the community server in either direction. Nothing is looked up and nothing is contributed from this device.":
     "Jangan pernah menghubungi server komunitas, baik untuk menerima maupun mengirim data. Tidak ada yang dicari dan tidak ada yang dikontribusikan dari perangkat ini.",
-  Nevermind: "Tidak jadi",
+  "Nevermind": "Tidak jadi",
   "New badge unlocked": "Lencana baru berhasil dibuka",
   "New to the chart": "Baru masuk peringkat",
   "Next and Previous follow this show":
@@ -882,16 +864,15 @@ const audit: Record<string, string> = {
   "Overview, manual wrangler deploy, costs, and troubleshooting.":
     "Ringkasan, deployment wrangler secara manual, biaya, dan pemecahan masalah.",
   "Pack removed, badges back to default": "Paket dihapus, lencana kembali ke bawaan",
-  "Page {page} of {count}, tap to jump": "Halaman {page} dari {count}, ketuk untuk berpindah",
-  Pair: "Pasangkan",
+  "Pair": "Pasangkan",
   "Pair once from here and this Frame will take commands.":
     "Pasangkan sekali dari sini agar Frame ini dapat menerima perintah.",
   "Pair with this Frame": "Pasangkan dengan Frame ini",
-  Paired: "Dipasangkan",
+  "Paired": "Dipasangkan",
   "Paired with {name}": "Dipasangkan dengan {name}",
   "Parsed playlists, program guide, and series info. Re-downloads on next open.":
     "Daftar tontonan, panduan program, dan info seri telah diuraikan. Akan diunduh ulang saat dibuka berikutnya.",
-  Pass: "Operan",
+  "Pass": "Operan",
   "Paste a track, album or playlist link.": "Tempel tautan trek, album, atau daftar tontonan.",
   "Pause when unfocused": "Jeda saat kehilangan fokus",
   "Peers, speed and progress on the player while a P2P stream plays. Sits top left, clear of the exit button.":
@@ -909,7 +890,6 @@ const audit: Record<string, string> = {
   "Pick a line when you hear it (1/2)": "Pilih dialog saat Anda mendengarnya (1/2)",
   "Pick a look. Every color and surface updates instantly.":
     "Pilih tampilan. Setiap warna dan elemen antarmuka langsung diperbarui.",
-  "Pick a world and dive into everything in it.": "Pilih satu dunia dan jelajahi semua isinya.",
   "Pick another line near the end (2/2)": "Pilih dialog lain menjelang akhir (2/2)",
   "Pick it from the home view to follow.":
     "Pilih item tersebut dari tampilan beranda untuk mengikutinya.",
@@ -931,7 +911,7 @@ const audit: Record<string, string> = {
   "Point Frame at your self-hosted library to browse and install sources":
     "Arahkan Frame ke perpustakaan yang dihosting sendiri untuk menjelajahi dan menginstal sumber",
   "Pop out subtitles": "Tampilkan subtitle di jendela terpisah",
-  Post: "Memposting",
+  "Post": "Memposting",
   "Poster reset to default": "Poster diatur ulang ke pengaturan bawaan",
   "Prepares up to two provider-confirmed cached debrid sources while the picker is open, so Play can start sooner. This may create or update transfers on your debrid account before you click Play. It never touches P2P or uncached sources, is rate-limited, and keeps prepared links in memory for two minutes only. Off by default.":
     "Menyiapkan hingga dua sumber debrid dengan cache yang telah dikonfirmasi penyedia saat pemilih terbuka, sehingga Play dapat dimulai lebih cepat. Tindakan ini mungkin membuat atau memperbarui transfer di akun debrid Anda sebelum Anda mengeklik Play. Fitur ini tidak pernah menyentuh sumber P2P atau sumber tanpa cache, dibatasi lajunya, dan hanya menyimpan tautan yang telah disiapkan dalam memori selama dua menit. Dinonaktifkan secara bawaan.",
@@ -949,8 +929,6 @@ const audit: Record<string, string> = {
     "Penyedia mengembalikan halaman web, bukan daftar putar",
   "Publishing as": "Mempublikasikan sebagai",
   "Pull money on a schedule": "Tarik uang sesuai jadwal",
-  "Put your plugin file and a repo.json manifest on any static HTTPS host: GitHub Pages, a raw gist, an object store, your own server.":
-    "Letakkan file plugin dan manifest repo.json Anda di host HTTPS statis mana pun: GitHub Pages, raw gist, penyimpanan objek, atau server Anda sendiri.",
   "Puts a check on titles you have already finished.":
     "Menambahkan tanda centang pada judul yang sudah Anda selesaikan.",
   "Quiet dramas, sharp thrillers, and series you save for yourself.":
@@ -997,7 +975,6 @@ const audit: Record<string, string> = {
   "Remembered source lists per title. Clears stale results after changing addons or debrid.":
     "Daftar sumber yang disimpan untuk setiap judul. Menghapus hasil usang setelah mengganti addon atau debrid.",
   "Remove cached source (all episodes)": "Hapus sumber dalam cache (semua episode)",
-  "Remove from continue reading": "Hapus dari Lanjutkan Membaca",
   "Remove from saved": "Hapus dari item tersimpan",
   "Render subtitles in a heavier weight. Turn off to use your font's normal weight.":
     "Tampilkan subtitle dengan font yang lebih tebal. Nonaktifkan untuk menggunakan ketebalan normal font Anda.",
@@ -1024,10 +1001,9 @@ const audit: Record<string, string> = {
     "Hasil dari addon yang lebih tinggi dalam daftar ini ditampilkan lebih dahulu. Jika satu addon tidak menemukan apa pun, addon berikutnya akan mengisi kekosongan.",
   "Retry download": "Coba unduh lagi",
   "Retry downloads": "Coba unduh lagi",
-  "Retry loading repository": "Coba muat repositori lagi",
   "Reviews on film pages are blurred until you reveal them.":
     "Ulasan di halaman film diburamkan sampai Anda menampilkannya.",
-  Romanian: "Rumania",
+  "Romanian": "Rumania",
   "Romcom Royalty": "Bangsawan Romcom",
   "Romcom Sweetheart": "Kesayangan Romcom",
   "Room code": "Kode ruang",
@@ -1042,39 +1018,38 @@ const audit: Record<string, string> = {
   "Rotten Tomatoes audience score": "Skor penonton Rotten Tomatoes",
   "Rotten Tomatoes, Metacritic, Letterboxd, Trakt and Simkl scores on the TV need an MDBList key entered on the TV.":
     "Skor Rotten Tomatoes, Metacritic, Letterboxd, Trakt, dan Simkl di TV memerlukan kunci MDBList yang dimasukkan di TV.",
-  Round: "Bulat",
-  Rounded: "Bersudut membulat",
+  "Round": "Bulat",
+  "Rounded": "Bersudut membulat",
   "Rounded background panel behind the text. Most readable.":
     "Panel latar bersudut membulat di belakang teks. Paling mudah dibaca.",
   "Rounded square in the same color.": "Persegi bersudut membulat dengan warna yang sama.",
   "Row & player title size": "Ukuran judul baris & pemutar",
   "Row card style": "Gaya kartu baris",
   "Row titles": "Judul baris",
-  Rows: "Baris",
+  "Rows": "Baris",
   "Rows on Home": "Baris di Beranda",
-  Royal: "Kerajaan",
+  "Royal": "Kerajaan",
   "Royal top bar": "Bilah atas kerajaan",
   "Rubber-Faced Genius": "Genius Berwajah Lentur",
   "Rule notify channels": "Kanal notifikasi aturan",
-  Rules: "Aturan",
+  "Rules": "Aturan",
   "Rules + limits": "Aturan + batas",
-  Ruleset: "Kumpulan aturan",
-  Run: "Jalankan",
+  "Ruleset": "Kumpulan aturan",
+  "Run": "Jalankan",
   "Run Anime4K on everything, not just anime": "Jalankan Anime4K untuk semuanya, bukan hanya anime",
   "Run again": "Jalankan lagi",
   "Run self-test": "Jalankan uji mandiri",
   "Run speed test": "Jalankan uji kecepatan",
   "Run test": "Jalankan pengujian",
   "Run your own Frame Relay": "Jalankan Frame Relay Anda sendiri",
-  "Run your own server": "Jalankan server Anda sendiri",
-  Running: "Sedang berjalan",
+  "Running": "Sedang berjalan",
   "Running on Cinemeta for now. Add a TMDB key from Settings whenever you're ready.":
     "Untuk saat ini menggunakan Cinemeta. Tambahkan kunci TMDB dari Pengaturan kapan pun Anda siap.",
   "Running on Cinemeta. Add a TMDB key in Settings whenever you want.":
     "Menggunakan Cinemeta. Tambahkan kunci TMDB di Pengaturan kapan pun Anda mau.",
   "Running self-test": "Menjalankan uji mandiri",
   "Running the latest Watch Together protocol.": "Menggunakan protokol Watch Together terbaru.",
-  Runs: "Berjalan",
+  "Runs": "Berjalan",
   "Runs after an upscaler to recover the detail and sharpness a doubler softens. Best paired with FSRCNNX or RAVU, not used alone.":
     "Dijalankan setelah upscaler untuk memulihkan detail dan ketajaman yang dilunakkan oleh penggandaan. Paling cocok dipasangkan dengan FSRCNNX atau RAVU, bukan digunakan sendiri.",
   "Runs in the app's WebView. You're modding your own client. No sandbox, no safety net. Errors land in the console.":
@@ -1082,8 +1057,8 @@ const audit: Record<string, string> = {
   "Runs on Cloudflare's free Workers tier. Takes about two minutes, and you can stop it from here later.":
     "Berjalan di tier Workers gratis Cloudflare. Hanya perlu sekitar dua menit, dan nanti Anda dapat menghentikannya dari sini.",
   "Runs the group": "Memimpin grup",
-  Runtime: "Durasi",
-  Russian: "Rusia",
+  "Runtime": "Durasi",
+  "Russian": "Rusia",
   "Russian Animation": "Animasi Rusia",
   "Russian Cinema": "Sinema Rusia",
   "Russian Drama": "Drama Rusia",
@@ -1144,7 +1119,6 @@ const audit: Record<string, string> = {
   "Seek bar style": "Gaya bilah waktu",
   "Seek dot shape": "Bentuk titik pada bilah waktu",
   "Seek step": "Interval lompatan",
-  "Seiun Award Winners": "Pemenang Seiun Award",
   "Select a passage to add a highlight, note, or reference.":
     "Pilih bagian teks untuk menambahkan sorotan, catatan, atau referensi.",
   "Select renderer": "Pilih renderer",
@@ -1271,7 +1245,7 @@ const audit: Record<string, string> = {
   "Start week on Monday": "Mulai minggu pada hari Senin",
   "Startup & default": "Mulai & bawaan",
   "Stay in party": "Tetap di ruang nonton bersama",
-  Steals: "Steal",
+  "Steals": "Steal",
   "Step back one frame and pause. Frame-accurate on mpv.":
     "Mundur satu frame lalu jeda pemutaran. Akurat per frame di mpv.",
   "Step forward one frame and pause. Frame-accurate on mpv.":
@@ -1304,7 +1278,7 @@ const audit: Record<string, string> = {
     "Alihkan menu dan tombol ke bahasa Anda. Bahasa Arab membalik tata letak menjadi dari kanan ke kiri.",
   "System default": "Bawaan sistem",
   "TAAF (detail logo)": "TAAF (logo terperinci)",
-  TBD: "TBD",
+  "TBD": "TBD",
   "THEN notify on": "LALU kirim notifikasi melalui",
   "TMDB is connected. Your TV has it.": "TMDB terhubung. Kini tersedia di TV Anda.",
   "TMDB is temporarily unavailable. Try your search again shortly.":
@@ -1321,7 +1295,6 @@ const audit: Record<string, string> = {
   "Thanks. Tracked as {id}.": "Terima kasih. Dicatat dengan ID {id}.",
   "That font is over 32 MB. Try a lighter file.":
     "Ukuran font itu lebih dari 32 MB. Coba file yang lebih kecil.",
-  "That is everything from this source.": "Itulah semua konten dari sumber ini.",
   "That list is private or doesn't exist. Public lists only.":
     "Daftar itu bersifat pribadi atau tidak ada. Hanya daftar publik.",
   "The Boogeyman": "The Boogeyman",
@@ -1348,7 +1321,6 @@ const audit: Record<string, string> = {
   "The code from sign up": "Kode dari pendaftaran",
   "The collection shows up as its own row you can reorder or hide from that page.":
     "Koleksi muncul sebagai baris tersendiri yang dapat Anda urutkan ulang atau sembunyikan dari halaman tersebut.",
-  "The comics industry's highest honor": "Penghargaan tertinggi industri komik",
   "The cost of borrowing per year": "Biaya pinjaman per tahun",
   "The label looks high (1080p / 4K) but doesn't match expected file size or release window. Often a CAM or TS rebadged. Try a Theater Capture stream or check the source list before committing.":
     "Label menunjukkan resolusi tinggi (1080p / 4K), tetapi tidak sesuai dengan perkiraan ukuran file atau waktu rilis. Sering kali ini adalah CAM atau TS yang diberi label baru. Coba stream Theater Capture atau periksa daftar sumber sebelum memilih.",
@@ -1418,7 +1390,7 @@ const audit: Record<string, string> = {
   "To run a public relay, post the": "Untuk menjalankan relai publik, publikasikan",
   "To run a public relay, post the {code} URL on r/Stremio or wherever your community lives. Other Frame users paste it into Settings, Frame Relay, {kbd}.":
     "Untuk menjalankan relai publik, publikasikan URL {code} di r/Stremio atau tempat komunitas Anda berkumpul. Pengguna Frame lain menempelkannya ke Pengaturan, Frame Relay, {kbd}.",
-  Toggle: "Aktifkan/nonaktifkan",
+  "Toggle": "Aktifkan/nonaktifkan",
   "Toggle Anime4K": "Aktifkan/nonaktifkan Anime4K",
   "Toggle Fullscreen": "Aktifkan/nonaktifkan Layar Penuh",
   "Toggle HDR to SDR": "Aktifkan/nonaktifkan HDR ke SDR",
@@ -1453,7 +1425,7 @@ const audit: Record<string, string> = {
   "Trakt anticipated": "Paling dinantikan di Trakt",
   "Trakt anticipated picks up something": "Ada sesuatu yang masuk daftar paling dinantikan Trakt",
   "Trakt community rating as a percentage.": "Peringkat komunitas Trakt dalam persentase.",
-  Transport: "Transport",
+  "Transport": "Transport",
   "Trending and Top on TMDB read live data, which needs your own TMDB key.":
     "Bagian Sedang Tren dan Teratas di TMDB menggunakan data langsung, yang memerlukan kunci TMDB Anda sendiri.",
   "Trending tracks star growth across your Frame visits. Open the addons page again tomorrow and the top risers will appear here.":
@@ -1468,16 +1440,15 @@ const audit: Record<string, string> = {
   "Turn on network serving": "Aktifkan layanan melalui jaringan",
   "Turn this off to take Cinemeta out entirely and use only your own metadata addons, such as AIOMetadata or AIOStreams. Cinemeta can go stale and show already released episodes as TBA. Leave it on unless you have a metadata addon installed, or titles will have no details.":
     "Nonaktifkan ini untuk menghapus Cinemeta sepenuhnya dan hanya menggunakan addon metadata Anda sendiri, seperti AIOMetadata atau AIOStreams. Data Cinemeta dapat menjadi usang dan menampilkan episode yang sudah dirilis sebagai TBA. Biarkan aktif kecuali Anda telah memasang addon metadata, atau judul tidak akan memiliki detail.",
-  Turnovers: "Kehilangan bola",
+  "Turnovers": "Kehilangan bola",
   "Turns your phone into a remote for this computer: play, pause, seek, volume, and casting, all from the couch. Open the Wi-Fi address on your phone's browser.":
     "Mengubah ponsel Anda menjadi kendali jarak jauh untuk komputer ini: putar, jeda, geser posisi pemutaran, atur volume, dan casting, semuanya dari sofa. Buka alamat Wi-Fi di browser ponsel Anda.",
   "Type a key on this TV": "Tekan sebuah tombol di TV ini",
   "Type into the focused field on the display": "Ketik di kolom yang sedang difokuskan pada layar",
-  Ukrainian: "Bahasa Ukraina",
+  "Ukrainian": "Bahasa Ukraina",
   "Unable to load series information": "Tidak dapat memuat informasi seri",
   "Unexpected file contents.": "Isi file tidak terduga.",
-  Unmute: "Aktifkan suara",
-  "Unmute page-turn sound": "Aktifkan suara pergantian halaman",
+  "Unmute": "Aktifkan suara",
   "Unmute this cell": "Aktifkan suara sel ini",
   "Unmute trailer": "Aktifkan suara cuplikan",
   "Unmute · M": "Aktifkan suara · M",
@@ -1511,14 +1482,14 @@ const audit: Record<string, string> = {
     "Digunakan untuk memeriksa cache dan membuka batasan tautan. Frame tidak pernah menambahkan atau menghapus apa pun di akun Anda secara otomatis.",
   "Using AIOStreams or another aggregator addon? Its own sorting and filtering happen inside the addon before Frame ever sees the results, then Frame applies the stream filter and result order above on top. If results look thinner than expected, keep one side permissive: either relax the addon's internal filters or set Frame's stream filter to Balanced or Off.":
     "Menggunakan AIOStreams atau addon agregator lain? Pengurutan dan pemfilteran internalnya dilakukan di dalam addon sebelum Frame melihat hasilnya, lalu Frame menambahkan filter stream dan urutan hasil di atas. Jika hasil lebih sedikit dari yang diharapkan, buat salah satu sisi lebih longgar: longgarkan filter internal addon atau atur filter stream Frame ke Seimbang atau Nonaktif.",
-  Venice: "Venice",
+  "Venice": "Venice",
   "Venice Film Festival": "Venice Film Festival",
   "Version and capabilities come straight from the addon's manifest. Ratings and categories come from the":
     "Versi dan kemampuan berasal langsung dari manifest addon. Peringkat dan kategori berasal dari",
   "Video files": "Berkas video",
   "Vietnam & After": "Vietnam & Era Setelahnya",
   "View more": "Lihat selengkapnya",
-  Viewport: "Viewport",
+  "Viewport": "Viewport",
   "Voice languages": "Bahasa dialog",
   "Vote average ≥ 8.0": "Rata-rata nilai ≥ 8.0",
   "WWII on Film": "WWII dalam Film",
@@ -1590,14 +1561,10 @@ const audit: Record<string, string> = {
   "Window events": "Event jendela",
   "Wipes engine data and starts fresh on a new port.":
     "Menghapus data engine dan memulai dari awal di port baru.",
-  Wiseguys: "Anggota mafia",
+  "Wiseguys": "Anggota mafia",
   "Workers Scripts": "Workers Scripts",
-  "Works on plain server-rendered HTML. Sites that build the page with JavaScript, or hide data inside scripts, need a plugin instead.":
-    "Berfungsi pada HTML biasa yang dirender server. Situs yang menyusun halaman dengan JavaScript, atau menyembunyikan data di dalam skrip, memerlukan plugin sebagai gantinya.",
   "Worth catching up on": "Layak ditonton untuk mengejar ketertinggalan",
   "Wrapping up": "Sedang menyelesaikan",
-  "Write a scraper for any site, host it, and install it like any other plugin":
-    "Tulis scraper untuk situs apa pun, host scraper tersebut, lalu instal seperti plugin lainnya",
   "Wrong channel or source?": "Saluran atau sumbernya salah?",
   "Wrong episode or quality?": "Episode atau kualitasnya salah?",
   "You are not signed in to a Frame account, so nothing here can reach the TV.":
@@ -1638,21 +1605,17 @@ const audit: Record<string, string> = {
   "cosmetic, minor": "kosmetis, ringan",
   "eBook extensions use Frame’s isolated worker, HTTP bridge, and HTML parser—the same sandbox used by Manga extensions. Only add repositories you trust.":
     "Ekstensi eBook menggunakan worker terisolasi, bridge HTTP, dan parser HTML Frame dalam sandbox yang sama dengan yang digunakan ekstensi Manga. Hanya tambahkan repositori yang Anda percayai.",
-  favorited: "ditambahkan ke favorit",
+  "favorited": "ditambahkan ke favorit",
   "for higher rate limits; leave blank for the free anonymous tier.":
     "untuk batas jumlah permintaan yang lebih tinggi; biarkan kosong untuk paket anonim gratis.",
   "hdr-toys tone-mapping": "hdr-toys tone-mapping",
   "hex or rgb/hsl": "hex atau rgb/hsl",
-  "if the first page is 0. Use this when the URL counts pages.":
-    "jika halaman pertama adalah 0. Gunakan ini saat URL menggunakan nomor halaman.",
   "language. Home filters to it.": "bahasa. Beranda memfilter berdasarkan bahasa ini.",
   "lead or co-lead of {n} acclaimed titles":
     "pemeran utama atau pemeran utama bersama dalam {n} judul terkenal",
   "living library.": "perpustakaan yang terus berkembang.",
   "loading more…": "memuat lebih banyak…",
-  "matches every page image in order.": "mencocokkan setiap gambar halaman secara berurutan.",
   "next airs in {count}d": "tayang berikutnya dalam {count} hari",
-  "reads the text inside the first match.": "membaca teks di dalam hasil kecocokan pertama.",
   "season packs": "paket musim",
   "skipped {n} anime": "melewatkan {n} anime",
   "this channel": "saluran ini",

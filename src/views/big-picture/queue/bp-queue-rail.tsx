@@ -4,7 +4,7 @@ import { Ban, Bookmark, BookmarkCheck, Clock, Info, ListPlus, type LucideIcon } 
 import { Play } from "@/components/icons/play-filled";
 import { useListsContaining } from "@/lib/custom-lists";
 import { SFX } from "@/lib/sfx";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { BP_ACTION_RING as FOCUS_RING, BP_ACTION_SOLID } from "../bp-action-style";
 import { useBpT } from "../bp-i18n";
 import { BpListDialog } from "../bp-list-dialog";

@@ -1,7 +1,7 @@
 import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 import {
   COUNTRY_OPTIONS,
   LANGUAGE_OPTIONS,

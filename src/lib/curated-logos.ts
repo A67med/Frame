@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { HARBOR_DATA_BASE } from "@/lib/config/endpoints";
 
 const URL = `${HARBOR_DATA_BASE}/curated-logos.json`;

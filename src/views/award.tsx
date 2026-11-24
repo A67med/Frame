@@ -13,7 +13,7 @@ import {
 import type { Meta } from "@/lib/cinemeta";
 import type { AwardType } from "@/lib/providers/wikidata";
 import { useSettings } from "@/lib/settings";
-import { useScrollMemory } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
 import { useT } from "@/lib/i18n";
 import { AwardHero } from "./award/award-hero";
 import { AwardList } from "./award/award-list";

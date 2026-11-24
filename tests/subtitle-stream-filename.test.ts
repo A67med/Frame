@@ -5,8 +5,8 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
 import { downloadPlayerSrc } from "../src/lib/download/player-src.ts";
-import { localPlayerSrc } from "../src/lib/local-library/player-src.ts";
-import { subtitleStreamDescriptor } from "../src/lib/subtitles/provider-label.ts";
+import { localPlayerSrc } from "../src/features/library/local-library/player-src.ts";
+import { subtitleStreamDescriptor } from "../src/features/subtitles/provider-label.ts";
 
 test("local and downloaded playback carry the exact filename into subtitle search", () => {
   const local = localPlayerSrc({

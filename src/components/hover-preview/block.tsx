@@ -4,7 +4,7 @@ import { useMemo, type ReactNode } from "react";
 import { useT } from "@/lib/i18n";
 import type { PreviewData } from "@/lib/hover-preview/preview-data";
 import { tmdbImdbCached } from "@/lib/providers/tmdb";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { useLocalizedOverview } from "@/lib/use-localized-overview";
 import { ImdbIcon } from "../icons/imdb-icon";
 import { MalLogo } from "../icons/mal-logo";

@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import type { SkipSegment } from "./types";
 import { HARBOR_API_BASE } from "@/lib/config/endpoints";
 

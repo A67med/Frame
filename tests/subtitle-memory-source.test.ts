@@ -4,14 +4,14 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { bindSubtitleDownloadAuth } from "../src/lib/subtitles/provider-auth.ts";
+import { bindSubtitleDownloadAuth } from "../src/features/subtitles/provider-auth.ts";
 import {
   rememberedChoiceFromLoad,
   rememberedFromChoice,
   rememberedSubAppliesToStream,
   rememberedSubtitleLoadMetadata,
   subtitleStreamKey,
-} from "../src/lib/subtitles/subtitle-memory.ts";
+} from "../src/features/subtitles/subtitle-memory.ts";
 
 test("the same torrent release shares a subtitle key across providers", () => {
   const a = subtitleStreamKey({ infoHash: "ABC123", fileIdx: 4, addonId: "provider-a" });

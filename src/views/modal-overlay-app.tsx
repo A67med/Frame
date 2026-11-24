@@ -12,8 +12,8 @@ import {
 } from "@/lib/modal-overlay";
 import { AudioModal, type AudioModalState } from "@/components/popups/audio-modal";
 import { SubtitleModal, type SubtitleModalState } from "@/components/popups/subtitle-modal";
-import { markLimitReached } from "@/lib/subtitles/limit-signal";
-import { markPendingSub } from "@/lib/subtitles/pending-subs";
+import { markLimitReached } from "@/features/subtitles/limit-signal";
+import { markPendingSub } from "@/features/subtitles/pending-subs";
 
 export function ModalOverlayApp() {
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { isAnyFullscreen, exitAnyFullscreen } from "@/lib/fullscreen-state";
-import { getLeaveConfirm, openLeaveConfirm } from "@/lib/player/leave-confirm";
+import { getLeaveConfirm, openLeaveConfirm } from "@/features/player/engine/leave-confirm";
 
 /** Shared Esc/Back leave path for player hotkeys and TV/remote Back. */
 export async function requestPlayerClose(opts: {

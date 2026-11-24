@@ -1,5 +1,5 @@
 import type { IptvChannel } from "./types";
-import type { PlayerSrc } from "../view";
+import type { PlayerSrc } from "../../app/navigation/view";
 import { headersFromChannel } from "./channel-headers";
 
 /** Shared by Live TV and Sports: the same URL, headers and native-engine policy. */

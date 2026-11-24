@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Maximize, Maximize2, Pause, Play, Settings2, Volume2, VolumeX, X } from "lucide-react";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import { useFloatingMedia, VideoPipSettings } from "./video-pip-settings";
-import { floatingSeek } from "@/lib/player/floating-controls";
+import { floatingSeek } from "@/features/player/engine/floating-controls";
 import { useT } from "@/lib/i18n";
 import { matchPlayerKey, storedHotkeyOverrides, type HotkeyId } from "@/lib/hotkeys";
 import "./video-pip.css";

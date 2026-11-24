@@ -1,4 +1,4 @@
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 const ANIME_SCHEME_RX = /^(kitsu|mal|anilist|anidb):/;
 

@@ -1,7 +1,7 @@
 import { RefreshCw } from "lucide-react";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { SFX } from "@/lib/sfx";
-import { useProfiles, type Profile } from "@/lib/profiles";
+import { useProfiles, type Profile } from "@/features/profiles/profiles";
 import { useBpT } from "./bp-i18n";
 import { pushBpBack } from "./bp-back";
 import { setBpFocus } from "./use-bp-focus";

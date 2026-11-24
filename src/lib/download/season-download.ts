@@ -6,8 +6,8 @@ import { magnetFromHash } from "@/lib/debrid/types";
 import { resolveStream } from "@/lib/streams/resolve";
 import { matchEpisodeFileIndex } from "@/lib/streams/episode-file";
 import type { ScoredStream } from "@/lib/streams/types";
-import type { PlayEpisode } from "@/lib/view";
-import { isVideoFile } from "@/lib/local-library";
+import type { PlayEpisode } from "@/app/navigation/view";
+import { isVideoFile } from "@/features/library/local-library";
 import { localTorrentAllowed, trackersFromSources } from "@/lib/torrent/stremio-stream";
 import {
   torrentEngineAdd,

@@ -2,7 +2,6 @@ import { AlertTriangle, ExternalLink, Loader2, Play } from "../icons";
 import { useEffect, useState, type ReactNode } from "react";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { isLinuxDesktop } from "@/lib/platform";
 import { openUrl } from "@/lib/window";
 import { svpApply, svpLaunch, svpStatus, type SvpStatus } from "@/lib/svp";
 import { ROW_DESC, Section, ToggleRow, Segmented } from "../shared";
@@ -47,11 +46,8 @@ export function SvpSection() {
   const ready = status?.ready ?? false;
   const checking = status === null && !statusFailed;
   const supported = status?.supported ?? false;
-  const linux = isLinuxDesktop();
   const loadFailed = status?.loadable === false;
-  const getUrl = linux
-    ? "https://www.svp-team.com/wiki/SVP:Linux"
-    : "https://www.svp-team.com/get/";
+  const getUrl = "https://www.svp-team.com/get/";
 
   const openSvp = async () => {
     if (busy) return;
@@ -129,13 +125,9 @@ export function SvpSection() {
             ? {
                 pill: t("Ready"),
                 tone: "ok",
-                desc: linux
-                  ? t(
-                      "Installed and detected. Frame found the native svpflow plugins and VapourSynth script library.",
-                    )
-                  : t(
-                      "Installed and detected. Frame found its interpolation engine and will drive it directly.",
-                    ),
+                desc: t(
+                  "Installed and detected. Frame found its interpolation engine and will drive it directly.",
+                ),
               }
             : installed
               ? {
@@ -156,15 +148,9 @@ export function SvpSection() {
   return (
     <Section
       title={t("SVP frame interpolation")}
-      subtitle={
-        linux
-          ? t(
-              "Uses your Linux SVP and VapourSynth installation to smooth motion inside Frame's player.",
-            )
-          : t(
-              "Uses SVP to smooth motion inside Frame's player. Install SVP once; Frame uses its engine and opens SVP Manager when needed.",
-            )
-      }
+      subtitle={t(
+        "Uses SVP to smooth motion inside Frame's player. Install SVP once; Frame uses its engine and opens SVP Manager when needed.",
+      )}
     >
       <SettingGroup label={t("Setup")}>
         <SettingRow wide label={t("SVP engine")} desc={engine.desc}>
@@ -216,11 +202,9 @@ export function SvpSection() {
           label={t("Enable SVP")}
           sub={
             ready
-              ? linux
-                ? t("Uses SVP's motion engine through VapourSynth. Restart playback to apply.")
-                : t(
-                    "Smooths motion using SVP. Restart playback to apply; turn this off if video will not play.",
-                  )
+              ? t(
+                  "Smooths motion using SVP. Restart playback to apply; turn this off if video will not play.",
+                )
               : t("Install SVP and check again before enabling it.")
           }
           value={settings.playerSvp}

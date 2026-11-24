@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
-import { getPlaybackPosition, subscribePlaybackClock } from "@/lib/player/playback-clock";
+import {
+  getPlaybackPosition,
+  subscribePlaybackClock,
+} from "@/features/player/engine/playback-clock";
 
 const NEAR_END_RATIO = 0.8;
 

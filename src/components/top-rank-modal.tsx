@@ -8,7 +8,7 @@ import { Poster, usePosterChain } from "@/components/poster";
 import { useRankings, type KnownForEntry, type PersonEntry } from "@/lib/rankings";
 import { useSettings } from "@/lib/settings";
 import { useTopRankModal, type TopRankDept } from "@/lib/top-rank-modal";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { openUrl } from "@/lib/window";
 import { pushActivityHint } from "@/lib/discord/activity-hint";

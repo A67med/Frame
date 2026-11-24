@@ -13,12 +13,7 @@ export function SystemTab() {
   const isWindows = typeof navigator !== "undefined" && navigator.userAgent.includes("Windows");
   return (
     <>
-      <Section
-        title={t("Downloads")}
-        subtitle={t(
-          "Choose where videos and eBooks are saved, and how their folders are organized.",
-        )}
-      >
+      <Section title={t("Downloads")}>
         {isTauri ? (
           <DownloadsSection />
         ) : (

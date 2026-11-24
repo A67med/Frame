@@ -20,11 +20,8 @@ function load(path: string, mocks: Record<string, unknown>, globals: Record<stri
   return module.exports;
 }
 
-test("full quality changes hero candidates without expanding TV or card decode sizes", () => {
-  let tv = false;
-  const art = load("src/views/big-picture/bp-art.ts", {
-    "@/lib/platform": { isAndroidTv: () => tv },
-  });
+test("full quality changes hero candidates without expanding card decode sizes", () => {
+  const art = load("src/views/big-picture/bp-art.ts", {});
   const src = "https://image.tmdb.org/t/p/w500/backdrop.jpg";
   const sources = [
     { url: src, portrait: false },
@@ -35,8 +32,6 @@ test("full quality changes hero candidates without expanding TV or card decode s
   ]);
   assert.equal(art.bpHeroCandidates(sources, false)[0].src, src.replace("w500", "w1280"));
   assert.equal(art.bpHeroArt(src, "portrait"), src.replace("w500", "w780"));
-  tv = true;
-  assert.equal(art.bpHeroCandidates(sources, true)[0].src, src.replace("w500", "w1280"));
   assert.equal(art.bpHeroArt(undefined, "wide", true), undefined);
 });
 

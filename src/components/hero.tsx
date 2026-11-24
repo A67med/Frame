@@ -36,8 +36,8 @@ import { useSettings } from "@/lib/settings";
 import { useTitleLogo } from "@/lib/title-logo";
 import { useLocalizedOverview } from "@/lib/use-localized-overview";
 import { fetchTrailer, prefetchTrailer, trailerSrc, type TrailerInfo } from "@/lib/trailer";
-import { useView } from "@/lib/view";
-import { useProfiles } from "@/lib/profiles";
+import { useView } from "@/app/navigation/view";
+import { useProfiles } from "@/features/profiles/profiles";
 import {
   getHeroMuted,
   setHeroMuted,
@@ -47,7 +47,7 @@ import {
 import { getHeroEnded, setHeroEnded } from "@/lib/hero-ended";
 import { usePageVisible } from "@/lib/visibility";
 import { useTrailerVideo } from "@/lib/use-trailer-video";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 
 const HERO_VIDEO_CLASS =
   "absolute left-1/2 top-1/2 h-[110%] w-[110%] -translate-x-1/2 -translate-y-1/2 object-cover";

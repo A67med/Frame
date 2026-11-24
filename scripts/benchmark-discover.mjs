@@ -40,7 +40,7 @@ export function catalogModule() {
 export function clientFixture({ baseline = false, latency = 0, fetch } = {}) {
   let requests = 0;
   const client = loadModule(readSource("src/lib/providers/tmdb/tmdb-client.ts", baseline), {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async (...args) => {
         requests++;
         if (latency) await new Promise((resolve) => setTimeout(resolve, latency));
@@ -100,7 +100,7 @@ export function railFixture(source, active = true) {
       "@/components/feed-shelf": { FeedShelf: "FeedShelf" },
       "@/components/row": { ScrollRootContext: {} },
       "@/lib/i18n": { useT: () => (text) => text },
-      "@/lib/view": { useView: () => ({ openGrid: () => {} }) },
+      "@/app/navigation/view": { useView: () => ({ openGrid: () => {} }) },
     },
     {
       IntersectionObserver: class {
@@ -217,11 +217,11 @@ export async function measureFeatured(
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const baseline = process.argv.includes("--baseline");
-  const source = readSource("src/views/discover.tsx", baseline);
+  const source = readSource("src/features/discovery/views/discover.tsx", baseline);
   const samples = [];
   for (let i = 0; i < 20; i++) samples.push((await measureFeatured(source)).firstContentMs);
   const rails = Array.from({ length: 14 }, () =>
-    railFixture(readSource("src/views/discover/discover-rail.tsx", baseline)),
+    railFixture(readSource("src/features/discovery/views/discover/discover-rail.tsx", baseline)),
   );
   const mountedRowRequests = rails.reduce((sum, rail) => sum + rail.requests.length, 0);
   rails.slice(0, 2).forEach((rail) => rail.intersect(true));

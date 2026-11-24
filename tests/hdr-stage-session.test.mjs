@@ -4,7 +4,7 @@ import {
   startHdrStageSession,
   HDR_COLD_BOOT_TIMEOUT_MS,
   HDR_LIVENESS_TIMEOUT_MS,
-} from "../src/lib/player/hdr-stage-session.ts";
+} from "../src/features/player/engine/hdr-stage-session.ts";
 
 const flush = async () => {
   for (let i = 0; i < 12; i++) await Promise.resolve();

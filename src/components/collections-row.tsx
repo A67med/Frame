@@ -1,8 +1,8 @@
 import { CollectionCard } from "@/components/collection-card";
-import { COLLECTIONS_CATALOG } from "@/lib/collections-catalog";
+import { COLLECTIONS_CATALOG } from "@/features/collections/catalog";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { Row } from "./row";
 
 export function CollectionsRow({ title }: { title?: string }) {

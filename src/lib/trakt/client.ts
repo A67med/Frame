@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { TRAKT_API_BASE, TRAKT_API_VERSION, TRAKT_REDIRECT_URI } from "./config";
 import { sessionClientId, traktApiKey, traktClientSecretFor } from "./credentials";
 import { getSession, setSession } from "./session";

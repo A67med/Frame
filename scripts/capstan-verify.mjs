@@ -28,7 +28,7 @@ import { fileURLToPath } from "node:url";
 import { unzipSync } from "fflate";
 import { hostTriple } from "./capstan-jdk.mjs";
 
-// The classes src/host/DexConverter.kt and src-tauri/src/capstan.rs load by name. A jar set
+// The classes src/host/DexConverter.kt and src-tauri/src/features/addons/capstan/mod.rs load by name. A jar set
 // missing one of them links and then throws on the first install a user attempts.
 const BRIDGE_CLASS = "com/harbor/capstan/bridge/Bridge.class";
 const ENTRY_CLASS = "com.harbor.capstan.bridge.Bridge";

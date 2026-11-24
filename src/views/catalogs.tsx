@@ -9,7 +9,7 @@ import {
   subscribeBrowseCatalogs,
   type BrowseCatalog,
 } from "@/lib/catalog-browse";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
 import { CatalogShelf } from "./catalogs/catalog-shelf";

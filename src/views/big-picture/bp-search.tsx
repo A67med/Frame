@@ -2,9 +2,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { useSearch } from "@/lib/search-context";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
 import { SFX } from "@/lib/sfx";
-import { isAndroid } from "@/lib/platform";
 import { BpKeyboardSheet } from "./bp-keyboard-sheet";
 import { setBpFocus, markBpInteracted } from "./use-bp-focus";
 import { BpMosaic } from "./bp-mosaic";
@@ -48,7 +46,6 @@ const SHAPE_OF: Record<BpSearchSection["kind"], BpGroupShape> = {
   titles: "wide",
   people: "people",
   anime: "poster",
-  manga: "poster",
   livetv: "card",
   collections: "banner",
   addonIndex: "card",
@@ -63,7 +60,6 @@ const BAND_OF: Record<BpSearchFilter, string> = {
   series: "core",
   people: "core",
   anime: "more",
-  manga: "more",
   livetv: "more",
   collections: "more",
   characters: "more",
@@ -88,7 +84,6 @@ export function BpSearch({ onSelect }: { onSelect: (m: Meta) => void }) {
   const { settings } = useSettings();
   const t = useBpT();
   const { query, recent, recordRecent, clearRecent } = useSearch();
-  const { openManga } = useView();
 
   // The filter is chosen against one query and is meaningless against the next,
   // so it is derived rather than stored. A chip that survives into a new search
@@ -128,7 +123,6 @@ export function BpSearch({ onSelect }: { onSelect: (m: Meta) => void }) {
   const startTyping = useCallback(() => {
     markBpInteracted();
     setTyping(true);
-    if (isAndroid()) inputRef.current?.focus();
   }, []);
 
   // The only way out of the sheet, wired to the Done key and to Back. The ring
@@ -164,10 +158,7 @@ export function BpSearch({ onSelect }: { onSelect: (m: Meta) => void }) {
     [commit, onSelect],
   );
 
-  const handlers = useMemo(
-    () => ({ onSelect: pick, onCommit: commit, openManga }),
-    [pick, commit, openManga],
-  );
+  const handlers = useMemo(() => ({ onSelect: pick, onCommit: commit }), [pick, commit]);
 
   // One renderer for every state. Splitting settled rows off into a second row
   // component is what made the addon mark appear only while a row was empty and
@@ -339,15 +330,13 @@ export function BpSearch({ onSelect }: { onSelect: (m: Meta) => void }) {
         )}
       </div>
 
-      {!isAndroid() && (
-        <BpKeyboardSheet
-          open={typing}
-          onChar={(c) => setQuery(query + c)}
-          onBackspace={() => setQuery(query.slice(0, -1))}
-          onClear={clear}
-          onDone={stopTyping}
-        />
-      )}
+      <BpKeyboardSheet
+        open={typing}
+        onChar={(c) => setQuery(query + c)}
+        onBackspace={() => setQuery(query.slice(0, -1))}
+        onClear={clear}
+        onDone={stopTyping}
+      />
     </div>
   );
 }

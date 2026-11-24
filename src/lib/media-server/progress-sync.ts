@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
-import type { PlayerSrc } from "@/lib/view";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { mediaServerConnections } from "./connections";
 import { identityMatches, mediaServerItems } from "./index-store";
 import { mediaServerAdapter } from "./sync";

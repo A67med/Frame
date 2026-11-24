@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import type { SearchPerson } from "@/lib/search";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function matchPersonForQuery(
   people: SearchPerson[] | undefined,

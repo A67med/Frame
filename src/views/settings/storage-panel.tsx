@@ -5,14 +5,13 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { useT } from "@/lib/i18n";
 import { clearPickerCache, pickerCacheCount } from "@/lib/picker-cache";
 import { clearThumbCache, getThumbCacheSize, type ThumbCacheSize } from "@/lib/remote-image-proxy";
-import { clearMangaCache } from "@/lib/manga/api";
 import { clearEpg } from "@/lib/iptv/epg-store";
 import { clearPlaylistCache } from "@/lib/iptv/store";
 import { clearSeriesInfoCache } from "@/lib/iptv/xtream-vod";
 import { clearDeadStreams } from "@/lib/dead-streams";
 import { clearResurfaceCache } from "@/lib/cw-resurface";
 import { Section } from "./shared";
-import { ROW_DESC, SettingGroup, SettingRow } from "./kit";
+import { SettingGroup, SettingRow } from "./kit";
 import { TempFilesCard } from "./temp-files-card";
 
 const CLEAR_BTN =
@@ -226,19 +225,8 @@ export function StoragePanel() {
         return 0;
       }
     };
-    const bytesOfPrefix = (prefix: string) => {
-      let total = 0;
-      try {
-        for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(i);
-          if (key && key.startsWith(prefix)) total += bytesOfKey(key);
-        }
-      } catch {}
-      return total;
-    };
     return {
       picker: pickerCacheCount(),
-      manga: bytesOfPrefix("harbor.manga.cache.v2."),
       dead: bytesOfKey("harbor.dead-streams.v1"),
     };
   }, [tick]);
@@ -370,15 +358,6 @@ export function StoragePanel() {
               }}
             />
             <ClearRow
-              title={t("Manga browse cache")}
-              sub={t("Cached chapter lists and browse pages. Downloads stay untouched.")}
-              usage={fmtBytes(cacheUsage.manga)}
-              onClear={() => {
-                clearMangaCache();
-                refresh();
-              }}
-            />
-            <ClearRow
               title={t("Poster thumbnails")}
               sub={t(
                 "Resized cover cache, kept 30 days up to size limits. Rebuilds as you browse.",
@@ -435,12 +414,6 @@ export function StoragePanel() {
               }}
             />
           </SettingGroup>
-
-          <p className={`max-w-[70ch] ${ROW_DESC}`}>
-            {t(
-              "Downloaded themes are managed in Theme & appearance. Video and manga downloads are managed on the Downloads page.",
-            )}
-          </p>
         </Section>
       )}
     </div>

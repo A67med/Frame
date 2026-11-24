@@ -3,7 +3,7 @@ import { useSettings } from "@/lib/settings";
 import { getThemeById } from "@/lib/theme";
 import { storedBackgroundImage } from "@/lib/theme-background";
 import { useThemePreview } from "@/lib/theme-preview";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function ThemeBackdrop() {
   const { settings } = useSettings();

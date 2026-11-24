@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { stremioSourceProfileId, useProfiles, type Profile } from "./profiles";
+import { stremioSourceProfileId, useProfiles, type Profile } from "@/features/profiles/profiles";
 import { getUser, login as apiLogin, type User } from "./stremio";
 
 type Session = { authKey: string; user: User };

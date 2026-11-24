@@ -6,16 +6,15 @@ const catalog: Record<string, string> = {
     "Pencarian musik memerlukan kunci API sebelum dapat dijalankan.",
   "Must Protect": "Wajib Dilindungi",
   "Must Protect Character": "Karakter yang Wajib Dilindungi",
-  Mute: "Bisukan",
+  "Mute": "Bisukan",
   "Mute / Unmute": "Bisukan / Bunyikan",
   "Mute all profile songs": "Bisukan semua lagu profil",
   "Mute or unmute audio.": "Bisukan atau bunyikan audio.",
-  "Mute page-turn sound": "Bisukan suara membalik halaman",
   "Mute trailer": "Bisukan trailer",
   "Mute · M": "Bisukan · M",
-  Muted: "Dibisukan",
+  "Muted": "Dibisukan",
   "Muted text": "Teks redup",
-  My: "Saya",
+  "My": "Saya",
   "My Library": "Perpustakaan Saya",
   "My Library shows upcoming episodes from the shows you've saved on Stremio. Sign in to wire it up.":
     "Perpustakaan Saya menampilkan episode mendatang dari acara yang Anda simpan di Stremio. Masuk untuk menghubungkannya.",
@@ -36,30 +35,30 @@ const catalog: Record<string, string> = {
   "My lists": "Daftar saya",
   "My playlist": "Daftar putar saya",
   "My provider": "Penyedia saya",
-  MyAnimeList: "MyAnimeList",
+  "MyAnimeList": "MyAnimeList",
   "MyAnimeList scores for anime titles.": "Skor MyAnimeList untuk judul anime.",
   "MyAnimeList scores for anime titles. RPDB doesn't cover anime, so this stays an opt-in.":
     "Skor MyAnimeList untuk judul anime. RPDB tidak mencakup anime, jadi fitur ini harus diaktifkan secara manual.",
   "MyAnimeList scores for anime titles. RPDB doesn't cover anime, so this stays optional.":
     "Skor MyAnimeList untuk judul anime. RPDB tidak mencakup anime, jadi fitur ini tetap opsional.",
   "MyAnimeList sync": "Sinkronisasi MyAnimeList",
-  Mystery: "Misteri",
-  NASCAR: "NASCAR",
-  NAVIGATION: "NAVIGASI",
-  NBA: "NBA",
+  "Mystery": "Misteri",
+  "NASCAR": "NASCAR",
+  "NAVIGATION": "NAVIGASI",
+  "NBA": "NBA",
   "NCAA أمريكية": "Sepak Bola Amerika NCAA",
   "NCAA كرة السلة": "Bola Basket NCAA",
-  NEW: "BARU",
-  NFL: "NFL",
-  NHL: "NHL",
-  NNEDI3: "NNEDI3",
+  "NEW": "BARU",
+  "NFL": "NFL",
+  "NHL": "NHL",
+  "NNEDI3": "NNEDI3",
   "NNEDI3 neural upscaler": "Peningkat resolusi neural NNEDI3",
   "NSFW. Hidden until enabled.": "NSFW. Disembunyikan hingga diaktifkan.",
   "NVIDIA Image Scaling. A light spatial upscaler and sharpener, an alternative to FSR that runs well on any GPU.":
     "NVIDIA Image Scaling. Peningkat resolusi spasial dan penajam ringan, sebagai alternatif FSR yang berjalan lancar di GPU apa pun.",
   "NVIDIA NIS": "NVIDIA NIS",
   "NVIDIA NIS upscaler": "Peningkat resolusi NVIDIA NIS",
-  Name: "Nama",
+  "Name": "Nama",
   "Name (e.g. REMUX)": "Nama (mis. REMUX)",
   "Name (optional)": "Nama (opsional)",
   "Name each file after its award ID. Frame resizes them and skips anything it cannot match.":
@@ -86,8 +85,8 @@ const catalog: Record<string, string> = {
   "Native-style hybrid bar": "Bilah hibrida bergaya native",
   "Native/Japanese": "Asli/Jepang",
   "Nature Films": "Film Alam",
-  Nav: "Navigasi",
-  Navigation: "Navigasi",
+  "Nav": "Navigasi",
+  "Navigation": "Navigasi",
   "Navigation and selection are silent": "Navigasi dan pemilihan tidak bersuara",
   "Navigation items": "Item navigasi",
   "Nebula Award Winners": "Pemenang Nebula Award",
@@ -100,27 +99,25 @@ const catalog: Record<string, string> = {
   "Needs pairing": "Memerlukan pemasangan",
   "Needs repair": "Perlu diperbaiki",
   "Neo-Noir": "Neo-Noir",
-  Nerve: "Nerve",
-  Netflix: "Netflix",
+  "Nerve": "Nerve",
+  "Netflix": "Netflix",
   "Netflix Originals": "Netflix Originals",
-  Network: "Jaringan",
+  "Network": "Jaringan",
   "Network discovery needs the desktop app.": "Penemuan jaringan memerlukan aplikasi desktop.",
   "Network error": "Kesalahan jaringan",
   "Network's best": "Terbaik dari jaringan",
-  Networks: "Jaringan",
+  "Networks": "Jaringan",
   "Neural upscalers, sharpeners, and HDR tone-mapping ported for mpv. Each is hosted by its author, not bundled with Frame. Download the ones you want; Frame chains them in the right order and applies them in the player.":
     "Peningkat resolusi neural, penajam, dan pemetaan rona HDR yang di-porting untuk mpv. Masing-masing dihosting oleh pembuatnya, bukan disertakan dalam Frame. Unduh yang Anda inginkan; Frame akan merangkainya dalam urutan yang tepat dan menerapkannya di pemutar.",
-  Never: "Tidak pernah",
+  "Never": "Tidak pernah",
   "Never auto-select tracks containing": "Jangan pernah pilih otomatis trek yang memuat",
   "Never contact the community server in either direction. Nothing is looked up and nothing is contributed from this device.":
     "Jangan pernah menghubungi server komunitas dalam kedua arah. Tidak ada yang dicari atau dikirimkan dari perangkat ini.",
   "Never hide the next episode": "Jangan pernah sembunyikan episode berikutnya",
   "Never show the content advisory for this title again":
     "Jangan pernah tampilkan peringatan konten untuk judul ini lagi",
-  "Never target official or licensed publisher sites.":
-    "Jangan pernah menargetkan situs penerbit resmi atau berlisensi.",
-  Nevermind: "Lupakan",
-  New: "Baru",
+  "Nevermind": "Lupakan",
+  "New": "Baru",
   "New & notable": "Baru & menarik",
   "New Anime Releases": "Rilisan Anime Baru",
   "New Episodes": "Episode Baru",
@@ -133,8 +130,6 @@ const catalog: Record<string, string> = {
   "New Year, New Stories": "Tahun Baru, Cerita Baru",
   "New badge unlocked": "Lencana baru terbuka",
   "New collection": "Koleksi baru",
-  "New downloads are saved here. Chapters you already saved stay where they are.":
-    "Unduhan baru disimpan di sini. Bab yang sudah Anda simpan tetap berada di lokasi semula.",
   "New episode released since you last watched":
     "Episode baru dirilis sejak terakhir kali Anda menonton",
   "New episodes": "Episode baru",
@@ -160,10 +155,10 @@ const catalog: Record<string, string> = {
     "Versi baru tersedia untuk tema yang Anda simpan.",
   "New voyage": "Pelayaran baru",
   "New {genre} Series": "Serial {genre} Baru",
-  Newest: "Terbaru",
+  "Newest": "Terbaru",
   "Newest first": "Terbaru dulu",
-  News: "Berita",
-  Next: "Berikutnya",
+  "News": "Berita",
+  "Next": "Berikutnya",
   "Next Episode": "Episode Berikutnya",
   "Next Up": "Selanjutnya",
   "Next and Previous behavior": "Perilaku Berikutnya dan Sebelumnya",
@@ -193,7 +188,7 @@ const catalog: Record<string, string> = {
   "Night mode gently compresses loud moments for late-night watching. Profiles take effect when the next track loads and stack with the normalizer.":
     "Mode malam mengurangi momen bersuara keras secara halus agar nyaman ditonton larut malam. Profil mulai berlaku saat trek berikutnya dimuat dan digunakan bersama normalizer.",
   "Nightmare Maker": "Pembuat Mimpi Buruk",
-  No: "Tidak",
+  "No": "Tidak",
   "No .nfo files detected. TMDB matching is recommended.":
     "Tidak ada file .nfo yang terdeteksi. Pencocokan TMDB disarankan.",
   "No .nfo files here": "Tidak ada file .nfo di sini",
@@ -244,8 +239,6 @@ const catalog: Record<string, string> = {
   "No badges earned yet": "Belum ada lencana yang diperoleh",
   "No badges match this title.": "Tidak ada lencana yang cocok dengan judul ini.",
   "No badges to show yet": "Belum ada lencana untuk ditampilkan",
-  "No bookmarks yet. Save your spot with the button above, in any reading mode.":
-    "Belum ada penanda. Simpan posisi Anda dengan tombol di atas, dalam mode baca apa pun.",
   "No bookmarks yet. Save your spot with the button above.":
     "Belum ada penanda. Simpan posisi Anda dengan tombol di atas.",
   "No books match that search": "Tidak ada buku yang cocok dengan pencarian itu",
@@ -265,9 +258,6 @@ const catalog: Record<string, string> = {
     "Tidak ada saluran yang cocok. Coba kategori lain atau hapus pencarian.",
   "No channels match. Try another group or paste a URL.":
     "Tidak ada saluran yang cocok. Coba grup lain atau tempel URL.",
-  "No chapters available in {lang} from this source.":
-    "Tidak ada bab dalam {lang} dari sumber ini.",
-  "No chapters match your search.": "Tidak ada bab yang cocok dengan pencarian Anda.",
   "No clean release has surfaced yet. This may be too new. Frame's filters dropped everything that came back as wrong-movie noise.":
     "Belum ada rilis bersih yang ditemukan. Judul ini mungkin terlalu baru. Filter Frame menyingkirkan semua hasil yang terdeteksi sebagai sampah dari film yang salah.",
   "No collections were found in the installed source catalog.":
@@ -368,7 +358,6 @@ const catalog: Record<string, string> = {
   "No location": "Tidak ada lokasi",
   "No locks. All sidebar tabs open without a PIN.":
     "Tanpa kunci. Semua tab bilah sisi dapat dibuka tanpa PIN.",
-  "No manga found": "Manga tidak ditemukan",
   "No match found": "Tidak ditemukan yang cocok",
   "No matches": "Tidak ada yang cocok",
   'No matches for "{query}"': 'Tidak ada yang cocok untuk "{query}"',
@@ -424,8 +413,6 @@ const catalog: Record<string, string> = {
     "Belum ada pengingat. Gunakan ikon jam di halaman acara untuk mendapat pemberitahuan tentang episode dan musim baru.",
   "No repositories yet. Add one above to browse eBook extensions.":
     "Belum ada repositori. Tambahkan di atas untuk menelusuri ekstensi eBook.",
-  "No repositories yet. Add one above to start browsing plugins.":
-    "Belum ada repositori. Tambahkan di atas untuk mulai menelusuri plugin.",
   "No response": "Tidak ada respons",
   "No results found.": "Hasil tidak ditemukan.",
   "No reviews from your friends for this film.": "Tidak ada ulasan dari teman Anda untuk film ini.",
@@ -502,14 +489,14 @@ const catalog: Record<string, string> = {
     "Tidak ada rilisan {kind} bulan ini. Coba filter lain.",
   "Nobody has shared a collection yet.": "Belum ada yang membagikan koleksi.",
   "Nobody told the sea.": "Tak seorang pun memberi tahu laut.",
-  Noir: "Noir",
+  "Noir": "Noir",
   "Noir cards": "Kartu Noir",
-  Nom: "Nom",
-  Nomination: "Nominasi",
-  Nominations: "Nominasi",
-  Nominee: "Nomine",
+  "Nom": "Nom",
+  "Nomination": "Nominasi",
+  "Nominations": "Nominasi",
+  "Nominee": "Nomine",
   "Non-fiction": "Nonfiksi",
-  None: "Tidak ada",
+  "None": "Tidak ada",
   "None installed yet. Add Stremio subtitle addons under Streaming sources.":
     "Belum ada yang terinstal. Tambahkan addon subtitle Stremio di Sumber streaming.",
   "None of Trakt's most-anticipated upcoming releases land in this month. Try a different month.":
@@ -519,12 +506,12 @@ const catalog: Record<string, string> = {
   "None of your addons returned a downloadable package for {season}. Refresh the sources or check your source settings.":
     "Tidak ada addon Anda yang menyediakan paket unduhan untuk {season}. Muat ulang sumber atau periksa pengaturan sumber Anda.",
   "None yet": "Belum ada",
-  Nord: "Nord",
+  "Nord": "Nord",
   "Nord sidebar": "Bilah samping Nord",
-  Normal: "Normal",
+  "Normal": "Normal",
   "Normalize embedded subtitle size": "Normalkan ukuran subtitle tersemat",
   "Normalize loudness": "Normalkan kelantangan",
-  Norwegian: "Norwegia",
+  "Norwegian": "Norwegia",
   "Not allowed": "Tidak diizinkan",
   "Not available": "Tidak tersedia",
   "Not cached": "Tidak di-cache",
@@ -556,12 +543,10 @@ const catalog: Record<string, string> = {
   "Not signed in": "Belum masuk",
   "Not signed in to Stremio. Your library stays local.":
     "Belum masuk ke Stremio. Perpustakaan Anda tetap tersimpan secara lokal.",
-  "Not sure which? Load page 2 of the site in a browser and watch what changes in the address bar.":
-    "Tidak yakin yang mana? Buka halaman 2 situs tersebut di browser dan perhatikan perubahan pada bilah alamat.",
   "Not the one? Search every source again": "Bukan yang ini? Cari lagi di semua sumber",
   "Not tracked": "Tidak dilacak",
   "Not valid JSON. The file may be corrupted.": "JSON tidak valid. File mungkin rusak.",
-  Note: "Catatan",
+  "Note": "Catatan",
   "Note the URL Cloudflare returns. It looks like":
     "Catat URL yang diberikan Cloudflare. Bentuknya seperti",
   "Note the URL Cloudflare returns. It looks like {code}.":
@@ -646,9 +631,9 @@ const catalog: Record<string, string> = {
   "Nothing yet": "Belum ada",
   "Nothing you have already set is lost. Frame picks this back up where you left it.":
     "Semua yang sudah Anda atur tetap tersimpan. Frame akan melanjutkannya dari posisi terakhir Anda.",
-  Notification: "Notifikasi",
-  Notifications: "Notifikasi",
-  Now: "Sekarang",
+  "Notification": "Notifikasi",
+  "Notifications": "Notifikasi",
+  "Now": "Sekarang",
   "Now Playing": "Sedang Diputar",
   "Now Playing card": "Kartu Sedang Diputar",
   "Now on Frame": "Kini di Frame",
@@ -671,18 +656,18 @@ const catalog: Record<string, string> = {
     "Nomor 1 akan digunakan lebih dulu saat Anda menekan Putar, kecuali prioritas stream telah diatur di Pengaturan.",
   "Number the titles": "Beri nomor pada judul",
   "Nvidia only": "Khusus Nvidia",
-  OK: "OK",
+  "OK": "OK",
   "OMDB daily budget": "Batas harian OMDB",
-  OMDb: "OMDb",
+  "OMDb": "OMDb",
   "OMDb · Rotten Tomatoes scores": "OMDb · Skor Rotten Tomatoes",
   "ON GOAL": "TEPAT SASARAN",
-  ONA: "ONA",
-  OP: "OP",
-  OS: "OS",
+  "ONA": "ONA",
+  "OP": "OP",
+  "OS": "OS",
   "OTA channels + IPTV": "Saluran OTA + IPTV",
-  OVA: "OVA",
+  "OVA": "OVA",
   "OVA of the Year": "OVA Terbaik Tahun Ini",
-  Off: "Nonaktif",
+  "Off": "Nonaktif",
   "Off (use CPU)": "Nonaktif (gunakan CPU)",
   "Off by default, so your controller only drives Frame while it is the focused window. Leave it off if you play games with the same controller.":
     "Nonaktif secara default, jadi pengontrol Anda hanya mengendalikan Frame saat jendelanya sedang aktif. Biarkan nonaktif jika Anda bermain game dengan pengontrol yang sama.",
@@ -698,17 +683,17 @@ const catalog: Record<string, string> = {
     "Saat nonaktif, font, latar belakang, dan kanvas Anda tetap menjadi pratinjau pribadi.",
   "Off · catalogs and streams hidden": "Nonaktif · katalog dan stream disembunyikan",
   "Offensive Rebounds": "Rebound Ofensif",
-  Official: "Resmi",
+  "Official": "Resmi",
   "Official age rating": "Klasifikasi usia resmi",
-  Offline: "Offline",
+  "Offline": "Offline",
   "Offline Reading": "Membaca Offline",
-  Offsides: "Offside",
+  "Offsides": "Offside",
   "Old-school Heat": "Nuansa Klasik",
   "Older laptops · low-end · battery · anything that stutters":
     "Laptop lama · kelas bawah · baterai · perangkat apa pun yang tersendat",
-  Oldest: "Terlama",
+  "Oldest": "Terlama",
   "Oldest first": "Terlama lebih dulu",
-  On: "Aktif",
+  "On": "Aktif",
   "On Cloudflare, click {b1}, then find {b2} and click {b3}.":
     "Di Cloudflare, klik {b1}, lalu cari {b2} dan klik {b3}.",
   "On Edge": "Di Edge",
@@ -760,7 +745,7 @@ const catalog: Record<string, string> = {
     "Aktif: deretan addon yang menduplikasi bawaan juga ditampilkan, bukan digabung menjadi satu.",
   "On: only titles you bookmarked. Off: also keeps the ones Stremio added when you hit play.":
     "Aktif: hanya judul yang Anda tandai. Nonaktif: judul yang ditambahkan Stremio saat Anda menekan putar juga disimpan.",
-  Onboarding: "Pengenalan awal",
+  "Onboarding": "Pengenalan awal",
   "Onboarding & hints": "Pengenalan awal & petunjuk",
   "Once saved, every poster gets re-rendered with IMDb, Rotten Tomatoes, and Metacritic stamped on it.":
     "Setelah disimpan, setiap poster dirender ulang dengan cap IMDb, Rotten Tomatoes, dan Metacritic.",
@@ -769,7 +754,6 @@ const catalog: Record<string, string> = {
   "One @name that finds you across Frame.":
     "Satu @nama agar Anda mudah ditemukan di seluruh Frame.",
   "One Frame, every screen.": "Satu Frame, di setiap layar.",
-  "One Piece, Naruto and more worlds": "One Piece, Naruto, dan dunia lainnya",
   "One choice that sets how hard your computer works to make video look its best. Pick the one that matches your machine. Takes effect on the next thing you play.":
     "Satu pilihan untuk menentukan seberapa keras komputer Anda bekerja agar video tampil sebaik mungkin. Pilih yang sesuai dengan komputer Anda. Berlaku pada tayangan berikutnya yang Anda putar.",
   "One free account for your handle, themes, and sync.":
@@ -792,14 +776,12 @@ const catalog: Record<string, string> = {
   "One-tap looks": "Tampilan sekali ketuk",
   "One-time setup downloads the shader pack (about 1 MB) into Frame. No files to hunt down.":
     "Penyiapan satu kali akan mengunduh paket shader (sekitar 1 MB) ke Frame. Tak perlu mencari file.",
-  Oneshot: "One-shot",
-  Ongoing: "Berlanjut",
-  Online: "Online",
+  "Oneshot": "One-shot",
+  "Ongoing": "Berlanjut",
+  "Online": "Online",
   "Online now": "Sedang online",
   "Only 1 source after filtering": "Hanya 1 sumber setelah difilter",
   "Only 2 sources after filtering": "Hanya 2 sumber setelah difilter",
-  "Only add repositories you trust. Frame cannot vouch for third-party plugins.":
-    "Hanya tambahkan repositori yang Anda percayai. Frame tidak dapat menjamin plugin pihak ketiga.",
   "Only addon/debrid sources, never peer-to-peer": "Hanya sumber addon/debrid, tanpa peer-to-peer",
   "Only continue if you fully trust this link":
     "Lanjutkan hanya jika Anda benar-benar memercayai tautan ini",
@@ -818,7 +800,6 @@ const catalog: Record<string, string> = {
     "Hanya tampilkan judul dengan bahasa asli ini di katalog Beranda. Biarkan semuanya nonaktif untuk menampilkan semua judul.",
   "Only show titles in these original languages on the Home rows. Leave all off to show everything.":
     "Hanya tampilkan judul dengan bahasa asli ini di deretan Beranda. Biarkan semuanya nonaktif untuk menampilkan semua judul.",
-  "Only sites you have the right to read.": "Hanya situs yang berhak Anda baca.",
   "Only start the P2P engine when needed": "Hanya jalankan mesin P2P saat diperlukan",
   "Only streams already in your debrid library.":
     "Hanya stream yang sudah ada di perpustakaan debrid Anda.",
@@ -834,8 +815,8 @@ const catalog: Record<string, string> = {
   "Only you can see your friends, badges, activity, and comments. Your name and avatar stay visible.":
     "Hanya Anda yang dapat melihat teman, lencana, aktivitas, dan komentar Anda. Nama dan avatar Anda tetap terlihat.",
   "Oops..": "Ups..",
-  Opacity: "Opasitas",
-  Open: "Buka",
+  "Opacity": "Opasitas",
+  "Open": "Buka",
   "Open @{handle} profile": "Buka profil @{handle}",
   "Open Account": "Buka Akun",
   "Open AniList again": "Buka AniList lagi",
@@ -895,7 +876,6 @@ const catalog: Record<string, string> = {
     "Buka di browser biasa, lakukan penyiapan di sana, lalu kembali dan tempel tautan penginstalan di bawah.",
   "Open library": "Buka perpustakaan",
   "Open manga": "Buka manga",
-  "Open manga details": "Buka detail manga",
   "Open on AniList": "Buka di AniList",
   "Open on IMDb": "Buka di IMDb",
   "Open on Letterboxd": "Buka di Letterboxd",
@@ -936,8 +916,6 @@ const catalog: Record<string, string> = {
     "Buka perpustakaan, tekan Bagikan tema, dan publikasi pertama Anda akan muncul di sini beserta status ulasan, jumlah unduhan, dan riwayat versinya.",
   "Open the queue": "Buka antrean",
   "Open the remote": "Buka remote",
-  "Open the site in a browser. Right-click the thing you want (a cover, a title, a chapter link) and choose Inspect.":
-    "Buka situs di browser. Klik kanan item yang diinginkan (sampul, judul, atau tautan bab), lalu pilih Periksa.",
   "Open the wheel menu on any eBook and choose Add to Shelf.":
     "Buka menu roda pada eBook apa pun, lalu pilih Tambahkan ke Rak.",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
@@ -957,9 +935,9 @@ const catalog: Record<string, string> = {
   "Open {title}": "Buka {title}",
   "Open {type} adaptation: {title}": "Buka adaptasi {type}: {title}",
   "OpenRouter API key (sk-or-...)": "Kunci API OpenRouter (sk-or-...)",
-  OpenSubtitles: "OpenSubtitles",
+  "OpenSubtitles": "OpenSubtitles",
   "OpenSubtitles API key": "Kunci API OpenSubtitles",
-  Opening: "Membuka",
+  "Opening": "Membuka",
   "Opening AniList...": "Membuka AniList...",
   "Opening MyAnimeList...": "Membuka MyAnimeList...",
   "Opening stremio-addons.net in your browser to sign in and rate":
@@ -973,7 +951,7 @@ const catalog: Record<string, string> = {
     "Membuka folder yang menyimpan cache DHT dan data transfer aktif.",
   "Opens the free signup page": "Membuka halaman pendaftaran gratis",
   "Opens your API settings page": "Membuka halaman pengaturan API Anda",
-  Optional: "Opsional",
+  "Optional": "Opsional",
   "Optional keys that unlock TMDB rails, baked-in poster ratings, fanart, and TVDB episode data.":
     "Kunci opsional yang mengaktifkan deretan TMDB, nilai pada poster, fanart, dan data episode TVDB.",
   "Optional overlays that appear over the video.": "Lapisan opsional yang muncul di atas video.",
@@ -985,7 +963,7 @@ const catalog: Record<string, string> = {
     "Opsional. Lewati langkah ini untuk mempertahankan sampul saat ini.",
   "Optional. TheIntroDB answers without a key, but a key raises your rate limit so timing keeps arriving when you binge. Get one at":
     "Opsional. TheIntroDB tetap merespons tanpa kunci, tetapi kunci menaikkan batas permintaan Anda sehingga data waktu terus tersedia saat Anda menonton maraton. Dapatkan kunci di",
-  Options: "Opsi",
+  "Options": "Opsi",
   "Options for the Library → Local tab: folders you scan from your own drive. When you export metadata, Frame writes a Kodi-style .nfo and downloads artwork next to each file at the sizes below.":
     "Opsi untuk tab Perpustakaan → Lokal: folder dari drive Anda sendiri yang akan dipindai. Saat mengekspor metadata, Frame akan menulis file .nfo bergaya Kodi dan mengunduh gambar di samping setiap file dengan ukuran di bawah ini.",
   "Or browse curated packs and import a link": "Atau telusuri paket pilihan dan impor tautan",
@@ -994,7 +972,7 @@ const catalog: Record<string, string> = {
   "Or paste the install link manually": "Atau tempel tautan penginstalan secara manual",
   "Or set a series to auto-download": "Atau atur serial agar diunduh otomatis",
   "Or try one of ours": "Atau coba salah satu milik kami",
-  Order: "Urutan",
+  "Order": "Urutan",
   "Organize addons": "Atur addon",
   "Organize downloads into folders": "Atur unduhan ke dalam folder",
   "Organize downloads into folders by movie or series name":

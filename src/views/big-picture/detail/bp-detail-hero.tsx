@@ -2,7 +2,7 @@ import { Text } from "lucide-react";
 import type { Meta } from "@/lib/cinemeta";
 import type { LibraryItem } from "@/lib/stremio";
 import type { TmdbDetail } from "@/lib/providers/tmdb/tmdb-details";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { MetaAwardsCorner } from "@/components/meta-awards-corner";
 import { useSettings } from "@/lib/settings";
 import { BpDetailActions } from "../bp-detail-actions";

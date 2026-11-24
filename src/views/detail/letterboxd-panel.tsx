@@ -1,7 +1,7 @@
 import { Component, useEffect, useState, type ErrorInfo, type ReactNode } from "react";
 import { Bookmark, Eye, ExternalLink, Heart, Loader2, Star, X } from "lucide-react";
 import type { Meta } from "@/lib/cinemeta";
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 import { useLetterboxd } from "@/lib/stremboxd/provider";
 import { fetchLetterboxdStreams, type LetterboxdStreamInfo } from "@/lib/stremboxd/client";
 import { letterboxdFilmUrl } from "@/lib/stremboxd/to-meta";

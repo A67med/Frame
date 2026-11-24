@@ -2,15 +2,18 @@ import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } fro
 import { Captions, Check, Gauge, Languages, LoaderCircle } from "lucide-react";
 import { AllAddonsIcon } from "@/components/icons/harbor-glyphs";
 import type { SubtitleMenuProps } from "@/components/player/subtitle-menu/types";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
 import { writePlayerPrefs } from "@/lib/player-prefs";
 import { useSettings } from "@/lib/settings";
 import type { SkipSegment } from "@/lib/skip-intro";
 import type { SpoilerMask } from "@/lib/spoilers";
 import type { ScoredStream } from "@/lib/streams/types";
-import { rememberedChoiceFromLoad, type SubChoiceInput } from "@/lib/subtitles/subtitle-memory";
+import {
+  rememberedChoiceFromLoad,
+  type SubChoiceInput,
+} from "@/features/subtitles/subtitle-memory";
 import type { EngineStats } from "@/lib/torrent/engine-stats";
-import { useView, type PlayerSrc, type PlayEpisode } from "@/lib/view";
+import { useView, type PlayerSrc, type PlayEpisode } from "@/app/navigation/view";
 import { MEDIA_SERVER_QUALITIES } from "@/lib/media-server/quality";
 import { switchMediaServerQuality } from "@/lib/media-server/playback";
 import type { MediaServerQuality } from "@/lib/media-server/types";
@@ -284,10 +287,6 @@ export function BpTenFootLayer({ p }: { p: PlayerOverlayLayersProps }) {
   const { settings, update } = useSettings();
   const closeRef = useRef<() => void>(() => {});
   closeRef.current = () => {
-    if (p.src.sportsDocked === false && !p.drawMode) {
-      p.onBack();
-      return;
-    }
     void requestPlayerClose({
       drawMode: p.drawMode,
       setDrawMode: (v) => p.setDrawMode(() => v),

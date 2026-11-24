@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTogether } from "@/lib/together/provider";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 const PREF_KEY = "harbor.together.followHostExit";
 

@@ -1,4 +1,4 @@
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useEffect, useState } from "react";
 import { FrameMark } from "@/components/icons/frame-mark";
 import { ProfileAvatar, SubtitleText } from "@/chrome/account-menu/account-menu-parts";

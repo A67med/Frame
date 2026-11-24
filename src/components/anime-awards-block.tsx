@@ -7,7 +7,7 @@ import {
   type AwardWin,
 } from "@/lib/anime-awards";
 import { resolveAwardIcon, useAwardPacks } from "@/lib/award-icons";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 
 export function AnimeAwardsBlock({ name, year }: { name: string; year?: number }) {

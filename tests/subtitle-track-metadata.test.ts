@@ -5,12 +5,15 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
 
-const mpv = readFileSync(new URL("../src/lib/player/mpv.ts", import.meta.url), "utf8");
+const mpv = readFileSync(new URL("../src/features/player/engine/mpv.ts", import.meta.url), "utf8");
 const selection = readFileSync(
-  new URL("../src/lib/subtitles/track-selection.ts", import.meta.url),
+  new URL("../src/features/subtitles/track-selection.ts", import.meta.url),
   "utf8",
 );
-const html5 = readFileSync(new URL("../src/lib/player/html5/bridge.ts", import.meta.url), "utf8");
+const html5 = readFileSync(
+  new URL("../src/features/player/engine/html5/bridge.ts", import.meta.url),
+  "utf8",
+);
 
 test("Windows path separators cannot drop loaded subtitle metadata", () => {
   assert.ok(

@@ -3,7 +3,7 @@ import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 import { makeSafeTauriUnlisten } from "@/lib/tauri-unlisten";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { dispatchTvNav } from "@/lib/keyboard-navigation";
 import { isGamepadCaptured } from "./capture";
 import { publishGamepads } from "./store";

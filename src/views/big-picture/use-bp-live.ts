@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { headersFromChannel } from "@/lib/iptv/channel-headers";
 import { recordChannelPlay } from "@/lib/iptv/channel-stats";
 import { isHydratableChannel } from "@/lib/iptv/channel-hydration";

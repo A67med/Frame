@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/lib/auth";
-import { useProfiles, type Profile } from "@/lib/profiles";
+import { useProfiles, type Profile } from "@/features/profiles/profiles";
 import { currentAuthor, subscribeAuthor, type Author } from "@/lib/theme-auth";
 import {
   currentStatus,

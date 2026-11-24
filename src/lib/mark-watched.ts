@@ -1,5 +1,5 @@
 import { meta as fetchMeta, narrowMediaType, type Meta } from "@/lib/cinemeta";
-import { savePlayback } from "@/lib/playback-history";
+import { savePlayback } from "@/features/player/history";
 import { pushWatched } from "@/lib/trakt/history";
 import { markEpisodeWatched } from "@/lib/trakt/resolve";
 import { stremioIdToTraktTarget } from "@/lib/trakt/ids";

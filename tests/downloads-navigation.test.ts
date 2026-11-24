@@ -2,11 +2,14 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import { navigateUnderPreview, previewPageStack } from "../src/lib/player/docked-navigation.ts";
+import {
+  navigateUnderPreview,
+  previewPageStack,
+} from "../src/features/player/engine/docked-navigation.ts";
 
 const source = ts.createSourceFile(
   "view.tsx",
-  readFileSync(new URL("../src/lib/view.tsx", import.meta.url), "utf8"),
+  readFileSync(new URL("../src/app/navigation/view.tsx", import.meta.url), "utf8"),
   ts.ScriptTarget.ESNext,
   true,
   ts.ScriptKind.TSX,
@@ -91,17 +94,17 @@ test("reselecting Downloads does not stack duplicate pages", () => {
   assert.deepEqual(h.stackRef.current, [{ kind: "home" }]);
 });
 
-test("opening and leaving Downloads keeps a docked sports player mounted", () => {
-  const dock = { kind: "player", src: { sportsDocked: true, url: "fixture-stream" } };
-  const h = fixture([{ kind: "sports" }, dock]);
+test("opening and leaving Downloads keeps a detached player mounted", () => {
+  const dock = { kind: "player", src: { pipDocked: true, url: "fixture-stream" } };
+  const h = fixture([{ kind: "library" }, dock]);
   h.setView("downloads");
   assert.deepEqual(
     h.stackRef.current.map((f: any) => f.kind),
-    ["sports", "downloads", "player"],
+    ["library", "downloads", "player"],
   );
   assert.equal(h.stackRef.current.at(-1), dock);
   h.pop();
-  assert.deepEqual(h.stackRef.current, [{ kind: "sports" }, dock]);
+  assert.deepEqual(h.stackRef.current, [{ kind: "library" }, dock]);
 });
 
 test("leaving Downloads through primary navigation retains the existing root reset behavior", () => {

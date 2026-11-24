@@ -1,7 +1,7 @@
 import { RotateCcw } from "lucide-react";
 import { Play } from "@/components/icons/play-filled";
 import { useT } from "@/lib/i18n";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 
 const KID_BUBBLES = [10, 24, 40, 55, 70, 84, 93];
 

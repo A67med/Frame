@@ -1,5 +1,5 @@
 import type { BrowseId, BrowseKind } from "@/lib/providers/tmdb/tmdb-brands";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 
 export type Browsed = MetaFilter & { kind: BrowseKind; name: string };
 

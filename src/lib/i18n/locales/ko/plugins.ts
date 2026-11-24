@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "플러그인",
-  Repositories: "저장소",
+  "Plugins": "플러그인",
+  "Repositories": "저장소",
   "Installed plugins": "설치된 플러그인",
   "Plugin repositories": "플러그인 저장소",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -29,8 +29,8 @@ const plugins: Record<string, string> = {
     "저장소를 추가한 다음 원하는 제공자를 설치하세요. 여기에 표시됩니다.",
   "Add a repository": "저장소 추가",
   "Movies and series": "영화 및 시리즈",
-  Script: "스크립트",
-  Verified: "검증됨",
+  "Script": "스크립트",
+  "Verified": "검증됨",
   "v{version} available": "v{version} 사용 가능",
   "Paused after {n} failures. Turn it back on to try again.":
     "{n}회 실패하여 일시 정지되었습니다. 다시 시도하려면 다시 켜세요.",
@@ -52,7 +52,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "{repo}의 v{version}, {when} 설치됨.",
   "Update to v{version}": "v{version}(으)로 업데이트",
   "Revert to v{version}": "v{version}(으)로 되돌리기",
-  Reaches: "접속 대상",
+  "Reaches": "접속 대상",
   "Any public website. This plugin did not say which sites it uses.":
     "모든 공개 웹사이트. 이 플러그인은 사용하는 사이트를 밝히지 않았습니다.",
   "Seen so far: {hosts}": "지금까지 확인됨: {hosts}",
@@ -100,7 +100,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "제거하고 {count}개를 삭제할까요?",
   "Could not reach this repository. Installed plugins keep working.":
     "이 저장소에 연결할 수 없습니다. 설치된 플러그인은 계속 작동합니다.",
-  "This repository lists no plugins.": "이 저장소에는 플러그인이 없습니다.",
   "This repository is not for stream plugins.": "이 저장소는 스트림 플러그인용이 아닙니다.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "스트림 플러그인이 아닙니다: getStreams 또는 streams 함수를 내보내지 않습니다.",

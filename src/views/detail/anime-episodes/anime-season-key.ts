@@ -1,6 +1,6 @@
 import type { Meta } from "@/lib/cinemeta";
 import type { KitsuEpisode } from "@/lib/providers/kitsu";
-import type { EpisodeDetailPlayback, PlayEpisode } from "@/lib/view";
+import type { EpisodeDetailPlayback, PlayEpisode } from "@/app/navigation/view";
 import { animeRowSeason } from "@/lib/anime-stremio-watched";
 
 export function animeSeasonKey(ep: KitsuEpisode): number {

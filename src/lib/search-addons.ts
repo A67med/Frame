@@ -1,6 +1,6 @@
 import { isCollectionCatalog, type Addon, type CatalogDef } from "./addons";
 import type { Meta } from "./cinemeta";
-import { safeFetch } from "./safe-fetch";
+import { safeFetch } from "../infrastructure/networking/safe-fetch";
 
 const CAP_PER_CATALOG = 20;
 const MAX_CATALOGS = 24;

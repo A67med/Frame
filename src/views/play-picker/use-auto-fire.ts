@@ -6,7 +6,7 @@ import { hasInstantMarker, streamMatchesLangs, torrentFilename } from "./picker-
 import { episodeVariantMatch } from "@/lib/streams/episode-file";
 import { episodeSpanContains } from "@/lib/episode-span";
 import type { AddonProgress } from "@/lib/streams/addons";
-import { preferredSourceAddonPending, type PlaybackEntry } from "@/lib/playback-history";
+import { preferredSourceAddonPending, type PlaybackEntry } from "@/features/player/history";
 
 const AUTO_SETTLE_MS = 1500;
 const AUTO_SETTLE_PACK_MS = 4000;

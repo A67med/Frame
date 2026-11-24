@@ -14,7 +14,7 @@ import { SIMKL_STATUS_LABELS } from "@/lib/simkl/list-status";
 import { useLetterboxd } from "@/lib/stremboxd/provider";
 import { fetchFullModeCatalog, fetchStremboxdCatalog } from "@/lib/stremboxd/client";
 import { stremboxdMetaToMeta } from "@/lib/stremboxd/to-meta";
-import { parseTs } from "@/views/library/shared";
+import { parseTs } from "@/features/library/views/library/shared";
 import type { BpLibEntry, BpLibFeed, BpLibGroup, BpLibStatus } from "./bp-library-types";
 
 const EMPTY: BpLibFeed = { entries: [], status: "ready", groups: [] };

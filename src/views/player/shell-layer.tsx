@@ -1,9 +1,12 @@
 import { memo, type RefObject } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
 import { getPlayerShell, type PlayerShellProps } from "@/lib/player-shells/registry";
 import { writePlayerPrefs } from "@/lib/player-prefs";
-import { rememberedChoiceFromLoad, type SubChoiceInput } from "@/lib/subtitles/subtitle-memory";
+import {
+  rememberedChoiceFromLoad,
+  type SubChoiceInput,
+} from "@/features/subtitles/subtitle-memory";
 import { writePlayerVolume } from "@/lib/player-volume";
 import type { useVideoDownload } from "./hooks/use-video-download";
 

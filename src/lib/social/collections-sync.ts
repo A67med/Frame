@@ -1,5 +1,5 @@
 import { invoke } from "@tauri-apps/api/core";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { authToken } from "@/lib/theme-auth";
 import { HARBOR_API_BASE } from "@/lib/config/endpoints";
 import {
@@ -8,7 +8,7 @@ import {
   absCollectionImage,
   type Collection,
   type CollectionItem,
-} from "@/lib/collections";
+} from "@/features/collections/store";
 
 const BASE = `${HARBOR_API_BASE}/themes/api/social`;
 const isTauri = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;

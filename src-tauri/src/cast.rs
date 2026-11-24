@@ -10,8 +10,8 @@ use serde::Serialize;
 use std::collections::HashMap;
 use std::net::IpAddr;
 use std::str::FromStr;
-use std::sync::Mutex;
 use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::Mutex;
 use std::time::Duration;
 
 use crate::airplay;
@@ -210,7 +210,12 @@ where
 
 fn restore_failed_stop(session: Option<ActiveSession>, epoch: u64) -> Result<(), String> {
     let mut active = ACTIVE.lock().map_err(|e| format!("lock: {e}"))?;
-    restore_failed_stop_if_current(&mut active, session, epoch, ACTIVE_EPOCH.load(Ordering::Relaxed));
+    restore_failed_stop_if_current(
+        &mut active,
+        session,
+        epoch,
+        ACTIVE_EPOCH.load(Ordering::Relaxed),
+    );
     Ok(())
 }
 
@@ -524,19 +529,37 @@ pub async fn cast_load(
     let _operation = TRANSPORT_OPS.lock().await;
     let control_url = required_control_url(&kind_str, control_url)?;
     let req_headers = headers.unwrap_or_default();
-    let direct_audio = kind_str == "dlna" && !audio_start_paused.unwrap_or(false)
+    let direct_audio = kind_str == "dlna"
+        && !audio_start_paused.unwrap_or(false)
         && audio_track_ordinal.unwrap_or(0) == 0
-        && dlna::supports_direct_audio(control_url.as_deref().unwrap_or(""), content_type.as_deref()).await;
-    if kind_str == "dlna" && !direct_audio && (audio_only.unwrap_or(false) || is_audio_content_type(content_type.as_deref())) {
+        && dlna::supports_direct_audio(
+            control_url.as_deref().unwrap_or(""),
+            content_type.as_deref(),
+        )
+        .await;
+    if kind_str == "dlna"
+        && !direct_audio
+        && (audio_only.unwrap_or(false) || is_audio_content_type(content_type.as_deref()))
+    {
         let cu = control_url.ok_or("DLNA device missing control_url")?;
         let input = AudioCastInput {
-            url, headers: req_headers, audio_ordinal: audio_track_ordinal.unwrap_or(0),
+            url,
+            headers: req_headers,
+            audio_ordinal: audio_track_ordinal.unwrap_or(0),
             start_seconds: start_time_sec.unwrap_or(0.0),
             // Live FLAC decoded on Sonos but failed real pause/resume tests. MP3 passed all controls.
             format: AudioCastFormat::Mp3,
-            title, target_host: host,
+            title,
+            target_host: host,
         };
-        return load_dlna_audio(&proxy_state, cu, input, audio_start_paused.unwrap_or(false), None).await;
+        return load_dlna_audio(
+            &proxy_state,
+            cu,
+            input,
+            audio_start_paused.unwrap_or(false),
+            None,
+        )
+        .await;
     }
     if audio_only.unwrap_or(false) && !is_audio_content_type(content_type.as_deref()) {
         return Err("Audio-only routing is currently supported by DLNA speakers".into());
@@ -727,35 +750,72 @@ pub async fn cast_load(
     }
 }
 
-async fn load_dlna_audio(proxy: &ProxyState, control_url: String, input: AudioCastInput, paused: bool, expected_previous: Option<&str>) -> Result<(), String> {
+async fn load_dlna_audio(
+    proxy: &ProxyState,
+    control_url: String,
+    input: AudioCastInput,
+    paused: bool,
+    expected_previous: Option<&str>,
+) -> Result<(), String> {
     let title = input.title.clone();
     let mime = input.format.mime().to_string();
     let route = proxy.register_audio_cast(input).await?;
     if let Some(previous) = expected_previous {
-        let still_owned = dlna::current_uri(&control_url).await.map(|uri| dlna::uri_has_audio_session(&uri, previous));
+        let still_owned = dlna::current_uri(&control_url)
+            .await
+            .map(|uri| dlna::uri_has_audio_session(&uri, previous));
         if !matches!(still_owned, Ok(true)) {
             proxy.stop_hls_session(&route.session_id).await;
             return Err("The speaker source changed during seeking".into());
         }
     }
-    let result = dlna::load_audio_route(&control_url, route.url, &route.session_id, title, mime, paused).await;
+    let result = dlna::load_audio_route(
+        &control_url,
+        route.url,
+        &route.session_id,
+        title,
+        mime,
+        paused,
+    )
+    .await;
     if let Err(error) = result {
         let cleanup = dlna::stop_audio_if_owned(&control_url, &route.session_id).await;
         if let Err(uncertain) = cleanup {
             // Retain an addressable session so a subsequent Stop can be acknowledged.
-            replace_active_session(ActiveSession::Dlna { control_url, hls_session_id: Some(route.session_id) }, |id| async move { proxy.stop_hls_session(&id).await; }).await?;
+            replace_active_session(
+                ActiveSession::Dlna {
+                    control_url,
+                    hls_session_id: Some(route.session_id),
+                },
+                |id| async move {
+                    proxy.stop_hls_session(&id).await;
+                },
+            )
+            .await?;
             return Err(uncertain);
         }
         proxy.stop_hls_session(&route.session_id).await;
         return Err(error);
     }
-    replace_active_session(ActiveSession::Dlna { control_url, hls_session_id: Some(route.session_id) }, |id| async move { proxy.stop_hls_session(&id).await; }).await
+    replace_active_session(
+        ActiveSession::Dlna {
+            control_url,
+            hls_session_id: Some(route.session_id),
+        },
+        |id| async move {
+            proxy.stop_hls_session(&id).await;
+        },
+    )
+    .await
 }
 
 fn snapshot_dlna_audio() -> Option<(String, String)> {
     let active = ACTIVE.lock().ok()?;
     match active.as_ref()? {
-        ActiveSession::Dlna { control_url, hls_session_id: Some(id) } if id.starts_with("audio-") => Some((control_url.clone(), id.clone())),
+        ActiveSession::Dlna {
+            control_url,
+            hls_session_id: Some(id),
+        } if id.starts_with("audio-") => Some((control_url.clone(), id.clone())),
         _ => None,
     }
 }
@@ -967,9 +1027,13 @@ fn snapshot_airplay() -> Option<(String, u16)> {
 pub async fn cast_play() -> Result<(), String> {
     let _operation = TRANSPORT_OPS.lock().await;
     if let Some((cu, id)) = snapshot_dlna_audio() {
-        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) { return Err("The speaker source changed".into()); }
+        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) {
+            return Err("The speaker source changed".into());
+        }
         dlna::play(cu.clone()).await?;
-        return dlna::wait_audio_state(&cu, &id, false, false).await.map(|_| ());
+        return dlna::wait_audio_state(&cu, &id, false, false)
+            .await
+            .map(|_| ());
     }
     if let Some(cu) = snapshot_dlna() {
         return dlna::play(cu).await;
@@ -1002,9 +1066,13 @@ pub async fn cast_play() -> Result<(), String> {
 pub async fn cast_pause() -> Result<(), String> {
     let _operation = TRANSPORT_OPS.lock().await;
     if let Some((cu, id)) = snapshot_dlna_audio() {
-        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) { return Err("The speaker source changed".into()); }
+        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) {
+            return Err("The speaker source changed".into());
+        }
         dlna::pause(cu.clone()).await?;
-        return dlna::wait_audio_state(&cu, &id, true, false).await.map(|_| ());
+        return dlna::wait_audio_state(&cu, &id, true, false)
+            .await
+            .map(|_| ());
     }
     if let Some(cu) = snapshot_dlna() {
         return dlna::pause(cu).await;
@@ -1037,9 +1105,15 @@ pub async fn cast_pause() -> Result<(), String> {
 pub async fn cast_seek(proxy_state: tauri::State<'_, ProxyState>, sec: f64) -> Result<(), String> {
     let _operation = TRANSPORT_OPS.lock().await;
     if let Some((cu, id)) = snapshot_dlna_audio() {
-        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) { return Err("The speaker source changed".into()); }
-        let paused = normalize_player_state(&dlna::status(cu.clone()).await?.player_state) == "PAUSED";
-        let mut input = proxy_state.audio_cast_input(&id).await.ok_or("Speaker audio route ended")?;
+        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) {
+            return Err("The speaker source changed".into());
+        }
+        let paused =
+            normalize_player_state(&dlna::status(cu.clone()).await?.player_state) == "PAUSED";
+        let mut input = proxy_state
+            .audio_cast_input(&id)
+            .await
+            .ok_or("Speaker audio route ended")?;
         input.start_seconds = sec;
         return load_dlna_audio(&proxy_state, cu, input, paused, Some(&id)).await;
     }
@@ -1086,7 +1160,10 @@ pub async fn cast_stop(proxy_state: tauri::State<'_, ProxyState>) -> Result<(), 
         None => None,
     };
     let result = match session.as_ref() {
-        Some(ActiveSession::Dlna { control_url, hls_session_id: Some(id) }) if id.starts_with("audio-") => dlna::stop_audio_if_owned(control_url, id).await,
+        Some(ActiveSession::Dlna {
+            control_url,
+            hls_session_id: Some(id),
+        }) if id.starts_with("audio-") => dlna::stop_audio_if_owned(control_url, id).await,
         Some(ActiveSession::Dlna { control_url, .. }) => dlna::stop(control_url.clone()).await,
         Some(ActiveSession::Roku { ecp_base, .. }) => roku::stop(ecp_base.clone()).await,
         Some(ActiveSession::AirPlay { host, port, .. }) => airplay::stop(host.clone(), *port).await,
@@ -1099,7 +1176,10 @@ pub async fn cast_stop(proxy_state: tauri::State<'_, ProxyState>) -> Result<(), 
             let (host, port, session_id) = (host.clone(), *port, session_id.clone());
             tokio::task::spawn_blocking(move || -> Result<(), String> {
                 let device = connect_device(&host, port)?;
-                device.receiver.stop_app(&session_id).map_err(|error| format!("stop: {error}"))?;
+                device
+                    .receiver
+                    .stop_app(&session_id)
+                    .map_err(|error| format!("stop: {error}"))?;
                 Ok(())
             })
             .await
@@ -1120,12 +1200,24 @@ pub async fn cast_stop(proxy_state: tauri::State<'_, ProxyState>) -> Result<(), 
 }
 
 #[tauri::command]
-pub async fn cast_status(proxy_state: tauri::State<'_, ProxyState>) -> Result<Option<CastStatus>, String> {
+pub async fn cast_status(
+    proxy_state: tauri::State<'_, ProxyState>,
+) -> Result<Option<CastStatus>, String> {
     if let Some((cu, id)) = snapshot_dlna_audio() {
-        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) { return Ok(None); }
-        let input = proxy_state.audio_cast_input(&id).await.ok_or("Speaker audio route ended")?;
+        if !dlna::uri_has_audio_session(&dlna::current_uri(&cu).await?, &id) {
+            return Ok(None);
+        }
+        let input = proxy_state
+            .audio_cast_input(&id)
+            .await
+            .ok_or("Speaker audio route ended")?;
         let state = dlna::status(cu).await?;
-        return Ok(Some(CastStatus { position_sec: input.start_seconds + state.position_sec, player_state: normalize_player_state(&state.player_state), connected: true, transport_codec: Some("mp3".into()) }));
+        return Ok(Some(CastStatus {
+            position_sec: input.start_seconds + state.position_sec,
+            player_state: normalize_player_state(&state.player_state),
+            connected: true,
+            transport_codec: Some("mp3".into()),
+        }));
     }
     if let Some(cu) = snapshot_dlna() {
         let s = dlna::status(cu).await.ok();
@@ -1165,7 +1257,9 @@ pub async fn cast_status(proxy_state: tauri::State<'_, ProxyState>) -> Result<Op
             .connect(transport_id.clone())
             .map_err(|e| format!("{e}"))?;
         if let Some(msid) = msid {
-            let status = device.media.get_status(&transport_id, Some(msid))
+            let status = device
+                .media
+                .get_status(&transport_id, Some(msid))
                 .map_err(|error| format!("status: {error}"))?;
             if let Some(entry) = status.entries.first() {
                 let raw_state = format!("{:?}", entry.player_state);
@@ -1233,31 +1327,75 @@ mod cast_validation_tests {
 
     #[test]
     fn failed_stop_restores_only_same_session_epoch() {
-        let old = || Some(ActiveSession::Dlna { control_url: "old".into(), hls_session_id: None });
+        let old = || {
+            Some(ActiveSession::Dlna {
+                control_url: "old".into(),
+                hls_session_id: None,
+            })
+        };
         let mut active = None;
         super::restore_failed_stop_if_current(&mut active, old(), 7, 7);
-        assert!(matches!(&active, Some(ActiveSession::Dlna { control_url, .. }) if control_url == "old"));
+        assert!(
+            matches!(&active, Some(ActiveSession::Dlna { control_url, .. }) if control_url == "old")
+        );
         active = None;
         super::restore_failed_stop_if_current(&mut active, old(), 7, 8);
-        assert!(active.is_none(), "do not revive a session after a newer LOAD/STOP");
-        active = Some(ActiveSession::Dlna { control_url: "new".into(), hls_session_id: None });
+        assert!(
+            active.is_none(),
+            "do not revive a session after a newer LOAD/STOP"
+        );
+        active = Some(ActiveSession::Dlna {
+            control_url: "new".into(),
+            hls_session_id: None,
+        });
         super::restore_failed_stop_if_current(&mut active, old(), 7, 8);
-        assert!(matches!(&active, Some(ActiveSession::Dlna { control_url, .. }) if control_url == "new"));
+        assert!(
+            matches!(&active, Some(ActiveSession::Dlna { control_url, .. }) if control_url == "new")
+        );
     }
 
     #[test]
     fn audio_cast_preserves_mime_metadata_and_skips_video_remux() {
         for kind in ["chromecast", "dlna"] {
-            for mime in ["audio/mpeg", "audio/flac", "audio/mp4", "audio/webm; codecs=opus"] {
-                assert!(!super::needs_auto_remux(kind, "https://example.test/song", Some(mime)));
-                assert_eq!(super::chromecast_content_type("http://192.0.2.1/s/id", Some(mime)), mime);
-                assert!(matches!(super::cast_media_metadata(Some("Song".into()), None, Some(mime)), super::Metadata::MusicTrack(_)));
+            for mime in [
+                "audio/mpeg",
+                "audio/flac",
+                "audio/mp4",
+                "audio/webm; codecs=opus",
+            ] {
+                assert!(!super::needs_auto_remux(
+                    kind,
+                    "https://example.test/song",
+                    Some(mime)
+                ));
+                assert_eq!(
+                    super::chromecast_content_type("http://192.0.2.1/s/id", Some(mime)),
+                    mime
+                );
+                assert!(matches!(
+                    super::cast_media_metadata(Some("Song".into()), None, Some(mime)),
+                    super::Metadata::MusicTrack(_)
+                ));
             }
         }
-        assert!(super::needs_auto_remux("chromecast", "https://example.test/movie.mp4", Some("video/mp4")));
-        assert!(!super::needs_auto_remux("dlna", "https://example.test/live.m3u8", None));
-        assert_eq!(super::chromecast_content_type("http://192.0.2.1/s/id", Some("video/mkv")), "video/mp4");
-        assert!(matches!(super::cast_media_metadata(None, None, Some("video/mp4")), super::Metadata::Movie(_)));
+        assert!(super::needs_auto_remux(
+            "chromecast",
+            "https://example.test/movie.mp4",
+            Some("video/mp4")
+        ));
+        assert!(!super::needs_auto_remux(
+            "dlna",
+            "https://example.test/live.m3u8",
+            None
+        ));
+        assert_eq!(
+            super::chromecast_content_type("http://192.0.2.1/s/id", Some("video/mkv")),
+            "video/mp4"
+        );
+        assert!(matches!(
+            super::cast_media_metadata(None, None, Some("video/mp4")),
+            super::Metadata::Movie(_)
+        ));
     }
 
     #[test]

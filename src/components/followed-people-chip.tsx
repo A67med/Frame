@@ -1,6 +1,6 @@
 import { useT } from "@/lib/i18n";
 import type { FollowAttribution } from "@/lib/follow-credits";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 const SHOWN = 3;
 

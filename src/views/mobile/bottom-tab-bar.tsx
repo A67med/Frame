@@ -1,7 +1,7 @@
 import { Bookmark, Home, MonitorSmartphone, User } from "lucide-react";
 import { Search } from "@/components/icons/search-icon";
 import type { ComponentType } from "react";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useT } from "@/lib/i18n";
 import { useMobileRemote } from "./mobile-remote";
 import { useSheetLock } from "./mobile-sheet-lock";

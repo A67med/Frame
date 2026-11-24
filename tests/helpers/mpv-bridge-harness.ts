@@ -1,15 +1,15 @@
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import { readFileSync } from "node:fs";
 import ts from "typescript";
-import * as snapshots from "../../src/lib/player/bridge.ts";
-import * as selection from "../../src/lib/player/subtitle-selection.ts";
-import * as cleanups from "../../src/lib/player/prepared-subtitle-cleanups.ts";
-import * as seeds from "../../src/lib/subtitles/seed-batch.ts";
-import * as failures from "../../src/lib/player/mpv-failure.ts";
-import * as language from "../../src/lib/subtitles/language.ts";
-import * as translationJobs from "../../src/lib/subtitles/translation-jobs.ts";
-import type { PlayerBridge, PlayerSnapshot } from "../../src/lib/player/bridge.ts";
-import type { MpvOptions } from "../../src/lib/player/mpv.ts";
+import * as snapshots from "../../src/features/player/engine/bridge.ts";
+import * as selection from "../../src/features/player/engine/subtitle-selection.ts";
+import * as cleanups from "../../src/features/player/engine/prepared-subtitle-cleanups.ts";
+import * as seeds from "../../src/features/subtitles/seed-batch.ts";
+import * as failures from "../../src/features/player/engine/mpv-failure.ts";
+import * as language from "../../src/features/subtitles/language.ts";
+import * as translationJobs from "../../src/features/subtitles/translation-jobs.ts";
+import type { PlayerBridge, PlayerSnapshot } from "../../src/features/player/engine/bridge.ts";
+import type { MpvOptions } from "../../src/features/player/engine/mpv.ts";
 
 export function deferred<T = void>() {
   let resolve!: (value: T) => void;
@@ -45,7 +45,10 @@ export function playerSnapshotChanged() {
 }
 
 export function mpvBridgeHarness(prefs = { volume: 0.35, muted: false }, options?: MpvOptions) {
-  const source = readFileSync(new URL("../../src/lib/player/mpv.ts", import.meta.url), "utf8");
+  const source = readFileSync(
+    new URL("../../src/features/player/engine/mpv.ts", import.meta.url),
+    "utf8",
+  );
   const compiled = ts.transpileModule(source, {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
   }).outputText;
@@ -84,7 +87,7 @@ export function mpvBridgeHarness(prefs = { volume: 0.35, muted: false }, options
         return () => handlers.delete(name);
       },
     },
-    "@/lib/subtitles/prepare": {
+    "@/features/subtitles/prepare": {
       prepareSubtitle: (input: { url: string }) => prepare(input),
       SubtitlePreparationError: class SubtitlePreparationError extends Error {
         reason: string;
@@ -95,16 +98,16 @@ export function mpvBridgeHarness(prefs = { volume: 0.35, muted: false }, options
         }
       },
     },
-    "@/lib/subtitles/provider-auth": { subtitleTrackDownloadHeaders: () => undefined },
-    "@/lib/subtitles/prepared-registry": { takePreparedSubtitle: () => null },
-    "@/lib/subtitles/limit-signal": { markLimitReached() {} },
-    "@/lib/subtitles/pending-subs": {
+    "@/features/subtitles/provider-auth": { subtitleTrackDownloadHeaders: () => undefined },
+    "@/features/subtitles/prepared-registry": { takePreparedSubtitle: () => null },
+    "@/features/subtitles/limit-signal": { markLimitReached() {} },
+    "@/features/subtitles/pending-subs": {
       markPendingSub() {},
       clearPendingSub() {},
       wasPendingSub: () => false,
     },
-    "@/lib/subtitles/translation-jobs": { ...translationJobs, registerTranslationJob() {} },
-    "@/lib/subtitles/language": language,
+    "@/features/subtitles/translation-jobs": { ...translationJobs, registerTranslationJob() {} },
+    "@/features/subtitles/language": language,
     "./mpv-failure": failures,
     "@/lib/platform": {
       isWindowsDesktop: () => true,
@@ -121,8 +124,8 @@ export function mpvBridgeHarness(prefs = { volume: 0.35, muted: false }, options
     "@/lib/perf/playback-trace": { finishPlaybackTrace() {}, markPlaybackTrace() {} },
     "./prepared-subtitle-cleanups": cleanups,
     "./subtitle-selection": selection,
-    "@/lib/subtitles/seed-batch": seeds,
-    "@/lib/subtitles/provider-url": { isSafeProviderSubtitleUrl: () => true },
+    "@/features/subtitles/seed-batch": seeds,
+    "@/features/subtitles/provider-url": { isSafeProviderSubtitleUrl: () => true },
     "./bridge": {
       ...snapshots,
       initialPlayerSnapshot: () => ({ ...snapshots.emptySnapshot, ...prefs }),

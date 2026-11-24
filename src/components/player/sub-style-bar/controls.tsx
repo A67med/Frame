@@ -5,7 +5,7 @@ import { ColorPopoverTrigger } from "@/views/settings/color-picker";
 import { previewFamily } from "@/views/settings/player-panel/internals";
 import { type Settings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { noteOverlayDismiss } from "@/lib/player/overlay-dismiss";
+import { noteOverlayDismiss } from "@/features/player/engine/overlay-dismiss";
 
 export const SWATCHES = ["#FFFFFF", "#FFE45E", "#9AE6B4", "#93C5FD", "#FCA5A5", "#C4B5FD"];
 

@@ -2,8 +2,8 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { mpvFailureSnapshot } from "../src/lib/player/mpv-failure.ts";
-import { emptySnapshot } from "../src/lib/player/bridge.ts";
+import { mpvFailureSnapshot } from "../src/features/player/engine/mpv-failure.ts";
+import { emptySnapshot } from "../src/features/player/engine/bridge.ts";
 
 test("persistent mpv event failures become a visible player error", () => {
   const snapshot = mpvFailureSnapshot(

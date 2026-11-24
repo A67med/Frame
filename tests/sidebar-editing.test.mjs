@@ -22,11 +22,11 @@ function load(file, mocks = {}, globals = {}) {
 }
 const nav = load("src/chrome/nav-items.tsx", {
   "@/lib/sports/enabled": { useSportsEnabled: () => false },
-  "@/lib/streams/plugins/available": { usePluginCataloguesAvailable: () => false },
+  "@/features/addons/streams/available": { usePluginCataloguesAvailable: () => false },
 });
 const navWithPlugins = load("src/chrome/nav-items.tsx", {
   "@/lib/sports/enabled": { useSportsEnabled: () => false },
-  "@/lib/streams/plugins/available": { usePluginCataloguesAvailable: () => true },
+  "@/features/addons/streams/available": { usePluginCataloguesAvailable: () => true },
 });
 const cfg = () => ({ order: [], hidden: [], renamed: {} });
 

@@ -2,7 +2,7 @@ import { lruSet } from "./cache";
 import type { Meta } from "./cinemeta";
 import { registerEvictable } from "./maintenance";
 import type { PipelineResult } from "./streams/pipeline";
-import type { PlayEpisode } from "./view";
+import type { PlayEpisode } from "../app/navigation/view";
 
 const MAX_ENTRIES = 80;
 const STALE_MS = 30 * 60 * 1000;

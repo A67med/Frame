@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useSettings } from "@/lib/settings";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 import { CinemetaFallback } from "./cinemeta-fallback";
 import { RailSection } from "./rail-section";
 import { railsForFilter } from "./rails-config";

@@ -3,7 +3,7 @@ import { Ellipsis, Lock } from "lucide-react";
 import { pushBackHandler } from "@/lib/back-intercept";
 import { useContextMenu } from "@/lib/context-menu";
 import { useT } from "@/lib/i18n";
-import type { View } from "@/lib/view";
+import type { View } from "@/app/navigation/view";
 import type { NavItem } from "./nav-items";
 import { NavEditableItem, NavHiddenTray, useNavDrag } from "./nav-edit";
 import { setNavEditMode, useNavEditMode } from "./nav-edit-mode";

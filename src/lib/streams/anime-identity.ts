@@ -8,7 +8,7 @@ import {
   tmdbTvToKitsu,
 } from "@/lib/providers/anime-mapping";
 import { franchiseRoot } from "@/lib/providers/anime-franchise-root";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import {
   animeAbsoluteFromScopedId,
   animeCoordPairs,

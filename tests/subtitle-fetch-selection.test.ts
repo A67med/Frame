@@ -2,10 +2,13 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { fetchSubtitlesIntoPlayer } from "../src/lib/subtitles/fetch-into-player.ts";
-import { SUBTITLE_PROVIDER_TIMEOUT_MS } from "../src/lib/subtitles/autoload.ts";
-import type { PreparedSubtitle, SubtitlePreparationInput } from "../src/lib/subtitles/prepare.ts";
-import type { SubResult } from "../src/lib/subtitles/types.ts";
+import { fetchSubtitlesIntoPlayer } from "../src/features/subtitles/fetch-into-player.ts";
+import { SUBTITLE_PROVIDER_TIMEOUT_MS } from "../src/features/subtitles/autoload.ts";
+import type {
+  PreparedSubtitle,
+  SubtitlePreparationInput,
+} from "../src/features/subtitles/prepare.ts";
+import type { SubResult } from "../src/features/subtitles/types.ts";
 
 const top: SubResult = {
   id: "top",

@@ -7,7 +7,7 @@ import type {
   TimeFormat,
   VolumeStyle,
 } from "@/lib/player-chrome";
-import { emptySnapshot, type PlayerCapabilities } from "@/lib/player/bridge";
+import { emptySnapshot, type PlayerCapabilities } from "@/features/player/engine/bridge";
 
 const NOOP = () => {};
 const NOOP_NUM = (_: number) => {};

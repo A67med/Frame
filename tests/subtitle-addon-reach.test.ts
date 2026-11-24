@@ -4,11 +4,14 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { filterTracksByPreferredLanguage, isKnownLanguage } from "../src/lib/subtitles/language.ts";
-import { subtitleLanguage } from "../src/lib/local-library/player-src.ts";
+import {
+  filterTracksByPreferredLanguage,
+  isKnownLanguage,
+} from "../src/features/subtitles/language.ts";
+import { subtitleLanguage } from "../src/features/library/local-library/player-src.ts";
 
 const src = readFileSync(
-  new URL("../src/lib/subtitles/providers/addons.ts", import.meta.url),
+  new URL("../src/features/subtitles/providers/addons.ts", import.meta.url),
   "utf8",
 );
 
@@ -60,7 +63,7 @@ test("the modal only reuses playing ids when the target is what is playing", () 
 });
 
 const source = readFileSync(
-  new URL("../src/lib/subtitles/addon-source.ts", import.meta.url),
+  new URL("../src/features/subtitles/addon-source.ts", import.meta.url),
   "utf8",
 );
 
@@ -77,9 +80,12 @@ test("a cached manifest resolves without any network wait", () => {
   assert.match(source, /if \(l\.manifest\)\s*return Promise\.resolve\(/);
 });
 
-const search = readFileSync(new URL("../src/lib/subtitles/search.ts", import.meta.url), "utf8");
+const search = readFileSync(
+  new URL("../src/features/subtitles/search.ts", import.meta.url),
+  "utf8",
+);
 const fetchIntoPlayer = readFileSync(
-  new URL("../src/lib/subtitles/fetch-into-player.ts", import.meta.url),
+  new URL("../src/features/subtitles/fetch-into-player.ts", import.meta.url),
   "utf8",
 );
 const subtitleMenu = readFileSync(

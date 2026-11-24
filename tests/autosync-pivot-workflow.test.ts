@@ -9,7 +9,7 @@ import {
   type PivotCandidate,
   type PivotGateEvidence,
   type PivotWorkflowPorts,
-} from "../src/lib/subtitles/autosync/pivot.ts";
+} from "../src/features/subtitles/autosync/pivot.ts";
 import { PIVOT_CUES, TARGET_CUES } from "./fixtures/subtitle-p2-fixtures.ts";
 
 const CORRECT: PivotCandidate = {

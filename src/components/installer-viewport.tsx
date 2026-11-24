@@ -3,10 +3,10 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { createPortal } from "react-dom";
 import { useT } from "@/lib/i18n";
 import { installFromUrl } from "@/lib/addon-store";
-import { isAdultText } from "@/lib/addons-store/adult-filter";
+import { isAdultText } from "@/features/addons/catalog/adult-filter";
 import { pushActivityHint } from "@/lib/discord/activity-hint";
 import { clearPendingDeepLink } from "@/lib/deep-link";
-import { isLinuxDesktop, isWeb } from "@/lib/platform";
+import { isWeb } from "@/lib/platform";
 import { openUrl } from "@/lib/window";
 import { HarborLoader } from "@/components/harbor-loader";
 import { InstallOverlay } from "./installer-viewport/install-overlay";
@@ -17,20 +17,6 @@ type InstallerDetail = { url: string; title?: string; logo?: string | null };
 
 export function openInstallerViewport(url: string, title?: string, logo?: string | null): void {
   if (typeof window === "undefined") return;
-  // Linux: the in-page iframe can't capture the addon's stremio:// install link
-  // (WebKitGTK refuses the scheme). Route through the Frame Browser window, where
-  // browser.rs intercepts the link and feeds it into the deep-link install bridge.
-  if (isLinuxDesktop()) {
-    void import("@tauri-apps/api/core").then(({ invoke }) => {
-      invoke("browser_open", { url }).catch(() => {
-        window.__harborInstallerOpen = true;
-        window.dispatchEvent(
-          new CustomEvent<InstallerDetail>(EVENT, { detail: { url, title, logo } }),
-        );
-      });
-    });
-    return;
-  }
   window.__harborInstallerOpen = true;
   window.dispatchEvent(new CustomEvent<InstallerDetail>(EVENT, { detail: { url, title, logo } }));
 }

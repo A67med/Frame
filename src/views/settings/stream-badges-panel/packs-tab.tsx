@@ -10,7 +10,7 @@ import {
   Upload,
 } from "../icons";
 import { emitListToast } from "@/components/lists/list-toast";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import {
   applyArtPack,
   BADGE_STUDIOS,

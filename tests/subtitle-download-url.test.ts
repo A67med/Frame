@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { resolveSubtitleDownloadUrl } from "../src/lib/subtitles/autosync/download-url.ts";
+import { resolveSubtitleDownloadUrl } from "../src/features/subtitles/autosync/download-url.ts";
 
 test("subtitle download URLs preserve absolute HTTP links", () => {
   assert.equal(

@@ -1,9 +1,5 @@
 use std::path::{Path, PathBuf};
-#[cfg(target_os = "linux")]
-use std::process::{Command, Output, Stdio};
 use std::sync::Mutex;
-#[cfg(target_os = "linux")]
-use std::time::{Duration, Instant};
 use tauri::Manager;
 
 #[derive(serde::Serialize)]
@@ -17,16 +13,6 @@ pub struct SvpStatus {
 }
 
 static LAST_LOAD: Mutex<Option<Result<(), String>>> = Mutex::new(None);
-
-fn unsupported_reason() -> Option<String> {
-    #[cfg(target_os = "linux")]
-    if std::env::var_os("FLATPAK_ID").is_some() {
-        return Some("Native SVP is not accessible from the Flatpak sandbox".to_string());
-    }
-    #[cfg(not(any(windows, target_os = "linux")))]
-    return Some("SVP integration is currently supported on Windows and Linux".to_string());
-    None
-}
 
 #[cfg(windows)]
 fn svp_root() -> Option<PathBuf> {
@@ -43,50 +29,6 @@ fn svp_root() -> Option<PathBuf> {
     candidates
         .into_iter()
         .find(|root| root.join("SVPManager.exe").exists())
-}
-
-#[cfg(target_os = "linux")]
-fn executable_in_path(name: &str) -> Option<PathBuf> {
-    std::env::var_os("PATH").and_then(|path| {
-        std::env::split_paths(&path)
-            .map(|dir| dir.join(name))
-            .find(|candidate| candidate.is_file())
-    })
-}
-
-#[cfg(target_os = "linux")]
-fn svp_root() -> Option<PathBuf> {
-    let mut candidates = Vec::new();
-    for env in ["HARBOR_SVP_ROOT", "SVP_HOME"] {
-        if let Some(path) = std::env::var_os(env) {
-            candidates.push(PathBuf::from(path));
-        }
-    }
-    if let Some(manager) =
-        executable_in_path("SVPManager").or_else(|| executable_in_path("svpmanager"))
-    {
-        let manager = std::fs::canonicalize(&manager).unwrap_or(manager);
-        if let Some(parent) = manager.parent() {
-            candidates.push(parent.to_path_buf());
-        }
-    }
-    if let Some(home) = std::env::var_os("HOME") {
-        let home = PathBuf::from(home);
-        candidates.push(home.join("SVP4"));
-        candidates.push(home.join(".local/share/SVP4"));
-    }
-    candidates.push(PathBuf::from("/opt/svp"));
-    candidates.push(PathBuf::from("/opt/svp4"));
-    candidates.into_iter().find(|root| {
-        root.join("SVPManager").is_file()
-            || root.join("svpmanager").is_file()
-            || svpflow_plugins(root).is_some()
-    })
-}
-
-#[cfg(not(any(windows, target_os = "linux")))]
-fn svp_root() -> Option<PathBuf> {
-    None
 }
 
 fn find_file(root: &Path, names: &[&str], depth: u32) -> Option<PathBuf> {
@@ -139,47 +81,6 @@ fn vsscript_file(root: Option<&Path>) -> Option<PathBuf> {
     candidates.into_iter().next()
 }
 
-#[cfg(target_os = "linux")]
-fn vsscript_file(root: Option<&Path>) -> Option<PathBuf> {
-    if let Some(path) = std::env::var_os("VSSCRIPT_PATH").map(PathBuf::from) {
-        if path.is_file() {
-            return Some(path);
-        }
-    }
-    if let Some(path) = configured_vsscript_file() {
-        return Some(path);
-    }
-    for path in [
-        "/usr/lib/libvapoursynth-script.so",
-        "/usr/lib/libvapoursynth-script.so.0",
-        "/usr/lib64/libvapoursynth-script.so",
-        "/usr/lib64/libvapoursynth-script.so.0",
-        "/usr/local/lib/libvapoursynth-script.so",
-        "/usr/local/lib/libvapoursynth-script.so.0",
-        "/usr/local/lib64/libvapoursynth-script.so",
-        "/usr/local/lib64/libvapoursynth-script.so.0",
-    ] {
-        let path = PathBuf::from(path);
-        if path.is_file() {
-            return Some(path);
-        }
-    }
-    let names = [
-        "libvsscript.so",
-        "libvsscript.so.0",
-        "libvapoursynth-script.so",
-        "libvapoursynth-script.so.0",
-    ];
-    find_file(Path::new("/usr/lib"), &names, 3)
-        .or_else(|| find_file(Path::new("/usr/local/lib"), &names, 3))
-        .or_else(|| root.and_then(|root| find_file(root, &names, 6)))
-}
-
-#[cfg(not(any(windows, target_os = "linux")))]
-fn vsscript_file(_root: Option<&Path>) -> Option<PathBuf> {
-    None
-}
-
 #[cfg(windows)]
 fn collect_files(root: &Path, names: &[&str], depth: u32, output: &mut Vec<PathBuf>) {
     if depth == 0 {
@@ -208,26 +109,6 @@ fn svpflow_plugins(root: &Path) -> Option<(PathBuf, PathBuf)> {
     let flow1 = find_file(root, &["svpflow1_vs.dll", "svpflow1_vs64.dll"], 6)?;
     let flow2 = find_file(root, &["svpflow2_vs.dll", "svpflow2_vs64.dll"], 6)?;
     Some((flow1, flow2))
-}
-
-#[cfg(target_os = "linux")]
-fn svpflow_plugins(root: &Path) -> Option<(PathBuf, PathBuf)> {
-    let flow1 = find_file(
-        root,
-        &["libsvpflow1.so", "svpflow1.so", "libsvpflow1_vs64.so"],
-        6,
-    )?;
-    let flow2 = find_file(
-        root,
-        &["libsvpflow2.so", "svpflow2.so", "libsvpflow2_vs64.so"],
-        6,
-    )?;
-    Some((flow1, flow2))
-}
-
-#[cfg(not(any(windows, target_os = "linux")))]
-fn svpflow_plugins(_root: &Path) -> Option<(PathBuf, PathBuf)> {
-    None
 }
 
 #[cfg(windows)]
@@ -290,21 +171,9 @@ fn crt_set_vsscript_path(value: &str) {
 }
 
 pub fn prime_svp_env() {
-    if unsupported_reason().is_some() {
-        return;
-    }
     let Some(root) = svp_root() else {
         return;
     };
-    #[cfg(target_os = "linux")]
-    if vapoursynth_config_path().is_none() {
-        if let Err(error) = configure_vapoursynth() {
-            if let Ok(mut guard) = LAST_LOAD.lock() {
-                *guard = Some(Err(error));
-            }
-            return;
-        }
-    }
     let Some(vsscript) = vsscript_file(Some(&root)) else {
         return;
     };
@@ -331,117 +200,16 @@ pub fn prime_svp_env() {
     }
 }
 
-#[cfg(target_os = "linux")]
-fn configure_vapoursynth() -> Result<(), String> {
-    if executable_in_path("vapoursynth").is_none() {
-        return Ok(());
-    }
-    let mut command = Command::new("vapoursynth");
-    command.arg("config");
-    let output = command_output_with_timeout(command, Duration::from_secs(5))?;
-    let stdout = String::from_utf8_lossy(&output.stdout);
-    let stderr = String::from_utf8_lossy(&output.stderr);
-    if !output.status.success() || stdout.contains("Failed to") || stderr.contains("Failed to") {
-        let detail = format!("{}{}", stdout, stderr).trim().to_string();
-        return Err(if detail.is_empty() {
-            "vapoursynth config failed".to_string()
-        } else {
-            format!("vapoursynth config failed: {}", detail)
-        });
-    }
-    Ok(())
-}
-
-#[cfg(target_os = "linux")]
-fn command_output_with_timeout(mut command: Command, timeout: Duration) -> Result<Output, String> {
-    let mut child = command
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
-        .spawn()
-        .map_err(|error| error.to_string())?;
-    let started = Instant::now();
-    loop {
-        match child.try_wait() {
-            Ok(Some(_)) => return child.wait_with_output().map_err(|error| error.to_string()),
-            Ok(None) if started.elapsed() < timeout => {
-                std::thread::sleep(Duration::from_millis(10));
-            }
-            Ok(None) => {
-                let _ = child.kill();
-                let _ = child.wait();
-                return Err("command timed out".to_string());
-            }
-            Err(error) => return Err(error.to_string()),
-        }
-    }
-}
-
-#[cfg(target_os = "linux")]
-fn vapoursynth_config_path() -> Option<PathBuf> {
-    let base = std::env::var_os("XDG_CONFIG_HOME")
-        .map(PathBuf::from)
-        .or_else(|| std::env::var_os("HOME").map(|home| PathBuf::from(home).join(".config")))?;
-    let path = base.join("vapoursynth/vapoursynth.toml");
-    path.is_file().then_some(path)
-}
-
-#[cfg(target_os = "linux")]
-fn configured_vsscript_file() -> Option<PathBuf> {
-    let config = std::fs::read_to_string(vapoursynth_config_path()?).ok()?;
-    config.lines().find_map(|line| {
-        let key = line.split_once('=')?.0.trim();
-        let path = key.strip_prefix('"')?.strip_suffix('"')?;
-        let path = PathBuf::from(path.replace("\\\\", "\\"));
-        path.is_file().then_some(path)
-    })
-}
-
-#[cfg(not(target_os = "linux"))]
-fn configure_vapoursynth() -> Result<(), String> {
-    Ok(())
-}
-
-#[cfg(target_os = "linux")]
-fn mpv_supports_vapoursynth() -> bool {
-    crate::mpv::supports_vapoursynth_filter()
-}
-
-#[cfg(not(target_os = "linux"))]
-fn mpv_supports_vapoursynth() -> bool {
-    true
-}
-
 #[tauri::command]
 pub fn svp_status() -> SvpStatus {
-    let reason = unsupported_reason();
-    if reason.is_some() {
-        return SvpStatus {
-            supported: false,
-            reason,
-            installed: false,
-            ready: false,
-            loadable: None,
-            load_error: None,
-        };
-    }
     let root = svp_root();
-    let engine_ready = root
+    let ready = root
         .as_ref()
         .is_some_and(|root| svpflow_plugins(root).is_some() && vsscript_file(Some(root)).is_some());
-    let mpv_ready = mpv_supports_vapoursynth();
-    let ready = engine_ready && mpv_ready;
     let (loadable, load_error) = match LAST_LOAD.lock().ok().and_then(|guard| guard.clone()) {
         Some(Ok(())) => (Some(true), None),
         Some(Err(message)) => (Some(false), Some(message)),
         None => (None, None),
-    };
-    let (loadable, load_error) = if engine_ready && !mpv_ready {
-        (
-            Some(false),
-            Some("The installed mpv/libmpv was built without VapourSynth support".to_string()),
-        )
-    } else {
-        (loadable, load_error)
     };
     SvpStatus {
         supported: true,
@@ -457,22 +225,6 @@ pub fn svp_status() -> SvpStatus {
 fn manager_executable(root: &Path) -> Option<PathBuf> {
     let path = root.join("SVPManager.exe");
     path.is_file().then_some(path)
-}
-
-#[cfg(target_os = "linux")]
-fn manager_executable(root: &Path) -> Option<PathBuf> {
-    for name in ["SVPManager", "svpmanager"] {
-        let path = root.join(name);
-        if path.is_file() {
-            return Some(path);
-        }
-    }
-    executable_in_path("SVPManager").or_else(|| executable_in_path("svpmanager"))
-}
-
-#[cfg(not(any(windows, target_os = "linux")))]
-fn manager_executable(_root: &Path) -> Option<PathBuf> {
-    None
 }
 
 #[cfg(windows)]
@@ -513,22 +265,6 @@ fn svp_manager_running() -> bool {
     found
 }
 
-#[cfg(target_os = "linux")]
-fn svp_manager_running() -> bool {
-    let Ok(processes) = std::fs::read_dir("/proc") else {
-        return false;
-    };
-    processes.flatten().any(|process| {
-        process
-            .file_name()
-            .to_string_lossy()
-            .parse::<u32>()
-            .ok()
-            .and_then(|_| std::fs::read_to_string(process.path().join("comm")).ok())
-            .is_some_and(|name| name.trim().eq_ignore_ascii_case("SVPManager"))
-    })
-}
-
 fn launch_svp_manager() -> Result<(), String> {
     let root = svp_root().ok_or_else(|| "SVP Manager is not installed".to_string())?;
     let executable = manager_executable(&root)
@@ -542,18 +278,11 @@ fn launch_svp_manager() -> Result<(), String> {
 
 #[tauri::command]
 pub fn svp_launch() -> Result<(), String> {
-    if let Some(reason) = unsupported_reason() {
-        return Err(reason);
-    }
     launch_svp_manager()
 }
 
 #[tauri::command]
 pub fn svp_ensure_running() -> Result<bool, String> {
-    if let Some(reason) = unsupported_reason() {
-        return Err(reason);
-    }
-    #[cfg(any(windows, target_os = "linux"))]
     {
         if svp_manager_running() {
             return Ok(false);
@@ -566,10 +295,6 @@ pub fn svp_ensure_running() -> Result<bool, String> {
         }
         launch_svp_manager()?;
         Ok(true)
-    }
-    #[cfg(not(any(windows, target_os = "linux")))]
-    {
-        Ok(false)
     }
 }
 
@@ -629,21 +354,11 @@ fn make_script(flow1: &Path, flow2: &Path, target_fps: &str) -> Result<String, S
 
 #[tauri::command]
 pub fn svp_apply(app: tauri::AppHandle, target_fps: String) -> Result<String, String> {
-    if let Some(reason) = unsupported_reason() {
-        return Err(reason);
-    }
     let root = svp_root().ok_or_else(|| "SVP is not installed".to_string())?;
     let (flow1, flow2) = svpflow_plugins(&root)
         .ok_or_else(|| "svpflow plugins were not found in the SVP install".to_string())?;
     vsscript_file(Some(&root))
         .ok_or_else(|| "VapourSynth script library was not found".to_string())?;
-    if !mpv_supports_vapoursynth() {
-        return Err("The installed mpv/libmpv was built without VapourSynth support".to_string());
-    }
-    #[cfg(target_os = "linux")]
-    if std::env::var_os("VSSCRIPT_PATH").is_none() {
-        return Err("Restart Frame after installing SVP or VapourSynth".to_string());
-    }
 
     let output_dir = app
         .path()

@@ -1,9 +1,9 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
-import { isNaturalEnd } from "@/lib/player/playback-end";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
+import { isNaturalEnd } from "@/features/player/engine/playback-end";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode, PlayerSrc } from "@/lib/view";
+import type { PlayEpisode, PlayerSrc } from "@/app/navigation/view";
 import { getSleepAtEnd, queueItemAfter, setSleepAtEnd, type QueueItem } from "@/lib/queue";
 
 const STUB_MAX_SEC = 150;

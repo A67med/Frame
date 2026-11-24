@@ -5,7 +5,7 @@ import { AwardChips } from "@/components/award-chips";
 import { ResultPoster } from "./result-poster";
 import { useLocalizedOverview } from "@/lib/use-localized-overview";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function TopMatch({
   match,

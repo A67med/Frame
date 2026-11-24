@@ -1,7 +1,7 @@
 import { HardDrive } from "lucide-react";
 import { Play } from "@/components/icons/play-filled";
-import type { LocalEntry } from "@/lib/local-library";
-import { episodeLabel } from "@/lib/local-library/player-src";
+import type { LocalEntry } from "@/features/library/local-library";
+import { episodeLabel } from "@/features/library/local-library/player-src";
 import { LocalVersionBadges } from "@/components/local-version-badges";
 import { useT } from "@/lib/i18n";
 

@@ -25,7 +25,7 @@ import {
 } from "@/lib/providers/harbor-imdb";
 import { tmdbImdbCached } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { useT } from "@/lib/i18n";
 import { PreviewBlock } from "./block";
 import { CrownArt, PreviewCrown } from "./crown";

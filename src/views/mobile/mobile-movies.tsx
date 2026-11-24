@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { topMovies } from "@/lib/cinemeta";
-import { recentlyPlayed } from "@/lib/playback-history";
+import { recentlyPlayed } from "@/features/player/history";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { useHideAnimeMetas, useHideAnimeRows } from "@/lib/anime-hide";

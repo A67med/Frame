@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
 import { useT } from "@/lib/i18n";
 
 const isTauri = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;

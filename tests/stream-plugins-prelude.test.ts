@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { composeProviderSource } from "../src/lib/streams/plugins/provider-compat/prelude.ts";
+import { composeProviderSource } from "../src/features/addons/streams/provider-compat/prelude.ts";
 
 const SHADOW = [
   "self",

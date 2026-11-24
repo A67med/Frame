@@ -1,13 +1,13 @@
 import type { Meta } from "@/lib/cinemeta";
-import { score, topEntries } from "@/lib/discover/affinity";
-import { profileFromMeta } from "@/lib/discover/profile";
-import { getStore } from "@/lib/discover/store";
+import { score, topEntries } from "@/features/discovery/discover/affinity";
+import { profileFromMeta } from "@/features/discovery/discover/profile";
+import { getStore } from "@/features/discovery/discover/store";
 import { dayIndex, mixSeed, mulberry32 } from "@/lib/feed/tags";
 import { hashStr } from "@/lib/feed/daily-rows-types";
 import { getDownvotedIds, getUpvotedIds } from "@/lib/feed/preferences";
-import { recentlyPlayed, watchTitleKey } from "@/lib/playback-history";
+import { recentlyPlayed, watchTitleKey } from "@/features/player/history";
 import { animeFranchiseKey, stripFranchiseSuffix } from "@/lib/providers/jikan";
-import { adultContentHidden, isAdultAnime } from "@/lib/addons-store/adult-filter";
+import { adultContentHidden, isAdultAnime } from "@/features/addons/catalog/adult-filter";
 import type { LibraryItem } from "@/lib/stremio";
 
 export const ANIME_GENRE_TO_JIKAN: Record<string, number> = {

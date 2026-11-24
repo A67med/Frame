@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { relevanceScore } from "../src/lib/streams/plugins/extension/match.ts";
-import { mergeHits, searchGroups } from "../src/lib/streams/plugins/extension/search.ts";
+import { relevanceScore } from "../src/features/addons/streams/extension/match.ts";
+import { mergeHits, searchGroups } from "../src/features/addons/streams/extension/search.ts";
 import type { Meta } from "../src/lib/cinemeta.ts";
 
 const hit = (id: string, name = id): Meta => ({ id, type: "movie", name });

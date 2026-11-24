@@ -4,7 +4,12 @@ import { Search } from "@/components/icons/search-icon";
 import type { Meta } from "@/lib/cinemeta";
 import { SFX } from "@/lib/sfx";
 import { useSettings } from "@/lib/settings";
-import { applyFilter, countByType, type SortKey, type TypeKey } from "@/views/library/shared";
+import {
+  applyFilter,
+  countByType,
+  type SortKey,
+  type TypeKey,
+} from "@/features/library/views/library/shared";
 import { BpCollectionSkeleton } from "./bp-collection-shell";
 import { BpGridScroller } from "./bp-grid";
 import { BpChip, BpChipRow } from "./bp-library-chips";
@@ -18,11 +23,11 @@ import {
   useBpLibraryTabs,
 } from "./use-bp-library";
 import type { BpLibEntry, BpLibSection, BpLibStatus, BpLibTab } from "./bp-library-types";
-import type { LocalSortKey, SortDir } from "@/views/library/local-tab/toolbar";
+import type { LocalSortKey, SortDir } from "@/features/library/views/library/local-tab/toolbar";
 import {
   readLibraryFilterPreferences,
   writeLibraryFilterPreferences,
-} from "@/views/library/filter-preferences";
+} from "@/features/library/views/library/filter-preferences";
 import { useBpT } from "./bp-i18n";
 import { useBpPersistedState } from "./bp-view-state";
 

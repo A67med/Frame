@@ -1,10 +1,10 @@
 import { ChevronLeft, Maximize, Minimize, Pause, Play } from "lucide-react";
 import { useRef, useState } from "react";
 import type { PlayerShellProps } from "@/lib/player-shells/types";
-import { usePlaybackPositionGated } from "@/lib/player/playback-clock";
+import { usePlaybackPositionGated } from "@/features/player/engine/playback-clock";
 import { useT } from "@/lib/i18n";
 import { FullscreenClock } from "@/components/player/fullscreen-clock";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
 import { LiveBadge, GoToLive, LiveSeekBar } from "../transport/live-controls";
 
 export function MinimalShell({

@@ -1,4 +1,4 @@
-import type { PlayEpisode } from "./view";
+import type { PlayEpisode } from "../app/navigation/view";
 
 export type AnimeTrackerTarget = { id: string; episode: number | undefined };
 

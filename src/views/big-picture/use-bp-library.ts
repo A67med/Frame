@@ -13,7 +13,11 @@ import { useAnilist } from "@/lib/anilist/provider";
 import { useMal } from "@/lib/mal/provider";
 import { useSimkl } from "@/lib/simkl/provider";
 import { useLetterboxd } from "@/lib/stremboxd/provider";
-import { localEntryToMeta, useLocalLibrary, type LocalEntry } from "@/lib/local-library";
+import {
+  localEntryToMeta,
+  useLocalLibrary,
+  type LocalEntry,
+} from "@/features/library/local-library";
 import {
   mediaServerConnections,
   subscribeMediaServerConnections,
@@ -28,15 +32,18 @@ import {
   readLocalEntries,
   subscribeWatchlist,
   type LocalEntry as SavedEntry,
-} from "@/lib/watchlist";
+} from "@/features/watchlist/watchlist";
 import { useCustomLists } from "@/lib/custom-lists";
 import { useMediaFavorites } from "@/lib/media-favorites";
 import { useCharacterFavorites } from "@/lib/character-favorites";
-import { useMangaFavorites } from "@/lib/manga-favorites";
-import { parseTs, sortedGroups, type SortKey } from "@/views/library/shared";
-import { filterLibrary, mergeWatchlist } from "@/views/library/watchlist-tab";
-import { filterHistory, historyItemsToDated, mergeHistory } from "@/views/library/history-merge";
-import { hydrateLibraryMeta } from "@/views/library/hydrate-meta";
+import { parseTs, sortedGroups, type SortKey } from "@/features/library/views/library/shared";
+import { filterLibrary, mergeWatchlist } from "@/features/library/views/library/watchlist-tab";
+import {
+  filterHistory,
+  historyItemsToDated,
+  mergeHistory,
+} from "@/features/library/views/library/history-merge";
+import { hydrateLibraryMeta } from "@/features/library/views/library/hydrate-meta";
 import { useBpServiceFeed } from "./use-bp-library-services";
 import type {
   BpLibEntry,
@@ -273,7 +280,6 @@ export function useBpLibraryFeed(
   const lists = useCustomLists();
   const favorites = useMediaFavorites();
   const characters = useCharacterFavorites();
-  const manga = useMangaFavorites();
   const service = useBpServiceFeed(tab, reload);
   const mediaServers = useMediaServerEntries(reload);
 
@@ -345,7 +351,7 @@ export function useBpLibraryFeed(
         })),
         status: "ready",
         groups: [],
-        hidden: characters.items.size + manga.items.size,
+        hidden: characters.items.size,
       };
     }
 
@@ -383,7 +389,6 @@ export function useBpLibraryFeed(
     lists,
     favorites,
     characters,
-    manga,
     service,
     mediaServers,
     trakt.watchlist,

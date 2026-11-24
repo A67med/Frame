@@ -21,7 +21,7 @@ import {
 import { searchCinemeta } from "@/lib/search";
 import { meta as fetchMeta, type Meta } from "@/lib/cinemeta";
 import { ResultPoster } from "./result-poster";
-import { useView, type PlayerSrc } from "@/lib/view";
+import { useView, type PlayerSrc } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 
 import { releaseYear } from "@/lib/release-info";

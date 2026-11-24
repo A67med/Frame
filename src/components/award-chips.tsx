@@ -5,7 +5,7 @@ import { mergeBundledAwards } from "@/lib/awards-history";
 import type { Meta } from "@/lib/cinemeta";
 import { awardSummary, useAwards, type AwardType } from "@/lib/providers/wikidata";
 import { parseAwardYear } from "@/lib/anime-awards";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 function shortName(type: AwardType): string {
   return AWARD_CATALOG[type]?.shorthand ?? "Award";

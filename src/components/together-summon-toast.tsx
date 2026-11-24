@@ -2,7 +2,7 @@ import { ArrowRight, X } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { useTogether } from "@/lib/together/provider";
 import { useSelfIdentity } from "@/lib/together/use-self-identity";
-import { useView, type View } from "@/lib/view";
+import { useView, type View } from "@/app/navigation/view";
 import type { Meta } from "@/lib/cinemeta";
 import { Avatar } from "./together-modal/avatar";
 

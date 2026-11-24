@@ -1,8 +1,8 @@
-import { createHtml5Bridge } from "@/lib/player/html5";
-import { createMpvBridge, probeMpv, type MpvRect } from "@/lib/player/mpv";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import { createHtml5Bridge } from "@/features/player/engine/html5";
+import { createMpvBridge, probeMpv, type MpvRect } from "@/features/player/engine/mpv";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import type { MonitorInfo } from "@/lib/monitors";
-import { isLinuxDesktop, isMacDesktop, isWindowsDesktop } from "@/lib/platform";
+import { isWindowsDesktop } from "@/lib/platform";
 
 export const SYNC_DRIFT_TOLERANCE_S = 0.6;
 export const SYNC_SUPPRESS_MS = 1400;
@@ -31,17 +31,12 @@ export function round2(v: number): number {
 export function embedFlags(
   engine: "html5" | "mpv",
   mpvEmbed: boolean,
-  videoWidth: number,
-  videoHeight: number,
 ): { mpvEmbedWindowsActive: boolean; stageBg: string } {
   const embedOn = engine === "mpv" && mpvEmbed;
   const mpvEmbedWindowsActive = embedOn && isWindowsDesktop();
-  const hasFrame = videoWidth > 0 && videoHeight > 0;
-  const macShowing = embedOn && isMacDesktop() && hasFrame;
-  const linuxShowing = embedOn && isLinuxDesktop() && hasFrame;
   return {
     mpvEmbedWindowsActive,
-    stageBg: mpvEmbedWindowsActive || macShowing || linuxShowing ? "" : "bg-black",
+    stageBg: mpvEmbedWindowsActive ? "" : "bg-black",
   };
 }
 
@@ -62,7 +57,6 @@ export async function pickBridge(
     rtxVsr?: boolean;
     embed?: boolean;
     anime4kShaders?: string[];
-    macEdr?: boolean;
     renderer?: "gpu-next" | "gpu";
     forceYuv420p?: boolean;
     extraOptions?: string;

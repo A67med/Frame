@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import { type PlayEpisode } from "@/lib/view";
+import { type PlayEpisode } from "@/app/navigation/view";
 import { useHeroLogos } from "@/components/anime-hero/use-hero-logos";
 import { useHideAnimeMetas } from "@/lib/anime-hide";
-import { useInLocalLibrary } from "@/lib/local-library";
+import { useInLocalLibrary } from "@/features/library/local-library";
 import { useTitleMediaServers } from "@/hooks/use-title-media-servers";
 import { useSettings } from "@/lib/settings";
 import { ratingTarget } from "@/lib/ratings/types";

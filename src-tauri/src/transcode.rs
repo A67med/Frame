@@ -178,17 +178,6 @@ pub fn locate_ffmpeg() -> Option<std::path::PathBuf> {
         if !p.exists() {
             continue;
         }
-        #[cfg(unix)]
-        {
-            use std::os::unix::fs::PermissionsExt;
-            if let Ok(meta) = std::fs::metadata(&p) {
-                if meta.permissions().mode() & 0o111 != 0 {
-                    eprintln!("[harbor::transcode] ffmpeg execution probe failed but file exists at {p:?} — trusting it");
-                    return Some(p);
-                }
-            }
-        }
-        #[cfg(not(unix))]
         {
             return Some(p);
         }

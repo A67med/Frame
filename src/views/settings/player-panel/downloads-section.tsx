@@ -32,20 +32,16 @@ export function DownloadsSection() {
     };
   }, []);
 
-  const pickFolder = async (kind: "video" | "ebook") => {
+  const pickFolder = async () => {
     setError(null);
-    const current =
-      kind === "ebook"
-        ? settings.ebookDownloadDir || settings.downloadDir || systemDefault
-        : settings.downloadDir || systemDefault;
+    const current = settings.downloadDir || systemDefault;
     try {
       const picked = await open({
         directory: true,
         defaultPath: current || undefined,
       });
       if (typeof picked === "string") {
-        if (kind === "ebook") update({ ebookDownloadDir: picked });
-        else update({ downloadDir: picked });
+        update({ downloadDir: picked });
       }
     } catch {
       setError(t("Could not open the folder picker. Try again."));
@@ -69,7 +65,7 @@ export function DownloadsSection() {
         current={settings.downloadDir || systemDefault}
         loading={loadingDefault}
         custom={!!settings.downloadDir}
-        onChoose={() => void pickFolder("video")}
+        onChoose={() => void pickFolder()}
         onReset={() => update({ downloadDir: "" })}
         onReveal={() => void revealCurrent(settings.downloadDir || systemDefault)}
       >
@@ -80,24 +76,6 @@ export function DownloadsSection() {
           )}
           value={settings.downloadCreateFolders}
           onChange={(v) => update({ downloadCreateFolders: v })}
-        />
-      </DownloadLocation>
-      <DownloadLocation
-        title={t("eBooks")}
-        current={settings.ebookDownloadDir || settings.downloadDir || systemDefault}
-        loading={loadingDefault}
-        custom={!!settings.ebookDownloadDir}
-        onChoose={() => void pickFolder("ebook")}
-        onReset={() => update({ ebookDownloadDir: "" })}
-        onReveal={() =>
-          void revealCurrent(settings.ebookDownloadDir || settings.downloadDir || systemDefault)
-        }
-      >
-        <ToggleRow
-          label={t("Create folders for eBooks")}
-          sub={t("Each title gets its own folder holding its EPUB or PDF.")}
-          value={settings.ebookDownloadCreateFolders}
-          onChange={(value) => update({ ebookDownloadCreateFolders: value })}
         />
       </DownloadLocation>
       {error && (

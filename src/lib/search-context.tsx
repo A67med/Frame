@@ -26,7 +26,7 @@ import { useAuth } from "@/lib/auth";
 import { useSettings } from "@/lib/settings";
 import { effectiveBinding, eventToBinding } from "@/lib/hotkeys";
 import { isMagnetInput, isDirectVideoUrl } from "@/lib/torrent/magnet";
-import { useView, type Frame } from "@/lib/view";
+import { useView, type Frame } from "@/app/navigation/view";
 
 type SearchState = {
   open: boolean;
@@ -303,10 +303,6 @@ export function SearchProvider({ children }: { children: ReactNode }) {
           series: [],
           liveTv: [],
           anime: [],
-          manga: [],
-          music: [],
-          ebooks: [],
-          sports: [],
           characters: [],
           addonGroups: [],
           addons: [],
@@ -333,14 +329,10 @@ export function SearchProvider({ children }: { children: ReactNode }) {
               : topMatch,
           movies: mergedMovies,
           series: mergedSeries,
-          // Anime, manga, music, eBook, sports, character and Live TV results are
+          // Anime, character and Live TV results are
           // not part of Frame. The fields stay so the result shape is unchanged.
           liveTv: [],
           anime: [],
-          manga: [],
-          music: [],
-          ebooks: [],
-          sports: [],
           characters: [],
           addonGroups: dedupedGroups,
           addons: searchAddonIndex(trimmed),

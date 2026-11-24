@@ -1,6 +1,6 @@
 import type { Meta } from "@/lib/cinemeta";
 import { episodeFromVideoId, type LibraryItem } from "@/lib/stremio";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { bpPlayEpisode, type BpEpisodeIds } from "../bp-episode-ids";
 
 export type BpResumeMark = { ep?: PlayEpisode; resumed: boolean };

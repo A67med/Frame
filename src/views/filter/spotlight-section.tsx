@@ -13,7 +13,7 @@ import {
   type PersonCredit,
 } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { SPOTLIGHT_SELF_TIMEOUT_MS, SpotlightGateContext } from "./spotlight-gate";
 
 const DIRECTOR_JOBS = new Set(["Director"]);

@@ -5,7 +5,7 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are outside the browser tsconfig.
 import test from "node:test";
 import ts from "typescript";
-import * as policy from "../src/lib/player/rtx-video-policy.ts";
+import * as policy from "../src/features/player/engine/rtx-video-policy.ts";
 
 const request = { hdr: false, vsr: true, svpActive: false, hdrToSdr: true };
 function harness() {
@@ -35,7 +35,7 @@ function harness() {
   };
   const module = { exports: {} };
   const output = ts.transpileModule(
-    readFileSync(new URL("../src/lib/player/rtx-video.ts", import.meta.url), "utf8"),
+    readFileSync(new URL("../src/features/player/engine/rtx-video.ts", import.meta.url), "utf8"),
     { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS } },
   ).outputText;
   new Function("require", "module", "exports", output)(
@@ -47,7 +47,7 @@ function harness() {
     module.exports,
   );
   return {
-    api: module.exports as typeof import("../src/lib/player/rtx-video"),
+    api: module.exports as typeof import("../src/features/player/engine/rtx-video"),
     filter: () => filter,
     hint: () => hint,
     commands,

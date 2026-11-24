@@ -1,18 +1,15 @@
 import { Poster } from "@/components/poster";
 import { ArrowedScrollRow } from "@/components/arrowed-scroll-row";
 import type { AnilistRelatedNode } from "@/lib/anilist/media-details";
-import { CollectionBadges } from "@/views/manga/collection-badge";
 
 export function AnimeRelatedRail({
   title,
   nodes,
   onOpen,
-  badgeCollections = false,
 }: {
   title: string;
   nodes: AnilistRelatedNode[];
   onOpen?: (node: AnilistRelatedNode) => void;
-  badgeCollections?: boolean;
 }) {
   if (nodes.length === 0) return null;
   return (
@@ -20,12 +17,7 @@ export function AnimeRelatedRail({
       <h3 className="mb-3 text-[15px] font-semibold text-ink">{title}</h3>
       <ArrowedScrollRow className="-mx-1 pb-1">
         {nodes.map((node) => (
-          <RelatedCard
-            key={node.anilistId}
-            node={node}
-            onOpen={onOpen}
-            badgeCollections={badgeCollections}
-          />
+          <RelatedCard key={node.anilistId} node={node} onOpen={onOpen} />
         ))}
       </ArrowedScrollRow>
     </section>
@@ -35,11 +27,9 @@ export function AnimeRelatedRail({
 function RelatedCard({
   node,
   onOpen,
-  badgeCollections,
 }: {
   node: AnilistRelatedNode;
   onOpen?: (node: AnilistRelatedNode) => void;
-  badgeCollections?: boolean;
 }) {
   const meta = [
     node.format,
@@ -67,11 +57,6 @@ function RelatedCard({
         {node.upcoming && (
           <span className="pointer-events-none absolute end-1.5 top-1.5 rounded-full bg-canvas/80 px-2 py-0.5 text-[10px] text-ink backdrop-blur">
             Upcoming
-          </span>
-        )}
-        {badgeCollections && node.mediaType === "manga" && (
-          <span className="absolute end-1.5 bottom-1.5">
-            <CollectionBadges title={node.title} size={30} side="top" />
           </span>
         )}
       </Poster>

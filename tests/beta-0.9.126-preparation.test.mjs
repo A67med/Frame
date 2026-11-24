@@ -24,7 +24,7 @@ test("beta 0.9.126 notes load offline without substituting stable notes", async 
   const module = { exports: {} };
   let requests = 0;
   const dependencies = {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async () => {
         requests++;
         throw new Error("Offline");

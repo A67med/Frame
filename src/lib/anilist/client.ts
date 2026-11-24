@@ -1,6 +1,6 @@
 import { ANILIST_GRAPHQL_URL } from "./config";
 import { getSession } from "./session";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { AnilistApiError } from "./errors";
 import { TRACKERS_REMOVED, TrackerRemovedError } from "@/lib/removed-trackers";
 export { AnilistApiError } from "./errors";

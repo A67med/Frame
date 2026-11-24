@@ -12,7 +12,7 @@ import { useLetterboxd } from "@/lib/stremboxd/provider";
 import { useCustomLists } from "@/lib/custom-lists";
 import { useCollectionRowsForPage } from "@/lib/page-collection-rows";
 import { useMediaFavorites, type MediaEntry } from "@/lib/media-favorites";
-import { useLocalWatchlist } from "@/lib/local-watchlist";
+import { useLocalWatchlist } from "@/features/watchlist/local";
 import { usePinnedRows } from "@/views/home/hooks/use-pinned-rows";
 import { useSettings } from "@/lib/settings";
 import { useUiLanguage } from "@/lib/i18n";

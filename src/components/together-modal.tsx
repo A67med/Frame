@@ -6,7 +6,7 @@ import { useSettings } from "@/lib/settings";
 import { useKnobAnim } from "@/lib/knob-anim";
 import { useTogether } from "@/lib/together/provider";
 import { useSelfIdentity } from "@/lib/together/use-self-identity";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { Tooltip } from "@/views/detail/tooltip";
 import { Avatar } from "./together-modal/avatar";

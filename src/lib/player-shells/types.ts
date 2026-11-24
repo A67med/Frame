@@ -1,7 +1,7 @@
 import type { ComponentType, ReactNode } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayerCapabilities, PlayerSnapshot } from "@/lib/player/bridge";
-import type { SubtitleAddHandler } from "@/lib/player/subtitle-load";
+import type { PlayerCapabilities, PlayerSnapshot } from "@/features/player/engine/bridge";
+import type { SubtitleAddHandler } from "@/features/player/engine/subtitle-load";
 
 export type PlayerShellProps = {
   snap: PlayerSnapshot;

@@ -1,6 +1,6 @@
 import { lruSet } from "@/lib/cache";
 import { registerEvictable } from "@/lib/maintenance";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { fetchCsmAdvisory } from "@/lib/providers/csm";
 
 // IMDb's public GraphQL endpoint: keyless, CORS-enabled for the app's origins, and the source imdb.com itself reads.

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { CastMenu } from "@/components/player/cast-menu";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
 import { useT } from "@/lib/i18n";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { CastErrorModal } from "./cast-error-modal";
 import { CastSessionBar, SpeakerAudioBar } from "./cast-session-bar";
 import { CastingOverlay } from "./casting-overlay";

@@ -2,7 +2,10 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { decodeSubtitleBytes, decodeSubtitleBytesDetailed } from "../src/lib/subtitles/encoding.ts";
+import {
+  decodeSubtitleBytes,
+  decodeSubtitleBytesDetailed,
+} from "../src/features/subtitles/encoding.ts";
 import {
   ARABIC_SRT,
   ISO_8859_6_ARABIC_DIALOGUE_SRT,

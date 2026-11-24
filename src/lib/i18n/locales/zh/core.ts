@@ -4,7 +4,6 @@ const core: Record<string, string> = {
   "nav.movies": "电影",
   "nav.shows": "剧集",
   "nav.anime": "动漫",
-  "nav.ebook": "电子书",
   "nav.live": "电视直播",
   "nav.playlists": "播放列表",
   "nav.calendar": "日历",
@@ -64,7 +63,6 @@ const core: Record<string, string> = {
   "arabic.row.trending": "阿拉伯热门内容",
   "nav.kids": "观看",
   "nav.catalogs": "目录",
-  "nav.manga": "漫画",
   "nav.people": "热门人物",
 };
 

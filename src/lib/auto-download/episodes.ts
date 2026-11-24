@@ -1,7 +1,7 @@
 import type { AutoDlSeries } from "@/lib/auto-download";
 import type { Meta } from "@/lib/cinemeta";
 import { activeDownloadFor } from "@/lib/download/downloads-store";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 type AiredEpisode = {
   season: number;

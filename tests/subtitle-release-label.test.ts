@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { subtitleReleaseLabel } from "../src/lib/subtitles/release-label.ts";
+import { subtitleReleaseLabel } from "../src/features/subtitles/release-label.ts";
 
 test("formats a BluRay REMUX release without repeating the movie title", () => {
   assert.equal(

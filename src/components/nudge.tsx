@@ -3,7 +3,7 @@ import tmdbLogo from "@/assets/addon-logos/tmdb.png";
 import { useT } from "@/lib/i18n";
 import { useOnboarding } from "@/lib/onboarding";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 const KEY = "tmdb-nudge";
 

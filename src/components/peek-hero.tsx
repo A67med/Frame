@@ -9,7 +9,7 @@ import { useImdbRating } from "@/lib/imdb-rating";
 import { useSettings } from "@/lib/settings";
 import { useTitleLogo } from "@/lib/title-logo";
 import { smartPlayEpisode } from "@/lib/smart-play";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { observe, usePageVisible } from "@/lib/visibility";
 
 const ROTATE_MS = 9500;

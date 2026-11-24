@@ -10,7 +10,7 @@ import {
   type BrandTitle,
 } from "@/lib/providers/tmdb/tmdb-brands";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { openUrl } from "@/lib/window";
 import { compactMoney } from "./brand-rails";
 import { browsedId, type Browsed } from "./browsed";

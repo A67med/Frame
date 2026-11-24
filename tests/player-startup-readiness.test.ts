@@ -8,15 +8,15 @@ import test from "node:test";
 const at = (path: string) => new URL(`../${path}`, import.meta.url);
 const read = (path: string) => readFileSync(at(path), "utf8");
 
-const bridge = read("src/lib/player/bridge.ts");
-const mpv = read("src/lib/player/mpv.ts");
-const html5 = read("src/lib/player/html5/bridge.ts");
+const bridge = read("src/features/player/engine/bridge.ts");
+const mpv = read("src/features/player/engine/mpv.ts");
+const html5 = read("src/features/player/engine/html5/bridge.ts");
 const loader = read("src/views/player/cinematic-player-loader.tsx");
 const picker = read("src/views/play-picker.tsx");
 const bridgeLoad = read("src/views/player/hooks/use-bridge-load.ts");
 const autoRetry = read("src/views/player/hooks/use-auto-retry.ts");
 const sync = read("src/views/player/hooks/use-stremio-sync.ts");
-const nativeMpv = read("src-tauri/src/mpv.rs");
+const nativeMpv = read("src-tauri/src/features/playback/mpv.rs");
 const controls = read("src/views/player/hooks/use-playback-controls.ts");
 
 test("player snapshots expose a resettable first-frame readiness signal", () => {

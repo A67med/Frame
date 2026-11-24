@@ -19,7 +19,6 @@ import { TvdbGuideModal } from "../tvdb-tutorial-modal";
 import { ProviderKeyRow, type KeyEntry, type KeyId } from "./provider-key-row";
 import { PosterServiceMark } from "./poster-mark";
 import type { LibraryKey } from "../library-panel";
-import nytLogo from "@/assets/service-logos/nyt.png";
 import geminiLogo from "@/assets/ai-logos/gemini.png";
 
 export type ProviderKeysArgs = {
@@ -55,12 +54,11 @@ export function useProviderKeys({
   const t = useT();
 
   const [mdblistDraft, setMdblistDraft] = useState(settings.mdblistKey);
-  const [nytDraft, setNytDraft] = useState(settings.nytKey);
   const [posterSrvDraft, setPosterSrvDraft] = useState(settings.posterBaseUrl);
   const [auddDraft, setAuddDraft] = useState(settings.auddKey);
   const [songAiDraft, setSongAiDraft] = useState(settings.songIdAiKey);
   const [extraSaved, setExtraSaved] = useState<
-    "mdblist" | "postersrv" | "ai" | "audd" | "songai" | "nyt" | null
+    "mdblist" | "postersrv" | "ai" | "audd" | "songai" | null
   >(null);
   const [tmdbGuide, setTmdbGuide] = useState(false);
   const [tvdbGuide, setTvdbGuide] = useState(false);
@@ -93,7 +91,7 @@ export function useProviderKeys({
     return () => window.removeEventListener("keydown", onKey);
   }, [keyModal, tmdbGuide, tvdbGuide]);
 
-  const flashExtra = (k: "mdblist" | "postersrv" | "ai" | "audd" | "songai" | "nyt") => {
+  const flashExtra = (k: "mdblist" | "postersrv" | "ai" | "audd" | "songai") => {
     setExtraSaved(k);
     if (extraTimerRef.current) window.clearTimeout(extraTimerRef.current);
     extraTimerRef.current = window.setTimeout(() => setExtraSaved(null), 1800);
@@ -319,37 +317,6 @@ export function useProviderKeys({
                 {"postersplus.elfhosted.com/poster?tmdb_id={tmdbId}&imdb_id={imdbId}&type={type}"}
               </code>
               .
-            </>
-          }
-        />
-      ),
-    },
-    {
-      id: "nyt",
-      name: t("New York Times"),
-      desc: t("Bestseller lists in the eBook section."),
-      value: settings.nytKey,
-      field: (
-        <KeyField
-          label={t("New York Times · bestseller lists")}
-          placeholder={t("NYT Books API key")}
-          iconSrc={nytLogo}
-          value={nytDraft}
-          onChange={setNytDraft}
-          onSave={() => {
-            update({ nytKey: nytDraft.trim() });
-            flashExtra("nyt");
-          }}
-          saved={extraSaved === "nyt"}
-          help={
-            <>
-              {t(
-                "Adds the New York Times bestseller lists to the eBook page, on the hero and as a row, with rank and weeks on the list. Free key at",
-              )}{" "}
-              <ExtLink href="https://developer.nytimes.com/get-started">
-                developer.nytimes.com
-              </ExtLink>
-              . {t("Enable the Books API on your app. Lists refresh weekly.")}
             </>
           }
         />

@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { createRequestScheduler } from "@/lib/request-scheduler";
 import { createCatalogCache, isCatalogPath } from "./tmdb-catalog-cache";
 

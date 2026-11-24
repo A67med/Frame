@@ -4,8 +4,8 @@ import {
   parseSizeBytes,
   syntheticFilename,
   toStreams,
-} from "../src/lib/streams/plugins/adapter.ts";
-import type { StreamPluginRequest } from "../src/lib/streams/plugins/types.ts";
+} from "../src/features/addons/streams/adapter.ts";
+import type { StreamPluginRequest } from "../src/features/addons/streams/types.ts";
 import { parseStream } from "../src/lib/streams/parser/parser-stream.ts";
 import { applyTrust } from "../src/lib/streams/trust.ts";
 

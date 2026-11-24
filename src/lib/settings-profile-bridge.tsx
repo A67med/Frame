@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useProfiles } from "./profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useSettings } from "./settings";
 
 export function SettingsProfileBridge() {

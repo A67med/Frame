@@ -5,7 +5,7 @@ import { useT } from "@/lib/i18n";
 import { rpdbPoster } from "@/lib/providers/rpdb";
 import { useSettings } from "@/lib/settings";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { artAtWidth } from "@/lib/image-rung";
 
 const DEPTH = [12, 21, 9, 23, 14, 17];

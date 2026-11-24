@@ -47,7 +47,7 @@ fn main_rect(app: &AppHandle) -> Result<(PhysicalPosition<i32>, PhysicalSize<u32
 pub async fn hdr_overlay_open(app: AppHandle, stage_id: String) -> Result<(), String> {
     let mut operation = HDR_OVERLAY_OPERATION.lock().await;
     *operation = Some(stage_id.clone());
-    crate::mpv::mpv_set_hdr_stage(app.clone(), false).await?;
+    crate::features::playback::mpv::mpv_set_hdr_stage(app.clone(), false).await?;
     if let Some(w) = app.get_webview_window(HDR_OVERLAY_LABEL) {
         w.hide().map_err(|e| e.to_string())?;
         let mut url = w.url().map_err(|e| e.to_string())?;
@@ -109,7 +109,7 @@ pub async fn hdr_overlay_show(app: AppHandle, stage_id: String) -> Result<bool, 
     // Sync at handoff, not at boot: the main window may have moved while loading.
     hdr_overlay_sync(app.clone()).await?;
     window.show().map_err(|e| e.to_string())?;
-    crate::mpv::mpv_set_hdr_stage(app, true).await?;
+    crate::features::playback::mpv::mpv_set_hdr_stage(app, true).await?;
     Ok(true)
 }
 
@@ -120,7 +120,7 @@ pub async fn hdr_overlay_close(app: AppHandle, stage_id: String) -> Result<(), S
         return Ok(());
     }
     *operation = None;
-    crate::mpv::mpv_set_hdr_stage(app.clone(), false).await?;
+    crate::features::playback::mpv::mpv_set_hdr_stage(app.clone(), false).await?;
     if let Some(w) = app.get_webview_window(HDR_OVERLAY_LABEL) {
         // Keep the hidden WebView for a later, explicitly navigated fresh boot.
         // Closing/recreating the same label races Windows' asynchronous teardown.
@@ -133,7 +133,7 @@ pub async fn hdr_overlay_close(app: AppHandle, stage_id: String) -> Result<(), S
 pub async fn hdr_overlay_hide(app: AppHandle) -> Result<(), String> {
     let mut operation = HDR_OVERLAY_OPERATION.lock().await;
     *operation = None;
-    crate::mpv::mpv_set_hdr_stage(app.clone(), false).await?;
+    crate::features::playback::mpv::mpv_set_hdr_stage(app.clone(), false).await?;
     if let Some(w) = app.get_webview_window(HDR_OVERLAY_LABEL) {
         let _ = w.hide();
     }

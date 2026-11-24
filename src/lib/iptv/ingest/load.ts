@@ -1,5 +1,5 @@
 import { parseM3uAsync } from "../parse-m3u-async";
-import { fetchM3uText, shapePlaylist } from "../store";
+import { fetchM3uText, shapePlaylist } from "./playlist";
 import { liveContainerPref } from "../settings-bridge";
 import type { IptvChannel, IptvPlaylist, IptvPlaylistSource } from "../types";
 import {

@@ -9,16 +9,19 @@ import {
   probePreparedSubtitleBatch,
   preflightPreparedCandidates,
   type TimingMeasurement,
-} from "../src/lib/subtitles/candidate-preflight.ts";
-import type { PreparedSubtitle, PreparedCandidateResult } from "../src/lib/subtitles/prepare.ts";
+} from "../src/features/subtitles/candidate-preflight.ts";
+import type {
+  PreparedSubtitle,
+  PreparedCandidateResult,
+} from "../src/features/subtitles/prepare.ts";
 import {
   registerPreparedSubtitle,
   takePreparedSubtitle,
-} from "../src/lib/subtitles/prepared-registry.ts";
+} from "../src/features/subtitles/prepared-registry.ts";
 import {
   isAutoSelectableSubtitleTrack,
   pickDesiredSubtitleTrack,
-} from "../src/lib/subtitles/track-selection.ts";
+} from "../src/features/subtitles/track-selection.ts";
 
 function prepared(name: string): PreparedSubtitle {
   return {

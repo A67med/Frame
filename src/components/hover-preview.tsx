@@ -42,7 +42,7 @@ import {
 import { useSearch } from "@/lib/search-context";
 import { useSettings } from "@/lib/settings";
 import { activeLayout } from "@/lib/theme";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { PreviewBody } from "./hover-preview/marquee";
 import { useMedia, type Scene } from "./hover-preview/scene";
 import { crownHeightFor, panelWidthFor, placePanel } from "./hover-preview/use-preview-position";

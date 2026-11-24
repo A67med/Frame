@@ -3,7 +3,7 @@ import { Play } from "@/components/icons/play-filled";
 import { useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { markMovieWatched } from "@/lib/mark-watched";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { useT } from "@/lib/i18n";
 
 export function ElegantHoverActions({

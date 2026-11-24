@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { queueIndexOf, useQueue } from "@/lib/queue";
-import type { PlayEpisode, PlayerSrc } from "@/lib/view";
+import type { PlayEpisode, PlayerSrc } from "@/app/navigation/view";
 
 export function useQueueNav(params: {
   src: PlayerSrc;

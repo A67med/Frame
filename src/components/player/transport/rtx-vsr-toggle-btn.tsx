@@ -1,8 +1,8 @@
 import { ImageUp } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { isWindowsDesktop } from "@/lib/platform";
-import { isRtxVsrBlocked } from "@/lib/player/rtx-video-policy";
-import { isSvpActiveForMedia } from "@/lib/player/svp-policy";
+import { isRtxVsrBlocked } from "@/features/player/engine/rtx-video-policy";
+import { isSvpActiveForMedia } from "@/features/player/engine/svp-policy";
 import { useSettings } from "@/lib/settings";
 import type { Meta } from "@/lib/cinemeta";
 import { BigButton } from "./big-button";

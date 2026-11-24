@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { runConsensus } from "../src/lib/subtitles/autosync/consensus.ts";
+import { runConsensus } from "../src/features/subtitles/autosync/consensus.ts";
 
 test("autosync consensus discovers cloud addons with the signed-in auth key", async () => {
   let discoveredWith: string | null | undefined;

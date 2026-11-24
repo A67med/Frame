@@ -1,7 +1,7 @@
 import { ChevronLeft, Delete } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { verifyProfilePassword } from "@/lib/profile-password";
-import { profileInitials, type Profile } from "@/lib/profiles";
+import { profileInitials, type Profile } from "@/features/profiles/profiles";
 import { useBpT } from "./bp-i18n";
 import { setBpFocus } from "./use-bp-focus";
 import { bpWhoPrefersReducedMotion } from "./bp-who-is-watching-logic";

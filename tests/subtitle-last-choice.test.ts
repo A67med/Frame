@@ -8,7 +8,10 @@ import {
   subtitleTrack,
 } from "./helpers/subtitle-memory-harness.ts";
 import { deferred, flushBridge } from "./helpers/mpv-bridge-harness.ts";
-import { rememberedFromChoice, type SubChoiceInput } from "../src/lib/subtitles/subtitle-memory.ts";
+import {
+  rememberedFromChoice,
+  type SubChoiceInput,
+} from "../src/features/subtitles/subtitle-memory.ts";
 
 const five = subtitleTrack("5");
 const six = subtitleTrack("6");

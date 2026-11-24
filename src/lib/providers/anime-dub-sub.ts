@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 const FEED_URL =
   "https://raw.githubusercontent.com/RockinChaos/AniSchedule/master/raw/dub-schedule.json";

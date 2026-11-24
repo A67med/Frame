@@ -39,8 +39,8 @@ const repairs: Record<string, string> = {
     "На странице API прокрутите вниз. Скопируйте значение в поле API Key и вставьте его в Frame. Frame сохранит его автоматически.",
   "Back on TMDB, click your avatar in the top right and choose Settings from the menu.":
     "Вернувшись на TMDB, нажмите свой аватар в правом верхнем углу и выберите в меню Settings.",
-  Born: "Дата рождения",
-  Both: "Оба варианта",
+  "Born": "Дата рождения",
+  "Both": "Оба варианта",
   "Bring your own keys": "Используйте свои ключи",
   "Change your handle?": "Изменить никнейм?",
   "Changing the metadata language reloads Frame so the new language takes effect. Apply when you're done with the options above.":
@@ -50,7 +50,7 @@ const repairs: Record<string, string> = {
   "Click to apply · Right-click to delete": "Клик – применить · Правый клик – удалить",
   "Closing the window tucks Frame into the tray instead of quitting, so it reopens instantly. Right-click the tray icon for quick controls, or pick Quit to exit fully.":
     "При закрытии окна Frame сворачивается в трей, а не завершается, поэтому открывается мгновенно. Правый клик по значку в трее – быстрые действия, «Выход» – полное завершение.",
-  Colored: "Цветной",
+  "Colored": "Цветной",
   "Condensed shows a top pick, quality tiles, and a drawer. Stremio is a flat list grouped by addon, no scoring.":
     "«Компактно» показывает лучший вариант, плитки качества и панель. «Stremio» – плоский список по дополнениям, без оценок.",
   "Confirm personal use once more and tick the box to agree to the API terms.":
@@ -73,22 +73,21 @@ const repairs: Record<string, string> = {
     "Перетащите угол для изменения размера. Стрелки влево и вправо меняют ширину, вверх и вниз – высоту, а Home сбрасывает размер.",
   "Drag to resize. Use arrow keys to adjust, or Home to reset.":
     "Перетащите для изменения размера. Используйте клавиши со стрелками для настройки, а Home – для сброса.",
-  Edge: "Край",
+  "Edge": "Край",
   "Edge-aware sharpening that lifts soft detail without the halos of a naive sharpen. An alternative to CAS, run one or the other, not both.":
     "Резкость с учётом краёв: проявляет мягкие детали без ореолов, свойственных обычному повышению резкости. Альтернатива CAS – включайте что-то одно.",
-  Email: "Эл. почта",
+  "Email": "Эл. почта",
   "Empty — click to add filters": "Пусто – нажмите, чтобы добавить фильтры",
-  Ended: "Завершено",
+  "Ended": "Завершено",
   "Engine status and your P2P settings as JSON, ready to paste into a bug report.":
     "Состояние движка и ваши настройки P2P в JSON – можно вставить в отчёт об ошибке.",
-  Ep: "Сер.",
+  "Ep": "Сер.",
   "Esc or click outside to close": "Esc или клик вне окна – закрыть",
   "Every addon": "Все дополнения",
   "Every Frame that announces itself on this network appears here as it answers, with the theme it is wearing.":
     "Каждый Frame, объявивший себя в этой сети, появляется здесь по мере ответа – вместе с темой, в которую он одет.",
   "Every winner Frame ships, browsable offline by year and category.":
     "Все победители, входящие в Frame, – просмотр офлайн по годам и категориям.",
-  "Everything else, via your own server": "Всё остальное – через свой сервер",
   "Export your Frame setup to a single file — pick exactly what goes in. Restore brings back only what the file contains. Your Stremio sign-in is always left out.":
     "Экспортируйте настройки Frame в один файл и выберите, что именно сохранить. При восстановлении вернутся только данные из файла. Вход в Stremio никогда не включается.",
   "Fill in the details, then Subscribe": "Заполните данные и нажмите Subscribe",
@@ -136,19 +135,8 @@ const repairs: Record<string, string> = {
     "Если поток не начал воспроизводиться за 10 секунд (мёртвый источник или недоступное дополнение), автоматически пробовать следующий доступный поток. По умолчанию выключено.",
   "If you want to put money somewhere and you use Frame, an ElfHosted subscription is the most useful place for it. You get a managed instance, and the servers Frame depends on stay paid for.":
     "Если вы пользуетесь Frame и хотите куда-то вложить деньги, подписка ElfHosted – самое полезное место. Вы получаете управляемый экземпляр, а серверы, от которых зависит Frame, остаются оплаченными.",
-  "Inside it, one folder per manga, named like the title.":
-    "Внутри – по одной папке на каждую мангу, названной по её названию.",
   "Install a Stremio addon and its catalogs show up here as poster rails, ready to browse.":
     "Установите дополнение Stremio – его каталоги появятся здесь рядами постеров, готовые к просмотру.",
-  "is a page number. Add": "– номер страницы. Добавьте",
-  "is a regex for the part to change": "– регулярное выражение для заменяемой части",
-  "is each chapter row": "– строка каждой главы",
-  "is how many items to skip, starting at 0. Frame auto-detects the site's page size and walks it for you, so you never set a page size. Use this when the URL counts items.":
-    "– сколько элементов пропустить, начиная с 0. Frame сам определяет размер страницы сайта и листает её за вас, поэтому размер страницы задавать не нужно. Используйте, если URL считает элементы.",
-  "is the box around one manga; inside it": "– контейнер вокруг одной манги; внутри него",
-  "is the manga URL": "– URL манги",
-  "is the search text (searchPath only).": "– текст поиска (только searchPath).",
-  "is what to swap in. The example turns": "– то, на что заменить. Пример превращает",
   "Jina Reader": "Jina Reader",
   "Keeping Frame's backend online costs real money, and ElfHosted covers it so the community does not have to. Becoming a subscriber is the best way to keep that going, and it is not a donation. You get proper infrastructure for your own setup, and Frame stays funded at the same time.":
     "Поддержание бэкенда Frame в сети стоит реальных денег, и ElfHosted берёт это на себя, чтобы сообществу не пришлось. Оформить подписку – лучший способ сохранить это, и это не пожертвование. Вы получаете полноценную инфраструктуру для собственной настройки, и при этом Frame остаётся профинансированным.",
@@ -173,8 +161,6 @@ const repairs: Record<string, string> = {
   "Open your account settings": "Откройте настройки аккаунта",
   "People have offered plenty of times and the answer has stayed no. If you were going to send something, send it to ElfHosted above so the infrastructure stays up, or to one of the charities below. Both do more good than paying me would.":
     "Предлагали много раз, и ответ остаётся прежним – нет. Если хотите что-то отправить, отправьте это ElfHosted выше, чтобы инфраструктура продолжала работать, или одному из фондов ниже. И то и другое принесёт больше пользы, чем деньги мне.",
-  "Pick one folder. Each subfolder inside is one manga, so name it exactly like the title. In each, add chapter folders of images or .cbz / .zip files. A cover.jpg sets a custom cover.":
-    "Выберите одну папку. Каждая вложенная папка – это одна манга, поэтому назовите её точно как название. Внутри добавьте папки глав с изображениями или файлы .cbz / .zip. Файл cover.jpg задаёт свою обложку.",
   "Pick what to save, then everything you choose lands in one file: theme, home layout, settings, addons, profiles, watchlist, player layouts, watch progress, and more. Your Stremio sign-in is left out on purpose.":
     "Выберите, что сохранить, и всё выбранное попадёт в один файл: тема, оформление главной, настройки, дополнения, профили, список к просмотру, раскладки плеера, прогресс просмотра и другое. Вход в Stremio намеренно не включается.",
   "Play from": "Воспроизвести с",
@@ -195,7 +181,7 @@ const repairs: Record<string, string> = {
   "Six places to start. Tap one and we'll filter the catalog for you.":
     "Шесть точек старта. Выберите одну – отфильтруем каталог.",
   "Size of the controller on-screen keyboard.": "Размер экранной клавиатуры для контроллера.",
-  soon: "скоро",
+  "soon": "скоро",
   "Spoiler — Click": "Спойлер – нажмите",
   "Spoiler — Click to reveal": "Спойлер – нажмите, чтобы показать",
   "Stream torrents through Frame's own Rust peer-to-peer engine instead of the bundled Stremio Server. Falls back automatically if it can't connect. Status and a self-test live in the Local engine card below.":
@@ -309,7 +295,7 @@ const repairs: Record<string, string> = {
     "У всех, кто откроет эту ссылку, URL ретранслятора и код комнаты подставятся автоматически. Работает и в браузере: гостю ничего устанавливать не нужно.",
   "Get a relay": "Получить ретранслятор",
   "Chinese (Simplified)": "Китайский (упрощённый)",
-  Indonesian: "Индонезийский",
+  "Indonesian": "Индонезийский",
   "Your face in Watch Together rooms, sessions, and chat. Sits on top of your Stremio account.":
     "Ваш аватар в комнатах совместного просмотра, сессиях и чате. Он используется поверх вашего аккаунта Stremio.",
   "Watch Together rooms drop after 6 hours":
@@ -346,7 +332,7 @@ const repairs: Record<string, string> = {
   "90s": "90-е",
   "2000s": "2000-е",
   "2010s": "2010-е",
-  Rec: "Запись",
+  "Rec": "Запись",
 };
 
 export default repairs;

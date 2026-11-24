@@ -1,13 +1,12 @@
 import { Bookmark, Check, HardDrive } from "lucide-react";
 import { useMemo, type ReactNode } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import { useInLocalLibrary } from "@/lib/local-library";
-import { isAndroidTv } from "@/lib/platform";
+import { useInLocalLibrary } from "@/features/library/local-library";
 import { useSettings } from "@/lib/settings";
 import type { Settings } from "@/lib/settings/types";
 import { isTop10, useTop10Version } from "@/lib/top10-set";
 import { useMetaWatched } from "@/lib/watched-flag";
-import { useInWatchlist } from "@/lib/watchlist";
+import { useInWatchlist } from "@/features/watchlist/watchlist";
 import { useBpT } from "./bp-i18n";
 import { BpScoreRow } from "./bp-score-chips";
 import type { BpCardBadge } from "./use-bp-card-badges";
@@ -72,7 +71,7 @@ export function useBpCardState(
   // Defaulting it here rather than in lib/settings/defaults.ts on purpose: that
   // file is shared, and flipping it there would turn the ribbon on for every
   // desktop user who has never asked for it.
-  const top10 = (isAndroidTv() || settings.top10Ribbon) && isTop10(meta.id, meta.name);
+  const top10 = settings.top10Ribbon && isTop10(meta.id, meta.name);
   return { inWatchlist, watched, inLocal, top10 };
 }
 

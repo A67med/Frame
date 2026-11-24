@@ -1,5 +1,5 @@
 import { lruSet } from "../cache";
-import { safeFetch } from "../safe-fetch";
+import { safeFetch } from "../../infrastructure/networking/safe-fetch";
 import {
   parseProductionFacts,
   productionSlug,

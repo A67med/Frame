@@ -1,6 +1,6 @@
 import { useSettings } from "@/lib/settings";
 import { isWindowsDesktop } from "@/lib/platform";
-import { isRtxHdrBlocked, isRtxVsrBlocked } from "@/lib/player/rtx-video-policy";
+import { isRtxHdrBlocked, isRtxVsrBlocked } from "@/features/player/engine/rtx-video-policy";
 import { useT } from "@/lib/i18n";
 import { SettingGroup } from "../kit";
 import { ToggleRow } from "../shared";

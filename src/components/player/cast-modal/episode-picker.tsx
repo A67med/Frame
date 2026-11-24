@@ -13,7 +13,7 @@ import type { Episode } from "@/lib/providers/tmdb";
 import { tmdbLanguageIso } from "@/lib/providers/tmdb/tmdb-client";
 import { useTrakt } from "@/lib/trakt/provider";
 import { useSimkl } from "@/lib/simkl/provider";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { useArcGroups } from "@/views/detail/series-episodes/use-arc-groups";
 import { useEpisodeOrder } from "@/views/detail/series-episodes/use-episode-order";
 import { useSeriesTvdbStills } from "@/views/detail/series-episodes/use-series-tvdb-stills";

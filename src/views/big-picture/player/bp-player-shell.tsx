@@ -9,7 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import { useView, type PlayerSrc } from "@/lib/view";
+import { useView, type PlayerSrc } from "@/app/navigation/view";
 import { runBpBack } from "../bp-back";
 import { BpHintBar, type BpAction } from "../bp-hint-bar";
 import { useBpT } from "../bp-i18n";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { lruSet } from "@/lib/cache";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { rankEpisodes, type CriticismEpisode, type RawEpisode } from "./match";
 
 export type { CriticismEpisode } from "./match";

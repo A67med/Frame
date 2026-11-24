@@ -1,15 +1,15 @@
 import { Check, Info, Languages } from "lucide-react";
-import type { TrackInfo } from "@/lib/player/bridge";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 import { HoverTooltip } from "@/components/hover-tooltip";
 import { useContextMenu, type ContextMenuTarget } from "@/lib/context-menu";
-import { isImageSubTrack } from "@/lib/player/sub-format";
-import { subtitleReleaseLabel } from "@/lib/subtitles/release-label";
-import { subtitleTrackLanguageLabel, subtitleTrackTitle } from "@/lib/subtitles/track-label";
-import { saveSubtitleToDisk } from "@/lib/subtitles/save-to-disk";
-import { useImportedSubs } from "@/lib/player/imported-subs";
+import { isImageSubTrack } from "@/features/player/engine/sub-format";
+import { subtitleReleaseLabel } from "@/features/subtitles/release-label";
+import { subtitleTrackLanguageLabel, subtitleTrackTitle } from "@/features/subtitles/track-label";
+import { saveSubtitleToDisk } from "@/features/subtitles/save-to-disk";
+import { useImportedSubs } from "@/features/player/engine/imported-subs";
 import { useT } from "@/lib/i18n";
-import { parseRelease } from "@/lib/subtitles/release-match";
-import { subtitleClassificationLabels } from "@/lib/subtitles/classification-labels";
+import { parseRelease } from "@/features/subtitles/release-match";
+import { subtitleClassificationLabels } from "@/features/subtitles/classification-labels";
 import { OverflowMarquee } from "./overflow-marquee";
 
 function subExt(track: TrackInfo): string {

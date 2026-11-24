@@ -9,7 +9,7 @@ import { SERVICES } from "@/lib/providers/streaming";
 import { CATEGORIES, type Category } from "@/lib/providers/service-catalog";
 import { useServiceCatalog } from "@/lib/providers/use-service-catalog";
 import { useSettings, type StreamingService } from "@/lib/settings";
-import { useScrollMemory } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
 import { useT } from "@/lib/i18n";
 
 export function ServiceView({ service }: { service: StreamingService }) {

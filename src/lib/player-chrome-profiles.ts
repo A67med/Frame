@@ -14,7 +14,7 @@ import {
   type PlayerControlConfig,
   type PlayerControlId,
   type ThemeId,
-} from "./player-chrome";
+} from "@/features/player/chrome-layout";
 import { t } from "@/lib/i18n";
 
 export type LayoutProfile = {

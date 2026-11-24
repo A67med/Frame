@@ -9,7 +9,7 @@ import { libraryGetOne } from "@/lib/stremio";
 import { decodeWatchedEpisodes } from "@/lib/stremio-watched";
 import { fetchWatchedKeySet } from "@/lib/trakt/history";
 import { useTrakt } from "@/lib/trakt/provider";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 export function usePlayerWatched(params: {
   meta: Meta;

@@ -1,4 +1,4 @@
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 import { readResumeEntry, readResumeSource } from "@/lib/resume";
 import { isDetectedAnime } from "./anime-detect";
 

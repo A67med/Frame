@@ -7,7 +7,6 @@ const agreeing = (v) => ({
   "src-tauri/tauri.conf.json": v,
   "src-tauri/Cargo.toml": v,
   "src-tauri/Cargo.lock": v,
-  "flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml": v,
 });
 
 test("a tag matching every version file may be released", () => {
@@ -25,7 +24,7 @@ test("each file that disagrees with the tag is reported", () => {
   const problems = releaseVersionProblems("v1.2.3", versions);
   assert.equal(problems.length, 1);
   assert.match(problems[0], /Cargo\.lock declares 1\.2\.2/);
-  assert.equal(releaseVersionProblems("v1.2.4", agreeing("1.2.3")).length, 5);
+  assert.equal(releaseVersionProblems("v1.2.4", agreeing("1.2.3")).length, 4);
 });
 
 test("the checked-in files all declare one version", () => {

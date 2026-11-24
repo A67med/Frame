@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { setPlaybackPresence } from "@/lib/discord/presence";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import type { PlayerSrc } from "@/lib/view";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 const POSITION_REFRESH_MS = 30000;
 

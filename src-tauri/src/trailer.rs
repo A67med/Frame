@@ -168,7 +168,11 @@ fn purge_extractions(dir: &Path, min_age: Duration, attribute: bool, now: System
     };
     let mut removed = 0;
     for entry in entries.flatten() {
-        if !entry.file_name().to_str().is_some_and(|n| n.starts_with("_MEI")) {
+        if !entry
+            .file_name()
+            .to_str()
+            .is_some_and(|n| n.starts_with("_MEI"))
+        {
             continue;
         }
         let Ok(meta) = entry.metadata() else {
@@ -282,56 +286,6 @@ pub(crate) async fn run_yt_dlp(
     timeout: Duration,
     label: &str,
 ) -> Result<YtDlpOutput, String> {
-    #[cfg(target_os = "linux")]
-    {
-        let run = async {
-            let system_failure = {
-                let mut command = tokio::process::Command::new("yt-dlp");
-                command.args(&args).kill_on_drop(true);
-                match command.output().await {
-                    Ok(output) => {
-                        let output = YtDlpOutput {
-                            success: output.status.success(),
-                            exit_code: output.status.code(),
-                            stdout: output.stdout,
-                            stderr: output.stderr,
-                        };
-                        if output.success {
-                            eprintln!("[harbor::trailer] system yt-dlp completed {label}");
-                            return Ok(output);
-                        }
-                        yt_dlp_failure("system", label, &output)
-                    }
-                    Err(error) => format!("system yt-dlp {label} could not start: {error}"),
-                }
-            };
-            eprintln!("[harbor::trailer] {system_failure}; trying bundled yt-dlp");
-
-            let bundled = match ytdlp_sidecar(app, label) {
-                Ok(command) => collect_sidecar_output(command, args, label).await,
-                Err(error) => Err(error),
-            };
-            match bundled {
-                Ok(output) => {
-                    if output.success {
-                        eprintln!("[harbor::trailer] bundled yt-dlp completed {label}");
-                        Ok(output)
-                    } else {
-                        Err(format!(
-                            "{system_failure}; {}",
-                            yt_dlp_failure("bundled", label, &output)
-                        ))
-                    }
-                }
-                Err(bundled_failure) => Err(format!("{system_failure}; {bundled_failure}")),
-            }
-        };
-        return tokio::time::timeout(timeout, run)
-            .await
-            .map_err(|_| format!("yt-dlp {label} timed out after {}s", timeout.as_secs()))?;
-    }
-
-    #[cfg(not(target_os = "linux"))]
     {
         let command = ytdlp_sidecar(app, label)?;
         let output = tokio::time::timeout(timeout, collect_sidecar_output(command, args, label))
@@ -549,18 +503,6 @@ pub async fn fetch_trailer(
     })
 }
 
-#[cfg(target_os = "linux")]
-async fn trailer_stream_url(
-    proxy_state: &crate::stream_proxy::ProxyState,
-    path: &Path,
-) -> Result<Option<String>, String> {
-    proxy_state
-        .register_local_file(path.to_path_buf())
-        .await
-        .map(Some)
-}
-
-#[cfg(not(target_os = "linux"))]
 async fn trailer_stream_url(
     _proxy_state: &crate::stream_proxy::ProxyState,
     _path: &Path,

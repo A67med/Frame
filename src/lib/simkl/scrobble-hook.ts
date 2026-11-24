@@ -3,9 +3,12 @@ import { useSimkl } from "./provider";
 import { simklScrobble, buildBody, type ScrobbleInfo } from "./scrobble";
 import { clearPendingWatch, recordPendingWatch } from "./pending-sync";
 import { recordWatchedFallback } from "./record-watched";
-import { getPlaybackPosition, subscribePlaybackClock } from "@/lib/player/playback-clock";
+import {
+  getPlaybackPosition,
+  subscribePlaybackClock,
+} from "@/features/player/engine/playback-clock";
 import { useSettings } from "@/lib/settings";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import {
   SIMKL_API_BASE,
   SIMKL_APP_NAME,

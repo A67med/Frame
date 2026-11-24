@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Plugins",
-  Repositories: "Dépôts",
+  "Plugins": "Plugins",
+  "Repositories": "Dépôts",
   "Installed plugins": "Plugins installés",
   "Plugin repositories": "Dépôts de plugins",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -32,8 +32,8 @@ const plugins: Record<string, string> = {
     "Ajoutez un dépôt, puis installez les fournisseurs que vous voulez. Ils apparaîtront ici.",
   "Add a repository": "Ajouter un dépôt",
   "Movies and series": "Films et séries",
-  Script: "Script",
-  Verified: "Vérifié",
+  "Script": "Script",
+  "Verified": "Vérifié",
   "v{version} available": "v{version} disponible",
   "Paused after {n} failures. Turn it back on to try again.":
     "En pause après {n} échecs. Réactivez-le pour réessayer.",
@@ -59,7 +59,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} depuis {repo}, installé {when}.",
   "Update to v{version}": "Mettre à jour vers v{version}",
   "Revert to v{version}": "Revenir à v{version}",
-  Reaches: "Accède à",
+  "Reaches": "Accède à",
   "Any public website. This plugin did not say which sites it uses.":
     "N'importe quel site public. Ce plugin n'a pas indiqué quels sites il utilise.",
   "Seen so far: {hosts}": "Vus jusqu'ici : {hosts}",
@@ -116,7 +116,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "Supprimer et désinstaller {count} ?",
   "Could not reach this repository. Installed plugins keep working.":
     "Impossible de joindre ce dépôt. Les plugins installés continuent de fonctionner.",
-  "This repository lists no plugins.": "Ce dépôt ne liste aucun plugin.",
   "This repository is not for stream plugins.": "Ce dépôt n'est pas destiné aux plugins de flux.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "Pas un plugin de flux : il n'exporte aucune fonction getStreams ni streams.",

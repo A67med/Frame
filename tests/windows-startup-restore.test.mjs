@@ -2,11 +2,15 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
+const mainWindow = readFileSync(
+  new URL("../src-tauri/src/platform/windows/main_window.rs", import.meta.url),
+  "utf8",
+);
 const source = readFileSync(new URL("../src-tauri/src/lib.rs", import.meta.url), "utf8");
 
 test("taskbar-gap paint is restricted to the one-pixel nonclient strip", () => {
-  const start = source.indexOf("unsafe fn paint_main_taskbar_gap(");
-  const body = source.slice(start, source.indexOf("fn install_maximize_guard", start));
+  const start = mainWindow.indexOf("unsafe fn paint_main_taskbar_gap(");
+  const body = mainWindow.slice(start, mainWindow.indexOf("fn install_maximize_guard", start));
   assert.ok(start >= 0);
   assert.match(body, /!IsZoomed\(hwnd\)\.as_bool\(\)/);
   assert.match(body, /origin\.y \+ client\.bottom != work\.bottom - 1/);

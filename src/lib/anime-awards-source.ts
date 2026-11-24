@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import type { AwardSourceId, AwardWin } from "@/lib/anime-awards";
 import { HARBOR_DATA_BASE } from "@/lib/config/endpoints";
 

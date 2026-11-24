@@ -11,11 +11,11 @@ import {
   prepareSubtitleBytes,
   SubtitlePreparationError,
   type PreparedSubtitle,
-} from "../src/lib/subtitles/prepare.ts";
+} from "../src/features/subtitles/prepare.ts";
 import { ARABIC_ASS } from "./fixtures/subtitle-p2-fixtures.ts";
-import { prepareSubtitleForSave } from "../src/lib/subtitles/save-to-disk.ts";
-import { resolveSwapCues } from "../src/lib/subtitles/autosync/opensubtitles.ts";
-import { prepareConsensusCandidate } from "../src/lib/subtitles/autosync/consensus.ts";
+import { prepareSubtitleForSave } from "../src/features/subtitles/save-to-disk.ts";
+import { resolveSwapCues } from "../src/features/subtitles/autosync/opensubtitles.ts";
+import { prepareConsensusCandidate } from "../src/features/subtitles/autosync/consensus.ts";
 
 const english = `1
 00:00:01,000 --> 00:00:02,500
@@ -337,7 +337,7 @@ test("top candidate preparation preserves rank when promises complete out of ord
 
 test("native prepared subtitle files use private per-file storage and startup recovery", () => {
   const prepareSource = readFileSync(
-    new URL("../src/lib/subtitles/prepare.ts", import.meta.url),
+    new URL("../src/features/subtitles/prepare.ts", import.meta.url),
     "utf8",
   );
   const pruneSource = readFileSync(

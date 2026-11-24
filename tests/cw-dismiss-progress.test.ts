@@ -153,7 +153,7 @@ function advanceHarness(
   ];
   let slot = 0;
   const mocks: Record<string, unknown> = {
-    "@/lib/profiles": { useProfiles: () => ({ activeProfile: null, profiles: [] }) },
+    "@/features/profiles/profiles": { useProfiles: () => ({ activeProfile: null, profiles: [] }) },
     react: {
       useState: () => [state[slot++], () => {}],
       useRef: (current: unknown) => ({ current }),

@@ -3,8 +3,8 @@ import { useTrakt } from "./provider";
 import { TRAKT_API_BASE, TRAKT_API_VERSION } from "./config";
 import { traktApiKey } from "./credentials";
 import { getSession } from "./session";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
-import type { PlayerSrc } from "@/lib/view";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 type Snap = {
   status: string;

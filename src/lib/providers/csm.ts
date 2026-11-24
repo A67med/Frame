@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { generateCsmSlugs, parseCsmHtml, type CsmAdvisory } from "./csm-parser";
 
 export { generateCsmSlugs, parseCsmHtml, type CsmAdvisory, type CsmCategory } from "./csm-parser";

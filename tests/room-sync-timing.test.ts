@@ -88,7 +88,7 @@ function harness(options: { cast?: boolean; started?: boolean } = {}) {
         });
       },
     },
-    "@/lib/player/playback-clock": {
+    "@/features/player/engine/playback-clock": {
       getPlaybackPosition: () => position,
       getPlaybackBuffered: () => buffered,
     },

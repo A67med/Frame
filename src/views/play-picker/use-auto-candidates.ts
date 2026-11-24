@@ -7,7 +7,7 @@ import {
   streamMatchesReleaseLineage,
   streamMatchesSource,
   type PlaybackEntry,
-} from "@/lib/playback-history";
+} from "@/features/player/history";
 import type { SourceDescriptor } from "@/lib/together/protocol";
 import { buildMatchScores } from "@/lib/together/source-match";
 import { hostSourceStream } from "@/lib/together/host-stream";

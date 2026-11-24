@@ -58,8 +58,6 @@ const catalog06: Record<string, string> = {
   "Frame default": "Domyślne ustawienie Frame",
   "Frame does not host any manga or any sources. Connect a self-hosted server you run, install a source plugin from a repository you trust, or open a folder you already have.":
     "Frame nie udostępnia żadnych mang ani źródeł. Połącz się z własnym serwerem, zainstaluj wtyczkę źródła z zaufanego repozytorium lub otwórz posiadany folder.",
-  "Frame does not host any manga or any sources. Connect your own server or open a folder you already have, and mix as many as you like.":
-    "Frame nie udostępnia żadnych mang ani źródeł. Połącz własny serwer lub otwórz folder, który już masz, i łącz dowolną liczbę źródeł.",
   "Frame does not host any manga. Add a source plugin from a repository you trust, connect your own server, or open a local folder. You can turn this off anytime in Settings.":
     "Frame nie udostępnia żadnych mang. Dodaj wtyczkę źródła z zaufanego repozytorium, połącz się z własnym serwerem lub otwórz folder lokalny. Możesz to wyłączyć w dowolnym momencie w Ustawieniach.",
   "Frame double-checks with Stremio after saving, so a half-written order can't slip through.":
@@ -96,8 +94,6 @@ const catalog06: Record<string, string> = {
     "Frame wczytuje je automatycznie, gdy dostępna jest ścieżka w tym języku. Drugą ścieżkę dla pojedynczego filmu można również ustawić lub wyłączyć w menu napisów odtwarzacza.",
   "Frame loads the native svpflow filter through VapourSynth and starts SVP Manager when available. Restart playback to apply.":
     "Frame wczytuje natywny filtr svpflow przez VapourSynth i uruchamia SVP Manager, gdy jest dostępny. Uruchom odtwarzanie ponownie, aby zastosować zmiany.",
-  "Frame logs into nothing and bypasses no password, paywall, or access control, and must not be used to attempt it. Point it only at content you are legally allowed to read, and never at official or licensed publisher sites. You alone are responsible for what you connect and for following copyright and each site's terms. Frame bundles and endorses no sites.":
-    "Frame nie loguje się do żadnych usług ani nie omija haseł, zapór płatniczych czy kontroli dostępu i nie wolno go używać do takich prób. Wskazuj mu wyłącznie treści, do których masz legalny dostęp, nigdy oficjalne ani licencjonowane strony wydawców. Tylko Ty odpowiadasz za podłączane zasoby oraz przestrzeganie praw autorskich i warunków poszczególnych witryn. Frame nie zawiera ani nie promuje żadnych witryn.",
   "Frame needs a TMDB key for artwork, rows and collections. It is free.":
     "Frame potrzebuje klucza TMDB do grafik, rzędów i kolekcji. Klucz jest bezpłatny.",
   "Frame needs at least one streaming source before it can play {title}. Install a stream addon or add a debrid key in settings.":
@@ -142,10 +138,6 @@ const catalog06: Record<string, string> = {
     "Frame nie wysyła telemetrii. Blokuje też wychodzące żądania reklamowe, analityczne i śledzące wysyłane przez dodatki lub dostawców metadanych, zanim opuszczą Twój komputer.",
   "Frame ships a neutral trophy for every award. Install an icon pack or upload your own image per award to make them yours. Packs are hosted by whoever makes them, so the artwork is theirs, not bundled with Frame.":
     "Frame zawiera neutralne trofeum dla każdej nagrody. Zainstaluj pakiet ikon lub prześlij własny obraz dla każdej nagrody, aby nadać im osobisty charakter. Pakiety są hostowane przez ich twórców, więc grafiki należą do nich i nie są dołączone do Frame.",
-  "Frame ships no manga sources and hosts nothing. Extensions come from repositories other people maintain. Paste a repository URL below to browse its plugins, then install the ones you want. Every plugin runs sandboxed in an isolated worker with no access to your files, accounts, or the rest of the app.":
-    "Frame nie zawiera źródeł mangi ani niczego nie udostępnia. Rozszerzenia pochodzą z repozytoriów utrzymywanych przez inne osoby. Wklej poniżej URL repozytorium, aby przeglądać jego wtyczki, a następnie zainstaluj wybrane. Każda wtyczka działa w piaskownicy, w odizolowanym procesie roboczym bez dostępu do Twoich plików, kont ani pozostałej części aplikacji.",
-  "Frame ships the engine, not the sites. You write a short JSON config that describes a site with CSS selectors, and Frame reads the site with them. Nothing is bundled: point it only at sites you have the right to read.":
-    "Frame dostarcza mechanizm, nie witryny. Tworzysz krótki plik konfiguracyjny JSON opisujący witrynę za pomocą selektorów CSS, a Frame używa ich do odczytywania witryny. Nic nie jest dołączone, wskazuj wyłącznie witryny, do których masz prawo dostępu.",
   "Frame shows your AniList lists on the Anime page and keeps your progress in sync.":
     "Frame wyświetla Twoje listy AniList na stronie Anime i synchronizuje postęp.",
   "Frame signed you up but returned no session. Try signing in instead.":
@@ -224,7 +216,7 @@ const catalog06: Record<string, string> = {
   "Hardware acceleration (hwdec)": "Przyspieszenie sprzętowe (hwdec)",
   "Have a file?": "Masz plik?",
   "Have a token from another device?": "Masz token z innego urządzenia?",
-  Head: "Nagłówek",
+  "Head": "Nagłówek",
   "Head to Discover. Cinemeta and OpenSubtitles cover the basics; Torrentio + a debrid key cover almost everything else.":
     "Przejdź do sekcji Odkrywaj. Cinemeta i OpenSubtitles zapewniają podstawowe funkcje, a Torrentio z kluczem usługi debrid wystarczy do niemal całej reszty.",
   "Headings above every row on Home.": "Nagłówki nad każdym rzędem na ekranie głównym.",
@@ -242,22 +234,22 @@ const catalog06: Record<string, string> = {
     "Uwaga: {keys} mogą wczytywać zewnętrzne skrypty lub udostępniać odtwarzacz w sieci. Zachowaj te ustawienia tylko wtedy, gdy dokładnie wiesz, co robią.",
   'Heads-up: a few addons (like AIOStatus) don\'t pre-fill from the URL. If the form loads blank, paste the existing manifest URL into their "Import from URL" field to restore your settings.':
     "Uwaga: niektóre dodatki (np. AIOStatus) nie wypełniają formularza automatycznie na podstawie adresu URL. Jeśli formularz jest pusty, wklej adres URL istniejącego manifestu w polu „Importuj z adresu URL”, aby przywrócić ustawienia.",
-  Health: "Stan",
+  "Health": "Stan",
   "Health check returns 5xx": "Kontrola stanu zwraca błąd 5xx",
   "Heartbreak Chronicles": "Kroniki złamanych serc",
-  Heartstrings: "Chwyta za serce",
-  Heartwarming: "Wzruszające",
-  Heavy: "Duże obciążenie",
+  "Heartstrings": "Chwyta za serce",
+  "Heartwarming": "Wzruszające",
+  "Heavy": "Duże obciążenie",
   "Heavy Hitters": "Gwiazdy wagi ciężkiej",
-  Hebrew: "hebrajski",
-  Height: "Wzrost",
+  "Hebrew": "hebrajski",
+  "Height": "Wzrost",
   "Heists & Cons": "Napady i przekręty",
   "Hello World": "Hello World",
   "Help & feedback": "Pomoc i opinie",
   "Help & support": "Pomoc i wsparcie",
   "Help translate Frame": "Pomóż tłumaczyć Frame",
   "Here for the late-night sci-fi": "Jestem tu dla nocnego science fiction",
-  Hero: "Bohater",
+  "Hero": "Bohater",
   "Hero carousel, Top 10, Trending, In Theaters, per-service rails.":
     "Karuzela główna, Top 10, Popularne, W kinach oraz rzędy poszczególnych usług.",
   "Hero carousel, Top 10, Trending, In Theaters, per-service rails. Addon catalogs append underneath, deduped.":
@@ -267,7 +259,7 @@ const catalog06: Record<string, string> = {
   "Hero trailers": "Zwiastuny w sekcji głównej",
   "Hero, Top 10, Trending, In Theaters, per-service rails. Your addons append underneath.":
     "Baner główny, Top 10, Popularne, W kinach i sekcje poszczególnych serwisów. Katalogi z dodatków pojawią się poniżej.",
-  Hidden: "Ukryte",
+  "Hidden": "Ukryte",
   "Hidden Gems": "Ukryte perełki",
   "Hidden Gems from the {decade}": "Ukryte perełki z lat {decade}",
   "Hidden Gems on MAL": "Ukryte perełki na MAL",
@@ -280,7 +272,7 @@ const catalog06: Record<string, string> = {
   "Hidden gems": "Ukryte perełki",
   "Hidden language": "Ukryty język",
   "Hidden sections": "Ukryte sekcje",
-  Hide: "Ukryj",
+  "Hide": "Ukryj",
   "Hide HI/SDH": "Ukryj HI/SDH",
   "Hide Live TV": "Ukryj telewizję na żywo",
   "Hide adult addons": "Ukryj dodatki dla dorosłych",
@@ -323,8 +315,6 @@ const catalog06: Record<string, string> = {
   "Hide subtitles window": "Ukryj okno napisów",
   "Hide the full URL": "Ukryj pełny adres URL",
   "Hide the title": "Ukryj tytuł",
-  "Hide the top and bottom bars while reading. Arrows, page number, and bookmark stay; the bars return when your cursor reaches the screen edge.":
-    "Ukryj górny i dolny pasek podczas czytania. Strzałki, numer strony i zakładka pozostaną widoczne, a paski pojawią się ponownie, gdy kursor dotrze do krawędzi ekranu.",
   "Hide this": "Ukryj",
   "Hide this Skip button": "Ukryj ten przycisk pomijania",
   "Hide this catalog": "Ukryj ten katalog",
@@ -349,7 +339,7 @@ const catalog06: Record<string, string> = {
     "Ukrywa strumienie, w których nie wykryto żadnego preferowanego języka. Wydania z wieloma ścieżkami dźwiękowymi są uznawane za zgodne.",
   "Hides the button on its own after a few seconds so a wrong one doesn't sit there the whole episode.":
     "Automatycznie ukrywa przycisk po kilku sekundach, aby błędny przycisk nie pozostawał widoczny przez cały odcinek.",
-  High: "Wysoki",
+  "High": "Wysoki",
   "High is sized to your screen and looks identical to full res on far less memory. Balanced saves the most. Maximum keeps original resolution.":
     "Ustawienie Wysokie dopasowuje rozmiar do ekranu i wygląda identycznie jak pełna rozdzielczość, zużywając znacznie mniej pamięci. Zrównoważone oszczędza najwięcej. Maksymalne zachowuje oryginalną rozdzielczość.",
   "High quality": "Wysoka jakość",
@@ -358,12 +348,12 @@ const catalog06: Record<string, string> = {
   "High-quality episode images": "Obrazy odcinków w wysokiej jakości",
   "Higher quality · slower": "Wyższa jakość · wolniejszy",
   "Highest rated": "Najwyżej oceniane",
-  Highlight: "Wyróżnienie",
+  "Highlight": "Wyróżnienie",
   "Highlight {color}": "Wyróżnienie: {color}",
   "Highlight, progress.": "Wyróżnienie, postęp.",
   "Highlighted blocks.": "Wyróżnione bloki.",
   "Highlighted passage": "Wyróżniony fragment",
-  Highlights: "Najważniejsze informacje",
+  "Highlights": "Najważniejsze informacje",
   "Highly Rated, Quietly Loved": "Wysoko oceniane, po cichu uwielbiane",
   "Highly rated by the community": "Wysoko oceniane przez społeczność",
   "Highly recommended. This is what gives you the full Frame experience: Popular, Trending, In Theaters, and per-service rails. Free at":
@@ -372,10 +362,10 @@ const catalog06: Record<string, string> = {
   "His Comedy": "Jego komedie",
   "Historical Drama": "Dramat historyczny",
   "History Buff": "Dla miłośników historii",
-  Hit: "Kliknij",
+  "Hit": "Kliknij",
   "Hit your daily quota? Use Frame's public relay, or host your own.":
     "Wyczerpano dzienny limit? Użyj publicznego przekaźnika Frame albo uruchom własny.",
-  Hits: "Odbicia",
+  "Hits": "Odbicia",
   "Hitting Play jumps straight into playback with the best stream Frame finds.":
     "Naciśnięcie przycisku Odtwórz natychmiast rozpoczyna odtwarzanie najlepszego strumienia znalezionego przez Frame.",
   "Hitting Play opens the source list so you can choose quality, debrid, and audio yourself.":
@@ -410,14 +400,13 @@ const catalog06: Record<string, string> = {
     "Styl strony głównej (wyselekcjonowany przez Frame / klasyczny Stremio)",
   "Home · Continue Watching": "Ekran główny · Oglądaj dalej",
   "Honored writers": "Uhonorowani scenarzyści",
-  Hoopla: "Hoopla",
-  Horizontal: "Poziomo",
+  "Hoopla": "Hoopla",
+  "Horizontal": "Poziomo",
   "Horizontal view": "Widok poziomy",
   "Horror & Supernatural": "Horror i zjawiska nadprzyrodzone",
-  Host: "Gospodarz",
+  "Host": "Gospodarz",
   "Host is watching": "Host ogląda",
-  "Host it with a repo.json": "Udostępnij za pomocą repo.json",
-  Hotkeys: "Skróty klawiszowe",
+  "Hotkeys": "Skróty klawiszowe",
   "Hotkeys / keyboard shortcuts": "Skróty klawiszowe",
   "Hover a band to inspect a pillar": "Najedź na pasmo, aby sprawdzić filar",
   "Hover a poster to peek at its rating, runtime, and synopsis without opening it.":
@@ -512,10 +501,10 @@ const catalog06: Record<string, string> = {
   "How to make an award pack": "Jak utworzyć pakiet nagród",
   "How you appear in Watch Together, sessions, and chat. Sits on top of your Stremio account.":
     "Określa, jak wyświetlasz się w funkcji Wspólne oglądanie, sesjach i na czacie. Działa jako warstwa na koncie Stremio.",
-  Huge: "Ogromny",
+  "Huge": "Ogromny",
   "Hugo Award Winners": "Laureaci Nagrody Hugo",
-  Hulu: "Hulu",
-  Hungarian: "węgierski",
+  "Hulu": "Hulu",
+  "Hungarian": "węgierski",
   "I already have a TMDB account": "Mam już konto TMDB",
   "I already have one": "Już mam konto",
   "I authorized it": "Autoryzacja zakończona",
@@ -526,11 +515,11 @@ const catalog06: Record<string, string> = {
   "I've saved my recovery code somewhere safe.":
     "Kod odzyskiwania został przeze mnie zapisany w bezpiecznym miejscu.",
   "IBM Plex": "IBM Plex",
-  ID: "ID",
+  "ID": "ID",
   "ID prefixes": "Prefiksy identyfikatorów",
   "IMDb Top": "IMDb Top",
   "IPTV lists": "Listy IPTV",
-  Icon: "Ikona",
+  "Icon": "Ikona",
   "Icon locked": "Ikona zablokowana",
   "Icon must be under {max} KB. Yours is {size} KB.":
     "Ikona musi mieć mniej niż {max} KB. Twoja ma {size} KB.",
@@ -547,7 +536,7 @@ const catalog06: Record<string, string> = {
   "Identify this title before exporting.": "Rozpoznaj ten tytuł przed eksportem.",
   "Identity matches from content hashing and the community database always apply on their own. Timing worked out from the audio only offers a fix until it has earned trust. Turn this on to let those audio-derived fixes apply automatically too.":
     "Dopasowania tożsamości na podstawie skrótu zawartości i społecznościowej bazy danych są zawsze stosowane automatycznie. Korekta czasu wyliczona wyłącznie z dźwięku jest tylko proponowana, dopóki nie zyska wiarygodności. Włącz tę opcję, aby automatycznie stosować również korekty uzyskane z dźwięku.",
-  Idle: "Bezczynny",
+  "Idle": "Bezczynny",
   "Idle for now": "Na razie bezczynne",
   "If a stream hasn't started playing in time (a dead source or an addon that's down), automatically try the next available stream. Off by default.":
     "Jeśli strumień nie zacznie się odtwarzać w wyznaczonym czasie, na przykład z powodu niedziałającego źródła lub dodatku, automatycznie wypróbuj następny dostępny strumień. Domyślnie wyłączone.",
@@ -594,7 +583,7 @@ const catalog06: Record<string, string> = {
     "Pomiń płatne plany. Użytek osobisty jest bezpłatny, nie jesteś firmą. Wybierz pierwszą opcję i przejdź dalej.",
   "Ignore this title": "Ignoruj ten tytuł",
   "Ignored titles": "Ignorowane tytuły",
-  Image: "Obraz",
+  "Image": "Obraz",
   "Image URL (optional)": "Adres URL obrazu (opcjonalnie)",
   "Image bar active. Pick a style above to switch back, or clear the image below.":
     "Aktywny jest pasek z obrazem. Wybierz styl powyżej, aby wrócić do zwykłego paska, lub usuń obraz poniżej.",
@@ -606,11 +595,9 @@ const catalog06: Record<string, string> = {
   "Image {n}": "Obraz {n}",
   "Images and video from https or data URLs.":
     "Obrazy i wideo z adresów https lub adresów URL typu data.",
-  "Implement the MangaProvider object: popular, search, detail, chapters, pageUrls, and optional tags. Nothing else.":
-    "Zaimplementuj obiekt MangaProvider: popular, search, detail, chapters, pageUrls oraz opcjonalnie tags. Nic więcej.",
   "Implement the {provider} object: popular, search, detail, chapters, {contentMethod}, and optional tags. Nothing else.":
     "Zaimplementuj obiekt {provider}: popular, search, detail, chapters, {contentMethod} oraz opcjonalnie tags. Nic więcej.",
-  Import: "Importuj",
+  "Import": "Importuj",
   "Import JavaScript sources": "Zaimportuj źródła JavaScript",
   "Import a .zip pack": "Importuj pakiet .zip",
   "Import a Theme": "Importuj motyw",
@@ -635,7 +622,7 @@ const catalog06: Record<string, string> = {
   "Import images or .zip": "Importuj obrazy lub plik .zip",
   "Import ratings": "Importuj oceny",
   "Import your ratings": "Zaimportuj swoje oceny",
-  Imported: "Zaimportowano",
+  "Imported": "Zaimportowano",
   "Imported and now playing": "Zaimportowano i rozpoczęto odtwarzanie",
   "Imported {n} ratings from {name}": "Zaimportowano {n} ocen z {name}",
   "Imported {n} sources": "Zaimportowano {n} źródeł",
@@ -671,20 +658,20 @@ const catalog06: Record<string, string> = {
   "In {name}": "W {name}",
   "In {providers}": "W {providers}",
   "In-app browser": "Przeglądarka w aplikacji",
-  Inactive: "Nieaktywny",
+  "Inactive": "Nieaktywny",
   "Includes Comet, MediaFusion, AIOStreams, StremThru, Jackettio and more, plus TorBox and Usenet accounts. No Docker, no server, no config.":
     "Obejmuje Comet, MediaFusion, AIOStreams, StremThru, Jackettio i inne dodatki, a także konta TorBox i Usenet. Bez Dockera, serwera ani konfiguracji.",
   "Increase interface scale": "Zwiększ skalę interfejsu",
   "Increase progress": "Zwiększ postęp",
   "Increase {name}": "Zwiększ {name}",
-  Independent: "Niezależne",
+  "Independent": "Niezależne",
   "Independent film": "Kino niezależne",
-  India: "Indie",
+  "India": "Indie",
   "Indian Films": "Filmy indyjskie",
   "Indy & Beyond": "Indy i nie tylko",
-  Info: "Informacje",
+  "Info": "Informacje",
   "Info modal": "Okno informacji",
-  Information: "Informacje",
+  "Information": "Informacje",
   "Initial delay": "Opóźnienie początkowe",
   "Injected ad": "Reklama dodana do strumienia",
   "Injected ad skip (experimental)": "Pomijanie wstrzykniętych reklam (eksperymentalne)",
@@ -694,13 +681,11 @@ const catalog06: Record<string, string> = {
   "Ink density": "Intensywność pisma",
   "Insecticide-treated nets. One of the most cost-effective interventions measured.":
     "Moskitiery nasączone środkiem owadobójczym. Jedna z najbardziej opłacalnych spośród przebadanych form pomocy.",
-  Insert: "Wstaw",
+  "Insert": "Wstaw",
   "Insert starter": "Wstaw szablon",
-  "Inside it, one folder per manga, named like the title.":
-    "Wewnątrz utwórz po jednym folderze na każdą mangę i nazwij go tak jak tytuł.",
   "Inside the playback view.": "W widoku odtwarzania.",
   "Insomnia Lineup": "Repertuar dla bezsennych",
-  Inspector: "Inspektor",
+  "Inspector": "Inspektor",
   "Install Media Assistant": "Zainstaluj Media Assistant",
   "Install SVP once (the free tier is enough). It bundles VapourSynth + svpflow; Frame reuses them, no extra setup.":
     "Zainstaluj SVP jeden raz (wystarczy bezpłatny plan). Pakiet zawiera VapourSynth + svpflow, które Frame wykorzysta bez dodatkowej konfiguracji.",
@@ -719,7 +704,6 @@ const catalog06: Record<string, string> = {
     "Zainstaluj ffmpeg za pomocą systemowego menedżera pakietów (apt, dnf, pacman, zypper itp.).",
   "Install from URL: paste any manifest or stremio:// link":
     "Instalacja z adresu URL: wklej dowolny manifest lub link stremio://",
-  "Install it in Extensions": "Zainstaluj w Rozszerzeniach",
   "Install it.": "Zainstaluj go.",
   "Install more shaders in Settings, Shaders to switch between them here.":
     "Zainstaluj więcej shaderów w Ustawieniach, w sekcji Shadery, aby przełączać je tutaj.",
@@ -737,7 +721,7 @@ const catalog06: Record<string, string> = {
   "Installed via {label}": "Zainstalowano przez {label}",
   "Installed via {name}": "Zainstalowano przez {name}",
   "Installed {title}": "Zainstalowano {title}",
-  Installing: "Instalowanie",
+  "Installing": "Instalowanie",
   "Installing and ordering addons on the TV. Addon lists already travel with your account, so install here and the TV picks them up.":
     "Instalowanie i porządkowanie dodatków na telewizorze. Listy dodatków są już synchronizowane z kontem, więc zainstaluj je tutaj, a telewizor automatycznie je pobierze.",
   "Installing {name}": "Instalowanie {name}",
@@ -745,48 +729,48 @@ const catalog06: Record<string, string> = {
   "Installing. Frame will restart.": "Instalowanie. Frame uruchomi się ponownie.",
   "Installing...": "Instalowanie...",
   "Installing…": "Instalowanie…",
-  Instant: "Natychmiast",
+  "Instant": "Natychmiast",
   "Instant Play: clicking Play queues the next stream automatically.":
     "Odtwarzanie natychmiastowe: kliknięcie przycisku Odtwórz automatycznie dodaje następny strumień do kolejki.",
   "Instant play": "Odtwarzanie natychmiastowe",
   "Instant play on the TV": "Odtwarzanie natychmiastowe na telewizorze",
-  Integrations: "Integracje",
-  Intelligence: "Inteligencja",
-  Inter: "Inter",
-  Interceptions: "Przechwyty",
-  Interface: "Interfejs",
+  "Integrations": "Integracje",
+  "Intelligence": "Inteligencja",
+  "Inter": "Inter",
+  "Interceptions": "Przechwyty",
+  "Interface": "Interfejs",
   "Interface language": "Język interfejsu",
   "Interface scale": "Skala interfejsu",
   "Interface scale (accessibility)": "Skala interfejsu (ułatwienia dostępu)",
   "Interface sounds": "Dźwięki interfejsu",
   "Interface sounds on the TV": "Dźwięki interfejsu na telewizorze",
-  Internals: "Mechanizmy wewnętrzne",
+  "Internals": "Mechanizmy wewnętrzne",
   "Internet speed": "Szybkość internetu",
   "Internet speed / bandwidth": "Szybkość internetu / przepustowość",
   "Interpolates frames for smoother panning, best on anime. Needs a display refresh rate above the video's frame rate, and can stutter on weak GPUs. mpv only.":
     "Interpoluje klatki, zapewniając płynniejszy ruch kamery, szczególnie w anime. Wymaga częstotliwości odświeżania ekranu wyższej niż liczba klatek filmu i może zacinać się na słabszych kartach graficznych. Tylko mpv.",
   "Interpolation invents frames between the drawn ones, so a pan travels in many small moves instead of a few big jumps.":
     "Interpolacja tworzy klatki pomiędzy wyrenderowanymi klatkami, dzięki czemu ruch panoramiczny składa się z wielu małych przesunięć zamiast kilku dużych skoków.",
-  Interrupted: "Przerwano",
+  "Interrupted": "Przerwano",
   "Interrupted: re-download to finish": "Przerwano: pobierz ponownie, aby dokończyć",
   "Into the Stars": "Wśród gwiazd",
   "Into the Wild": "W dziczy",
-  Intros: "Czołówki",
+  "Intros": "Czołówki",
   "Invent your own award types": "Twórz własne typy nagród",
-  Invert: "Odwróć zaznaczenie",
+  "Invert": "Odwróć zaznaczenie",
   "Investigative Docs": "Dokumenty śledcze",
-  Invite: "Zaproś",
+  "Invite": "Zaproś",
   "Invite a member": "Zaproś członka",
   "Invite link": "Link z zaproszeniem",
   "Invite member": "Zaproś członka",
   "Invite only": "Tylko na zaproszenie",
   "Invite via link": "Zaproś przez link",
   "Invited by {name}": "Zaproszenie od {name}",
-  Invites: "Zaproszenia",
+  "Invites": "Zaproszenia",
   "Is the channel playing right?": "Czy odtwarzany jest właściwy kanał?",
-  Isekai: "Isekai",
+  "Isekai": "Isekai",
   "Issue #{ticket}": "Zgłoszenie #{ticket}",
-  Issues: "Problemy",
+  "Issues": "Problemy",
   "It goes to a quick review, then it's live for everyone.":
     "Motyw przejdzie krótką weryfikację, a następnie będzie dostępny dla wszystkich.",
   "It is not affiliated with the maker of {product}, or with any company, addon author, or trademark holder referenced inside the app.":
@@ -799,8 +783,6 @@ const catalog06: Record<string, string> = {
     "Ten profil zarządza profilami i nie można go usunąć. Przekaż rolę profilu głównego innemu profilowi, aby usunąć ten profil.",
   "It may be invite only, or it no longer exists.":
     "Grupa może być dostępna tylko na zaproszenie albo już nie istnieć.",
-  "It may be rate limiting or temporarily down. Try again, or switch to another source.":
-    "Źródło może ograniczać częstotliwość żądań lub być tymczasowo niedostępne. Spróbuj ponownie albo wybierz inne źródło.",
   "It only runs when you tap that button, so it never costs anything unless you ask.":
     "Działa tylko po naciśnięciu tego przycisku, więc nic nie kosztuje, dopóki nie wyślesz zapytania.",
   "It replies with your numeric ID. Copy that number. Paste it into the":
@@ -808,13 +790,13 @@ const catalog06: Record<string, string> = {
   "It updates automatically; nothing to do.":
     "Aktualizuje się automatycznie, nie musisz nic robić.",
   "Italian Films": "Filmy włoskie",
-  Italic: "Kursywa",
-  Italy: "Włochy",
+  "Italic": "Kursywa",
+  "Italy": "Włochy",
   "JMAF (detail logo)": "JMAF (logo szczegółowości)",
   "JPEG / PNG / WebP. Big files auto-compress to fit.":
     "JPEG / PNG / WebP. Duże pliki są automatycznie kompresowane, aby się zmieściły.",
   "JSON (.json)": "JSON (.json)",
-  Japan: "Japonia",
+  "Japan": "Japonia",
   "Japan Media Arts Festival": "Japan Media Arts Festival",
   "Japanese Films": "Filmy japońskie",
   "Jazz & Showbiz": "Jazz i show-biznes",

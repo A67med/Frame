@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import { subscribe as subscribeTaste } from "@/lib/discover/store";
+import { subscribe as subscribeTaste } from "@/features/discovery/discover/store";
 import { getDownvotedIds, getUpvotedIds, subscribePrefs } from "@/lib/feed/preferences";
-import { recentlyPlayed, subscribePlayback, watchTitleKey } from "@/lib/playback-history";
+import { recentlyPlayed, subscribePlayback, watchTitleKey } from "@/features/player/history";
 import {
   animeFranchiseKey,
   jikanByGenre,

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import { suwayomiAuthFor } from "@/lib/manga/sources/suwayomi/auth-registry";
 import { useSettings } from "@/lib/settings";
 
 const isTauri = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
@@ -28,7 +27,6 @@ export function needsImageProxy(url: string): boolean {
   if (!isTauri) return false;
   // An <img> tag cannot send an Authorization header, so any server behind
   // basic auth must be fetched through Rust regardless of scheme.
-  if (suwayomiAuthFor(url)) return true;
   if (!url.startsWith("http://")) return false;
   try {
     const host = new URL(url).hostname.toLowerCase();
@@ -81,15 +79,12 @@ function proxyImage(url: string, thumbWidthPx?: number): Promise<string | null> 
   if (existing) return existing;
   const p = (async () => {
     try {
-      const auth = suwayomiAuthFor(url);
       const resp = await invoke<HarborFetchResponse>("harbor_fetch", {
         args: {
           url,
           method: "GET",
           responseType: "base64",
           timeoutMs: 30000,
-          headers: auth ? { authorization: auth } : undefined,
-          allowLocalNetwork: Boolean(auth),
           thumbWidthPx,
         },
       });

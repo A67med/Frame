@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import type { TmdbDetail } from "../tmdb/tmdb-details";
 
 // IMDb's public GraphQL endpoint, the same keyless source as lib/providers/harbor-imdb.ts.

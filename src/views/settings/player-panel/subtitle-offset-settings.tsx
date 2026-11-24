@@ -1,7 +1,10 @@
 import { Captions } from "../icons";
 import { SubtitleOffsetIndicator } from "@/components/player/subtitle-offset-indicator";
 import { useT } from "@/lib/i18n";
-import type { SubtitleOffsetPosition, SubtitleOffsetSize } from "@/lib/player/subtitle-offset";
+import type {
+  SubtitleOffsetPosition,
+  SubtitleOffsetSize,
+} from "@/features/player/engine/subtitle-offset";
 import { useSettings } from "@/lib/settings";
 import { Segmented, ToggleRow } from "../shared";
 import { SettingGroup } from "../kit";

@@ -9,7 +9,7 @@ import {
 } from "@/lib/awards-history";
 import { peekRankSnapshot } from "@/lib/harbor-rank";
 import type { Meta } from "@/lib/cinemeta";
-import { getStore } from "@/lib/discover/store";
+import { getStore } from "@/features/discovery/discover/store";
 import { fetchGenreSample, selectDailyRows } from "@/lib/feed";
 import { fetchRankList, type HarborRankExplanation } from "@/lib/harbor-rank";
 import { CATALOG_REQUEST_TIMEOUT_MS, withTimeout } from "@/lib/progressive-rows";

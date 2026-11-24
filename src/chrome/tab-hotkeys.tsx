@@ -6,7 +6,7 @@ import {
   shouldHandleGlobalKeyboardEvent,
 } from "@/lib/hotkeys";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { applyNavCustomization, useAvailableNavItems } from "./nav-items";
 import { usePreviewNavCustomization } from "@/lib/theme-preview";
 

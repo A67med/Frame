@@ -6,7 +6,7 @@ import {
   desiredSubtitleIsEmbedded,
   pickDesiredSubtitleTrack,
   subtitleAutoSelectionSignature,
-} from "../src/lib/subtitles/track-selection.ts";
+} from "../src/features/subtitles/track-selection.ts";
 
 test("late language discovery invalidates selection and enables embedded selection", () => {
   const track = { id: "1", lang: "", external: false };

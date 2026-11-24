@@ -8,7 +8,7 @@ import {
   flushBridge,
   playerSnapshotChanged,
 } from "./helpers/mpv-bridge-harness.ts";
-import { emptySnapshot } from "../src/lib/player/bridge.ts";
+import { emptySnapshot } from "../src/features/player/engine/bridge.ts";
 
 const tracks = [
   { type: "sub", id: 1, lang: "en", selected: true },

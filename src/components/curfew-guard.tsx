@@ -4,8 +4,8 @@ import { FrameMark } from "@/components/icons/frame-mark";
 import { loadCurfew, saveCurfew, type CurfewRecord } from "@/lib/curfew";
 import { useT } from "@/lib/i18n";
 import { verifyProfilePassword } from "@/lib/profile-password";
-import { useProfiles, type Profile } from "@/lib/profiles";
-import { useView } from "@/lib/view";
+import { useProfiles, type Profile } from "@/features/profiles/profiles";
+import { useView } from "@/app/navigation/view";
 
 export function CurfewGuard() {
   const { activeProfile, openPicker } = useProfiles();

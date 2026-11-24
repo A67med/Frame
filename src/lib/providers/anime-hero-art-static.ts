@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { HARBOR_DATA_BASE } from "@/lib/config/endpoints";
 import { readHeroArtCache, writeHeroArtCache } from "./anime-hero-art-cache";
 

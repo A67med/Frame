@@ -11,9 +11,12 @@ test("stream proxy and prebuffer use the tested redirect policy", () => {
 });
 
 test("native plugin fetch strips unknown credential names at origin changes", () => {
-  const source = readFileSync(new URL("../src-tauri/src/http_fetch.rs", import.meta.url), "utf8");
+  const source = readFileSync(
+    new URL("../src-tauri/src/infrastructure/networking/http_fetch.rs", import.meta.url),
+    "utf8",
+  );
   assert.match(
     source,
-    /if cross_origin \{\s*subtitle_credential = None;\s*headers.retain\(\|\(name, _\)\| crate::http_redirect::safe_cross_origin_header\(name\)\);/,
+    /if cross_origin \{\s*subtitle_credential = None;\s*headers.retain\(\|\(name, _\)\| http_redirect::safe_cross_origin_header\(name\)\);/,
   );
 });

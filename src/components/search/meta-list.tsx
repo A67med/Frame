@@ -1,10 +1,10 @@
 import { Star } from "lucide-react";
 import type { Meta } from "@/lib/cinemeta";
 import { useT } from "@/lib/i18n";
-import { useInWatchlist } from "@/lib/watchlist";
-import { useInLocalLibrary } from "@/lib/local-library";
+import { useInWatchlist } from "@/features/watchlist/watchlist";
+import { useInLocalLibrary } from "@/features/library/local-library";
 import { ResultPoster } from "./result-poster";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 function MetaRow({ m, onClose, index }: { m: Meta; onClose: () => void; index?: number }) {
   const { openMeta } = useView();

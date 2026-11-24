@@ -5,7 +5,7 @@ import { AwardLogo, laurelColorFor } from "@/components/icons/award-logo";
 import { Laurel } from "@/components/icons/laurel";
 import { useT } from "@/lib/i18n";
 import type { AwardEntry, AwardType } from "@/lib/providers/wikidata";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { meta as cinemetaMeta, type Meta } from "@/lib/cinemeta";
 
 const TOOLTIP_WIDTH = 360;

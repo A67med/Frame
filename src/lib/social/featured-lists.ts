@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { authToken, currentAuthor } from "@/lib/theme-auth";
 import { readLists, type CustomList } from "@/lib/custom-lists";
 import { bakeDefaultPosters } from "./featured-posters";

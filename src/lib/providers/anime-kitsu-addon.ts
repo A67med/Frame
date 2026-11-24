@@ -1,6 +1,6 @@
 import { lruSet } from "@/lib/cache";
 import { registerCache } from "@/lib/memory-profiler";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 const HOST = "https://anime-kitsu.strem.fun";
 const TTL = 6 * 60 * 60 * 1000;

@@ -2,9 +2,9 @@ import type {
   PluginHealth,
   PluginLogLine,
   StreamPluginSettingsField,
-} from "@/lib/streams/plugins/types";
+} from "@/features/addons/streams/types";
 
-export type PluginKind = "stream" | "manga" | "ebook";
+export type PluginKind = "stream";
 
 export type PluginState =
   | "ok"

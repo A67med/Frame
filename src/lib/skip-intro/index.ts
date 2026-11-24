@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Meta } from "../cinemeta";
-import type { Chapter } from "../player/bridge";
-import type { PlayEpisode, PlayerStreamRef } from "../view";
+import type { Chapter } from "../../features/player/engine/bridge";
+import type { PlayEpisode, PlayerStreamRef } from "../../app/navigation/view";
 import { animeIdentityEligible, resolveAnimeIdentity } from "../streams/anime-identity";
 import { fetchAdSegments } from "./adcorpus";
 import { fingerprint } from "./fingerprint";

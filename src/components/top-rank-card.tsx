@@ -13,8 +13,8 @@ import {
 import { useT } from "@/lib/i18n";
 import { useTmdbImdbId } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
-import { useInWatchlist } from "@/lib/watchlist";
+import { useView } from "@/app/navigation/view";
+import { useInWatchlist } from "@/features/watchlist/watchlist";
 import { Poster, usePosterChain } from "./poster";
 
 function AwardDot({ name, year }: { name: string; year?: number }) {

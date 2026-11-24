@@ -9,7 +9,7 @@ import {
 } from "react";
 import { anyTabLocked, DEFAULT_HIDDEN, type HiddenTabs, type LockableTab } from "./lockable-tabs";
 import { hashProfilePassword, verifyProfilePassword } from "./profile-password";
-import { useProfiles } from "./profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 
 export { LOCKABLE_TABS, type LockableTab, type HiddenTabs } from "./lockable-tabs";
 

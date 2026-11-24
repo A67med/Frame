@@ -6,9 +6,9 @@ import type { Addon } from "@/lib/addons";
 import { useAuth } from "@/lib/auth";
 import { captureFocusReturn, tvFocus } from "@/lib/keyboard-navigation";
 import { isBackKey, navOwnsFocus } from "@/lib/keyboard-navigation/geometry";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
-import { requestAddonsTab } from "@/views/addons";
+import { requestAddonsTab } from "@/features/addons/views/addons";
 import { SettingRow } from "../kit";
 import { SButton } from "../ui";
 

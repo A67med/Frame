@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import { isAdultText } from "../src/lib/addons-store/adult-filter.ts";
+import { isAdultText } from "../src/features/addons/catalog/adult-filter.ts";
 import type { Addon } from "../src/lib/addons.ts";
 
 function addon(transportUrl: string, id = "test.streams", adult = false): Addon {
@@ -48,9 +48,9 @@ async function catalog(local: Addon[], account: Addon[], adultsAllowed = false) 
     "./community": { fetchCommunityAddons: async () => [], fetchManifest: async () => null },
     "./curated": { CURATED_ADDONS: [] },
   };
-  const exports = {} as typeof import("../src/lib/addons-store/store.ts");
+  const exports = {} as typeof import("../src/features/addons/catalog/store.ts");
   const compiled = ts.transpileModule(
-    readFileSync(new URL("../src/lib/addons-store/store.ts", import.meta.url), "utf8"),
+    readFileSync(new URL("../src/features/addons/catalog/store.ts", import.meta.url), "utf8"),
     {
       compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
     },

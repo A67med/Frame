@@ -1,8 +1,8 @@
 import type { Meta } from "@/lib/cinemeta";
-import { toggleWatchlist, watchlistHas } from "@/lib/watchlist";
+import { toggleWatchlist, watchlistHas } from "@/features/watchlist/watchlist";
 import { markMetaWatched, unmarkMetaWatched } from "@/lib/mark-watched";
 import { setMediaFavorite } from "@/lib/media-favorites";
-import { readActiveProfileIdentity } from "@/lib/profiles";
+import { readActiveProfileIdentity } from "@/features/profiles/profiles";
 import { resolveSimklTarget } from "@/lib/simkl/ids";
 import { setSimklStatus, clearSimklStatus } from "@/lib/simkl/list-status";
 import { resolveAnilistMediaId } from "@/lib/anilist/sync";

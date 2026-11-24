@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import { useSettings } from "@/lib/settings";
 import { makeSafeTauriUnlisten } from "@/lib/tauri-unlisten";
 

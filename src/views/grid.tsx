@@ -7,7 +7,8 @@ import type { Meta } from "@/lib/cinemeta";
 import { useT } from "@/lib/i18n";
 import { layoutHasGlobalBack } from "@/lib/theme";
 import { useSettings } from "@/lib/settings";
-import { useScrollMemory, useView, type GridSpec } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView, type GridSpec } from "@/app/navigation/view";
 
 const PAGE_CAP = 40;
 

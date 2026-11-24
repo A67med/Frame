@@ -1,6 +1,6 @@
 import { Channel, invoke } from "@tauri-apps/api/core";
 import { HARBOR_RELEASES_URL } from "@/lib/config/endpoints";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 export type HandoffProbe = {
   supported: boolean;

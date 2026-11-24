@@ -14,7 +14,7 @@ import {
 import { useTmdbImdbId } from "@/lib/providers/tmdb";
 import { awardSummary, type AwardType } from "@/lib/providers/wikidata";
 import { useSettings } from "@/lib/settings";
-import { useInWatchlist } from "@/lib/watchlist";
+import { useInWatchlist } from "@/features/watchlist/watchlist";
 import { bpClassicAwardLabel } from "./bp-award-mark";
 import { BpWatchlistMark } from "./bp-card-state-marks";
 import { useBpT } from "./bp-i18n";

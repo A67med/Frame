@@ -3,7 +3,11 @@ import "./_localstorage-stub.ts";
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { frameProfileId, type Profile, type ProfilesState } from "../src/lib/profiles.tsx";
+import {
+  frameProfileId,
+  type Profile,
+  type ProfilesState,
+} from "../src/features/profiles/profiles.tsx";
 
 function profile(id: string, extra: Partial<Profile> = {}): Profile {
   return {

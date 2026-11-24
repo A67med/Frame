@@ -1,5 +1,5 @@
 import { withMetaCache } from "@/lib/cinemeta-cache";
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 
 const CINEMETA = "https://v3-cinemeta.strem.io";
 

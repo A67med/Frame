@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Плагины",
-  Repositories: "Репозитории",
+  "Plugins": "Плагины",
+  "Repositories": "Репозитории",
   "Installed plugins": "Установленные плагины",
   "Plugin repositories": "Репозитории плагинов",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -33,8 +33,8 @@ const plugins: Record<string, string> = {
     "Добавьте репозиторий, затем установите нужных провайдеров. Они появятся здесь.",
   "Add a repository": "Добавить репозиторий",
   "Movies and series": "Фильмы и сериалы",
-  Script: "Скрипт",
-  Verified: "Проверено",
+  "Script": "Скрипт",
+  "Verified": "Проверено",
   "v{version} available": "Доступна v{version}",
   "Paused after {n} failures. Turn it back on to try again.":
     "Приостановлен после {n} сбоев. Включите снова, чтобы повторить попытку.",
@@ -61,7 +61,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} из {repo}, установлен {when}.",
   "Update to v{version}": "Обновить до v{version}",
   "Revert to v{version}": "Вернуть v{version}",
-  Reaches: "Обращается к",
+  "Reaches": "Обращается к",
   "Any public website. This plugin did not say which sites it uses.":
     "Любой публичный сайт. Этот плагин не указал, какие сайты использует.",
   "Seen so far: {hosts}": "Замечено: {hosts}",
@@ -124,7 +124,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "Удалить и деинсталлировать {count}?",
   "Could not reach this repository. Installed plugins keep working.":
     "Не удалось связаться с репозиторием. Установленные плагины продолжают работать.",
-  "This repository lists no plugins.": "В этом репозитории нет плагинов.",
   "This repository is not for stream plugins.": "Этот репозиторий не для плагинов потоков.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "Не плагин потоков: не экспортирует функцию getStreams или streams.",

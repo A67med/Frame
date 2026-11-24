@@ -1,7 +1,7 @@
 import { enterBigPicture } from "@/lib/big-picture";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { SFX } from "@/lib/sfx";
 import { shouldOfferBigPicture } from "@/views/big-picture/bp-logic";
 

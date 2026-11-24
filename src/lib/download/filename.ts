@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 const ILLEGAL = /[<>:"/\\|?*\x00-\x1F]/g;
 const TRAILING = /[. ]+$/g;

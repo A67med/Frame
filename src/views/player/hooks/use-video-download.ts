@@ -12,7 +12,7 @@ import {
 import { buildDefaultFilename, extensionFromUrl } from "@/lib/download/filename";
 import { useSettings } from "@/lib/settings";
 import { isWindowsDesktop } from "@/lib/platform";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 export type DownloadStatus =
   | { kind: "idle" }

@@ -1,7 +1,7 @@
 import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 import { getCurrentWindow } from "@tauri-apps/api/window";
-import { isPlayerInteractionLocked } from "@/lib/player/interaction-lock";
+import { isPlayerInteractionLocked } from "@/features/player/engine/interaction-lock";
 import { isWindowsDesktop } from "@/lib/platform";
 
 const isTauri = () => typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;

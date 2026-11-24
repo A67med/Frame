@@ -2,7 +2,7 @@ import { Poster } from "@/components/poster";
 import { Row } from "@/components/row";
 import { useT } from "@/lib/i18n";
 import { IMG } from "@/lib/providers/tmdb/tmdb-client";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { COLLAB_RAIL_MIN, type Collaborator } from "./collaborator-rank";
 
 export function CollaboratorRail({ people }: { people: Collaborator[] }) {

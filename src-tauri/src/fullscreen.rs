@@ -85,7 +85,10 @@ fn enter_fullscreen(
         let mut saved = saved.lock().unwrap();
         // Preserve the original snapshot if the OS temporarily drops fullscreen
         // and the player reasserts it before the user has actually exited.
-        saved.get_or_insert(SavedWindowState { maximized, geometry });
+        saved.get_or_insert(SavedWindowState {
+            maximized,
+            geometry,
+        });
         main.set_fullscreen(true)
             .map_err(|e| format!("set_fullscreen(true): {}", e))?;
         let _ = main.set_focus();
@@ -135,7 +138,10 @@ fn exit_fullscreen(
                 let _ = main.center();
             }
         } else if is_fs {
-            let _ = main.set_size(tauri::LogicalSize { width: 1280.0, height: 800.0 });
+            let _ = main.set_size(tauri::LogicalSize {
+                width: 1280.0,
+                height: 800.0,
+            });
             let _ = main.center();
         }
         let _ = main.set_focus();

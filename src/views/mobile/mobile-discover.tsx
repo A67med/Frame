@@ -3,7 +3,7 @@ import type { Meta } from "@/lib/cinemeta";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { useHideAnimeMetas, useHideAnimeRows } from "@/lib/anime-hide";
-import { getStore } from "@/lib/discover/store";
+import { getStore } from "@/features/discovery/discover/store";
 import { fetchCriticsPickList, selectDailyRows } from "@/lib/feed";
 import { buildFeatured, buildFeaturedFast } from "@/lib/feed/featured";
 import { ANCHOR_TRENDING } from "@/lib/feed/daily-rows-anchors";

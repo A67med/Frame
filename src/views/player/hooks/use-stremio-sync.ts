@@ -3,14 +3,17 @@ import { cloudWriteId, libraryGetOne, libraryGetOneStrict, type LibraryItem } fr
 import { cloudLibraryPut, flushWriteQueue, queuedWatched } from "@/lib/stremio-write-queue";
 import { withItemLock } from "@/lib/stremio-item-lock";
 import { freshestWatched } from "@/lib/stremio-watched-sync";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackPosition, subscribePlaybackClock } from "@/lib/player/playback-clock";
-import { useProfiles } from "@/lib/profiles";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import {
+  getPlaybackPosition,
+  subscribePlaybackClock,
+} from "@/features/player/engine/playback-clock";
+import { useProfiles } from "@/features/profiles/profiles";
 import { recordWatchedBy } from "@/lib/watched-by";
 import { recordAnimeCwId } from "@/lib/anime-cw-ids";
-import type { PlayerSrc } from "@/lib/view";
-import { resumeLibraryGetOne } from "@/lib/player/resume-start";
-import { playerLoadIdentity } from "@/lib/player/load-identity";
+import type { PlayerSrc } from "@/app/navigation/view";
+import { resumeLibraryGetOne } from "@/features/player/engine/resume-start";
+import { playerLoadIdentity } from "@/features/player/engine/load-identity";
 
 const ANIME_SCHEME = /^(kitsu|mal|anilist|anidb):/;
 

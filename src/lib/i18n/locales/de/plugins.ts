@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Plugins",
-  Repositories: "Repositorys",
+  "Plugins": "Plugins",
+  "Repositories": "Repositorys",
   "Installed plugins": "Installierte Plugins",
   "Plugin repositories": "Plugin-Repositorys",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -31,8 +31,8 @@ const plugins: Record<string, string> = {
     "Füge ein Repository hinzu und installiere dann die Anbieter, die du möchtest. Sie erscheinen hier.",
   "Add a repository": "Repository hinzufügen",
   "Movies and series": "Filme und Serien",
-  Script: "Skript",
-  Verified: "Verifiziert",
+  "Script": "Skript",
+  "Verified": "Verifiziert",
   "v{version} available": "v{version} verfügbar",
   "Paused after {n} failures. Turn it back on to try again.":
     "Nach {n} Fehlern pausiert. Schalte es wieder ein, um es erneut zu versuchen.",
@@ -58,7 +58,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} aus {repo}, installiert {when}.",
   "Update to v{version}": "Auf v{version} aktualisieren",
   "Revert to v{version}": "Auf v{version} zurücksetzen",
-  Reaches: "Erreicht",
+  "Reaches": "Erreicht",
   "Any public website. This plugin did not say which sites it uses.":
     "Jede öffentliche Website. Dieses Plugin hat nicht angegeben, welche Seiten es nutzt.",
   "Seen so far: {hosts}": "Bisher gesehen: {hosts}",
@@ -113,7 +113,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "Entfernen und {count} deinstallieren?",
   "Could not reach this repository. Installed plugins keep working.":
     "Dieses Repository ist nicht erreichbar. Installierte Plugins funktionieren weiter.",
-  "This repository lists no plugins.": "Dieses Repository listet keine Plugins.",
   "This repository is not for stream plugins.": "Dieses Repository ist nicht für Stream-Plugins.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "Kein Stream-Plugin: Es exportiert keine getStreams- oder streams-Funktion.",

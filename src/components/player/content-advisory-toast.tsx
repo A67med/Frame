@@ -1,8 +1,8 @@
 import { EyeOff, Ghost, Heart, Info, MessageSquareWarning, Swords, Wine, X } from "lucide-react";
 import { type FocusEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
-import { ignoreAdvisory } from "@/lib/player/content-advisory-ignore";
-import { usePlaybackPositionGated } from "@/lib/player/playback-clock";
+import { ignoreAdvisory } from "@/features/player/engine/content-advisory-ignore";
+import { usePlaybackPositionGated } from "@/features/player/engine/playback-clock";
 import { useSettings } from "@/lib/settings";
 
 export type Advisory = { category: string; severity: string };

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Loader2, Wand2 } from "lucide-react";
 import { useAutoSyncHandle } from "@/components/player/autosync/autosync-store";
-import { loadSubPresets } from "@/lib/player/sub-presets";
+import { loadSubPresets } from "@/features/player/engine/sub-presets";
 import { useSettings } from "@/lib/settings";
 import { useBpT } from "../bp-i18n";
 import { Chip, LABEL, NOTE, Row, SPIN, Stepper, offsetLabel } from "./bp-subtitle-parts";

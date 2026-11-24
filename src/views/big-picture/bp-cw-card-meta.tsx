@@ -8,7 +8,7 @@ import type { Meta } from "@/lib/cinemeta";
 import { peekCachedLogo, resolveLogo } from "@/lib/logo";
 import { useHasNewEpisode } from "@/lib/new-episodes";
 import { animeKitsuMeta } from "@/lib/providers/anime-kitsu-addon";
-import { useProfiles, type Profile } from "@/lib/profiles";
+import { useProfiles, type Profile } from "@/features/profiles/profiles";
 import { useProxiedImageSrc } from "@/lib/remote-image-proxy";
 import { fetchSeasonEpisodes } from "@/lib/series-episodes";
 import { useSettings } from "@/lib/settings";

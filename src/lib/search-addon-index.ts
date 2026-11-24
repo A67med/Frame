@@ -1,5 +1,5 @@
-import { CURATED_ADDONS } from "./addons-store/curated";
-import { adultContentHidden } from "./addons-store/adult-filter";
+import { CURATED_ADDONS } from "../features/addons/catalog/curated";
+import { adultContentHidden } from "../features/addons/catalog/adult-filter";
 import { loadInstalled, isInstalled } from "./addon-store";
 
 export type AddonHit = {

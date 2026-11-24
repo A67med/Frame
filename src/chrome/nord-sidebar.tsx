@@ -13,7 +13,7 @@ import { useNavEditMode } from "@/chrome/nav-edit-mode";
 import { useT } from "@/lib/i18n";
 import { useParental } from "@/lib/parental";
 import { useSettings } from "@/lib/settings";
-import { useView, type View } from "@/lib/view";
+import { useView, type View } from "@/app/navigation/view";
 
 const FROST = "#88c0d0";
 const RAIL = "linear-gradient(180deg, #8fbcbb59, #88c0d033 44%, #b48ead2b 78%, #81a1c14d)";

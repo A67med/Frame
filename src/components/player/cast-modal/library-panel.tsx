@@ -5,17 +5,17 @@ import { useLetterboxd } from "@/lib/stremboxd/provider";
 import { useMal } from "@/lib/mal/provider";
 import { useSimkl } from "@/lib/simkl/provider";
 import { useTrakt } from "@/lib/trakt/provider";
-import { AnilistTab } from "@/views/library/anilist-tab";
-import { FavoritesTab } from "@/views/library/favorites-tab";
-import { HistoryTab } from "@/views/library/history-tab";
-import { LetterboxdTab } from "@/views/library/letterboxd-tab";
-import { LocalTab } from "@/views/library/local-tab";
-import { MalTab } from "@/views/library/mal-tab";
-import { MyListsTab } from "@/views/library/my-lists-tab";
-import { SimklTab } from "@/views/library/simkl-tab";
-import { TabBtn, type Tab } from "@/views/library/shared";
-import { TraktTab } from "@/views/library/trakt-tab";
-import { WatchlistTab } from "@/views/library/watchlist-tab";
+import { AnilistTab } from "@/features/library/views/library/anilist-tab";
+import { FavoritesTab } from "@/features/library/views/library/favorites-tab";
+import { HistoryTab } from "@/features/library/views/library/history-tab";
+import { LetterboxdTab } from "@/features/library/views/library/letterboxd-tab";
+import { LocalTab } from "@/features/library/views/library/local-tab";
+import { MalTab } from "@/features/library/views/library/mal-tab";
+import { MyListsTab } from "@/features/library/views/library/my-lists-tab";
+import { SimklTab } from "@/features/library/views/library/simkl-tab";
+import { TabBtn, type Tab } from "@/features/library/views/library/shared";
+import { TraktTab } from "@/features/library/views/library/trakt-tab";
+import { WatchlistTab } from "@/features/library/views/library/watchlist-tab";
 
 const TAB_KEY = "harbor.library.tab";
 

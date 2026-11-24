@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useT } from "@/lib/i18n";
-import { usePlaybackPositionGated } from "@/lib/player/playback-clock";
+import { usePlaybackPositionGated } from "@/features/player/engine/playback-clock";
 import { useSettings } from "@/lib/settings";
 import {
   DEFAULT_FULLSCREEN_CLOCK_SIZE_PX,

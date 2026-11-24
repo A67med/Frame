@@ -1,9 +1,9 @@
-import type { TrackInfo } from "@/lib/player/bridge";
-import { subtitleTrackLanguageLabel, subtitleTrackTitle } from "@/lib/subtitles/track-label";
+import type { TrackInfo } from "@/features/player/engine/bridge";
+import { subtitleTrackLanguageLabel, subtitleTrackTitle } from "@/features/subtitles/track-label";
 import type { SubtitleContentContext } from "./subtitle-context-store";
 import type { Group, SubtitleMenuProps } from "./types";
-import type { GeneratedSubtitleGroup } from "@/lib/subtitles/types";
-import type { TranslationJob } from "@/lib/subtitles/translation-jobs";
+import type { GeneratedSubtitleGroup } from "@/features/subtitles/types";
+import type { TranslationJob } from "@/features/subtitles/translation-jobs";
 
 export function buildOverlayState(
   props: SubtitleMenuProps,

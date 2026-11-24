@@ -18,11 +18,15 @@ import { useSubtitleContext } from "@/components/player/subtitle-menu/subtitle-c
 import { useSubtitleSearch } from "@/components/player/subtitle-menu/subtitle-search-store";
 import type { SubtitleMenuProps } from "@/components/player/subtitle-menu/types";
 import { groupByLang, variantTitle } from "@/components/player/subtitle-menu/utils";
-import { hasImportedSubTitle, markImportedSub, useImportedSubs } from "@/lib/player/imported-subs";
-import { setSecondarySub } from "@/lib/player/secondary-sub";
+import {
+  hasImportedSubTitle,
+  markImportedSub,
+  useImportedSubs,
+} from "@/features/player/engine/imported-subs";
+import { setSecondarySub } from "@/features/player/engine/secondary-sub";
 import { useSettings } from "@/lib/settings";
-import { filterTracksByPreferredLanguage } from "@/lib/subtitles/language";
-import { subtitleTrackLanguageLabel } from "@/lib/subtitles/track-label";
+import { filterTracksByPreferredLanguage } from "@/features/subtitles/language";
+import { subtitleTrackLanguageLabel } from "@/features/subtitles/track-label";
 import { setBpFocus } from "../bp-focus-core";
 import { useBpT } from "../bp-i18n";
 import { BpSubtitleFind, type BpSubtitleTarget } from "./bp-subtitle-find";

@@ -4,7 +4,7 @@ import { AuthModal } from "@/components/auth-modal";
 import { ParentalPinModal } from "@/components/parental-pin-modal";
 import { verifyProfilePassword } from "@/lib/profile-password";
 import { subscribeAccountMenuOpen, type AccountMenuAnchor } from "@/lib/social/account-menu-open";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { AccountMenuPanel } from "./account-menu-panel";
 import { useAccountMenu } from "./use-account-menu";
 

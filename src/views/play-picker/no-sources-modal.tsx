@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function NoSourcesConfiguredModal({ meta }: { meta: Meta }) {
   const { goBack, setView, openSettings } = useView();

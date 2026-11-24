@@ -2,7 +2,7 @@ import { useEffect, useRef, useSyncExternalStore } from "react";
 import { WifiOff } from "lucide-react";
 import { useDownloads } from "@/lib/download/downloads-store";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 function subscribe(cb: () => void) {
   window.addEventListener("online", cb);

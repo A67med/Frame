@@ -242,29 +242,6 @@ pub async fn window_pip_enter(app: AppHandle, state: State<'_, PipState>) -> Res
         .map_err(|e| format!("set_position: {}", e))?;
     let _ = main.set_focus();
 
-    #[cfg(target_os = "macos")]
-    {
-        if let Ok(ns) = main.ns_window() {
-            let ptr = ns as i64;
-            let _ = app.run_on_main_thread(move || crate::pip_mac::enter_pip_window(ptr));
-            // tauri #5566: in RELEASE builds macOS resets the window level + collection
-            // behavior shortly after the resize, so a single set doesn't make the window
-            // float over other apps. Re-assert it for ~1.5s, stopping early if PiP exits.
-            let app2 = app.clone();
-            let active = state.window_pip_active.clone();
-            std::thread::spawn(move || {
-                for _ in 0..8 {
-                    std::thread::sleep(std::time::Duration::from_millis(180));
-                    if !active.load(Ordering::SeqCst) {
-                        break;
-                    }
-                    let p = ptr;
-                    let _ = app2.run_on_main_thread(move || crate::pip_mac::enter_pip_window(p));
-                }
-            });
-        }
-    }
-
     let _ = app.emit_to("main", "pip://entered", ());
 
     Ok(())
@@ -299,28 +276,6 @@ pub async fn window_pip_exit(app: AppHandle, state: State<'_, PipState>) -> Resu
         let _ = main.center();
     }
     let _ = main.set_focus();
-
-    #[cfg(target_os = "macos")]
-    {
-        if let Ok(ns) = main.ns_window() {
-            let ptr = ns as i64;
-            let _ = app.run_on_main_thread(move || crate::pip_mac::exit_pip_window(ptr));
-            // Mirror the enter re-assert so the restored normal level sticks too; stop if
-            // the user re-enters PiP.
-            let app2 = app.clone();
-            let active = state.window_pip_active.clone();
-            std::thread::spawn(move || {
-                for _ in 0..3 {
-                    std::thread::sleep(std::time::Duration::from_millis(160));
-                    if active.load(Ordering::SeqCst) {
-                        break;
-                    }
-                    let p = ptr;
-                    let _ = app2.run_on_main_thread(move || crate::pip_mac::exit_pip_window(p));
-                }
-            });
-        }
-    }
 
     let _ = app.emit_to("main", "pip://exited", ());
     Ok(())

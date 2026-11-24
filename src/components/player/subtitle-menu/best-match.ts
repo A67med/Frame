@@ -1,12 +1,12 @@
-import type { TrackInfo } from "@/lib/player/bridge";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 import {
   parseRelease,
   releaseAffinity,
   releaseCompatibilityPercent,
   subtitleConfidenceRank,
   type SubtitleMatchConfidence,
-} from "@/lib/subtitles/release-match";
-import { streamTagsOf, type StreamHints } from "@/lib/subtitles/stream-hints";
+} from "@/features/subtitles/release-match";
+import { streamTagsOf, type StreamHints } from "@/features/subtitles/stream-hints";
 
 export type MatchVerdict = {
   track: TrackInfo;

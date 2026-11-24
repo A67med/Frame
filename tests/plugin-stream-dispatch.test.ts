@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { pinnedPluginBase, pluginQueryId } from "../src/lib/streams/addons.ts";
-import { pluginIdPrefixes } from "../src/lib/streams/plugins/addon.ts";
+import { pluginIdPrefixes } from "../src/features/addons/streams/addon.ts";
 import type { Addon } from "../src/lib/addons.ts";
 
 const CAPSTAN = "capstan:ext/uhdmovies:https%3A%2F%2Fp.example%2Ffight-club%2F:1:1";

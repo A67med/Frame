@@ -1,15 +1,13 @@
 import { useSyncExternalStore } from "react";
-import { safeFetch } from "@/lib/safe-fetch";
-import { assertSafeUrl } from "@/lib/manga/plugins/host-http";
-import { PluginWorker } from "@/lib/manga/plugins/worker-host";
-import { normalizeRepoUrl } from "@/lib/streams/plugins/manifest";
-import { PluginError } from "@/lib/streams/plugins/types";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
+import { assertSafeUrl } from "@/features/addons/runtime/host-http";
+import { PluginWorker } from "@/features/addons/runtime/worker-host";
+import { normalizeRepoUrl } from "@/features/addons/streams/manifest";
+import { PluginError } from "@/features/addons/streams/types";
 import {
   looksLikeAndroidExtensionRepo,
   looksLikeStremioAddon,
-} from "@/lib/streams/plugins/manifest";
-import { ebookKind } from "./kinds/ebook";
-import { mangaKind } from "./kinds/manga";
+} from "@/features/addons/streams/manifest";
 import { streamKind } from "./kinds/stream";
 import type { KindAdapter, PluginKind, RepoView } from "./types";
 
@@ -27,7 +25,7 @@ export type {
 } from "./types";
 export { repoHost } from "./types";
 
-const adapters: KindAdapter[] = [streamKind, mangaKind, ebookKind];
+const adapters: KindAdapter[] = [streamKind];
 
 export function pluginKinds(): KindAdapter[] {
   return adapters;
@@ -105,7 +103,6 @@ async function probeKind(entryUrl: string): Promise<PluginKind | null> {
       const meta = await worker.meta();
       const methods = new Set(meta.methods ?? []);
       if (methods.has("streams")) return "stream";
-      if (methods.has("chapters")) return "manga";
       return null;
     } finally {
       worker.dispose();
@@ -141,7 +138,8 @@ export async function detectRepoKind(rawUrl: string): Promise<{ kind: PluginKind
     return { kind: "stream", url };
   }
   const type = typeof json.type === "string" ? json.type : "";
-  if (type === "stream" || type === "manga" || type === "ebook") return { kind: type, url };
+  if (type === "stream") return { kind: type, url };
+  if (type === "manga" || type === "ebook") throw new PluginError("not-a-repo");
   if (Array.isArray(json.plugins)) {
     const first = json.plugins.find(
       (p) => p && typeof p === "object" && typeof (p as { entry?: unknown }).entry === "string",
@@ -151,19 +149,10 @@ export async function detectRepoKind(rawUrl: string): Promise<{ kind: PluginKind
         const probed = await probeKind(new URL(first.entry, url).href);
         if (probed === "stream") return { kind: "stream", url };
       } catch {
-        /* fall through to manga */
+        throw new PluginError("not-a-repo");
       }
     }
-    return { kind: "manga", url };
   }
-  const arr = Array.isArray(parsed)
-    ? parsed
-    : Array.isArray(json.sources)
-      ? json.sources
-      : Array.isArray(json.mangayomiSources)
-        ? json.mangayomiSources
-        : null;
-  if (arr && arr.length) return { kind: "manga", url };
   throw new PluginError("not-a-repo");
 }
 

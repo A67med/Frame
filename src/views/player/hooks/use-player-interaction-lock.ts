@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { effectiveBinding, eventToBinding } from "@/lib/hotkeys";
-import { setPlayerInteractionLocked } from "@/lib/player/interaction-lock";
+import { setPlayerInteractionLocked } from "@/features/player/engine/interaction-lock";
 import { useSettings } from "@/lib/settings";
 
 const UNLOCK_CONTROL = "[data-player-unlock-control]";

@@ -11,29 +11,32 @@ import {
 } from "@/lib/streams/anime-identity-core";
 import { isSplitFranchiseKitsu } from "@/lib/providers/anime-franchise-root";
 import { parseKitsuId } from "@/lib/providers/kitsu";
-import { profileFromMeta } from "@/lib/discover/profile";
-import { trackEvent } from "@/lib/discover/store";
+import { profileFromMeta } from "@/features/discovery/discover/profile";
+import { trackEvent } from "@/features/discovery/discover/store";
 import { isExternalPlaylistId } from "@/lib/iptv/vod";
 import { clearLocalCw, localCwEntry, saveLocalCw } from "@/lib/local-cw";
 import { recordWatchEvent } from "@/lib/watch-events";
-import { isLocalUrl } from "@/lib/player/local-url";
+import { isLocalUrl } from "@/features/player/engine/local-url";
 import { isManuallyWatched, recordManualWatchedMeta, setManualWatched } from "@/lib/manual-watched";
-import { savePlayback } from "@/lib/playback-history";
+import { savePlayback } from "@/features/player/history";
 import { clearResume, saveResumeMs } from "@/lib/resume";
 import { isMovieWatchedLocal, setMovieWatchedLocal } from "@/lib/movie-watched";
 import { setViewedSeason } from "@/lib/season-view-pref";
 import { animeTrackerTarget } from "@/lib/tracker-progress";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackPosition, subscribePlaybackClock } from "@/lib/player/playback-clock";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import {
+  getPlaybackPosition,
+  subscribePlaybackClock,
+} from "@/features/player/engine/playback-clock";
 import { useSettings } from "@/lib/settings";
-import { useProfiles } from "@/lib/profiles";
-import type { PlayerSrc, PlayEpisode } from "@/lib/view";
+import { useProfiles } from "@/features/profiles/profiles";
+import type { PlayerSrc, PlayEpisode } from "@/app/navigation/view";
 import { ANIME_CLOUD_ID, CLOUD_OK } from "@/lib/stremio";
 import { syncSeriesWatchedToStremio } from "@/lib/stremio-episode-watched";
 import { isDetectedAnime } from "@/lib/anime-detect";
 import { absoluteEntryNumber } from "@/lib/anime-entry-target";
-import { isNaturalEnd } from "@/lib/player/playback-end";
-import { playerLoadIdentity } from "@/lib/player/load-identity";
+import { isNaturalEnd } from "@/features/player/engine/playback-end";
+import { playerLoadIdentity } from "@/features/player/engine/load-identity";
 
 const TICK_MS = 4000;
 const MIN_POSITION_SEC = 5;

@@ -22,7 +22,7 @@ import {
   subscribeThemeLibraryRequest,
 } from "./library-open-store";
 import type { StoreTab } from "./custom-themes-section/community-store/store-tabs";
-import { importForeignTheme } from "@/lib/theme-import";
+import { importForeignTheme } from "@/features/themes/import";
 import { isHarborStyleName, parseHarborStyle, serializeHarborStyle } from "@/lib/harborstyle";
 import { useSettings } from "@/lib/settings";
 import { pushActivityHint } from "@/lib/discord/activity-hint";

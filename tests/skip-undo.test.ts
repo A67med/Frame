@@ -23,9 +23,9 @@ function harness(
         eventToBinding: (e: any) => e.key,
         isTypingTarget: () => false,
       },
-      "@/lib/player/interaction-lock": { isPlayerInteractionLocked: () => false },
+      "@/features/player/engine/interaction-lock": { isPlayerInteractionLocked: () => false },
       "react/jsx-runtime": { jsx: (_type: any, props: any) => props },
-      "@/lib/player/playback-clock": { usePlaybackPosition: () => position.at },
+      "@/features/player/engine/playback-clock": { usePlaybackPosition: () => position.at },
       "@/components/player/skip-pill": { SkipPill() {} },
       "@/views/big-picture/player/bp-skip-pill": { BpSkipPill() {} },
       "@/lib/skip-intro": {

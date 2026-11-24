@@ -1,8 +1,8 @@
 import type { Meta } from "@/lib/cinemeta";
 import type { Settings, StreamingService } from "@/lib/settings";
 import { fetchAwardWinners } from "@/lib/feed/award-winners";
-import { topEntries } from "@/lib/discover/affinity";
-import { getStore } from "@/lib/discover/store";
+import { topEntries } from "@/features/discovery/discover/affinity";
+import { getStore } from "@/features/discovery/discover/store";
 import { MOVIE_GENRES } from "@/lib/feed/tags";
 import { SERVICES, providerIdsFor, serviceBadge } from "@/lib/providers/streaming";
 import {

@@ -12,8 +12,8 @@ import {
 import { Play } from "@/components/icons/play-filled";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
-import { useLocalLibrary, type LocalEntry } from "@/lib/local-library";
-import { sortVersions } from "@/lib/local-library/versions";
+import { useLocalLibrary, type LocalEntry } from "@/features/library/local-library";
+import { sortVersions } from "@/features/library/local-library/versions";
 import { LocalVersionBadges } from "@/components/local-version-badges";
 import { MediaServerBrand } from "@/components/media-server-brand";
 import { meta as fetchCinemetaMeta, type Meta } from "@/lib/cinemeta";
@@ -25,7 +25,7 @@ import {
   getLocalEpisodes,
   subscribeLocalEpisodes,
   type LocalEpisodesPayload,
-} from "@/lib/player/local-episodes-modal";
+} from "@/features/player/engine/local-episodes-modal";
 
 export function LocalEpisodesModal() {
   const state = useSyncExternalStore(subscribeLocalEpisodes, getLocalEpisodes);

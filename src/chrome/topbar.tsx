@@ -21,7 +21,7 @@ import {
   shouldHandleGlobalKeyboardEvent,
 } from "@/lib/hotkeys";
 import { useT } from "@/lib/i18n";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { useSearch } from "@/lib/search-context";
 import { useSettings } from "@/lib/settings";
 import { usePlaylists } from "@/lib/iptv/playlists-store";
@@ -29,7 +29,7 @@ import { useTogether } from "@/lib/together/provider";
 import { useSelfIdentity } from "@/lib/together/use-self-identity";
 import { activeLayout } from "@/lib/theme";
 import { useThemePreview } from "@/lib/theme-preview";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useWindowFullscreen } from "@/lib/use-window-fullscreen";
 import { close, minimize, toggleMaximize, useMaximized } from "@/lib/window";
 

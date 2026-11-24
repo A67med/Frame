@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
-import { getPlaybackPosition, subscribePlaybackClock } from "@/lib/player/playback-clock";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
+import {
+  getPlaybackPosition,
+  subscribePlaybackClock,
+} from "@/features/player/engine/playback-clock";
 
 export type AbLoopState = {
   a: number | null;

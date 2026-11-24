@@ -1,9 +1,9 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/lib/player/bridge";
-import { resetSecondarySub, useSecondarySubChoice } from "@/lib/player/secondary-sub";
-import { pickBestTrack } from "@/lib/subtitles/language";
-import { canBeSecondarySub } from "@/lib/player/sub-format";
-import { applySecondarySubNative } from "@/lib/player/sub-style";
+import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/features/player/engine/bridge";
+import { resetSecondarySub, useSecondarySubChoice } from "@/features/player/engine/secondary-sub";
+import { pickBestTrack } from "@/features/subtitles/language";
+import { canBeSecondarySub } from "@/features/player/engine/sub-format";
+import { applySecondarySubNative } from "@/features/player/engine/sub-style";
 import type { Settings } from "@/lib/settings";
 
 function autoPick(tracks: TrackInfo[], lang: string, primaryId: string | null): string | null {

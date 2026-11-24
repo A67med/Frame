@@ -1,7 +1,7 @@
 import type { Meta } from "@/lib/cinemeta";
-import { score as affinityScore } from "@/lib/discover/affinity";
-import { profileFromMeta } from "@/lib/discover/profile";
-import type { Affinity } from "@/lib/discover/types";
+import { score as affinityScore } from "@/features/discovery/discover/affinity";
+import { profileFromMeta } from "@/features/discovery/discover/profile";
+import type { Affinity } from "@/features/discovery/discover/types";
 import { getVoteWithTs } from "@/lib/feed/preferences";
 import { mixSeed, mulberry32 } from "@/lib/feed/tags";
 import {

@@ -1,4 +1,3 @@
-import { isAndroidTv } from "@/lib/platform";
 import { useSettings } from "@/lib/settings";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -16,5 +15,5 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 export function useBpDecorMotion(): boolean {
   const reduce = useReducedMotion();
   const { settings } = useSettings();
-  return !reduce && !isAndroidTv() && settings.bigPictureBackdropZoom !== false;
+  return !reduce && settings.bigPictureBackdropZoom !== false;
 }

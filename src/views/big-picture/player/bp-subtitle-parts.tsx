@@ -1,10 +1,10 @@
-import type { TrackInfo } from "@/lib/player/bridge";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 import { variantTitle } from "@/components/player/subtitle-menu/utils";
-import { providerLabel, releaseOf } from "@/lib/subtitles/provider-label";
-import { subtitleTrackLanguageLabel } from "@/lib/subtitles/track-label";
-import type { SubResult } from "@/lib/subtitles/types";
+import { providerLabel, releaseOf } from "@/features/subtitles/provider-label";
+import { subtitleTrackLanguageLabel } from "@/features/subtitles/track-label";
+import type { SubResult } from "@/features/subtitles/types";
 import { SFX } from "@/lib/sfx";
-import { subtitleClassificationLabels } from "@/lib/subtitles/classification-labels";
+import { subtitleClassificationLabels } from "@/features/subtitles/classification-labels";
 
 export type BpSubT = (key: string, vars?: Record<string, string | number>) => string;
 

@@ -9,9 +9,9 @@ const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "u
 
 const doc = read("android-extension-compat/docs/BRIDGE.md");
 const dispatch = read("android-extension-compat/src/host/BridgeServer.kt");
-const rust = read("src-tauri/src/capstan.rs");
+const rust = read("src-tauri/src/features/addons/capstan/mod.rs");
 const registry = read("src-tauri/src/lib.rs");
-const wire = read("src/lib/streams/plugins/extension/bridge.ts");
+const wire = read("src/features/addons/streams/extension/bridge.ts");
 const browse = read("src/lib/catalog-browse.ts");
 
 test("the catalogue methods the desktop side sends are the ones the bridge answers", () => {

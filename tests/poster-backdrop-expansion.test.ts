@@ -80,7 +80,7 @@ test("Expanding Cards reflows the row and preserves card overlays", () => {
     new URL("../src/components/pick-card.tsx", import.meta.url),
     "utf8",
   );
-  const cssSource = readFileSync(new URL("../src/index.css", import.meta.url), "utf8");
+  const cssSource = readFileSync(new URL("../src/styles/desktop.css", import.meta.url), "utf8");
   const navigationSource = readFileSync(
     new URL("../src/lib/keyboard-navigation.ts", import.meta.url),
     "utf8",

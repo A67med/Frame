@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from 
 import type { Meta } from "@/lib/cinemeta";
 import type { DebridStore } from "@/lib/debrid/types";
 import { invalidatePreparedDebridLink } from "@/lib/debrid/playback-preparation";
-import { savePlayback } from "@/lib/playback-history";
+import { savePlayback } from "@/features/player/history";
 import { saveSeasonLock } from "@/lib/season-lock";
 import { markStreamDead, recordStubEvent } from "@/lib/dead-streams";
 
@@ -29,7 +29,7 @@ import { registerStreamProxy, unregisterStreamProxy } from "@/lib/stream-proxy";
 import type { ScoredStream } from "@/lib/streams/types";
 import type { PlayInvite } from "@/lib/together/protocol";
 import { buildPlayInvite } from "@/lib/together/build-invite";
-import { type PlayEpisode, type PlayerSrc } from "@/lib/view";
+import { type PlayEpisode, type PlayerSrc } from "@/app/navigation/view";
 import { parseKitsuId } from "@/lib/providers/kitsu";
 import { splitFranchiseDisplaySeason } from "@/lib/streams/anime-identity-core";
 import { openInAppBrowser, openUrl } from "@/lib/window";

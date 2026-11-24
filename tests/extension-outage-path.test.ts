@@ -7,9 +7,9 @@ import test from "node:test";
 
 const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 
-const bridge = read("src/lib/streams/plugins/extension/bridge.ts");
-const run = read("src/lib/streams/plugins/extension/run.ts");
-const runtime = read("src/lib/streams/plugins/runtime.ts");
+const bridge = read("src/features/addons/streams/extension/bridge.ts");
+const run = read("src/features/addons/streams/extension/run.ts");
+const runtime = read("src/features/addons/streams/runtime.ts");
 const ladder = read("src/views/play-picker/picker-empty-ladder.tsx");
 const outages = read("src/views/play-picker/source-outages.tsx");
 

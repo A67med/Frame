@@ -1,20 +1,20 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
 import {
   getPlaybackBuffered,
   getPlaybackPosition,
   usePlaybackFlag,
-} from "@/lib/player/playback-clock";
-import { isTruncatedEnd } from "@/lib/player/playback-end";
-import { isLocalUrl } from "@/lib/player/local-url";
-import { canAutoRetryStuckLoad } from "@/lib/player/stall-wait";
+} from "@/features/player/engine/playback-clock";
+import { isTruncatedEnd } from "@/features/player/engine/playback-end";
+import { isLocalUrl } from "@/features/player/engine/local-url";
+import { canAutoRetryStuckLoad } from "@/features/player/engine/stall-wait";
 import { clearOnePickerCache } from "@/lib/picker-cache";
 import { resolveViaDebrids } from "@/lib/streams/resolve";
 import { registerStreamProxy } from "@/lib/stream-proxy";
 import { buildTranscodedUrl, probeStremioServer } from "@/lib/stremio-server";
 import type { DebridStore } from "@/lib/debrid/types";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayerSrc, PlayEpisode } from "@/lib/view";
+import type { PlayerSrc, PlayEpisode } from "@/app/navigation/view";
 import {
   BLACK_SCREEN_GRACE_MS,
   MAX_AUTORETRY_ATTEMPTS,

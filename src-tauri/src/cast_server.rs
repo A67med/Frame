@@ -23,12 +23,6 @@ fn kill_orphan_sidecars() {
             .creation_flags(0x0800_0000)
             .output();
     }
-    #[cfg(not(windows))]
-    {
-        let _ = std::process::Command::new("pkill")
-            .args(["-f", "stremio-server"])
-            .output();
-    }
 }
 
 pub fn ensure_started_on_setup(_app: &AppHandle) {

@@ -2,7 +2,7 @@ const surfaces: Record<string, string> = {
   "Saved movies, episodes, and eBooks for offline use":
     "Сохранённые фильмы, эпизоды и электронные книги для просмотра и чтения без интернета",
   "{count} paused": "Приостановлено: {count}",
-  Issues: "Проблемы",
+  "Issues": "Проблемы",
   "Download a movie, episode, or eBook and it will appear here with its progress and offline status.":
     "Скачайте фильм, эпизод или электронную книгу, и здесь появятся ход загрузки и статус доступности без интернета.",
   "Or set a series to auto-download": "Или включите автозагрузку сериала",
@@ -26,7 +26,7 @@ const surfaces: Record<string, string> = {
   "Loading book collections…": "Загрузка коллекций книг…",
   "No collections were found in the installed source catalog.":
     "В каталоге установленного источника коллекции не найдены.",
-  Shelf: "Полка",
+  "Shelf": "Полка",
   "{count} books saved to your shelf": "Книг сохранено на полке: {count}",
   "Books you add to your shelf will appear here.": "Добавленные на полку книги появятся здесь.",
   "Your shelf is waiting": "Ваша полка пока пуста",
@@ -47,9 +47,9 @@ const surfaces: Record<string, string> = {
   "Refresh source": "Обновить источник",
   "Manage eBook sources": "Управление источниками электронных книг",
   "Filter eBooks": "Фильтр электронных книг",
-  Fiction: "Художественная литература",
+  "Fiction": "Художественная литература",
   "Non-fiction": "Нон-фикшн",
-  Hiatus: "Перерыв",
+  "Hiatus": "Перерыв",
   "Sort by": "Сортировать по",
   "Get your free TheTVDB key": "Получите бесплатный ключ TheTVDB",
   "About a minute. Free for personal use.": "Около минуты. Для личного использования бесплатно.",
@@ -64,9 +64,9 @@ const surfaces: Record<string, string> = {
   "Click to copy": "Нажмите, чтобы скопировать",
   "Copy {text}": "Копировать {text}",
   "Frame snippet": "Фрагмент Frame",
-  example: "пример",
+  "example": "пример",
   "Cheat sheet": "Шпаргалка",
-  Contents: "Содержание",
+  "Contents": "Содержание",
   "Every surface in Frame maps to one of these 12 variables.":
     "Каждой поверхности в Frame соответствует одна из этих 12 переменных.",
   "Font tokens": "Токены шрифтов",
@@ -95,7 +95,7 @@ const surfaces: Record<string, string> = {
   "View identifiers": "Идентификаторы представлений",
   "Use these strings if you wire a custom navbar that needs to navigate.":
     "Используйте эти строки, если настраиваете навигацию в собственной панели.",
-  Recipes: "Примеры",
+  "Recipes": "Примеры",
   "Copy-paste starters for common customizations.": "Готовые заготовки для типовых настроек.",
   "Frame theme": "Тема Frame",
   "{file} is empty. Start typing to restyle Frame.":
@@ -108,7 +108,7 @@ const surfaces: Record<string, string> = {
     "Вы редактируете оболочку вручную, поэтому визуальный конструктор не используется.",
   "Pick a position, name it, then choose your menu items.":
     "Выберите расположение, задайте название, затем выберите пункты меню.",
-  Sidebar: "Боковая панель",
+  "Sidebar": "Боковая панель",
   "Brand name": "Название бренда",
   "Menu items": "Пункты меню",
   "Add at least one item below.": "Добавьте ниже хотя бы один пункт.",
@@ -123,11 +123,11 @@ const surfaces: Record<string, string> = {
   "No icons match that search. Try Upload.":
     "По этому запросу значки не найдены. Попробуйте загрузить свой.",
   "Start from": "Начать с",
-  Shuffle: "Перемешать",
-  Palette: "Палитра",
-  Surfaces: "Поверхности",
-  Buttons: "Кнопки",
-  Layout: "Макет",
+  "Shuffle": "Перемешать",
+  "Palette": "Палитра",
+  "Surfaces": "Поверхности",
+  "Buttons": "Кнопки",
+  "Layout": "Макет",
   "Where the navigation lives. Pick one to see it live.":
     "Расположение навигации. Выберите вариант, чтобы сразу увидеть результат.",
   "Navigation items": "Элементы навигации",
@@ -146,7 +146,7 @@ const surfaces: Record<string, string> = {
   "Hide from nav": "Скрыть из навигации",
   "Remove font": "Удалить шрифт",
   "The quick brown fox jumps": "Съешь ещё этих мягких французских булок",
-  Project: "Проект",
+  "Project": "Проект",
   "Download {file}": "Скачать {file}",
   "Ln {line}, Col {col}": "Стр. {line}, стлб. {col}",
   "{lines} lines": "Строк: {lines}",
@@ -178,7 +178,7 @@ const surfaces: Record<string, string> = {
     "Добавьте до 6 снимков экрана, чтобы показать тему в действии. Это необязательно, но поможет привлечь внимание.",
   "Add screenshot": "Добавить снимок экрана",
   "Theme name": "Название темы",
-  Tagline: "Слоган",
+  "Tagline": "Слоган",
   "One line shown under the name.": "Одна строка под названием.",
   "A short, punchy description": "Краткое и яркое описание",
   "Submitted for review": "Отправлено на проверку",
@@ -189,8 +189,8 @@ const surfaces: Record<string, string> = {
   "No community themes yet": "В сообществе пока нет тем",
   "Be the first to share a look. Publish a theme and it shows up here for everyone.":
     "Поделитесь оформлением первым. Опубликуйте тему, и она появится здесь для всех.",
-  theme: "тема",
-  themes: "темы",
+  "theme": "тема",
+  "themes": "темы",
   "No themes match your search.": "По вашему запросу темы не найдены.",
   "No community themes yet. Be the first to share one.":
     "В сообществе пока нет тем. Опубликуйте первую.",
@@ -239,12 +239,12 @@ const surfaces: Record<string, string> = {
   "One-time setup downloads the shader pack (about 1 MB) into Frame. No files to hunt down.":
     "При однократной настройке Frame загрузит пакет шейдеров (около 1 МБ). Искать файлы не придётся.",
   "Downloading shaders…": "Загрузка шейдеров…",
-  Performance: "Производительность",
+  "Performance": "Производительность",
   "Shaders installed": "Шейдеры установлены",
   "Couldn't read that image. Try a different file.":
     "Не удалось прочитать изображение. Попробуйте другой файл.",
   "Custom image loaded": "Пользовательское изображение загружено",
-  Processing: "Обработка",
+  "Processing": "Обработка",
   "That SVG is {size} (max 512 KB). Optimize it at svgomg or save it smaller and try again.":
     "Размер этого SVG: {size} (максимум 512 КБ). Оптимизируйте его в svgomg или сохраните в меньшем размере и повторите попытку.",
   "Animated GIFs are kept as-is to preserve animation, but this one is {size} and the cap is 2 MB. Try a shorter or lower-frame-rate version.":
@@ -256,7 +256,7 @@ const surfaces: Record<string, string> = {
   "Even after auto-shrinking this image is still too big to store. Try one with a tighter crop.":
     "Даже после автоматического уменьшения изображение слишком велико для сохранения. Попробуйте кадрировать его плотнее.",
   "Icon locked": "Значок заблокирован",
-  Preset: "Предустановка",
+  "Preset": "Предустановка",
   "{label} icons": "Значки «{label}»",
   "Please choose a PNG, SVG, JPG, or WebP image.": "Выберите изображение PNG, SVG, JPG или WebP.",
   "Icon must be under {max} KB. Yours is {size} KB.":
@@ -275,18 +275,18 @@ const surfaces: Record<string, string> = {
   "Rename profile": "Переименовать профиль",
   'Delete "{name}"? This can\'t be undone.': "Удалить «{name}»? Это действие нельзя отменить.",
   "No saved profiles yet.": "Сохранённых профилей пока нет.",
-  Taken: "Занято",
+  "Taken": "Занято",
   "Could not update privacy. Try again.":
     "Не удалось обновить настройки конфиденциальности. Повторите попытку.",
   "Add a display name first. It is the name shown on your profile.":
     "Сначала добавьте отображаемое имя. Оно будет указано в вашем профиле.",
   "That custom url is not available.": "Этот пользовательский URL недоступен.",
-  Alias: "Псевдоним",
+  "Alias": "Псевдоним",
   "Shows as a bubble on your profile": "Показывается в виде облачка в вашем профиле",
   "Here for the late-night sci-fi": "Здесь ради ночной научной фантастики",
-  Pronouns: "Местоимения",
+  "Pronouns": "Местоимения",
   "they/them": "они/их",
-  Location: "Местоположение",
+  "Location": "Местоположение",
   "Custom url": "Пользовательский URL",
   "YouTube, SoundCloud or Spotify link": "Ссылка на YouTube, SoundCloud или Spotify",
   "Customize profile": "Настроить профиль",
@@ -294,7 +294,7 @@ const surfaces: Record<string, string> = {
     "Собственный шрифт, фон страницы и холст HTML/CSS со свободной компоновкой",
   "Arrange cards": "Упорядочить карточки",
   "Reorder or hide the cards on your profile": "Измените порядок карточек в профиле или скройте их",
-  Arrange: "Настроить порядок",
+  "Arrange": "Настроить порядок",
   "Show up to 6 of your lists on your profile": "Показывайте в профиле до 6 своих списков",
   "Choose which badges appear by your name, and their order":
     "Выберите значки рядом с именем и задайте их порядок",
@@ -314,7 +314,7 @@ const surfaces: Record<string, string> = {
   "How the canvas works": "Как работает холст",
   "Your HTML and CSS render inside a sandboxed frame, fully isolated from the rest of Frame. Write it like a tiny self-contained page. Font and page background are separate controls above, applied to the whole profile.":
     "Ваши HTML и CSS отображаются в изолированном фрейме и полностью отделены от остальной части Frame. Оформляйте их как небольшую самостоятельную страницу. Шрифт и фон страницы настраиваются отдельно выше и применяются ко всему профилю.",
-  Allowed: "Разрешено",
+  "Allowed": "Разрешено",
   "Not allowed": "Запрещено",
   "HTML and CSS are each capped at 16,384 characters.":
     "Объём HTML и CSS ограничен 16 384 символами для каждого.",
@@ -358,7 +358,7 @@ const surfaces: Record<string, string> = {
   "Open a terminal and run: winget install Gyan.FFmpeg":
     "Откройте терминал и выполните: winget install Gyan.FFmpeg",
   "Download interrupted": "Загрузка прервана",
-  Video: "Видео",
+  "Video": "Видео",
   "Save dialog failed": "Не удалось открыть диалог сохранения",
   "{count}m ago": "{count} мин. назад",
   "{count}h ago": "{count} ч. назад",
@@ -383,7 +383,7 @@ const surfaces: Record<string, string> = {
   "Open a manga on Frame to control the reader from here.":
     "Откройте мангу в Frame, чтобы управлять чтением отсюда.",
   "Your computer": "Ваш компьютер",
-  Reconnecting: "Повторное подключение",
+  "Reconnecting": "Повторное подключение",
   "Read on this device": "Читать на этом устройстве",
   "Read here": "Читать здесь",
   "Read on": "Продолжить чтение",
@@ -395,11 +395,11 @@ const surfaces: Record<string, string> = {
   "Close zoom controls": "Закрыть управление масштабом",
   "Zoom and pan joystick": "Джойстик масштабирования и перемещения",
   "Loading chapter": "Загрузка главы",
-  Prev: "Пред.",
+  "Prev": "Пред.",
   "Back to remote": "Назад к пульту",
-  Cancelled: "Отменено",
+  "Cancelled": "Отменено",
   "Latest chapter": "Последняя глава",
-  Licensed: "Лицензировано",
+  "Licensed": "Лицензировано",
   "Could not validate this API key.": "Не удалось проверить этот API-ключ.",
   "Add a Google Books API key for book titles, covers, authors, and descriptions. Wikidata works automatically as the final metadata fallback.":
     "Добавьте API-ключ Google Books для получения названий, обложек, авторов и описаний книг. Wikidata автоматически используется как последний резервный источник метаданных.",
@@ -409,7 +409,7 @@ const surfaces: Record<string, string> = {
     "Хранилище заполнено. Очистите кеш Frame и повторите сохранение.",
   "DeepSeek model is working.": "Модель DeepSeek работает.",
   "Translation test failed": "Проверка перевода не выполнена",
-  Translation: "Перевод",
+  "Translation": "Перевод",
   "Translate to": "Переводить на",
   "Translation runs when a chapter opens and keeps the original if a request fails or is truncated.":
     "Перевод выполняется при открытии главы. Если запрос завершится ошибкой или ответ будет обрезан, сохранится оригинал.",
@@ -421,8 +421,8 @@ const surfaces: Record<string, string> = {
   "DeepSeek API key (sk-...)": "API-ключ DeepSeek (sk-...)",
   "Use your API key to Translate Chapters to Your Language. Get a key from the":
     "Используйте свой API-ключ, чтобы переводить главы на ваш язык. Получите ключ на",
-  Folder: "Папка",
-  Site: "Сайт",
+  "Folder": "Папка",
+  "Site": "Сайт",
   "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
     "Выберите одну папку библиотеки. Каждая вложенная папка представляет собой отдельную электронную книгу. Поместите в неё главы в виде файлов TXT, Markdown, HTML или EPUB и при желании добавьте изображение обложки.",
   "My eBooks": "Мои электронные книги",
@@ -442,7 +442,7 @@ const surfaces: Record<string, string> = {
   "No repositories yet. Add one above to browse eBook extensions.":
     "Репозиториев пока нет. Добавьте репозиторий выше, чтобы просматривать дополнения для электронных книг.",
   "{count} connected": "Подключено: {count}",
-  Intelligence: "Интеллектуальные функции",
+  "Intelligence": "Интеллектуальные функции",
   "Metadata & translation": "Метаданные и перевод",
   "{count} repositories": "Репозитории: {count}",
   "Build your own": "Создайте свою",
@@ -450,7 +450,7 @@ const surfaces: Record<string, string> = {
   "Connect books you own, trusted reading sources, and metadata services. Frame keeps the shelf coherent while every source stays under your control.":
     "Подключайте свои книги, проверенные источники для чтения и сервисы метаданных. Frame поддерживает порядок на полке, а все источники остаются под вашим контролем.",
   "Source overview": "Обзор источников",
-  Repositories: "Репозитории",
+  "Repositories": "Репозитории",
   "Private reading collection": "Личная коллекция книг",
   "eBook source settings": "Настройки источников электронных книг",
   "Your shelf, your rules.": "Ваша полка, ваши правила.",
@@ -475,8 +475,8 @@ const surfaces: Record<string, string> = {
   "Book Details": "Сведения о книге",
   "On Shelf": "На полке",
   "Add to Shelf": "Добавить на полку",
-  Bookmarked: "Закладка добавлена",
-  Bookmark: "Добавить закладку",
+  "Bookmarked": "Закладка добавлена",
+  "Bookmark": "Добавить закладку",
   "Marked as read": "Отмечено как прочитанное",
   "Mark as Read": "Отметить как прочитанное",
   "Close eBook menu": "Закрыть меню электронной книги",
@@ -523,8 +523,8 @@ const surfaces: Record<string, string> = {
   "checking now": "идёт проверка",
   "Stop auto-downloading {title}": "Отключить автозагрузку: {title}",
   "Stop auto-downloading": "Отключить автозагрузку",
-  Grab: "Скачать",
-  episodes: "серии",
+  "Grab": "Скачать",
+  "episodes": "серии",
   "download error": "ошибка загрузки",
   "Resume download": "Продолжить загрузку",
   "Pause download": "Приостановить загрузку",
@@ -564,20 +564,8 @@ const surfaces: Record<string, string> = {
   "Player controls locked": "Элементы управления плеером заблокированы",
   "Player controls unlocked": "Элементы управления плеером разблокированы",
   "SVP active": "SVP активен",
-  "What everyone is reading": "Что читают все",
-  "Critically Acclaimed": "Признано критиками",
-  "Beloved by readers and critics": "Любимцы читателей и критиков",
-  "Featured at Anime Expo": "Представлено на Anime Expo",
-  "Spotlighted at the show": "В центре внимания выставки",
-  "Eisner Award Winners": "Лауреаты премии Айснера",
-  "The comics industry's highest honor": "Высшая награда индустрии комиксов",
   "Eisner Winner": "Лауреат премии Айснера",
-  "Harvey Award Winners": "Лауреаты премии Харви",
-  "Best Manga honorees": "Лауреаты в категории «Лучшая манга»",
   "Harvey Winner": "Лауреат премии Харви",
-  "Seiun Award Winners": "Лауреаты премии «Сэйун»",
-  "Japan's top science-fiction comic honor":
-    "Главная японская награда за научно-фантастические комиксы",
   "Seiun Winner": "Лауреат премии «Сэйун»",
   "Anime Expo": "Anime Expo",
 };

@@ -15,7 +15,7 @@ import {
   needsTmdbEpisodeNames,
   tmdbEpisodeNames,
 } from "@/lib/providers/tmdb";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 export function useSeasonBrowser(
   meta: Meta,

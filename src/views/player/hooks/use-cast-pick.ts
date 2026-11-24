@@ -7,10 +7,10 @@ import {
 } from "@/lib/cast";
 import { useDebridClients } from "@/lib/debrid/registry";
 import { t } from "@/lib/i18n";
-import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
+import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
 import type { Settings } from "@/lib/settings";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { resolveCompatibleCastUrl } from "../cast-resolve";
 import { localizedFfmpegInstallStep, type useCastSession } from "./use-cast-session";
 

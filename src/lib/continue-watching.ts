@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/lib/auth";
-import { anyProfileSharesStremioWith, useProfiles } from "@/lib/profiles";
+import { anyProfileSharesStremioWith, useProfiles } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
 import { listLocalCw, subscribeLocalCw } from "@/lib/local-cw";
 import { setExternalCwSources } from "@/lib/feed/external-cw";

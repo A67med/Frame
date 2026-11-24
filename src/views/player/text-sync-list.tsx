@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowDown, Check } from "lucide-react";
 import { Play } from "@/components/icons/play-filled";
 import { useT } from "@/lib/i18n";
-import type { SubCue } from "@/lib/subtitles/parser";
-import type { SyncPoint, SyncSegment } from "@/lib/subtitles/text-sync";
+import type { SubCue } from "@/features/subtitles/parser";
+import type { SyncPoint, SyncSegment } from "@/features/subtitles/text-sync";
 
 export function TextSyncList({
   cues,

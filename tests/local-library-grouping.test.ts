@@ -2,8 +2,8 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { localGroupKey, localTitleKey } from "../src/lib/local-library/group-key.ts";
-import type { LocalEntry } from "../src/lib/local-library.ts";
+import { localGroupKey, localTitleKey } from "../src/features/library/local-library/group-key.ts";
+import type { LocalEntry } from "../src/features/library/local-library.ts";
 
 function entry(over: Partial<LocalEntry> = {}): LocalEntry {
   return {

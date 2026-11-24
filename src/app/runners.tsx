@@ -5,7 +5,7 @@ import { useAutoDownloadRunner } from "@/lib/auto-download/runner";
 import type { Meta } from "@/lib/cinemeta";
 import { useTogether } from "@/lib/together/provider";
 import type { ParticipantLocation } from "@/lib/together/protocol";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function TogetherFloater() {
   const { chromeHidden } = useView();

@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { emptySnapshot, type PlayerSnapshot } from "../src/lib/player/bridge.ts";
+import { emptySnapshot, type PlayerSnapshot } from "../src/features/player/engine/bridge.ts";
 import { resolveStreamPillVariant } from "../src/views/player/hooks/use-stream-pill.ts";
 
 const at = (path: string) => new URL(`../${path}`, import.meta.url);

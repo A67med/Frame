@@ -5,7 +5,7 @@
 
 import type { Meta } from "@/lib/cinemeta";
 import { meta as fetchCinemetaMeta } from "@/lib/cinemeta";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import type { Settings } from "@/lib/settings";
 import { tmdbEpisodeDetail } from "@/lib/providers/tmdb/tmdb-episode-details";
 import { getCachedEpisode, cacheEpisode } from "@/lib/providers/tmdb/tmdb-episode-cache";

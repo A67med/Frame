@@ -2,7 +2,11 @@ import { RotateCcw, X } from "lucide-react";
 import { useEffect } from "react";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { PICTURE_DIALS, closePictureBar, usePictureBarOpen } from "@/lib/player/picture-bar";
+import {
+  PICTURE_DIALS,
+  closePictureBar,
+  usePictureBarOpen,
+} from "@/features/player/engine/picture-bar";
 
 const IDLE_MS = 12000;
 

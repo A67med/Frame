@@ -1,5 +1,5 @@
 import { authToken, captureSessionScope, refreshToken } from "@/lib/theme-auth";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 // Never replay an old account's mutation using a new account's credentials.
 export async function authenticatedFetch(

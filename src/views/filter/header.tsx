@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Building2, Calendar, ChevronDown, Clock, Globe, Languages, Tag, Tv } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { MOVIE_GENRES } from "@/lib/feed/tags";
-import { useView, type MetaFilter } from "@/lib/view";
+import { useView, type MetaFilter } from "@/app/navigation/view";
 import { runtimeRange } from "./rails-config";
 import { BrandHero, useBrandArt } from "./brand-hero";
 import { browsedId, isBrowsed } from "./browsed";

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useSettings } from "@/lib/settings";
 import { useSectionBack } from "@/lib/section-back";
 import { openExternalUrlStrict } from "@/lib/window";

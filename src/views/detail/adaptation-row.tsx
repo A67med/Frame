@@ -1,15 +1,14 @@
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
-import { GUTENDEX_ID } from "@/lib/ebook/gutendex";
+import { useView } from "@/app/navigation/view";
 import type { AdaptationFamily } from "@/lib/providers/wikidata-graph";
 import { GraphPanel, GraphPanelRow, useAnchor } from "./graph-panel";
 
 export function AdaptationRow({ family }: { family: AdaptationFamily }) {
   const t = useT();
-  const { openMeta, openEBook } = useView();
+  const { openMeta } = useView();
   const { anchor, open, close } = useAnchor();
   const { source, siblings } = family;
-  const reachable = siblings.length > 0 || !!source.gutenbergId;
+  const reachable = siblings.length > 0;
 
   const facts = [
     source.authors.filter((name) => !/^https?:\/\//i.test(name)).join(" & "),
@@ -54,20 +53,6 @@ export function AdaptationRow({ family }: { family: AdaptationFamily }) {
           subtitle={subtitle || undefined}
           anchor={anchor}
           onClose={close}
-          action={
-            source.gutenbergId ? (
-              <button
-                type="button"
-                onClick={() => {
-                  openEBook(`source:${GUTENDEX_ID}:${source.gutenbergId}`);
-                  close();
-                }}
-                className="mt-1.5 self-start rounded-md text-[11px] font-semibold text-ink-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
-              >
-                {t("Read it")}
-              </button>
-            ) : undefined
-          }
         >
           {siblings.map((sibling) => (
             <li key={sibling.metaId}>

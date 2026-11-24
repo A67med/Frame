@@ -3,8 +3,8 @@ import { lazyView as lazy } from "@/lib/lazy-view";
 
 const importWrapped = () => import("@/views/wrapped");
 const importDetail = () => import("@/views/detail");
-const importAddons = () => import("@/views/addons");
-const importDiscover = () => import("@/views/discover");
+const importAddons = () => import("@/features/addons/views/addons");
+const importDiscover = () => import("@/features/discovery/views/discover");
 const importCatalogs = () => import("@/views/catalogs");
 const importPlugins = () => import("@/views/plugins");
 const importAward = () => import("@/views/award");
@@ -14,7 +14,7 @@ const importBrands = () => import("@/views/brands");
 const importGrid = () => import("@/views/grid");
 const importPerson = () => import("@/views/person");
 const importPeople = () => import("@/views/people");
-const importRadar = () => import("@/views/radar");
+const importRadar = () => import("@/features/discovery/views/radar");
 const importFollowing = () => import("@/views/following");
 const importCollection = () => import("@/views/collection");
 const importEpisodeDetail = () => import("@/views/episode-detail");
@@ -25,8 +25,9 @@ const importQueue = () => import("@/views/queue");
 const importService = () => import("@/views/service");
 const importSettings = () => import("@/views/settings");
 const importShows = () => import("@/views/shows");
-const importLibrary = () => import("@/views/library");
-const importCommunityCollections = () => import("@/views/collections/community-hub");
+const importLibrary = () => import("@/features/library/views/library");
+const importCommunityCollections = () =>
+  import("@/features/collections/views/collections/community-hub");
 const importDownloads = () => import("@/views/downloads");
 const importOnboarding = () => import("@/components/onboarding");
 
@@ -62,7 +63,7 @@ export const EpisodeDetailView = lazy(() =>
   importEpisodeDetail().then((m) => ({ default: m.EpisodeDetailView })),
 );
 export const CollectionsView = lazy(() =>
-  import("@/views/collections").then((m) => ({ default: m.CollectionsView })),
+  import("@/features/collections/views/collections").then((m) => ({ default: m.CollectionsView })),
 );
 export const CommunityCollectionsView = lazy(() =>
   importCommunityCollections().then((m) => ({ default: m.CommunityCollectionsView })),

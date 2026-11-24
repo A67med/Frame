@@ -2,7 +2,7 @@ import { Link2 } from "lucide-react";
 import { Play } from "@/components/icons/play-filled";
 import { useMemo } from "react";
 import { directUrlNotWebReady } from "@/lib/torrent/magnet";
-import { useView, type PlayerSrc } from "@/lib/view";
+import { useView, type PlayerSrc } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 
 export function UrlCard({ raw, onClose }: { raw: string; onClose: () => void }) {

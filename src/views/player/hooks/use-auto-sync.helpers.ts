@@ -1,15 +1,15 @@
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import type { PlayerSrc } from "@/lib/view";
-import type { SubCue } from "@/lib/subtitles/parser";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import type { PlayerSrc } from "@/app/navigation/view";
+import type { SubCue } from "@/features/subtitles/parser";
 import type {
   MediaMeta,
   PipelineContext,
   PipelineOutcome,
   SourceKind,
-} from "@/lib/subtitles/autosync/pipeline";
-import { outcomeRank, type SubtitleFormat } from "@/lib/subtitles/autosync/fp-gate";
-import type { DriftPlayerState } from "@/lib/subtitles/autosync/drift-monitor";
-import { normalizeLang } from "@/lib/subtitles/language";
+} from "@/features/subtitles/autosync/pipeline";
+import { outcomeRank, type SubtitleFormat } from "@/features/subtitles/autosync/fp-gate";
+import type { DriftPlayerState } from "@/features/subtitles/autosync/drift-monitor";
+import { normalizeLang } from "@/features/subtitles/language";
 
 export function isLoopback(url: string): boolean {
   return /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])[:/]/i.test(url);

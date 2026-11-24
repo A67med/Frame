@@ -6,7 +6,7 @@ import { tmdbPersonIdByName, tmdbPersonIdCached } from "@/lib/providers/tmdb";
 import type { CanonEntry } from "@/lib/curated/canon";
 import { useCanon } from "@/lib/curated/use-canon";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { type AwardEntry, type AwardType } from "@/lib/providers/wikidata";
 import { useT } from "@/lib/i18n";
 import { AwardLogo, laurelColorFor } from "./icons/award-logo";

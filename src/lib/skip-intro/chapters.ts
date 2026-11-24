@@ -1,4 +1,4 @@
-import type { Chapter } from "../player/bridge";
+import type { Chapter } from "../../features/player/engine/bridge";
 import type { SkipKind, SkipSegment } from "./types";
 
 const INTRO_PATTERNS = [

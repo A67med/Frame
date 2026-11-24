@@ -6,8 +6,8 @@ import {
   parseStreamRepoManifest,
   pluginIdFor,
   splitRepoLinks,
-} from "../src/lib/streams/plugins/manifest.ts";
-import { PluginError } from "../src/lib/streams/plugins/types.ts";
+} from "../src/features/addons/streams/manifest.ts";
+import { PluginError } from "../src/features/addons/streams/types.ts";
 
 test("github page links become raw manifest links", () => {
   assert.equal(

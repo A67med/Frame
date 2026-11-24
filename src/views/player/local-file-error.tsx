@@ -1,6 +1,6 @@
 import { ArrowLeft, FileX } from "lucide-react";
 import { useT } from "@/lib/i18n";
-import type { Html5ErrorSourceKey } from "@/lib/player/html5/error-map";
+import type { Html5ErrorSourceKey } from "@/features/player/engine/html5/error-map";
 
 export function LocalFileError({
   path,

@@ -3,8 +3,8 @@ import { usePlaylists } from "@/lib/iptv/playlists-store";
 import { headersFromChannel } from "@/lib/iptv/channel-headers";
 import type { IptvChannel, IptvPlaylistSource } from "@/lib/iptv/types";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayerSrc } from "@/lib/view";
-import { preservePreviewMode } from "@/lib/player/docked-navigation";
+import type { PlayerSrc } from "@/app/navigation/view";
+import { preservePreviewMode } from "@/features/player/engine/docked-navigation";
 
 export function useLiveChannelOverlay(params: {
   src: PlayerSrc;

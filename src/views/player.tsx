@@ -1,25 +1,21 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { SportsDockControls } from "./sports/dock-controls";
-import { useDockDrag, type DockSpot } from "./sports/use-dock-drag";
-import { readEmbedRect } from "@/lib/player/embed-rect";
-import { EmbeddedBroadcastPlayer } from "./sports/embedded-broadcast-player";
 import { resolveChromeTheme } from "@/lib/theme";
 import { useBigPicture } from "@/lib/big-picture";
-import { useActiveKid } from "@/lib/profiles";
-import { type PlayerBridge } from "@/lib/player/bridge";
+import { useActiveKid } from "@/features/profiles/profiles";
+import { type PlayerBridge } from "@/features/player/engine/bridge";
 import { useDebridClients } from "@/lib/debrid/registry";
 import { useSettings } from "@/lib/settings";
 import { writePlayerVolume } from "@/lib/player-volume";
 import { nameColor } from "@/lib/together/colors";
 import { useTogether } from "@/lib/together/provider";
 import { buildPlayInvite } from "@/lib/together/build-invite";
-import { useView, type PlayerSrc, type PlayEpisode } from "@/lib/view";
+import { useView, type PlayerSrc, type PlayEpisode } from "@/app/navigation/view";
 import { useQueue, useSleepAtEnd, queueIndexOf, setQueuePlaying } from "@/lib/queue";
 import { useSkipSegments, useAdSegments } from "@/lib/skip-intro";
 import { withinAdWindow } from "@/lib/ad-report/window";
-import { isLocalUrl } from "@/lib/player/local-url";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
-import { hasPlaybackStartedForStallCheck, stallWaitMs } from "@/lib/player/stall-wait";
+import { isLocalUrl } from "@/features/player/engine/local-url";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
+import { hasPlaybackStartedForStallCheck, stallWaitMs } from "@/features/player/engine/stall-wait";
 import { useAuth } from "@/lib/auth";
 import { embedFlags } from "./player/player-utils";
 import { useFullscreen } from "./player/hooks/use-fullscreen";
@@ -39,14 +35,14 @@ import {
   subscribePlaybackClock,
   resolvePlaybackDownloadedFraction,
   setPlaybackDownloaded,
-} from "@/lib/player/playback-clock";
+} from "@/features/player/engine/playback-clock";
 import {
   awaitCastServerReady,
   isBundledEngineUrl,
   isLocalEngineUrl,
   restartCastServer,
 } from "@/lib/stremio-server";
-import { playbackStartupProfile } from "@/lib/player/startup-profile";
+import { playbackStartupProfile } from "@/features/player/engine/startup-profile";
 import { isWeb } from "@/lib/platform";
 import { usePauseOnInactive } from "./player/hooks/use-pause-on-inactive";
 import { spoilerMaskFor } from "@/lib/spoilers";
@@ -92,7 +88,6 @@ import { useTrickplay } from "./player/hooks/use-trickplay";
 import { useStreamPill } from "./player/hooks/use-stream-pill";
 import { useStubDetection } from "./player/hooks/use-stub-detection";
 import { useBridgeLoad } from "./player/hooks/use-bridge-load";
-import { useSportsDockSurface } from "./player/hooks/use-sports-dock-surface";
 import { useVideoFill } from "./player/hooks/use-video-fill";
 import { usePlayerOsd } from "./player/hooks/use-player-osd";
 import type { ActionFeedback } from "@/components/player/action-indicator";
@@ -109,28 +104,19 @@ import { setSkipSegmentsView } from "@/lib/skip-intro/segment-store";
 import { markStreamDead, STUB_TTL_MS } from "@/lib/dead-streams";
 import type { VolumeIndicatorState } from "@/components/player/volume-indicator";
 import type { SpeedIndicatorState } from "@/components/player/speed-indicator";
-import type { ToastInfo } from "@/views/addons/addons-types";
+import type { ToastInfo } from "@/features/addons/views/addons/addons-types";
 import { SFX } from "@/lib/sfx";
 import { useKeyboardNavigation } from "@/lib/keyboard-navigation";
-import { clearOverlayDismiss, dismissedJustNow } from "@/lib/player/overlay-dismiss";
-import { subtitleStreamKey } from "@/lib/subtitles/subtitle-memory";
-import { SUBTITLE_FPS_TRANSITION_FAILED_EVENT } from "@/lib/player/subtitle-fps";
+import { clearOverlayDismiss, dismissedJustNow } from "@/features/player/engine/overlay-dismiss";
+import { subtitleStreamKey } from "@/features/subtitles/subtitle-memory";
+import { SUBTITLE_FPS_TRANSITION_FAILED_EVENT } from "@/features/player/engine/subtitle-fps";
 import { PlayerInteractionLockControls } from "@/components/player/player-interaction-lock";
 import { usePlayerInteractionLock } from "./player/hooks/use-player-interaction-lock";
 import { isNextAired } from "@/lib/cw-resurface";
-import { exitAnyFullscreen } from "@/lib/fullscreen-state";
 
 let hdrFallbackNoticeShown = false;
 
 export function PlayerView({ src }: { src: PlayerSrc }) {
-  return src.officialBroadcast ? (
-    <EmbeddedBroadcastPlayer src={src} stream={src.officialBroadcast} />
-  ) : (
-    <NativePlayerView src={src} />
-  );
-}
-
-function NativePlayerView({ src }: { src: PlayerSrc }) {
   const {
     setChromeHidden: setAppChromeHidden,
     topPath,
@@ -141,17 +127,15 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     setPipDocked,
     picker,
   } = useView();
-  const docked = !!src.sportsDocked;
-  const [dockMinimized, setDockMinimized] = useState(false);
   const setChromeHidden = useCallback(
-    (hidden: boolean) => setAppChromeHidden(docked || src.pipDocked ? false : hidden),
-    [docked, src.pipDocked, setAppChromeHidden],
+    (hidden: boolean) => setAppChromeHidden(src.pipDocked ? false : hidden),
+    [src.pipDocked, setAppChromeHidden],
   );
   useEffect(() => {
     setAppChromeHidden(false);
     window.dispatchEvent(new Event("resize"));
     window.dispatchEvent(new Event("harbor:mpv-refresh-geom"));
-  }, [docked, src.pipDocked, setAppChromeHidden]);
+  }, [src.pipDocked, setAppChromeHidden]);
   const { settings, update } = useSettings();
   const bigPictureActive = useBigPicture().active;
   const isKid = useActiveKid() != null;
@@ -195,10 +179,6 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     hostSource,
   } = useTogether();
   const stageRef = useRef<HTMLDivElement>(null);
-  const refreshDockGeometry = useCallback(
-    () => window.dispatchEvent(new Event("harbor:mpv-refresh-geom")),
-    [],
-  );
   const videoMountRef = useRef<HTMLDivElement>(null);
   const bridgeRef = useRef<PlayerBridge | null>(null);
   const selfFrameReadyRef = useRef(false);
@@ -209,28 +189,6 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     src,
     settings,
   });
-  const nativeDock = docked && engine === "mpv" && embedActive;
-  const prepareDockMove = useCallback(
-    (next: DockSpot, commit: () => void) => {
-      if (!nativeDock) return false;
-      const stage = stageRef.current?.getBoundingClientRect();
-      const rect = readEmbedRect(videoMountRef.current);
-      if (!stage || !rect) return false;
-      return (
-        bridgeRef.current?.moveEmbeddedSurface?.(
-          {
-            ...rect,
-            cssLeft: rect.cssLeft + next.x - stage.left,
-            cssTop: rect.cssTop + next.y - stage.top,
-          },
-          commit,
-        ) ?? false
-      );
-    },
-    [nativeDock],
-  );
-  const dockDrag = useDockDrag(stageRef, docked, refreshDockGeometry, prepareDockMove);
-  useSportsDockSurface(nativeDock && !src.pipDocked, videoMountRef);
   const isP2pEngine =
     (isBundledEngineUrl(src.url) || isLocalEngineUrl(src.url)) &&
     !src.url.includes("/hlsv2/") &&
@@ -588,24 +546,14 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     openPicker,
   });
   closePlayerRef.current = () => void closePlayer();
-  const backFromPlayer = useCallback(async () => {
-    if (src.sportsDocked === false) {
-      // Keep the mounted playback engine and current source; only change its surface.
-      setDockMinimized(false);
-      replacePlayerSrc({ ...src, sportsDocked: true });
-      await exitAnyFullscreen();
-      return;
-    }
-    await closePlayer();
-  }, [src, replacePlayerSrc, closePlayer]);
   useEffect(() => {
     const onLocalBack = (e: Event) => {
       e.preventDefault();
-      void backFromPlayer();
+      void closePlayer();
     };
     window.addEventListener("harbor:local-back", onLocalBack);
     return () => window.removeEventListener("harbor:local-back", onLocalBack);
-  }, [backFromPlayer]);
+  }, [closePlayer]);
 
   useKeyboardNavigation({
     // TV focus navigation intentionally owns arrows and Space while enabled.
@@ -615,7 +563,7 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     wrap: true,
     arrows: chromeVisible && !pipMode,
     onBack: () => {
-      void backFromPlayer();
+      void closePlayer();
       return true;
     },
   });
@@ -1078,7 +1026,6 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     drawMode,
     setDrawMode,
     closePlayer,
-    returnToPreview: src.sportsDocked === false ? backFromPlayer : undefined,
     playPauseToggle,
     seekStep,
     seekTo,
@@ -1351,7 +1298,7 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     engine,
     embedActive,
     hdrGamma: snap.hdrGamma,
-    playerHdrStage: docked ? "off" : settings.playerHdrStage,
+    playerHdrStage: settings.playerHdrStage,
     playerHdrToSdr: settings.playerHdrToSdr,
     onFallback: () => {
       if (hdrFallbackNoticeShown) return;
@@ -1363,12 +1310,7 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     },
   });
 
-  const { mpvEmbedWindowsActive, stageBg } = embedFlags(
-    engine,
-    embedActive,
-    snap.videoWidth,
-    snap.videoHeight,
-  );
+  const { mpvEmbedWindowsActive, stageBg } = embedFlags(engine, embedActive);
   const { loaderActive } = useEverPlayed({
     url: src.url,
     status: snap.status,
@@ -1477,7 +1419,7 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
     swappingEp,
     swapResolvingKey,
     closePlayer,
-    onBack: backFromPlayer,
+    onBack: closePlayer,
     cancelToPicker,
     engineStats,
     isP2pEngine,
@@ -1613,14 +1555,10 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
       data-harbor-player
       data-detached={src.pipDocked || undefined}
       inert={src.pipDocked || undefined}
-      data-docked={docked}
-      data-native-dock={nativeDock}
-      data-audio-only={docked && dockMinimized}
       dir="ltr"
-      className={`fixed z-[100] overflow-hidden ${docked ? "sports-player-dock" : "inset-0"} ${stageBg}`}
+      className={`fixed z-[100] overflow-hidden inset-0 ${stageBg}`}
       style={{
         ...(screenLocked ? { cursor: "default" } : cursorStyle),
-        ...dockDrag.style,
         ...(src.pipDocked ? { visibility: "hidden", pointerEvents: "none" } : {}),
       }}
       onMouseMove={wakeChrome}
@@ -1696,29 +1634,8 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
           if (resuming) hideForResume();
         }}
       />
-      {docked && (
-        <SportsDockControls
-          dragHandlers={dockDrag.handlers}
-          src={src}
-          snap={snap}
-          bridge={bridgeRef.current}
-          minimized={dockMinimized}
-          onMinimize={() => setDockMinimized((value) => !value)}
-          onPlayPause={playPauseToggle}
-          onClose={() => void closePlayer()}
-          onExpand={() => {
-            setDockMinimized(false);
-            replacePlayerSrc({ ...src, sportsDocked: false });
-          }}
-          onFullscreen={() => {
-            setDockMinimized(false);
-            replacePlayerSrc({ ...src, sportsDocked: false });
-            toggleFullscreen();
-          }}
-        />
-      )}
-      {!docked && !hdrStageActive && <PlayerOverlayLayers {...overlayProps} />}
-      {!docked && !hdrStageActive && (
+      {!hdrStageActive && <PlayerOverlayLayers {...overlayProps} />}
+      {!hdrStageActive && (
         <PlayerInteractionLockControls
           enabled={screenLockEnabled}
           locked={screenLocked}
@@ -1740,7 +1657,7 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
           onExit={stopWatching}
         />
       )}
-      {sourceError && !docked && (
+      {sourceError && (
         <SourceErrorCard
           error={sourceError}
           onChoose={() => {
@@ -1787,7 +1704,7 @@ function NativePlayerView({ src }: { src: PlayerSrc }) {
             Promise.resolve(false),
           pip: togglePipMode,
           cast: () => cast.openCastMenu(null),
-          back: backFromPlayer,
+          back: closePlayer,
           prevEp: playPrev,
           nextEp: playNext,
           pickAnother: pickAnotherOrGuide,

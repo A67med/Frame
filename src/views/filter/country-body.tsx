@@ -1,6 +1,6 @@
 import { useCountryPeople } from "@/lib/country-people";
 import { useCountryCanon } from "@/lib/providers/wikidata-canon";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 import { BrandBrowse } from "./brand-browse";
 import { BrandFacts, useBrandStats } from "./brand-facts";
 import { BoxOfficeRail, DecadesSection, FranchisesRail, LongestRunningRail } from "./brand-rails";

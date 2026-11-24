@@ -1,5 +1,5 @@
 import type { KitsuEpisode } from "@/lib/providers/kitsu";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 /** Keep the hero's saved episode even while its season's metadata is loading. */
 export function animePlayEpisode(

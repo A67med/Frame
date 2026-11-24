@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { parseRelease, releaseAffinity } from "../src/lib/subtitles/release-match.ts";
+import { parseRelease, releaseAffinity } from "../src/features/subtitles/release-match.ts";
 
 const bluray4k = parseRelease("Movie.2024.2160p.BluRay.REMUX-FraMeSToR");
 

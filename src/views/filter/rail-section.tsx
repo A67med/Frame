@@ -6,7 +6,7 @@ import { useT } from "@/lib/i18n";
 import { useClaimSeenIds, useDedupOnSeenIds } from "@/lib/feed/seen-ids";
 import { tmdbDiscover } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 import type { StandardRail } from "./rails-config";
 import { MAX_PAGES, MIN_INITIAL_FILL, SpotlightGateContext } from "./spotlight-gate";
 

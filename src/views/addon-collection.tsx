@@ -2,7 +2,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { PickCard } from "@/components/pick-card";
 import { fetchAddonCatalogPage, fetchAddonMeta } from "@/lib/addons";
 import { narrowMediaType, type Meta, type MetaType } from "@/lib/cinemeta";
-import { useScrollMemory, useView } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 
 type CollectionVideo = NonNullable<Meta["videos"]>[number];

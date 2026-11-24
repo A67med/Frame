@@ -5,7 +5,7 @@ import {
   usePlaybackBufferedGated,
   usePlaybackDownloadedGated,
   setSeekHovering,
-} from "@/lib/player/playback-clock";
+} from "@/features/player/engine/playback-clock";
 import { useTrickplayState } from "@/lib/trickplay";
 import { useSkipSegmentsView } from "@/lib/skip-intro/segment-store";
 import { ThumbPreview } from "@/components/player/thumb-preview";

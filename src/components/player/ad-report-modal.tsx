@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import { HelpCircle, Plus, X } from "lucide-react";
 import { useState } from "react";
-import { usePlaybackPosition } from "@/lib/player/playback-clock";
+import { usePlaybackPosition } from "@/features/player/engine/playback-clock";
 import { useT } from "@/lib/i18n";
 import { useEscape } from "@/components/modal-shell";
 import type { AdRange } from "@/lib/ad-report/submit";

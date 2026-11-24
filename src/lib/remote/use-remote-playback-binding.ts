@@ -1,7 +1,7 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
 import type { CastDeviceInfo } from "@/lib/cast";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { registerRemotePlayback, type RemotePlaybackBinding } from "./session";
 
 /** Registers the active player + cast session with the remote control hub. */

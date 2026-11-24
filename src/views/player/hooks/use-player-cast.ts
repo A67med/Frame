@@ -1,13 +1,13 @@
 import { useEffect, useMemo, type RefObject } from "react";
 import { useDebridClients } from "@/lib/debrid/registry";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
 import {
   getPlaybackBuffered,
   getPlaybackPosition,
   setPlaybackClock,
-} from "@/lib/player/playback-clock";
+} from "@/features/player/engine/playback-clock";
 import type { Settings } from "@/lib/settings";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { useCastPick } from "./use-cast-pick";
 import { useCastSession } from "./use-cast-session";
 

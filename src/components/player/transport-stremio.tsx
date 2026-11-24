@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import type { PlayerCapabilities, PlayerSnapshot } from "@/lib/player/bridge";
-import type { SubtitleAddHandler } from "@/lib/player/subtitle-load";
+import type { PlayerCapabilities, PlayerSnapshot } from "@/features/player/engine/bridge";
+import type { SubtitleAddHandler } from "@/features/player/engine/subtitle-load";
 import type { Meta } from "@/lib/cinemeta";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
 import {
   controlsInSlot,
   PLAYER_CHROME_CHANGED_EVENT,
@@ -21,7 +21,7 @@ import {
   RenderedStremioControl,
   type StremioRenderCtx,
 } from "./transport/control-renderer-stremio";
-import { usePlayerNavigation } from "@/lib/view";
+import { usePlayerNavigation } from "@/app/navigation/view";
 import { useCastModalPlay } from "./use-cast-modal-play";
 
 export type TransportStremioProps = {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { buildStreamIdsWithIdentity } from "@/lib/streams/anime-identity";
 
 export function useStreamIds(

@@ -2,10 +2,10 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import type { TrackInfo } from "../src/lib/player/bridge.ts";
+import type { TrackInfo } from "../src/features/player/engine/bridge.ts";
 import { pickBestMatch, rankByRelease } from "../src/components/player/subtitle-menu/best-match.ts";
-import { releaseCompatibilityPercent } from "../src/lib/subtitles/release-match.ts";
-import { streamTagsOf } from "../src/lib/subtitles/stream-hints.ts";
+import { releaseCompatibilityPercent } from "../src/features/subtitles/release-match.ts";
+import { streamTagsOf } from "../src/features/subtitles/stream-hints.ts";
 
 function track(overrides: Partial<TrackInfo>): TrackInfo {
   return {

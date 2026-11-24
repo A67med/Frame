@@ -18,7 +18,7 @@ import { useAllPlaylists } from "@/views/live/hooks/use-all-playlists";
 import { useChannelFilter } from "@/views/live/hooks/use-channel-filter";
 import { useEpg, useNowTick } from "@/views/live/hooks/use-epg";
 import { useIptvPlaylist } from "@/views/live/hooks/use-iptv-playlist";
-import { useScrollMemory } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { CurrentChannelInfo } from "./current-channel-info";

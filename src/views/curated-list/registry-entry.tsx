@@ -5,7 +5,7 @@ import { itemMeta } from "@/lib/curated/registry";
 import type { CuratedList, CuratedListItem } from "@/lib/curated/types";
 import type { RegistryEntry as Entry } from "@/lib/film-registry/types";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { openUrl } from "@/lib/window";
 
 const QUIET =

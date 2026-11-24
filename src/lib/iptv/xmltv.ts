@@ -20,7 +20,7 @@ async function iptvFetch(url: string, signal: AbortSignal): Promise<Response> {
       } as unknown as RequestInit);
     } catch (e) {
       if (!/scope|not allowed/i.test(String(e))) throw e;
-      const { safeFetch } = await import("@/lib/safe-fetch");
+      const { safeFetch } = await import("@/infrastructure/networking/safe-fetch");
       return safeFetch(url, {
         signal,
         headers: {

@@ -5,7 +5,7 @@ import type { Meta } from "@/lib/cinemeta";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { useHeroLogos } from "@/components/anime-hero/use-hero-logos";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { ImdbIcon } from "@/components/icons/imdb-icon";
 import type { AnimeFilterOpts } from "@/lib/anime-filter";
 import { fetchAnilistTrendingAnime } from "@/lib/anilist/browse";

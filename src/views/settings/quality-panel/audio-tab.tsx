@@ -2,7 +2,7 @@ import { Dropdown } from "@/components/dropdown";
 import { useEffect, useState } from "react";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { listMpvAudioDevices, type MpvAudioDevice } from "@/lib/player/mpv";
+import { listMpvAudioDevices, type MpvAudioDevice } from "@/features/player/engine/mpv";
 import { SettingRow } from "../kit";
 import { Section, Segmented, ToggleRow } from "../shared";
 import { AudioProfilePreview } from "./audio-profile-preview";

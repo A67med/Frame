@@ -1,5 +1,3 @@
-#[cfg(target_os = "linux")]
-use tauri::Emitter;
 use tauri::{AppHandle, Manager, Url, WebviewUrl, WebviewWindowBuilder};
 
 const BROWSER_LABEL: &str = "harbor-browser";
@@ -29,32 +27,6 @@ const CHROME_INIT_SCRIPT: &str = r#"
 // Linux only: WebKitGTK can't open stremio:// or navigate to a raw manifest.json,
 // so an addon's "Install" button dies with "URL can't be shown". We funnel those
 // intents into a top-level location change, which on_navigation then captures.
-#[cfg(target_os = "linux")]
-const STREMIO_CAPTURE_SCRIPT: &str = r#"
-(function () {
-  if (window.__harborCaptureBooted) return;
-  window.__harborCaptureBooted = true;
-  const isInstall = (u) => {
-    try {
-      const s = String(u);
-      return s.indexOf('stremio://') === 0 || /\/manifest\.json(\?|$)/i.test(s);
-    } catch (_) { return false; }
-  };
-  const origOpen = window.open;
-  window.open = function (u) {
-    if (isInstall(u)) { try { window.location.href = String(u); } catch (_) {} return null; }
-    return origOpen ? origOpen.apply(window, arguments) : null;
-  };
-  document.addEventListener('click', function (e) {
-    const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
-    if (a && isInstall(a.getAttribute('href'))) {
-      e.preventDefault();
-      e.stopPropagation();
-      try { window.location.href = a.href || a.getAttribute('href'); } catch (_) {}
-    }
-  }, true);
-})();
-"#;
 
 #[tauri::command]
 pub async fn browser_open(app: AppHandle, url: String) -> Result<(), String> {
@@ -88,9 +60,6 @@ pub async fn browser_open(app: AppHandle, url: String) -> Result<(), String> {
     let target_y = main_pos.y + (main_size.height - target_h) / 2.0;
 
     let app_for_window = app.clone();
-    #[cfg(target_os = "linux")]
-    let init_script = format!("{}\n{}", CHROME_INIT_SCRIPT, STREMIO_CAPTURE_SCRIPT);
-    #[cfg(not(target_os = "linux"))]
     let init_script = CHROME_INIT_SCRIPT.to_string();
     // Creating WebView2 inside the UI event loop can deadlock all Frame windows.
     tauri::async_runtime::spawn_blocking(move || -> Result<(), String> {
@@ -109,20 +78,6 @@ pub async fn browser_open(app: AppHandle, url: String) -> Result<(), String> {
                 .shadow(true)
                 .focused(true)
                 .initialization_script(&init_script);
-
-        #[cfg(target_os = "linux")]
-        {
-            let nav_app = app_for_window.clone();
-            builder = builder.on_navigation(move |url| {
-                let s = url.as_str();
-                if url.scheme() == "stremio" || s.contains("/manifest.json") {
-                    eprintln!("[browser] captured install link: {}", s);
-                    let _ = nav_app.emit("harbor://browser-stremio-capture", s.to_string());
-                    return false;
-                }
-                true
-            });
-        }
 
         let result = crate::browser_args::match_main(&app_for_window, builder).build();
         match result {

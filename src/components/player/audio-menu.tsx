@@ -2,13 +2,13 @@ import { Check, Languages, RotateCcw, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { listen, type UnlistenFn } from "@tauri-apps/api/event";
 import { Flag } from "@/components/flag";
-import type { TrackInfo } from "@/lib/player/bridge";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 import { modalOverlayClose, modalOverlayEmitState, modalOverlayOpen } from "@/lib/modal-overlay";
-import { languageName, normalizeLang, trackLanguageName } from "@/lib/subtitles/language";
+import { languageName, normalizeLang, trackLanguageName } from "@/features/subtitles/language";
 import { useT } from "@/lib/i18n";
 import { useMenuSide } from "./menu-side";
 import { Tooltip } from "./transport/tooltip";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 
 type Props = {
   tracks: TrackInfo[];

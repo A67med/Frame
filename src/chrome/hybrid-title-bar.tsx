@@ -15,24 +15,20 @@ export function HybridTitleBar({ suppressed = false }: { suppressed?: boolean })
   const fullscreen = useWindowFullscreen();
   if (!IS_TAURI || settings.useNativeTitleBar || !settings.hybridTitleBar) return null;
   if (suppressed || fullscreen) return null;
-  const mac = osClass() === "macos";
   return (
     <div
       data-tauri-drag-region
       className="fixed inset-x-0 top-0 z-[140] h-9 select-none border-b border-edge-soft/70 bg-canvas/80 backdrop-blur-md"
     >
       <div className="absolute left-0 top-0 flex h-full items-center">
-        {mac && <MacDots />}
         <HybridMenuBar />
       </div>
       <div className="absolute left-1/2 top-0 flex h-full -translate-x-1/2 items-center">
         <BarSearch />
       </div>
-      {!mac && (
-        <div className="absolute right-0 top-0 flex h-full items-stretch">
-          <WinControls />
-        </div>
-      )}
+      <div className="absolute right-0 top-0 flex h-full items-stretch">
+        <WinControls />
+      </div>
     </div>
   );
 }
@@ -71,7 +67,7 @@ function BarSearch() {
 }
 
 export function WindowCaptionPreview({ native = false }: { native?: boolean }) {
-  return osClass() === "macos" ? <MacDots preview /> : <WinControls preview native={native} />;
+  return <WinControls preview native={native} />;
 }
 
 function WinControls({
@@ -189,65 +185,5 @@ function WinBtn({
         />
       </span>
     </div>
-  );
-}
-
-function MacDots({ preview = false }: { preview?: boolean } = {}) {
-  const t = useT();
-  const maxed = useMaximized();
-  return (
-    <div data-tauri-drag-region="false" className="flex h-full items-center gap-2 pl-3.5 pr-2">
-      <MacDot color="#ff5f57" label={t("common.close")} onClick={preview ? undefined : close}>
-        <path
-          d="M3.2 3.2l3.6 3.6M6.8 3.2l-3.6 3.6"
-          stroke="#4d0000"
-          strokeWidth="1.3"
-          strokeLinecap="round"
-        />
-      </MacDot>
-      <MacDot color="#febc2e" label={t("chrome.minimize")} onClick={preview ? undefined : minimize}>
-        <path d="M2.6 5h4.8" stroke="#5a3d00" strokeWidth="1.3" strokeLinecap="round" />
-      </MacDot>
-      <MacDot
-        color="#28c840"
-        label={maxed ? t("chrome.restore") : t("chrome.maximize")}
-        onClick={preview ? undefined : () => void toggleMaximize()}
-      >
-        <path d="M2.6 2.6H5.8L2.6 5.8Z" fill="#0b3d0b" />
-        <path d="M7.4 7.4H4.2L7.4 4.2Z" fill="#0b3d0b" />
-      </MacDot>
-    </div>
-  );
-}
-
-function MacDot({
-  color,
-  label,
-  onClick,
-  children,
-}: {
-  color: string;
-  label: string;
-  onClick?: () => void;
-  children: ReactNode;
-}) {
-  return (
-    <button
-      type="button"
-      aria-label={label}
-      onClick={onClick}
-      className="group/dot flex h-[13px] w-[13px] items-center justify-center rounded-full ring-1 ring-black/15"
-      style={{ backgroundColor: color }}
-    >
-      <svg
-        width="10"
-        height="10"
-        viewBox="0 0 10 10"
-        fill="none"
-        className="opacity-0 transition-opacity duration-100 group-hover/dot:opacity-100"
-      >
-        {children}
-      </svg>
-    </button>
   );
 }

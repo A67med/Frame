@@ -1,7 +1,7 @@
 import animeCatIcon from "@/assets/category/anime.svg";
 import adultCatIcon from "@/assets/category/adult.svg";
 import { Download, HardDrive, Minus, Plus } from "../icons";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
 import { useSampleArtwork } from "@/lib/sample-artwork";
 import { useT } from "@/lib/i18n";

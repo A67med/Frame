@@ -5,12 +5,12 @@ import { useSettings } from "@/lib/settings";
 import { buildStreamIdsWithIdentity } from "@/lib/streams/anime-identity";
 import { buildEpisodePipelineInput } from "@/lib/streams/episode-pipeline-input";
 import { runPipeline } from "@/lib/streams/pipeline";
-import { pluginCacheTokens } from "@/lib/streams/plugins";
+import { pluginCacheTokens } from "@/features/addons/streams";
 import { buildPickerConfigHash, peekPickerCache, setPickerCache } from "@/lib/picker-cache";
 import { useAddons } from "@/views/play-picker/use-addons";
 import { stampAddonOrder } from "@/views/play-picker/picker-utils";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 export function useSwitcherRefresh(params: {
   meta: Meta;

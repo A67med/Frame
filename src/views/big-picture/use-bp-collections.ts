@@ -4,7 +4,7 @@ import {
   COLLECTION_CATEGORIES,
   COLLECTIONS_CATALOG,
   type CatalogCollection,
-} from "@/lib/collections-catalog";
+} from "@/features/collections/catalog";
 import {
   collectionNameMatches,
   tmdbCollection,

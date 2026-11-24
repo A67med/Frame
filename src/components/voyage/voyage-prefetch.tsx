@@ -7,7 +7,7 @@ import { buildPickerConfigHash, getPickerCache, setPickerCache } from "@/lib/pic
 import { useSettings } from "@/lib/settings";
 import { buildEpisodePipelineInput } from "@/lib/streams/episode-pipeline-input";
 import { runPipeline } from "@/lib/streams/pipeline";
-import { isPluginAddon, pluginCacheTokens } from "@/lib/streams/plugins";
+import { isPluginAddon, pluginCacheTokens } from "@/features/addons/streams";
 import { useAddons } from "@/views/play-picker/use-addons";
 import { useAnimeAltTitles } from "@/views/play-picker/use-anime-alt-titles";
 import { useImdbId } from "@/views/play-picker/use-imdb-id";

@@ -17,7 +17,7 @@ function fixture(magnets: unknown) {
     "@/lib/debug": { dlog() {}, dwarn() {} },
     "@/lib/streams/episode-file": { matchEpisodeFileIndex },
     "./types": { hashFromMagnet, magnetFromHash },
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async (url: string) => {
         const parsed = new URL(url);
         requests.push(parsed);

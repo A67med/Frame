@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { isSimklBlocked, simklRequest } from "./client";
 import type { SimklIds, SimklTarget } from "./types";
 import { updateCachedRatingByTarget, getCachedRatingByTarget } from "./activities";

@@ -1,5 +1,5 @@
 import { lruSet } from "@/lib/cache";
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 import type { Meta } from "@/lib/cinemeta";
 import { extractTitleFromChannelName } from "./channel-title";
 

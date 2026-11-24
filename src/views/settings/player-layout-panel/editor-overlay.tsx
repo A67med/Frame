@@ -18,7 +18,7 @@ import {
   RenderedStremioControl,
   type StremioRenderCtx,
 } from "@/components/player/transport/control-renderer-stremio";
-import { setPlaybackClock } from "@/lib/player/playback-clock";
+import { setPlaybackClock } from "@/features/player/engine/playback-clock";
 import { useT } from "@/lib/i18n";
 import { DefaultLayout, FauxBackdrop, StremioLayout, TopRow } from "./editor-chrome";
 import { buildDefaultCtx, buildStremioCtx, type PlayerMode } from "./editor-mock-ctx";

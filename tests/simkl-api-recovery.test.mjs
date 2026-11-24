@@ -26,7 +26,7 @@ function harness(responses = []) {
     }
   }
   const mocks = {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async (url, init) => {
         calls.push({ url: new URL(url), init, at: state.now });
         const response = responses.shift();

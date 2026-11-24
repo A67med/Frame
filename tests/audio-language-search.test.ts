@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { normalizeLang } from "../src/lib/subtitles/language";
+import { normalizeLang } from "../src/features/subtitles/language";
 
 const menu = readFileSync(
   new URL("../src/components/player/audio-menu.tsx", import.meta.url),

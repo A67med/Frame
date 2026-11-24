@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Loader2, X } from "lucide-react";
 import type { Meta } from "@/lib/cinemeta";
 import { SFX } from "@/lib/sfx";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { bpCardArt } from "./bp-art";
 import { pushBpBack } from "./bp-back";
 import { useBpT } from "./bp-i18n";

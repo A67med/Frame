@@ -124,7 +124,10 @@ impl AudioCastState {
             .read()
             .await
             .iter()
-            .filter(|(_, s)| s.created.elapsed() > Duration::from_secs(6 * 60 * 60) && s.readers.available_permits() == 2)
+            .filter(|(_, s)| {
+                s.created.elapsed() > Duration::from_secs(6 * 60 * 60)
+                    && s.readers.available_permits() == 2
+            })
             .map(|(id, _)| id.clone())
             .collect();
         for id in &ids {

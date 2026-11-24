@@ -18,7 +18,7 @@ import { PickCard } from "@/components/pick-card";
 import { Row, ScrollRootContext } from "@/components/row";
 import { AnimeRankCard } from "@/components/top-rank-card";
 import { useAuth } from "@/lib/auth";
-import { anyProfileSharesStremioWith, useProfiles } from "@/lib/profiles";
+import { anyProfileSharesStremioWith, useProfiles } from "@/features/profiles/profiles";
 import {
   createAddonCatalogFetcher,
   isCollectionCatalog,
@@ -88,7 +88,7 @@ import { fetchAnilistTrendingAnime } from "@/lib/anilist/browse";
 import { useSettings } from "@/lib/settings";
 import { useCollectionRowsForPage } from "@/lib/page-collection-rows";
 import { useContentDrag } from "@/lib/window-drag";
-import { isAdultAnime } from "@/lib/addons-store/adult-filter";
+import { isAdultAnime } from "@/features/addons/catalog/adult-filter";
 import { absorbCloudAnimeCw } from "@/lib/anime-cw-absorb";
 import {
   ANIME_CLOUD_ID,
@@ -115,7 +115,8 @@ import {
 } from "@/lib/simkl/list-status";
 import { loadAnilistWatchedMap } from "@/lib/anilist/watched-map";
 import { useSimkl } from "@/lib/simkl/provider";
-import { useScrollMemory, useView } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView } from "@/app/navigation/view";
 
 export { isAnimeRow } from "./anime/anime-rows";
 

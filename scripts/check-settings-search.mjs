@@ -78,7 +78,7 @@ try {
   const mod = await server.ssrLoadModule("/src/views/settings/search-match.ts");
   const { matchesSettingsSearch, rankSettingsSearch, setSettingsSearchVocabulary } = mod;
 
-  const nav = fs.readFileSync(path.join(ROOT, "src/views/settings/nav.tsx"), "utf8");
+  const nav = fs.readFileSync(path.join(ROOT, "src/features/settings/search/options.ts"), "utf8");
   const entries = settingsSearchEntries(nav);
 
   setSettingsSearchVocabulary(entries.flatMap((e) => [e.label, ...e.keywords]));

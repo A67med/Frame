@@ -1,5 +1,4 @@
 import { memo, useEffect, useState, type RefObject } from "react";
-import { isAndroidTv } from "@/lib/platform";
 import { BpMosaic } from "./bp-mosaic";
 import { BpLiveSplit } from "./bp-live-split";
 import { useBpDecorMotion } from "./bp-decor-motion";
@@ -171,7 +170,6 @@ function BpAmbientLayersBody(v: BpAmbientView) {
   // against an 18MB steady state, so read GL mtrack out of
   // `dumpsys meminfo app.harbor` after touching this, not just framestats.
   // TV only. Desktop composites these fine and was never measured here.
-  const xfadeLayer = isAndroidTv() ? "opacity" : undefined;
 
   return (
     <div
@@ -290,7 +288,6 @@ function BpAmbientLayersBody(v: BpAmbientView) {
                   style={{
                     opacity: v.trailerOn ? 0 : top ? 1 : 0,
                     zIndex: top ? 0 : 1,
-                    willChange: xfadeLayer,
                   }}
                 />
               );

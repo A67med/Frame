@@ -5,7 +5,7 @@ import { type FranchiseEntry } from "@/lib/providers/anime-detail";
 import type { KitsuEpisode } from "@/lib/providers/kitsu";
 import { useSettings } from "@/lib/settings";
 import { effectiveOrderProvider, tvdbPanelEnabled } from "@/lib/settings/episode-order";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { fetchWatchedKeySet } from "@/lib/trakt/history";
 import { useTrakt } from "@/lib/trakt/provider";
 import { useAnilistWatched } from "@/lib/anilist/use-anilist-watched";

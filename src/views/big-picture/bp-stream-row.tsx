@@ -24,15 +24,15 @@ import {
 } from "@/components/format-badge";
 import { HostMatchChip } from "@/components/host-match-chip";
 import { QUALITY_LABEL, qualityKey } from "@/components/player/stream-switcher/quality";
-import type { LocalEntry } from "@/lib/local-library";
+import type { LocalEntry } from "@/features/library/local-library";
 import type { MediaServerConnection, PlayableCopy } from "@/lib/media-server/types";
 import type { MediaServerHealth } from "@/lib/media-server/health";
-import { episodeLabel } from "@/lib/local-library/player-src";
+import { episodeLabel } from "@/features/library/local-library/player-src";
 import { useSettings } from "@/lib/settings";
 import { formatBytes } from "@/lib/together/source-descriptor";
 import { SFX } from "@/lib/sfx";
 import type { ScoredStream } from "@/lib/streams/types";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import {
   contributorLabel,
   displayTitle,

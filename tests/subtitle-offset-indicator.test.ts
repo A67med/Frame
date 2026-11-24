@@ -8,7 +8,7 @@ import {
   formatSubtitleOffset,
   sanitizeSubtitleOffsetPosition,
   sanitizeSubtitleOffsetSize,
-} from "../src/lib/player/subtitle-offset.ts";
+} from "../src/features/player/engine/subtitle-offset.ts";
 
 const keyboardSource = readFileSync(
   new URL("../src/views/player/hooks/use-keyboard-shortcuts.ts", import.meta.url),
@@ -31,7 +31,7 @@ const syncBarSource = readFileSync(
   "utf8",
 );
 const syncStoreSource = readFileSync(
-  new URL("../src/lib/player/sub-sync.ts", import.meta.url),
+  new URL("../src/features/player/engine/sub-sync.ts", import.meta.url),
   "utf8",
 );
 const subtitleMenuSource = readFileSync(

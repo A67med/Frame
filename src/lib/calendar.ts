@@ -1,5 +1,5 @@
 import { invoke } from "@tauri-apps/api/core";
-import { safeFetch as fetch, safeFetchBytes } from "@/lib/safe-fetch";
+import { safeFetch as fetch, safeFetchBytes } from "@/infrastructure/networking/safe-fetch";
 import { formatAirDate } from "@/lib/dates";
 import {
   isPermissionGranted as tauriNotifyGranted,
@@ -7,7 +7,7 @@ import {
   sendNotification as tauriSendNotification,
 } from "@tauri-apps/plugin-notification";
 import { emitDeepLinkOpen, parseHarborOpen } from "@/lib/deep-link";
-import { isLinuxDesktop, isMacDesktop, isWeb, isWindowsDesktop } from "@/lib/platform";
+import { isWeb, isWindowsDesktop } from "@/lib/platform";
 import { ensureNotifyPermission } from "@/lib/reminders";
 import { setItemWithRecovery } from "@/lib/storage-recovery";
 import { focusWindow } from "@/lib/window";
@@ -522,7 +522,7 @@ async function fetchPosterBytes(url: string): Promise<number[] | undefined> {
 }
 
 function isDesktopTauri(): boolean {
-  return isWindowsDesktop() || isMacDesktop() || isLinuxDesktop();
+  return isWindowsDesktop();
 }
 
 export async function ensureDesktopNotifyPermission(): Promise<boolean> {

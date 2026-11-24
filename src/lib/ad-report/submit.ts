@@ -1,6 +1,6 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { fingerprint } from "@/lib/skip-intro/fingerprint";
-import type { PlayerStreamRef } from "@/lib/view";
+import type { PlayerStreamRef } from "@/app/navigation/view";
 import { HARBOR_BUGS_BASE } from "@/lib/config/endpoints";
 
 const REPORT_URL = HARBOR_BUGS_BASE ? `${HARBOR_BUGS_BASE}/v1/adreport` : "";

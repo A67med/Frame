@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import type { LocalEntry } from "../src/lib/local-library.ts";
+import type { LocalEntry } from "../src/features/library/local-library.ts";
 
 const KEY = "harbor.library.local.v1";
 
@@ -55,14 +55,14 @@ function harness(initial: LocalEntry[], legacy?: LocalEntry[]) {
     const pending = new Promise<LocalEntry[]>((resolve) => {
       release = () => resolve(snapshot);
     });
-    const removals = load("src/lib/local-library/removals.ts", {}, storage);
+    const removals = load("src/features/library/local-library/removals.ts", {}, storage);
     const library = load(
-      "src/lib/local-library.ts",
+      "src/features/library/local-library.ts",
       {
         react: {},
         "@/lib/episode-span": { parseEpisodeSpan: () => null },
-        "@/lib/local-library/removals": removals,
-        "@/lib/local-library/storage": {
+        "@/features/library/local-library/removals": removals,
+        "@/features/library/local-library/storage": {
           loadLocalLibraryStore: () => pending,
           saveLocalLibraryStore: async (entries: LocalEntry[]) => {
             persisted = structuredClone(entries);

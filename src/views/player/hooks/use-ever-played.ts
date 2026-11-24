@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import type { PlayerStatus } from "@/lib/player/bridge";
-import { getPlaybackPosition, usePlaybackFlag } from "@/lib/player/playback-clock";
+import type { PlayerStatus } from "@/features/player/engine/bridge";
+import { getPlaybackPosition, usePlaybackFlag } from "@/features/player/engine/playback-clock";
 
 export function useEverPlayed(params: {
   url: string;

@@ -2,10 +2,10 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { rankSubtitleCandidates } from "../src/lib/subtitles/candidate-ranking.ts";
-import { subtitleSourceQueryKey } from "../src/lib/subtitles/autosync/sub-source-contract.ts";
-import { deduplicateAndRankSubtitleResults } from "../src/lib/subtitles/search.ts";
-import type { SubResult } from "../src/lib/subtitles/types.ts";
+import { rankSubtitleCandidates } from "../src/features/subtitles/candidate-ranking.ts";
+import { subtitleSourceQueryKey } from "../src/features/subtitles/autosync/sub-source-contract.ts";
+import { deduplicateAndRankSubtitleResults } from "../src/features/subtitles/search.ts";
+import type { SubResult } from "../src/features/subtitles/types.ts";
 
 function candidate(id: string, overrides: Partial<SubResult> = {}): SubResult {
   return {

@@ -1,6 +1,6 @@
 import { Check, AlertCircle } from "lucide-react";
 import { useT } from "@/lib/i18n";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 
 type Variant = "check" | "stalled" | "failed";
 

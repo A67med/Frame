@@ -1,7 +1,7 @@
 import { Check, Download, Loader2, RefreshCw } from "../icons";
 import { useState } from "react";
 import { downloadShader } from "@/lib/shaders";
-import { SHADER_CATALOG, type ShaderCatalogEntry } from "@/lib/player/shader-catalog";
+import { SHADER_CATALOG, type ShaderCatalogEntry } from "@/features/player/engine/shader-catalog";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { ExtLink, RowDesc, RowNote, RowText, RowTitle } from "../shared";

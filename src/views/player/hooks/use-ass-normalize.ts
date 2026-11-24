@@ -1,10 +1,10 @@
 import { invoke } from "@tauri-apps/api/core";
 import { useEffect, useRef, useState } from "react";
-import { safeFetch } from "@/lib/safe-fetch";
-import { decodeSubtitleBytes } from "@/lib/subtitles/encoding";
-import { embeddedSubIndex, resolveReadableUrl } from "@/lib/subtitles/extract";
-import { assScaleFromFactor, computeAssBaseFactor } from "@/lib/player/ass-header";
-import type { TrackInfo } from "@/lib/player/bridge";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
+import { decodeSubtitleBytes } from "@/features/subtitles/encoding";
+import { embeddedSubIndex, resolveReadableUrl } from "@/features/subtitles/extract";
+import { assScaleFromFactor, computeAssBaseFactor } from "@/features/player/engine/ass-header";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 
 function isTauri(): boolean {
   return typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;

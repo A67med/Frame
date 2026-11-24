@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { stripSdhText } from "../src/lib/subtitles/sdh-filter.ts";
+import { stripSdhText } from "../src/features/subtitles/sdh-filter.ts";
 
 const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
@@ -109,21 +109,21 @@ test("the filter never invents ass override tags or eats existing ones", () => {
 });
 
 test("the html5 engine strips at read time and never mutates the parsed cue model", () => {
-  const bridge = read("src/lib/player/html5/bridge.ts");
-  assert.match(bridge, /import \{ stripSdhText \} from "@\/lib\/subtitles\/sdh-filter"/);
+  const bridge = read("src/features/player/engine/html5/bridge.ts");
+  assert.match(bridge, /import \{ stripSdhText \} from "@\/features\/subtitles\/sdh-filter"/);
   assert.match(bridge, /hideSdh \? stripSdhText\(/);
   assert.doesNotMatch(bridge, /\.cues = .*stripSdhText/);
 
-  const parser = read("src/lib/subtitles/parser.ts");
+  const parser = read("src/features/subtitles/parser.ts");
   assert.doesNotMatch(parser, /stripSdhText/);
-  const prepare = read("src/lib/subtitles/prepare.ts");
+  const prepare = read("src/features/subtitles/prepare.ts");
   assert.doesNotMatch(prepare, /stripSdhText/);
   const textSync = read("src/views/player/text-sync-list.tsx");
   assert.doesNotMatch(textSync, /stripSdhText/);
 });
 
 test("mpv gets the safe filter level only, and never a rewritten enclosure list", () => {
-  const style = read("src/lib/player/sub-style.ts");
+  const style = read("src/features/player/engine/sub-style.ts");
   assert.match(style, /\["sub-filter-sdh", /);
   assert.match(style, /\["sub-filter-sdh-harder", false\]/);
   assert.doesNotMatch(style, /sub-filter-sdh-enclosures/);

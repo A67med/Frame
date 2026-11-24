@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 export type Category = {
   id: string;

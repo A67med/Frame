@@ -1,8 +1,8 @@
 import { lruSet } from "@/lib/cache";
 import { registerCache } from "@/lib/memory-profiler";
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 import type { Meta } from "./cinemeta";
-import type { PlayEpisode } from "./view";
+import type { PlayEpisode } from "../app/navigation/view";
 import {
   applyTmdbEpisodeNames,
   needsTmdbEpisodeNames,

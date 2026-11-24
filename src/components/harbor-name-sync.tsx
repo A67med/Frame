@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { fetchProfileAlias, nameEquals, pushNameToProfileAlias } from "@/lib/account/name-sync";
 import { createNameSyncSession } from "@/lib/account/name-sync-session";
 import { bindNameSyncState } from "@/lib/account/name-sync-state";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { currentAuthor, subscribeAuthor } from "@/lib/theme-auth";
 import { useTogether } from "@/lib/together/provider";
 

@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import { recentlyPlayed, watchTitleKey } from "@/lib/playback-history";
+import { recentlyPlayed, watchTitleKey } from "@/features/player/history";
 import { isMovieWatchedLocal } from "@/lib/movie-watched";
 import { isWatchedFlagged } from "@/lib/watched-flag";
 import { manualWatchedLibraryItems } from "@/lib/manual-watched";

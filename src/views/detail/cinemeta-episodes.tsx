@@ -12,7 +12,7 @@ import {
 } from "@/lib/manual-watched";
 import { Poster } from "@/components/poster";
 import { useSettings } from "@/lib/settings";
-import { useLocalAwareSeriesPlay } from "@/lib/local-library/use-series-play";
+import { useLocalAwareSeriesPlay } from "@/features/library/local-library/use-series-play";
 import { useT } from "@/lib/i18n";
 import { EpisodeDownloadButton } from "./episode-download-button";
 import { resumeDefaultSeason } from "@/lib/episode-progress";

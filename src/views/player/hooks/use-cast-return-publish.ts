@@ -1,9 +1,9 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
 import type { PartialSyncState } from "@/lib/together/provider";
 import type { SourceDescriptor } from "@/lib/together/protocol";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 export function useCastReturnPublish(params: {
   casting: boolean;

@@ -3,7 +3,7 @@ import { Users } from "lucide-react";
 import { exitBigPicture } from "@/lib/big-picture";
 import { SFX } from "@/lib/sfx";
 import type { ScoredStream } from "@/lib/streams/types";
-import { useView, type PlayEpisode } from "@/lib/view";
+import { useView, type PlayEpisode } from "@/app/navigation/view";
 import { formatSize, streamSummaryParts } from "@/views/play-picker/picker-utils";
 import { pushBpBack } from "./bp-back";
 import { useBpT } from "./bp-i18n";

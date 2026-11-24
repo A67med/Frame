@@ -8,7 +8,7 @@ import { PeekHero } from "@/components/peek-hero";
 import { Row, ScrollRootContext } from "@/components/row";
 import { TmdbNudge } from "@/components/nudge";
 import { useAuth } from "@/lib/auth";
-import { useProfiles, anyProfileSharesStremioWith } from "@/lib/profiles";
+import { useProfiles, anyProfileSharesStremioWith } from "@/features/profiles/profiles";
 import { topSeries, type Meta } from "@/lib/cinemeta";
 import { useHideAnimeMetas } from "@/lib/anime-hide";
 import { useT } from "@/lib/i18n";
@@ -35,7 +35,7 @@ import {
   subscribeManualWatched,
 } from "@/lib/manual-watched";
 import { useCwAdvance } from "./home/hooks/use-cw-advance";
-import { useScrollMemory } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
 import { buildShowHero, bucketCopy } from "./shows/hero-curation";
 import { showSpecs } from "./shows/show-specs";
 import { useCollectionRowsForPage } from "@/lib/page-collection-rows";

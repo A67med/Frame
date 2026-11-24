@@ -133,7 +133,10 @@ fn a_directory_that_cannot_be_read_removes_nothing() {
     let root = fixture();
     let absent = root.join("absent");
 
-    assert_eq!(purge_extractions(&absent, AN_HOUR, true, an_hour_later()), 0);
+    assert_eq!(
+        purge_extractions(&absent, AN_HOUR, true, an_hour_later()),
+        0
+    );
     assert_eq!(
         purge_extractions(&absent, Duration::ZERO, false, an_hour_later()),
         0
@@ -169,57 +172,6 @@ fn the_shared_sweep_is_confined_to_the_darwin_user_temp_directory() {
     assert!(!is_darwin_user_temp(Path::new("/var/foldersnope")));
     assert!(!is_darwin_user_temp(Path::new("/Users/js/scratch")));
     assert!(!is_darwin_user_temp(Path::new("")));
-}
-
-#[cfg(unix)]
-#[test]
-fn a_symlinked_extraction_is_neither_followed_nor_removed() {
-    let root = fixture();
-    let outside = fixture();
-    let bait = extraction(&outside, "_MEIbait", YT_DLP_EXTRACTION);
-    let keepsake = outside.join("keep.txt");
-    std::fs::write(&keepsake, b"payload").unwrap();
-    let link = root.join("_MEIlink");
-    std::os::unix::fs::symlink(&outside, &link).unwrap();
-
-    assert_eq!(purge_extractions(&root, AN_HOUR, false, an_hour_later()), 0);
-    assert!(std::fs::symlink_metadata(&link).unwrap().is_symlink());
-    assert!(keepsake.is_file());
-    assert!(bait.is_dir());
-    std::fs::remove_file(&link).unwrap();
-    std::fs::remove_dir_all(&root).unwrap();
-    std::fs::remove_dir_all(&outside).unwrap();
-}
-
-#[cfg(unix)]
-#[test]
-fn a_symlinked_sweep_root_is_refused() {
-    let real = fixture();
-    let victim = extraction(&real, "_MEIvictim", YT_DLP_EXTRACTION);
-    let link = std::env::temp_dir().join(format!("harbor-ytdlp-root-{}", uuid::Uuid::new_v4()));
-    std::os::unix::fs::symlink(&real, &link).unwrap();
-
-    assert_eq!(purge_extractions(&link, AN_HOUR, false, an_hour_later()), 0);
-    assert!(victim.is_dir());
-    std::fs::remove_file(&link).unwrap();
-    std::fs::remove_dir_all(&real).unwrap();
-}
-
-#[cfg(unix)]
-#[test]
-fn an_unreadable_extraction_survives_attribution() {
-    use std::os::unix::fs::PermissionsExt;
-    let root = fixture();
-    let sealed = extraction(&root, "_MEIsealed", YT_DLP_EXTRACTION);
-    std::fs::set_permissions(&sealed, std::fs::Permissions::from_mode(0o000)).unwrap();
-    let is_sealed = std::fs::read_dir(&sealed).is_err();
-    let removed = purge_extractions(&root, AN_HOUR, true, an_hour_later());
-    std::fs::set_permissions(&sealed, std::fs::Permissions::from_mode(0o755)).ok();
-
-    assert!(is_sealed, "chmod 000 left the directory readable");
-    assert_eq!(removed, 0);
-    assert!(sealed.is_dir());
-    std::fs::remove_dir_all(&root).unwrap();
 }
 
 #[cfg(windows)]

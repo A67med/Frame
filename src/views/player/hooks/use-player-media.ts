@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useRef, type RefObject } from "react";
 import { useAuth } from "@/lib/auth";
 import { downloadText } from "@/lib/download-text";
-import { getCuesAnySource } from "@/lib/subtitles/extract";
-import { toSrt } from "@/lib/subtitles/serialize";
+import { getCuesAnySource } from "@/features/subtitles/extract";
+import { toSrt } from "@/features/subtitles/serialize";
 import { isWindowsDesktop } from "@/lib/platform";
-import { isAssTrack, isImageSubTrack } from "@/lib/player/sub-format";
-import { clearImportedSubs } from "@/lib/player/imported-subs";
+import { isAssTrack, isImageSubTrack } from "@/features/player/engine/sub-format";
+import { clearImportedSubs } from "@/features/player/engine/imported-subs";
 import { readPlayerVolume } from "@/lib/player-volume";
 import { setPlayerActions } from "@/lib/player-actions";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
 import { useSettings } from "@/lib/settings";
 import { useSimklScrobble } from "@/lib/simkl/scrobble-hook";
 import { useTraktScrobble } from "@/lib/trakt/scrobble-hook";
@@ -25,7 +25,7 @@ import {
   stopAllFullDownloads,
   stopFullDownload,
 } from "@/lib/torrent/full-download";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { useExitSnapshot } from "./use-exit-snapshot";
 import { usePowerInhibit } from "./use-power-inhibit";
 import { useResumeAutosave } from "./use-resume-autosave";
@@ -40,8 +40,8 @@ import { useAutoSync } from "./use-auto-sync";
 import { publishAutoSync } from "@/components/player/autosync/autosync-store";
 import { useVideoDownload } from "./use-video-download";
 import { useWebviewMemory } from "./use-webview-memory";
-import { useCaptionsPopoutOpen } from "@/lib/player/captions-popout-state";
-import { sdhSafeForLanguage } from "@/lib/subtitles/sdh-filter";
+import { useCaptionsPopoutOpen } from "@/features/player/engine/captions-popout-state";
+import { sdhSafeForLanguage } from "@/features/subtitles/sdh-filter";
 
 const HDR_NATIVE_GAMMAS = new Set(["pq", "hlg"]);
 

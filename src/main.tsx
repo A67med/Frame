@@ -7,7 +7,7 @@ import { getUiLanguage } from "@/lib/i18n/store";
 import { ensureUiLocale } from "@/lib/i18n/load-locale";
 import { applyOsDataset } from "@/lib/platform";
 import { loadSecrets } from "@/lib/secret-store";
-import { initSubtitleCache } from "@/lib/subtitles/subtitle-cache";
+import { initSubtitleCache } from "@/features/subtitles/subtitle-cache";
 import { CaptionsApp } from "@/views/captions-app";
 import { ModalOverlayApp } from "@/views/modal-overlay-app";
 import { HdrOverlayApp } from "@/views/hdr-overlay-app";

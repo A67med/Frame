@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { lruGet, lruSet } from "@/lib/cache";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 export type MdblistScores = {
   score: number | null;

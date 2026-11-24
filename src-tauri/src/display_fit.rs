@@ -24,50 +24,30 @@ fn has_saved_window_state(app: &tauri::AppHandle) -> bool {
     let Ok(text) = std::fs::read_to_string(dir.join(app.filename())) else {
         return false;
     };
-    let Ok(states) = serde_json::from_str::<serde_json::Map<String, serde_json::Value>>(&text) else {
+    let Ok(states) = serde_json::from_str::<serde_json::Map<String, serde_json::Value>>(&text)
+    else {
         return false;
     };
     let Some(state) = states.get("main") else {
         return false;
     };
-    let number = |key: &str| state.get(key).and_then(serde_json::Value::as_f64).unwrap_or(0.0);
-    let flag = |key: &str| state.get(key).and_then(serde_json::Value::as_bool).unwrap_or(false);
+    let number = |key: &str| {
+        state
+            .get(key)
+            .and_then(serde_json::Value::as_f64)
+            .unwrap_or(0.0)
+    };
+    let flag = |key: &str| {
+        state
+            .get(key)
+            .and_then(serde_json::Value::as_bool)
+            .unwrap_or(false)
+    };
     number("width") > 0.0
         || number("height") > 0.0
         || number("x") != 0.0
         || number("y") != 0.0
         || flag("maximized")
-}
-
-#[cfg(target_os = "macos")]
-fn macos_screen_insets(window: &WebviewWindow) -> Option<(f64, f64, f64, f64)> {
-    let _mtm = objc2_foundation::MainThreadMarker::new()?;
-    let ns_window_ptr = window.ns_window().ok()? as i64;
-    if ns_window_ptr == 0 {
-        return None;
-    }
-    unsafe {
-        use objc2_app_kit::NSWindow;
-        let raw: *mut objc2::runtime::AnyObject = ns_window_ptr as *mut objc2::runtime::AnyObject;
-        let ns_win: &NSWindow = &*(raw as *const NSWindow);
-        let screen = ns_win.screen()?;
-        let screen_frame = screen.frame();
-        let visible_frame = screen.visibleFrame();
-
-        let top_inset = (screen_frame.origin.y + screen_frame.size.height)
-            - (visible_frame.origin.y + visible_frame.size.height);
-        let bottom_inset = visible_frame.origin.y - screen_frame.origin.y;
-        let left_inset = visible_frame.origin.x - screen_frame.origin.x;
-        let right_inset = (screen_frame.origin.x + screen_frame.size.width)
-            - (visible_frame.origin.x + visible_frame.size.width);
-
-        Some((
-            top_inset.max(0.0),
-            bottom_inset.max(0.0),
-            left_inset.max(0.0),
-            right_inset.max(0.0),
-        ))
-    }
 }
 
 #[cfg(target_os = "windows")]
@@ -78,7 +58,12 @@ fn windows_work_area_insets(window: &WebviewWindow) -> (f64, f64, f64, f64) {
     let Ok(hwnd) = window.hwnd() else {
         return (0.0, 0.0, 0.0, 0.0);
     };
-    let scale = window.current_monitor().ok().flatten().map(|m| m.scale_factor()).unwrap_or(1.0);
+    let scale = window
+        .current_monitor()
+        .ok()
+        .flatten()
+        .map(|m| m.scale_factor())
+        .unwrap_or(1.0);
     if !(scale > 0.0) {
         return (0.0, 0.0, 0.0, 0.0);
     }
@@ -129,13 +114,8 @@ pub fn fit_to_monitor(window: &WebviewWindow) {
         return;
     };
 
-    #[cfg(target_os = "macos")]
-    let (top_inset, bottom_inset, left_inset, right_inset) =
-        macos_screen_insets(window).unwrap_or((0.0, 0.0, 0.0, 0.0));
     #[cfg(target_os = "windows")]
     let (top_inset, bottom_inset, left_inset, right_inset) = windows_work_area_insets(window);
-    #[cfg(not(any(target_os = "macos", target_os = "windows")))]
-    let (top_inset, bottom_inset, left_inset, right_inset) = (0.0, 0.0, 0.0, 0.0);
 
     let vis_w = (mon_w - left_inset - right_inset).max(FLOOR_W);
     let vis_h = (mon_h - top_inset - bottom_inset).max(FLOOR_H);
@@ -202,14 +182,6 @@ pub fn install(app: &tauri::AppHandle) {
     if has_saved_window_state(app) {
         return;
     }
-    #[cfg(target_os = "macos")]
-    {
-        let win = window.clone();
-        let _ = app.run_on_main_thread(move || {
-            fit_to_monitor(&win);
-        });
-    }
-    #[cfg(not(target_os = "macos"))]
     {
         fit_to_monitor(&window);
     }

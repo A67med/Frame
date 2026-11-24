@@ -1,55 +1,7 @@
-/*
- * fetch-binaries.mjs
- *
- * Downloads the Tauri "externalBin" sidecars (yt-dlp, ffmpeg, ffprobe) for the
- * CURRENT OS + arch and writes them to src-tauri/binaries/<name>-<triple>[.exe],
- * which is exactly the path tauri.conf.json externalBin resolves to at build time.
- *
- * Why this script exists:
- *   src-tauri/binaries/* is gitignored (see .gitignore), so a fresh clone ships
- *   NONE of these binaries. Without them `tauri build` dies with
- *   "resource path binaries/yt-dlp-<triple> doesn't exist". Run this once (via
- *   `pnpm run setup`) before building.
- *
- * ----------------------------------------------------------------------------
- * SOURCES. yt-dlp and the Linux ffmpeg are "latest/rolling" upstream builds and
- * are NOT checksum pinned. Windows ffmpeg/ffprobe are pinned to one gyan.dev
- * release (FFMPEG_WIN below), mirrored on crazyrabbit0/harbor-deps; repin with
- * `node scripts/fetch-binaries.mjs --latest`.
- * ----------------------------------------------------------------------------
- *
- * yt-dlp  (single self-contained binary, no archive)
- *   linux  x86_64 : github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux
- *   linux  aarch64: github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux_aarch64
- *   macOS  (both) : github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos
- *                   (universal2; needs macOS 12+. For macOS 11 use yt-dlp_macos_legacy.)
- *   windows x86_64: github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe
- *
- * ffmpeg + ffprobe  (extracted from an archive)
- *   linux  x86_64 : github.com/BtbN/FFmpeg-Builds latest ffmpeg-master-latest-linux64-gpl.tar.xz
- *   linux  aarch64: github.com/BtbN/FFmpeg-Builds latest ffmpeg-master-latest-linuxarm64-gpl.tar.xz
- *                   (was johnvansickle.com, which 415-blocks CI/automated GETs. BtbN is a
- *                    static standalone build hosted on GitHub releases, same as yt-dlp above.)
- *   macOS  (both) : Homebrew's ffmpeg (installed with mpv). This copy only links on the
- *                   build machine; macos-bundle-libmpv.py prepare replaces it with one
- *                   relinked against the bundled Frameworks.
- *   windows x86_64: gyan.dev ffmpeg-<version>-essentials_build.zip, pinned by SHA-256:
- *                   harbor-deps mirror, then GyanD/codexffmpeg, then gyan.dev packages/
- *
- * Extraction tools (documented external dependency):
- *   .tar.xz -> `tar -xJf`  (linux; GNU tar + xz-utils)
- *   .zip    -> macOS: `unzip`   windows: `tar.exe`/bsdtar   (built into supported Windows)
- *
- * Env overrides (mirrors / air-gapped): HARBOR_YTDLP_URL, HARBOR_FFMPEG_URL,
- * HARBOR_FFPROBE_URL replace the resolved URL for the current platform (on Windows
- * the zip must still match the pin; macOS ignores them and uses Homebrew). Or just
- * drop the finished binary into src-tauri/binaries/<name>-<triple>[.exe] by hand.
- */
-
+// Stage the Windows x64 sidecars. --latest repins the shared FFmpeg and ffprobe archive.
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
-  chmodSync,
   copyFileSync,
   existsSync,
   mkdirSync,
@@ -68,19 +20,14 @@ const script = fileURLToPath(import.meta.url);
 const root = join(dirname(script), "..");
 const binDir = join(root, "src-tauri", "binaries");
 
-function targetTriple() {
-  const arch = process.arch === "arm64" ? "aarch64" : "x86_64";
-  if (process.platform === "win32") return `${arch}-pc-windows-msvc`;
-  if (process.platform === "darwin") return `${arch}-apple-darwin`;
-  return `${arch}-unknown-linux-gnu`;
+if (process.platform !== "win32" || process.arch !== "x64") {
+  throw new Error("Frame sidecars require Windows x64");
 }
+const triple = "x86_64-pc-windows-msvc";
 
-const EXE = process.platform === "win32" ? ".exe" : "";
-const triple = targetTriple();
 const mb = (p) => (statSync(p).size / 1048576).toFixed(0);
 
 const YTDLP = "https://github.com/yt-dlp/yt-dlp/releases/latest/download";
-const BTBN = "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest";
 const FFMPEG_WIN_VERSION = "9.0.2";
 const FFMPEG_WIN_SHA256 = "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba";
 const FFMPEG_WIN_ZIP = `ffmpeg-${FFMPEG_WIN_VERSION}-essentials_build.zip`;
@@ -93,46 +40,6 @@ const FFMPEG_WIN_URLS = [
 ];
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
-
-const SOURCES = {
-  "yt-dlp": {
-    "x86_64-unknown-linux-gnu": { kind: "raw", url: `${YTDLP}/yt-dlp_linux` },
-    "aarch64-unknown-linux-gnu": { kind: "raw", url: `${YTDLP}/yt-dlp_linux_aarch64` },
-    "x86_64-apple-darwin": { kind: "raw", url: `${YTDLP}/yt-dlp_macos` },
-    "aarch64-apple-darwin": { kind: "raw", url: `${YTDLP}/yt-dlp_macos` },
-    "x86_64-pc-windows-msvc": { kind: "raw", url: `${YTDLP}/yt-dlp.exe` },
-  },
-  ffmpeg: {
-    "x86_64-unknown-linux-gnu": {
-      kind: "tar.xz",
-      url: `${BTBN}/ffmpeg-master-latest-linux64-gpl.tar.xz`,
-      member: "ffmpeg",
-    },
-    "aarch64-unknown-linux-gnu": {
-      kind: "tar.xz",
-      url: `${BTBN}/ffmpeg-master-latest-linuxarm64-gpl.tar.xz`,
-      member: "ffmpeg",
-    },
-    "x86_64-apple-darwin": { kind: "brew", formula: "ffmpeg" },
-    "aarch64-apple-darwin": { kind: "brew", formula: "ffmpeg" },
-    "x86_64-pc-windows-msvc": { kind: "pinned-zip", member: "ffmpeg.exe" },
-  },
-  ffprobe: {
-    "x86_64-unknown-linux-gnu": {
-      kind: "tar.xz",
-      url: `${BTBN}/ffmpeg-master-latest-linux64-gpl.tar.xz`,
-      member: "ffprobe",
-    },
-    "aarch64-unknown-linux-gnu": {
-      kind: "tar.xz",
-      url: `${BTBN}/ffmpeg-master-latest-linuxarm64-gpl.tar.xz`,
-      member: "ffprobe",
-    },
-    "x86_64-apple-darwin": { kind: "brew", formula: "ffmpeg" },
-    "aarch64-apple-darwin": { kind: "brew", formula: "ffmpeg" },
-    "x86_64-pc-windows-msvc": { kind: "pinned-zip", member: "ffprobe.exe" },
-  },
-};
 
 const OVERRIDE = {
   "yt-dlp": process.env.HARBOR_YTDLP_URL,
@@ -183,22 +90,14 @@ function findMember(dir, name) {
   return best;
 }
 
-function extractMember(buf, kind, member, dest) {
+function extractMember(buf, member, dest) {
   const tmp = mkdtempSync(join(tmpdir(), "harbor-bin-"));
   try {
-    const archive = join(tmp, kind === "tar.xz" ? "archive.tar.xz" : "archive.zip");
+    const archive = join(tmp, "archive.zip");
     writeFileSync(archive, buf);
     const outDir = join(tmp, "out");
     mkdirSync(outDir, { recursive: true });
-    if (kind === "tar.xz") {
-      execFileSync("tar", ["-xJf", archive, "-C", outDir], { stdio: "inherit" });
-    } else if (process.platform === "win32") {
-      // The built-in Windows bsdtar supports ZIP and avoids Expand-Archive's
-      // PowerShell/.NET overload failures on some Windows runners.
-      execFileSync("tar.exe", ["-xf", archive, "-C", outDir], { stdio: "inherit" });
-    } else {
-      execFileSync("unzip", ["-oq", archive, "-d", outDir], { stdio: "inherit" });
-    }
+    execFileSync("tar.exe", ["-xf", archive, "-C", outDir], { stdio: "inherit" });
     const found = findMember(outDir, member);
     if (!found) throw new Error(`could not find ${member} inside archive`);
     copyFileSync(found, dest);
@@ -226,18 +125,6 @@ function fetchPinnedZip(override) {
     throw new Error(`no source served ${FFMPEG_WIN_ZIP} with the pinned SHA-256`);
   })();
   return pinnedZip;
-}
-
-function copyFromBrew(formula, name, dest) {
-  let prefix;
-  try {
-    prefix = execFileSync("brew", ["--prefix", formula], { encoding: "utf8" }).trim();
-  } catch {
-    throw new Error(`Homebrew ${formula} is not available; run \`brew install ${formula}\``);
-  }
-  const binary = join(prefix, "bin", name);
-  if (!existsSync(binary)) throw new Error(`${binary} not found; run \`brew install ${formula}\``);
-  copyFileSync(binary, dest);
 }
 
 // Repins the Windows ffmpeg/ffprobe to gyan.dev's newest release; the zip still has to be uploaded to harbor-deps.
@@ -288,14 +175,11 @@ if (process.argv.includes("--latest")) {
 function hint(name) {
   const lines = [
     `[binaries] fix: set ${ENVVAR[name]} to a mirror URL, or drop a working`,
-    `[binaries]      ${name}-${triple}${EXE} into src-tauri/binaries/ by hand.`,
+    `[binaries]      ${name}-${triple}.exe into src-tauri/binaries/ by hand.`,
   ];
   if (name === "yt-dlp")
     lines.push("[binaries]      source: github.com/yt-dlp/yt-dlp/releases/latest");
-  else
-    lines.push(
-      "[binaries]      sources: BtbN (linux), Homebrew ffmpeg (macOS), pinned gyan.dev zip (windows)",
-    );
+  else lines.push("[binaries]      source: checksum-pinned gyan.dev essentials zip");
   return lines.join("\n");
 }
 
@@ -303,29 +187,16 @@ if (!existsSync(binDir)) mkdirSync(binDir, { recursive: true });
 
 let ok = true;
 for (const name of ["yt-dlp", "ffmpeg", "ffprobe"]) {
-  const dest = join(binDir, `${name}-${triple}${EXE}`);
+  const dest = join(binDir, `${name}-${triple}.exe`);
   if (existsSync(dest) && statSync(dest).size > 0) {
-    console.log(`[binaries] ${name}-${triple}${EXE} already present (${mb(dest)} MB)`);
-    continue;
-  }
-  const spec = SOURCES[name][triple];
-  if (!spec) {
-    console.error(`[binaries] no known source for ${name} on ${triple}`);
-    console.error(hint(name));
-    ok = false;
+    console.log(`[binaries] ${name}-${triple}.exe already present (${mb(dest)} MB)`);
     continue;
   }
   try {
-    if (spec.kind === "brew") copyFromBrew(spec.formula, name, dest);
-    else if (spec.kind === "pinned-zip")
-      extractMember(await fetchPinnedZip(OVERRIDE[name]), "zip", spec.member, dest);
-    else {
-      const buf = await download(OVERRIDE[name] ?? spec.url);
-      if (spec.kind === "raw") writeFileSync(dest, buf);
-      else extractMember(buf, spec.kind, spec.member, dest);
-    }
-    if (process.platform !== "win32") chmodSync(dest, 0o755);
-    console.log(`[binaries] wrote ${name}-${triple}${EXE} (${mb(dest)} MB)`);
+    if (name === "yt-dlp")
+      writeFileSync(dest, await download(OVERRIDE[name] ?? YTDLP + "/yt-dlp.exe"));
+    else extractMember(await fetchPinnedZip(OVERRIDE[name]), name + ".exe", dest);
+    console.log(`[binaries] wrote ${name}-${triple}.exe (${mb(dest)} MB)`);
   } catch (err) {
     console.error(`[binaries] ${name} failed: ${err.message}`);
     console.error(hint(name));

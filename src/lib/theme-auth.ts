@@ -1,5 +1,5 @@
 import { HARBOR_API_BASE } from "@/lib/config/endpoints";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 const API = `${HARBOR_API_BASE}/themes/api`;
 const ORIGIN = HARBOR_API_BASE;

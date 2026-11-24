@@ -2,10 +2,10 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-const native = readFileSync(new URL("../src-tauri/src/mpv.rs", import.meta.url), "utf8").replace(
-  /\r\n/g,
-  "\n",
-);
+const native = readFileSync(
+  new URL("../src-tauri/src/features/playback/mpv.rs", import.meta.url),
+  "utf8",
+).replace(/\r\n/g, "\n");
 const start = native.slice(
   native.indexOf("pub async fn mpv_start("),
   native.indexOf("async fn restore_display_sdr_if_flipped("),

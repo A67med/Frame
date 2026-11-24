@@ -1,5 +1,3 @@
-import { useRef, useState } from "react";
-import { isAndroid } from "@/lib/platform";
 import { BP_ROW_FLUSH } from "./bp-step-parts";
 import { Eye, EyeOff } from "lucide-react";
 import { SFX } from "@/lib/sfx";
@@ -38,13 +36,6 @@ export function BpOnboardField({
   onSubmit?: () => void;
   active?: boolean;
 }) {
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const [armed, setArmed] = useState(false);
-  // The ring lands here the moment the step opens, and on Android focusing a
-  // writable input throws the system IME over the whole screen before the user
-  // has asked for anything. Held readOnly until OK, so the keyboard is a choice.
-  const locked = isAndroid() && !armed;
-
   const t = useBpT();
   const masked = !!secret && !revealed;
   return (
@@ -62,9 +53,7 @@ export function BpOnboardField({
             <input
               data-bp-focusable
               data-tv-text-auto
-              ref={inputRef}
-              readOnly={locked}
-              inputMode={locked ? "none" : undefined}
+
               type={masked ? "password" : "text"}
               value={value}
               spellCheck={false}
@@ -75,16 +64,11 @@ export function BpOnboardField({
               onKeyDown={(e) => {
                 if (e.key !== "Enter") return;
                 e.stopPropagation();
-                if (locked) {
-                  setArmed(true);
-                  requestAnimationFrame(() => inputRef.current?.focus());
-                  return;
-                }
                 if (!onSubmit) return;
                 e.preventDefault();
                 onSubmit();
               }}
-              onBlur={() => setArmed(false)}
+
               placeholder={placeholder}
               aria-label={label}
               className="min-w-0 flex-1 bg-transparent text-[clamp(16px,2.3vh,30px)] font-semibold tracking-[0.01em] text-ink outline-none placeholder:text-ink-subtle"

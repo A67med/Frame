@@ -4,7 +4,7 @@ import {
   usePlaybackPosition,
   usePlaybackPositionGated,
   usePlaybackBufferedGated,
-} from "@/lib/player/playback-clock";
+} from "@/features/player/engine/playback-clock";
 import { useT } from "@/lib/i18n";
 import { SeekBarVisual } from "./seek-bar-visual";
 

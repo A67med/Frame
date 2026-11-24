@@ -2,14 +2,14 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import { Loader2, PackageX } from "lucide-react";
 import { isCurrentStream } from "@/components/player/stream-switcher/switcher-row";
 import type { Meta } from "@/lib/cinemeta";
-import { localPlayerSrc } from "@/lib/local-library/player-src";
+import { localPlayerSrc } from "@/features/library/local-library/player-src";
 import { createMediaServerPlayerSrc } from "@/lib/media-server/playback";
 import { decidePlaybackSource } from "@/lib/media-server/playback-policy";
 import { useMediaServerHealth } from "@/hooks/use-media-server-health";
 import { useSettings } from "@/lib/settings";
 import { SFX } from "@/lib/sfx";
 import type { ScoredStream } from "@/lib/streams/types";
-import { type PlayEpisode } from "@/lib/view";
+import { type PlayEpisode } from "@/app/navigation/view";
 import {
   anyStreamCached,
   debridBanner,

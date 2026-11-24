@@ -1,5 +1,5 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import { notifyMediaSeeked } from "@/lib/media-session";
 
 export function usePendingSeekApply(params: {

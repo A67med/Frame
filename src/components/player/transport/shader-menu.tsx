@@ -1,13 +1,13 @@
 import { Check, Layers } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { ANIME4K_MODES } from "@/lib/player/anime4k-modes";
-import { SHADER_CATALOG } from "@/lib/player/shader-catalog";
+import { ANIME4K_MODES } from "@/features/player/engine/anime4k-modes";
+import { SHADER_CATALOG } from "@/features/player/engine/shader-catalog";
 import type { Anime4kChoice } from "@/views/player/hooks/use-anime4k";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { useMenuSide } from "../menu-side";
 import { Tooltip } from "./tooltip";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 
 const A4K_OPTIONS: Array<{ id: Anime4kChoice; label: string }> = [
   { id: "auto", label: "Auto" },

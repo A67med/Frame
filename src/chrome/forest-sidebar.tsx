@@ -13,7 +13,7 @@ import { useAvailableNavItems, applyNavCustomization, type NavItem } from "@/chr
 import { isRtl, useT, useUiLanguage } from "@/lib/i18n";
 import { useParental } from "@/lib/parental";
 import { useSettings } from "@/lib/settings";
-import { useView, type View } from "@/lib/view";
+import { useView, type View } from "@/app/navigation/view";
 
 const SUN = "oklch(0.9 0.12 100)";
 const LEAF = "oklch(0.8 0.15 145)";

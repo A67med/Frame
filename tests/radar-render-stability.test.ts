@@ -7,7 +7,7 @@ import test from "node:test";
 
 // Both of these crashed the page with React error #185 (maximum update depth).
 test("Radar never uses an array-building reader as a store snapshot", () => {
-  const radar = readFileSync("src/views/radar.tsx", "utf8");
+  const radar = readFileSync("src/features/discovery/views/radar.tsx", "utf8");
   assert.doesNotMatch(radar, /useSyncExternalStore/);
 });
 

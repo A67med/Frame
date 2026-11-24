@@ -1,8 +1,8 @@
 import { evictLocalPrefix, idbCacheGet, idbCacheSet } from "@/lib/idb-cache";
 import { useEffect, useState } from "react";
-import { fetchCommunityAddons } from "@/lib/addons-store/community";
+import { fetchCommunityAddons } from "@/features/addons/catalog/community";
 import { registerEvictable } from "@/lib/maintenance";
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 import type { Addon } from "@/lib/addons";
 
 const API_BASE = "https://stremio-addons.net/api/v0";

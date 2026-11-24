@@ -46,22 +46,6 @@ fn device_name() -> String {
             }
         }
     }
-    #[cfg(not(windows))]
-    {
-        let mut buf = vec![0u8; 256];
-        let rc = unsafe { libc::gethostname(buf.as_mut_ptr() as *mut libc::c_char, buf.len()) };
-        if rc == 0 {
-            if let Some(end) = buf.iter().position(|&b| b == 0) {
-                buf.truncate(end);
-            }
-            if let Ok(text) = String::from_utf8(buf) {
-                let trimmed = text.trim().trim_end_matches(".local");
-                if !trimmed.is_empty() {
-                    return trimmed.to_string();
-                }
-            }
-        }
-    }
     std::env::var("HOSTNAME")
         .ok()
         .filter(|s| !s.trim().is_empty())

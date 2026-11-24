@@ -16,37 +16,36 @@ const catalog: Record<string, string> = {
   "Subtle text": "Teks samar",
   "Suggest a source": "Sarankan sumber",
   "Suggest another": "Sarankan yang lain",
-  Suggested: "Disarankan",
+  "Suggested": "Disarankan",
   "Suggestion sent": "Saran terkirim",
   "Sum borrowed plus earned interest": "Jumlah pinjaman ditambah bunga yang diperoleh",
-  Summary: "Ringkasan",
+  "Summary": "Ringkasan",
   "Summary needs at least 6 characters": "Ringkasan harus minimal 6 karakter",
   "Summer Blockbusters": "Film Laris Musim Panas",
-  Sun: "Min",
-  Sundown: "Matahari Terbenam",
-  Superheroes: "Pahlawan Super",
-  Supernatural: "Supranatural",
+  "Sun": "Min",
+  "Sundown": "Matahari Terbenam",
+  "Superheroes": "Pahlawan Super",
+  "Supernatural": "Supranatural",
   "Superstar!": "Superstar!",
   "Support ElfHosted or Stremio, or give to any charity below, and the badge lands on your profile.":
     "Dukung ElfHosted atau Stremio, atau berdonasi ke badan amal mana pun di bawah, dan lencana akan muncul di profil Anda.",
   "Support Frame": "Dukung Frame",
   "Support Stremio": "Dukung Stremio",
-  Supporting: "Mendukung",
-  Sure: "Tentu",
+  "Supporting": "Mendukung",
+  "Sure": "Tentu",
   "Sure?": "Yakin?",
-  Surface: "Permukaan",
-  Surfaces: "Permukaan",
+  "Surface": "Permukaan",
+  "Surfaces": "Permukaan",
   "Surprise me": "Beri saya kejutan",
-  Suspense: "Ketegangan",
+  "Suspense": "Ketegangan",
   "Suspicious file": "File mencurigakan",
-  "Suwayomi / Tachidesk walkthrough": "Panduan Suwayomi / Tachidesk",
   "Swap in Better Posters, PostersPlus, or your own URL template.":
     "Ganti dengan Better Posters, PostersPlus, atau templat URL Anda sendiri.",
   "Swapping configuration": "Mengganti konfigurasi",
-  Swedish: "Swedia",
+  "Swedish": "Swedia",
   "Swedish Cinema": "Sinema Swedia",
   "Swedish Films": "Film Swedia",
-  Switch: "Ganti",
+  "Switch": "Ganti",
   "Switch Frame to {language}?": "Ganti bahasa Frame ke {language}?",
   "Switch profile": "Ganti profil",
   "Switch source": "Ganti sumber",
@@ -66,9 +65,9 @@ const catalog: Record<string, string> = {
   "Switch to {name}": "Beralih ke {name}",
   "Switch to {name}: {why}": "Beralih ke {name}: {why}",
   "Sword & Sorcery": "Pedang & Sihir",
-  Symbols: "Simbol",
-  Symptom: "Gejala",
-  Sync: "Sinkronkan",
+  "Symbols": "Simbol",
+  "Symptom": "Gejala",
+  "Sync": "Sinkronkan",
   "Sync Offset": "Offset Sinkronisasi",
   "Sync across your devices": "Sinkronkan di semua perangkat Anda",
   "Sync and track movies, shows, and anime across everything you use. Frame marks what you finish as watched on Simkl and keeps your plan-to-watch list in step. Free at simkl.com.":
@@ -95,7 +94,7 @@ const catalog: Record<string, string> = {
   "Sync your profile, themes, lists and friends. You can do this any time.":
     "Sinkronkan profil, tema, daftar, dan teman Anda. Anda dapat melakukannya kapan saja.",
   "Sync, themes and friends": "Sinkronisasi, tema, dan teman",
-  Synced: "Tersinkron",
+  "Synced": "Tersinkron",
   "Synced addons": "Addon tersinkron",
   "Synced to AniList": "Tersinkron ke AniList",
   "Synced to MyAnimeList": "Tersinkron ke MyAnimeList",
@@ -111,8 +110,8 @@ const catalog: Record<string, string> = {
   "Syncs to your {services}": "Disinkronkan ke {services} Anda",
   "Syncs your profile, themes, lists and friends. Optional, and you can do it later.":
     "Menyinkronkan profil, tema, daftar, dan teman Anda. Opsional, dan Anda dapat melakukannya nanti.",
-  Synopsis: "Sinopsis",
-  System: "Sistem",
+  "Synopsis": "Sinopsis",
+  "System": "Sistem",
   "System UI": "UI Sistem",
   "System default": "Default sistem",
   "System tray": "Baki sistem",
@@ -123,9 +122,9 @@ const catalog: Record<string, string> = {
   "S{s} E{e} is out now": "S{s} E{e} sudah tayang",
   "S{s} · E{e}": "S{s} · E{e}",
   "TAAF (detail logo)": "TAAF (logo detail)",
-  TBD: "Belum ditentukan",
+  "TBD": "Belum ditentukan",
   "THEN notify on": "LALU beri tahu di",
-  TMDB: "TMDB",
+  "TMDB": "TMDB",
   "TMDB API key": "Kunci API TMDB",
   "TMDB API key (v3)": "Kunci API TMDB (v3)",
   "TMDB API key, v3 auth": "Kunci API TMDB, autentikasi v3",
@@ -158,9 +157,9 @@ const catalog: Record<string, string> = {
   "TMDB powers the firehose of every release this month. The free tier covers it. About 60 seconds to set up. Switch to My Library if you'd rather only see what you've saved.":
     "TMDB menyediakan aliran semua rilisan bulan ini. Paket gratis sudah mencukupi. Penyiapan sekitar 60 detik. Beralihlah ke Perpustakaan Saya jika Anda hanya ingin melihat yang telah disimpan.",
   "TMDB · catalogs and rails": "TMDB · katalog dan deretan",
-  TRACKS: "TREK",
+  "TRACKS": "TREK",
   "TTF, OTF, WOFF or WOFF2": "TTF, OTF, WOFF atau WOFF2",
-  TV: "TV",
+  "TV": "TV",
   "TV Genre": "Genre TV",
   "TV Guide": "Panduan TV",
   "TV Series": "Serial TV",
@@ -178,24 +177,24 @@ const catalog: Record<string, string> = {
     "TV menampilkan kartu gambar lebar dengan logo. Poster menggunakan kisi klasik.",
   "TV uses wide rounded cards with the logo on the art, like a TV home screen. Poster is the classic grid.":
     "TV menggunakan kartu lebar bersudut bulat dengan logo pada gambar, seperti layar beranda TV. Poster menggunakan kisi klasik.",
-  TVDB: "TVDB",
+  "TVDB": "TVDB",
   "TVDB list": "Daftar TVDB",
   "TVDB lists are unavailable right now.": "Daftar TVDB sedang tidak tersedia.",
   "TVDB order": "Urutan TVDB",
   "Tackle %": "% Tekel",
-  Tackles: "Tekel",
+  "Tackles": "Tekel",
   "Tag limit reached": "Batas tag tercapai",
-  Tagline: "Slogan",
-  Tags: "Tag",
+  "Tagline": "Slogan",
+  "Tags": "Tag",
   "Tailwind utility shortcuts": "Pintasan utilitas Tailwind",
-  Taiwanese: "Taiwan",
+  "Taiwanese": "Taiwan",
   "Take me back": "Bawa saya kembali",
   "Take the short API Key at the very bottom, not the long API Read Access Token above it.":
     "Ambil API Key pendek di bagian paling bawah, bukan API Read Access Token panjang di atasnya.",
-  Taken: "Direbut",
+  "Taken": "Direbut",
   "Takes about 10 seconds.": "Memerlukan waktu sekitar 10 detik.",
-  Tamil: "Tamil",
-  Tap: "Ketuk",
+  "Tamil": "Tamil",
+  "Tap": "Ketuk",
   "Tap a line to jump there, then nudge until the subtitles match what you hear.":
     "Ketuk satu baris untuk melompat ke sana, lalu sesuaikan hingga subtitle cocok dengan yang Anda dengar.",
   "Tap a line, then nudge": "Ketuk satu baris, lalu sesuaikan",
@@ -219,22 +218,19 @@ const catalog: Record<string, string> = {
     "Ketuk genre yang ingin lebih sering Anda lihat. Pilihan ini mengarahkan baris Pilihan Teratas di bagian atas halaman ini.",
   "Tap the heart on any movie, show, manga, or character to save it here.":
     "Ketuk ikon hati pada film, acara, manga, atau karakter untuk menyimpannya di sini.",
-  "Tap the page to bookmark": "Ketuk halaman untuk menandai",
-  "Tap the star on any manga to save it here.":
-    "Ketuk ikon bintang pada manga untuk menyimpannya di sini.",
   "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
     "Ketuk ikon bintang pada film, acara, atau manga, atau ikon hati pada karakter, untuk menyimpannya di sini.",
   "Tap to switch": "Ketuk untuk beralih",
   "Tap to switch. The pencil renames, recolors, or adds a PIN.":
     "Ketuk untuk beralih. Ikon pensil dapat mengganti nama, mengubah warna, atau menambahkan PIN.",
   "Tarantino Picks": "Pilihan Tarantino",
-  Taste: "Selera",
+  "Taste": "Selera",
   "Team Turnovers": "Turnover Tim",
   "Technical Fouls": "Pelanggaran Teknis",
   "Technical detail": "Detail teknis",
   "Technical details": "Detail teknis",
   "Technical. IBM's open family.": "Teknis. Keluarga font terbuka IBM.",
-  Telecine: "Telecine",
+  "Telecine": "Telecine",
   "Telecine Print": "Salinan Telecine",
   "Telegram bot": "Bot Telegram",
   "Telegram sends through a bot you create. You need two things: a":
@@ -245,13 +241,13 @@ const catalog: Record<string, string> = {
   "Tell people what changed in this version. Reviewers see it too.":
     "Beri tahu orang lain apa yang berubah dalam versi ini. Peninjau juga akan melihatnya.",
   "Telling your boss you're quitting": "Memberi tahu atasan bahwa Anda mengundurkan diri",
-  Template: "Templat",
+  "Template": "Templat",
   "Temporary files": "File sementara",
   "Ten minutes of head start. Built for spotty Wi-Fi or a far-away server, at the cost of a longer wait before playback begins.":
     "Muatan awal sepuluh menit. Dirancang untuk Wi-Fi yang tidak stabil atau server yang jauh, dengan konsekuensi menunggu lebih lama sebelum pemutaran dimulai.",
   "Tennis tournaments": "Turnamen tenis",
   "Tense Performances": "Penampilan Menegangkan",
-  Test: "Uji",
+  "Test": "Uji",
   "Test badge rules (Try it)": "Uji aturan lencana (Coba)",
   "Test connection": "Uji koneksi",
   "Test controller": "Uji pengontrol",
@@ -262,9 +258,9 @@ const catalog: Record<string, string> = {
   "Test relay connection": "Uji koneksi relai",
   "Test remote server connection": "Uji koneksi server jarak jauh",
   "Test this voice": "Uji suara ini",
-  Testing: "Menguji",
+  "Testing": "Menguji",
   "Testing…": "Menguji…",
-  Text: "Teks",
+  "Text": "Teks",
   "Text Sync": "Sinkronisasi Teks",
   "Text color": "Warna teks",
   "Text colour": "Warna teks",
@@ -273,8 +269,8 @@ const catalog: Record<string, string> = {
   "Text sync unavailable for embedded tracks":
     "Sinkronisasi teks tidak tersedia untuk trek tertanam",
   "Text-based sync": "Sinkronisasi berbasis teks",
-  Thai: "Thai",
-  Thanks: "Terima kasih",
+  "Thai": "Thai",
+  "Thanks": "Terima kasih",
   "Thanks for sharing. It'll appear in the library once it's approved. You can manage it any time from your uploads.":
     "Terima kasih telah berbagi. Ini akan muncul di perpustakaan setelah disetujui. Anda dapat mengelolanya kapan saja dari unggahan Anda.",
   "Thanks! This helps us know the betas are heading the right way.":
@@ -288,10 +284,6 @@ const catalog: Record<string, string> = {
   "That code has expired": "Kode itu sudah kedaluwarsa",
   "That code is no longer valid. Look at your TV for a new one.":
     "Kode itu sudah tidak valid. Lihat TV Anda untuk mendapatkan kode baru.",
-  "That config is not valid. Check baseUrl, popularPath, list, chapters, and pages.":
-    "Konfigurasi itu tidak valid. Periksa baseUrl, popularPath, list, chapters, dan pages.",
-  "That config is not valid. It needs baseUrl, popularPath, list (item + link), chapters (item + link), and pages (image).":
-    "Konfigurasi itu tidak valid. Konfigurasi memerlukan baseUrl, popularPath, list (item + link), chapters (item + link), dan pages (image).",
   "That custom url is not available.": "URL khusus itu tidak tersedia.",
   "That did not work. Check your details.": "Tidak berhasil. Periksa detail Anda.",
   "That does not look like a Spotify link.": "Itu sepertinya bukan tautan Spotify.",
@@ -317,13 +309,10 @@ const catalog: Record<string, string> = {
   "That import did not go through. Try again.": "Impor itu tidak berhasil. Coba lagi.",
   "That is a large correction ({n}%). One of the two points may be off, double-check them.":
     "Itu adalah koreksi besar ({n}%). Salah satu dari kedua titik mungkin meleset, periksa kembali.",
-  "That is everything from this source.": "Itu semua dari sumber ini.",
   "That is five. Deselect one to swap it out.":
     "Sudah lima. Batalkan pilihan satu untuk menggantinya.",
   "That is the whole trick. A file called {example} drops straight into the matching slot. The name before .png is all that matters, capitals and spaces are ignored.":
     "Begitulah caranya. File bernama {example} langsung masuk ke slot yang cocok. Hanya nama sebelum .png yang penting, huruf kapital dan spasi diabaikan.",
-  "That is unusual for a popular listing. It is likely a hiccup on their end.":
-    "Itu tidak biasa untuk daftar populer. Kemungkinan ada gangguan di pihak mereka.",
   "That list is private or doesn't exist. Public lists only.":
     "Daftar itu bersifat privat atau tidak ada. Hanya daftar publik.",
   "That looks like spam, try rephrasing": "Itu tampak seperti spam, coba ubah kalimatnya",
@@ -388,10 +377,6 @@ const catalog: Record<string, string> = {
   "The addon didn't tell us anything about this file's resolution or source. It could be anything from 4K Blu-ray to a phone capture. Pick a labeled stream if one exists.":
     "Addon tidak memberi tahu kami apa pun tentang resolusi atau sumber file ini. Bisa saja 4K Blu-ray atau rekaman ponsel. Pilih stream berlabel jika tersedia.",
   "The all-time greats": "Karya terbaik sepanjang masa",
-  "The anime adaptation covers ": "Adaptasi animenya mencakup ",
-  "The anime adaptation ends at this chapter": "Adaptasi animenya berakhir di bab ini",
-  "The anime adaptation runs through ": "Adaptasi animenya berlanjut hingga ",
-  "The anime adaptation starts at ": "Adaptasi animenya dimulai dari ",
   "The author submitted a new version that's in review. You're seeing the current published version until it's approved.":
     "Penulis mengirimkan versi baru yang sedang ditinjau. Anda akan melihat versi yang saat ini dipublikasikan hingga versi baru disetujui.",
   "The authorization code timed out before you finished. Try again.":
@@ -410,7 +395,6 @@ const catalog: Record<string, string> = {
   "The code from sign up": "Kode dari pendaftaran",
   "The collection shows up as its own row you can reorder or hide from that page.":
     "Koleksi muncul sebagai baris tersendiri yang dapat Anda urutkan ulang atau sembunyikan dari halaman tersebut.",
-  "The comics industry's highest honor": "Penghargaan tertinggi industri komik",
   "The cost of borrowing per year": "Biaya pinjaman per tahun",
   "The credentials in the URL are wrong. Edit the playlist and double check the username and password against what your provider sent.":
     "Kredensial dalam URL salah. Edit playlist dan periksa kembali nama pengguna serta kata sandi berdasarkan informasi dari penyedia Anda.",
@@ -434,8 +418,6 @@ const catalog: Record<string, string> = {
     "Paket gratis seharga $0 untuk penggunaan pribadi. Cukup pilih opsi pertama, tanpa perlu membayar.",
   "The full annual amount upfront": "Seluruh biaya tahunan dibayar di muka",
   "The generated audio could not be played": "Audio yang dihasilkan tidak dapat diputar",
-  "The highlighted tag shows its name and class.":
-    "Tag yang disorot menampilkan nama dan class-nya.",
   "The home hero trailer plays with sound and a mute button in the corner, then shows a replay button when it ends. Auto-rotation pauses so it stays on the featured title.":
     "Trailer utama di beranda diputar dengan suara dan tombol bisukan di sudut, lalu menampilkan tombol putar ulang setelah selesai. Rotasi otomatis dijeda agar tetap menampilkan judul unggulan.",
   "The host did not respond. The URL may have expired (many providers rotate domains), the server is down, or your network is blocking it. Contact your provider for an updated URL.":
@@ -539,8 +521,6 @@ const catalog: Record<string, string> = {
   "The signing bonus from year one": "Bonus penandatanganan dari tahun pertama",
   "The source responded but the stream would not open. Try a different one.":
     "Sumber merespons, tetapi stream tidak dapat dibuka. Coba sumber lain.",
-  "The source returned a bad response for this manga. It may be temporary, or the title may have moved. Try another source, or head back and pick something else.":
-    "Sumber memberikan respons yang tidak valid untuk manga ini. Ini mungkin hanya sementara, atau judulnya mungkin telah dipindahkan. Coba sumber lain, atau kembali dan pilih yang lain.",
   "The standard year-end bonus": "Bonus standar akhir tahun",
   "The streaming engine is still starting up. Give it a moment and press Play again.":
     "Mesin streaming masih dimulai. Tunggu sebentar, lalu tekan Putar lagi.",
@@ -565,10 +545,10 @@ const catalog: Record<string, string> = {
     "Ikon jendela dan bilah tugas langsung diperbarui. Pintasan yang terpasang akan diperbarui pada pembaruan berikutnya.",
   "The yellow chip in the poster corner.": "Chip kuning di sudut poster.",
   "TheIntroDB · intro and credits timing": "TheIntroDB · waktu intro dan kredit",
-  TheTVDB: "TheTVDB",
+  "TheTVDB": "TheTVDB",
   "TheTVDB · episode data": "TheTVDB · data episode",
   "Theatrical Capture": "Rekaman Bioskop",
-  Theme: "Tema",
+  "Theme": "Tema",
   "Theme & appearance": "Tema & tampilan",
   "Theme API cheat sheet": "Ringkasan praktis API tema",
   "Theme Library": "Perpustakaan Tema",
@@ -619,7 +599,7 @@ const catalog: Record<string, string> = {
     "Mereka akan mengirim tautan aktivasi lewat email untuk pertama kalinya. Klik tautan itu, lalu kembali dan pilih Simpan.",
   "They said the harbour would be quiet tonight.": "Mereka bilang pelabuhan akan sepi malam ini.",
   "Thicker outline": "Garis luar lebih tebal",
-  Thickness: "Ketebalan",
+  "Thickness": "Ketebalan",
   "Things you still do on the TV itself": "Hal yang masih Anda lakukan langsung di TV",
   "Thinner outline": "Garis luar lebih tipis",
   "This Afternoon": "Sore Ini",
@@ -640,8 +620,6 @@ const catalog: Record<string, string> = {
   "This catalog came back empty. Try another one, or check the addon in Settings.":
     "Katalog ini tidak berisi apa pun. Coba katalog lain atau periksa addon di Pengaturan.",
   "This channel isn't responding": "Channel ini tidak merespons",
-  "This chapter could not be loaded from this source.":
-    "Bab ini tidak dapat dimuat dari sumber ini.",
   "This chapter could not be loaded.": "Bab ini tidak dapat dimuat.",
   "This collection does not have any titles in it right now.":
     "Koleksi ini tidak memiliki judul saat ini.",
@@ -720,8 +698,6 @@ const catalog: Record<string, string> = {
     "Yang ini juga menggantikan pemutar dan alat bawaan Frame, jadi pemasangannya dilakukan melalui Frame Setup. Frame akan ditutup, pemasang menyelesaikan prosesnya, lalu Frame dibuka kembali.",
   "This one installs through Frame Setup, but the update manifest carries no signature for it. Frame will not run an installer it cannot verify. Download it and run it yourself.":
     "Yang ini dipasang melalui Frame Setup, tetapi manifes pembaruannya tidak memiliki tanda tangan. Frame tidak akan menjalankan pemasang yang tidak dapat diverifikasi. Unduh dan jalankan sendiri.",
-  "This only takes a moment the first time.":
-    "Ini hanya memerlukan waktu sejenak saat pertama kali.",
   "This opens Frame to devices on your Wi-Fi. You can turn it off again in Settings.":
     "Ini membuka akses Frame ke perangkat di Wi-Fi Anda. Anda dapat menonaktifkannya lagi di Pengaturan.",
   "This order drives your catalog rows and the default stream order. A stream priority set in Settings overrides it for streams.":
@@ -740,12 +716,9 @@ const catalog: Record<string, string> = {
     "Daftar putar ini tidak memiliki serial. Mungkin isinya hanya saluran siaran langsung, atau login Xtream yang menyediakan serial secara terpisah.",
   "This playlist hasn't been loaded yet, or it has no channels.":
     "Daftar putar ini belum dimuat, atau tidak memiliki saluran.",
-  "This reads pages a browser can already load. It does not, and must not be made to, bypass a login, password, paywall, or any access control.":
-    "Ini membaca halaman yang sudah dapat dimuat oleh browser. Fitur ini tidak dan tidak boleh dibuat untuk melewati login, kata sandi, paywall, atau kontrol akses apa pun.",
   "This replaces your current Frame setup (theme, home layout, settings, addons, profiles, and more) with the {n} saved entries in this file. Your Stremio sign-in stays as is. Frame reloads when it finishes.":
     "Ini mengganti penyiapan Frame Anda saat ini (tema, tata letak beranda, pengaturan, addon, profil, dan lainnya) dengan {n} entri tersimpan dalam file ini. Status login Stremio Anda tetap sama. Frame dimuat ulang setelah selesai.",
   "This repository lists no eBook extensions.": "Repositori ini tidak mencantumkan ekstensi eBook.",
-  "This repository lists no plugins.": "Repositori ini tidak mencantumkan plugin.",
   "This score only appears on cards.": "Skor ini hanya muncul pada kartu.",
   "This screen stopped. Going back to Home usually clears it.":
     "Layar ini terhenti. Kembali ke Beranda biasanya mengatasinya.",
@@ -766,7 +739,6 @@ const catalog: Record<string, string> = {
     "Situs ini mungkin tidak mendukung penampil sementara Frame. Coba lagi tautan asli atau buka di browser Anda.",
   "This source": "Sumber ini",
   "This source did not provide any chapters.": "Sumber ini tidak menyediakan bab apa pun.",
-  "This source did not respond": "Sumber ini tidak merespons",
   "This source didn't respond": "Sumber ini tidak merespons",
   "This source is down": "Sumber ini sedang tidak aktif",
   "This source is not a downloadable season package. Pick another package.":
@@ -779,7 +751,6 @@ const catalog: Record<string, string> = {
   "This source rejected the stream": "Sumber ini menolak stream",
   "This source returned no chapters for this title.":
     "Sumber ini tidak memberikan bab apa pun untuk judul ini.",
-  "This source returned nothing": "Sumber ini tidak memberikan hasil apa pun",
   "This source stays quiet until you add a key.":
     "Sumber ini tidak akan merespons sampai Anda menambahkan kunci.",
   "This subtitle appears to be for a different cut. Try another match.":
@@ -792,7 +763,6 @@ const catalog: Record<string, string> = {
   "This theme is missing its colors.": "Tema ini tidak memiliki warna.",
   "This theme's preview colors look invalid.": "Warna pratinjau tema ini tampaknya tidak valid.",
   "This thread is locked.": "Utas ini dikunci.",
-  "This title would not open": "Judul ini tidak dapat dibuka",
   "This trailer plays on YouTube.": "Trailer ini diputar di YouTube.",
   "This user has chosen to keep activity private":
     "Pengguna ini memilih untuk merahasiakan aktivitasnya",
@@ -808,26 +778,26 @@ const catalog: Record<string, string> = {
   "Three Point %": "Persentase Tembakan Tiga Poin %",
   "Three ways to add art": "Tiga cara menambahkan gambar",
   "Three-Time Oscar": "Tiga Kali Meraih Oscar",
-  Thriller: "Thriller",
-  Thrillers: "Thriller",
-  Thu: "Kam",
+  "Thriller": "Thriller",
+  "Thrillers": "Thriller",
+  "Thu": "Kam",
   "Thumbs down hides this title from Featured. Thumbs up helps surface similar picks.":
     "Jempol ke bawah menyembunyikan judul ini dari Unggulan. Jempol ke atas membantu menampilkan pilihan serupa.",
   "Ticking Clocks": "Waktu yang Terus Berdetak",
   "Tied to your account. Manage it in My themes.": "Terikat ke akun Anda. Kelola di Tema saya.",
-  Tight: "Rapat",
+  "Tight": "Rapat",
   "Tighter spacing": "Jarak lebih rapat",
   "Tiles horizontally; the bar's height crops it vertically. Animated GIFs up to 2 MB play.":
     "Ubin tersusun horizontal; tinggi bilah memangkasnya secara vertikal. GIF animasi hingga 2 MB dapat diputar.",
-  Time: "Waktu",
+  "Time": "Waktu",
   "Time elapsed": "Waktu berlalu",
   "Time format": "Format waktu",
   "Time only, with a subtle shadow.": "Hanya waktu, dengan bayangan halus.",
   "Time remaining or duration": "Sisa waktu atau durasi",
   "Time well spent": "Waktu yang dimanfaatkan dengan baik",
   "Time's up!": "Waktu habis!",
-  Timeless: "Tak lekang oleh waktu",
-  Timer: "Pengatur waktu",
+  "Timeless": "Tak lekang oleh waktu",
+  "Timer": "Pengatur waktu",
   "Timing analysis active": "Analisis waktu aktif",
   "Timing and drift are corrected. Check playback, then save.":
     "Waktu dan penyimpangan telah dikoreksi. Periksa pemutaran, lalu simpan.",
@@ -836,12 +806,12 @@ const catalog: Record<string, string> = {
   "Timing looks aligned": "Waktunya tampak selaras",
   "Timing rate": "Laju waktu",
   "Timing sources": "Sumber data waktu",
-  Title: "Judul",
+  "Title": "Judul",
   "Title & info": "Judul & info",
   "Title (optional)": "Judul (opsional)",
   "Title info": "Info judul",
   "Title text": "Teks judul",
-  Titles: "Judul",
+  "Titles": "Judul",
   "Titles and descriptions": "Judul dan deskripsi",
   "Titles you ignore on the advisory card never show it again.":
     "Judul yang Anda abaikan di kartu peringatan tidak akan pernah menampilkannya lagi.",
@@ -854,10 +824,10 @@ const catalog: Record<string, string> = {
   "To run a public relay, post the {code} URL on r/Stremio or wherever your community lives. Other Frame users paste it into Settings, Frame Relay, {kbd}.":
     "Untuk menjalankan relai publik, posting URL {code} di r/Stremio atau tempat komunitas Anda berkumpul. Pengguna Frame lain menempelkannya ke Pengaturan, Relai Frame, {kbd}.",
   "To the side": "Ke samping",
-  Today: "Hari ini",
+  "Today": "Hari ini",
   "Today's openers": "Pembuka hari ini",
-  Together: "Bersama",
-  Toggle: "Aktif/nonaktifkan",
+  "Together": "Bersama",
+  "Toggle": "Aktif/nonaktifkan",
   "Toggle Anime4K": "Aktif/nonaktifkan Anime4K",
   "Toggle Fullscreen": "Aktif/nonaktifkan Layar Penuh",
   "Toggle HDR to SDR": "Aktif/nonaktifkan HDR ke SDR",
@@ -880,12 +850,12 @@ const catalog: Record<string, string> = {
   "Token works, but no accounts came back. Check the token's permissions.":
     "Token berfungsi, tetapi tidak ada akun yang ditemukan. Periksa izin token.",
   "Tokyo Anime Award Festival": "Festival Penghargaan Anime Tokyo",
-  Tomatometer: "Tomatometer",
-  Tomorrow: "Besok",
-  Tone: "Rona",
+  "Tomatometer": "Tomatometer",
+  "Tomorrow": "Besok",
+  "Tone": "Rona",
   "Tone-mapping curve": "Kurva pemetaan rona",
   "Tonemap to SDR": "Petakan rona ke SDR",
-  Tonight: "Malam ini",
+  "Tonight": "Malam ini",
   "Tonight's Slate": "Sajian Malam Ini",
   "Tonight's binge bait": "Tontonan maraton malam ini",
   "Tonight's lineup": "Jajaran acara malam ini",
@@ -899,8 +869,8 @@ const catalog: Record<string, string> = {
     "Terlalu banyak percobaan. Coba lagi dalam {seconds}s.",
   "Too new. Subtitles haven't been published yet.": "Terlalu baru. Subtitle belum diterbitkan.",
   "Too short": "Terlalu pendek",
-  Tools: "Alat",
-  Top: "Teratas",
+  "Tools": "Alat",
+  "Top": "Teratas",
   "Top 10": "10 Teratas",
   "Top 10 Comedy": "10 Komedi Teratas",
   "Top 10 Drama": "10 Drama Teratas",
@@ -981,20 +951,20 @@ const catalog: Record<string, string> = {
   "Torrent link": "Tautan torrent",
   "Torrent name": "Nama torrent",
   "P2P streaming": "Streaming P2P",
-  Torrents: "Torrent",
+  "Torrents": "Torrent",
   "P2P is disabled. Uncached streams will not play unless they come from a debrid service or a direct link. To use P2P, toggle this off.":
     "P2P dinonaktifkan. Stream yang belum di-cache tidak dapat diputar kecuali berasal dari layanan debrid atau tautan langsung. Untuk menggunakan P2P, nonaktifkan opsi ini.",
   "Total Shots": "Total Tembakan",
   "Total Technical Fouls": "Total Pelanggaran Teknis",
   "Total Turnovers": "Total Turnover",
   "Total fees in fixed dollars": "Total biaya tetap dalam dolar",
-  Touchpad: "Touchpad",
+  "Touchpad": "Touchpad",
   "Touchpad. Swipe to move, tap to select.":
     "Touchpad. Geser untuk berpindah, ketuk untuk memilih.",
-  Tournament: "Turnamen",
-  Tournaments: "Turnamen",
+  "Tournament": "Turnamen",
+  "Tournaments": "Turnamen",
   "Towering Roles": "Peran Besar",
-  Track: "Lacak",
+  "Track": "Lacak",
   "Track everything you watch, see your watchlist, and get personalized recommendations on Frame's home page. Free at trakt.tv.":
     "Lacak semua yang Anda tonton, lihat daftar tontonan Anda, dan dapatkan rekomendasi yang dipersonalisasi di halaman beranda Frame. Gratis di trakt.tv.",
   "Track people": "Lacak orang",
@@ -1005,16 +975,16 @@ const catalog: Record<string, string> = {
   "Tracked people": "Orang yang dilacak",
   "Tracked person release rule": "Aturan rilis orang yang dilacak",
   "Tracker color": "Warna pelacak",
-  Trackers: "Pelacak",
+  "Trackers": "Pelacak",
   "Tracking what you watch": "Melacak tontonan Anda",
-  Tracks: "Trek",
+  "Tracks": "Trek",
   "Tracks whose name contains one of these words are skipped.":
     "Trek yang namanya memuat salah satu kata ini akan dilewati.",
-  Trailer: "Trailer",
+  "Trailer": "Trailer",
   "Trailer card": "Kartu trailer",
   "Trailer quality": "Kualitas trailer",
-  Trailers: "Trailer",
-  Trakt: "Trakt",
+  "Trailers": "Trailer",
+  "Trakt": "Trakt",
   "Trakt Comments": "Komentar Trakt",
   "Trakt account limit reached. Upgrade to Trakt VIP or trim your watchlist.":
     "Batas akun Trakt tercapai. Tingkatkan ke Trakt VIP atau kurangi daftar tontonan Anda.",
@@ -1040,7 +1010,7 @@ const catalog: Record<string, string> = {
     "Sesi masuk Trakt telah berakhir. Hubungkan kembali Trakt di Pengaturan, lalu coba lagi.",
   "Trakt sources": "Sumber Trakt",
   "Trakt watchlist": "Daftar tontonan Trakt",
-  Transcoding: "Transcoding",
+  "Transcoding": "Transcoding",
   "Transfer primary": "Alihkan profil utama",
   "Transfer to another profile": "Alihkan ke profil lain",
   "Translate chapter": "Terjemahkan bab",
@@ -1056,12 +1026,12 @@ const catalog: Record<string, string> = {
     "Terjemahkan poster serial dan film ke bahasa Arab jika tersedia di TMDB",
   "Translate titles": "Terjemahkan judul",
   "Translate to": "Terjemahkan ke",
-  Translation: "Terjemahan",
+  "Translation": "Terjemahan",
   "Translation failed": "Terjemahan gagal",
   "Translation runs when a chapter opens and keeps the original if a request fails or is truncated.":
     "Terjemahan dijalankan saat bab dibuka dan tetap menggunakan versi asli jika permintaan gagal atau terpotong.",
   "Translation test failed": "Pengujian terjemahan gagal",
-  Transport: "Transportasi",
+  "Transport": "Transportasi",
 };
 
 export default catalog;

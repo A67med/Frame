@@ -55,7 +55,7 @@
       }
     ],
     "createUpdaterArtifacts": false,
-    "targets": ["app", "dmg", "deb", "rpm", "appimage", "nsis"],
+    "targets": ["nsis"],
     "externalBin": ["binaries/yt-dlp", "binaries/ffmpeg", "binaries/ffprobe"],
     "resources": {
       "fonts/*": "fonts/",
@@ -64,49 +64,7 @@
       "resources/capstan/": "resources/capstan/"
     },
     "licenseFile": "installer/eula.txt",
-    "icon": [
-      "icons/32x32.png",
-      "icons/128x128.png",
-      "icons/128x128@2x.png",
-      "icons/icon.icns",
-      "icons/icon.ico"
-    ],
-    "linux": {
-      "appimage": {
-        "bundleMediaFramework": true
-      },
-      "deb": {
-        "depends": [
-          "libmpv2 | libmpv1",
-          "libwebkit2gtk-4.1-0",
-          "libgl1",
-          "libegl1",
-          "libayatana-appindicator3-1",
-          "libssl3",
-          "ca-certificates",
-          "gstreamer1.0-plugins-good",
-          "gstreamer1.0-plugins-bad",
-          "gstreamer1.0-libav"
-        ],
-        "desktopTemplate": "main.desktop"
-      },
-      "rpm": {
-        "depends": [
-          "mpv-libs",
-          "webkit2gtk4.1",
-          "mesa-libGL",
-          "mesa-libEGL",
-          "libappindicator-gtk3",
-          "openssl-libs",
-          "ca-certificates"
-        ],
-        "desktopTemplate": "main.desktop"
-      }
-    },
-    "macOS": {
-      "minimumSystemVersion": "12.0",
-      "entitlements": "Entitlements.plist"
-    },
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"],
     "windows": {
       "nsis": {
         "installMode": "currentUser",

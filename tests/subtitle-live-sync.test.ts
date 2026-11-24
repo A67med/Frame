@@ -4,8 +4,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { findActiveCue } from "../src/lib/subtitles/parser.ts";
-import { applyLinear } from "../src/lib/subtitles/text-sync.ts";
+import { findActiveCue } from "../src/features/subtitles/parser.ts";
+import { applyLinear } from "../src/features/subtitles/text-sync.ts";
 
 const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 

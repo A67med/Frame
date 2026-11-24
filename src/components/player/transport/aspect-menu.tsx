@@ -10,7 +10,7 @@ import {
 import { useT } from "@/lib/i18n";
 import { useMenuSide } from "../menu-side";
 import { Tooltip } from "./tooltip";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 
 export function AspectMenu({
   mode,

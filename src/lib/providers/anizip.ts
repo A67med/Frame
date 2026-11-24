@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 const ENDPOINT = "https://api.ani.zip/mappings";
 const GAP_MS = 90;

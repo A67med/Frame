@@ -5,7 +5,7 @@ import simklLogo from "@/assets/simkl.png";
 import traktLogo from "@/assets/trakt.svg";
 import type { Meta } from "@/lib/cinemeta";
 import { useAuth } from "@/lib/auth";
-import { anyProfileSharesStremioWith, useProfiles } from "@/lib/profiles";
+import { anyProfileSharesStremioWith, useProfiles } from "@/features/profiles/profiles";
 import { useHideAnime } from "@/lib/anime-hide";
 import { useHeroLogos } from "@/components/anime-hero/use-hero-logos";
 import { dismissCw, isCwDismissed, useCwDismissVersion } from "@/lib/cw-dismiss";

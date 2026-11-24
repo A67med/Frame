@@ -1,18 +1,22 @@
 import { Component, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AuthProvider } from "@/lib/auth";
-import { CompanionProfilesProvider } from "@/lib/profiles";
+import { CompanionProfilesProvider } from "@/features/profiles/profiles";
 import { SettingsProvider } from "@/lib/settings";
 import { ShellLayer } from "./player/shell-layer";
 import { DragClickStage } from "./player/drag-click-stage";
-import { emptySnapshot, type PlayerSnapshot } from "@/lib/player/bridge";
-import { createForwardingMpvBridge } from "@/lib/player/mpv-forward";
-import { buildSubtitleTimingMediaKey } from "@/lib/player/subtitle-fps";
+import { emptySnapshot, type PlayerSnapshot } from "@/features/player/engine/bridge";
+import { createForwardingMpvBridge } from "@/features/player/engine/mpv-forward";
+import { buildSubtitleTimingMediaKey } from "@/features/player/engine/subtitle-fps";
 import {
   hdrOverlayEmitAction,
   onHdrStageProps,
   type HdrNavigationRequest,
 } from "@/lib/hdr-overlay";
-import { PlayerNavigationProvider, type PlayerNavigation, type PlayerSrc } from "@/lib/view";
+import {
+  PlayerNavigationProvider,
+  type PlayerNavigation,
+  type PlayerSrc,
+} from "@/app/navigation/view";
 import { PlayerInteractionLockControls } from "@/components/player/player-interaction-lock";
 import { usePlayerInteractionBlocker } from "./player/hooks/use-player-interaction-lock";
 

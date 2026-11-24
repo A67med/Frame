@@ -20,7 +20,7 @@ import {
 import { useSettings } from "@/lib/settings";
 import { getThemeById } from "@/lib/theme";
 import { useParental } from "@/lib/parental";
-import { useView, type View } from "@/lib/view";
+import { useView, type View } from "@/app/navigation/view";
 import { close, minimize, toggleMaximize, useMaximized } from "@/lib/window";
 import { OverflowNav, type NavEntry } from "@/chrome/nav-overflow";
 import { useAvailableNavItems, applyNavCustomization, type NavItem } from "@/chrome/nav-items";

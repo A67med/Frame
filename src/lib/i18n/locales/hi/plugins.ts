@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "प्लगइन",
-  Repositories: "रिपॉज़िटरी",
+  "Plugins": "प्लगइन",
+  "Repositories": "रिपॉज़िटरी",
   "Installed plugins": "इंस्टॉल किए गए प्लगइन",
   "Plugin repositories": "प्लगइन रिपॉज़िटरी",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -29,8 +29,8 @@ const plugins: Record<string, string> = {
     "एक रिपॉज़िटरी जोड़ें, फिर मनचाहे प्रोवाइडर इंस्टॉल करें। वे यहाँ दिखेंगे।",
   "Add a repository": "रिपॉज़िटरी जोड़ें",
   "Movies and series": "फ़िल्में और सीरीज़",
-  Script: "स्क्रिप्ट",
-  Verified: "सत्यापित",
+  "Script": "स्क्रिप्ट",
+  "Verified": "सत्यापित",
   "v{version} available": "v{version} उपलब्ध",
   "Paused after {n} failures. Turn it back on to try again.":
     "{n} विफलताओं के बाद रोका गया। फिर से कोशिश करने के लिए इसे दोबारा चालू करें।",
@@ -55,7 +55,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "{repo} से v{version}, {when} इंस्टॉल किया गया।",
   "Update to v{version}": "v{version} पर अपडेट करें",
   "Revert to v{version}": "v{version} पर वापस जाएँ",
-  Reaches: "संपर्क करता है",
+  "Reaches": "संपर्क करता है",
   "Any public website. This plugin did not say which sites it uses.":
     "कोई भी सार्वजनिक वेबसाइट। इस प्लगइन ने नहीं बताया कि यह किन साइटों का उपयोग करता है।",
   "Seen so far: {hosts}": "अब तक देखे गए: {hosts}",
@@ -103,7 +103,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "{count} को हटाएँ और अनइंस्टॉल करें?",
   "Could not reach this repository. Installed plugins keep working.":
     "इस रिपॉज़िटरी तक नहीं पहुँचा जा सका। इंस्टॉल किए गए प्लगइन काम करते रहेंगे।",
-  "This repository lists no plugins.": "इस रिपॉज़िटरी में कोई प्लगइन सूचीबद्ध नहीं है।",
   "This repository is not for stream plugins.": "यह रिपॉज़िटरी स्ट्रीम प्लगइन के लिए नहीं है।",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "स्ट्रीम प्लगइन नहीं है: यह कोई getStreams या streams फ़ंक्शन एक्सपोर्ट नहीं करता।",

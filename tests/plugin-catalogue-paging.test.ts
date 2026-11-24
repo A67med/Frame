@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const SHIM = readFileSync("android-extension-compat/src/api/HomePageResponse.kt", "utf8");
-const CATALOGUE = readFileSync("src/lib/streams/plugins/extension/catalogue.ts", "utf8");
+const CATALOGUE = readFileSync("src/features/addons/streams/extension/catalogue.ts", "utf8");
 
 test("a provider that does not say whether a page follows is taken to have one", () => {
   // Kotlin fills in a default argument in the class that declares it, so this is the value every

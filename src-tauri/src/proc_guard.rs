@@ -6,14 +6,6 @@ pub fn init() {
 }
 
 pub fn configure_command(cmd: &mut Command) {
-    #[cfg(target_os = "linux")]
-    unsafe {
-        cmd.pre_exec(|| {
-            unsafe { libc::prctl(libc::PR_SET_PDEATHSIG, libc::SIGKILL) };
-            Ok(())
-        });
-    }
-    #[cfg(not(target_os = "linux"))]
     let _ = cmd;
 }
 
@@ -22,8 +14,6 @@ pub fn adopt(child: &Child) {
     if let Some(handle) = child.raw_handle() {
         win::assign(handle as isize);
     }
-    #[cfg(not(windows))]
-    let _ = child;
 }
 
 pub fn reap_orphans() {
@@ -41,15 +31,6 @@ fn reap_platform() {
         .stdout(std::process::Stdio::null())
         .stderr(std::process::Stdio::null())
         .output();
-}
-
-#[cfg(not(windows))]
-fn reap_platform() {
-    for signature in ["harbor-thumbs-", "harbor-mv-"] {
-        let _ = std::process::Command::new("pkill")
-            .args(["-9", "-f", signature])
-            .output();
-    }
 }
 
 #[cfg(windows)]

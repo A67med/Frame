@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
-import { hostOf } from "@/lib/addons-store/reorder";
+import { hostOf } from "@/features/addons/catalog/reorder";
 import { isRtl, useUiLanguage } from "@/lib/i18n";
 import { useProxiedImageSrc } from "@/lib/remote-image-proxy";
 import { SFX } from "@/lib/sfx";

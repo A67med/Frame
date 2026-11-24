@@ -1,5 +1,5 @@
 import type { AniZipMapping } from "@/lib/providers/anizip";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 const ANIME_SCHEME = /^(kitsu|mal|anilist|anidb):/;
 

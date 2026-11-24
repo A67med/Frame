@@ -8,7 +8,7 @@ import { ButtonGlyph, type GlyphKind } from "@/components/gamepad-button-glyph";
 import { useSettings } from "@/lib/settings";
 import { SFX } from "@/lib/sfx";
 import { exitBigPicture, pushBigPicture } from "@/lib/big-picture";
-import { toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { forceBpMeta, readBpCwItem, useBpFocusedMeta } from "./bp-focus-meta";
 import { pushBpBack } from "./bp-back";
 import { requestBpPlay } from "./bp-play-request";

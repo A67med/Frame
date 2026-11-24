@@ -1,6 +1,6 @@
 import type { Meta } from "./cinemeta";
 import { lastPlayedEpisode } from "./resume";
-import type { PlayEpisode } from "./view";
+import type { PlayEpisode } from "../app/navigation/view";
 
 export function smartPlayEpisode(meta: Meta): PlayEpisode | undefined {
   if (meta.type !== "series") return undefined;

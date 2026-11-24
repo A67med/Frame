@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
 import type { PartialSyncState } from "@/lib/together/provider";
 import type { SourceDescriptor } from "@/lib/together/protocol";
 import { buildSourceDescriptor, descriptorsEqual } from "@/lib/together/source-descriptor";
-import type { PlayerSrc, PlayerStreamRef } from "@/lib/view";
+import type { PlayerSrc, PlayerStreamRef } from "@/app/navigation/view";
 
 const URL_CHANGE_DURATION_GUARD_MS = 1500;
 

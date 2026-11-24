@@ -1,5 +1,5 @@
 import { AudioMenuBody } from "@/components/player/audio-menu";
-import type { TrackInfo } from "@/lib/player/bridge";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 
 export type AudioModalState = {
   tracks: TrackInfo[];

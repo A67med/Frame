@@ -109,7 +109,7 @@ export async function collectDiagnostics(opts: {
   let mpvProbe: Diagnostics["mpvProbe"] = null;
   try {
     if (typeof window !== "undefined" && "__TAURI_INTERNALS__" in window) {
-      const { probeMpv } = await import("@/lib/player/mpv");
+      const { probeMpv } = await import("@/features/player/engine/mpv");
       const probe = await probeMpv();
       mpvProbe = { available: probe.available, version: probe.version, error: probe.error };
     }

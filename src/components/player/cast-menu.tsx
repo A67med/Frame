@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { discoverCastDevices, type CastDeviceInfo } from "@/lib/cast";
 import { isRtl, useT, useUiLanguage } from "@/lib/i18n";
 import { CastIcon } from "./cast-icon";
-import { noteOverlayDismiss } from "@/lib/player/overlay-dismiss";
+import { noteOverlayDismiss } from "@/features/player/engine/overlay-dismiss";
 
 export function CastMenu({
   open,

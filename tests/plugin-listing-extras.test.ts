@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { listingTitle, readListing } from "../src/lib/streams/plugins/extension/listing";
+import { listingTitle, readListing } from "../src/features/addons/streams/extension/listing";
 
 test("the title is cut where the provider's own detail starts", () => {
   // The real line, as a provider sends it.

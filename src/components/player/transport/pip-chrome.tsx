@@ -1,5 +1,5 @@
 import { Captions } from "lucide-react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
 import { useT } from "@/lib/i18n";
 import { Tooltip } from "./tooltip";
 import { PipIconBtn, PipStepBtn } from "./pip-controls";

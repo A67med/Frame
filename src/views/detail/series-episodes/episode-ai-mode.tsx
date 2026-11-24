@@ -4,7 +4,7 @@ import type { Meta } from "@/lib/cinemeta";
 import { ProviderLogo } from "@/components/ai-provider-logo";
 import { aiIsGroq, aiKey, modelLabelFor, providerForModel } from "@/lib/ai-models";
 import { aiFindEpisodes, type EpisodeCandidate } from "@/lib/ai-episode-search";
-import { useLocalAwareSeriesPlay } from "@/lib/local-library/use-series-play";
+import { useLocalAwareSeriesPlay } from "@/features/library/local-library/use-series-play";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { AiThinking } from "@/components/search/ai-search/ai-thinking";

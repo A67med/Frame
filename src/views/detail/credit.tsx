@@ -1,5 +1,5 @@
 import type { PersonRef } from "@/lib/providers/tmdb";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function Credit({ label, people }: { label: string; people: PersonRef[] }) {
   const { openPerson } = useView();

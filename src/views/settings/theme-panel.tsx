@@ -1,4 +1,4 @@
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { AppWindow, Frame, Move, PanelTop, PanelTopDashed } from "./icons";
 import { useEffect, useState, type ReactNode, useRef } from "react";
 import { getCustomThemes, subscribeCustomThemes } from "@/lib/custom-themes";

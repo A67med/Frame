@@ -6,7 +6,7 @@ import { peekCachedLogo, resolveLogo } from "@/lib/logo";
 import { useTmdbImdbId } from "@/lib/providers/tmdb";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { MetaAwardsCorner } from "../meta-awards-corner";
 import { ThumbsDock } from "./thumbs-dock";
 import { FADE_MS, upsizeTmdb } from "./types";

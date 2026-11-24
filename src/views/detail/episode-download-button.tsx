@@ -2,8 +2,8 @@ import { ArrowDownToLine, Check, RotateCw, X } from "lucide-react";
 import { HoverTooltip } from "@/components/hover-tooltip";
 import type { Meta } from "@/lib/cinemeta";
 import { activeDownloadFor, cancelDownload, useDownloads } from "@/lib/download/downloads-store";
-import { findLocalEpisodeByIds, findLocalMovie } from "@/lib/local-library";
-import { useView, type PlayEpisode } from "@/lib/view";
+import { findLocalEpisodeByIds, findLocalMovie } from "@/features/library/local-library";
+import { useView, type PlayEpisode } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 
 export function EpisodeDownloadButton({

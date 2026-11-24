@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import { useLocalAwareSeriesPlay } from "@/lib/local-library/use-series-play";
+import { useLocalAwareSeriesPlay } from "@/features/library/local-library/use-series-play";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { EpisodeResultRow } from "./episode-result-row";

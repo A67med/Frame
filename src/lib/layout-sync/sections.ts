@@ -1,9 +1,9 @@
 // Concrete modules, never the @/lib/profile-sync barrel. The barrel re-exports
 // ProfileSyncRunner, which imports this layer's register module, so going through it
 // would close a cycle whose only protection is evaluation order.
-import { registerSection } from "@/lib/profile-sync/sections";
-import { mergeWatchedBy, normalizeWatchedBy } from "@/lib/profile-sync/watched-by-merge";
-import type { ProfileSectionKey, SectionAdapter } from "@/lib/profile-sync/types";
+import { registerSection } from "@/features/profiles/sync/sections";
+import { mergeWatchedBy, normalizeWatchedBy } from "@/features/profiles/sync/watched-by-merge";
+import type { ProfileSectionKey, SectionAdapter } from "@/features/profiles/sync/types";
 import { readWatchedByMap, replaceWatchedByMap } from "@/lib/watched-by";
 import type { Settings } from "@/lib/settings";
 import { layoutWired, readSettingsFor, writeSettingsFor } from "./store";

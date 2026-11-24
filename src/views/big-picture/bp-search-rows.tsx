@@ -1,8 +1,7 @@
-import { BookOpen, Blocks, Check, Layers, Tv, User } from "lucide-react";
+import { Blocks, Check, Layers, Tv, User } from "lucide-react";
 import type { Meta } from "@/lib/cinemeta";
 import type { AnimeHit, LiveTvHit, SearchPerson } from "@/lib/search";
 import type { AddonHit } from "@/lib/search-addon-index";
-import type { MangaSummary } from "@/lib/manga/model";
 import type { TvdbCollectionHit } from "@/lib/providers/tvdb-collections";
 import { pushBigPicture } from "@/lib/big-picture";
 import { useProxiedImageSrc } from "@/lib/remote-image-proxy";
@@ -14,8 +13,6 @@ import { useBpLivePlay } from "./use-bp-live";
 const HEADSHOT = "https://image.tmdb.org/t/p/h632";
 const HEADSHOT_BOX: BpArtBox = { min: 84, vw: 6.8, max: 126 };
 const HEADSHOT_CELL = bpBoxCss(HEADSHOT_BOX);
-const MANGA_BOX: BpArtBox = { min: 132, vw: 10.6, max: 210 };
-const MANGA_CELL = bpBoxCss(MANGA_BOX);
 const COLLECTION_BOX: BpArtBox = { min: 230, vw: 19, max: 340 };
 const COLLECTION_CELL = bpBoxCss(COLLECTION_BOX);
 
@@ -186,47 +183,6 @@ export function BpCollectionCell({
         <span className="line-clamp-1 text-[clamp(12.5px,1.7vh,19px)] font-semibold leading-tight text-ink">
           {hit.name}
         </span>
-      </span>
-    </button>
-  );
-}
-
-// Manga has no Big Picture route of its own, so this hands off to the desktop
-// reader exactly the way BpHeroManga already does. Do not swap it for a
-// pushBigPicture({ kind: "manga" }) until that route actually exists; the detail
-// route cannot resolve a manga id and the card opens nothing.
-export function BpMangaCell({ manga, onOpen }: { manga: MangaSummary; onOpen: () => void }) {
-  const src = useProxiedImageSrc(bpCardArt(manga.cover, bpBoxPx(MANGA_BOX)));
-  return (
-    <button
-      type="button"
-      data-bp-focusable
-      data-bp-tile
-      data-bp-restore-key={`manga:${manga.id}`}
-      onClick={() => {
-        SFX.click();
-        onOpen();
-      }}
-      aria-label={manga.title}
-      className="group relative flex shrink-0 flex-col justify-end overflow-hidden rounded-[var(--bp-r-md)] bg-[var(--bp-panel)] text-start transition-transform duration-[var(--bp-dur-fast)] ease-[var(--bp-ease)]"
-      style={{ width: MANGA_CELL, aspectRatio: "2 / 3" }}
-    >
-      {src ? (
-        <img
-          src={src}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      ) : (
-        <span className="absolute inset-0 flex items-center justify-center">
-          <BookOpen size={24} className="text-ink-subtle" strokeWidth={1.7} />
-        </span>
-      )}
-      <span aria-hidden className="absolute inset-0" style={{ background: COLLECTION_SCRIM }} />
-      <span className="relative line-clamp-2 p-[clamp(8px,0.7vw,14px)] text-[clamp(11.5px,1.55vh,17px)] font-semibold leading-tight text-ink">
-        {manga.title}
       </span>
     </button>
   );

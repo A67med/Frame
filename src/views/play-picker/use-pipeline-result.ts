@@ -10,10 +10,10 @@ import {
 } from "@/lib/picker-cache";
 import { useSettings } from "@/lib/settings";
 import type { AddonProgress } from "@/lib/streams/addons";
-import { pluginCacheTokens } from "@/lib/streams/plugins";
+import { pluginCacheTokens } from "@/features/addons/streams";
 import { runPipeline, type PipelineResult } from "@/lib/streams/pipeline";
 import { buildEpisodePipelineInput } from "@/lib/streams/episode-pipeline-input";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import {
   pickerErrorTransport,
   pipelineError,

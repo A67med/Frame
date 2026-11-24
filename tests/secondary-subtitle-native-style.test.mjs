@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import * as formats from "../src/lib/player/sub-format.ts";
-import { pickBestTrack } from "../src/lib/subtitles/language.ts";
+import * as formats from "../src/features/player/engine/sub-format.ts";
+import { pickBestTrack } from "../src/features/subtitles/language.ts";
 
 function load(relativePath, dependencies) {
   const source = readFileSync(new URL(relativePath, import.meta.url), "utf8");
@@ -33,7 +33,7 @@ function deferred() {
 
 function nativeStyle(handler = async () => {}) {
   const calls = [];
-  const style = load("../src/lib/player/sub-style.ts", {
+  const style = load("../src/features/player/engine/sub-style.ts", {
     "@tauri-apps/api/core": {
       async invoke(command, args) {
         assert.equal(command, "mpv_set_property");
@@ -138,10 +138,13 @@ function hookHarness() {
         }
       },
     },
-    "@/lib/player/secondary-sub": { resetSecondarySub() {}, useSecondarySubChoice: () => "auto" },
-    "@/lib/player/sub-format": formats,
-    "@/lib/subtitles/language": { pickBestTrack },
-    "@/lib/player/sub-style": {
+    "@/features/player/engine/secondary-sub": {
+      resetSecondarySub() {},
+      useSecondarySubChoice: () => "auto",
+    },
+    "@/features/player/engine/sub-format": formats,
+    "@/features/subtitles/language": { pickBestTrack },
+    "@/features/player/engine/sub-style": {
       applySecondarySubNative: async (...args) => {
         calls.push(args);
       },

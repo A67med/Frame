@@ -29,7 +29,7 @@ function harness(local: any, patch: any = {}, privateProfile: string | null = nu
       ...state,
     },
   };
-  const h = hookHarness("src/lib/player/resume-start.ts", "resolveStartMs", {
+  const h = hookHarness("src/features/player/engine/resume-start.ts", "resolveStartMs", {
     "@/lib/resume": {
       readResumeEntry: () => local,
       saveResumeBatch: (batch: any) => writes.push(...batch),

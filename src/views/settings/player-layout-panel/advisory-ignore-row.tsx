@@ -2,7 +2,10 @@ import { Check, RotateCw } from "../icons";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
 import { navOwnsFocus } from "@/lib/keyboard-navigation/geometry";
-import { clearAdvisoryIgnores, useAdvisoryIgnoreCount } from "@/lib/player/content-advisory-ignore";
+import {
+  clearAdvisoryIgnores,
+  useAdvisoryIgnoreCount,
+} from "@/features/player/engine/content-advisory-ignore";
 import { ActionRow } from "../advanced-panel/action-row";
 
 export function AdvisoryIgnoreRow({ featureOn }: { featureOn: boolean }) {

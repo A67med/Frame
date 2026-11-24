@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { COLLECTIONS_CATALOG } from "@/lib/collections-catalog";
-import { useCollections } from "@/lib/collections";
+import { COLLECTIONS_CATALOG } from "@/features/collections/catalog";
+import { useCollections } from "@/features/collections/store";
 import { useSettings } from "@/lib/settings";
-import { nearestScrollRoot, useCategoryFeed } from "@/views/collections/use-category-feed";
+import {
+  nearestScrollRoot,
+  useCategoryFeed,
+} from "@/features/collections/views/collections/use-category-feed";
 import {
   BP_COLLECTIONS_ALL,
   BP_CURATED_NAMES,

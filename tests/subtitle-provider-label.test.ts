@@ -9,7 +9,7 @@ import {
   subtitleContextTitle,
   subtitleStreamDescriptor,
   subtitleTitleOf,
-} from "../src/lib/subtitles/provider-label.ts";
+} from "../src/features/subtitles/provider-label.ts";
 
 test("addon subtitles expose a detectable upstream provider without hiding AIOStreams", () => {
   assert.equal(

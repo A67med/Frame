@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { isNaturalEnd, isTruncatedEnd } from "../src/lib/player/playback-end.ts";
-import type { PlayerSnapshot } from "../src/lib/player/bridge.ts";
+import { isNaturalEnd, isTruncatedEnd } from "../src/features/player/engine/playback-end.ts";
+import type { PlayerSnapshot } from "../src/features/player/engine/bridge.ts";
 
 const snap = (status: string, durationSec: number): PlayerSnapshot =>
   ({ status, durationSec }) as unknown as PlayerSnapshot;

@@ -702,7 +702,7 @@ export async function openManualDownload(): Promise<void> {
   const { openUrl } = await import("@/lib/window");
   let target = HARBOR_RELEASES_URL;
   try {
-    const { safeFetch } = await import("@/lib/safe-fetch");
+    const { safeFetch } = await import("@/infrastructure/networking/safe-fetch");
     const [res, probe] = await Promise.all([
       safeFetch(`${HARBOR_RELEASES_URL}/latest/download/latest.json`),
       probeHandoff(),

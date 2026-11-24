@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTogether, type ChatMessage } from "@/lib/together/provider";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 const VISIBLE_MS = 5500;
 const MAX_TOASTS = 3;

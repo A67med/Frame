@@ -774,61 +774,6 @@ fn spawn_ipc(
     });
 }
 
-#[cfg(not(windows))]
-fn spawn_ipc(
-    pipe: String,
-    mut writer_rx: mpsc::Receiver<Value>,
-    pending: Pending,
-    seek_notify: Arc<Notify>,
-) {
-    use tokio::io::{AsyncBufReadExt, BufReader};
-    use tokio::net::UnixStream;
-    tokio::spawn(async move {
-        let mut stream = None;
-        for _ in 0..40 {
-            match UnixStream::connect(&pipe).await {
-                Ok(s) => {
-                    stream = Some(s);
-                    break;
-                }
-                Err(_) => tokio::time::sleep(Duration::from_millis(100)).await,
-            }
-        }
-        let stream = match stream {
-            Some(s) => s,
-            None => return,
-        };
-        let (r, mut w) = stream.into_split();
-        let mut reader = BufReader::new(r);
-        let read_pending = pending.clone();
-        let read_notify = seek_notify.clone();
-        tokio::spawn(async move {
-            let mut line = String::new();
-            loop {
-                line.clear();
-                match reader.read_line(&mut line).await {
-                    Ok(0) => break,
-                    Ok(_) => {
-                        let trimmed = line.trim();
-                        if trimmed.is_empty() {
-                            continue;
-                        }
-                        handle_line(trimmed, &read_pending, &read_notify);
-                    }
-                    Err(_) => break,
-                }
-            }
-        });
-        while let Some(msg) = writer_rx.recv().await {
-            let mut s = msg.to_string();
-            s.push('\n');
-            if w.write_all(s.as_bytes()).await.is_err() {
-                break;
-            }
-        }
-    });
-}
-
 #[cfg(test)]
 mod cache_tests {
     use super::{send_ipc_message, ThumbCache, ThumbsState};

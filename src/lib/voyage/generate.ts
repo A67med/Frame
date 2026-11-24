@@ -1,6 +1,6 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { meta as fetchMeta, type Meta } from "@/lib/cinemeta";
-import { watchTitleKey } from "@/lib/playback-history";
+import { watchTitleKey } from "@/features/player/history";
 import type { VoyageTheme } from "./types";
 
 const BASE = "https://v3-cinemeta.strem.io/catalog";

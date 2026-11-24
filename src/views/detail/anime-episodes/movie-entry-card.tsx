@@ -4,7 +4,7 @@ import type { Meta } from "@/lib/cinemeta";
 import type { KitsuEpisode } from "@/lib/providers/kitsu";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { useView, type PlayEpisode } from "@/lib/view";
+import { useView, type PlayEpisode } from "@/app/navigation/view";
 
 function entryPlayEpisode(ep: KitsuEpisode | undefined): PlayEpisode | undefined {
   if (!ep) return undefined;

@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
-import { noteOverlayDismiss } from "@/lib/player/overlay-dismiss";
+import { noteOverlayDismiss } from "@/features/player/engine/overlay-dismiss";
 import type { CastDeviceInfo } from "@/lib/cast";
 import { isRtl, useT, useUiLanguage } from "@/lib/i18n";
 import { CastIcon } from "@/components/player/cast-icon";
 import { ArrowLeft, Loader2, Pause, Play, Square, X } from "lucide-react";
-import type { VideoAudioCastState } from "@/lib/player/video-audio-cast";
+import type { VideoAudioCastState } from "@/features/player/engine/video-audio-cast";
 
 export function SpeakerAudioBar({
   device,

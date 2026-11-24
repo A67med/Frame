@@ -1,10 +1,10 @@
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
 import type { CastDeviceInfo } from "@/lib/cast";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { injectHostNav } from "./inject-host-nav";
 import { tvFocus } from "@/lib/keyboard-navigation";
 import { setSleepMode } from "@/lib/sleep-timer-store";
-import { readActiveProfileIdentity, readAllProfilesIdentity } from "@/lib/profiles";
+import { readActiveProfileIdentity, readAllProfilesIdentity } from "@/features/profiles/profiles";
 import {
   applyTextToFocused,
   armFocusedTextEntry,

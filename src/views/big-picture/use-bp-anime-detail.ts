@@ -13,7 +13,7 @@ import { pickTvdbImage } from "@/lib/providers/tvdb-proxy";
 import { useSettings } from "@/lib/settings";
 import type { SpoilerMask } from "@/lib/spoilers";
 import { effectiveOrderProvider, tvdbPanelEnabled } from "@/lib/settings/episode-order";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { animeSeasonKey } from "@/views/detail/anime-episodes/anime-season-key";
 import { useAnimeOrder } from "@/views/detail/anime-episodes/use-anime-order";
 import { useAnimePreferredSeason } from "@/views/detail/anime-episodes/use-anime-preferred-season";

@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
-import { BookOpen, Check, FileText, FolderOpen, Trash2 } from "lucide-react";
+import { Check, FolderOpen, Trash2 } from "lucide-react";
 import { Play } from "@/components/icons/play-filled";
 import { DownloadCancelIcon, DownloadPauseResumeIcon } from "@/components/download-action-icons";
 import { Poster, usePosterChain } from "@/components/poster";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import {
   cancelDownload,
@@ -26,7 +26,6 @@ export function DownloadRow({ d, compact = false }: { d: DownloadItem; compact?:
     d.poster ?? undefined,
     d.season != null ? "series" : "movie",
   );
-  const isEBook = d.kind === "ebook";
   const pct = Math.round(d.ratio * 100);
   const downloading = d.status === "downloading";
   const active = downloading || d.status === "paused";
@@ -52,12 +51,7 @@ export function DownloadRow({ d, compact = false }: { d: DownloadItem; compact?:
       <div
         className={`${compact ? "h-[44px] w-[30px]" : "h-[68px] w-[46px]"} shrink-0 overflow-hidden rounded-lg`}
       >
-        <Poster
-          src={isEBook ? (d.poster ?? undefined) : poster.src}
-          onError={isEBook ? undefined : poster.onError}
-          seed={d.metaId}
-          ratio="portrait"
-        />
+        <Poster src={poster.src} onError={poster.onError} seed={d.metaId} ratio="portrait" />
       </div>
       <div className="flex min-w-0 flex-1 flex-col gap-1.5">
         <div className="flex min-w-0 items-baseline gap-2">
@@ -135,27 +129,12 @@ export function DownloadRow({ d, compact = false }: { d: DownloadItem; compact?:
           <>
             {d.status === "done" && (
               <>
-                {!isEBook && (
-                  <RowBtn label={t("Play")} onClick={playLocal}>
-                    <Play size={16} strokeWidth={2.2} fill="currentColor" />
-                  </RowBtn>
-                )}
-                {isEBook && d.format === "pdf" ? (
-                  <span
-                    className="flex h-9 w-9 items-center justify-center text-ink-subtle"
-                    title={t("PDF print dialog opened")}
-                  >
-                    <FileText size={16} />
-                  </span>
-                ) : (
-                  <RowBtn label={t("Show in folder")} onClick={() => void revealDownload(d.id)}>
-                    {isEBook ? (
-                      <BookOpen size={16} strokeWidth={2} />
-                    ) : (
-                      <FolderOpen size={16} strokeWidth={2} />
-                    )}
-                  </RowBtn>
-                )}
+                <RowBtn label={t("Play")} onClick={playLocal}>
+                  <Play size={16} strokeWidth={2.2} fill="currentColor" />
+                </RowBtn>
+                <RowBtn label={t("Show in folder")} onClick={() => void revealDownload(d.id)}>
+                  <FolderOpen size={16} strokeWidth={2} />
+                </RowBtn>
               </>
             )}
             <DeleteButton onClick={() => removeDownload(d.id)} />

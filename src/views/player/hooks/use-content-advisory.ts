@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { isAdvisoryIgnored } from "@/lib/player/content-advisory-ignore";
+import { isAdvisoryIgnored } from "@/features/player/engine/content-advisory-ignore";
 import {
   harborImdbMpaRating,
   harborImdbParental,

@@ -11,7 +11,7 @@ import type { Rejection } from "@/lib/streams/trust";
 import type { Addon } from "@/lib/addons";
 import type { DebridSlug, ScoredStream, Stream, Tier } from "@/lib/streams/types";
 import { hasCachedMarker, hasUncachedMarker } from "@/lib/streams/cached";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { parseKitsuId } from "@/lib/providers/kitsu";
 import { splitFranchiseDisplaySeason } from "@/lib/streams/anime-identity-core";
 

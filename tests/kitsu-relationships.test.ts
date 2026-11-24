@@ -123,7 +123,7 @@ test("kitsuMainTvSeries only follows parent_story or full_story, ignoring spinof
     "@/lib/cache": { lruSet: () => ({ has: () => false, add: () => {} }) },
     "@/lib/cinemeta": {},
     "@/lib/maintenance": { registerEvictable: () => {} },
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async (url: string) => {
         requestedUrl = url;
         return {
@@ -132,7 +132,7 @@ test("kitsuMainTvSeries only follows parent_story or full_story, ignoring spinof
         };
       },
     },
-    "@/lib/addons-store/adult-filter": { adultContentHidden: () => false },
+    "@/features/addons/catalog/adult-filter": { adultContentHidden: () => false },
   };
 
   const code = ts.transpileModule(

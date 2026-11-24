@@ -3,7 +3,7 @@ import { Spinner } from "@/components/spinner";
 import { createPortal } from "react-dom";
 import { useT } from "@/lib/i18n";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { usePageVisible } from "@/lib/visibility";
 import { MultiPlayer } from "@/views/multiview/multi-player";
 import type { IptvChannel } from "@/lib/iptv/types";

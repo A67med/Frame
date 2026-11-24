@@ -20,10 +20,6 @@ function carriedVersions(): Record<string, string | undefined> {
     "src-tauri/tauri.conf.json": json("src-tauri/tauri.conf.json"),
     "src-tauri/Cargo.toml": toml("src-tauri/Cargo.toml"),
     "src-tauri/Cargo.lock": lock("src-tauri/Cargo.lock", "frame"),
-    "flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml":
-      /<release version="([^"]+)" date="[^"]+"\s*\/>/.exec(
-        read("flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml"),
-      )?.[1],
   };
 }
 

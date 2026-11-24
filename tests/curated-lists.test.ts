@@ -264,7 +264,7 @@ test("only the rails Discover actually renders claim one", () => {
     ["national-film-registry-latest", "nyt-tv-100"],
     "the rest reach the reader through the canon shelf",
   );
-  const discover = read("src/views/discover.tsx");
+  const discover = read("src/features/discovery/views/discover.tsx");
   assert.match(discover, /listId="nyt-tv-100"/);
   assert.match(discover, /listId=\{REGISTRY_LATEST_LIST_ID\}/);
   assert.match(discover, /case "special:canon":/);

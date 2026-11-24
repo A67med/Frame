@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { searchWyzie } from "../src/lib/subtitles/providers/wyzie.ts";
+import { searchWyzie } from "../src/features/subtitles/providers/wyzie.ts";
 
 test("Wyzie uses a known display language instead of inventing English", async () => {
   const results = await searchWyzie(

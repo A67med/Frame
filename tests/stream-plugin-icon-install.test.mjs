@@ -5,7 +5,7 @@ import test from "node:test";
 import ts from "typescript";
 
 const source = readFileSync(
-  new URL("../src/lib/streams/plugins/install.ts", import.meta.url),
+  new URL("../src/features/addons/streams/install.ts", import.meta.url),
   "utf8",
 );
 const compiled = ts.transpileModule(source, {
@@ -15,7 +15,7 @@ const compiled = ts.transpileModule(source, {
 function installer({ fetched, prior, fails = false } = {}) {
   const saved = [];
   const dependencies = {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async () => new Response("export const streams = () => []"),
       safeFetchBytes: async () => new Response(new Uint8Array([0x50, 0x4b, 0x80, 0xff])),
       safeFetchBase64: async () => {
@@ -23,13 +23,13 @@ function installer({ fetched, prior, fails = false } = {}) {
         return fetched;
       },
     },
-    "@/lib/manga/plugins/host-http": {
+    "@/features/addons/runtime/host-http": {
       assertSafeUrl: (url) => {
         if (!url.startsWith("https://public.example/")) throw new Error("rejected URL");
         return url;
       },
     },
-    "@/lib/manga/plugins/worker-host": {
+    "@/features/addons/runtime/worker-host": {
       PluginWorker: class {
         async meta() {
           return { methods: ["streams"] };

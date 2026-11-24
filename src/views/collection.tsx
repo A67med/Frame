@@ -3,7 +3,7 @@ import { PickCard } from "@/components/pick-card";
 import type { Meta } from "@/lib/cinemeta";
 import { tmdbCollection, type TmdbCollection } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
-import { useScrollMemory } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
 import { useT } from "@/lib/i18n";
 
 export function CollectionView({ collectionId }: { collectionId: number }) {

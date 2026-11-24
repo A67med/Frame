@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { subscribeMemoryPressure } from "@/lib/maintenance";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 
 const KEEP_ALIVE_MS = 1500;
 const IDLE_EVICT_MS = 60 * 1000;

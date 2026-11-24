@@ -252,7 +252,7 @@ test("private resume ignores shared cloud and imported offsets", async () => {
   resume.saveResumeMs("tt100", 600000, 1, 1, 1, undefined, undefined, "b");
   h.select("a");
   resume.saveResumeBatch([{ id: "tt100", ms: 900000, season: 1, episode: 1 }]);
-  const start = h.load("src/lib/player/resume-start.ts");
+  const start = h.load("src/features/player/engine/resume-start.ts");
   const identity = { metaId: "tt100", authKey: "fixture", imdbId: "tt100", imdbVerified: true };
   start.prefetchResumeStart(identity);
   assert.equal(start.isResumeStartReady(identity), true);

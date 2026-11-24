@@ -18,7 +18,7 @@ function fixture() {
   const mocks: Record<string, unknown> = {
     react: {},
     "@/lib/cache": { lruGet, lruSet },
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: (url: string) => {
         const parsed = new URL(url);
         requests.push(parsed);

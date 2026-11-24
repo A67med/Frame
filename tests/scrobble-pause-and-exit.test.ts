@@ -9,7 +9,7 @@ const at = (p: string) => new URL(`../${p}`, import.meta.url);
 const read = (p: string) => readFileSync(at(p), "utf8");
 const simkl = read("src/lib/simkl/scrobble-hook.ts");
 const trakt = read("src/lib/trakt/scrobble-hook.ts");
-const safeFetch = read("src/lib/safe-fetch.ts");
+const safeFetch = read("src/infrastructure/networking/safe-fetch.ts");
 const simklClient = read("src/lib/simkl/client.ts");
 
 test("no tracker gates its pause behind a setting with no UI", () => {

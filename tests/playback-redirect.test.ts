@@ -95,7 +95,7 @@ function pickerHarness(intent = "play") {
   let redirect = async () => finalUrl;
   const h = hookHarness("src/views/play-picker/use-pick-handler.ts", "usePickHandler", {
     "@/lib/debrid/playback-preparation": { invalidatePreparedDebridLink() {} },
-    "@/lib/playback-history": { savePlayback: (_id: string, entry: any) => history.push(entry) },
+    "@/features/player/history": { savePlayback: (_id: string, entry: any) => history.push(entry) },
     "@/lib/season-lock": { saveSeasonLock() {} },
     "@/lib/dead-streams": { markStreamDead() {}, recordStubEvent() {} },
     "@/lib/torrent/stremio-stream": { engineP2pEligible: () => false },

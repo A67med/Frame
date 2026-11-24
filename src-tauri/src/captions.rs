@@ -20,7 +20,11 @@ pub async fn captions_window_is_open(app: AppHandle) -> Result<bool, String> {
     Ok(captions_is_open(&app))
 }
 
-fn captions_placement(anchor: &WebviewWindow, width: f64, height: f64) -> Result<(f64, f64), String> {
+fn captions_placement(
+    anchor: &WebviewWindow,
+    width: f64,
+    height: f64,
+) -> Result<(f64, f64), String> {
     let gap = 12.0_f64;
     let scale = anchor.scale_factor().unwrap_or(1.0);
     let size = anchor

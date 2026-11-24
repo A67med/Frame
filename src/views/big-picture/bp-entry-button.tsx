@@ -2,7 +2,7 @@ import { Monitor } from "lucide-react";
 import { enterBigPicture } from "@/lib/big-picture";
 import { useGamepads } from "@/lib/gamepad/store";
 import { useSettings } from "@/lib/settings";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { SFX } from "@/lib/sfx";
 import { useBpT } from "./bp-i18n";
 import { shouldOfferBigPicture } from "./bp-logic";

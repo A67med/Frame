@@ -4,7 +4,7 @@ import {
   formatSubtitleOffset,
   type SubtitleOffsetPosition,
   type SubtitleOffsetSize,
-} from "@/lib/player/subtitle-offset";
+} from "@/features/player/engine/subtitle-offset";
 import { useSettings } from "@/lib/settings";
 
 const PLAYER_POSITION_CLASSES: Record<SubtitleOffsetPosition, string> = {

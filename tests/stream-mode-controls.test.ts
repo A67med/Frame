@@ -24,7 +24,7 @@ test("source mode can also be repaired from normal settings", () => {
     at("src/views/settings/streaming-sources-panel/picker-tab.tsx"),
     "utf8",
   );
-  const settingsSearch = readFileSync(at("src/views/settings/nav.tsx"), "utf8");
+  const settingsSearch = readFileSync(at("src/features/settings/search/options.ts"), "utf8");
 
   assert.match(pickerSettings, /title=\{t\("Source mode"\)\}/);
   assert.match(

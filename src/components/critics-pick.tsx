@@ -16,7 +16,7 @@ import {
 } from "@/lib/providers/tmdb";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { openUrl } from "@/lib/window";
 import { CastChip } from "./critics-pick/cast-chip";
 import { Lightbox } from "./critics-pick/lightbox";

@@ -232,7 +232,7 @@ test("region and Following changes cannot reuse another calendar's attribution",
 
 // The hidden region control must never leave an old global preference driving Radar.
 test("Radar digital releases stay in Egypt without a region selector", () => {
-  const source = readFileSync("src/views/radar.tsx", "utf8");
+  const source = readFileSync("src/features/discovery/views/radar.tsx", "utf8");
   const section = source.slice(
     source.indexOf("function DigitalReleasesSection("),
     source.indexOf("export default"),

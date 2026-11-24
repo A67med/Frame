@@ -48,13 +48,13 @@ import { useSimklCardScores, useSimklCardScoresByAnimeId } from "@/lib/simkl/rat
 import { simklRequest } from "@/lib/simkl/client";
 import { getLocalCache } from "@/lib/simkl/activities";
 import { aniZipByKitsu, aniZipByMal } from "@/lib/providers/anizip";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { TvCard } from "@/components/tv-card";
 import { useTilt } from "@/lib/use-tilt";
 import { observe } from "@/lib/visibility";
-import { useInWatchlist } from "@/lib/watchlist";
+import { useInWatchlist } from "@/features/watchlist/watchlist";
 import { useMetaWatched } from "@/lib/watched-flag";
-import { useInLocalLibrary } from "@/lib/local-library";
+import { useInLocalLibrary } from "@/features/library/local-library";
 import { LocalDot } from "@/components/local-badge";
 import { ClapperMini } from "./icons/clapper-mini";
 import { Poster, useLocalizedPoster } from "./poster";
@@ -116,7 +116,6 @@ const PosterCard = memo(function PosterCard({
   kids = false,
   reason,
   reasonDetail,
-  onOpenManga,
 }: {
   meta: Meta;
   flagRerun?: boolean;
@@ -124,11 +123,9 @@ const PosterCard = memo(function PosterCard({
   kids?: boolean;
   reason?: string;
   reasonDetail?: string;
-  onOpenManga?: (meta: Meta) => void;
 }) {
-  const { openMeta, openPicker, openManga } = useView();
+  const { openMeta, openPicker } = useView();
   // Saved list items may carry a stale id; let the caller resolve it first.
-  const openMangaTarget = (m: Meta) => (onOpenManga ? onOpenManga(m) : openManga(m.id));
   const { open: openContextMenu } = useContextMenu();
   const { settings } = useSettings();
   const ref = useRef<HTMLButtonElement>(null);
@@ -604,11 +601,7 @@ const PosterCard = memo(function PosterCard({
   return (
     <button
       ref={ref}
-      onClick={() =>
-        meta.type === "manga"
-          ? openMangaTarget(meta)
-          : openMeta(meta, isAnimeCardId ? { exact: true } : undefined)
-      }
+      onClick={() => openMeta(meta, isAnimeCardId ? { exact: true } : undefined)}
       onContextMenu={(e) => openContextMenu(e, { kind: "meta", meta })}
       onFocus={(e) => {
         expandingCard.onFocus();
@@ -684,7 +677,6 @@ const PosterCard = memo(function PosterCard({
             meta={meta}
             onPlay={() => {
               if (meta.isCollection) openMeta(meta);
-              else if (meta.type === "manga") openMangaTarget(meta);
               else if (meta.type === "movie")
                 openPicker(meta, undefined, { autoPlay: true, resume: true });
               else openMeta(meta);
@@ -696,7 +688,6 @@ const PosterCard = memo(function PosterCard({
             style={inCardHover}
             onPlay={() => {
               if (meta.isCollection) openMeta(meta);
-              else if (meta.type === "manga") openMangaTarget(meta);
               else if (meta.type === "movie")
                 openPicker(meta, undefined, { autoPlay: true, resume: true });
               else openMeta(meta);
@@ -1029,10 +1020,9 @@ export const PickCard = Object.assign(
     kids?: boolean;
     reason?: string;
     reasonDetail?: string;
-    onOpenManga?: (meta: Meta) => void;
   }) {
     const { settings } = useSettings();
-    if (settings.rowCardStyle === "tv" && !props.kids && props.meta.type !== "manga") {
+    if (settings.rowCardStyle === "tv" && !props.kids) {
       return <TvCard meta={props.meta} kids={props.kids} reason={props.reason} />;
     }
     return <PosterCard {...props} />;

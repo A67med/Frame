@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { namedPage } from "../src/lib/streams/plugins/extension/run.ts";
-import { listingTitle } from "../src/lib/streams/plugins/extension/listing.ts";
-import type { StreamPluginRequest } from "../src/lib/streams/plugins/types.ts";
+import { namedPage } from "../src/features/addons/streams/extension/run.ts";
+import { listingTitle } from "../src/features/addons/streams/extension/listing.ts";
+import type { StreamPluginRequest } from "../src/features/addons/streams/types.ts";
 
 const req = (over: Partial<StreamPluginRequest> = {}): StreamPluginRequest => ({
   type: "series",

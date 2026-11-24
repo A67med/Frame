@@ -1,8 +1,8 @@
 import { Volume2, VolumeX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
 import { useT } from "@/lib/i18n";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 
 export function PipVolume({
   snap,

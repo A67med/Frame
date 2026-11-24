@@ -7,7 +7,7 @@ import {
   getWatchLocalConfirm,
   subscribeWatchLocalConfirm,
   type WatchLocalChoice,
-} from "@/lib/player/watch-local-confirm";
+} from "@/features/player/engine/watch-local-confirm";
 
 function formatClock(ms: number): string {
   const total = Math.max(0, Math.floor(ms / 1000));

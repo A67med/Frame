@@ -1,4 +1,4 @@
-import type { PlayerStreamRef } from "@/lib/view";
+import type { PlayerStreamRef } from "@/app/navigation/view";
 
 export function contentKey(metaId: string, imdbId: string | null): string {
   if (imdbId && imdbId.startsWith("tt")) return imdbId;

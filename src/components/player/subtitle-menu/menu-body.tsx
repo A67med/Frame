@@ -10,12 +10,19 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Flag } from "@/components/flag";
-import { hasImportedSubTitle, markImportedSub, useImportedSubs } from "@/lib/player/imported-subs";
-import { setSecondarySub } from "@/lib/player/secondary-sub";
-import { canBeSecondarySub } from "@/lib/player/sub-format";
+import {
+  hasImportedSubTitle,
+  markImportedSub,
+  useImportedSubs,
+} from "@/features/player/engine/imported-subs";
+import { setSecondarySub } from "@/features/player/engine/secondary-sub";
+import { canBeSecondarySub } from "@/features/player/engine/sub-format";
 import { useT } from "@/lib/i18n";
 import { HoverTooltip } from "@/components/hover-tooltip";
-import { filterTracksByPreferredLanguage, isGeneratedLangLabel } from "@/lib/subtitles/language";
+import {
+  filterTracksByPreferredLanguage,
+  isGeneratedLangLabel,
+} from "@/features/subtitles/language";
 import { SearchSection } from "./search-section";
 import { VariantRow } from "./variant-row";
 import { MenuHeader } from "./menu-header";
@@ -23,7 +30,7 @@ import { pickBestMatch, rankByRelease } from "./best-match";
 import { useSubtitleSearch } from "./subtitle-search-store";
 import { Count, EmptyState, ImportBanner, Tab, ToggleChip } from "./menu-body-parts";
 import type { SubtitleMenuProps } from "./types";
-import { subtitleTrackLanguageLabel } from "@/lib/subtitles/track-label";
+import { subtitleTrackLanguageLabel } from "@/features/subtitles/track-label";
 import { groupByLang, isVeryNewRelease, variantTitle } from "./utils";
 
 type SourceFilter = "all" | "embedded" | "external";

@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ResolvingSelection } from "@/views/play-picker/use-pick-handler";
 import type { Meta } from "@/lib/cinemeta";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
 import type { ScoredStream } from "@/lib/streams/types";
 import { useTogether } from "@/lib/together/provider";
-import { useView, type PlayEpisode, type PlayerSrc } from "@/lib/view";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
+import { useView, type PlayEpisode, type PlayerSrc } from "@/app/navigation/view";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
 import { playError, streamIdentity, type PickerError } from "@/views/play-picker/picker-utils";
 import { useAutoCandidates } from "@/views/play-picker/use-auto-candidates";
 import { useAutoFire } from "@/views/play-picker/use-auto-fire";

@@ -40,8 +40,8 @@ import {
   type Meta,
 } from "@/lib/cinemeta";
 import { addonBasesForOrigin, fetchAddonMeta, gatherCatalogAddons } from "@/lib/addons";
-import { useCapstanDetail } from "@/lib/streams/plugins/extension/detail-hook";
-import { isCapstanId, titlesAgree } from "@/lib/streams/plugins/extension/detail";
+import { useCapstanDetail } from "@/features/addons/streams/extension/detail-hook";
+import { isCapstanId, titlesAgree } from "@/features/addons/streams/extension/detail";
 import { resolveMeta } from "@/lib/meta-resource";
 import { useMdblistScores } from "@/lib/providers/mdblist";
 import { lastPlayedEpisode, readResumeEntry, saveResumeMs } from "@/lib/resume";
@@ -86,15 +86,15 @@ import {
 } from "@/lib/manual-watched";
 import { useTogether } from "@/lib/together/provider";
 import { useTrakt } from "@/lib/trakt/provider";
-import { noteLocalImdbId, toggleWatchlist, useInWatchlist } from "@/lib/watchlist";
+import { noteLocalImdbId, toggleWatchlist, useInWatchlist } from "@/features/watchlist/watchlist";
 import { PopIcon } from "@/components/pop-icon";
-import { useInLocalLibrary } from "@/lib/local-library";
+import { useInLocalLibrary } from "@/features/library/local-library";
 import { LocalLibraryBrand } from "@/components/local-library-brand";
 import { MediaServerBrand, mediaServerProviderName } from "@/components/media-server-brand";
 import { useTitleMediaServers } from "@/hooks/use-title-media-servers";
-import { localPlayerSrc } from "@/lib/local-library/player-src";
-import { resolveLocalPlayVersions } from "@/lib/local-library/playback";
-import { openLocalVersions } from "@/lib/player/local-versions-modal";
+import { localPlayerSrc } from "@/features/library/local-library/player-src";
+import { resolveLocalPlayVersions } from "@/features/library/local-library/playback";
+import { openLocalVersions } from "@/features/player/engine/local-versions-modal";
 import { mediaServerConnections } from "@/lib/media-server/connections";
 import { mediaServerItems } from "@/lib/media-server/index-store";
 import { matchingServerItems, serverPlayableCopies } from "@/lib/media-server/selectors";
@@ -102,9 +102,10 @@ import { createMediaServerPlayerSrc, decidePlaybackSource } from "@/lib/media-se
 import { markMovieWatched, unmarkMovieWatched } from "@/lib/mark-watched";
 import { useIsFavorite, useMediaFavorites } from "@/lib/media-favorites";
 import { openUrl } from "@/lib/window";
-import { profileFromDetail, trackEvent } from "@/lib/discover";
+import { profileFromDetail, trackEvent } from "@/features/discovery/discover";
 import { MOVIE_GENRES, TV_GENRES } from "@/lib/feed/tags";
-import { useScrollMemory, useView, type PlayEpisode } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView, type PlayEpisode } from "@/app/navigation/view";
 import { prefetchSegments } from "@/lib/skip-intro";
 import { useT } from "@/lib/i18n";
 import { AddToListMenu } from "@/components/lists/add-to-list-menu";

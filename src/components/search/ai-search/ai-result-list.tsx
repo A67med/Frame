@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import type { AiResult } from "@/lib/ai-search";
 import { useLocalizedOverview } from "@/lib/use-localized-overview";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { ResultPoster } from "../result-poster";
 

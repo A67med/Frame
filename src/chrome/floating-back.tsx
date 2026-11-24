@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { useSectionBackActive } from "@/lib/section-back";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { BACK_SHAPE, BACK_SKIN } from "./back-affordance";
 
 const DEEP_KINDS = new Set([

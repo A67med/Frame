@@ -10,7 +10,7 @@ import {
   ANIME4K_MODES,
   type Anime4kMode,
   type Anime4kTier,
-} from "@/lib/player/anime4k-modes";
+} from "@/features/player/engine/anime4k-modes";
 import { useSettings } from "@/lib/settings";
 import { ROW_ACTION, ROW_ACTION_PRIMARY, ROW_DESC, SettingGroup } from "../kit";
 import { Segmented } from "../shared";

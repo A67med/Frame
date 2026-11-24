@@ -34,13 +34,14 @@ import {
   streamMatchesEntry,
   streamMatchesReleaseLineage,
   streamMatchesSource,
-} from "@/lib/playback-history";
+} from "@/features/player/history";
 import { readSeasonLock } from "@/lib/season-lock";
 import { useSettings } from "@/lib/settings";
 import type { ScoredStream, Tier } from "@/lib/streams/types";
 import { isAddonRanked } from "@/lib/streams/addon-detect";
 import { isFilterEmpty, matchesCustomFilter } from "@/lib/streams/custom-filters";
-import { useScrollMemory, useView, type PlayEpisode, type PlayerSrc } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView, type PlayEpisode, type PlayerSrc } from "@/app/navigation/view";
 import { prefetchSegments } from "@/lib/skip-intro";
 import { exitWindowFullscreen } from "@/lib/fullscreen-state";
 import { useWindowFullscreen } from "@/lib/use-window-fullscreen";
@@ -75,7 +76,7 @@ import { StremioLayout } from "./play-picker/stremio-layout";
 import { SourceDrawer } from "./play-picker/source-drawer";
 import { TierStrip } from "./play-picker/tier-strip";
 import { usePickHandler, type ResolvingSelection } from "./play-picker/use-pick-handler";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { useAutoCandidates } from "./play-picker/use-auto-candidates";
 import { useAutoFire } from "./play-picker/use-auto-fire";
 import { useRoomInvite } from "./play-picker/use-room-invite";
@@ -85,16 +86,19 @@ import { useImdbId } from "./play-picker/use-imdb-id";
 import { usePipelineResult } from "./play-picker/use-pipeline-result";
 import { animeAbsoluteFromStreamIds } from "@/lib/streams/anime-identity";
 import { useStreamIds } from "./play-picker/use-stream-ids";
-import { findLocalEpisodeVersions, findLocalMovieVersions } from "@/lib/local-library/versions";
-import { localPlayerSrc } from "@/lib/local-library/player-src";
+import {
+  findLocalEpisodeVersions,
+  findLocalMovieVersions,
+} from "@/features/library/local-library/versions";
+import { localPlayerSrc } from "@/features/library/local-library/player-src";
 import { downloadableSeasonPacks } from "@/lib/download/season-pack";
 import { downloadSeasonPerEpisode } from "@/lib/download/season-download";
 import { completedDownloadFor, type DownloadItem } from "@/lib/download/downloads-store";
 import { downloadLocalEntry, downloadPlayerSrc } from "@/lib/download/player-src";
 import { LocalStreamList } from "./play-picker/local-stream-card";
 import { SubtitleSelectStep } from "./play-picker/subtitle-select-step";
-import { prefetchResumeStart } from "@/lib/player/resume-start";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
+import { prefetchResumeStart } from "@/features/player/engine/resume-start";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
 
 const TIER_ORDER: Tier[] = ["4K_DV", "4K_HDR", "4K", "1080p_HDR", "1080p", "720p", "SD", "ROUGH"];
 

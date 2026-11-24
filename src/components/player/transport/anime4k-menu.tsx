@@ -1,11 +1,11 @@
 import { Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { ANIME4K_MODES } from "@/lib/player/anime4k-modes";
+import { ANIME4K_MODES } from "@/features/player/engine/anime4k-modes";
 import type { Anime4kChoice } from "@/views/player/hooks/use-anime4k";
 import { useT } from "@/lib/i18n";
 import { useMenuSide } from "../menu-side";
 import { Tooltip } from "./tooltip";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 
 const OPTIONS: Array<{ id: Anime4kChoice; label: string }> = [
   { id: "auto", label: "Auto" },

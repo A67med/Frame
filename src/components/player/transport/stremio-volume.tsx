@@ -1,6 +1,6 @@
 import { Minus, Plus, Volume2, VolumeX } from "lucide-react";
 import { useRef, useState } from "react";
-import type { PlayerCapabilities, PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerCapabilities, PlayerSnapshot } from "@/features/player/engine/bridge";
 import type { VolumeStyle } from "@/lib/player-chrome";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";

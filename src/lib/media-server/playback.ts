@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode, PlayerSrc } from "@/lib/view";
+import type { PlayEpisode, PlayerSrc } from "@/app/navigation/view";
 import { mediaServerAdapter } from "./sync";
 import { mediaServerConnections, updateMediaServerConnection } from "./connections";
 import { mediaServerItems } from "./index-store";

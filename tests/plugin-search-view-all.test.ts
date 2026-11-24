@@ -2,10 +2,10 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
-const SEARCH = readFileSync("src/lib/streams/plugins/extension/search.ts", "utf8");
-const BRIDGE = readFileSync("src/lib/streams/plugins/extension/bridge.ts", "utf8");
+const SEARCH = readFileSync("src/features/addons/streams/extension/search.ts", "utf8");
+const BRIDGE = readFileSync("src/features/addons/streams/extension/bridge.ts", "utf8");
 const VIEW = readFileSync("src/views/plugins.tsx", "utf8");
-const RUST = readFileSync("src-tauri/src/capstan.rs", "utf8");
+const RUST = readFileSync("src-tauri/src/features/addons/capstan/mod.rs", "utf8");
 const API = readFileSync("android-extension-compat/src/api/MainAPI.kt", "utf8");
 
 /** The body of `searchPluginPage`, which is the walk a plugin's View all drives. */

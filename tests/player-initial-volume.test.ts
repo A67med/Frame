@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { emptySnapshot, initialPlayerSnapshot } from "../src/lib/player/bridge.ts";
+import { emptySnapshot, initialPlayerSnapshot } from "../src/features/player/engine/bridge.ts";
 
 test("the initial player snapshot uses the saved volume and mute preference", () => {
   localStorage.setItem("harbor.player.volume.v1", JSON.stringify({ volume: 0.42, muted: true }));
@@ -17,8 +17,14 @@ test("the initial player snapshot uses the saved volume and mute preference", ()
 });
 
 test("both playback engines and the React bridge state use the seeded snapshot", () => {
-  const html5 = readFileSync(new URL("../src/lib/player/html5/bridge.ts", import.meta.url), "utf8");
-  const mpv = readFileSync(new URL("../src/lib/player/mpv.ts", import.meta.url), "utf8");
+  const html5 = readFileSync(
+    new URL("../src/features/player/engine/html5/bridge.ts", import.meta.url),
+    "utf8",
+  );
+  const mpv = readFileSync(
+    new URL("../src/features/player/engine/mpv.ts", import.meta.url),
+    "utf8",
+  );
   const hook = readFileSync(
     new URL("../src/views/player/hooks/use-player-bridge.ts", import.meta.url),
     "utf8",

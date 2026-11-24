@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { usePlaybackPosition, usePlaybackBuffered } from "@/lib/player/playback-clock";
+import { usePlaybackPosition, usePlaybackBuffered } from "@/features/player/engine/playback-clock";
 
 export function PipSeekBar({
   durationSec,

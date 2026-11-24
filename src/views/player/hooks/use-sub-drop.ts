@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import { t } from "@/lib/i18n";
 import { writePlayerPrefs } from "@/lib/player-prefs";
-import { markImportedSub } from "@/lib/player/imported-subs";
-import { writeRememberedSub } from "@/lib/subtitles/subtitle-memory";
+import { markImportedSub } from "@/features/player/engine/imported-subs";
+import { writeRememberedSub } from "@/features/subtitles/subtitle-memory";
 
 const SUB_EXT = /\.(srt|ass|ssa|vtt|sub)$/i;
 

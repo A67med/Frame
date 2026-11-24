@@ -6,25 +6,26 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
+const optionsSource = read("src/features/settings/search/options.ts");
 const nav = read("src/views/settings/nav.tsx");
 const settings = read("src/views/settings.tsx");
 const TRACKERS = ["trakt", "simkl", "anilist", "mal", "letterboxd"];
 
 function trackerOptions(): Array<{ label: string; tab: string | null }> {
-  const start = nav.indexOf("const SETTINGS_OPTIONS");
-  const open = nav.indexOf("= [", start) + 2;
+  const start = optionsSource.indexOf("const SETTINGS_OPTIONS");
+  const open = optionsSource.indexOf("= [", start) + 2;
   const out: Array<{ label: string; tab: string | null }> = [];
   let depth = 0;
   let from = 0;
-  for (let i = open; i < nav.length; i += 1) {
-    const c = nav[i];
+  for (let i = open; i < optionsSource.length; i += 1) {
+    const c = optionsSource[i];
     if (c === "{") {
       if (depth === 0) from = i;
       depth += 1;
     } else if (c === "}") {
       depth -= 1;
       if (depth === 0) {
-        const body = nav.slice(from, i + 1);
+        const body = optionsSource.slice(from, i + 1);
         if (/section:\s*"trackers"/.test(body)) {
           const label = /label:\s*"([^"]*)"/.exec(body);
           const tab = /\n\s*tab:\s*"([^"]*)"/.exec(body);

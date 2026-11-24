@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { useSettings } from "@/lib/settings";
 import { useTogether } from "@/lib/together/provider";
-import { usePlayerNavigation, type PlayEpisode } from "@/lib/view";
+import { usePlayerNavigation, type PlayEpisode } from "@/app/navigation/view";
 
 export function useCastModalPlay() {
   const { exitPlayer, openPicker } = usePlayerNavigation();

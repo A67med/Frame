@@ -4,9 +4,9 @@ import { PickCard } from "@/components/pick-card";
 import { Row } from "@/components/row";
 import type { Meta } from "@/lib/cinemeta";
 import { tmdbCollection } from "@/lib/providers/tmdb";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { dropUnreleased, dropUnsafeGenres } from "@/views/kids/kids-filter";
 
 export function CollectionRow({

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import type { BpPlayback } from "./use-bp-playback";
 
 /**

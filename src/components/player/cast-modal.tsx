@@ -7,7 +7,7 @@ import { useT } from "@/lib/i18n";
 import { useQueue } from "@/lib/queue";
 import { captureFocusReturn } from "@/lib/keyboard-navigation";
 import { isBackKey } from "@/lib/keyboard-navigation/geometry";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { EpisodePicker } from "./cast-modal/episode-picker";
 import { ExitConfirm, SKIP_EXIT_CONFIRM_KEY } from "./cast-modal/exit-confirm";
 import { GenreBackdrop } from "./cast-modal/genre-backdrop";

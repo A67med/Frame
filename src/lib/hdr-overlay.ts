@@ -1,7 +1,7 @@
 import { invoke } from "@tauri-apps/api/core";
 import { listen, type UnlistenFn } from "@tauri-apps/api/event";
-import type { SubtitleLoadMetadata } from "@/lib/subtitles/types";
-import type { PlayerNavigation } from "@/lib/view";
+import type { SubtitleLoadMetadata } from "@/features/subtitles/types";
+import type { PlayerNavigation } from "@/app/navigation/view";
 
 export type HdrNavigationRequest = {
   [K in keyof PlayerNavigation]: { action: K; args: Parameters<PlayerNavigation[K]> };

@@ -16,7 +16,7 @@ import {
   getLocalVersions,
   subscribeLocalVersions,
   type LocalVersionsPayload,
-} from "@/lib/player/local-versions-modal";
+} from "@/features/player/engine/local-versions-modal";
 
 export function LocalVersionsModal() {
   const state = useSyncExternalStore(subscribeLocalVersions, getLocalVersions);

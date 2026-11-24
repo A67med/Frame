@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Wtyczki",
-  Repositories: "Repozytoria",
+  "Plugins": "Wtyczki",
+  "Repositories": "Repozytoria",
   "Installed plugins": "Zainstalowane wtyczki",
   "Plugin repositories": "Repozytoria wtyczek",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -33,8 +33,8 @@ const plugins: Record<string, string> = {
     "Dodaj repozytorium, a potem zainstaluj wybranych dostawców. Pojawią się tutaj.",
   "Add a repository": "Dodaj repozytorium",
   "Movies and series": "Filmy i seriale",
-  Script: "Skrypt",
-  Verified: "Zweryfikowana",
+  "Script": "Skrypt",
+  "Verified": "Zweryfikowana",
   "v{version} available": "Dostępna v{version}",
   "Paused after {n} failures. Turn it back on to try again.":
     "Wstrzymana po {n} błędach. Włącz ponownie, aby spróbować jeszcze raz.",
@@ -61,7 +61,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} z {repo}, zainstalowano {when}.",
   "Update to v{version}": "Aktualizuj do v{version}",
   "Revert to v{version}": "Przywróć v{version}",
-  Reaches: "Łączy się z",
+  "Reaches": "Łączy się z",
   "Any public website. This plugin did not say which sites it uses.":
     "Dowolna publiczna strona. Ta wtyczka nie podała, z jakich stron korzysta.",
   "Seen so far: {hosts}": "Dotąd zauważone: {hosts}",
@@ -124,7 +124,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "Usunąć i odinstalować {count}?",
   "Could not reach this repository. Installed plugins keep working.":
     "Nie można połączyć się z tym repozytorium. Zainstalowane wtyczki nadal działają.",
-  "This repository lists no plugins.": "To repozytorium nie zawiera wtyczek.",
   "This repository is not for stream plugins.": "To repozytorium nie jest dla wtyczek strumieni.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "To nie wtyczka strumieni: nie eksportuje funkcji getStreams ani streams.",

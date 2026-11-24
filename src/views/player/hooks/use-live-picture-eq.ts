@@ -1,5 +1,5 @@
 import { useEffect, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import { useSettings } from "@/lib/settings";
 import { PICTURE_KEYS } from "@/views/settings/mpv-panel/dials";
 

@@ -2,7 +2,7 @@ import { ArrowRight, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
 import { useTogether } from "@/lib/together/provider";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import type { Meta } from "@/lib/cinemeta";
 
 const AUTO_JOIN_MS = 4000;

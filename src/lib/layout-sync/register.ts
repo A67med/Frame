@@ -1,4 +1,4 @@
-import { registerRosterSection } from "@/lib/profile-sync/roster-section";
+import { registerRosterSection } from "@/features/profiles/sync/roster-section";
 import { registerLayoutSections } from "./sections";
 
 // Imported for side effect by ProfileSyncRunner. A section whose adapter never

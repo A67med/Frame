@@ -13,18 +13,21 @@ import {
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Flag } from "@/components/flag";
 import { useContextMenu } from "@/lib/context-menu";
-import { saveSubtitleToDisk } from "@/lib/subtitles/save-to-disk";
-import { markAddedSub, useAddedSubs } from "@/lib/subtitles/added-subs";
-import { wasLimitReached } from "@/lib/subtitles/limit-signal";
-import { wasPendingSub } from "@/lib/subtitles/pending-subs";
-import { useSubtitleTranslationStatus, useTranslationJob } from "@/lib/subtitles/translation-jobs";
-import type { SubResult } from "@/lib/subtitles/types";
-import { parseRelease } from "@/lib/subtitles/release-match";
-import { providerLabel } from "@/lib/subtitles/provider-label";
+import { saveSubtitleToDisk } from "@/features/subtitles/save-to-disk";
+import { markAddedSub, useAddedSubs } from "@/features/subtitles/added-subs";
+import { wasLimitReached } from "@/features/subtitles/limit-signal";
+import { wasPendingSub } from "@/features/subtitles/pending-subs";
+import {
+  useSubtitleTranslationStatus,
+  useTranslationJob,
+} from "@/features/subtitles/translation-jobs";
+import type { SubResult } from "@/features/subtitles/types";
+import { parseRelease } from "@/features/subtitles/release-match";
+import { providerLabel } from "@/features/subtitles/provider-label";
 import { useT } from "@/lib/i18n";
-import { subtitleSearchMatchDetails } from "@/lib/subtitles/match-explanation";
-import type { StreamHints } from "@/lib/subtitles/stream-hints";
-import { subtitleClassificationLabels } from "@/lib/subtitles/classification-labels";
+import { subtitleSearchMatchDetails } from "@/features/subtitles/match-explanation";
+import type { StreamHints } from "@/features/subtitles/stream-hints";
+import { subtitleClassificationLabels } from "@/features/subtitles/classification-labels";
 
 const PAGE_SIZE = 30;
 

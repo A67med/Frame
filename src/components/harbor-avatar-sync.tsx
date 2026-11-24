@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { pushAvatarToEcosystem } from "@/lib/account/avatar-sync";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
 import { currentAuthor, subscribeAuthor } from "@/lib/theme-auth";
 

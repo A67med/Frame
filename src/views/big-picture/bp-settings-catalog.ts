@@ -2,7 +2,7 @@ import { LANGUAGES } from "@/lib/i18n";
 import { SERVICES } from "@/lib/providers/streaming";
 import type { StreamingService } from "@/lib/settings";
 import type { Settings } from "@/lib/settings/types";
-import { ALL_LANGUAGE_NAMES } from "@/lib/subtitles/language";
+import { ALL_LANGUAGE_NAMES } from "@/features/subtitles/language";
 import { mediaServerConnections } from "@/lib/media-server/connections";
 
 export type BpCatId =

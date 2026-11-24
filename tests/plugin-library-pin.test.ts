@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { pinnedPluginBase, pinnedPluginUrl } from "../src/lib/streams/addons.ts";
-import { pluginIdFromCatalogueBase } from "../src/lib/streams/plugins/addon.ts";
+import { pluginIdFromCatalogueBase } from "../src/features/addons/streams/addon.ts";
 import { persistableAddonOrigin } from "../src/lib/cinemeta.ts";
 import type { Addon } from "../src/lib/addons.ts";
 
@@ -79,7 +79,7 @@ test("a saved row keeps the base it is resolved and played through", () => {
 
 test("a plugin row carries the catalogue it came from", () => {
   assert.match(
-    readFileSync("src/lib/streams/plugins/extension/catalogue.ts", "utf8"),
+    readFileSync("src/features/addons/streams/extension/catalogue.ts", "utf8"),
     /base: extensionCatalogueBase\(cat\.pluginId, cat\.providerId\)/,
     "without its base a saved row cannot name its plugin at play time",
   );

@@ -121,5 +121,6 @@ export function createAnimeCatalogClient(
 export const animeCatalogRequest = createAnimeCatalogClient({
   // Midnight doesn't send CORS headers. Native Frame uses its HTTP bridge;
   // Frame Web uses the explicitly allowed same-origin proxy.
-  fallbackFetch: async (...args) => (await import("../safe-fetch")).safeFetch(...args),
+  fallbackFetch: async (...args) =>
+    (await import("../../infrastructure/networking/safe-fetch")).safeFetch(...args),
 });

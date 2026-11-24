@@ -6,8 +6,11 @@ import { useAuth } from "@/lib/auth";
 import type { Meta } from "@/lib/cinemeta";
 import { useDebridClients } from "@/lib/debrid/registry";
 import type { DebridStore } from "@/lib/debrid/types";
-import type { LocalEntry } from "@/lib/local-library";
-import { findLocalEpisodeVersions, findLocalMovieVersions } from "@/lib/local-library/versions";
+import type { LocalEntry } from "@/features/library/local-library";
+import {
+  findLocalEpisodeVersions,
+  findLocalMovieVersions,
+} from "@/features/library/local-library/versions";
 import { mediaServerConnections } from "@/lib/media-server/connections";
 import { mediaServerItems } from "@/lib/media-server/index-store";
 import { matchingServerItems, serverPlayableCopies } from "@/lib/media-server/selectors";
@@ -21,7 +24,7 @@ import {
   streamMatchesEntry,
   streamMatchesSource,
   type PlaybackEntry,
-} from "@/lib/playback-history";
+} from "@/features/player/history";
 import { readSeasonLock } from "@/lib/season-lock";
 import { useSettings } from "@/lib/settings";
 import type { PipelineResult } from "@/lib/streams/pipeline";
@@ -29,7 +32,7 @@ import type { ScoredStream } from "@/lib/streams/types";
 import { useTogether } from "@/lib/together/provider";
 import { hostSourceMatchesMedia } from "@/lib/together/room-derive";
 import { buildMatchScores, matchBadge } from "@/lib/together/source-match";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { streamIsCached } from "@/views/play-picker/picker-utils";
 import { useAddons } from "@/views/play-picker/use-addons";
 import { useAnimeAltTitles } from "@/views/play-picker/use-anime-alt-titles";

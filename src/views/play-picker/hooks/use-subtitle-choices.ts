@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/lib/auth";
 import type { Addon } from "@/lib/addons";
-import { gatherSubtitleAddons } from "@/lib/subtitles/addon-source";
-import { languageName } from "@/lib/subtitles/language";
-import { subtitleStreamDescriptor } from "@/lib/subtitles/provider-label";
-import { rankSubtitleCandidates, searchSubtitles } from "@/lib/subtitles/search";
-import { resolveAnimeSearchCoords } from "@/lib/subtitles/anime-numbering";
-import type { SubResult } from "@/lib/subtitles/types";
+import { gatherSubtitleAddons } from "@/features/subtitles/addon-source";
+import { languageName } from "@/features/subtitles/language";
+import { subtitleStreamDescriptor } from "@/features/subtitles/provider-label";
+import { rankSubtitleCandidates, searchSubtitles } from "@/features/subtitles/search";
+import { resolveAnimeSearchCoords } from "@/features/subtitles/anime-numbering";
+import type { SubResult } from "@/features/subtitles/types";
 import { useSettings } from "@/lib/settings";
 import { buildStreamIds } from "@/lib/streams/stream-ids";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 export type SubtitleLangGroup = { langKey: string; langDisplay: string; items: SubResult[] };
 

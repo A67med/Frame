@@ -2,7 +2,7 @@ import { Poster } from "@/components/poster";
 import { Row } from "@/components/row";
 import type { AwardPerson } from "@/lib/awards/award-page";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function PeopleRail({
   title,

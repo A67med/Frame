@@ -1,5 +1,5 @@
 import type { Addon } from "@/lib/addons";
-import { hostOf } from "@/lib/addons-store/reorder";
+import { hostOf } from "@/features/addons/catalog/reorder";
 import type { StreamPriorityEntry } from "@/lib/settings/types";
 
 export type AddonRankFn = (index: number, addon: Addon) => number;

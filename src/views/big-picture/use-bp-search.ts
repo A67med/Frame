@@ -12,7 +12,6 @@ import type { CharacterHit, CharacterMediaRef } from "@/lib/anilist/character";
 import type { AnimeHit, LiveTvHit, SearchPerson, SearchResults } from "@/lib/search";
 import type { AddonQuery, AddonQueryState } from "@/lib/search-addons";
 import type { AddonHit } from "@/lib/search-addon-index";
-import type { MangaSummary } from "@/lib/manga/model";
 import { useBpT } from "./bp-i18n";
 
 type BpT = (key: string, vars?: Record<string, string | number>) => string;
@@ -24,7 +23,6 @@ export type BpSearchFilter =
   | "series"
   | "people"
   | "anime"
-  | "manga"
   | "livetv"
   | "collections"
   | "characters"
@@ -58,7 +56,6 @@ export type BpSearchSection = BpSectionBase &
     | { kind: "titles"; metas: Meta[] }
     | { kind: "people"; people: SearchPerson[] }
     | { kind: "anime"; anime: AnimeHit[] }
-    | { kind: "manga"; manga: MangaSummary[] }
     | { kind: "livetv"; channels: LiveTvHit[] }
     | { kind: "collections"; collections: TvdbCollectionHit[] }
     | { kind: "addonIndex"; addons: AddonHit[] }
@@ -89,7 +86,6 @@ const GROUP_ORDER: Array<Exclude<BpSearchFilter, "all" | "top">> = [
   "series",
   "people",
   "anime",
-  "manga",
   "livetv",
   "collections",
   "characters",
@@ -101,7 +97,6 @@ const GROUP_LABEL: Record<Exclude<BpSearchFilter, "all" | "top">, string> = {
   series: "Series",
   people: "People",
   anime: "Anime",
-  manga: "Manga",
   livetv: "Live TV",
   collections: "Collections",
   characters: "Franchise",
@@ -118,8 +113,6 @@ export function bpSectionCount(s: BpSearchSection): number {
       return s.people.length;
     case "anime":
       return s.anime.length;
-    case "manga":
-      return s.manga.length;
     case "livetv":
       return s.channels.length;
     case "collections":
@@ -129,13 +122,10 @@ export function bpSectionCount(s: BpSearchSection): number {
   }
 }
 
-// A manga ref carries an AniList id, and openManga is keyed by manga source id, so a
-// type:"manga" meta out of here must go through resolveMangaIdByTitle before it can
-// be opened. Handing the AniList id straight to openManga opens nothing.
 function characterMeta(ref: CharacterMediaRef): Meta {
   return {
     id: `anilist:${ref.anilistId}`,
-    type: ref.type === "manga" ? "manga" : "anime",
+    type: "anime",
     name: ref.name,
     poster: ref.poster ?? undefined,
     background: ref.background ?? ref.poster ?? undefined,
@@ -146,7 +136,7 @@ function characterMeta(ref: CharacterMediaRef): Meta {
 }
 
 function characterMetas(c: CharacterHit): Meta[] {
-  return [...c.anime, ...c.manga].map(characterMeta);
+  return c.anime.map(characterMeta);
 }
 
 // Distinct things found, not cells drawn. Fifteen addons each carrying the same film
@@ -173,7 +163,7 @@ function bpDistinctCount(sections: BpSearchSection[]): number {
 // never queried must not pulse: search-context resolves manga, anime and live TV
 // to a synchronous [] when they are switched off, so a skeleton there promises,
 // in a designed loading state, content no request was ever issued for.
-type BpSourceGates = { anime: boolean; manga: boolean; liveTv: boolean };
+type BpSourceGates = { anime: boolean; liveTv: boolean };
 
 type SlotInput = {
   t: BpT;
@@ -246,16 +236,6 @@ function buildBpSearchSlots(input: SlotInput): BpSearchSection[] {
     anime,
   });
 
-  const manga = r?.manga ?? [];
-  out.push({
-    key: "manga",
-    label: t("Manga"),
-    group: "manga",
-    pending: filling(manga.length, gates.manga),
-    kind: "manga",
-    manga,
-  });
-
   const channels = r?.liveTv ?? [];
   out.push({
     key: "livetv",
@@ -280,7 +260,7 @@ function buildBpSearchSlots(input: SlotInput): BpSearchSection[] {
   // more, the extra rows land mid-rail and renumber every addon row below them, so
   // reserve for them here rather than appending them when they arrive.
   const chars = r?.characters ?? [];
-  const franchiseQueried = gates.anime || gates.manga;
+  const franchiseQueried = gates.anime;
   if (chars.length === 0) {
     out.push({
       key: "character:reserved",
@@ -354,7 +334,6 @@ export function useBpSearch(filter: BpSearchFilter): BpSearchState {
   const gates = useMemo<BpSourceGates>(
     () => ({
       anime: !hiddenTabs.anime && !settings.hideContent.anime,
-      manga: settings.mangaEnabled,
       liveTv: !hiddenTabs.liveTv && settings.iptvPlaylists.length > 0,
     }),
     // length, not the array. Only the count is read, and depending on the array
@@ -363,7 +342,6 @@ export function useBpSearch(filter: BpSearchFilter): BpSearchState {
       hiddenTabs.anime,
       hiddenTabs.liveTv,
       settings.hideContent.anime,
-      settings.mangaEnabled,
       settings.iptvPlaylists.length,
     ],
   );

@@ -13,7 +13,7 @@ import {
   type DownloadItem,
 } from "@/lib/download/downloads-store";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 type T = (key: string) => string;
 

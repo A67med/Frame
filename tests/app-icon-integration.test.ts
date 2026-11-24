@@ -13,7 +13,7 @@ const displayFit = readFileSync(
 );
 
 test("custom app icons are gated to desktop runtimes", () => {
-  assert.match(frontend, /osClass\(\) === "android" \|\| osClass\(\) === "web"/);
+  assert.match(frontend, /osClass\(\) === "web"/);
 });
 
 test("native icon failures are returned instead of reported as success", () => {

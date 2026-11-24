@@ -33,7 +33,7 @@ export function apiFixture({ baseline = false, fetch, refresh = async () => fals
   let token = "fixture-token";
   const requests = [];
   const imports = {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async (url, init) => {
         requests.push({ url, init });
         return fetch ? fetch(url, init) : Response.json({ alias: "Original" });
@@ -150,7 +150,9 @@ export function componentFixture({ baseline = false, load, save } = {}) {
         };
       },
     },
-    "@/lib/profiles": { useProfiles: () => ({ activeProfile: profile, updateProfile }) },
+    "@/features/profiles/profiles": {
+      useProfiles: () => ({ activeProfile: profile, updateProfile }),
+    },
     "@/lib/theme-auth": {
       currentAuthor: () => author,
       subscribeAuthor: (fn) => {

@@ -2,7 +2,7 @@ import { accoladesFor } from "@/lib/curated/accolades";
 import { CRITERION_LIST_ID, spineFor } from "@/lib/curated/spine";
 import { inductionYear, REGISTRY_LIST_ID } from "@/lib/film-registry/inductions";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { Pill } from "./pill";
 
 export function AccoladeBadges({ imdbId }: { imdbId: string | null | undefined }) {

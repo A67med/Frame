@@ -1,7 +1,6 @@
 import { useGamepads } from "@/lib/gamepad/store";
 import { detectLayout } from "@/lib/gamepad/layout";
 import { ButtonGlyph, type GlyphKind } from "@/components/gamepad-button-glyph";
-import { isAndroid } from "@/lib/platform";
 import { BP_NAV_JUMP } from "./bp-logic";
 import { useBpT } from "./bp-i18n";
 
@@ -52,16 +51,6 @@ const PS_GLYPH: Partial<Record<BpAction, { kind: GlyphKind; label: string }>> = 
 // A hint with no entry here is dropped on a remote without a pad, so anything
 // that describes a remote gesture has to be listed or it is invisible on the
 // one device it was written for while still looking right in a browser.
-const REMOTE_GLYPH: Partial<Record<BpAction, string>> = {
-  select: "OK",
-  toggle: "OK",
-  type: "OK",
-  back: "Back",
-  exit: "Back",
-  nav: "Menu",
-  actions: "▼",
-  advance: "▼",
-};
 
 const KEY_GLYPH: Record<BpAction, string> = {
   select: "Enter",
@@ -118,7 +107,6 @@ export function BpHintBar({
   const pads = useGamepads();
   const usingPad = pads.length > 0;
   const layout = detectLayout(pads.map((pad) => pad.name));
-  const onTv = isAndroid();
 
   // First because the bar is right aligned: a narrow window sheds the leftmost
   // hint, and this is the one that can afford to go.
@@ -128,10 +116,9 @@ export function BpHintBar({
 
   // A connected pad does not mean an absent keyboard, so an action the pad has
   // no button for still shows the key that does work rather than vanishing.
-  const usable = onTv && !usingPad ? shown.filter((a) => a in REMOTE_GLYPH) : shown;
 
-  const hints = usable.map((a) => {
-    const preferred = usingPad ? PAD_GLYPH[a] : onTv ? REMOTE_GLYPH[a] : undefined;
+  const hints = shown.map((a) => {
+    const preferred = usingPad ? PAD_GLYPH[a] : undefined;
     const glyph = preferred ?? KEY_GLYPH[a];
     return {
       action: a,

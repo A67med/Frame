@@ -10,10 +10,10 @@ import { LetterboxdRowMenu } from "@/components/letterboxd/letterboxd-row-menu";
 import { useLetterboxd } from "@/lib/stremboxd/provider";
 import { useT } from "@/lib/i18n";
 import type { HomeRowCustomization } from "@/lib/home-customization";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import type { HomeRow } from "./home-types";
 import { RowControls } from "./row-controls";
-import { watchTitleKey, type WatchedSet } from "@/lib/playback-history";
+import { watchTitleKey, type WatchedSet } from "@/features/player/history";
 import { useSettings } from "@/lib/settings";
 
 type Translate = (key: string, vars?: Record<string, string | number>) => string;

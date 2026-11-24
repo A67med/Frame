@@ -4,7 +4,7 @@ import { useT } from "@/lib/i18n";
 import { changeAuthorPassword, logoutAuthor, type Author } from "@/lib/theme-auth";
 import { removeAvatar as removeEcosystemAvatar, uploadAvatar } from "@/lib/social/avatar";
 import { markAvatarSynced } from "@/lib/account/avatar-sync";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
 import { ROW_ACTION, ROW_ACTION_DANGER, ROW_ACTION_PRIMARY } from "../../../kit";
 import { ROW_DESC, RowNote } from "../../../shared";

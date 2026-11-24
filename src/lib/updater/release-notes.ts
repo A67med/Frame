@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { HARBOR_DATA_BASE } from "@/lib/config/endpoints";
 import bundled from "./bundled-release-notes.json";
 

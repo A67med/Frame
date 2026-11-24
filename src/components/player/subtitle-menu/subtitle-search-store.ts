@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from "react";
-import type { StreamHints } from "@/lib/subtitles/search";
-import type { GeneratedSubtitleGroup } from "@/lib/subtitles/types";
+import type { StreamHints } from "@/features/subtitles/search";
+import type { GeneratedSubtitleGroup } from "@/features/subtitles/types";
 
 export type SubtitleSearchHandle = {
   status: "idle" | "searching";

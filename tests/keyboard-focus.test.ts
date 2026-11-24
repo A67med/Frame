@@ -32,7 +32,9 @@ const settingsSidebarSource = readFileSync(
   "utf8",
 );
 const themeSource = readFileSync(new URL("../src/lib/theme.ts", import.meta.url), "utf8");
-const globalStylesSource = readFileSync(new URL("../src/index.css", import.meta.url), "utf8");
+const globalStylesSource = ["../src/styles/desktop.css", "../src/index.css"]
+  .map((p) => readFileSync(new URL(p, import.meta.url), "utf8"))
+  .join("\n");
 
 test("TV focus waits for navigation intent before applying page defaults", () => {
   assert.match(navigationSource, /let hasTvNavigationIntent = false/);
@@ -273,16 +275,10 @@ test("F6 blocks the native default without stopping custom shortcut propagation"
   assert.match(navigationSource, /window.removeEventListener\("keydown", swallowF6\)/);
 });
 
-test("search focus overrides coexist with Music styles and reduced-motion support", () => {
+test("search overlay owns its focus indicator", () => {
   assert.match(globalStylesSource, /\[data-search-overlay\] input/);
   assert.match(
     globalStylesSource,
     /\[data-search-overlay\] \[data-tv-search-editing-focused="true"\],\s*\[data-search-overlay\] \[data-tv-search-nav-focused="true"\] \{\s*outline: none !important;\s*\}/,
-  );
-  assert.match(globalStylesSource, /\.music-eq-bars \{/);
-  assert.match(globalStylesSource, /@keyframes music-eq-bounce/);
-  assert.match(
-    globalStylesSource,
-    /@media \(prefers-reduced-motion: reduce\) \{\s*\.music-eq-bars i \{\s*animation: none;/,
   );
 });

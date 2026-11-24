@@ -1,12 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import type { PlayerBridge, TrackInfo } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
-import type { SubCue } from "@/lib/subtitles/parser";
-import { getCuesAnySource } from "@/lib/subtitles/extract";
-import { toSrt, toVtt } from "@/lib/subtitles/serialize";
-import type { SubChoiceInput } from "@/lib/subtitles/subtitle-memory";
-import { applyLinear, deltaFn, type SyncPoint, type SyncSegment } from "@/lib/subtitles/text-sync";
+import type { PlayerBridge, TrackInfo } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
+import type { SubCue } from "@/features/subtitles/parser";
+import { getCuesAnySource } from "@/features/subtitles/extract";
+import { toSrt, toVtt } from "@/features/subtitles/serialize";
+import type { SubChoiceInput } from "@/features/subtitles/subtitle-memory";
+import {
+  applyLinear,
+  deltaFn,
+  type SyncPoint,
+  type SyncSegment,
+} from "@/features/subtitles/text-sync";
 import { writePlayerPrefs } from "@/lib/player-prefs";
 
 const round3 = (v: number) => Math.round(v * 1000) / 1000;

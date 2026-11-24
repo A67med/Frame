@@ -1,5 +1,5 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import { t } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
 import type { ActionFeedback } from "@/components/player/action-indicator";

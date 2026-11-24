@@ -6,7 +6,7 @@ import {
   preferredSourceAddonPending,
   streamMatchesReleaseLineage,
   streamMatchesSource,
-} from "../src/lib/playback-history.ts";
+} from "../src/features/player/history.ts";
 
 test("season-pack episodes match by torrent hash when their file-specific binge groups differ", () => {
   const entry = {

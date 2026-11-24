@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import { UiIcon } from "@/components/ui-icon";
-import type { TrackInfo } from "@/lib/player/bridge";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 import { useT } from "@/lib/i18n";
 import { useAutoSyncHandle } from "@/components/player/autosync/autosync-store";
 import { HoverTooltip } from "@/components/hover-tooltip";

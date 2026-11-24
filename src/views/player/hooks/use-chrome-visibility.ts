@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { getSeekHovering, subscribeSeekHovering } from "@/lib/player/playback-clock";
+import { getSeekHovering, subscribeSeekHovering } from "@/features/player/engine/playback-clock";
 import {
   CHROME_HIDE_MS_PAUSED,
   CHROME_HIDE_MS_PLAYING,

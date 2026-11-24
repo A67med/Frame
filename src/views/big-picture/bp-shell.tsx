@@ -13,9 +13,8 @@ import { useT } from "@/lib/i18n";
 import { isAnimeRow } from "@/views/anime";
 import type { HomeRow } from "@/views/home/home-types";
 import { SFX } from "@/lib/sfx";
-import { useView, type PlayEpisode } from "@/lib/view";
-import { useActiveKid } from "@/lib/profiles";
-import { isAndroidTv } from "@/lib/platform";
+import { useView, type PlayEpisode } from "@/app/navigation/view";
+import { useActiveKid } from "@/features/profiles/profiles";
 import {
   exitBigPicture,
   goBigPictureTab,
@@ -88,8 +87,6 @@ const HINTS: Record<string, BpAction[]> = {
   shows: ["select", "back", "tabs"],
   movies: ["select", "back", "tabs"],
   live: ["select", "back", "tabs"],
-  sports: ["select", "back", "tabs"],
-  "sports-event": ["select", "back"],
   discover: ["select", "back", "tabs"],
   search: ["type", "phone", "back", "tabs"],
   library: ["select", "back", "tabs"],
@@ -272,7 +269,7 @@ export function BigPictureShell() {
     // Big Picture IS the app and Back at the root belongs to the launcher, so
     // decline and let MainActivity finish the activity. In the window there is
     // something behind Big Picture to go back to, which is what the confirm asks.
-    if (isAndroidTv()) return false;
+
     setConfirmExit(true);
     return true;
   }, [quickOpen, confirmExit, phoneOpen, sources, who]);
@@ -401,7 +398,7 @@ export function BigPictureShell() {
              the other two performance decisions in this directory already use
              (bp-decor-motion, bp-ambient-layers) and only that WebView was
              measured. */
-          data-bp-tv={isAndroidTv() ? "" : undefined}
+
           role="application"
           aria-label={t("Big Picture")}
           aria-hidden={playing || undefined}

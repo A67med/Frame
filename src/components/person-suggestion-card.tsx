@@ -3,7 +3,7 @@ import { useFollows } from "@/lib/follows";
 import { useT } from "@/lib/i18n";
 import { tmdbDepartmentLabelKey } from "@/lib/providers/tmdb/tmdb-people";
 import type { PersonSuggestion } from "@/lib/radar/people";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 /** A person to discover: opens their page and filmography, with a one-press follow. */
 export function PersonSuggestionCard({ person }: { person: PersonSuggestion }) {

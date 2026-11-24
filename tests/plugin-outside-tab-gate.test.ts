@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { providesOwnRows } from "../src/lib/streams/plugins/runnable.ts";
+import { providesOwnRows } from "../src/features/addons/streams/runnable.ts";
 
 const SRC = "src";
 

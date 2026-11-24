@@ -17,10 +17,10 @@ globalThis.fetch = (async (input: RequestInfo | URL) => {
 
 const endpoints = await import("../src/lib/config/endpoints.ts");
 const { safeFetch, safeFetchStream, safeFetchBytes, safeFetchLocal, RetiredServiceError } =
-  await import("../src/lib/safe-fetch.ts");
+  await import("../src/infrastructure/networking/safe-fetch.ts");
 const { fetchAdSegments } = await import("../src/lib/skip-intro/adcorpus.ts");
 const { crowdConfigFromSettings, DEFAULT_COMMUNITY_SYNC_URL } =
-  await import("../src/lib/subtitles/autosync/crowd-db.ts");
+  await import("../src/features/subtitles/autosync/crowd-db.ts");
 const { submitAdReport } = await import("../src/lib/ad-report/submit.ts");
 
 test("no service base defaults to a Harbor host", () => {

@@ -2,7 +2,6 @@ import { awardSourceMeta, groupWinsBySource, parseAwardYear } from "@/lib/anime-
 import { resolveAwardIcon, useAwardPacks } from "@/lib/award-icons";
 import type { Meta } from "@/lib/cinemeta";
 import { HoverTooltip } from "@/components/hover-tooltip";
-import { CollectionBadges } from "@/views/manga/collection-badge";
 
 export function HeroSlideBadges({ meta }: { meta: Meta }) {
   useAwardPacks();
@@ -41,7 +40,6 @@ export function HeroSlideBadges({ meta }: { meta: Meta }) {
           </HoverTooltip>
         );
       })}
-      <CollectionBadges title={meta.name} size={30} side="top" />
     </div>
   );
 }

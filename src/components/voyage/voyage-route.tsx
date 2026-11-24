@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import {
   closeVoyage,
   launchVoyage,

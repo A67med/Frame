@@ -1,4 +1,4 @@
-import type { PlaybackEntry } from "./playback-history";
+import type { PlaybackEntry } from "@/features/player/history";
 
 export type SeasonLockEntry = PlaybackEntry & { seriesWide?: boolean };
 

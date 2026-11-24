@@ -8,7 +8,7 @@ import {
   type BrandSummary,
 } from "@/lib/providers/tmdb/tmdb-brands";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { Row } from "./row";
 
 export function useBrandRanking(

@@ -2,17 +2,20 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are outside the browser-only tsconfig.
 import test from "node:test";
-import { prepareSubtitle, SubtitlePreparationError } from "../src/lib/subtitles/prepare.ts";
+import { prepareSubtitle, SubtitlePreparationError } from "../src/features/subtitles/prepare.ts";
 import {
   createSubtitleTranslationQueue,
   subtitleTranslationStatus,
   publishSubtitleTranslations,
-} from "../src/lib/subtitles/translation-jobs.ts";
-import { fetchSubtitlesIntoPlayer } from "../src/lib/subtitles/fetch-into-player.ts";
-import { rankSubtitleCandidates } from "../src/lib/subtitles/candidate-ranking.ts";
-import { prepareConsensusCandidate } from "../src/lib/subtitles/autosync/consensus.ts";
-import { isGeneratedLangLabel, isPlausibleLang } from "../src/lib/subtitles/language.ts";
-import { subtitleLoadMetadataOf, subtitleTitleOf } from "../src/lib/subtitles/provider-label.ts";
+} from "../src/features/subtitles/translation-jobs.ts";
+import { fetchSubtitlesIntoPlayer } from "../src/features/subtitles/fetch-into-player.ts";
+import { rankSubtitleCandidates } from "../src/features/subtitles/candidate-ranking.ts";
+import { prepareConsensusCandidate } from "../src/features/subtitles/autosync/consensus.ts";
+import { isGeneratedLangLabel, isPlausibleLang } from "../src/features/subtitles/language.ts";
+import {
+  subtitleLoadMetadataOf,
+  subtitleTitleOf,
+} from "../src/features/subtitles/provider-label.ts";
 import { deferred, flushBridge, mpvBridgeHarness } from "./helpers/mpv-bridge-harness.ts";
 
 const url = "https://subtitles.test/addon/config/translate/source/hi.srt";

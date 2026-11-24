@@ -27,7 +27,7 @@ const catalog09: Record<string, string> = {
     "Wł.: paski dodatków powielające wbudowane paski również są wyświetlane, zamiast łączyć się w jeden.",
   "On: only titles you bookmarked. Off: also keeps the ones Stremio added when you hit play.":
     "Wł.: tylko tytuły dodane przez Ciebie do zakładek. Wył.: zachowuje także tytuły dodane przez Stremio po rozpoczęciu odtwarzania.",
-  Onboarding: "Wprowadzenie",
+  "Onboarding": "Wprowadzenie",
   "Onboarding & hints": "Wprowadzenie i wskazówki",
   "Once saved, every poster gets re-rendered with IMDb, Rotten Tomatoes, and Metacritic stamped on it.":
     "Po zapisaniu każdy plakat zostanie ponownie wyrenderowany z naniesionymi ocenami IMDb, Rotten Tomatoes i Metacritic.",
@@ -36,7 +36,6 @@ const catalog09: Record<string, string> = {
   "One @name that finds you across Frame.":
     "Jedna @nazwa, dzięki której można Cię znaleźć w całym Frame.",
   "One Frame, every screen.": "Jeden Frame na każdym ekranie.",
-  "One Piece, Naruto and more worlds": "One Piece, Naruto i inne światy",
   "One choice that sets how hard your computer works to make video look its best. Pick the one that matches your machine. Takes effect on the next thing you play.":
     "Jedno ustawienie określające, jak intensywnie komputer ma pracować nad uzyskaniem najlepszego obrazu. Wybierz opcję pasującą do swojego sprzętu. Zmiana zacznie obowiązywać przy następnym odtwarzanym materiale.",
   "One free account for your handle, themes, and sync.":
@@ -59,13 +58,11 @@ const catalog09: Record<string, string> = {
   "One-tap looks": "Wygląd jednym stuknięciem",
   "One-time setup downloads the shader pack (about 1 MB) into Frame. No files to hunt down.":
     "Podczas jednorazowej konfiguracji pakiet shaderów (około 1 MB) zostanie pobrany do Frame. Nie musisz szukać żadnych plików.",
-  Oneshot: "One-shot",
-  Online: "Online",
+  "Oneshot": "One-shot",
+  "Online": "Online",
   "Online now": "Teraz online",
   "Only 1 source after filtering": "Po odfiltrowaniu zostało tylko 1 źródło",
   "Only 2 sources after filtering": "Po odfiltrowaniu zostały tylko 2 źródła",
-  "Only add repositories you trust. Frame cannot vouch for third-party plugins.":
-    "Dodawaj tylko zaufane repozytoria. Frame nie może ręczyć za wtyczki innych firm.",
   "Only addon/debrid sources, never peer-to-peer": "Tylko źródła dodatków/debrid, bez peer-to-peer",
   "Only continue if you fully trust this link":
     "Kontynuuj tylko wtedy, gdy w pełni ufasz temu linkowi",
@@ -84,7 +81,6 @@ const catalog09: Record<string, string> = {
     "Na stronie głównej pokazuj tylko tytuły w tych językach oryginalnych. Pozostaw wszystkie opcje wyłączone, aby wyświetlać wszystko.",
   "Only show titles in these original languages on the Home rows. Leave all off to show everything.":
     "W wierszach strony głównej pokazuj tylko tytuły, których językami oryginalnymi są wybrane języki. Nie wybieraj żadnego, aby wyświetlać wszystkie tytuły.",
-  "Only sites you have the right to read.": "Tylko witryny, do których masz prawo dostępu.",
   "Only start the P2P engine when needed": "Uruchamiaj silnik P2P tylko w razie potrzeby",
   "Only streams already in your debrid library.":
     "Tylko strumienie, które są już w bibliotece debrid.",
@@ -98,8 +94,8 @@ const catalog09: Record<string, string> = {
   "Only you can see your friends, badges, activity, and comments. Your name and avatar stay visible.":
     "Tylko Ty możesz zobaczyć swoich znajomych, odznaki, aktywność i komentarze. Twoja nazwa i awatar pozostają widoczne.",
   "Oops..": "Ups...",
-  Opacity: "Krycie",
-  Open: "Otwórz",
+  "Opacity": "Krycie",
+  "Open": "Otwórz",
   "Open @{handle} profile": "Otwórz profil użytkownika @{handle}",
   "Open Account": "Otwórz konto",
   "Open AniList again": "Otwórz AniList ponownie",
@@ -156,7 +152,6 @@ const catalog09: Record<string, string> = {
   "Open it in a regular browser, set it up there, then come back and paste the install link below.":
     "Otwórz go w zwykłej przeglądarce, skonfiguruj tam, a następnie wróć i wklej poniżej link instalacyjny.",
   "Open library": "Otwórz bibliotekę",
-  "Open manga details": "Otwórz szczegóły mangi",
   "Open on IMDb": "Otwórz w IMDb",
   "Open on Letterboxd": "Otwórz w Letterboxd",
   "Open on computer": "Otwórz na komputerze",
@@ -195,8 +190,6 @@ const catalog09: Record<string, string> = {
     "Otwórz bibliotekę i wybierz „Udostępnij motyw”. Pierwsza publikacja pojawi się tutaj wraz ze stanem weryfikacji, liczbą pobrań i historią wersji.",
   "Open the queue": "Otwórz kolejkę",
   "Open the remote": "Otwórz pilota",
-  "Open the site in a browser. Right-click the thing you want (a cover, a title, a chapter link) and choose Inspect.":
-    "Otwórz witrynę w przeglądarce. Kliknij prawym przyciskiem wybrany element (okładkę, tytuł lub link do rozdziału) i wybierz opcję Zbadaj.",
   "Open the wheel menu on any eBook and choose Add to Shelf.":
     "Otwórz menu kołowe dowolnego e-booka i wybierz „Dodaj do półki”.",
   "Open this link on a phone on the same Wi-Fi to flip pages, zoom, and pick chapters with gestures. Keep this reader open.":
@@ -211,9 +204,9 @@ const catalog09: Record<string, string> = {
   "Open {name} profile": "Otwórz profil użytkownika {name}",
   "Open {type} adaptation: {title}": "Otwórz adaptację typu {type}: {title}",
   "OpenRouter API key (sk-or-...)": "Klucz API OpenRouter (sk-or-...)",
-  OpenSubtitles: "OpenSubtitles",
+  "OpenSubtitles": "OpenSubtitles",
   "OpenSubtitles API key": "Klucz API OpenSubtitles",
-  Opening: "Czołówka",
+  "Opening": "Czołówka",
   "Opening AniList...": "Otwieranie AniList...",
   "Opening MyAnimeList...": "Otwieranie MyAnimeList...",
   "Opening stremio-addons.net in your browser to sign in and rate":
@@ -227,7 +220,7 @@ const catalog09: Record<string, string> = {
     "Otwiera folder zawierający pamięć podręczną DHT i dane aktywnych transferów.",
   "Opens the free signup page": "Otwiera stronę bezpłatnej rejestracji",
   "Opens your API settings page": "Otwiera stronę ustawień API",
-  Optional: "Opcjonalnie",
+  "Optional": "Opcjonalnie",
   "Optional keys that unlock TMDB rails, baked-in poster ratings, fanart, and TVDB episode data.":
     "Opcjonalne klucze odblokowujące sekcje TMDB, oceny umieszczone na plakatach, fanarty i dane odcinków TVDB.",
   "Optional overlays that appear over the video.":
@@ -240,7 +233,7 @@ const catalog09: Record<string, string> = {
     "Opcjonalnie. Pomiń ten krok, aby zachować obecną okładkę.",
   "Optional. TheIntroDB answers without a key, but a key raises your rate limit so timing keeps arriving when you binge. Get one at":
     "Opcjonalne. TheIntroDB odpowiada bez klucza, ale klucz zwiększa limit żądań, dzięki czemu czasy nadchodzą nieprzerwanie podczas maratonu. Klucz uzyskasz na",
-  Options: "Opcje",
+  "Options": "Opcje",
   "Options for the Library → Local tab: folders you scan from your own drive. When you export metadata, Frame writes a Kodi-style .nfo and downloads artwork next to each file at the sizes below.":
     "Opcje karty Biblioteka → Lokalne: foldery skanowane z własnego dysku. Podczas eksportowania metadanych Frame zapisuje plik .nfo w stylu Kodi i pobiera grafiki w poniższych rozmiarach obok każdego pliku.",
   "Or browse curated packs and import a link":
@@ -250,24 +243,24 @@ const catalog09: Record<string, string> = {
   "Or paste the install link manually": "Możesz też wkleić link instalacyjny ręcznie",
   "Or set a series to auto-download": "Lub włącz automatyczne pobieranie serialu",
   "Or try one of ours": "Albo wypróbuj jeden z naszych",
-  Order: "Kolejność",
+  "Order": "Kolejność",
   "Organize addons": "Organizuj dodatki",
   "Organize downloads into folders": "Porządkuj pobrane pliki w folderach",
   "Organize downloads into folders by movie or series name":
     "Porządkuj pobrane pliki w folderach według tytułu filmu lub serialu",
   "Origin country": "Kraj pochodzenia",
-  Original: "Oryginalne",
+  "Original": "Oryginalne",
   "Original language": "Język oryginalny",
   "Original title": "Tytuł oryginalny",
-  Orthodox: "Praworęczna",
+  "Orthodox": "Praworęczna",
   "Oscar, SAG, BAFTA winners": "Laureaci Oscarów, nagród SAG i BAFTA",
-  Other: "Inne",
+  "Other": "Inne",
   "Other Work": "Inne dzieła",
   "Other devices": "Inne urządzenia",
   "Other sources": "Inne źródła",
   "Other titles from the same author": "Inne tytuły tego samego autora",
   "Outlaws & Bounty Hunters": "Wyjęci spod prawa i łowcy nagród",
-  Outline: "Obrys",
+  "Outline": "Obrys",
   "Outline color": "Kolor obrysu",
   "Outline thickness": "Grubość obrysu",
   "Output device": "Urządzenie wyjściowe",
@@ -276,36 +269,36 @@ const catalog09: Record<string, string> = {
   "Over the cap, the oldest files are deleted first.":
     "Po przekroczeniu limitu najstarsze pliki są usuwane jako pierwsze.",
   "Overall Record": "Bilans ogólny",
-  Overlay: "Nakładka",
+  "Overlay": "Nakładka",
   "Overlays your Letterboxd rating on catalog posters (when available).":
     "Nakłada Twoją ocenę z Letterboxd na plakaty w katalogu, jeśli jest dostępna.",
-  Override: "Zastąp",
+  "Override": "Zastąp",
   "Override embedded styles": "Zastąp osadzone style",
   "Override {name}": "Zastąp {name}",
   "Overview, manual wrangler deploy, costs, and troubleshooting.":
     "Omówienie, ręczne wdrażanie przez Wrangler, koszty i rozwiązywanie problemów.",
   "Overwrite {name} with this look": "Zastąp {name} tym wyglądem",
   "Overwrite {n} TV settings": "Zastąp ustawienia telewizora ({n})",
-  Owner: "Właściciel",
+  "Owner": "Właściciel",
   "Owner token": "Token właściciela",
   "Ownership verified": "Własność potwierdzona",
-  P2P: "P2P",
+  "P2P": "P2P",
   "P2P & servers": "P2P i serwery",
   "P2P only": "Tylko P2P",
   "P2P sources, debrid-ready": "Źródła P2P, gotowe do użycia z usługą debrid",
-  PANELS: "PANELE",
-  PBS: "PBS",
+  "PANELS": "PANELE",
+  "PBS": "PBS",
   "PDF (print)": "PDF (druk)",
   "PDF print dialog opened": "Otwarto okno drukowania PDF",
   "PDF print view ready": "Widok wydruku PDF jest gotowy",
-  PIN: "PIN",
+  "PIN": "PIN",
   "PIN & sidebar locks": "PIN i blokady paska bocznego",
   "PIN off": "PIN wyłączony",
   "PIN on": "PIN włączony",
   "PIN set": "Kod PIN ustawiony",
   "PIN-locked profiles": "Profile zablokowane kodem PIN",
   "PINs didn't match. Start over.": "Kody PIN nie są zgodne. Zacznij od nowa.",
-  PLAYBACK: "ODTWARZANIE",
+  "PLAYBACK": "ODTWARZANIE",
   "PM Picks": "Na popołudnie",
   "PNG, GIF, WebP, or SVG. Animated GIFs play.":
     "PNG, GIF, WebP lub SVG. Animowane pliki GIF są odtwarzane.",
@@ -317,46 +310,44 @@ const catalog09: Record<string, string> = {
     "PNG, JPG, WebP, GIF, MP4, WebM, MOV. Maksymalnie {count} plików, po 100 MB każdy.",
   "PNG, WEBP, SVG or GIF. Frame shrinks it to 128px so it stays small on disk.":
     "PNG, WEBP, SVG lub GIF. Frame zmniejsza obraz do 128px, aby zajmował mało miejsca na dysku.",
-  PREVIEW: "PODGLĄD",
+  "PREVIEW": "PODGLĄD",
   "Pack name": "Nazwa zestawu",
   "Pack removed, badges back to default":
     "Usunięto pakiet, odznaki przywrócono do domyślnego wyglądu",
-  Packaged: "Wydanie fizyczne",
-  Packs: "Pakiety",
+  "Packaged": "Wydanie fizyczne",
+  "Packs": "Pakiety",
   "Packs & import": "Pakiety i importowanie",
   "Packs stay hosted by their maker. Frame keeps the link, not the artwork.":
     "Pakiety pozostają na serwerach ich twórców. Frame przechowuje łącze, a nie grafiki.",
-  Page: "Strona",
+  "Page": "Strona",
   "Page background": "Tło strony",
   "Page background color": "Kolor tła strony",
   "Page background image": "Obraz tła strony",
   "Page base.": "Podstawa strony.",
-  "Page failed to load": "Nie udało się wczytać strony",
   "Page gap": "Odstęp między stronami",
   "Page width": "Szerokość strony",
   "Page {n}": "Strona {n}",
   "Page {page}": "Strona {page}",
-  "Page {page} of {count}, tap to jump": "Strona {page} z {count}, stuknij, aby przejść",
-  Paid: "Płatny",
+  "Paid": "Płatny",
   "Paid plan at": "Płatny plan na",
   "Paid. Bakes scores into the poster image itself.":
     "Płatne. Osadza oceny bezpośrednio w obrazie plakatu.",
   "Painted Skies": "Malowane niebo",
-  Pair: "Sparuj",
+  "Pair": "Sparuj",
   "Pair once from here and this Frame will take commands.":
     "Sparuj Frame tutaj, a będzie odtąd przyjmować polecenia.",
   "Pair with this Frame": "Sparuj z tym Frame",
-  Paired: "Sparowano",
+  "Paired": "Sparowano",
   "Paired with {name}": "Sparowano z {name}",
-  Palette: "Paleta",
+  "Palette": "Paleta",
   "Palme d'Or": "Złota Palma",
-  Panel: "Panel",
+  "Panel": "Panel",
   "Panel and play": "Panel i odtwarzanie",
   "Panel surface": "Powierzchnia panelu",
-  Panels: "Panele",
-  Paper: "Papierowy",
+  "Panels": "Panele",
+  "Paper": "Papierowy",
   "Paramount+": "Paramount+",
-  Paranoia: "Paranoja",
+  "Paranoia": "Paranoja",
   "Paranormal Cases": "Przypadki paranormalne",
   "Parent PIN": "Kod PIN rodzica",
   "Parental controls are on. Enter your PIN to access settings.":
@@ -366,13 +357,13 @@ const catalog09: Record<string, string> = {
     "Przetworzone playlisty, program telewizyjny i informacje o serialach. Zostaną pobrane ponownie przy następnym otwarciu.",
   "Part of {name}": "Część {name}",
   "Partially read": "Częściowo przeczytane",
-  Pass: "Pomiń",
+  "Pass": "Pomiń",
   "Pass Completion %": "Skuteczność podań",
   "Passage {passage}": "Fragment {passage}",
-  Passes: "Podania",
+  "Passes": "Podania",
   "Password updated": "Hasło zostało zaktualizowane",
   "Past Midnight": "Po północy",
-  Paste: "Wklej",
+  "Paste": "Wklej",
   "Paste a Trakt, MDBList, TMDB, Letterboxd, IMDb, or MAL list URL":
     "Wklej adres URL listy Trakt, MDBList, TMDB, Letterboxd, IMDb lub MAL",
   "Paste a direct image link.": "Wklej bezpośrednie łącze do obrazu.",
@@ -407,25 +398,21 @@ const catalog09: Record<string, string> = {
   "Paste your Subsource API key": "Wklej klucz API Subsource",
   "Paste your TheIntroDB API key": "Wklej swój klucz API TheIntroDB",
   "Paste your key": "Wklej swój klucz",
-  "Paste your repo.json URL into Extensions above, then install. That is how you bring any site's sources back.":
-    "Wklej URL swojego repo.json w sekcji Rozszerzenia powyżej, a następnie zainstaluj. W ten sposób ponownie dodasz źródła z dowolnej witryny.",
-  "Paste your scraping config as JSON here, or grab the template above to start.":
-    "Wklej tutaj konfigurację scrapera w formacie JSON albo pobierz powyższy szablon, aby zacząć.",
   "Paste your v3 API key": "Wklej swój klucz API v3",
   "Pattern (e.g. \\bremux\\b)": "Wzorzec (np. \\bremux\\b)",
-  Pause: "Wstrzymaj",
+  "Pause": "Wstrzymaj",
   "Pause download": "Wstrzymaj pobieranie",
   "Pause downloads": "Wstrzymaj pobieranie",
   "Pause narration": "Wstrzymaj narrację",
   "Pause when minimized": "Wstrzymuj po zminimalizowaniu",
   "Pause when unfocused": "Wstrzymuj po utracie fokusu",
   "Pause · Space": "Wstrzymaj · Spacja",
-  Paused: "Wstrzymano",
-  Resumed: "Wznowiono",
+  "Paused": "Wstrzymano",
+  "Resumed": "Wznowiono",
   "Paused on": "Wstrzymano na",
   "Paused on Simkl": "Wstrzymano w Simkl",
   "Paused on Trakt": "Wstrzymano w Trakt",
-  Peacock: "Peacock",
+  "Peacock": "Peacock",
   "Peers, speed and progress chip on the player during torrent playback. Turn off to keep the player clean.":
     "Widżet z liczbą peerów, szybkością i postępem wyświetlany w odtwarzaczu podczas odtwarzania torrenta. Wyłącz, aby zachować przejrzysty interfejs odtwarzacza.",
   "Peers, speed and progress on the player while a P2P stream plays. Sits top left, clear of the exit button.":
@@ -435,7 +422,7 @@ const catalog09: Record<string, string> = {
   "Penalty Goals": "Gole z rzutów karnych",
   "Penalty Kicks Taken": "Wykonane rzuty karne",
   "Pens currently in demand": "Najbardziej poszukiwani obecnie scenarzyści",
-  People: "Osoby",
+  "People": "Osoby",
   "People (empty = all tracked)": "Osoby (puste = wszystkie śledzone)",
   "People can pin a track to their profile. This controls what happens when you visit one.":
     "Użytkownicy mogą przypiąć utwór do swojego profilu. To ustawienie określa, co dzieje się po odwiedzeniu takiego profilu.",
@@ -446,18 +433,18 @@ const catalog09: Record<string, string> = {
   "People you can mention": "Osoby, o których możesz wspomnieć",
   "People you watch": "Osoby, które oglądasz",
   "Percent Led": "Procent czasu na prowadzeniu",
-  Performance: "Wydajność",
+  "Performance": "Wydajność",
   "Performance notice": "Informacja o wydajności",
   "Period Greats": "Mistrzowie kina kostiumowego",
   "Periodically match faces in the current frame against the cast to show who is on screen now. On-device, nothing leaves your machine. Uses a little more CPU while playing.":
     "Okresowo porównuj twarze w bieżącej klatce z obsadą, aby pokazać osoby obecne teraz na ekranie. Wszystko odbywa się na urządzeniu, żadne dane nie opuszczają komputera. Podczas odtwarzania funkcja nieco zwiększa użycie procesora.",
-  Philo: "Philo",
-  Phone: "Telefon",
+  "Philo": "Philo",
+  "Phone": "Telefon",
   "Phone keyboard": "Klawiatura telefonu",
   "Phone remote": "Pilot na telefon",
   "Phone setup is off": "Konfiguracja przez telefon jest wyłączona",
   "Phone setup unavailable": "Konfiguracja telefonu jest niedostępna",
-  PiP: "PiP",
+  "PiP": "PiP",
   "Pick OLED for perfect-black panels to unlock shadow detail in tonemapped HDR.":
     "Wybierz OLED dla paneli o idealnej czerni, aby wydobyć szczegóły w cieniach obrazu HDR z mapowaniem tonalnym.",
   "Pick a 4-digit PIN. You'll be asked for it before this profile opens.":
@@ -499,8 +486,6 @@ const catalog09: Record<string, string> = {
   "Pick a theme, then rearrange every button in the player chrome. Hide what you never use, promote what you do.":
     "Wybierz motyw, a następnie zmień rozmieszczenie wszystkich przycisków interfejsu odtwarzacza. Ukryj te, których nie używasz, i wyróżnij potrzebne.",
   "Pick a video": "Wybierz film",
-  "Pick a world and dive into everything in it.":
-    "Wybierz świat i zanurz się we wszystkim, co oferuje.",
   "Pick a z-index for your overlays that sits where you want it.":
     "Wybierz dla nakładek wartość z-index, która umieści je na odpowiedniej warstwie.",
   "Pick an avatar": "Wybierz awatar",
@@ -519,8 +504,6 @@ const catalog09: Record<string, string> = {
     "Wybierz tę pozycję w widoku głównym, aby ją obserwować.",
   "Pick lists from your library to show them here":
     "Wybierz listy ze swojej biblioteki, aby je tutaj wyświetlić",
-  "Pick one folder. Each subfolder inside is one manga, so name it exactly like the title. In each, add chapter folders of images or .cbz / .zip files. A cover.jpg sets a custom cover.":
-    "Wybierz jeden folder. Każdy znajdujący się w nim podfolder to jedna manga, nazwij go więc dokładnie tak jak tytuł. W każdym z nich dodaj foldery rozdziałów z obrazami lub pliki .cbz / .zip. Plik cover.jpg ustawia własną okładkę.",
   "Pick one library folder. Each subfolder is one eBook. Put its chapters inside as TXT, Markdown, HTML, or EPUB files and optionally add a cover image.":
     "Wybierz jeden folder biblioteki. Każdy podfolder to jeden e-book. Umieść w nim rozdziały w plikach TXT, Markdown, HTML lub EPUB. Opcjonalnie możesz też dodać obraz okładki.",
   "Pick one of your themes to share.": "Wybierz jeden ze swoich motywów do udostępnienia.",
@@ -548,9 +531,6 @@ const catalog09: Record<string, string> = {
   "Pick up exactly where you left off.": "Wznów dokładnie od miejsca, w którym przerwano.",
   "Pick up partly-watched episodes and movies at your saved spot. Anything watched past 80% always restarts. Turn this off to always start from the beginning, handy if you rewatch shows.":
     "Wznawiaj częściowo obejrzane odcinki i filmy od zapisanego miejsca. Materiały obejrzane w ponad 80% zawsze są odtwarzane od początku. Wyłącz tę opcję, aby zawsze rozpoczynać od początku, co przydaje się podczas ponownego oglądania seriali.",
-  "Pick up the manga at {label}.": "Zacznij czytać mangę od {label}.",
-  "Pick up the manga where the anime ends.":
-    "Zacznij czytać mangę od miejsca, w którym kończy się anime.",
   "Pick up to five. It shapes what Frame surfaces first.":
     "Wybierz maksymalnie pięć. Wpływa to na treści, które Frame wyświetla w pierwszej kolejności.",
   "Pick up to {max} artists to show on your profile.":
@@ -584,14 +564,14 @@ const catalog09: Record<string, string> = {
   "Pick your source": "Wybierz źródło",
   "Pick your subtitle languages": "Wybierz języki napisów",
   "Picked for you": "Wybrane dla Ciebie",
-  Picker: "Selektor",
+  "Picker": "Selektor",
   "Picker layout": "Układ selektora",
   "Picker layout (Condensed / Stremio)": "Układ selektora (zwarty / Stremio)",
   "Picking…": "Wybieranie…",
   "Picks up at your saved spot instead of the start.":
     "Wznawia od zapisanego miejsca zamiast od początku.",
   "Picks up right where you left off": "Wznawia dokładnie od miejsca przerwania",
-  Picture: "Obraz",
+  "Picture": "Obraz",
   "Picture (adjustments & aspect)": "Obraz (regulacja i proporcje)",
   "Picture adjustments": "Ustawienia obrazu",
   "Picture adjustments (brightness, contrast, sharpen)":
@@ -607,16 +587,16 @@ const catalog09: Record<string, string> = {
   "Picture-in-picture": "Obraz w obrazie",
   "Pilots that pull you in and finales that earn the season.":
     "Odcinki pilotażowe, które wciągają, i finały, dla których warto obejrzeć cały sezon.",
-  Pin: "Przypnij",
+  "Pin": "Przypnij",
   "Pin category to top": "Przypnij kategorię na górze",
   "Pin the catalogs you want up top, hide the ones you never open, and reorder your pinned rails. Your browse view updates instantly.":
     "Przypnij u góry katalogi, które chcesz mieć pod ręką, ukryj te, których nigdy nie otwierasz, i zmień kolejność przypiętych sekcji. Widok przeglądania zaktualizuje się natychmiast.",
   "Pin to top": "Przypnij na górze",
   "Pings your Worker at /health to confirm it's reachable from this device.":
     "Wysyła żądanie do punktu /health Twojego Workera, aby potwierdzić, że jest osiągalny z tego urządzenia.",
-  Pinned: "Przypięte",
+  "Pinned": "Przypięte",
   "Pinned to top": "Przypięto u góry",
-  Pinstripe: "Prążki",
+  "Pinstripe": "Prążki",
   "Pitch a fix as a PR": "Prześlij poprawkę jako PR",
   "Pitches Thrown": "Narzucone piłki",
   "Pixar Greats": "Najlepsze filmy Pixara",
@@ -658,14 +638,14 @@ const catalog09: Record<string, string> = {
     "Odtwarzaj, wstrzymuj, przewijaj, reguluj głośność i przesyłaj na inne urządzenia bez wstawania z kanapy.",
   "Play, then tap the line you hear at two spots (one early, one late) to fix drift.":
     "Rozpocznij odtwarzanie, a następnie stuknij słyszany wiersz w dwóch miejscach (jednym na początku i jednym pod koniec), aby skorygować rozbieżność.",
-  PlayStation: "PlayStation",
-  Playback: "Odtwarzanie",
+  "PlayStation": "PlayStation",
+  "Playback": "Odtwarzanie",
   "Playback quality": "Jakość odtwarzania",
   "Playback speed": "Prędkość odtwarzania",
   "Playback speed {label}": "Prędkość odtwarzania {label}",
   "Playback stats · press I to hide": "Statystyki odtwarzania · naciśnij I, aby ukryć",
   "Played last": "Ostatnio odtwarzane",
-  Player: "Odtwarzacz",
+  "Player": "Odtwarzacz",
   "Player & quality": "Odtwarzacz i jakość",
   "Player audio": "Dźwięk odtwarzacza",
   "Player chrome": "Elementy interfejsu odtwarzacza",
@@ -685,16 +665,16 @@ const catalog09: Record<string, string> = {
   "Player style": "Styl odtwarzacza",
   "Player title": "Tytuł w odtwarzaczu",
   "Player volume sounds": "Dźwięki zmiany głośności odtwarzacza",
-  Playing: "Odtwarzanie",
+  "Playing": "Odtwarzanie",
   "Playing now": "Teraz odtwarzane",
   "Playing on {device}. Change device": "Odtwarzanie na urządzeniu {device}. Zmień urządzenie",
-  Playlist: "Playlista",
+  "Playlist": "Playlista",
   "Playlist URL": "Adres URL playlisty",
   "Playlist URL not found": "Nie znaleziono adresu URL playlisty",
   "Playlist address": "Adres playlisty",
   "Playlist contained no channels": "Playlista nie zawiera żadnych kanałów",
   "Playlist is too large": "Playlista jest zbyt duża",
-  Playlists: "Playlisty",
+  "Playlists": "Playlisty",
   "Plays + ratings sync from Frame to Trakt.tv.":
     "Odtworzenia i oceny są synchronizowane z Frame do Trakt.tv.",
   "Plays HDR content in its own window so Windows treats it as true HDR (the SDR brightness slider stops dimming it). Turn off HDR-to-SDR tonemapping above to use this on an HDR display.":
@@ -707,8 +687,6 @@ const catalog09: Record<string, string> = {
   "Plays the trailer behind the hero after a short pause.":
     "Po krótkiej chwili odtwarza zwiastun w tle sekcji głównej.",
   "Please choose a PNG, SVG, JPG, or WebP image.": "Wybierz obraz PNG, SVG, JPG lub WebP.",
-  "Plugins run sandboxed in an isolated worker with no access to your files, accounts, or the rest of Frame. What a plugin scrapes is between you and the site it targets. Only install plugins from repositories you trust.":
-    "Wtyczki działają w piaskownicy, w odizolowanym procesie roboczym bez dostępu do Twoich plików, kont ani pozostałej części Frame. To, co wtyczka pozyskuje, jest sprawą między Tobą a wskazaną przez nią witryną. Instaluj wtyczki wyłącznie z zaufanych repozytoriów.",
   "Plus Jakarta Sans": "Plus Jakarta Sans",
   "Pluto TV": "Pluto TV",
   "Point Frame at a folder. We scan it for movies and shows, parse titles from filenames, and enrich them with TMDB so they look the same as everything else here. We just remember the path; nothing is copied or moved.":
@@ -717,19 +695,15 @@ const catalog09: Record<string, string> = {
     "Połącz Frame z serwerem strumieniowym na innym urządzeniu, na przykład z usługą Stremio na serwerze domowym. Strumienie P2P będą pobierane i odtwarzane z tamtego urządzenia zamiast z tego.",
   "Point Frame at your self-hosted library to browse and install sources":
     "Połącz Frame z własnym serwerem biblioteki, aby przeglądać i instalować źródła",
-  "Point Frame's built-in scraper at any HTML site with a config":
-    "Skieruj wbudowany scraper Frame na dowolną witrynę HTML za pomocą konfiguracji",
-  "Point Local folder at CBZ files or folders of images you already own.":
-    "Wskaż w Folderze lokalnym własne pliki CBZ lub foldery z obrazami.",
-  Pointer: "Wskaźnik",
+  "Pointer": "Wskaźnik",
   "Points Conceded Off Turnovers": "Punkty stracone po stratach",
   "Points in Paint": "Punkty z pola trzech sekund",
   "Pop out subtitles": "Wyświetl napisy w osobnym oknie",
   "Pop the video into a small always-on-top window, or restore it.":
     "Przenieś wideo do małego okna zawsze na wierzchu lub przywróć je.",
   "Pop-up position": "Położenie wyskakującego okna",
-  Popcornmeter: "Popcornmeter",
-  Popular: "Popularne",
+  "Popcornmeter": "Popcornmeter",
+  "Popular": "Popularne",
   "Popular Anime": "Popularne anime",
   "Popular Manga": "Popularne mangi",
   "Popular Movies": "Popularne filmy",
@@ -742,17 +716,17 @@ const catalog09: Record<string, string> = {
   "Popular titles from book metadata": "Popularne tytuły z metadanych książek",
   "Popular titles from the installed source": "Popularne tytuły z zainstalowanego źródła",
   "Popular · AIO": "Popularne · AIO",
-  Popularity: "Popularność",
-  Port: "Port",
+  "Popularity": "Popularność",
+  "Port": "Port",
   "Portuguese (Brazil)": "Portugalski (Brazylia)",
-  Position: "Położenie",
+  "Position": "Położenie",
   "Position and size only": "Tylko położenie i rozmiar",
   "Position {position}": "Pozycja {position}",
-  Possession: "Posiadanie piłki",
+  "Possession": "Posiadanie piłki",
   "Possession %": "Posiadanie piłki %",
-  Post: "Opublikuj",
+  "Post": "Opublikuj",
   "Post, moderate and invite": "Publikowanie, moderowanie i zapraszanie",
-  Poster: "Plakat",
+  "Poster": "Plakat",
   "Poster card size": "Rozmiar karty plakatu",
   "Poster card style": "Styl karty plakatu",
   "Poster dock magnification": "Powiększanie plakatów w stylu Docka",
@@ -762,7 +736,7 @@ const catalog09: Record<string, string> = {
   "Poster size": "Rozmiar plakatów",
   "Poster translation is disabled because a custom poster service is active.":
     "Tłumaczenie plakatów jest wyłączone, ponieważ aktywna jest niestandardowa usługa plakatów.",
-  Posters: "Plakaty",
+  "Posters": "Plakaty",
   'Posters, logos, and title art load in the first available language from this list, falling back down the order. "Original" uses the title\'s own language. Put your main language first. Needs a TMDB key.':
     "Plakaty, logotypy i grafiki tytułowe są wczytywane w pierwszym dostępnym języku z tej listy, zgodnie z podaną kolejnością. Opcja „Oryginalny” używa języka danego tytułu. Umieść swój główny język na początku. Wymaga klucza TMDB.",
   'Posters, logos, and title art load in the first available language from this list. "Original" uses the title\'s own language. Needs a TMDB key.':

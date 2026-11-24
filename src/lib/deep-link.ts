@@ -1,6 +1,5 @@
 import { makeSafeTauriUnlisten } from "@/lib/tauri-unlisten";
 import { focusWindow } from "@/lib/window";
-import { isMusicDeepLink } from "@/lib/music/deep-link";
 
 const EVENT = "harbor:deeplink-install";
 const OPEN_EVENT = "harbor:deeplink-open";
@@ -72,7 +71,7 @@ export function onDeepLinkOpenList(handler: (list: DeepLinkList) => void): () =>
 // Frame has no Music page. A Harbor music link is consumed here so it is never
 // mistaken for an addon install.
 function routeMusic(url: string): boolean {
-  return isMusicDeepLink(url);
+  return url.startsWith("harbor://music/");
 }
 
 export function emitOpenProfileEdit(): void {
@@ -154,7 +153,7 @@ export function parseHarborList(url: string): DeepLinkList | null {
 }
 
 function shouldForward(url: string): boolean {
-  if (isMusicDeepLink(url)) return false;
+  if (routeMusic(url)) return false;
   if (appLinkPath(url) !== null) return true;
   if (url.startsWith("stremio://")) {
     if (window.__harborInstallerOpen) return true;

@@ -21,7 +21,7 @@ import { setMalClientId } from "@/lib/mal/credentials";
 import { setUiLanguage } from "@/lib/i18n";
 import { makeSafeTauriUnlisten } from "@/lib/tauri-unlisten";
 import { STORAGE_KEY } from "./settings/defaults";
-import { readSettingsFile, writeSettingsFile } from "./settings/file-store";
+import { readSettingsFile, writeSettingsFile } from "@/infrastructure/persistence/file-store";
 import { torrentEngineSetEnabled } from "./torrent/local-engine";
 import { loadFontData, saveFontData } from "./font-storage";
 import { isRemovedBuiltinAvatar } from "./avatars/catalog";
@@ -33,7 +33,7 @@ import {
   sourceKeyFor,
 } from "./settings/profile-store";
 import type { Settings, StreamingService } from "./settings/types";
-import { markSectionDirty } from "./profile-sync/scheduler";
+import { markSectionDirty } from "../features/profiles/sync/scheduler";
 import { configureLayoutStore } from "./layout-sync/store";
 import { SYNCED_SETTINGS_FIELDS } from "./layout-sync/sections";
 
@@ -304,7 +304,7 @@ export function SettingsProvider({
       }
       if (cancelled) return;
       try {
-        const { syncSubFontsToDisk } = await import("@/lib/player/sub-font-install");
+        const { syncSubFontsToDisk } = await import("@/features/player/engine/sub-font-install");
         await syncSubFontsToDisk(fonts);
       } catch (e) {
         console.warn("[fonts] could not sync fonts to disk for libass", e);

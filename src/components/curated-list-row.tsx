@@ -5,7 +5,7 @@ import { PickCard } from "@/components/pick-card";
 import { useT } from "@/lib/i18n";
 import { curatedList, itemMeta } from "@/lib/curated/registry";
 import type { CuratedList, ListBrand } from "@/lib/curated/types";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { Row } from "./row";
 
 const BRAND_MARK: Record<ListBrand, { src: string; alt: string; height: number }> = {

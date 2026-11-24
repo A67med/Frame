@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 
 /**
  * The nav owns the top bar and the shell owns the layer chain, so the avatar

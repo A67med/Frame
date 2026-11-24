@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useSettings, type Settings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { noteOverlayDismiss } from "@/lib/player/overlay-dismiss";
+import { noteOverlayDismiss } from "@/features/player/engine/overlay-dismiss";
 
 function clamp(n: number, lo: number, hi: number): number {
   return Math.max(lo, Math.min(hi, n));

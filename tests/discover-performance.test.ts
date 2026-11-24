@@ -10,8 +10,8 @@ import {
   readSource,
 } from "../scripts/benchmark-discover.mjs";
 
-const discover = readSource("src/views/discover.tsx");
-const railSource = readSource("src/views/discover/discover-rail.tsx");
+const discover = readSource("src/features/discovery/views/discover.tsx");
+const railSource = readSource("src/features/discovery/views/discover/discover-rail.tsx");
 
 test("eligible fast banner is visible before full enrichment starts returning", async () => {
   const result = await measureFeatured(discover);
@@ -169,7 +169,7 @@ test("fast candidates are identity-warmed and filtered again before exposure", a
   const meta = { id: "tmdb:movie:1", background: "fixture" };
   const module = loadModule(readSource("src/lib/feed/featured/index.ts"), {
     "@/lib/cinemeta": {},
-    "@/lib/discover/store": { getStore: () => ({ affinity: {} }) },
+    "@/features/discovery/discover/store": { getStore: () => ({ affinity: {} }) },
     "../exclude": {
       buildExclusionSets: () => ({}),
       isExcluded: () => warmed,

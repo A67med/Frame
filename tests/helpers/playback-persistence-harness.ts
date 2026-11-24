@@ -1,8 +1,8 @@
 import { readFileSync } from "node:fs";
 import ts from "typescript";
-import { emptySnapshot } from "../../src/lib/player/bridge.ts";
-import { isNaturalEnd } from "../../src/lib/player/playback-end.ts";
-import { playerLoadIdentity } from "../../src/lib/player/load-identity.ts";
+import { emptySnapshot } from "../../src/features/player/engine/bridge.ts";
+import { isNaturalEnd } from "../../src/features/player/engine/playback-end.ts";
+import { playerLoadIdentity } from "../../src/features/player/engine/load-identity.ts";
 import { animeTrackerTarget } from "../../src/lib/tracker-progress.ts";
 
 export function playbackPersistenceHarness(kind: "local" | "cloud" = "local") {

@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import { MOVIE_GENRES, TV_GENRES } from "@/lib/feed/tags";
-import { useFilmSoundtrack } from "@/lib/providers/musicbrainz-soundtrack";
+import { useFilmSoundtrack } from "@/features/metadata/musicbrainz-soundtrack";
 import { tmdbCompanyIdByName, type TmdbDetail } from "@/lib/providers/tmdb";
 import { useCriticism } from "@/lib/providers/podcast-criticism";
 import { useAdaptationFamily } from "@/lib/providers/wikidata-graph";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { AdaptationRow } from "./adaptation-row";
 import { CriticismRow } from "./criticism-row";

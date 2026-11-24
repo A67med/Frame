@@ -23,7 +23,7 @@ function load(path, mocks = {}, storage = undefined) {
   return exports;
 }
 
-const tab = load("src/views/library/watchlist-tab.tsx", {
+const tab = load("src/features/library/views/library/watchlist-tab.tsx", {
   "@/lib/trakt/to-meta": load("src/lib/trakt/to-meta.ts"),
   "@/lib/stremio": { libraryMetaType: (type) => type },
   "./shared": { parseTs: (value) => (value ? Date.parse(value) : null) },
@@ -90,7 +90,7 @@ function watchlist() {
     removeItem: (key) => data.delete(key),
   };
   const api = load(
-    "src/lib/watchlist.ts",
+    "src/features/watchlist/watchlist.ts",
     {
       "@/lib/storage-recovery": {
         setItemWithRecovery: (key, value) => {
@@ -134,14 +134,14 @@ test("removing a known film also removes its local IMDb/TMDB twin", () => {
 });
 
 test("all library groupings retain virtualization and local removal wiring", () => {
-  const source = read("src/views/library/watchlist-tab.tsx");
+  const source = read("src/features/library/views/library/watchlist-tab.tsx");
   const grids = source.match(/<GroupedGrid\b[\s\S]*?\/>/g);
   assert.equal(grids.length, 3);
   for (const grid of grids) {
     assert.match(grid, /onRemoveLocal=\{handleRemoveLocal\}/);
     assert.match(grid, /scrollRef=\{scrollRef\}/);
   }
-  const shared = read("src/views/library/shared.tsx");
+  const shared = read("src/features/library/views/library/shared.tsx");
   assert.equal((shared.match(/\(\) => onRemoveLocal\(it.localId as string\)/g) ?? []).length, 2);
 });
 
@@ -156,7 +156,7 @@ test("invalidated refreshes cannot publish or retain stale membership", async ()
   const published = [];
   let finishTrakt;
   let current = true;
-  const api = load("src/lib/watchlist-sync.tsx", {
+  const api = load("src/features/watchlist/sync.tsx", {
     "@/lib/stremio": { library: async () => [cloud("tt1")] },
     "@/lib/trakt/watchlist": {
       fetchWatchlist: () =>
@@ -164,7 +164,7 @@ test("invalidated refreshes cannot publish or retain stale membership", async ()
           finishTrakt = resolve;
         }),
     },
-    "@/lib/watchlist": { setWatchlistAggregate: (ids) => published.push(ids) },
+    "@/features/watchlist/watchlist": { setWatchlistAggregate: (ids) => published.push(ids) },
   });
   const pending = api.refreshWatchlistAggregates("test-auth", true, false, () => current);
   await Promise.resolve();
@@ -178,11 +178,11 @@ test("invalidated refreshes cannot publish or retain stale membership", async ()
 
 test("current refreshes combine all connected providers and exclude temporary items", async () => {
   const published = [];
-  const api = load("src/lib/watchlist-sync.tsx", {
+  const api = load("src/features/watchlist/sync.tsx", {
     "@/lib/stremio": { library: async () => [cloud("tt1"), { ...cloud("tt9"), temp: true }] },
     "@/lib/trakt/watchlist": { fetchWatchlist: async () => [trakt(2, "tt2", 1992)] },
     "@/lib/simkl/watchlist": { fetchWatchlist: async () => [trakt(3, "tt3", 2019)] },
-    "@/lib/watchlist": { setWatchlistAggregate: (ids) => published.push(ids) },
+    "@/features/watchlist/watchlist": { setWatchlistAggregate: (ids) => published.push(ids) },
   });
   const items = await api.refreshWatchlistAggregates("test-auth", true, true);
   assert.equal(items.length, 1);

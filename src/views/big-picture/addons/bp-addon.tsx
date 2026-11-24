@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { popBigPicture } from "@/lib/big-picture";
-import { hostOf } from "@/lib/addons-store/reorder";
+import { hostOf } from "@/features/addons/catalog/reorder";
 import { useProxiedImageSrc } from "@/lib/remote-image-proxy";
 import { SFX } from "@/lib/sfx";
 import { useBpT } from "../bp-i18n";

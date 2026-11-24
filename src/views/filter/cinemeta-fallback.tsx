@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { PickCard } from "@/components/pick-card";
 import { type Meta, topMovies, topSeries } from "@/lib/cinemeta";
 import { useT } from "@/lib/i18n";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 
 const PAGE_SIZE = 100;
 const MAX_ITEMS = 600;

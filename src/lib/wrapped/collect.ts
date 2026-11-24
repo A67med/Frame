@@ -1,5 +1,5 @@
 import { manualWatchedLibraryItems } from "@/lib/manual-watched";
-import { playbackEntries } from "@/lib/playback-history";
+import { playbackEntries } from "@/features/player/history";
 import { fetchWatchedHistory as fetchTraktHistory } from "@/lib/trakt/history";
 import { isDetectedAnime } from "@/lib/anime-detect";
 import type { WatchEvent, WatchType, WrappedSource } from "./types";

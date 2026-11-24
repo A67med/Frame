@@ -1,6 +1,6 @@
-import type { TrackInfo } from "@/lib/player/bridge";
-import type { SubtitleAddHandler } from "@/lib/player/subtitle-load";
-import type { GeneratedSubtitleGroup } from "@/lib/subtitles/types";
+import type { TrackInfo } from "@/features/player/engine/bridge";
+import type { SubtitleAddHandler } from "@/features/player/engine/subtitle-load";
+import type { GeneratedSubtitleGroup } from "@/features/subtitles/types";
 
 export type SubtitleMenuProps = {
   generated?: GeneratedSubtitleGroup[];

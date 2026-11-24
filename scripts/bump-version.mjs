@@ -47,12 +47,6 @@ function setVersion(version) {
       `name = "${name}"\nversion = "${version}"`,
     );
   }
-  const date = new Date().toISOString().slice(0, 10);
-  replaceOnce(
-    "flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml",
-    /<release version="[^"]+" date="[^"]+"\s*\/>/,
-    `<release version="${version}" date="${date}" />`,
-  );
 }
 
 const arg = process.argv[2];

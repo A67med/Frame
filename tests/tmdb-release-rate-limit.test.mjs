@@ -12,7 +12,7 @@ test("release-date requests recover from rate limiting and cache only successful
   }).outputText;
   const api = {};
   const dependencies = {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async () => {
         calls += 1;
         return calls < 3

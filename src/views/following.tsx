@@ -19,9 +19,10 @@ import {
   type PersonSuggestion,
 } from "@/lib/radar/people";
 import { localIsoDay } from "@/lib/radar/release-dates";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
-import { useScrollMemory, useView } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView } from "@/app/navigation/view";
 import { fmtDate } from "./person/person-utils";
 
 const ROLES: Array<{ id: FollowRole; label: string }> = [

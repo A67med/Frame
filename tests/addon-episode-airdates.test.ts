@@ -5,9 +5,9 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
 import ts from "typescript";
-import { isNaturalEnd } from "../src/lib/player/playback-end.ts";
+import { isNaturalEnd } from "../src/features/player/engine/playback-end.ts";
 import type { Meta } from "../src/lib/cinemeta.ts";
-import type { PlayEpisode } from "../src/lib/view.tsx";
+import type { PlayEpisode } from "../src/app/navigation/view.tsx";
 
 function read(path: string): string {
   return readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
@@ -69,8 +69,8 @@ function autoAdvances(next: PlayEpisode | null): PlayEpisode[] {
   const played: PlayEpisode[] = [];
   const { useAutoNextEpisode } = load("src/views/player/hooks/use-auto-next-episode.ts", {
     react: { useRef: (current: unknown) => ({ current }), useEffect: (fn: () => void) => fn() },
-    "@/lib/player/playback-clock": { getPlaybackPosition: () => 1800 },
-    "@/lib/player/playback-end": { isNaturalEnd },
+    "@/features/player/engine/playback-clock": { getPlaybackPosition: () => 1800 },
+    "@/features/player/engine/playback-end": { isNaturalEnd },
   });
   useAutoNextEpisode({
     src: { url: "fixture://episode-one" },
@@ -91,7 +91,7 @@ function series(videos: Meta["videos"]) {
       lruSet: (map: Map<unknown, unknown>, key: unknown, value: unknown) => map.set(key, value),
     },
     "@/lib/memory-profiler": { registerCache() {} },
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async () => {
         requests++;
         return { ok: true, json: async () => ({ meta: { videos } }) };
@@ -127,9 +127,9 @@ function nativeAdjacent(meta: Meta): { prev: PlayEpisode | null; next: PlayEpiso
       "@/lib/cinemeta": { isAddonNativeMeta },
       "@/lib/series-episodes": {},
       "@/lib/hidden-episodes": {},
-      "@/lib/local-library": {},
-      "@/lib/player/local-url": {},
-      "@/views/library/local-tab/show-group": {},
+      "@/features/library/local-library": {},
+      "@/features/player/engine/local-url": {},
+      "@/features/library/views/library/local-tab/show-group": {},
       "@/lib/download/downloads-store": {},
       "@/lib/download/player-src": {},
     },

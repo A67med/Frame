@@ -26,7 +26,9 @@ const allTsx = tree(SRC);
 const allSrc = allTsx.concat(tree(SRC, ".ts"));
 const settingsTsx = tree(SETTINGS).concat(tree(path.join(SRC, "views", "account")));
 const settingsSrc = settingsTsx.concat(tree(SETTINGS, ".ts"));
-const css = read(path.join(SRC, "index.css"));
+const css = ["index.css", "styles/desktop.css", "features/settings/settings.css"]
+  .map((file) => read(path.join(SRC, file)))
+  .join("\n");
 
 const findings = [];
 const report = (check, items, detail) => {
@@ -218,7 +220,7 @@ report(
   "a settings control writes the key and nothing outside settings ever reads it; keys read only to drive the settings UI itself will show here too",
 );
 
-const nav = read(path.join(SETTINGS, "nav.tsx"));
+const nav = read(path.resolve(SETTINGS, "../../features/settings/search/options.ts"));
 const headings = new Set();
 for (const f of settingsSrc) {
   const s = read(f);

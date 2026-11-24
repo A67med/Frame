@@ -1,4 +1,4 @@
-import type { Affinity } from "@/lib/discover/types";
+import type { Affinity } from "@/features/discovery/discover/types";
 import { t } from "@/lib/i18n";
 import { providerIdsFor, SERVICES } from "@/lib/providers/streaming";
 import type { StreamingService } from "@/lib/settings";

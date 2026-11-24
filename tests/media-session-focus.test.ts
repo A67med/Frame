@@ -52,7 +52,7 @@ function fixture(
       }),
     },
     "@/lib/platform": { isWindowsDesktop: () => options.windows ?? true },
-    "@/lib/player/interaction-lock": { isPlayerInteractionLocked: () => locked },
+    "@/features/player/engine/interaction-lock": { isPlayerInteractionLocked: () => locked },
   };
   const source = readFileSync(new URL("../src/lib/media-session.ts", import.meta.url), "utf8");
   const compiled = ts.transpileModule(source, {

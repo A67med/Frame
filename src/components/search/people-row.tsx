@@ -3,7 +3,7 @@ import { NavArrow } from "@/components/nav-arrow";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
 import type { SearchPerson } from "@/lib/search";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 const CARD_WIDTH = 104;
 const GAP = 16;

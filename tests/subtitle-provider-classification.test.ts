@@ -4,14 +4,14 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { classifyProviderSubtitleMetadata } from "../src/lib/subtitles/provider-classification.ts";
+import { classifyProviderSubtitleMetadata } from "../src/features/subtitles/provider-classification.ts";
 
 const addonSource = readFileSync(
-  new URL("../src/lib/subtitles/providers/addons.ts", import.meta.url),
+  new URL("../src/features/subtitles/providers/addons.ts", import.meta.url),
   "utf8",
 );
 const opensubtitlesSource = readFileSync(
-  new URL("../src/lib/subtitles/providers/opensubtitles-v3.ts", import.meta.url),
+  new URL("../src/features/subtitles/providers/opensubtitles-v3.ts", import.meta.url),
   "utf8",
 );
 

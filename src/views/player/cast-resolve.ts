@@ -11,7 +11,7 @@ import { peekPickerCache } from "@/lib/picker-cache";
 import { registerStreamProxy } from "@/lib/stream-proxy";
 import { resolveStream } from "@/lib/streams/resolve";
 import type { ScoredStream } from "@/lib/streams/types";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 export type CastResolution =
   | { kind: "compat"; url: string; caps: DeviceCaps }

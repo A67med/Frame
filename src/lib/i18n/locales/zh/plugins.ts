@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "脚本插件",
-  Repositories: "仓库",
+  "Plugins": "脚本插件",
+  "Repositories": "仓库",
   "Installed plugins": "已安装的脚本插件",
   "Plugin repositories": "脚本插件仓库",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -29,8 +29,8 @@ const plugins: Record<string, string> = {
     "先添加一个仓库，再安装你想要的提供源。它们会显示在这里。",
   "Add a repository": "添加仓库",
   "Movies and series": "电影和剧集",
-  Script: "脚本",
-  Verified: "已验证",
+  "Script": "脚本",
+  "Verified": "已验证",
   "v{version} available": "v{version} 可用",
   "Paused after {n} failures. Turn it back on to try again.":
     "失败 {n} 次后已暂停。重新打开以再试一次。",
@@ -52,7 +52,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "来自 {repo} 的 v{version}，安装于 {when}。",
   "Update to v{version}": "更新到 v{version}",
   "Revert to v{version}": "回退到 v{version}",
-  Reaches: "访问范围",
+  "Reaches": "访问范围",
   "Any public website. This plugin did not say which sites it uses.":
     "任何公开网站。此脚本插件未说明它使用哪些网站。",
   "Seen so far: {hosts}": "目前已见：{hosts}",
@@ -99,7 +99,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "移除并卸载 {count} 个？",
   "Could not reach this repository. Installed plugins keep working.":
     "无法连接此仓库。已安装的脚本插件仍可继续使用。",
-  "This repository lists no plugins.": "此仓库未列出任何脚本插件。",
   "This repository is not for stream plugins.": "此仓库不是播放源脚本插件仓库。",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "不是播放源脚本插件：它没有导出 getStreams 或 streams 函数。",

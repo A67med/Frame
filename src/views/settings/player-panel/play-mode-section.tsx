@@ -1,8 +1,7 @@
 import { Timer } from "../icons";
 import { useSettings } from "@/lib/settings";
-import { isAndroid } from "@/lib/platform";
 import { useT } from "@/lib/i18n";
-import { STALL_WAIT_OPTIONS, stallWaitSec } from "@/lib/player/stall-wait";
+import { STALL_WAIT_OPTIONS, stallWaitSec } from "@/features/player/engine/stall-wait";
 import { SettingGroup, SettingRow } from "../kit";
 import { RowDesc, RowTitle, Segmented, ToggleRow, useRegisterRowTitle } from "../shared";
 import { Dropdown } from "@/components/dropdown";
@@ -194,7 +193,7 @@ export function PlayModePanel() {
           value={settings.torrentFullDownload}
           onChange={(v) => update({ torrentFullDownload: v })}
         />
-        {!isAndroid() && <PlaybackCacheFolder />}
+        <PlaybackCacheFolder />
       </SettingGroup>
     </div>
   );

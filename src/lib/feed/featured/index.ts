@@ -1,6 +1,6 @@
 import { topMovies, type Meta } from "@/lib/cinemeta";
 import type { Settings } from "@/lib/settings";
-import { getStore } from "@/lib/discover/store";
+import { getStore } from "@/features/discovery/discover/store";
 import { buildExclusionSets, isExcluded, warmCandidateIds } from "../exclude";
 import { getVoteEntries } from "../preferences";
 import { diversify } from "./diversify";

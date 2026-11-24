@@ -49,8 +49,7 @@ function servePublicMediapipe() {
   };
 }
 
-export default defineConfig(({ mode }) => {
-  const android = mode === "android" || process.env.HARBOR_TARGET === "android";
+export default defineConfig(() => {
   const devHost = process.env.TAURI_DEV_HOST;
   return {
     fmt,
@@ -72,25 +71,6 @@ export default defineConfig(({ mode }) => {
       ),
       __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
     },
-    // Both entries ship. index-tv.html is what the TV window loads; index.html
-    // exists only so web_server.rs has a page to hand the phone for /remote,
-    // which the QR hand-off in onboarding depends on. Listing tv alone left the
-    // phone staring at "web assets are not available in this build".
-    // Vite 7 defaults to baseline-widely-available, a chrome107 floor. Android
-    // TV sticks and Fire TV ship a System WebView well below that, and the
-    // failure is a bare SyntaxError before React mounts, with no error surface
-    // on a device you cannot open devtools on. Pin a floor the hardware meets.
-    // This lowers syntax only; esbuild adds no API polyfills.
-    ...(android
-      ? {
-          build: {
-            target: "chrome87",
-            rollupOptions: { input: { tv: "index-tv.html", main: "index.html" } },
-          },
-        }
-      : {
-          build: { rollupOptions: { input: { main: "index.html" } } },
-        }),
     server: {
       host: devHost || "127.0.0.1",
       port: 1420,
@@ -115,38 +95,22 @@ export default defineConfig(({ mode }) => {
       },
       proxy: Object.fromEntries(
         [
-          "mcp-api.op.gg",
-          "store.steampowered.com",
-          "api.steampowered.com",
-          "steamcommunity.com",
-          "partner.steamgames.com",
-          "help.steampowered.com",
-          "worldofwarcraft.blizzard.com",
-          "api.warframe.com",
           "www.youtube.com",
-          "www.pcgamingwiki.com",
-          "kick.com",
-          "prosettings.net",
-          "www.speedrun.com",
           "graphql.anilist.co",
           "api.trakt.tv",
           "myanimelist.net",
           "api.myanimelist.net",
           "caching.graphql.imdb.com",
-          "openlibrary.org",
-          "covers.openlibrary.org",
           "www.googleapis.com",
           "www.wikidata.org",
           "api.deepseek.com",
-          "api.igdb.com",
-          "id.twitch.tv",
           "raw.githubusercontent.com",
         ].map((host) => [
           `/api-proxy/${host}`,
           {
             target: `https://${host}`,
             changeOrigin: true,
-            ...(["www.youtube.com", "kick.com", "prosettings.net"].includes(host)
+            ...(host === "www.youtube.com"
               ? {
                   configure(proxy: HttpProxy.ProxyServer) {
                     proxy.on("proxyReq", (request) => {
@@ -164,34 +128,6 @@ export default defineConfig(({ mode }) => {
                   },
                 }
               : {}),
-            ...(host === "steamcommunity.com"
-              ? {
-                  configure(proxy: HttpProxy.ProxyServer) {
-                    proxy.on("proxyRes", (response, request) => {
-                      // Keep canonical achievement redirects (440 → TF2) inside the dev proxy.
-                      if (
-                        !/^\/stats\/[^/]+\/achievements\/?(?:\?|$)/.test(request.url ?? "") ||
-                        !response.headers.location
-                      )
-                        return;
-                      try {
-                        const destination = new URL(
-                          response.headers.location,
-                          "https://steamcommunity.com",
-                        );
-                        if (
-                          destination.origin === "https://steamcommunity.com" &&
-                          /^\/stats\/[^/]+\/achievements\/?$/.test(destination.pathname)
-                        ) {
-                          response.headers.location = `/api-proxy/steamcommunity.com${destination.pathname}${destination.search}`;
-                        }
-                      } catch {
-                        /* Leave malformed or unrelated upstream redirects unchanged. */
-                      }
-                    });
-                  },
-                }
-              : {}),
             rewrite: (path: string) => path.replace(`/api-proxy/${host}`, ""),
           },
         ]),
@@ -203,13 +139,13 @@ export default defineConfig(({ mode }) => {
     assetsInclude: ["**/*.onnx", "**/*.tflite"],
     optimizeDeps: {
       // Scan only app entries, not the installer or local HTML previews.
-      entries: ["index.html", "index-tv.html"],
+      entries: ["index.html"],
       // Reached only from a lazy route's own lazy child, so the scanner does not find it from an
       // entry. Discovered at runtime instead, it answers the first request with a 504 and a reload
       // the error boundary swallows, which strands that route until the dep cache is rebuilt.
       include: ["qrcode"],
       exclude: ["onnxruntime-web", "@mediapipe/tasks-vision"],
     },
-    worker: { format: "es" },
+    worker: { format: "es" as const },
   };
 });

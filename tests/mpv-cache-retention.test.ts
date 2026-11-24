@@ -6,14 +6,14 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const at = (p: string) => new URL(`../${p}`, import.meta.url);
-const mpv = readFileSync(at("src-tauri/src/mpv.rs"), "utf8");
+const mpv = readFileSync(at("src-tauri/src/features/playback/mpv.rs"), "utf8");
 const prune = readFileSync(at("src-tauri/src/temp_prune.rs"), "utf8");
 const lib = readFileSync(at("src-tauri/src/lib.rs"), "utf8");
-const cache = readFileSync(at("src-tauri/src/playback_cache.rs"), "utf8");
+const cache = readFileSync(at("src-tauri/src/features/playback/cache.rs"), "utf8");
 
 test("mpv still writes its demuxer cache to a directory on disk", () => {
   assert.match(cache, /default_base\.join\("mpv-cache"\)/);
-  assert.match(mpv, /playback_cache::cache_dir\(&base, args\.cache_dir\.as_deref\(\)\)/);
+  assert.match(mpv, /features::playback::cache::cache_dir\(&base, args\.cache_dir\.as_deref\(\)\)/);
   assert.match(mpv, /set_property\("cache-on-disk", "yes"\)/);
 });
 

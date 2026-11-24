@@ -1,9 +1,9 @@
-import { COLLECTIONS_CATALOG, type CatalogCollection } from "@/lib/collections-catalog";
-import type { Collection, CollectionItem } from "@/lib/collections";
+import { COLLECTIONS_CATALOG, type CatalogCollection } from "@/features/collections/catalog";
+import type { Collection, CollectionItem } from "@/features/collections/store";
 import { fetchCommunityCollections, type CommunityCollection } from "@/lib/social/collections-sync";
 import { searchTvdbCollectionsOrNull } from "@/lib/providers/tvdb-collections";
 import { tmdbCollectionsFeed } from "@/lib/providers/tmdb";
-import type { CategoryHit } from "@/views/collections/use-category-feed";
+import type { CategoryHit } from "@/features/collections/views/collections/use-category-feed";
 import {
   BP_COLLECTIONS_ALL,
   BP_CURATED_NAMES,

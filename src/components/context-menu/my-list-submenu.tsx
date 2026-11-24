@@ -2,7 +2,7 @@ import { Check, ChevronRight, ListPlus, Plus } from "lucide-react";
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { sharedLists, type ListItemInput, type ListStore } from "@/lib/custom-lists";
-import { useInLocalWatchlist, useLocalWatchlist } from "@/lib/local-watchlist";
+import { useInLocalWatchlist, useLocalWatchlist } from "@/features/watchlist/local";
 import { useT } from "@/lib/i18n";
 import { emitListToast } from "@/components/lists/list-toast";
 import { CreateListModal } from "@/components/lists/create-list-modal";

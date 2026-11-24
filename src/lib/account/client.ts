@@ -1,7 +1,7 @@
 import { authenticatedFetch } from "./authenticated-fetch";
 import { captureSessionScope } from "@/lib/theme-auth";
 import { HARBOR_API_BASE } from "@/lib/config/endpoints";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 const API = `${HARBOR_API_BASE}/themes/api`;
 

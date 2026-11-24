@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { unzip } from "@/lib/unzip";
 
 export type AwardPack = {

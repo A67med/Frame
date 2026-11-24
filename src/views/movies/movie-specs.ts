@@ -1,6 +1,6 @@
 import { blackAndWhitePage } from "@/lib/black-and-white";
 import { type Meta } from "@/lib/cinemeta";
-import { recentlyPlayed, watchTitleKey } from "@/lib/playback-history";
+import { recentlyPlayed, watchTitleKey } from "@/features/player/history";
 import { fetchUnderNinety } from "@/lib/feed/sections";
 import { pickMoodSpecs } from "@/lib/feed/moods";
 import { MOVIE_GENRES } from "@/lib/feed/tags";

@@ -1,5 +1,5 @@
-import type { LocalEntry } from "@/lib/local-library";
-import { parseLocalEntry } from "@/lib/local-library/versions";
+import type { LocalEntry } from "@/features/library/local-library";
+import { parseLocalEntry } from "@/features/library/local-library/versions";
 import { formatBytes } from "@/lib/together/source-descriptor";
 import { FormatBadge, streamBadges, type BadgeSize } from "@/components/format-badge";
 

@@ -5,12 +5,12 @@ import test from "node:test";
 import {
   buildSubdlSearchUrl,
   searchSubdl,
-} from "../src/lib/subtitles/autosync/sub-source-subdl.ts";
+} from "../src/features/subtitles/autosync/sub-source-subdl.ts";
 import {
   buildSubsourceMovieSearchUrl,
   searchSubsource,
-} from "../src/lib/subtitles/autosync/sub-source-subsource.ts";
-import { rateLimitDelaySeconds } from "../src/lib/subtitles/autosync/sub-source-contract.ts";
+} from "../src/features/subtitles/autosync/sub-source-subsource.ts";
+import { rateLimitDelaySeconds } from "../src/features/subtitles/autosync/sub-source-contract.ts";
 
 const providerContext = {
   userAgent: "Frame-Test",

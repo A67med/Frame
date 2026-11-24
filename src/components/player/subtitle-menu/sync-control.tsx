@@ -3,7 +3,7 @@ import { UiIcon } from "@/components/ui-icon";
 import { useEffect, useRef, useState } from "react";
 import { useAutoSyncHandle } from "@/components/player/autosync/autosync-store";
 import { useT } from "@/lib/i18n";
-import { openSyncBar } from "@/lib/player/sub-sync";
+import { openSyncBar } from "@/features/player/engine/sub-sync";
 
 type Props = {
   canAutoSync: boolean;

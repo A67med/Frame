@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ArrowBigUp, Delete, Space, X } from "lucide-react";
-import { isAndroid } from "@/lib/platform";
 import { SFX } from "@/lib/sfx";
 import { useBpT } from "../bp-i18n";
 
@@ -85,13 +84,8 @@ export function BpOnboardKeyboard({
   onClear: () => void;
 }) {
   const [layer, setLayer] = useState<Layer>("lower");
-  // Above the guard, never below it. isAndroid() is constant for the process so
-  // the hook count was stable by accident, and the first hook added over this
-  // return, or any gate that becomes dynamic, turns it into a hard crash on the
-  // two screens the user is mid-typing on.
   const t = useBpT();
 
-  if (isAndroid()) return null;
   const rows = layer === "symbols" ? SYMBOLS : layer === "upper" ? UPPER : LOWER;
   const shifted = layer === "upper";
 

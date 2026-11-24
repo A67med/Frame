@@ -6,7 +6,7 @@ import {
   bufferSizeFor,
   formatBufferMemory,
   type BufferSizeId,
-} from "@/lib/player/buffer-profile";
+} from "@/features/player/engine/buffer-profile";
 import { Section, Segmented } from "../shared";
 import { SettingRow } from "../kit";
 

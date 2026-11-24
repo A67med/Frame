@@ -1,7 +1,7 @@
 import { useT } from "@/lib/i18n";
 import { shelfLists } from "@/lib/curated/registry";
 import type { CuratedList } from "@/lib/curated/types";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { Row } from "./row";
 import { curatedListLogos } from "./curated-list-logos";
 

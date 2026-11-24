@@ -9,7 +9,7 @@ import {
 } from "react";
 import { useT } from "@/lib/i18n";
 import type { ActionFeedback } from "@/components/player/action-indicator";
-import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/features/player/engine/bridge";
 import { useClipRecorder } from "./use-clip-recorder";
 import { useFrameGrab } from "./use-frame-grab";
 import { useGifRecorder } from "./use-gif-recorder";

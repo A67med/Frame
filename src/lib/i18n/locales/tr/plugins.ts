@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Uzantılar",
-  Repositories: "Depolar",
+  "Plugins": "Uzantılar",
+  "Repositories": "Depolar",
   "Installed plugins": "Yüklü uzantılar",
   "Plugin repositories": "Uzantı depoları",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -29,8 +29,8 @@ const plugins: Record<string, string> = {
     "Bir depo ekleyin, sonra istediğiniz sağlayıcıları yükleyin. Burada görünürler.",
   "Add a repository": "Depo ekle",
   "Movies and series": "Filmler ve diziler",
-  Script: "Betik",
-  Verified: "Doğrulandı",
+  "Script": "Betik",
+  "Verified": "Doğrulandı",
   "v{version} available": "v{version} mevcut",
   "Paused after {n} failures. Turn it back on to try again.":
     "{n} hatadan sonra duraklatıldı. Yeniden denemek için tekrar açın.",
@@ -52,7 +52,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "{repo} deposundan v{version}, {when} yüklendi.",
   "Update to v{version}": "v{version} sürümüne güncelle",
   "Revert to v{version}": "v{version} sürümüne geri dön",
-  Reaches: "Eriştiği alan adları",
+  "Reaches": "Eriştiği alan adları",
   "Any public website. This plugin did not say which sites it uses.":
     "Herhangi bir herkese açık site. Bu uzantı hangi siteleri kullandığını belirtmedi.",
   "Seen so far: {hosts}": "Şimdiye kadar görülenler: {hosts}",
@@ -101,7 +101,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "{count} uzantı kaldırılıp silinsin mi?",
   "Could not reach this repository. Installed plugins keep working.":
     "Bu depoya ulaşılamadı. Yüklü uzantılar çalışmaya devam eder.",
-  "This repository lists no plugins.": "Bu depo hiç uzantı listelemiyor.",
   "This repository is not for stream plugins.": "Bu depo yayın uzantıları için değil.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "Yayın uzantısı değil: getStreams veya streams işlevi dışa aktarmıyor.",

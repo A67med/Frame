@@ -1,5 +1,5 @@
 import { SlidersHorizontal } from "../icons";
-import type { ShaderCatalogEntry } from "@/lib/player/shader-catalog";
+import type { ShaderCatalogEntry } from "@/features/player/engine/shader-catalog";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { Segmented, ToggleRow } from "../shared";

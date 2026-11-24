@@ -5,7 +5,10 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
 
-const lib = readFileSync(new URL("../src-tauri/src/lib.rs", import.meta.url), "utf8");
+const lib = readFileSync(
+  new URL("../src-tauri/src/platform/windows/main_window.rs", import.meta.url),
+  "utf8",
+);
 const guard = lib.slice(
   lib.indexOf('unsafe extern "system" fn maxguard_subclass_proc('),
   lib.indexOf("fn install_maximize_guard("),

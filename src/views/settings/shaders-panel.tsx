@@ -3,7 +3,7 @@ import { Info } from "./icons";
 import { useEffect, useState } from "react";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { SHADER_CATALOG } from "@/lib/player/shader-catalog";
+import { SHADER_CATALOG } from "@/features/player/engine/shader-catalog";
 import { shaderDir } from "@/lib/shaders";
 import { Section, ToggleRow } from "./shared";
 import { SettingGroup } from "./kit";

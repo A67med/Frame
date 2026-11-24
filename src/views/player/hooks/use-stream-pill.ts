@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
 
 export type StreamPillVariant = "check" | "stalled" | "failed";
 

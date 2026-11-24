@@ -10,7 +10,7 @@ import { SPOILER_TEXT_CLASS, SPOILER_THUMB_CLASS, type SpoilerMask } from "@/lib
 import { animeSeasonKey } from "./anime-season-key";
 import { parseKitsuId } from "@/lib/providers/kitsu";
 import { splitFranchiseDisplaySeason } from "@/lib/streams/anime-identity-core";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { FillerBadge, UpcomingBadge } from "../badges";
 import { EpisodeRatingBadge } from "../episode-rating-badge";

@@ -7,7 +7,7 @@ import { listPager } from "@/lib/list-pager";
 import { useCollectionRowsForPage } from "@/lib/page-collection-rows";
 import { applyPageRows, loadPageRows } from "@/lib/page-rows";
 import { CATALOG_REQUEST_TIMEOUT_MS, upsertOrdered, withTimeout } from "@/lib/progressive-rows";
-import { recentlyPlayed } from "@/lib/playback-history";
+import { recentlyPlayed } from "@/features/player/history";
 import { useSettings } from "@/lib/settings";
 import { useBpTop10Feed } from "./bp-top10-feed";
 import { buildShowHero } from "@/views/shows/hero-curation";

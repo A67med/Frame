@@ -7,7 +7,7 @@ import test from "node:test";
 import ar from "../src/lib/i18n/locales/ar.ts";
 import pt from "../src/lib/i18n/locales/pt.ts";
 import ru from "../src/lib/i18n/locales/ru.ts";
-import { subtitleClassificationLabels } from "../src/lib/subtitles/classification-labels.ts";
+import { subtitleClassificationLabels } from "../src/features/subtitles/classification-labels.ts";
 
 const allFlags = {
   hearingImpaired: true,

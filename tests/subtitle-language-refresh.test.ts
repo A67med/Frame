@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
 import { mpvBridgeHarness } from "./helpers/mpv-bridge-harness.ts";
-import { filterTracksByPreferredLanguage } from "../src/lib/subtitles/language.ts";
-import { subtitleTrackLanguageLabel } from "../src/lib/subtitles/track-label.ts";
+import { filterTracksByPreferredLanguage } from "../src/features/subtitles/language.ts";
+import { subtitleTrackLanguageLabel } from "../src/features/subtitles/track-label.ts";
 
 for (const nativeLang of [undefined, "und", "en"]) {
   test(`Arabic download keeps its language when native metadata is ${nativeLang}`, async () => {

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useProfiles } from "./profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useSettings, type ContentFilters } from "./settings";
 import { useTogether } from "./together/provider";
 

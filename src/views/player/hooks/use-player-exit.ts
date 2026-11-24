@@ -5,14 +5,14 @@ import {
   readPlayback,
   savePlayback,
   streamMatchesEntry,
-} from "@/lib/playback-history";
-import type { PlayerBridge } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
+} from "@/features/player/history";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
 import { saveResumeMs } from "@/lib/resume";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { exitWindowFullscreenOnPlayerClose } from "@/lib/fullscreen-state";
 import type { PartialSyncState } from "@/lib/together/provider";
-import { useView, type PlayerSrc, type PlayerStreamRef } from "@/lib/view";
+import { useView, type PlayerSrc, type PlayerStreamRef } from "@/app/navigation/view";
 import { MAX_AUTORETRY_ATTEMPTS } from "../player-utils";
 
 const REMEMBER_MIN_SEC = 30;

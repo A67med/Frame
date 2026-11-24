@@ -41,7 +41,7 @@ test("imported and alternate themes keep their authored layout without rewriting
     const { useCinematicDesktop } = load("lib/use-cinematic-desktop.ts", {
       "./theme": { activeLayout },
       "./settings": { useSettings: () => ({ settings }) },
-      "./profiles": { useActiveKid: () => null },
+      "@/features/profiles/profiles": { useActiveKid: () => null },
       "./theme-preview": { useThemePreview: () => null },
     });
     assert.equal(useCinematicDesktop(), enabled, preset);
@@ -60,7 +60,7 @@ test("preview layout is authoritative and child profiles retain their own interf
     const { useCinematicDesktop } = load("lib/use-cinematic-desktop.ts", {
       "./theme": { activeLayout },
       "./settings": { useSettings: () => ({ settings: { theme: { preset: "frame" } } }) },
-      "./profiles": { useActiveKid: () => kid },
+      "@/features/profiles/profiles": { useActiveKid: () => kid },
       "./theme-preview": { useThemePreview: () => preview },
     });
     assert.equal(useCinematicDesktop(), enabled);
@@ -79,7 +79,7 @@ test("history controls follow the existing stack capabilities and delegate navig
     "react/jsx-runtime": jsx,
     "lucide-react": { ArrowLeft: "svg", ArrowRight: "svg" },
     "@/lib/i18n": { useT: () => (key: string) => `translated:${key}` },
-    "@/lib/view": { useView: () => state },
+    "@/app/navigation/view": { useView: () => state },
   });
   const [back, forward] = HistoryControls().props.children;
   assert.equal(back.props.disabled, true);

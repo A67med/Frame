@@ -37,15 +37,15 @@ test("native Base64 fetch preserves bytes and forwards native policy limits", as
         };
       },
     },
-    "./privacy/blocklist": { isBlockedUrl: () => false },
-    "./fetch-bridge-stats": load("src/lib/fetch-bridge-stats.ts"),
-    "./subtitles/provider-url": {
+    "../../lib/privacy/blocklist": { isBlockedUrl: () => false },
+    "../../lib/fetch-bridge-stats": load("src/lib/fetch-bridge-stats.ts"),
+    "../../features/subtitles/provider-url": {
       SUBTITLE_PUBLIC_NETWORK_HEADER: "x-public-only",
       isSafeProviderSubtitleUrl: (url) => !url.includes("127.0.0.1"),
     },
   };
   const { safeFetchBase64 } = load(
-    "src/lib/safe-fetch.ts",
+    "src/infrastructure/networking/safe-fetch.ts",
     {
       window: { __TAURI_INTERNALS__: {} },
       atob: () => {
@@ -77,10 +77,11 @@ test("native Base64 fetch preserves bytes and forwards native policy limits", as
   );
   assert.equal(calls.length, 1);
   assert.equal(
-    load("src/lib/safe-fetch.ts", { window: {} }, dependencies).safeFetchBase64(
-      "https://example.com",
-      {},
-    ),
+    load(
+      "src/infrastructure/networking/safe-fetch.ts",
+      { window: {} },
+      dependencies,
+    ).safeFetchBase64("https://example.com", {}),
     null,
   );
 });
@@ -88,7 +89,7 @@ test("native Base64 fetch preserves bytes and forwards native policy limits", as
 test("plugin list identity ignores runtime health but changes with configuration", () => {
   const plugin = { id: "test", hash: "v1", enabled: true, listed: true, settingsValues: {} };
   const { pluginListKey } = load(
-    "src/lib/streams/plugins/addon.ts",
+    "src/features/addons/streams/addon.ts",
     {},
     {
       "./store": { installedStreamPluginsSync: () => [plugin] },
@@ -219,7 +220,7 @@ test("Lottie waits for loaded frames, pauses offscreen, and cleans up", () => {
 });
 
 test("plugin HTTP slots are handed to queued work before new arrivals", async () => {
-  const { PluginWorker } = load("src/lib/manga/plugins/worker-host.ts");
+  const { PluginWorker } = load("src/features/addons/runtime/worker-host.ts");
   const worker = new PluginWorker({}, {});
   await Promise.all(Array.from({ length: 6 }, () => worker.acquireHttp()));
   let admitted = 0;
@@ -237,7 +238,7 @@ test("plugin HTTP slots are handed to queued work before new arrivals", async ()
 });
 
 test("global plugin HTTP cap remains 16 across workers and queued arrivals", async () => {
-  const { PluginWorker } = load("src/lib/manga/plugins/worker-host.ts");
+  const { PluginWorker } = load("src/features/addons/runtime/worker-host.ts");
   const workers = Array.from({ length: 18 }, () => new PluginWorker({}, {}));
   await Promise.all(workers.slice(0, 16).map((w) => w.acquireHttp()));
   let admitted = 0;

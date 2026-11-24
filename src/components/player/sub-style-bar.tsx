@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { useEffect } from "react";
 import { useSettings } from "@/lib/settings";
-import { closeStyleBar, useStyleBarOpen } from "@/lib/player/sub-presets";
+import { closeStyleBar, useStyleBarOpen } from "@/features/player/engine/sub-presets";
 import { useT } from "@/lib/i18n";
 import { BoldToggle, ColorRow, FontMenu, SizeStepper } from "./sub-style-bar/controls";
 import { AdvancedMenu } from "./sub-style-bar/advanced-menu";

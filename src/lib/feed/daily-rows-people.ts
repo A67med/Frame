@@ -1,5 +1,5 @@
-import { topEntries } from "@/lib/discover/affinity";
-import type { Affinity } from "@/lib/discover/types";
+import { topEntries } from "@/features/discovery/discover/affinity";
+import type { Affinity } from "@/features/discovery/discover/types";
 import { relax, type CatalogEntry, type ExpandedRow } from "./daily-rows-types";
 
 const personCache = new Map<number, string>();

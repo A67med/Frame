@@ -4,23 +4,26 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { PreparedSubtitleCleanupRegistry } from "../src/lib/player/prepared-subtitle-cleanups.ts";
-import { SubtitleSelectionCoordinator } from "../src/lib/player/subtitle-selection.ts";
+import { PreparedSubtitleCleanupRegistry } from "../src/features/player/engine/prepared-subtitle-cleanups.ts";
+import { SubtitleSelectionCoordinator } from "../src/features/player/engine/subtitle-selection.ts";
 import {
   SubtitleAutoloadRunCoordinator,
   subtitleAutoloadLateSelectionAllowed,
   subtitleAutoloadSelectionLeaseValid,
-} from "../src/lib/subtitles/autoload-run.ts";
-import { PreparedSubtitleSeedBatch } from "../src/lib/subtitles/seed-batch.ts";
-import { automaticAutoSyncMayStart } from "../src/lib/subtitles/autosync/preflight-gate.ts";
+} from "../src/features/subtitles/autoload-run.ts";
+import { PreparedSubtitleSeedBatch } from "../src/features/subtitles/seed-batch.ts";
+import { automaticAutoSyncMayStart } from "../src/features/subtitles/autosync/preflight-gate.ts";
 import {
   pickDesiredSubtitleTrack,
   subtitleAutoSelectionSignature,
-} from "../src/lib/subtitles/track-selection.ts";
+} from "../src/features/subtitles/track-selection.ts";
 
-const mpvSource = readFileSync(new URL("../src/lib/player/mpv.ts", import.meta.url), "utf8");
+const mpvSource = readFileSync(
+  new URL("../src/features/player/engine/mpv.ts", import.meta.url),
+  "utf8",
+);
 const html5Source = readFileSync(
-  new URL("../src/lib/player/html5/bridge.ts", import.meta.url),
+  new URL("../src/features/player/engine/html5/bridge.ts", import.meta.url),
   "utf8",
 );
 const autoloadSource = readFileSync(
@@ -40,7 +43,7 @@ const mediaServerPlaybackSource = readFileSync(
   "utf8",
 );
 const mediaServerLibrarySource = readFileSync(
-  new URL("../src/views/library/media-servers-tab.tsx", import.meta.url),
+  new URL("../src/features/library/views/library/media-servers-tab.tsx", import.meta.url),
   "utf8",
 );
 

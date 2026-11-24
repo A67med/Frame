@@ -1,6 +1,6 @@
 import { normalizeThemeDesign } from "./theme-design";
+import { FONT_PAIRS } from "@/features/themes/fonts";
 import {
-  FONT_PAIRS,
   type ChromeConfig,
   type ChromeNavId,
   type FontPairId,

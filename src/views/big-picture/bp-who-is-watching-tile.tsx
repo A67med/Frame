@@ -1,6 +1,6 @@
 import { Lock } from "lucide-react";
 import { useEffect, useState, type CSSProperties } from "react";
-import { profileInitials, type Profile } from "@/lib/profiles";
+import { profileInitials, type Profile } from "@/features/profiles/profiles";
 import { useBpT } from "./bp-i18n";
 
 export type BpWhoTileState = "idle" | "chosen" | "dimmed";

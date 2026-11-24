@@ -12,7 +12,7 @@ const catalog13: Record<string, string> = {
   "Subtitle timing": "Synchronizacja napisów",
   "Subtitle track": "Ścieżka napisów",
   "Subtitle {number}": "Napisy {number}",
-  Subtitles: "Napisy",
+  "Subtitles": "Napisy",
   "Subtitles already aligned": "Napisy są już zsynchronizowane",
   "Subtitles appear early": "Napisy pojawiają się za wcześnie",
   "Subtitles appear late": "Napisy pojawiają się za późno",
@@ -35,35 +35,34 @@ const catalog13: Record<string, string> = {
   "Subtle text": "Dyskretny tekst",
   "Suggest a source": "Zaproponuj źródło",
   "Suggest another": "Zaproponuj inne",
-  Suggested: "Sugerowane",
+  "Suggested": "Sugerowane",
   "Suggestion sent": "Sugestia została wysłana",
-  Summary: "Podsumowanie",
+  "Summary": "Podsumowanie",
   "Summary needs at least 6 characters": "Podsumowanie musi mieć co najmniej 6 znaków",
   "Summer Blockbusters": "Letnie hity kinowe",
-  Sun: "niedz.",
-  Sundown: "O zachodzie słońca",
-  Superheroes: "Superbohaterowie",
-  Supernatural: "Nadprzyrodzone",
+  "Sun": "niedz.",
+  "Sundown": "O zachodzie słońca",
+  "Superheroes": "Superbohaterowie",
+  "Supernatural": "Nadprzyrodzone",
   "Superstar!": "Rewelacja!",
   "Support ElfHosted or Stremio, or give to any charity below, and the badge lands on your profile.":
     "Wesprzyj ElfHosted lub Stremio albo dowolną organizację charytatywną poniżej, a odznaka pojawi się na Twoim profilu.",
   "Support Frame": "Wesprzyj Frame",
   "Support Stremio": "Wesprzyj Stremio",
-  Supporting: "Postać drugoplanowa",
-  Sure: "Jasne",
+  "Supporting": "Postać drugoplanowa",
+  "Sure": "Jasne",
   "Sure?": "Na pewno?",
-  Surface: "Powierzchnia",
-  Surfaces: "Powierzchnie",
+  "Surface": "Powierzchnia",
+  "Surfaces": "Powierzchnie",
   "Surprise me": "Zaskocz mnie",
-  Suspense: "Napięcie",
+  "Suspense": "Napięcie",
   "Suspicious file": "Podejrzany plik",
-  "Suwayomi / Tachidesk walkthrough": "Instrukcja Suwayomi / Tachidesk",
   "Swap in Better Posters, PostersPlus, or your own URL template.":
     "Zastąp je plakatami Better Posters, PostersPlus lub własnym szablonem URL.",
   "Swapping configuration": "Zmienianie konfiguracji",
-  Swedish: "szwedzki",
+  "Swedish": "szwedzki",
   "Swedish Films": "Szwedzkie filmy",
-  Switch: "Zmienna",
+  "Switch": "Zmienna",
   "Switch Frame to {language}?": "Przełączyć Frame na język {language}?",
   "Switch profile": "Zmień profil",
   "Switch source": "Zmień źródło",
@@ -81,9 +80,9 @@ const catalog13: Record<string, string> = {
   "Switch to {name}": "Zmień na {name}",
   "Switch to {name}: {why}": "Zmień na {name}: {why}",
   "Sword & Sorcery": "Magia i miecz",
-  Symbols: "Symbole",
-  Symptom: "Objaw",
-  Sync: "Synchronizuj",
+  "Symbols": "Symbole",
+  "Symptom": "Objaw",
+  "Sync": "Synchronizuj",
   "Sync Offset": "Przesunięcie synchronizacji",
   "Sync across your devices": "Synchronizuj między urządzeniami",
   "Sync and track movies, shows, and anime across everything you use. Frame marks what you finish as watched on Simkl and keeps your plan-to-watch list in step. Free at simkl.com.":
@@ -110,7 +109,7 @@ const catalog13: Record<string, string> = {
   "Sync your profile, themes, lists and friends. You can do this any time.":
     "Synchronizuj swój profil, motywy, listy i znajomych. Możesz to zrobić w dowolnym momencie.",
   "Sync, themes and friends": "Synchronizacja, motywy i znajomi",
-  Synced: "Zsynchronizowano",
+  "Synced": "Zsynchronizowano",
   "Synced addons": "Zsynchronizowane dodatki",
   "Synced to AniList": "Zsynchronizowano z AniList",
   "Synced to MyAnimeList": "Zsynchronizowano z MyAnimeList",
@@ -126,8 +125,8 @@ const catalog13: Record<string, string> = {
   "Syncs to your {services}": "Synchronizacja z: {services}",
   "Syncs your profile, themes, lists and friends. Optional, and you can do it later.":
     "Synchronizuje Twój profil, motywy, listy i znajomych. Jest to opcjonalne i można to zrobić później.",
-  Synopsis: "Streszczenie",
-  System: "Systemowy",
+  "Synopsis": "Streszczenie",
+  "System": "Systemowy",
   "System UI": "Interfejs systemowy",
   "System default": "Domyślne ustawienie systemu",
   "System tray": "Zasobnik systemowy",
@@ -138,7 +137,7 @@ const catalog13: Record<string, string> = {
   "S{s} E{e} is out now": "S{s} E{e} jest już dostępny",
   "S{s} · E{e}": "S{s} · O{e}",
   "TAAF (detail logo)": "TAAF (logo w widoku szczegółów)",
-  TBD: "Do ustalenia",
+  "TBD": "Do ustalenia",
   "THEN notify on": "NASTĘPNIE powiadom przez",
   "TMDB API key": "Klucz API TMDB",
   "TMDB API key (v3)": "Klucz API TMDB (v3)",
@@ -171,9 +170,9 @@ const catalog13: Record<string, string> = {
   "TMDB powers the firehose of every release this month. The free tier covers it. About 60 seconds to set up. Switch to My Library if you'd rather only see what you've saved.":
     "TMDB zapewnia pełny strumień wszystkich premier w tym miesiącu. Wystarczy bezpłatny plan, a konfiguracja zajmuje około 60 sekund. Jeśli wolisz widzieć tylko zapisane materiały, przełącz na Moją bibliotekę.",
   "TMDB · catalogs and rails": "TMDB · katalogi i rzędy",
-  TRACKS: "ŚCIEŻKI",
+  "TRACKS": "ŚCIEŻKI",
   "TTF, OTF, WOFF or WOFF2": "TTF, OTF, WOFF lub WOFF2",
-  TV: "TV",
+  "TV": "TV",
   "TV Genre": "Gatunek TV",
   "TV Guide": "Program TV",
   "TV Series": "Serial telewizyjny",
@@ -191,24 +190,24 @@ const catalog13: Record<string, string> = {
     "Karty seriali z szerokimi grafikami i logo. Plakat to klasyczna siatka.",
   "TV uses wide rounded cards with the logo on the art, like a TV home screen. Poster is the classic grid.":
     "Widok TV używa szerokich, zaokrąglonych kart z logo na grafice, jak na ekranie głównym telewizora. Widok plakatu to klasyczna siatka.",
-  TVDB: "TVDB",
+  "TVDB": "TVDB",
   "TVDB list": "Lista TVDB",
   "TVDB lists are unavailable right now.": "Listy TVDB są teraz niedostępne.",
   "TVDB order": "Kolejność TVDB",
   "Tackle %": "Skuteczność odbiorów",
-  Tackles: "Odbiory",
+  "Tackles": "Odbiory",
   "Tag limit reached": "Osiągnięto limit tagów",
-  Tagline: "Hasło",
-  Tags: "Tagi",
+  "Tagline": "Hasło",
+  "Tags": "Tagi",
   "Tailwind utility shortcuts": "Skróty klas narzędziowych Tailwind",
-  Taiwanese: "Tajwańskie",
+  "Taiwanese": "Tajwańskie",
   "Take me back": "Wróć",
   "Take the short API Key at the very bottom, not the long API Read Access Token above it.":
     "Skopiuj krótki klucz API na samym dole, a nie znajdujący się wyżej długi API Read Access Token.",
-  Taken: "Zajęty",
+  "Taken": "Zajęty",
   "Takes about 10 seconds.": "Zajmuje to około 10 sekund.",
-  Tamil: "tamilski",
-  Tap: "Naciśnij",
+  "Tamil": "tamilski",
+  "Tap": "Naciśnij",
   "Tap a line to jump there, then nudge until the subtitles match what you hear.":
     "Stuknij wiersz, aby przejść do tego miejsca, a następnie dostosuj przesunięcie, aż napisy będą zgodne z tym, co słyszysz.",
   "Tap a line, then nudge": "Stuknij wiersz, a następnie dostosuj przesunięcie",
@@ -233,22 +232,19 @@ const catalog13: Record<string, string> = {
     "Wybierz gatunki, których chcesz widzieć więcej. Wpływają one na sekcję Najlepsze propozycje u góry tej strony.",
   "Tap the heart on any movie, show, manga, or character to save it here.":
     "Stuknij serce przy dowolnym filmie, serialu, mandze lub postaci, aby zapisać je tutaj.",
-  "Tap the page to bookmark": "Dotknij strony, aby dodać zakładkę",
-  "Tap the star on any manga to save it here.":
-    "Dotknij gwiazdki przy dowolnej mandze, aby ją tutaj zapisać.",
   "Tap the star on any movie, show, or manga, or the heart on a character, to save it here.":
     "Dotknij gwiazdki przy dowolnym filmie, serialu lub mandze albo serca przy postaci, aby zapisać je tutaj.",
   "Tap to switch": "Dotknij, aby przełączyć",
   "Tap to switch. The pencil renames, recolors, or adds a PIN.":
     "Dotknij, aby przełączyć. Ołówek pozwala zmienić nazwę lub kolor albo dodać kod PIN.",
   "Tarantino Picks": "Wybór Tarantino",
-  Taste: "Gust",
+  "Taste": "Gust",
   "Team Turnovers": "Straty drużyny",
   "Technical Fouls": "Faule techniczne",
   "Technical detail": "Szczegóły techniczne",
   "Technical details": "Szczegóły techniczne",
   "Technical. IBM's open family.": "Techniczny. Otwarta rodzina krojów IBM.",
-  Telecine: "Telecine",
+  "Telecine": "Telecine",
   "Telecine Print": "Kopia telecine",
   "Telegram bot": "Bot Telegrama",
   "Telegram sends through a bot you create. You need two things: a":
@@ -258,13 +254,13 @@ const catalog13: Record<string, string> = {
   "Television's finest": "Najlepsze produkcje telewizyjne",
   "Tell people what changed in this version. Reviewers see it too.":
     "Opisz zmiany w tej wersji. Osoby weryfikujące również zobaczą ten opis.",
-  Template: "Szablon",
+  "Template": "Szablon",
   "Temporary files": "Pliki tymczasowe",
   "Ten minutes of head start. Built for spotty Wi-Fi or a far-away server, at the cost of a longer wait before playback begins.":
     "Dziesięć minut zapasu danych. Rozwiązanie z myślą o niestabilnej sieci Wi-Fi lub odległym serwerze, kosztem dłuższego oczekiwania na rozpoczęcie odtwarzania.",
   "Tennis tournaments": "Turnieje tenisowe",
   "Tense Performances": "Trzymające w napięciu kreacje",
-  Test: "Test",
+  "Test": "Test",
   "Test badge rules (Try it)": "Przetestuj reguły odznak (Wypróbuj)",
   "Test connection": "Testuj połączenie",
   "Test controller": "Testuj kontroler",
@@ -275,9 +271,9 @@ const catalog13: Record<string, string> = {
   "Test relay connection": "Testuj połączenie z przekaźnikiem",
   "Test remote server connection": "Testuj połączenie ze zdalnym serwerem",
   "Test this voice": "Wypróbuj ten głos",
-  Testing: "Testowa",
+  "Testing": "Testowa",
   "Testing…": "Testowanie…",
-  Text: "Tekst",
+  "Text": "Tekst",
   "Text Sync": "Synchronizacja tekstu",
   "Text color": "Kolor tekstu",
   "Text colour": "Kolor tekstu",
@@ -286,8 +282,8 @@ const catalog13: Record<string, string> = {
   "Text sync unavailable for embedded tracks":
     "Synchronizacja na podstawie tekstu jest niedostępna dla osadzonych ścieżek",
   "Text-based sync": "Synchronizacja na podstawie tekstu",
-  Thai: "tajski",
-  Thanks: "Dziękujemy",
+  "Thai": "tajski",
+  "Thanks": "Dziękujemy",
   "Thanks for sharing. It'll appear in the library once it's approved. You can manage it any time from your uploads.":
     "Dziękujemy za udostępnienie. Po zatwierdzeniu motyw pojawi się w bibliotece. Możesz nim zarządzać w dowolnym momencie w sekcji przesłanych materiałów.",
   "Thanks! This helps us know the betas are heading the right way.":
@@ -301,10 +297,6 @@ const catalog13: Record<string, string> = {
   "That code has expired": "Ten kod wygasł",
   "That code is no longer valid. Look at your TV for a new one.":
     "Ten kod nie jest już ważny. Sprawdź nowy kod na telewizorze.",
-  "That config is not valid. Check baseUrl, popularPath, list, chapters, and pages.":
-    "Ta konfiguracja jest nieprawidłowa. Sprawdź baseUrl, popularPath, list, chapters i pages.",
-  "That config is not valid. It needs baseUrl, popularPath, list (item + link), chapters (item + link), and pages (image).":
-    "Ta konfiguracja jest nieprawidłowa. Wymaga baseUrl, popularPath, list (item + link), chapters (item + link) i pages (image).",
   "That custom url is not available.": "Ten niestandardowy adres URL jest niedostępny.",
   "That did not work. Check your details.": "Nie udało się. Sprawdź podane dane.",
   "That does not look like a Spotify link.": "To nie wygląda na link Spotify.",
@@ -329,13 +321,10 @@ const catalog13: Record<string, string> = {
   "That import did not go through. Try again.": "Import nie powiódł się. Spróbuj ponownie.",
   "That is a large correction ({n}%). One of the two points may be off, double-check them.":
     "To duża korekta ({n}%). Jeden z dwóch punktów może być nieprawidłowy, sprawdź je ponownie.",
-  "That is everything from this source.": "To wszystko z tego źródła.",
   "That is five. Deselect one to swap it out.":
     "To już pięć. Usuń zaznaczenie jednego elementu, aby go zastąpić.",
   "That is the whole trick. A file called {example} drops straight into the matching slot. The name before .png is all that matters, capitals and spaces are ignored.":
     "Na tym polega cała sztuczka. Plik o nazwie {example} trafia bezpośrednio do odpowiedniego miejsca. Liczy się tylko nazwa przed .png, wielkość liter i spacje są ignorowane.",
-  "That is unusual for a popular listing. It is likely a hiccup on their end.":
-    "To nietypowe dla listy popularnych tytułów. Prawdopodobnie to chwilowy problem po ich stronie.",
   "That list is private or doesn't exist. Public lists only.":
     "Ta lista jest prywatna albo nie istnieje. Obsługiwane są tylko listy publiczne.",
   "That looks like spam, try rephrasing": "To wygląda na spam, spróbuj sformułować to inaczej",
@@ -399,10 +388,6 @@ const catalog13: Record<string, string> = {
   "The addon didn't tell us anything about this file's resolution or source. It could be anything from 4K Blu-ray to a phone capture. Pick a labeled stream if one exists.":
     "Dodatek nie podał żadnych informacji o rozdzielczości ani źródle tego pliku. Może to być wszystko, od Blu-ray 4K po nagranie telefonem. Jeśli jest dostępny oznaczony strumień, wybierz go.",
   "The all-time greats": "Najlepsi wszech czasów",
-  "The anime adaptation covers ": "Adaptacja anime obejmuje ",
-  "The anime adaptation ends at this chapter": "Adaptacja anime kończy się na tym rozdziale",
-  "The anime adaptation runs through ": "Adaptacja anime obejmuje rozdziały do ",
-  "The anime adaptation starts at ": "Adaptacja anime zaczyna się od ",
   "The author submitted a new version that's in review. You're seeing the current published version until it's approved.":
     "Autor przesłał nową wersję, która jest sprawdzana. Do czasu jej zatwierdzenia widzisz obecnie opublikowaną wersję.",
   "The authorization code timed out before you finished. Try again.":
@@ -441,7 +426,6 @@ const catalog13: Record<string, string> = {
   "The free tier is $0 for personal use. Just pick the first option, no payment needed.":
     "Bezpłatny plan kosztuje $0 do użytku osobistego. Wystarczy wybrać pierwszą opcję, płatność nie jest wymagana.",
   "The generated audio could not be played": "Nie udało się odtworzyć wygenerowanego dźwięku",
-  "The highlighted tag shows its name and class.": "Wyróżniony tag pokazuje swoją nazwę i klasę.",
   "The home hero trailer plays with sound and a mute button in the corner, then shows a replay button when it ends. Auto-rotation pauses so it stays on the featured title.":
     "Zwiastun w wyróżnionej sekcji strony głównej jest odtwarzany z dźwiękiem i przyciskiem wyciszenia w rogu, a po zakończeniu pojawia się przycisk ponownego odtwarzania. Automatyczna rotacja zostaje wstrzymana, dzięki czemu wyróżniony tytuł pozostaje na ekranie.",
   "The host did not respond. The URL may have expired (many providers rotate domains), the server is down, or your network is blocking it. Contact your provider for an updated URL.":
@@ -543,8 +527,6 @@ const catalog13: Record<string, string> = {
     "Statek odpływa. Dziękujemy za oglądanie z Frame. Czas posłuchać dorosłych.",
   "The source responded but the stream would not open. Try a different one.":
     "Źródło odpowiedziało, ale nie udało się otworzyć strumienia. Spróbuj użyć innego.",
-  "The source returned a bad response for this manga. It may be temporary, or the title may have moved. Try another source, or head back and pick something else.":
-    "Źródło zwróciło nieprawidłową odpowiedź dla tej mangi. Problem może być tymczasowy albo tytuł mógł zostać przeniesiony. Wypróbuj inne źródło lub wróć i wybierz coś innego.",
   "The streaming engine is still starting up. Give it a moment and press Play again.":
     "Silnik strumieniowania nadal się uruchamia. Poczekaj chwilę i ponownie naciśnij Odtwórz.",
   "The streaming server didn't come back up.": "Serwer strumieniowania nie wrócił do działania.",
@@ -567,10 +549,10 @@ const catalog13: Record<string, string> = {
     "Ikona okna i paska zadań zostanie zaktualizowana od razu. Zainstalowany skrót odświeży się przy następnej aktualizacji.",
   "The yellow chip in the poster corner.": "Żółta etykieta w rogu plakatu.",
   "TheIntroDB · intro and credits timing": "TheIntroDB · czasy czołówek i napisów końcowych",
-  TheTVDB: "TheTVDB",
+  "TheTVDB": "TheTVDB",
   "TheTVDB · episode data": "TheTVDB · dane odcinków",
   "Theatrical Capture": "Nagranie kinowe",
-  Theme: "Motyw",
+  "Theme": "Motyw",
   "Theme & appearance": "Motyw i wygląd",
   "Theme API cheat sheet": "Ściągawka API motywów",
   "Theme Library": "Biblioteka motywów",
@@ -623,7 +605,7 @@ const catalog13: Record<string, string> = {
   "They said the harbour would be quiet tonight.":
     "Mówili, że port będzie dziś wieczorem spokojny.",
   "Thicker outline": "Grubszy obrys",
-  Thickness: "Grubość",
+  "Thickness": "Grubość",
   "Things you still do on the TV itself":
     "Czynności, które nadal wykonujesz bezpośrednio na telewizorze",
   "Thinner outline": "Cieńszy obrys",
@@ -645,8 +627,6 @@ const catalog13: Record<string, string> = {
   "This catalog came back empty. Try another one, or check the addon in Settings.":
     "Ten katalog jest pusty. Wypróbuj inny lub sprawdź dodatek w Ustawieniach.",
   "This channel isn't responding": "Ten kanał nie odpowiada",
-  "This chapter could not be loaded from this source.":
-    "Nie udało się załadować tego rozdziału z tego źródła.",
   "This chapter could not be loaded.": "Nie udało się wczytać tego rozdziału.",
   "This collection does not have any titles in it right now.":
     "Ta kolekcja nie zawiera obecnie żadnych tytułów.",
@@ -721,7 +701,6 @@ const catalog13: Record<string, string> = {
     "Ta aktualizacja zastępuje również wbudowane odtwarzacze i narzędzia Frame, dlatego jest instalowana przez Frame Setup. Frame zostanie zamknięty, instalator dokończy pracę, a następnie Frame otworzy się ponownie.",
   "This one installs through Frame Setup, but the update manifest carries no signature for it. Frame will not run an installer it cannot verify. Download it and run it yourself.":
     "Ta aktualizacja jest instalowana przez Frame Setup, ale jej manifest aktualizacji nie zawiera podpisu. Frame nie uruchomi instalatora, którego nie może zweryfikować. Pobierz go i uruchom samodzielnie.",
-  "This only takes a moment the first time.": "Za pierwszym razem zajmuje to tylko chwilę.",
   "This opens Frame to devices on your Wi-Fi. You can turn it off again in Settings.":
     "Pozwala to urządzeniom w Twojej sieci Wi-Fi łączyć się z Frame. Możesz ponownie wyłączyć tę funkcję w Ustawieniach.",
   "This order drives your catalog rows and the default stream order. A stream priority set in Settings overrides it for streams.":
@@ -740,13 +719,10 @@ const catalog13: Record<string, string> = {
     "Ta playlista nie zawiera seriali. Może obejmować tylko kanały na żywo albo korzystać z danych logowania Xtream, które udostępniają seriale osobno.",
   "This playlist hasn't been loaded yet, or it has no channels.":
     "Ta playlista nie została jeszcze wczytana lub nie zawiera kanałów.",
-  "This reads pages a browser can already load. It does not, and must not be made to, bypass a login, password, paywall, or any access control.":
-    "Ta funkcja odczytuje strony, które przeglądarka może już wczytać. Nie omija i nie może służyć do omijania logowania, hasła, blokady płatnego dostępu ani żadnej kontroli dostępu.",
   "This replaces your current Frame setup (theme, home layout, settings, addons, profiles, and more) with the {n} saved entries in this file. Your Stremio sign-in stays as is. Frame reloads when it finishes.":
     "Spowoduje to zastąpienie obecnej konfiguracji Frame (motywu, układu strony głównej, ustawień, dodatków, profili i innych danych) zapisanymi w tym pliku wpisami w liczbie {n}. Logowanie do Stremio pozostanie bez zmian. Po zakończeniu Frame uruchomi się ponownie.",
   "This repository lists no eBook extensions.":
     "To repozytorium nie zawiera żadnych rozszerzeń e-booków.",
-  "This repository lists no plugins.": "W tym repozytorium nie ma żadnych wtyczek.",
   "This score only appears on cards.": "Ta ocena pojawia się tylko na kartach.",
   "This screen stopped. Going back to Home usually clears it.":
     "Ten ekran przestał działać. Powrót do ekranu głównego zwykle rozwiązuje problem.",
@@ -765,7 +741,6 @@ const catalog13: Record<string, string> = {
     "Ta witryna może nie obsługiwać tymczasowej przeglądarki Frame. Spróbuj ponownie otworzyć oryginalny link lub otwórz go w przeglądarce.",
   "This source": "To źródło",
   "This source did not provide any chapters.": "To źródło nie udostępniło żadnych rozdziałów.",
-  "This source did not respond": "To źródło nie odpowiedziało",
   "This source didn't respond": "To źródło nie odpowiedziało",
   "This source is down": "To źródło nie działa",
   "This source is not a downloadable season package. Pick another package.":
@@ -778,7 +753,6 @@ const catalog13: Record<string, string> = {
   "This source rejected the stream": "To źródło odrzuciło strumień",
   "This source returned no chapters for this title.":
     "To źródło nie zwróciło żadnych rozdziałów dla tego tytułu.",
-  "This source returned nothing": "To źródło niczego nie zwróciło",
   "This source stays quiet until you add a key.":
     "To źródło pozostanie nieaktywne, dopóki nie dodasz klucza.",
   "This subtitle appears to be for a different cut. Try another match.":
@@ -790,7 +764,6 @@ const catalog13: Record<string, string> = {
   "This theme is missing a color ({color}).": "W tym motywie brakuje koloru ({color}).",
   "This theme is missing its colors.": "W tym motywie brakuje kolorów.",
   "This theme's preview colors look invalid.": "Kolory podglądu tego motywu są nieprawidłowe.",
-  "This title would not open": "Nie udało się otworzyć tego tytułu",
   "This trailer plays on YouTube.": "Ten zwiastun jest odtwarzany w YouTube.",
   "This user has chosen to keep activity private":
     "Ten użytkownik zachowuje swoją aktywność jako prywatną",
@@ -804,14 +777,14 @@ const catalog13: Record<string, string> = {
   "Three Point %": "Skuteczność rzutów za 3 punkty",
   "Three ways to add art": "Trzy sposoby dodawania grafik",
   "Three-Time Oscar": "Trzykrotny zdobywca Oscara",
-  Thrillers: "Thrillery",
-  Thu: "czw.",
+  "Thrillers": "Thrillery",
+  "Thu": "czw.",
   "Thumbs down hides this title from Featured. Thumbs up helps surface similar picks.":
     "Kciuk w dół ukrywa ten tytuł w sekcji Polecane. Kciuk w górę pomaga wyświetlać podobne propozycje.",
   "Ticking Clocks": "Tykanie zegara",
   "Tied to your account. Manage it in My themes.":
     "Powiązany z Twoim kontem. Możesz nim zarządzać w sekcji Moje motywy.",
-  Tight: "Wąski",
+  "Tight": "Wąski",
   "Tighter spacing": "Mniejsze odstępy",
   "Tiles horizontally; the bar's height crops it vertically. Animated GIFs up to 2 MB play.":
     "Obraz jest powtarzany poziomo, a wysokość paska przycina go w pionie. Animowane pliki GIF do 2 MB są odtwarzane.",
@@ -821,8 +794,8 @@ const catalog13: Record<string, string> = {
   "Time remaining or duration": "Pozostały czas lub czas trwania",
   "Time well spent": "Dobrze spędzony czas",
   "Time's up!": "Czas minął!",
-  Timeless: "Ponadczasowe",
-  Timer: "Minutnik",
+  "Timeless": "Ponadczasowe",
+  "Timer": "Minutnik",
   "Timing analysis active": "Analiza synchronizacji jest aktywna",
   "Timing and drift are corrected. Check playback, then save.":
     "Skorygowano synchronizację i rozbieżność. Sprawdź odtwarzanie, a następnie zapisz.",
@@ -831,12 +804,12 @@ const catalog13: Record<string, string> = {
   "Timing looks aligned": "Synchronizacja wygląda na prawidłową",
   "Timing rate": "Tempo synchronizacji",
   "Timing sources": "Źródła czasów",
-  Title: "Tytuł",
+  "Title": "Tytuł",
   "Title & info": "Tytuł i informacje",
   "Title (optional)": "Tytuł (opcjonalnie)",
   "Title info": "Informacje o tytule",
   "Title text": "Tekst tytułu",
-  Titles: "Tytuły",
+  "Titles": "Tytuły",
 };
 
 export default catalog13;

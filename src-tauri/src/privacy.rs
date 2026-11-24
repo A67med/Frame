@@ -57,8 +57,6 @@ pub fn privacy_set_enabled(app: tauri::AppHandle, enabled: bool) -> Result<Priva
     #[cfg(target_os = "windows")]
     app.run_on_main_thread(windows_impl::sync_all)
         .map_err(|e| e.to_string())?;
-    #[cfg(not(target_os = "windows"))]
-    let _ = app;
     // The callback updates actual enabled state. requestedEnabled is not a success claim.
     Ok(privacy_status())
 }
@@ -68,8 +66,6 @@ pub fn init() -> tauri::plugin::TauriPlugin<tauri::Wry> {
         .on_webview_ready(|webview| {
             #[cfg(target_os = "windows")]
             windows_impl::install(webview);
-            #[cfg(not(target_os = "windows"))]
-            let _ = webview;
         })
         .build()
 }

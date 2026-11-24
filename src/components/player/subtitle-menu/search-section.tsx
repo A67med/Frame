@@ -2,32 +2,32 @@ import { Loader2, Search as SearchIcon, SlidersHorizontal, X } from "lucide-reac
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "@/lib/auth";
 import type { Addon } from "@/lib/addons";
-import { gatherSubtitleAddons } from "@/lib/subtitles/addon-source";
-import { isKnownLanguage, languageName, langScore } from "@/lib/subtitles/language";
+import { gatherSubtitleAddons } from "@/features/subtitles/addon-source";
+import { isKnownLanguage, languageName, langScore } from "@/features/subtitles/language";
 import { HoverTooltip } from "@/components/hover-tooltip";
-import { searchSubtitles, type SearchOptions } from "@/lib/subtitles/search";
-import { subtitleLoadMetadataOf, subtitleTitleOf } from "@/lib/subtitles/provider-label";
-import type { SubResult } from "@/lib/subtitles/types";
+import { searchSubtitles, type SearchOptions } from "@/features/subtitles/search";
+import { subtitleLoadMetadataOf, subtitleTitleOf } from "@/features/subtitles/provider-label";
+import type { SubResult } from "@/features/subtitles/types";
 import {
   bestCandidate,
   parseTitleQuery,
   searchTitleCandidates,
   type TitleCandidate,
-} from "@/lib/subtitles/title-search";
+} from "@/features/subtitles/title-search";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { useSubtitleContext } from "./subtitle-context-store";
 import type { SubtitleMenuProps } from "./types";
 import { isVeryNewRelease } from "./utils";
 import { FilterChip, LangGroup } from "./search-results";
-import type { StreamHints } from "@/lib/subtitles/stream-hints";
+import type { StreamHints } from "@/features/subtitles/stream-hints";
 import {
   readSubtitleSearchCacheEntry,
   subtitleSearchCacheKey,
   subtitleSearchResultsMayBeCached,
   type SubtitleSearchCacheEntry,
   type SubtitleSearchCacheScope,
-} from "@/lib/subtitles/search-cache";
+} from "@/features/subtitles/search-cache";
 import { TargetBar, TitleSuggestDropdown } from "./title-suggest";
 
 type TitleTarget = {

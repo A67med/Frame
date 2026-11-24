@@ -2,14 +2,14 @@ import { ArrowLeft, Check, Loader2 } from "lucide-react";
 import { Dropdown } from "@/components/dropdown";
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n";
-import type { TrackInfo } from "@/lib/player/bridge";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 import {
   getMpvSubtitleFpsGeneration,
   readMpvSubtitleFps,
   readMpvVideoFps,
   writeMpvSubtitleFps,
-} from "@/lib/player/mpv-properties";
-import { isTextSubTrack } from "@/lib/player/sub-format";
+} from "@/features/player/engine/mpv-properties";
+import { isTextSubTrack } from "@/features/player/engine/sub-format";
 import {
   SUBTITLE_FPS_PRESETS,
   formatSubtitleFps,
@@ -19,7 +19,7 @@ import {
   validateSubtitleFps,
   type SubtitleFpsChoice,
   type SubtitleFpsUnavailableReason,
-} from "@/lib/player/subtitle-fps";
+} from "@/features/player/engine/subtitle-fps";
 
 type Props = {
   engine: "html5" | "mpv";

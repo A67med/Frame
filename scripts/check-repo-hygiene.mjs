@@ -44,10 +44,6 @@ for (const crate of requiredCrates) {
   }
 }
 
-if (!fs.existsSync(path.join(rootDir, "native/macos/virtual-mic/build.sh"))) {
-  error("macOS virtual microphone source must remain available for supported platform builds.");
-}
-
 // 3. Required architecture & compatibility documentation
 const requiredDocs = [
   "docs/SOURCE-CLEANUP-AUDIT.md",

@@ -1,10 +1,10 @@
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import { readFileSync } from "node:fs";
 import ts from "typescript";
-import * as timing from "../../src/lib/subtitles/text-sync.ts";
-import * as serialize from "../../src/lib/subtitles/serialize.ts";
+import * as timing from "../../src/features/subtitles/text-sync.ts";
+import * as serialize from "../../src/features/subtitles/serialize.ts";
 import type { useTextSync } from "../../src/views/player/hooks/use-text-sync.ts";
-import { emptySnapshot, type PlayerBridge } from "../../src/lib/player/bridge.ts";
+import { emptySnapshot, type PlayerBridge } from "../../src/features/player/engine/bridge.ts";
 
 export function textSyncHarness(
   source = readFileSync(
@@ -103,10 +103,10 @@ export function textSyncHarness(
       tempDir: async () => "temp",
       join: async (...parts: string[]) => parts.join("/"),
     },
-    "@/lib/player/playback-clock": { getPlaybackPosition: () => position },
-    "@/lib/subtitles/extract": { getCuesAnySource: () => readCues() },
-    "@/lib/subtitles/serialize": serialize,
-    "@/lib/subtitles/text-sync": timing,
+    "@/features/player/engine/playback-clock": { getPlaybackPosition: () => position },
+    "@/features/subtitles/extract": { getCuesAnySource: () => readCues() },
+    "@/features/subtitles/serialize": serialize,
+    "@/features/subtitles/text-sync": timing,
     "@/lib/player-prefs": { writePlayerPrefs() {} },
   };
   const module = { exports: {} as { useTextSync: typeof useTextSync } };

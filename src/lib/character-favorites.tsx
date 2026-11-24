@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { useProfiles } from "./profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 
 export type CharacterEntry = {
   id: string;

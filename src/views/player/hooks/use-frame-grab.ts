@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
 import { t } from "@/lib/i18n";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import {
   captureBaseTitle,
   captureDir,
@@ -8,9 +8,9 @@ import {
   formatStamp,
   joinPath,
   safeName,
-} from "@/lib/player/capture-path";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
-import type { PlayerSrc } from "@/lib/view";
+} from "@/features/player/engine/capture-path";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 export type FrameGrabToast = {
   id: number;

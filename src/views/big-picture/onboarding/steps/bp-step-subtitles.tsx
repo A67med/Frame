@@ -1,7 +1,7 @@
 import { Flag } from "@/components/flag";
 import { SFX } from "@/lib/sfx";
 import { useSettings } from "@/lib/settings";
-import { ALL_LANGUAGE_NAMES } from "@/lib/subtitles/language";
+import { ALL_LANGUAGE_NAMES } from "@/features/subtitles/language";
 import { useBpT } from "../../bp-i18n";
 import { BpSubtitlePreview } from "../bp-subtitle-preview";
 import { BP_ROW_FLUSH, BpDecisionNote, BpDecisionScroll } from "../bp-step-parts";

@@ -5,7 +5,7 @@ import {
   episodeSpanLabel,
   parseEpisodeSpan,
 } from "../src/lib/episode-span.ts";
-import { parseFilename } from "../src/lib/local-library.ts";
+import { parseFilename } from "../src/features/library/local-library.ts";
 import { episodeVariantMatch, matchEpisodeFileIndex } from "../src/lib/streams/episode-file.ts";
 
 for (const filename of [

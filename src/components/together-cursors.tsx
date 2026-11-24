@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSettings } from "@/lib/settings";
 import { useTogether, type RemoteCursor } from "@/lib/together/provider";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 const SEND_INTERVAL_MS = 60;
 const HIDDEN_AFTER_IDLE_MS = 1500;

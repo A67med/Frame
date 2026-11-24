@@ -7,9 +7,9 @@ import test from "node:test";
 
 const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 
-const context = read("src/lib/subtitles/autosync/context.ts");
-const pipeline = read("src/lib/subtitles/autosync/pipeline.ts");
-const smart = read("src/lib/subtitles/autosync/smart-layer.ts");
+const context = read("src/features/subtitles/autosync/context.ts");
+const pipeline = read("src/features/subtitles/autosync/pipeline.ts");
+const smart = read("src/features/subtitles/autosync/smart-layer.ts");
 
 test("every audio and network port is timeout-bounded", () => {
   assert.match(context, /function bounded<T>\(p: Promise<T>, ms: number, fallback: T\)/);
@@ -64,7 +64,7 @@ test("fast tier keeps best-effort at offer when audio cannot confirm", () => {
 });
 
 test("single-source subtitles can still vote on the offset", () => {
-  const consensus = read("src/lib/subtitles/autosync/consensus.ts");
+  const consensus = read("src/features/subtitles/autosync/consensus.ts");
   assert.match(consensus, /single-source fallback/);
   assert.match(consensus, /soloPeers\.length >= 2/);
   assert.match(consensus, /corroboratedReference\(soloPeers, false\)/);

@@ -14,7 +14,7 @@ import { dirname, join } from "node:path";
 import { connect } from "node:net";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import { fileURLToPath } from "node:url";
-import { emptySnapshot } from "../src/lib/player/bridge.ts";
+import { emptySnapshot } from "../src/features/player/engine/bridge.ts";
 import { mpvBridgeHarness, playerSnapshotChanged } from "./helpers/mpv-bridge-harness.ts";
 import ts from "typescript";
 
@@ -174,7 +174,7 @@ test(
 
       // Run the real style writer against this isolated native player's IPC.
       const styleSource = readFileSync(
-        new URL("../src/lib/player/sub-style.ts", import.meta.url),
+        new URL("../src/features/player/engine/sub-style.ts", import.meta.url),
         "utf8",
       );
       const styleCode = ts.transpileModule(styleSource, {

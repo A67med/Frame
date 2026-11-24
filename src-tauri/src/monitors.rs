@@ -115,7 +115,10 @@ mod imp {
     /// (often generic) and `MONITOR\...` PnP id. Index 0 is the adapter; monitors
     /// start at index 1.
     fn enum_display_device_for(device_name: &str) -> (String, String) {
-        let dev_name: Vec<u16> = device_name.encode_utf16().chain(std::iter::once(0)).collect();
+        let dev_name: Vec<u16> = device_name
+            .encode_utf16()
+            .chain(std::iter::once(0))
+            .collect();
         let adapter = read_display_device(0, &dev_name);
         let mut name = String::new();
         let mut id = String::new();
@@ -331,9 +334,12 @@ mod imp {
         } else if by_device_name.len() == 1 {
             Some(by_device_name[0])
         } else {
-            current
-                .iter()
-                .find(|m| m.x == saved.x && m.y == saved.y && m.width == saved.width && m.height == saved.height)
+            current.iter().find(|m| {
+                m.x == saved.x
+                    && m.y == saved.y
+                    && m.width == saved.width
+                    && m.height == saved.height
+            })
         }?;
 
         resolve_by_device_name(&chosen.device_name)
@@ -418,10 +424,6 @@ mod imp {
 
 #[cfg(windows)]
 pub use imp::{list, resolve, resolve_for_hwnd};
-#[cfg(not(windows))]
-pub fn list() -> Vec<MonitorInfo> {
-    Vec::new()
-}
 
 /// The `list_monitors` command payload.
 #[tauri::command]
@@ -506,11 +508,5 @@ pub async fn move_main_to_monitor(
         };
         move_window_to_monitor(&window, &resolved.into())?;
         Ok(true)
-    }
-    #[cfg(not(windows))]
-    {
-        let _ = app;
-        let _ = monitor;
-        Ok(false)
     }
 }

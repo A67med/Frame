@@ -33,17 +33,17 @@ const discovery: Record<string, string> = {
   "Show HI/SDH": "显示 HI/SDH",
   "Show others' drawings": "显示其他人的绘制内容",
   "About this title": "关于此片",
-  Browse: "浏览",
+  "Browse": "浏览",
   "Browse provider": "浏览提供商",
   "Hide search": "隐藏搜索",
   "Just the next show: {title}": "仅录制下一个节目：{title}",
-  Movie: "电影",
+  "Movie": "电影",
   "Movie's too new": "电影太新了",
   "No channels match. Try a different category or clear the search.":
     "没有匹配的频道。请尝试其他类别或清除搜索条件。",
   "No subtitles found yet. Try the search at the bottom.":
     "尚未找到字幕。请尝试使用底部的搜索功能。",
-  Search: "搜索",
+  "Search": "搜索",
   "Search {n} channels": "搜索 {n} 个频道",
   "Search {n} favorites": "搜索 {n} 个收藏项",
   "Show details": "显示详情",
@@ -58,7 +58,7 @@ const discovery: Record<string, string> = {
     "字幕尚未发布。请尝试在下方搜索，或过几天再来查看。",
   "This and next: + {title}": "本节目及下一节目：+ {title}",
   "This show: {title}": "本节目：{title}",
-  Title: "标题",
+  "Title": "标题",
   "Drag to resize. Use arrow keys to adjust, or Home to reset.":
     "拖动以调整大小。使用方向键调整，或按 Home 重置。",
   "Drag the corner to resize. Left and right change width; up and down change height; Home resets the size.":
@@ -67,8 +67,7 @@ const discovery: Record<string, string> = {
     "当前显示 {n2} 个频道中的前 {n1} 个。请使用搜索或分类缩小范围。",
   "Showing first {shown} of {total} channels. Use search or a category to narrow down.":
     "共 {total} 个频道，当前显示前 {shown} 个。请使用搜索或选择分类缩小范围。",
-  Home: "首页",
-  "sports.customize.title": "自定义联赛",
+  "Home": "首页",
   "Home Runs": "本垒打",
   "Search movies": "搜索电影",
   "Search shows": "搜索剧集",
@@ -182,8 +181,8 @@ const discovery: Record<string, string> = {
   "Overlays your Letterboxd rating on catalog posters (when available).":
     "在目录海报上叠加显示你的 Letterboxd 评分（如有）。",
   "Popular This Week": "本周热门",
-  Trending: "趋势",
-  Popular: "热门",
+  "Trending": "趋势",
+  "Popular": "热门",
   "Trending · Cinemeta": "趋势 · Cinemeta",
   "Popular · AIO": "热门 · AIO",
   "On: addon rails that duplicate the built-ins show too, instead of folding into one.":
@@ -347,7 +346,7 @@ const discovery: Record<string, string> = {
     "此插件仅提供播放源，没有可浏览的目录，但你打开任何条目时，它仍会在后台工作。",
   "Late Show": "深夜剧场",
   "Featured & Recommended": "精选与推荐",
-  Featured: "精选",
+  "Featured": "精选",
   "Pick a random title": "随机选一部",
   "Browse your catalogs": "浏览你的内容目录",
   "Show section": "显示此版块",
@@ -383,7 +382,7 @@ const discovery: Record<string, string> = {
   "this title": "此条目",
   "Title & info": "标题和信息",
   "Show password": "显示密码",
-  Discover: "发现",
+  "Discover": "发现",
   "Loading the catalog": "正在加载目录",
   "Curated for popularity and reliability. No paid placements. Install anything else by URL on the Browse tab.":
     "按热门度和可靠性精选，无付费推广。可在“浏览”标签页中通过 URL 安装其他任意插件。",
@@ -420,7 +419,7 @@ const discovery: Record<string, string> = {
   "Browse all releases": "浏览所有版本",
   "Browse by country": "按国家/地区浏览",
   "Browse channels": "浏览频道",
-  Catalog: "目录",
+  "Catalog": "目录",
   "Close search": "关闭搜索",
   "Detail pages show every available rating regardless of the card score toggles below. Turn this off to hide ratings on detail pages too.":
     "无论下方的卡片评分开关如何设置，详情页都会显示所有可用评分。关闭此项也会隐藏详情页上的评分。",
@@ -429,7 +428,7 @@ const discovery: Record<string, string> = {
   "Falls back to the TMDB rating only when a title has no IMDb score yet (mostly brand-new or unreleased). Off by default so cards prefer IMDb.":
     "仅当条目尚无 IMDb 评分时才改用 TMDB 评分（大多是刚上映或尚未上映的条目）。默认关闭，以便卡片优先显示 IMDb 评分。",
   "Featured {n}": "精选 {n} 项",
-  Genre: "类型",
+  "Genre": "类型",
   "Home hero shadow": "首页主视觉阴影",
   "Home languages": "首页语言",
   "How dark the gradient behind the featured title on Home is. 100% is the classic look; lower it to let more of the artwork show through.":
@@ -455,7 +454,7 @@ const discovery: Record<string, string> = {
   "Search TMDB…": "搜索 TMDB…",
   "Service-specific browsing needs a TMDB key. Pick All / Movies / Shows to browse via Cinemeta.":
     "浏览特定服务的内容需要 TMDB 密钥。选择“全部”/“电影”/“剧集”可通过 Cinemeta 浏览。",
-  Show: "显示",
+  "Show": "显示",
   "Show {n} more reviews": "再显示 {n} 条评论",
   "Show a Skip Intro / Skip Credits button when Frame detects one. Turn this off to never show it. You can also tap the X on the button to dismiss a wrong one for the rest of the episode.":
     "Frame 检测到片头或片尾时，显示“跳过片头”或“跳过片尾”按钮。关闭后将不再显示。也可点按按钮上的 X，在本集剩余时间内忽略错误识别。",
@@ -481,11 +480,11 @@ const discovery: Record<string, string> = {
   "Show the Skip button": "显示“跳过”按钮",
   "Show title": "显示标题",
   "Show TMDB score on cards": "在卡片上显示 TMDB 评分",
-  Spotlight: "焦点推荐",
+  "Spotlight": "焦点推荐",
   "Spotlight {n}": "焦点推荐 {n}",
   "Not the one? Search every source again": "不是这个？重新搜索所有来源",
   "Tap one until your show plays nice and clear!": "逐个点按尝试，直到节目播放流畅、画面清晰！",
-  title: "标题",
+  "title": "标题",
   "Try a genre": "尝试按类型搜索",
   "What happens when you hit Play on a title. Instant just starts; Manual lets you pick the source.":
     "点击某个影片的“播放”后如何操作。“即时”会直接开始播放；“手动”可让你选择片源。",
@@ -496,23 +495,8 @@ const discovery: Record<string, string> = {
     "看完一集或一部电影后，立即删除其下载文件。中途停止的内容会保留，以便继续观看。",
   "You're on the latest build. Earlier builds show up here as new versions ship.":
     "你使用的是最新版本。新版本发布后，较早的版本会显示在这里。",
-  "4. Paging + search tokens": "4. 分页和搜索标记",
   "Back to browse": "返回浏览",
-  "Implement the MangaProvider object: popular, search, detail, chapters, pageUrls, and optional tags. Nothing else.":
-    "实现 MangaProvider 对象：popular、search、detail、chapters、pageUrls，以及可选的 tags。无需其他内容。",
-  "No chapters match your search.": "没有符合搜索条件的章节。",
-  "Readers also recommend": "读者还推荐",
   "Search chapters...": "搜索章节…",
-  "That is unusual for a popular listing. It is likely a hiccup on their end.":
-    "热门列表出现这种情况并不正常，可能是对方暂时出现了故障。",
-  "This title would not open": "无法打开此作品",
-  "Try a different title or clear your filters.": "请尝试其他作品或清除筛选条件。",
-  "each card on a browse/search page.": "浏览或搜索页面上的每张卡片。",
-  "is the search text (searchPath only).": "是搜索文本（仅限 searchPath）。",
-  "the browse and search URLs, with the paging number and search word swapped for tokens (below).":
-    "浏览和搜索 URL，其中分页数字和搜索词将替换为下方的标记。",
-  "the series page. title, cover, description, author, status (all optional).":
-    "作品页面。标题、封面、简介、作者、状态（均为可选项）。",
   "All-time body of work, not who is trending. Trending and Top on TMDB are the live tabs.":
     "依据整个职业生涯的作品，而非当前热度。TMDB 的“趋势”和“热门”是实时标签页。",
   "Anyone can find and join from search": "任何人都能通过搜索找到并加入",
@@ -641,7 +625,6 @@ const discovery: Record<string, string> = {
   "{n} title#few": "{n} 部作品#few",
   "Insurance that covers the home": "为住宅提供保障的保险",
   "Most Popular": "最受欢迎",
-  "Spotlighted at the show": "展会焦点作品",
   "Show episode": "显示剧集",
   "Installing {title}": "正在安装 {title}",
   "Installed {title}": "已安装 {title}",
@@ -705,7 +688,7 @@ const discovery: Record<string, string> = {
     "注册时，TMDB 可能会显示验证码。完成验证即可继续。",
   "Browse all": "浏览全部",
   "Explore, discover and earn stars": "探索、发现并赢取星星",
-  HOME: "主场",
+  "HOME": "主场",
   "View {title}": "查看 {title}",
   "Couldn't load this catalog": "无法加载此目录",
   "Frame couldn't reach the catalog servers. Check your connection and try again.":

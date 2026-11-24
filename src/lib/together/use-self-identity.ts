@@ -1,5 +1,5 @@
 import { useAuth } from "@/lib/auth";
-import { useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { useSettings } from "@/lib/settings";
 
 export function useSelfIdentity(): { avatar: string | null; color: string | null } {

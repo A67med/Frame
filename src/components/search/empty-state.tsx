@@ -30,7 +30,7 @@ import { surpriseMe } from "@/lib/surprise-me";
 import { tmdbDiscover } from "@/lib/providers/tmdb";
 import { SERVICES, providerIdsFor } from "@/lib/providers/streaming";
 import type { StreamingService } from "@/lib/settings";
-import { useView, type View } from "@/lib/view";
+import { useView, type View } from "@/app/navigation/view";
 import type { LockableTab } from "@/lib/lockable-tabs";
 import { topMovies, topSeries, type Meta } from "@/lib/cinemeta";
 import { PickCard } from "@/components/pick-card";

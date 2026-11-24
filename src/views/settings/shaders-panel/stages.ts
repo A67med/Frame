@@ -1,5 +1,9 @@
 import { Maximize2, Palette, Sparkles, Sun, Wand2, type LucideIcon } from "../icons";
-import type { ShaderCatalogEntry, ShaderContent, ShaderStage } from "@/lib/player/shader-catalog";
+import type {
+  ShaderCatalogEntry,
+  ShaderContent,
+  ShaderStage,
+} from "@/features/player/engine/shader-catalog";
 
 export const STAGE_SEQUENCE: ShaderStage[] = [
   "prescale",

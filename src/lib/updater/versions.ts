@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { probeHandoff } from "./handoff";
 
 const RELEASES_API = "https://api.github.com/repos/A67med/Frame/releases?per_page=30";

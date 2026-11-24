@@ -6,7 +6,7 @@ import type { KitsuEpisode } from "@/lib/providers/kitsu";
 import { useSettings } from "@/lib/settings";
 import { SFX } from "@/lib/sfx";
 import type { SpoilerMask } from "@/lib/spoilers";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { BpAnimeSeasonChip } from "./bp-anime-season-chip";
 import { BpChip, BpChipDivider } from "./bp-library-chips";
 import {

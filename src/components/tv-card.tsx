@@ -4,7 +4,7 @@ import { peekCachedLogo, resolveLogo } from "@/lib/logo";
 import { sizeImageUrl } from "@/lib/img-size";
 import { useContextMenu } from "@/lib/context-menu";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { usePosterChain } from "@/components/poster";
 import { ensureStaticHeroArt, peekStaticHeroArt } from "@/lib/providers/anime-hero-art-static";
 import { prepareExpandingCardArtwork } from "@/lib/expanding-card-artwork";
@@ -51,7 +51,7 @@ export const TvCard = memo(function TvCard({
   kids?: boolean;
   reason?: string;
 }) {
-  const { openMeta, openManga } = useView();
+  const { openMeta } = useView();
   const { open: openContextMenu } = useContextMenu();
   const { settings } = useSettings();
   const logo = useLogo(meta);
@@ -62,18 +62,10 @@ export const TvCard = memo(function TvCard({
     meta.type === "series" ? "series" : "movie",
   );
 
-  const open = () => {
-    if (meta.type === "manga") {
-      openManga(meta.id);
-      return;
-    }
-    openMeta(meta);
-  };
-
   return (
     <button
       type="button"
-      onClick={open}
+      onClick={() => openMeta(meta)}
       onContextMenu={(e) => openContextMenu(e, { kind: "meta", meta })}
       title={meta.name}
       style={{ borderRadius: settings.posterRadius }}

@@ -1,9 +1,9 @@
 import { memo } from "react";
 import type { ComponentProps } from "react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import { mapErrorSourceKey } from "@/lib/player/html5/error-map";
-import type { PlayerSrc } from "@/lib/view";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import { mapErrorSourceKey } from "@/features/player/engine/html5/error-map";
+import type { PlayerSrc } from "@/app/navigation/view";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
 import { CinematicPlayerLoader } from "./cinematic-player-loader";
 import { LiveChannelError } from "./live-channel-error";
 import { LocalFileError } from "./local-file-error";

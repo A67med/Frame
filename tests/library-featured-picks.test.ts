@@ -2,7 +2,10 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { pickFeatured, resetFeaturedPicks } from "../src/views/library/featured-picks.ts";
+import {
+  pickFeatured,
+  resetFeaturedPicks,
+} from "../src/features/library/views/library/featured-picks.ts";
 import type { Meta } from "../src/lib/cinemeta.ts";
 
 function metas(n: number, withArt = true): Meta[] {

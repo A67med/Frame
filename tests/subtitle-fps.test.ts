@@ -17,8 +17,8 @@ import {
   subtitleFpsAvailability,
   subtitleFpsToMpvValue,
   validateSubtitleFps,
-} from "../src/lib/player/subtitle-fps.ts";
-import { isTextSubTrack } from "../src/lib/player/sub-format.ts";
+} from "../src/features/player/engine/subtitle-fps.ts";
+import { isTextSubTrack } from "../src/features/player/engine/sub-format.ts";
 
 const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
@@ -417,7 +417,7 @@ test("Auto Sync status applies only to its current media and subtitle track", ()
 
 test("the feature reuses Playback Stats FPS properties and only writes mpv sub-fps", () => {
   const stats = read("src/components/player/stats-overlay.tsx");
-  const properties = read("src/lib/player/mpv-properties.ts");
+  const properties = read("src/features/player/engine/mpv-properties.ts");
   assert.match(stats, /"estimated-vf-fps"/);
   assert.match(stats, /"container-fps"/);
   assert.match(properties, /"estimated-vf-fps"/);
@@ -428,7 +428,7 @@ test("the feature reuses Playback Stats FPS properties and only writes mpv sub-f
 });
 
 test("manual FPS scope contains no calibration or delay ownership", () => {
-  const logic = read("src/lib/player/subtitle-fps.ts");
+  const logic = read("src/features/player/engine/subtitle-fps.ts");
   const panel = read("src/components/player/subtitle-menu/subtitle-fps-panel.tsx");
   assert.doesNotMatch(logic, /calibr|sub-delay|SubtitleTimingPoint/i);
   assert.doesNotMatch(panel, /calibr|early point|late point|manual offset|sub-delay/i);
@@ -483,10 +483,10 @@ test("the panel refreshes after Auto Sync or secondary subtitles reset the nativ
 });
 
 test("mpv lifecycle and Auto Sync boundaries reset only subtitle FPS", () => {
-  const properties = read("src/lib/player/mpv-properties.ts");
+  const properties = read("src/features/player/engine/mpv-properties.ts");
   const autoSyncStore = read("src/components/player/autosync/autosync-store.ts");
-  const bridge = read("src/lib/player/mpv.ts");
-  const forwardingBridge = read("src/lib/player/mpv-forward.ts");
+  const bridge = read("src/features/player/engine/mpv.ts");
+  const forwardingBridge = read("src/features/player/engine/mpv-forward.ts");
   const hdrStageBridge = read("src/views/player/hdr-stage-bridge.tsx");
   const autoSync = read("src/views/player/hooks/use-auto-sync.ts");
   const player = read("src/views/player.tsx");

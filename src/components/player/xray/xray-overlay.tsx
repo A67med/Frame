@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { UiIcon } from "@/components/ui-icon";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import type { CastEntry } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";

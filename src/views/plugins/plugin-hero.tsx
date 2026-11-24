@@ -5,7 +5,7 @@ import { browseFetcher, type BrowseCatalog } from "@/lib/catalog-browse";
 import { HeroCarousel, type Slide } from "@/components/hero-carousel";
 import { useSettings } from "@/lib/settings";
 import { tmdbLogo, tmdbMovieImages } from "@/lib/providers/tmdb/tmdb-images";
-import { loadCapstanDetail } from "@/lib/streams/plugins/extension/detail";
+import { loadCapstanDetail } from "@/features/addons/streams/extension/detail";
 
 /** How many rows the hero reads from. Each is a request to someone's service, so it takes a few
  * rows of the selection rather than all of them; the rails below read the same first pages and

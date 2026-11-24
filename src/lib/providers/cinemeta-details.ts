@@ -1,4 +1,4 @@
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 import { topMovies, topSeries, type Meta } from "@/lib/cinemeta";
 import { registerEvictable } from "@/lib/maintenance";
 import type { CastEntry, TmdbDetail } from "./tmdb/tmdb-details";

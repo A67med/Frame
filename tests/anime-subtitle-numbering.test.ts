@@ -5,7 +5,7 @@ import test from "node:test";
 import {
   animeSearchCoordsFromMapping,
   classifyAnimeNumbering,
-} from "../src/lib/subtitles/anime-numbering.ts";
+} from "../src/features/subtitles/anime-numbering.ts";
 
 const ONE_PIECE_LIKE = {
   mappings: { kitsu_id: 21, thetvdb_id: 74796, imdb_id: "tt0388629" },

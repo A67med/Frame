@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { subtitleSearchMatchDetails } from "../src/lib/subtitles/match-explanation.ts";
+import { subtitleSearchMatchDetails } from "../src/features/subtitles/match-explanation.ts";
 
 test("manual search details keep provider and local release evidence separate", () => {
   const details = subtitleSearchMatchDetails(

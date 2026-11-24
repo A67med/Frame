@@ -4,7 +4,7 @@ import { useT } from "@/lib/i18n";
 import { loadListItems } from "@/lib/curated/items";
 import { curatedList } from "@/lib/curated/registry";
 import type { CuratedListItem } from "@/lib/curated/types";
-import { useScrollMemory } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
 import { ListGrid } from "./curated-list/list-grid";
 import { ListHeader } from "./curated-list/list-header";
 import { RegistryEntries } from "./curated-list/registry-entries";

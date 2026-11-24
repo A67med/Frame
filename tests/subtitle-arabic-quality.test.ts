@@ -5,18 +5,18 @@ import test from "node:test";
 import {
   arabicMatchIncludes,
   normalizeArabicForMatch,
-} from "../src/lib/subtitles/arabic-normalize.ts";
+} from "../src/features/subtitles/arabic-normalize.ts";
 import {
   analyzeArabicSubtitleQuality,
   cleanupArabicCuesSafely,
   cleanupArabicSubtitleTextSafely,
-} from "../src/lib/subtitles/arabic-quality.ts";
-import { alignSubToAsr } from "../src/lib/subtitles/autosync/smart-layer.ts";
+} from "../src/features/subtitles/arabic-quality.ts";
+import { alignSubToAsr } from "../src/features/subtitles/autosync/smart-layer.ts";
 import {
   dialogueSequence,
   jaccard,
   wordShingles,
-} from "../src/lib/subtitles/autosync/consensus.ts";
+} from "../src/features/subtitles/autosync/consensus.ts";
 
 test("Arabic matching folds marks, letters, digits, punctuation, and direction controls", () => {
   const dirty = "\u061Cإِعْلَانـ، سَنَة ٢٠٢٤ و کِتاب ۱۲۳؟";

@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from "react";
 import type { Meta } from "@/lib/cinemeta";
 import { getVoteEntries } from "@/lib/feed/preferences";
-import { recentlyPlayed } from "@/lib/playback-history";
+import { recentlyPlayed } from "@/features/player/history";
 import { externalWatchedIds } from "@/lib/feed/external-watched";
 import { isVoyageWatched, voyageProgress } from "./progress";
 import { movieWatchedIds } from "@/lib/movie-watched";

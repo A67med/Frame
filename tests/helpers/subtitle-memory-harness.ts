@@ -1,9 +1,13 @@
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import { readFileSync } from "node:fs";
 import ts from "typescript";
-import * as memory from "../../src/lib/subtitles/subtitle-memory.ts";
-import { normalizeLang } from "../../src/lib/subtitles/language.ts";
-import { emptySnapshot, type PlayerSnapshot, type TrackInfo } from "../../src/lib/player/bridge.ts";
+import * as memory from "../../src/features/subtitles/subtitle-memory.ts";
+import { normalizeLang } from "../../src/features/subtitles/language.ts";
+import {
+  emptySnapshot,
+  type PlayerSnapshot,
+  type TrackInfo,
+} from "../../src/features/player/engine/bridge.ts";
 
 export function subtitleTrack(id: string): TrackInfo {
   return {
@@ -131,10 +135,10 @@ export function memoryControlsHarness() {
       },
       useRef: (value: unknown) => refs[refIndex++] ?? (refs[refIndex - 1] = { current: value }),
     },
-    "@/lib/player/playback-clock": {},
+    "@/features/player/engine/playback-clock": {},
     "@/lib/media-session": { notifyMediaSeeked() {} },
     "@/lib/player-prefs": { writePlayerPrefs() {} },
-    "@/lib/subtitles/subtitle-memory": {
+    "@/features/subtitles/subtitle-memory": {
       ...memory,
       readRememberedSub: (key: string) => saved.get(key),
       writeRememberedSub: (key: string, sub: memory.RememberedSub) => {
@@ -143,8 +147,8 @@ export function memoryControlsHarness() {
         return record;
       },
     },
-    "@/lib/player/imported-subs": { hasImportedSubTitle: () => false },
-    "@/lib/subtitles/selected-subtitle-cache": {
+    "@/features/player/engine/imported-subs": { hasImportedSubTitle: () => false },
+    "@/features/subtitles/selected-subtitle-cache": {
       cacheSelectedSubtitle: (input: (typeof cacheRequests)[number]) => {
         cacheRequests.push(input);
         return cache(input);

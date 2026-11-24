@@ -1,5 +1,5 @@
 import { fetch as tauriHttpFetch } from "@tauri-apps/plugin-http";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 const isTauri = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
 const probeFetch: typeof fetch = isTauri ? (tauriHttpFetch as unknown as typeof fetch) : safeFetch;

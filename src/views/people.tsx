@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BackToTop } from "@/components/back-to-top";
 import { useT } from "@/lib/i18n";
-import { useScrollMemory, useView } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView } from "@/app/navigation/view";
 import {
   fetchRankManifest,
   type HarborRankExplanation,

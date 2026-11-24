@@ -1,6 +1,6 @@
 import type { Meta } from "@/lib/cinemeta";
 import type { Settings } from "@/lib/settings";
-import { recentlyPlayed, watchTitleKey } from "@/lib/playback-history";
+import { recentlyPlayed, watchTitleKey } from "@/features/player/history";
 import { tmdbDiscover, tmdbTrending } from "@/lib/providers/tmdb";
 import { fetchAwardWinners } from "./award-winners";
 import { localizeFloor } from "./locale";

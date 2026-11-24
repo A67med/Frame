@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { replaceUrlsInOrder } from "../src/lib/addons-store/reorder.ts";
+import { replaceUrlsInOrder } from "../src/features/addons/catalog/reorder.ts";
 
 test("addon replacement keeps its position and removes retired URLs", () => {
   assert.deepEqual(replaceUrlsInOrder(["b", "old-a", "c"], ["old-a"], "new-a"), [

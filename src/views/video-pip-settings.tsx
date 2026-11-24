@@ -8,7 +8,7 @@ import {
   floatingTracks,
   type FloatingChapter,
   type FloatingTrack,
-} from "@/lib/player/floating-controls";
+} from "@/features/player/engine/floating-controls";
 
 export function useFloatingMedia() {
   const [volume, setVolume] = useState(100),

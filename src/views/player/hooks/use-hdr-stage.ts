@@ -9,7 +9,7 @@ import {
   onHdrStageReady,
 } from "@/lib/hdr-overlay";
 import type { Settings } from "@/lib/settings";
-import { startHdrStageSession } from "@/lib/player/hdr-stage-session";
+import { startHdrStageSession } from "@/features/player/engine/hdr-stage-session";
 
 const HDR_GAMMAS = new Set(["pq", "hlg"]);
 const MONITOR_DEBOUNCE_MS = 600;

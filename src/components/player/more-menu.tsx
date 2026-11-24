@@ -10,13 +10,13 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { magnetFromHash } from "@/lib/debrid/types";
-import { saveSubtitleToDisk } from "@/lib/subtitles/save-to-disk";
-import type { TrackInfo } from "@/lib/player/bridge";
+import { saveSubtitleToDisk } from "@/features/subtitles/save-to-disk";
+import type { TrackInfo } from "@/features/player/engine/bridge";
 import { openUrl } from "@/lib/window";
 import { useT } from "@/lib/i18n";
 import { copyText } from "./copy-link-button";
 import { Tooltip } from "./transport/tooltip";
-import { watchOutsideMouseDown } from "@/lib/player/overlay-dismiss";
+import { watchOutsideMouseDown } from "@/features/player/engine/overlay-dismiss";
 
 type MoreRowSpec = {
   key: string;

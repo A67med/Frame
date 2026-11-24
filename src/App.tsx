@@ -1,3 +1,4 @@
+import { AppProviders } from "@/app/providers/app-providers";
 import { hasBackHandlers } from "@/lib/back-intercept";
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FloatingBack } from "@/chrome/floating-back";
@@ -55,8 +56,7 @@ import { TogetherSummonToast } from "@/components/together-summon-toast";
 import { TogetherParticipantLeftToast } from "@/components/together-participant-left-toast";
 import { ThemeBackdrop } from "@/components/theme-backdrop";
 import { TopRankModal } from "@/components/top-rank-modal";
-import { AuthProvider } from "@/lib/auth";
-import { ProfilesProvider, useProfiles } from "@/lib/profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { RemindersRunner } from "@/lib/reminders-runner";
 import { RemoteHostMount } from "@/lib/remote/host-mount";
 import { RemotePairPrompt } from "@/lib/remote/pair-prompt";
@@ -68,25 +68,13 @@ import { HarborAvatarSync } from "@/components/harbor-avatar-sync";
 import { HarborNameSync } from "@/components/harbor-name-sync";
 import { SettingsProfileBridge } from "@/lib/settings-profile-bridge";
 import { TrackerProfileBridge } from "@/lib/tracker-profile-bridge";
-import { WatchlistSync } from "@/lib/watchlist-sync";
-import { ContextMenuProvider } from "@/lib/context-menu";
-import { TopRankModalProvider } from "@/lib/top-rank-modal";
-import { OnboardingProvider } from "@/lib/onboarding";
+import { WatchlistSync } from "@/features/watchlist/sync";
 import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
 import "@/styles/frame-desktop.css";
-import { RankingsProvider } from "@/lib/rankings";
-import { SettingsProvider } from "@/lib/settings";
-import { SearchProvider, useSearch } from "@/lib/search-context";
+import { useSearch } from "@/lib/search-context";
 import { SearchOverlay } from "@/components/search/search-overlay";
 import { SearchHotkey } from "@/components/search/search-hotkey";
 import { LinkOutInterstitial } from "@/components/link-out-interstitial";
-import { TogetherProvider } from "@/lib/together/provider";
-import { DvrProvider } from "@/lib/dvr/provider";
-import { FavoritesProvider } from "@/lib/iptv/favorites";
-import { MediaFavoritesProvider } from "@/lib/media-favorites";
-import { CharacterFavoritesProvider } from "@/lib/character-favorites";
-import { MangaFavoritesProvider } from "@/lib/manga-favorites";
-import { LocalWatchlistProvider } from "@/lib/local-watchlist";
 import { useSettings } from "@/lib/settings";
 import {
   flushPendingTorrentRemovals,
@@ -99,17 +87,11 @@ import {
   findHotkeyMatch,
   shouldHandleGlobalKeyboardEvent,
 } from "@/lib/hotkeys";
-import { ViewProvider, useView, type Frame, type View } from "@/lib/view";
+import { useView, type Frame, type View } from "@/app/navigation/view";
 import { ThemeChromeBridge } from "@/components/theme-chrome-bridge";
 import type { MetaType } from "@/lib/cinemeta";
-import { usePluginCataloguesAvailable } from "@/lib/streams/plugins/available";
+import { usePluginCataloguesAvailable } from "@/features/addons/streams/available";
 import { SpooktoberHome } from "@/views/spooktober/spooktober-home";
-import { ParentalProvider } from "@/lib/parental";
-import { TraktProvider } from "@/lib/trakt/provider";
-import { AnilistProvider } from "@/lib/anilist/provider";
-import { MalProvider } from "@/lib/mal/provider";
-import { SimklProvider } from "@/lib/simkl/provider";
-import { LetterboxdProvider } from "@/lib/stremboxd/provider";
 import {
   useKeyboardNavigation,
   tvFocus,
@@ -177,109 +159,67 @@ import {
 
 export function App({ onReady }: { onReady?: () => void }) {
   return (
-    <SettingsProvider syncTorrentEnginePolicy>
-      <ProfilesProvider>
-        <ParentalProvider>
-          <TraktProvider>
-            <AnilistProvider>
-              <MalProvider>
-                <SimklProvider>
-                  <LetterboxdProvider>
-                    <RankingsProvider>
-                      <AuthProvider>
-                        <OnboardingProvider>
-                          <TogetherProvider>
-                            <ViewProvider>
-                              <SearchProvider>
-                                <DvrProvider>
-                                  <FavoritesProvider>
-                                    <MediaFavoritesProvider>
-                                      <CharacterFavoritesProvider>
-                                        <MangaFavoritesProvider>
-                                          <LocalWatchlistProvider>
-                                            <ContextMenuProvider>
-                                              <TopRankModalProvider>
-                                                <HarborErrorBoundary>
-                                                  <ProfileIdentitySync />
-                                                  <HarborAvatarSync />
-                                                  <HarborNameSync />
-                                                  <SettingsProfileBridge />
-                                                  <TrackerProfileBridge />
-                                                  <MiddleClickScroll />
-                                                  <ThemeBackdrop />
-                                                  <WatchlistSync />
-                                                  {isMobileWeb() || isRemoteRoute() ? (
-                                                    <>
-                                                      <Suspense fallback={null}>
-                                                        <MobileShell />
-                                                      </Suspense>
-                                                      <RevealOnMount onReady={onReady} />
-                                                    </>
-                                                  ) : (
-                                                    <Shell onReady={onReady} />
-                                                  )}
-                                                  {!isMobileWeb() && !isRemoteRoute() && (
-                                                    <Suspense fallback={null}>
-                                                      <OnboardingModal />
-                                                    </Suspense>
-                                                  )}
-                                                  <TogetherInviteToast />
-                                                  <TogetherFloater />
-                                                  <TogetherHostLeavingPrompt />
-                                                  <TogetherSummonToast />
-                                                  <TogetherParticipantLeftToast />
-                                                  <ListToastHost />
-                                                  <DiagnosticsConsentHost />
-                                                  <TogetherLocationPublisher />
-                                                  <AutoDownloadRunner />
-                                                  <RemindersRunner />
-                                                  <RemoteHostMount />
-                                                  <RemotePairPrompt />
-                                                  <RemoteOpenBridge />
-                                                  <GamepadRunner />
-                                                  <ControllerConnectedToast />
-                                                  <ContextMenu />
-                                                  <AnnouncementGlobal />
-                                                  <WatchLocalModal />
-                                                  <LocalEpisodesModal />
-                                                  <LocalVersionsModal />
-                                                  <HoverPreview />
-                                                  <CustomHoverCssMount />
-                                                  <TopRankModal />
-                                                  <CurfewGuard />
-                                                  <SearchOverlay />
-                                                  <SearchHotkey />
-                                                  <LinkOutInterstitial />
-                                                  <EmbedViewportRoot />
-                                                  <InstallerViewportRoot />
-                                                  <UpdateRoot />
-                                                  <VoyageRoot />
-                                                  <ScreensaverRoot />
-                                                </HarborErrorBoundary>
-                                                <ErrorView />
-                                                <DevErrorTrigger />
-                                              </TopRankModalProvider>
-                                            </ContextMenuProvider>
-                                          </LocalWatchlistProvider>
-                                        </MangaFavoritesProvider>
-                                      </CharacterFavoritesProvider>
-                                    </MediaFavoritesProvider>
-                                  </FavoritesProvider>
-                                </DvrProvider>
-                              </SearchProvider>
-                            </ViewProvider>
-                          </TogetherProvider>
-                        </OnboardingProvider>
-                      </AuthProvider>
-                    </RankingsProvider>
-                  </LetterboxdProvider>
-                </SimklProvider>
-              </MalProvider>
-            </AnilistProvider>
-          </TraktProvider>
-        </ParentalProvider>
-      </ProfilesProvider>
-    </SettingsProvider>
+    <AppProviders>
+      <HarborErrorBoundary>
+        <ProfileIdentitySync />
+        <HarborAvatarSync />
+        <HarborNameSync />
+        <SettingsProfileBridge />
+        <TrackerProfileBridge />
+        <MiddleClickScroll />
+        <ThemeBackdrop />
+        <WatchlistSync />
+        {isMobileWeb() || isRemoteRoute() ? (
+          <>
+            <Suspense fallback={null}>
+              <MobileShell />
+            </Suspense>
+            <RevealOnMount onReady={onReady} />
+          </>
+        ) : (
+          <Shell onReady={onReady} />
+        )}
+        {!isMobileWeb() && !isRemoteRoute() && (
+          <Suspense fallback={null}>
+            <OnboardingModal />
+          </Suspense>
+        )}
+        <TogetherInviteToast />
+        <TogetherFloater />
+        <TogetherHostLeavingPrompt />
+        <TogetherSummonToast />
+        <TogetherParticipantLeftToast />
+        <ListToastHost />
+        <DiagnosticsConsentHost />
+        <TogetherLocationPublisher />
+        <AutoDownloadRunner />
+        <RemindersRunner />
+        <RemoteHostMount />
+        <RemotePairPrompt />
+        <RemoteOpenBridge />
+        <GamepadRunner />
+        <ControllerConnectedToast />
+        <ContextMenu />
+        <AnnouncementGlobal />
+        <WatchLocalModal />
+        <LocalEpisodesModal />
+        <LocalVersionsModal />
+        <HoverPreview />
+        <CustomHoverCssMount />
+        <TopRankModal />
+        <CurfewGuard />
+        <SearchOverlay />
+        <SearchHotkey />
+        <LinkOutInterstitial />
+        <EmbedViewportRoot />
+        <InstallerViewportRoot />
+        <UpdateRoot />
+        <VoyageRoot />
+        <ScreensaverRoot />
+      </HarborErrorBoundary>
+      <ErrorView />
+      <DevErrorTrigger />
+    </AppProviders>
   );
 }
 
@@ -802,7 +742,7 @@ function Shell({ onReady }: { onReady?: () => void }) {
     if (REMOVED_PAGES.has(topKind)) setView("home");
   }, [topKind, setView]);
 
-  const playerActive = !!player && !player.sportsDocked && !player.pipDocked;
+  const playerActive = !!player && !player.pipDocked;
   useEffect(() => setNativeMemoryActive(playerActive), [playerActive]);
   useEffect(() => {
     if (!playerActive) void exitWindowFullscreenOnPlayerClose();

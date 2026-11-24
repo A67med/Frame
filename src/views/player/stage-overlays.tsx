@@ -14,14 +14,14 @@ import {
 } from "@/components/player/volume-indicator";
 import { SpeedIndicator, type SpeedIndicatorState } from "@/components/player/speed-indicator";
 import { ActionIndicator, type ActionIndicatorState } from "@/components/player/action-indicator";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
 import type { ParentalCategory } from "@/lib/providers/harbor-imdb";
 import {
   ContentAdvisoryToast,
   type ContentAdvisoryPosition,
 } from "@/components/player/content-advisory-toast";
 import { useT } from "@/lib/i18n";
-import { useCaptionsPopoutOpen } from "@/lib/player/captions-popout-state";
+import { useCaptionsPopoutOpen } from "@/features/player/engine/captions-popout-state";
 import { ContentAdvisoryPrompt } from "@/components/player/content-advisory-prompt";
 
 export const StageOverlays = memo(function StageOverlays({

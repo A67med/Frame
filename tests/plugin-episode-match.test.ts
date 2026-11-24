@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { pickEpisodes } from "../src/lib/streams/plugins/extension/match.ts";
-import type { BridgeMedia } from "../src/lib/streams/plugins/extension/bridge.ts";
-import type { StreamPluginRequest } from "../src/lib/streams/plugins/types.ts";
+import { pickEpisodes } from "../src/features/addons/streams/extension/match.ts";
+import type { BridgeMedia } from "../src/features/addons/streams/extension/bridge.ts";
+import type { StreamPluginRequest } from "../src/features/addons/streams/types.ts";
 
 const media = (episodes: BridgeMedia["episodes"]): BridgeMedia => ({
   name: "India's Got Latent",

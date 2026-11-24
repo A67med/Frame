@@ -5,7 +5,7 @@ import {
   type CustomColors,
   type ThemeSettings,
 } from "@/lib/theme";
-import { languageName } from "@/lib/subtitles/language";
+import { languageName } from "@/features/subtitles/language";
 import { sanitizeSeekStep } from "@/lib/seek-step";
 import { migrateModelId, providerTabFor } from "@/lib/ai-models";
 import {
@@ -17,8 +17,8 @@ import { normalizePosterCardSettings } from "@/lib/poster-backdrop-expansion";
 import {
   sanitizeSubtitleOffsetPosition,
   sanitizeSubtitleOffsetSize,
-} from "@/lib/player/subtitle-offset";
-import { sanitizeBufferSize } from "@/lib/player/buffer-profile";
+} from "@/features/player/engine/subtitle-offset";
+import { sanitizeBufferSize } from "@/features/player/engine/buffer-profile";
 import { sanitizeScreensaverMedia } from "@/lib/screensaver/media";
 import {
   sanitizeControllerCursor,
@@ -260,16 +260,6 @@ function parseStoredSettings(raw: string | null): Settings {
       parsed.songIdAiModel = DEFAULT.songIdAiModel;
     }
     if (parsed.aiSearchModel) parsed.aiSearchModel = migrateModelId(parsed.aiSearchModel);
-    if (typeof parsed.steamSearchShortcut !== "boolean")
-      parsed.steamSearchShortcut = DEFAULT.steamSearchShortcut;
-    if (!["first", "random", "manual"].includes(parsed.gameArtworkSelection as string))
-      parsed.gameArtworkSelection = DEFAULT.gameArtworkSelection;
-    if (typeof parsed.gameArtworkScreenshots !== "boolean")
-      parsed.gameArtworkScreenshots = DEFAULT.gameArtworkScreenshots;
-    if (typeof parsed.gameArtworkCoverIcon !== "boolean")
-      parsed.gameArtworkCoverIcon = DEFAULT.gameArtworkCoverIcon;
-    if (parsed.gameAgeRatingAgency !== "ESRB" && parsed.gameAgeRatingAgency !== "PEGI")
-      parsed.gameAgeRatingAgency = DEFAULT.gameAgeRatingAgency;
     if (parsed.aiSearchProvider !== "groq" && parsed.aiSearchProvider !== "openrouter") {
       parsed.aiSearchProvider = parsed.aiSearchModel
         ? providerTabFor(parsed.aiSearchModel)
@@ -367,7 +357,6 @@ function parseStoredSettings(raw: string | null): Settings {
         typeof parsed.region === "string" && /^[a-z]{2}$/i.test(parsed.region)
           ? parsed.region.toUpperCase()
           : DEFAULT.region,
-      showQuickGameLibrary: parsed.showQuickGameLibrary === true,
       topbarAppearance: sanitizeTopbarAppearance(
         parsed.topbarAppearance,
         parsed.transparentTopBar,

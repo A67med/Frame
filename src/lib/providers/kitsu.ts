@@ -1,8 +1,8 @@
 import { lruSet } from "@/lib/cache";
 import type { Meta } from "@/lib/cinemeta";
 import { registerEvictable } from "@/lib/maintenance";
-import { safeFetch } from "@/lib/safe-fetch";
-import { adultContentHidden } from "@/lib/addons-store/adult-filter";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
+import { adultContentHidden } from "@/features/addons/catalog/adult-filter";
 
 const KITSU = "https://kitsu.io/api/edge";
 

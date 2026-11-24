@@ -44,14 +44,18 @@ test("HDR shell mounts with the actual profile, auth and navigation contexts", (
     setItem: (...args) => writes.push(args),
   };
   const profiles = load(
-    "src/lib/profiles.tsx",
+    "src/features/profiles/profiles.tsx",
     {
-      "./avatars/catalog": { isRemovedBuiltinAvatar: () => false },
+      "@/lib/avatars/catalog": { isRemovedBuiltinAvatar: () => false },
     },
     { localStorage },
   );
-  const auth = load("src/lib/auth.tsx", { "./profiles": profiles }, { localStorage });
-  const view = load("src/lib/view.tsx");
+  const auth = load(
+    "src/lib/auth.tsx",
+    { "@/features/profiles/profiles": profiles },
+    { localStorage },
+  );
+  const view = load("src/app/navigation/view.tsx");
   const forwarded = [];
   const payload = {
     stageId: "test-stage",
@@ -64,10 +68,10 @@ test("HDR shell mounts with the actual profile, auth and navigation contexts", (
       useState: (initial) => React.useState(initial === null ? payload : initial),
     },
     "@/lib/auth": auth,
-    "@/lib/profiles": profiles,
-    "@/lib/view": view,
+    "@/features/profiles/profiles": profiles,
+    "@/app/navigation/view": view,
     "@/lib/settings": { SettingsProvider: ({ children }) => children },
-    "@/lib/player/mpv-forward": { createForwardingMpvBridge: () => ({}) },
+    "@/features/player/engine/mpv-forward": { createForwardingMpvBridge: () => ({}) },
     "./player/hooks/use-player-interaction-lock": { usePlayerInteractionBlocker: () => {} },
     "./player/drag-click-stage": { DragClickStage: () => null },
     "@/components/player/player-interaction-lock": { PlayerInteractionLockControls: () => null },
@@ -134,11 +138,11 @@ test("overlay subscribes before requesting props and cancels late listener regis
       "src/views/hdr-overlay-app.tsx",
       {
         react: { ...React, useEffect: (effect) => effects.push(effect) },
-        "@/lib/profiles": { CompanionProfilesProvider: passthrough },
+        "@/features/profiles/profiles": { CompanionProfilesProvider: passthrough },
         "@/lib/auth": { AuthProvider: passthrough },
         "@/lib/settings": { SettingsProvider: passthrough },
-        "@/lib/view": { PlayerNavigationProvider: passthrough },
-        "@/lib/player/mpv-forward": { createForwardingMpvBridge: () => ({}) },
+        "@/app/navigation/view": { PlayerNavigationProvider: passthrough },
+        "@/features/player/engine/mpv-forward": { createForwardingMpvBridge: () => ({}) },
         "./player/hooks/use-player-interaction-lock": { usePlayerInteractionBlocker() {} },
         "@/lib/hdr-overlay": {
           onHdrStageProps: () =>

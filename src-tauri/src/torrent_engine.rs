@@ -21,9 +21,7 @@ use librqbit::{
 // Only the desktop new_session builds SessionOptions inline. Android gets the
 // whole struct back from p2p_android::session_options, so these three would be
 // unused imports there.
-#[cfg(not(target_os = "android"))]
 use librqbit::dht::PersistentDhtConfig;
-#[cfg(not(target_os = "android"))]
 use librqbit::{SessionOptions, SessionPersistenceConfig};
 use serde::Serialize;
 use tauri::{AppHandle, Manager};
@@ -301,26 +299,6 @@ pub struct TorrentEngineStats {
     state: String,
 }
 
-#[cfg(target_os = "android")]
-async fn new_session(
-    dir: &std::path::Path,
-    full: bool,
-    dht: bool,
-    persist_dht: bool,
-    cancellation: CancellationToken,
-) -> Result<Arc<Session>, String> {
-    let guard = cancellation.clone().drop_guard();
-    let mut options =
-        crate::p2p_android::session_options(dir, full, dht, persist_dht, trackers::as_url_set());
-    options.cancellation_token = Some(cancellation);
-    let session = Session::new_with_opts(dir.to_path_buf(), options)
-        .await
-        .map_err(|e| format!("{e:#}"))?;
-    let _ = guard.disarm();
-    Ok(session)
-}
-
-#[cfg(not(target_os = "android"))]
 async fn new_session(
     dir: &std::path::Path,
     full: bool,
@@ -413,7 +391,6 @@ struct EngineConfig {
     max_gb: Option<u64>,
 }
 
-#[cfg(not(target_os = "android"))]
 fn config_path(app: &AppHandle) -> Option<std::path::PathBuf> {
     app.path()
         .app_cache_dir()
@@ -424,13 +401,6 @@ fn config_path(app: &AppHandle) -> Option<std::path::PathBuf> {
 // Same reason as engine_dir below: Android's app_cache_dir is activity.cacheDir,
 // which the OS empties under storage pressure. Leaving engine.json there loses
 // the user's chosen cache directory and retention settings at random.
-#[cfg(target_os = "android")]
-fn config_path(app: &AppHandle) -> Option<std::path::PathBuf> {
-    app.path()
-        .app_data_dir()
-        .ok()
-        .map(|d| d.join("engine.json"))
-}
 
 fn read_config(app: &AppHandle) -> EngineConfig {
     config_path(app)
@@ -439,7 +409,6 @@ fn read_config(app: &AppHandle) -> EngineConfig {
         .unwrap_or_default()
 }
 
-#[cfg(not(target_os = "android"))]
 fn engine_dir(app: &AppHandle, cfg: &EngineConfig) -> Result<std::path::PathBuf, String> {
     if let Some(custom) = cfg.dir.as_deref().map(str::trim).filter(|s| !s.is_empty()) {
         return Ok(std::path::PathBuf::from(custom).join("harbor-stream-cache"));
@@ -450,27 +419,10 @@ fn engine_dir(app: &AppHandle, cfg: &EngineConfig) -> Result<std::path::PathBuf,
         .map(|d| d.join("engine"))
 }
 
-#[cfg(target_os = "android")]
-fn engine_dir(app: &AppHandle, cfg: &EngineConfig) -> Result<std::path::PathBuf, String> {
-    if let Some(custom) = cfg.dir.as_deref().map(str::trim).filter(|s| !s.is_empty()) {
-        return Ok(std::path::PathBuf::from(custom).join("harbor-stream-cache"));
-    }
-    app.path()
-        .app_data_dir()
-        .map_err(|e| e.to_string())
-        .map(|d| crate::p2p_android::engine_root(&d))
-}
-
 async fn init(app: AppHandle, cancellation: CancellationToken) -> Result<(), String> {
     let cancellation = cancellation.child_token();
     let guard = cancellation.clone().drop_guard();
-    #[cfg(not(target_os = "android"))]
     std::env::set_var("DHT_QUERIES_PER_SECOND", "400");
-    #[cfg(target_os = "android")]
-    std::env::set_var(
-        "DHT_QUERIES_PER_SECOND",
-        crate::p2p_android::DHT_QUERIES_PER_SECOND,
-    );
     let cfg = read_config(&app);
     let dir = engine_dir(&app, &cfg)?;
     std::fs::create_dir_all(&dir).map_err(|e| e.to_string())?;
@@ -564,12 +516,12 @@ async fn ensure_session(app: &AppHandle) -> Result<Arc<Session>, String> {
 }
 
 pub fn ensure_started_on_setup(app: &AppHandle) {
-    let enabled = !crate::settings_store::read_torrents_disabled(app);
+    let enabled = !crate::features::profiles::storage::read_torrents_disabled(app);
     let change = lifecycle().request(enabled);
     if !enabled || !lifecycle().enable(change) {
         return;
     }
-    if crate::settings_store::read_defer_torrent_engine(app) {
+    if crate::features::profiles::storage::read_defer_torrent_engine(app) {
         return;
     }
     let app = app.clone();

@@ -33,7 +33,7 @@ test("MPV restart from another media path cannot clear the current stall", async
 // Execute the bridge's actual snapshot callback with controlled media-element state.
 function html5SnapshotHarness() {
   const source = readFileSync(
-    new URL("../src/lib/player/html5/bridge.ts", import.meta.url),
+    new URL("../src/features/player/engine/html5/bridge.ts", import.meta.url),
     "utf8",
   );
   const ast = ts.createSourceFile("bridge.ts", source, ts.ScriptTarget.Latest, true);

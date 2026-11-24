@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { downloadShader } from "@/lib/shaders";
 import { tvFocus } from "@/lib/keyboard-navigation";
 import { navOwnsFocus } from "@/lib/keyboard-navigation/geometry";
-import type { ShaderCatalogEntry } from "@/lib/player/shader-catalog";
+import type { ShaderCatalogEntry } from "@/features/player/engine/shader-catalog";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { openUrl } from "@/lib/window";

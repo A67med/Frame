@@ -4,7 +4,7 @@ import { Dropdown } from "@/components/dropdown";
 import { Flag } from "@/components/flag";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { ALL_LANGUAGE_NAMES } from "@/lib/subtitles/language";
+import { ALL_LANGUAGE_NAMES } from "@/features/subtitles/language";
 import { Section, Segmented } from "../shared";
 import { SettingRow, Nested } from "../kit";
 

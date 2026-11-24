@@ -4,7 +4,7 @@ import {
   rankSoundtrackCandidates,
   readReleaseGroup,
   soundtrackCandidates,
-} from "../src/lib/providers/musicbrainz-soundtrack-pick.ts";
+} from "../src/features/metadata/musicbrainz-soundtrack-pick.ts";
 
 const REMIX_ID = "13a48695-785a-4b04-bfbe-433c604c7f4f";
 const OVERTURE_ID = "0c2833dc-2fe4-4215-b91f-e37c5d65136f";

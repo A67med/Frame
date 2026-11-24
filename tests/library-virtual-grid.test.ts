@@ -6,9 +6,9 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
-const shared = read("src/views/library/shared.tsx");
-const tab = read("src/views/library/watchlist-tab.tsx");
-const library = read("src/views/library.tsx");
+const shared = read("src/features/library/views/library/shared.tsx");
+const tab = read("src/features/library/views/library/watchlist-tab.tsx");
+const library = read("src/features/library/views/library.tsx");
 
 test("grouped library grids virtualize per group when given a scroll ref", () => {
   assert.match(

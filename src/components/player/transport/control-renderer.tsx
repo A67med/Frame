@@ -1,4 +1,4 @@
-import { togglePictureBar } from "@/lib/player/picture-bar";
+import { togglePictureBar } from "@/features/player/engine/picture-bar";
 import { t as translate } from "@/lib/i18n";
 import { StremioVolume } from "./stremio-volume";
 import {
@@ -14,8 +14,8 @@ import {
 } from "lucide-react";
 import { NavGlyph } from "@/components/icons/nav-glyph";
 import type { ReactNode } from "react";
-import type { PlayerCapabilities, PlayerSnapshot } from "@/lib/player/bridge";
-import type { SubtitleAddHandler } from "@/lib/player/subtitle-load";
+import type { PlayerCapabilities, PlayerSnapshot } from "@/features/player/engine/bridge";
+import type { SubtitleAddHandler } from "@/features/player/engine/subtitle-load";
 import type { Meta } from "@/lib/cinemeta";
 import {
   getCustomIcon,
@@ -28,7 +28,7 @@ import {
 import type { DownloadStatus } from "@/views/player/hooks/use-video-download";
 import { CustomIcon, renderCustomIconControl } from "./custom-icon-renderer";
 import { QualityInfo } from "./quality-badge";
-import { hdrFormatLabel, realQualityLabel } from "@/lib/player/resolution-label";
+import { hdrFormatLabel, realQualityLabel } from "@/features/player/engine/resolution-label";
 import { ThreeLiquidGlassSurface } from "@/components/ThreeLiquidGlassSurface";
 import { FullscreenClock } from "@/components/player/fullscreen-clock";
 

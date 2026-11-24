@@ -1,7 +1,7 @@
 import { AlertTriangle } from "../icons";
 import { useEffect, useState } from "react";
-import { isMacDesktop, isWindowsDesktop } from "@/lib/platform";
-import { probeMpv, type MpvProbe } from "@/lib/player/mpv";
+import { isWindowsDesktop } from "@/lib/platform";
+import { probeMpv, type MpvProbe } from "@/features/player/engine/mpv";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import { ROW_DESC, SettingGroup, SettingRow } from "../kit";
@@ -28,10 +28,6 @@ export function PlayerEnginePanel() {
       cancelled = true;
     };
   }, []);
-
-  const macEdrSub = t(
-    "Sends HDR to the display through macOS EDR instead of mapping it down to SDR. Needs HDR-to-SDR tonemapping off, mpv embedded, and a display with HDR headroom. Takes effect on the next video. Experimental: color can look flat, and an SDR video after an HDR one may need a window resize.",
-  );
 
   const choices: Array<{
     id: "auto" | "html5" | "mpv";
@@ -143,15 +139,6 @@ export function PlayerEnginePanel() {
               value={settings.playerHdrToSdr}
               onChange={(v) => update({ playerHdrToSdr: v })}
             />
-            {isMacDesktop() && (
-              <ToggleRow
-                label={t("True HDR, embedded")}
-                sub={macEdrSub}
-                lockReason={settings.playerHdrToSdr ? macEdrSub : undefined}
-                value={settings.playerMacEdr}
-                onChange={(v) => update({ playerMacEdr: v })}
-              />
-            )}
             <DisplayPanelSelector />
           </SettingGroup>
         )}

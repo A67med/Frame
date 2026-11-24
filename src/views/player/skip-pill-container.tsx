@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { usePlaybackPosition } from "@/lib/player/playback-clock";
+import { usePlaybackPosition } from "@/features/player/engine/playback-clock";
 import { SkipPill } from "@/components/player/skip-pill";
 import { BpSkipPill } from "@/views/big-picture/player/bp-skip-pill";
 import { activeSegment, type SkipSegment } from "@/lib/skip-intro";
 import { useSettings } from "@/lib/settings";
 import { effectiveBinding, eventToBinding, isTypingTarget } from "@/lib/hotkeys";
-import { isPlayerInteractionLocked } from "@/lib/player/interaction-lock";
+import { isPlayerInteractionLocked } from "@/features/player/engine/interaction-lock";
 import type { SpoilerMask } from "@/lib/spoilers";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 const UNDO_SKIP_MS = 4000;
 

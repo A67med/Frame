@@ -1,5 +1,5 @@
 import { activeLayout } from "./theme";
-import { useActiveKid } from "./profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { useSettings } from "./settings";
 import { useThemePreview } from "./theme-preview";
 

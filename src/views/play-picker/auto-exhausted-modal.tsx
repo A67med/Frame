@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import { useView, type PlayEpisode } from "@/lib/view";
+import { useView, type PlayEpisode } from "@/app/navigation/view";
 import { parseKitsuId } from "@/lib/providers/kitsu";
 import { splitFranchiseDisplaySeason } from "@/lib/streams/anime-identity-core";
 import { useT } from "@/lib/i18n";

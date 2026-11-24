@@ -1,52 +1,52 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
 import { convertFileSrc, invoke } from "@tauri-apps/api/core";
-import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/lib/player/bridge";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/features/player/engine/bridge";
+import type { PlayerSrc } from "@/app/navigation/view";
 import type { Settings } from "@/lib/settings";
 import { dwarn } from "@/lib/debug";
-import { fetchAndParse, type SubCue } from "@/lib/subtitles/parser";
-import { toSrt, toVtt } from "@/lib/subtitles/serialize";
+import { fetchAndParse, type SubCue } from "@/features/subtitles/parser";
+import { toSrt, toVtt } from "@/features/subtitles/serialize";
 import {
   runAutoSync,
   type PipelineContext,
   type PipelineOutcome,
-} from "@/lib/subtitles/autosync/pipeline";
-import { buildTierPorts, defaultOsConfig } from "@/lib/subtitles/autosync/context";
+} from "@/features/subtitles/autosync/pipeline";
+import { buildTierPorts, defaultOsConfig } from "@/features/subtitles/autosync/context";
 import {
   preferAutoSyncOutcome,
   runExperimentalPivotAutoSync,
-} from "@/lib/subtitles/autosync/pivot-runtime";
+} from "@/features/subtitles/autosync/pivot-runtime";
 import {
   crowdConfigFromSettings,
   reportCrowdFeedback,
   reportVerifiedSync,
-} from "@/lib/subtitles/autosync/crowd-db";
+} from "@/features/subtitles/autosync/crowd-db";
 import {
   classifyTorrentSource,
   scheduleProgressiveTorrentSync,
   sourceKindFor,
   type ProgressiveHandle,
-} from "@/lib/subtitles/autosync/torrent-sync";
-import { resolveSwapCues, type OsConfig } from "@/lib/subtitles/autosync/opensubtitles";
+} from "@/features/subtitles/autosync/torrent-sync";
+import { resolveSwapCues, type OsConfig } from "@/features/subtitles/autosync/opensubtitles";
 import {
   isDelayOnlyTransform,
   type SubtitleFormat,
   type SyncTransform,
-} from "@/lib/subtitles/autosync/fp-gate";
-import { transformCues } from "@/lib/subtitles/autosync/html5-sync";
+} from "@/features/subtitles/autosync/fp-gate";
+import { transformCues } from "@/features/subtitles/autosync/html5-sync";
 import {
   DriftMonitor,
   makeTauriDriftPorts,
   type DriftDeps,
-} from "@/lib/subtitles/autosync/drift-monitor";
-import { resetMpvSubtitleFpsForTransition } from "@/lib/player/mpv-properties";
+} from "@/features/subtitles/autosync/drift-monitor";
+import { resetMpvSubtitleFpsForTransition } from "@/features/player/engine/mpv-properties";
 import {
   buildSubtitleTimingMediaKey,
   isAutoSyncScopeCurrent,
   runAfterSubtitleFpsReset,
-} from "@/lib/player/subtitle-fps";
-import { isAssTrack } from "@/lib/player/sub-format";
-import { automaticAutoSyncMayStart } from "@/lib/subtitles/autosync/preflight-gate";
+} from "@/features/player/engine/subtitle-fps";
+import { isAssTrack } from "@/features/player/engine/sub-format";
+import { automaticAutoSyncMayStart } from "@/features/subtitles/autosync/preflight-gate";
 import { buildContext, isLoopback, outcomeScore, toDriftState } from "./use-auto-sync.helpers";
 
 export type AutoSyncStatus =

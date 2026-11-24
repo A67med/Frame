@@ -6,8 +6,8 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const at = (p: string) => new URL(`../${p}`, import.meta.url);
-const mpv = readFileSync(at("src/lib/player/mpv.ts"), "utf8");
-const mpvRs = readFileSync(at("src-tauri/src/mpv.rs"), "utf8");
+const mpv = readFileSync(at("src/features/player/engine/mpv.ts"), "utf8");
+const mpvRs = readFileSync(at("src-tauri/src/features/playback/mpv.rs"), "utf8");
 
 // The mpv bridge is a closure bound to Tauri's invoke/listen and the DOM, so we
 // assert the wiring statically the way the other mpv tests do. This mirrors the

@@ -69,7 +69,7 @@ const social: Record<string, string> = {
   "Delete comment": "删除评论",
   "Add your social links": "添加社交链接",
   "In a watch party": "正在参加同看派对",
-  Share: "分享",
+  "Share": "分享",
   "Remove friend": "删除好友",
   "1 friend in common": "1 位共同好友",
   "You have reached {max} lists. Remove one to make room.":
@@ -89,7 +89,7 @@ const social: Record<string, string> = {
   "Invite via link": "通过链接邀请",
   "Open invite link panel": "打开邀请链接面板",
   "Close invite link panel": "关闭邀请链接面板",
-  Invite: "邀请",
+  "Invite": "邀请",
   "Watch Together needs a relay.": "“一起观看”需要中继服务。",
   "Paste invite link": "粘贴邀请链接",
   "Start a new room": "创建新房间",
@@ -110,7 +110,7 @@ const social: Record<string, string> = {
   "Failed to post comment": "发表评论失败",
   "Write a comment...": "发表评论…",
   "By community stars": "按社区星级排序",
-  Community: "社区",
+  "Community": "社区",
   "community API. Star, browse, and contribute on their site.":
     "社区 API。可在其网站上加星、浏览和贡献内容。",
   "Shared to the community": "已分享到社区",
@@ -125,21 +125,15 @@ const social: Record<string, string> = {
   "Next review": "下一条评论",
   "Open review source": "打开评论来源",
   "Previous review": "上一条评论",
-  review: "评论",
-  Review: "评论",
+  "review": "评论",
+  "Review": "评论",
   "Show a Skip button when a known injected ad plays, and a small report button on new releases so you can mark ads for review.":
     "播放已知的插入广告时显示“跳过”按钮，并在新发布内容上显示小型举报按钮，以便将广告标记为待审核。",
   "Thanks. Sent for review.": "谢谢。已提交审核。",
-  "Know a good one? Add a name, its API or site URL, and an icon if you have one. We review every suggestion before it goes live.":
-    "知道合适的来源？请添加名称、API 或网站 URL，如果有图标也可一并添加。每条建议都会在上线前经过审核。",
-  "Only add repositories you trust. Frame cannot vouch for third-party plugins.":
-    "仅添加您信任的仓库。Frame 无法为第三方插件担保。",
-  "We review every source. Yours will be reviewed and approved shortly if it checks out.":
-    "我们会审核每个来源。如果您的来源通过检查，很快就会获批。",
   "Could not respond to that invite.": "无法处理该邀请。",
   "Dismiss notification": "关闭通知",
   "Friend requests": "好友请求",
-  Notification: "通知",
+  "Notification": "通知",
   "Popular community addons ranked by the public directory's stars. Install anything else by URL on the Browse tab.":
     "按公开目录星级排名的热门社区插件。其他插件可在「浏览」标签页中通过 URL 安装。",
   "Remove friend?": "移除好友？",
@@ -169,7 +163,7 @@ const social: Record<string, string> = {
   "Starting or joining a room. It has to happen on the device that is playing.":
     "创建或加入房间。必须在正在播放的设备上操作。",
   "Stops the TV playing to an empty room all night.": "防止电视对着空房间播放一整夜。",
-  Together: "一起看",
+  "Together": "一起看",
   "Watch Together relay": "一起看中继",
   "Community collections are coming soon": "社区合集即将推出",
   "Curated, themed sets you can make beautiful and share by link. A Studio Ghibli shelf, the best heist movies, a marathon for a rainy weekend.":
@@ -181,7 +175,7 @@ const social: Record<string, string> = {
     "是什么将这些作品联系在一起？同一个工作室、同一种氛围，或是一场刷片之夜。",
   "Make it bigger for a TV across the room, smaller for a desk monitor.":
     "远距离看电视时调大，使用桌面显示器时调小。",
-  Social: "社交",
+  "Social": "社交",
   "{count} community ratings on stremio-addons.net#one":
     "stremio-addons.net 上有 {count} 条社区评分",
   "{count} community ratings on stremio-addons.net#few":

@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { HarborLoader } from "@/components/harbor-loader";
 import { CustomArtwork } from "@/components/custom-artwork";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import { isLocalUrl } from "@/lib/player/local-url";
-import { usePlaybackPositionGated } from "@/lib/player/playback-clock";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import { isLocalUrl } from "@/features/player/engine/local-url";
+import { usePlaybackPositionGated } from "@/features/player/engine/playback-clock";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { Topbar } from "@/chrome/topbar";
 import { useT } from "@/lib/i18n";
-import { useActiveKid } from "@/lib/profiles";
+import { useActiveKid } from "@/features/profiles/profiles";
 import { resolveLogo } from "@/lib/logo";
 import { useSettings } from "@/lib/settings";
 import { useTitleLogo } from "@/lib/title-logo";

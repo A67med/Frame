@@ -152,8 +152,6 @@ const catalog13: Record<string, string> = {
   "دوري MLS": "MLS 리그",
   "“Cached” just means your addon thinks that file is already saved on your debrid, ready to play instantly. That flag isn’t always right: sometimes the file isn’t actually there yet. When that happens the source won’t start, or it plays a short broken clip. It’s not a Frame problem: pick another source, or give it a minute to finish caching and try again.":
     "‘캐시됨’은 애드온에서 해당 파일이 디브리드에 이미 저장되어 즉시 재생할 수 있다고 판단한다는 의미일 뿐입니다. 이 표시는 항상 정확하지 않으며, 실제로는 파일이 아직 없을 수도 있습니다. 이 경우 소스가 시작되지 않거나 짧고 손상된 클립이 재생됩니다. Frame의 문제가 아닙니다. 다른 소스를 선택하거나 캐시가 완료되도록 잠시 기다린 후 다시 시도하세요.",
-  "← folder or .cbz / .zip": "← 폴더 또는 .cbz / .zip",
-  "← name it like the manga": "← 만화와 같은 이름으로 지정",
   "≈{count}m left": "약 {count}분 남음",
   "≈{count}s left": "약 {count}초 남음",
   "○ Mark watched": "○ 시청함으로 표시",

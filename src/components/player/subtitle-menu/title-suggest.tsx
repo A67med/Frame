@@ -2,7 +2,7 @@ import { Film, Loader2, Minus, Plus, Tv } from "lucide-react";
 import { useLayoutEffect, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
 import { useT } from "@/lib/i18n";
-import type { TitleCandidate } from "@/lib/subtitles/title-search";
+import type { TitleCandidate } from "@/features/subtitles/title-search";
 
 export function TitleSuggestDropdown({
   anchorRef,

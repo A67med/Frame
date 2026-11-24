@@ -11,7 +11,7 @@ import {
 } from "@/lib/providers/stremio-addons";
 import { useSettings } from "@/lib/settings";
 import { fetchManifestAt, installAddon, manifestToConfigureUrl } from "@/lib/addon-store";
-import { rememberPendingAddon } from "@/lib/addons-store/pending-detail";
+import { rememberPendingAddon } from "@/features/addons/catalog/pending-detail";
 import { openInstallerViewport } from "@/components/installer-viewport";
 import { openUrl } from "@/lib/window";
 import { useT } from "@/lib/i18n";

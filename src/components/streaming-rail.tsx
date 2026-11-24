@@ -2,7 +2,7 @@ import { Row } from "@/components/row";
 import { ServiceLogo } from "@/components/service-logo";
 import { useT } from "@/lib/i18n";
 import type { StreamingService } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function StreamingRail({ services }: { services: StreamingService[] }) {
   const { openService } = useView();

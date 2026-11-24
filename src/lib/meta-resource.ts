@@ -1,5 +1,5 @@
 import { cinemetaEnabled, meta as cinemetaMeta, type Meta } from "./cinemeta";
-import { safeFetch as fetch } from "./safe-fetch";
+import { safeFetch as fetch } from "../infrastructure/networking/safe-fetch";
 import { addonAccepts, userAddons, type Addon } from "./addons";
 import { loadInstalled } from "./addon-store";
 import { readActiveStremioAuthKey } from "./auth";

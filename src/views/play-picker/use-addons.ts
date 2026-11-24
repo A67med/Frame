@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchInstalledAddons, fetchManifestAt, filterEnabled } from "@/lib/addon-store";
 import { userAddons, withDebridKeys, type Addon } from "@/lib/addons";
-import { applyOrderToItems, loadDisplayOrder } from "@/lib/addons-store/reorder";
+import { applyOrderToItems, loadDisplayOrder } from "@/features/addons/catalog/reorder";
 import type { useSettings } from "@/lib/settings";
 import {
   loadStreamPlugins,
@@ -9,7 +9,7 @@ import {
   pluginListKey,
   setStreamPluginConfig,
   subscribeStreamPluginList,
-} from "@/lib/streams/plugins";
+} from "@/features/addons/streams";
 
 type Settings = ReturnType<typeof useSettings>["settings"];
 

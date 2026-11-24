@@ -7,7 +7,7 @@ import {
   clearSubtitleDownloadCredentials,
   subtitleCredentialRequest,
   subtitleDownloadHeaders,
-} from "../src/lib/subtitles/provider-auth.ts";
+} from "../src/features/subtitles/provider-auth.ts";
 
 test("subtitle download credentials stay bound to the search result that created them", async () => {
   await clearSubtitleDownloadCredentials();

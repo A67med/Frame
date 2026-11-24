@@ -134,7 +134,7 @@ function harness() {
       manualWatchedState: (id: string, s: number, e: number) => manual.get(episodeKey(id, s, e)),
     },
     "@/lib/settings": { useSettings: () => ({ settings }) },
-    "@/lib/profiles": {
+    "@/features/profiles/profiles": {
       useProfiles: () => ({ activeProfile: profile, profiles: [] }),
       anyProfileSharesStremioWith: () => true,
     },
@@ -156,7 +156,7 @@ function harness() {
     "@/lib/cw-profile": { privateCwProfileId: () => (settings.cwPerProfile ? profile.id : null) },
     "@/lib/providers/anime-mapping": { relatedLibraryIds: async () => [] },
     "@/lib/anime-detect": { isDetectedAnime: () => false },
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: () => {
         throw new Error("unexpected live request");
       },

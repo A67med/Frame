@@ -2,7 +2,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 import { discoverCastDevices } from "@/lib/cast";
-import { getPlaybackPosition, subscribePlaybackClock } from "@/lib/player/playback-clock";
+import {
+  getPlaybackPosition,
+  subscribePlaybackClock,
+} from "@/features/player/engine/playback-clock";
 import { useSettings } from "@/lib/settings";
 import { useAuth } from "@/lib/auth";
 import { library, libraryMetaType, type LibraryItem } from "@/lib/stremio";
@@ -11,8 +14,12 @@ import { fetchWatchlist } from "@/lib/trakt/watchlist";
 import { fetchWatchedHistory, type HistoryItem } from "@/lib/trakt/history";
 import { traktItemToMeta } from "@/lib/trakt/to-meta";
 import type { TraktItem } from "@/lib/trakt/types";
-import { readLocalEntries, subscribeWatchlist, type LocalEntry } from "@/lib/watchlist";
-import { localEntryToMeta, useLocalLibrary } from "@/lib/local-library";
+import {
+  readLocalEntries,
+  subscribeWatchlist,
+  type LocalEntry,
+} from "@/features/watchlist/watchlist";
+import { localEntryToMeta, useLocalLibrary } from "@/features/library/local-library";
 import {
   mediaServerConnections,
   subscribeMediaServerConnections,
@@ -20,7 +27,7 @@ import {
 import { mediaServerItems } from "@/lib/media-server/index-store";
 import { groupMediaServerTitles } from "@/lib/media-server/selectors";
 import { subscribeMediaServerSyncProgress } from "@/lib/media-server/sync";
-import { hydrateLibraryMeta } from "@/views/library/hydrate-meta";
+import { hydrateLibraryMeta } from "@/features/library/views/library/hydrate-meta";
 import { useMediaFavorites } from "@/lib/media-favorites";
 import { useSimkl } from "@/lib/simkl/provider";
 import { useAnilist } from "@/lib/anilist/provider";
@@ -36,13 +43,6 @@ import {
   setRemoteTrackers,
   subscribeRemoteSession,
 } from "./session";
-import {
-  buildRemoteMangaState,
-  dispatchMangaCommand,
-  isMangaCommand,
-  subscribeRemoteManga,
-} from "./manga-session";
-import { subscribeMangaBookmarks } from "@/lib/manga-bookmarks";
 import { installTextEntryListeners } from "./text-entry";
 import {
   REMOTE_PROTO,
@@ -73,7 +73,6 @@ const UNSUPPORTED = new Set(["setConfig"]);
 function pushSnapshot(force = false) {
   const snapshot = {
     ...buildRemoteSnapshot(getPlaybackPosition()),
-    manga: buildRemoteMangaState(),
   };
   if (!force) {
     const { updatedAt: _ignored, ...rest } = snapshot;
@@ -526,11 +525,6 @@ export function RemoteHostMount() {
               ack(clientId, id, true);
               return;
             }
-            if (isMangaCommand(msg.command.action)) {
-              await dispatchMangaCommand(msg.command);
-              ack(clientId, id, true);
-              return;
-            }
             await dispatchRemoteCommand(msg.command);
             ack(clientId, id, true);
             // nav/setText: focusin/out + 400ms tick cover textEntry; skip churn.
@@ -561,19 +555,6 @@ export function RemoteHostMount() {
     });
 
     unsubs.push(subscribeRemoteSession(() => pushSnapshot()));
-    let mangaRaf = 0;
-    const pushMangaCoalesced = () => {
-      if (mangaRaf) return;
-      mangaRaf = requestAnimationFrame(() => {
-        mangaRaf = 0;
-        pushSnapshot();
-      });
-    };
-    unsubs.push(subscribeRemoteManga(pushMangaCoalesced));
-    unsubs.push(subscribeMangaBookmarks(pushMangaCoalesced));
-    unsubs.push(() => {
-      if (mangaRaf) cancelAnimationFrame(mangaRaf);
-    });
     unsubs.push(
       subscribePlaybackClock(() => {
         // throttle via shared interval below

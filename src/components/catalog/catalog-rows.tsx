@@ -16,7 +16,7 @@ import {
   togglePageRowHidden,
   type PageRowCustomization,
 } from "@/lib/page-rows";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export type CatalogRow = {
   key: string;

@@ -1,6 +1,6 @@
 import type { ScoredStream } from "../streams/types";
 import { episodeVariantMatch } from "../streams/episode-file.ts";
-import type { PlayEpisode } from "../view";
+import type { PlayEpisode } from "../../app/navigation/view";
 
 type SeasonPackCandidate = Pick<ScoredStream, "infoHash" | "season" | "seasonPack">;
 

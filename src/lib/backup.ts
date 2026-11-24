@@ -1,7 +1,7 @@
 import { downloadText } from "@/lib/download-text";
-import { buildSyncBackup, type SyncBackup } from "@/lib/profile-sync/backup-payload";
+import { buildSyncBackup, type SyncBackup } from "@/features/profiles/sync/backup-payload";
 import { loadBgImage, saveBgImage } from "@/lib/theme-storage";
-import { readAllProfilesIdentity } from "@/lib/profiles";
+import { readAllProfilesIdentity } from "@/features/profiles/profiles";
 import { activeProfileId } from "@/lib/active-profile-id";
 import {
   flushSecrets,
@@ -11,7 +11,11 @@ import {
   setSecret,
 } from "@/lib/secret-store";
 import { setItemWithRecovery } from "@/lib/storage-recovery";
-import { localLibraryReady, readLocalLibrary, restoreLocalLibrary } from "@/lib/local-library";
+import {
+  localLibraryReady,
+  readLocalLibrary,
+  restoreLocalLibrary,
+} from "@/features/library/local-library";
 
 declare const __APP_VERSION__: string;
 

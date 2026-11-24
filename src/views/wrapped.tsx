@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useTrakt } from "@/lib/trakt/provider";
 import { aggregateWrapped } from "@/lib/wrapped/aggregate";
 import { collectWatchEvents } from "@/lib/wrapped/collect";

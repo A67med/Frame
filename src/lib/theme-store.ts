@@ -5,7 +5,7 @@ import {
   type CustomTheme,
 } from "@/lib/custom-themes";
 import { scanTheme } from "@/lib/theme-scan";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { authToken } from "./theme-auth";
 import { getDownloadRecords, recordDownloadedTheme } from "@/lib/theme-updates";
 import { parseHarborStyle } from "@/lib/harborstyle";

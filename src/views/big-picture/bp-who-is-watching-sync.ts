@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { requestSyncPull, useSyncStatus } from "@/lib/profile-sync";
+import { requestSyncPull, useSyncStatus } from "@/features/profiles/sync";
 
 /**
  * The chooser's view of the account sync engine, DERIVED from the engine's own status

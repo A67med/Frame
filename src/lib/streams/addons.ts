@@ -1,4 +1,4 @@
-import { safeFetch as fetch, safeFetchLocal } from "@/lib/safe-fetch";
+import { safeFetch as fetch, safeFetchLocal } from "@/infrastructure/networking/safe-fetch";
 import type { Addon } from "@/lib/addons";
 import { dlog, dwarn } from "@/lib/debug";
 import { isHarborFetchPolicyError } from "@/lib/fetch-fallback-policy";
@@ -17,8 +17,8 @@ import {
   PLUGIN_ADDON_PREFIX,
   pluginIdFromCatalogueBase,
   runPluginAddon,
-} from "./plugins/addon";
-import type { StreamRequestContext } from "./plugins/types";
+} from "../../features/addons/streams/addon";
+import type { StreamRequestContext } from "../../features/addons/streams/types";
 import type { Stream } from "./types";
 
 const TIMEOUT_MS_FAST = 8000;

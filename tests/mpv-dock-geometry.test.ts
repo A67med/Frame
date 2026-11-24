@@ -3,8 +3,8 @@ import test from "node:test";
 // @ts-expect-error Node tests run outside the browser-only tsconfig.
 import assert from "node:assert/strict";
 import { deferred, flushBridge, mpvBridgeHarness } from "./helpers/mpv-bridge-harness.ts";
-import type { PlayerEmbedRect } from "../src/lib/player/bridge.ts";
-import { isLivePlaybackSrc } from "../src/lib/player/live-src.ts";
+import type { PlayerEmbedRect } from "../src/features/player/engine/bridge.ts";
+import { isLivePlaybackSrc } from "../src/features/player/engine/live-src.ts";
 
 const rect = (left = 0): PlayerEmbedRect => ({
   cssLeft: left,

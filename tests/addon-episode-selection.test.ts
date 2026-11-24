@@ -61,7 +61,7 @@ function harness(layout: "list" | "grid" | "strip", videos: NonNullable<Meta["vi
     "@/lib/settings": {
       useSettings: () => ({ settings: { episodeLayout: layout, instantPlay: false }, update() {} }),
     },
-    "@/lib/local-library/use-series-play": {
+    "@/features/library/local-library/use-series-play": {
       useLocalAwareSeriesPlay: () => (input: any) => picked.push(input),
     },
     "@/lib/i18n": { useT: () => (key: string) => key },

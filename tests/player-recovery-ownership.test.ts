@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import { emptySnapshot } from "../src/lib/player/bridge.ts";
-import { canAutoRetryStuckLoad } from "../src/lib/player/stall-wait.ts";
+import { emptySnapshot } from "../src/features/player/engine/bridge.ts";
+import { canAutoRetryStuckLoad } from "../src/features/player/engine/stall-wait.ts";
 
 function deferred<T = any>() {
   let resolve!: (value: T) => void, reject!: (error: Error) => void;

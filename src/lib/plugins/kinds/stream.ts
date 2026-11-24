@@ -1,4 +1,4 @@
-import { adultContentHidden } from "@/lib/addons-store/adult-filter";
+import { adultContentHidden } from "@/features/addons/catalog/adult-filter";
 import {
   addStreamRepo,
   checkStreamPlugin,
@@ -21,9 +21,9 @@ import {
   uninstallStreamPlugin,
   type InstalledStreamPlugin,
   type StreamRepoRecord,
-} from "@/lib/streams/plugins";
-import { pluginIdFor } from "@/lib/streams/plugins/manifest";
-import { PluginError } from "@/lib/streams/plugins/types";
+} from "@/features/addons/streams";
+import { pluginIdFor } from "@/features/addons/streams/manifest";
+import { PluginError } from "@/features/addons/streams/types";
 import {
   repoHost,
   type EntryView,

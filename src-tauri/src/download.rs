@@ -186,7 +186,12 @@ async fn run_download(
         || content_type.contains("html")
         || content_type.contains("json")
         || content_type.contains("xml");
-    if non_video || (audio && (content_type.contains("mpegurl") || content_type.contains("dash+xml"))) || declared.map(|n| n < if audio { 1024 } else { 65_536 }).unwrap_or(false) {
+    if non_video
+        || (audio && (content_type.contains("mpegurl") || content_type.contains("dash+xml")))
+        || declared
+            .map(|n| n < if audio { 1024 } else { 65_536 })
+            .unwrap_or(false)
+    {
         let body = resp.text().await.unwrap_or_default();
         let snippet: String = body.chars().take(500).collect();
         eprintln!(
@@ -256,10 +261,15 @@ async fn run_download(
         }
     }
 
-    writer.flush().await.map_err(|e| DownloadEnd::Failed(format!("flush: {}", e)))?;
+    writer
+        .flush()
+        .await
+        .map_err(|e| DownloadEnd::Failed(format!("flush: {}", e)))?;
     drop(writer);
     if audio && total.is_some_and(|expected| expected != received) {
-        return Err(DownloadEnd::Failed("audio download was incomplete".to_string()));
+        return Err(DownloadEnd::Failed(
+            "audio download was incomplete".to_string(),
+        ));
     }
 
     if received < if audio { 1024 } else { MIN_VIDEO_BYTES } {

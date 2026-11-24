@@ -13,26 +13,26 @@ import {
   unknownQuality,
   type GateInputs,
   type QualityMeasurement,
-} from "../src/lib/subtitles/autosync/fp-gate.ts";
+} from "../src/features/subtitles/autosync/fp-gate.ts";
 import {
   DEFAULT_BUNDLE,
   isReleaseReady,
   type CalibrationBundle,
-} from "../src/lib/subtitles/autosync/calibration.ts";
+} from "../src/features/subtitles/autosync/calibration.ts";
 import {
   canUseLexicalAsr,
   escalateTryHarder,
   type EscalateArgs,
-} from "../src/lib/subtitles/autosync/smart-layer.ts";
-import type { SignalEvidence } from "../src/lib/subtitles/autosync/confidence.ts";
+} from "../src/features/subtitles/autosync/smart-layer.ts";
+import type { SignalEvidence } from "../src/features/subtitles/autosync/confidence.ts";
 import {
   runAutoSync,
   type PipelineContext,
   type TierPorts,
-} from "../src/lib/subtitles/autosync/pipeline.ts";
+} from "../src/features/subtitles/autosync/pipeline.ts";
 import { audioLanguageFromSnapshot } from "../src/views/player/hooks/use-auto-sync.helpers.ts";
-import type { PlayerSnapshot } from "../src/lib/player/bridge.ts";
-import { consensusLanguages } from "../src/lib/subtitles/autosync/language-context.ts";
+import type { PlayerSnapshot } from "../src/features/player/engine/bridge.ts";
+import { consensusLanguages } from "../src/features/subtitles/autosync/language-context.ts";
 
 const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
@@ -537,12 +537,12 @@ test("selected audio metadata supplies audioLanguage independently of subtitle l
 });
 
 test("ASR language and ASS application paths are wired conservatively", () => {
-  const context = read("src/lib/subtitles/autosync/context.ts");
+  const context = read("src/features/subtitles/autosync/context.ts");
   assert.match(context, /subLang: ctx\.audioLanguage \|\| null/);
   assert.doesNotMatch(context, /subLang: ctx\.languages\[0\]/);
   assert.doesNotMatch(context, /NEUTRAL_QUALITY|TORRENT_BASELINE/);
 
-  const torrent = read("src/lib/subtitles/autosync/torrent-sync.ts");
+  const torrent = read("src/features/subtitles/autosync/torrent-sync.ts");
   assert.doesNotMatch(torrent, /UNVERIFIED_BASELINE_NCC|BASELINE_Z/);
 
   const hook = read("src/views/player/hooks/use-auto-sync.ts");
@@ -554,7 +554,7 @@ test("ASR language and ASS application paths are wired conservatively", () => {
   );
   assert.match(hook, /formatOf\(b, activeSelected\)/);
 
-  const driftPorts = read("src/lib/subtitles/autosync/drift-ports.ts");
+  const driftPorts = read("src/features/subtitles/autosync/drift-ports.ts");
   assert.doesNotMatch(driftPorts, /asr_confirm_window/);
   assert.doesNotMatch(hook, /enableAsr:/);
 });

@@ -6,7 +6,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
-const tab = read("src/views/library/local-tab.tsx");
+const tab = read("src/features/library/views/library/local-tab.tsx");
 const types = read("src/lib/settings/types.ts");
 const defaults = read("src/lib/settings/defaults.ts");
 const load = read("src/lib/settings/load.ts");

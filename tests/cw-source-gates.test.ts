@@ -32,7 +32,7 @@ function harness(bigPicture: boolean, sources: any, privateProfile = false) {
   const noop = () => {};
   const mocks = {
     "@/lib/auth": { useAuth: () => ({ authKey: null }) },
-    "@/lib/profiles": {
+    "@/features/profiles/profiles": {
       useProfiles: () => ({ activeProfile: { id: "test" }, profiles: [] }),
       anyProfileSharesStremioWith: () => true,
     },

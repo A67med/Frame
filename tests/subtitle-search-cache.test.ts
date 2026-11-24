@@ -8,8 +8,8 @@ import {
   subtitleSearchCacheKey,
   subtitleSearchResultsMayBeCached,
   type SubtitleSearchCacheScope,
-} from "../src/lib/subtitles/search-cache.ts";
-import type { SubResult } from "../src/lib/subtitles/types.ts";
+} from "../src/features/subtitles/search-cache.ts";
+import type { SubResult } from "../src/features/subtitles/types.ts";
 
 const baseScope: SubtitleSearchCacheScope = {
   languages: ["ar", "en"],

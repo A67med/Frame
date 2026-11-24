@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import type { PlayerSnapshot } from "@/lib/player/bridge";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSnapshot } from "@/features/player/engine/bridge";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { SHORT_PLAYBACK_SEC } from "@/lib/dead-streams";
 
 /**

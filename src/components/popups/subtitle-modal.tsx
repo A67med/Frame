@@ -4,16 +4,16 @@ import {
   publishSubtitleContext,
   type SubtitleContentContext,
 } from "@/components/player/subtitle-menu/subtitle-context-store";
-import type { TrackInfo } from "@/lib/player/bridge";
-import type { SubtitleAddHandler } from "@/lib/player/subtitle-load";
+import type { TrackInfo } from "@/features/player/engine/bridge";
+import type { SubtitleAddHandler } from "@/features/player/engine/subtitle-load";
 import { ResizableSubtitlePanel } from "@/components/player/subtitle-menu/resizable-panel";
-import type { GeneratedSubtitleGroup } from "@/lib/subtitles/types";
+import type { GeneratedSubtitleGroup } from "@/features/subtitles/types";
 import {
   clearTranslationJobs,
   registerTranslationJob,
   type TranslationJob,
-} from "@/lib/subtitles/translation-jobs";
-import { replaceAddedSubs } from "@/lib/subtitles/added-subs";
+} from "@/features/subtitles/translation-jobs";
+import { replaceAddedSubs } from "@/features/subtitles/added-subs";
 
 export type SubtitleModalState = {
   tracks: TrackInfo[];

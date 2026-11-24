@@ -1,6 +1,6 @@
 import { userAddons, type Addon, type AddonCatalogCursor, type CatalogDef } from "@/lib/addons";
 import { fetchManifestAt, filterEnabled, loadInstalled } from "@/lib/addon-store";
-import { applyOrderToItems, hostOf, loadDisplayOrder } from "@/lib/addons-store/reorder";
+import { applyOrderToItems, hostOf, loadDisplayOrder } from "@/features/addons/catalog/reorder";
 import { bpAddonLogo } from "./bp-addon-logo";
 
 export type BpAddonEntry = {

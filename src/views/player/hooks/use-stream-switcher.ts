@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackPosition, usePlaybackFlag } from "@/lib/player/playback-clock";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
+import { getPlaybackPosition, usePlaybackFlag } from "@/features/player/engine/playback-clock";
 import { pinPickerCache, unpinPickerCache } from "@/lib/picker-cache";
 import { readResumeMs } from "@/lib/resume";
 import { SHORT_PLAYBACK_SEC } from "@/lib/dead-streams";
-import { savePlayback } from "@/lib/playback-history";
+import { savePlayback } from "@/features/player/history";
 import { resolveStream } from "@/lib/streams/resolve";
 import type { ScoredStream } from "@/lib/streams/types";
 import { registerStreamProxy, unregisterStreamProxy } from "@/lib/stream-proxy";
-import { playbackStartupProfile } from "@/lib/player/startup-profile";
+import { playbackStartupProfile } from "@/features/player/engine/startup-profile";
 import { resolvePlaybackRedirect } from "@/lib/streams/playback-redirect";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import type { DebridStore } from "@/lib/debrid/types";
 
 let checkShownThisSession = false;

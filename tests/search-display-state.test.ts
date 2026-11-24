@@ -15,7 +15,6 @@ function results(query: string, tmdbUnavailable = false): SearchResults {
     series: [],
     liveTv: [],
     anime: [],
-    manga: [],
     characters: [],
     addonGroups: [],
     addons: [],

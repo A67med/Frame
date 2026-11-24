@@ -318,8 +318,6 @@ const catalog: Record<string, string> = {
   "دوري MLS": "Liga MLS",
   "“Cached” just means your addon thinks that file is already saved on your debrid, ready to play instantly. That flag isn’t always right: sometimes the file isn’t actually there yet. When that happens the source won’t start, or it plays a short broken clip. It’s not a Frame problem: pick another source, or give it a minute to finish caching and try again.":
     "“Dalam cache” hanya berarti addon Anda menganggap file tersebut sudah tersimpan di debrid Anda dan siap langsung diputar. Penanda itu tidak selalu benar: terkadang file tersebut sebenarnya belum tersedia. Jika itu terjadi, sumber tidak dapat dimulai atau hanya memutar klip pendek yang rusak. Ini bukan masalah Frame: pilih sumber lain, atau tunggu sebentar hingga proses penyimpanan ke cache selesai lalu coba lagi.",
-  "← folder or .cbz / .zip": "← folder atau .cbz / .zip",
-  "← name it like the manga": "← beri nama seperti judul manga",
   "−15s": "−15 dtk",
   "≈{count}m left": "≈tersisa {count} mnt",
   "≈{count}s left": "≈tersisa {count} dtk",

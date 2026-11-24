@@ -7,7 +7,7 @@ import {
   tmdbSearchCollectionId,
 } from "@/lib/providers/tmdb";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function CollectionCard({
   id,

@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
-import { usePlaybackDownloadedGated, usePlaybackPositionGated } from "@/lib/player/playback-clock";
+import {
+  usePlaybackDownloadedGated,
+  usePlaybackPositionGated,
+} from "@/features/player/engine/playback-clock";
 import { useT } from "@/lib/i18n";
 import { fmtTime } from "./transport-utils";
 import type { TimeFormat } from "@/lib/player-chrome";

@@ -3,7 +3,7 @@ import { EpisodePanel } from "@/components/player/episode-panel";
 import { ResumePrompt } from "@/components/player/resume-prompt";
 import type { Meta } from "@/lib/cinemeta";
 import type { PanelCorner } from "@/lib/player-chrome";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { HeaderWarning, NoAudioWarning } from "./header-warning";
 

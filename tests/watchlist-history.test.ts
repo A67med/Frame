@@ -47,7 +47,7 @@ function fixture(initial: LibraryItem | null) {
   let failedRead = false;
   const writes: LibraryItem[] = [];
   const api = load("src/lib/stremio.ts", {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async (url: string, options: { body: string }) => {
         const body = JSON.parse(options.body);
         assert.equal(body.authKey, "fixture-auth");
@@ -65,11 +65,13 @@ function fixture(initial: LibraryItem | null) {
     },
     "@/lib/resume": { readResumeEntry: () => null, readResumeSource: () => undefined },
   });
-  const history = load("src/views/library/history-merge.ts", {
+  const history = load("src/features/library/views/library/history-merge.ts", {
     "@/lib/stremio": api,
     "./shared": { parseTs: Date.parse },
   });
-  const tab = load("src/views/library/watchlist-tab.tsx", { "@/lib/stremio": api });
+  const tab = load("src/features/library/views/library/watchlist-tab.tsx", {
+    "@/lib/stremio": api,
+  });
   return {
     api,
     tab,
@@ -162,7 +164,7 @@ test("Library tab removal uses the bookmark operation and preserves History", as
   const f = fixture(item());
   const source = ts.createSourceFile(
     "watchlist-tab.tsx",
-    read("src/views/library/watchlist-tab.tsx"),
+    read("src/features/library/views/library/watchlist-tab.tsx"),
     ts.ScriptTarget.Latest,
     true,
     ts.ScriptKind.TSX,

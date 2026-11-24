@@ -2,11 +2,11 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import * as modes from "../src/lib/player/anime4k-modes";
-import * as anime from "../src/lib/player/anime-src";
-import * as general from "../src/lib/player/shader-chain";
+import * as modes from "../src/features/player/engine/anime4k-modes";
+import * as anime from "../src/features/player/engine/anime-src";
+import * as general from "../src/features/player/engine/shader-chain";
 import type { Settings } from "../src/lib/settings";
-import type { PlayerSrc } from "../src/lib/view";
+import type { PlayerSrc } from "../src/app/navigation/view";
 
 function fixture() {
   const settings = {
@@ -40,9 +40,9 @@ function fixture() {
         pending.push(fn);
       },
     },
-    "@/lib/player/anime4k-modes": modes,
-    "@/lib/player/anime-src": anime,
-    "@/lib/player/shader-chain": general,
+    "@/features/player/engine/anime4k-modes": modes,
+    "@/features/player/engine/anime-src": anime,
+    "@/features/player/engine/shader-chain": general,
     "@/lib/settings": {
       useSettings: () => ({
         settings,

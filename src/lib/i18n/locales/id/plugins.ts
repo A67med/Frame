@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Plugin",
-  Repositories: "Repositori",
+  "Plugins": "Plugin",
+  "Repositories": "Repositori",
   "Installed plugins": "Plugin terpasang",
   "Plugin repositories": "Repositori plugin",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -29,8 +29,8 @@ const plugins: Record<string, string> = {
     "Tambahkan repositori, lalu pasang penyedia yang Anda inginkan. Mereka akan muncul di sini.",
   "Add a repository": "Tambah repositori",
   "Movies and series": "Film dan serial",
-  Script: "Skrip",
-  Verified: "Terverifikasi",
+  "Script": "Skrip",
+  "Verified": "Terverifikasi",
   "v{version} available": "v{version} tersedia",
   "Paused after {n} failures. Turn it back on to try again.":
     "Dijeda setelah {n} kegagalan. Nyalakan lagi untuk mencoba kembali.",
@@ -52,7 +52,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} dari {repo}, dipasang {when}.",
   "Update to v{version}": "Perbarui ke v{version}",
   "Revert to v{version}": "Kembalikan ke v{version}",
-  Reaches: "Mengakses",
+  "Reaches": "Mengakses",
   "Any public website. This plugin did not say which sites it uses.":
     "Situs publik mana pun. Plugin ini tidak menyebutkan situs yang digunakannya.",
   "Seen so far: {hosts}": "Terlihat sejauh ini: {hosts}",
@@ -100,7 +100,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "Hapus dan copot {count}?",
   "Could not reach this repository. Installed plugins keep working.":
     "Tidak dapat menjangkau repositori ini. Plugin yang terpasang tetap berfungsi.",
-  "This repository lists no plugins.": "Repositori ini tidak mencantumkan plugin.",
   "This repository is not for stream plugins.": "Repositori ini bukan untuk plugin stream.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "Bukan plugin stream: tidak mengekspor fungsi getStreams atau streams.",

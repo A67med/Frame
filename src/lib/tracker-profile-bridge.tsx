@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useProfiles } from "./profiles";
+import { useProfiles } from "@/features/profiles/profiles";
 import { resetForProfile as resetTrakt } from "./trakt/session";
 import { resetForProfile as resetSimkl } from "./simkl/session";
 import { resetForProfile as resetAnilist } from "./anilist/session";

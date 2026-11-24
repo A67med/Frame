@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { safeFetch as fetch } from "@/lib/safe-fetch";
+import { safeFetch as fetch } from "@/infrastructure/networking/safe-fetch";
 
 export type CardScores = {
   rtAudience: number | null;

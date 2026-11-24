@@ -44,7 +44,7 @@ function fixture() {
       registerEvictable: (name: string, evict: (aggressive: boolean) => void) =>
         evictors.set(name, evict),
     },
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: () => {
         requests++;
         return response();

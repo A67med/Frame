@@ -1,43 +1,46 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
-import { langScore, pickBestTrack, normalizeLang } from "@/lib/subtitles/language";
-import { fetchSubtitlesIntoPlayer, streamHintsOf } from "@/lib/subtitles/fetch-into-player";
-import { subtitleStreamDescriptor } from "@/lib/subtitles/provider-label";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
+import { langScore, pickBestTrack, normalizeLang } from "@/features/subtitles/language";
+import { fetchSubtitlesIntoPlayer, streamHintsOf } from "@/features/subtitles/fetch-into-player";
+import { subtitleStreamDescriptor } from "@/features/subtitles/provider-label";
 import { publishSubtitleSearch } from "@/components/player/subtitle-menu/subtitle-search-store";
 import { publishSubtitleContext } from "@/components/player/subtitle-menu/subtitle-context-store";
 import { readPlayerPrefs, type PerShowPrefs } from "@/lib/player-prefs";
-import { audioLanguageOrder, resolveOriginalLanguage } from "@/lib/player/original-audio";
+import {
+  audioLanguageOrder,
+  resolveOriginalLanguage,
+} from "@/features/player/engine/original-audio";
 import { tmdbImdbId } from "@/lib/providers/tmdb";
 import type { Addon } from "@/lib/addons";
-import type { GeneratedSubtitleGroup } from "@/lib/subtitles/types";
-import { gatherSubtitleAddons } from "@/lib/subtitles/addon-source";
+import type { GeneratedSubtitleGroup } from "@/features/subtitles/types";
+import { gatherSubtitleAddons } from "@/features/subtitles/addon-source";
 import { buildStreamIds } from "@/lib/streams/stream-ids";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import type { Settings } from "@/lib/settings";
-import { canStartSubtitleAutoload, subtitleSearchImdbId } from "@/lib/subtitles/autoload";
+import { canStartSubtitleAutoload, subtitleSearchImdbId } from "@/features/subtitles/autoload";
 import {
   SubtitleAutoloadRunCoordinator,
   subtitleAutoloadLateSelectionAllowed,
   subtitleAutoloadSelectionLeaseValid,
-} from "@/lib/subtitles/autoload-run";
-import { resolveAnimeSearchCoords } from "@/lib/subtitles/anime-numbering";
+} from "@/features/subtitles/autoload-run";
+import { resolveAnimeSearchCoords } from "@/features/subtitles/anime-numbering";
 import {
   desiredSubtitleIsEmbedded,
   isAutoSelectableSubtitleTrack,
   pickDesiredSubtitleTrack,
   subtitleAutoSelectionSignature,
-} from "@/lib/subtitles/track-selection";
-import { markAddedSub } from "@/lib/subtitles/added-subs";
-import { markImportedSub } from "@/lib/player/imported-subs";
-import { bindSubtitleDownloadAuth } from "@/lib/subtitles/provider-auth";
+} from "@/features/subtitles/track-selection";
+import { markAddedSub } from "@/features/subtitles/added-subs";
+import { markImportedSub } from "@/features/player/engine/imported-subs";
+import { bindSubtitleDownloadAuth } from "@/features/subtitles/provider-auth";
 import {
   readRememberedSub,
   rememberedSubAppliesToStream,
   rememberedSubtitleLoadMetadata,
   rememberedSubtitleIsLocal,
   subtitleMediaKey,
-} from "@/lib/subtitles/subtitle-memory";
+} from "@/features/subtitles/subtitle-memory";
 
 export function useTrackAutoload(params: {
   bridgeRef: RefObject<PlayerBridge | null>;

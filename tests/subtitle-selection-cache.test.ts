@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { selectedSubtitleCacheName } from "../src/lib/subtitles/selected-subtitle-cache.ts";
+import { selectedSubtitleCacheName } from "../src/features/subtitles/selected-subtitle-cache.ts";
 
 test("selected subtitle cache paths are stable per content, release, and subtitle", () => {
   const choice = {

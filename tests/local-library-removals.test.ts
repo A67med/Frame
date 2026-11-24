@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import type { LocalEntry } from "../src/lib/local-library.ts";
+import type { LocalEntry } from "../src/features/library/local-library.ts";
 
 function load(path: string, mocks: Record<string, unknown>, storage: unknown) {
   const output = ts.transpileModule(readFileSync(path, "utf8"), {
@@ -47,14 +47,14 @@ function harness() {
   };
   let persisted: LocalEntry[] = [];
   const createLibrary = () => {
-    const removals = load("src/lib/local-library/removals.ts", {}, storage);
+    const removals = load("src/features/library/local-library/removals.ts", {}, storage);
     const library = load(
-      "src/lib/local-library.ts",
+      "src/features/library/local-library.ts",
       {
         react: {},
         "@/lib/episode-span": { parseEpisodeSpan: () => null },
-        "@/lib/local-library/removals": removals,
-        "@/lib/local-library/storage": {
+        "@/features/library/local-library/removals": removals,
+        "@/features/library/local-library/storage": {
           loadLocalLibraryStore: async () => persisted,
           saveLocalLibraryStore: async (entries: LocalEntry[]) => {
             persisted = entries;
@@ -157,7 +157,7 @@ function scanHarness(h: ReturnType<typeof harness>, files: LocalEntry[]) {
     return file;
   };
   const { useLocalScan } = load(
-    "src/views/library/local-tab/use-local-scan.ts",
+    "src/features/library/views/library/local-tab/use-local-scan.ts",
     {
       react: {
         useCallback: (fn: unknown) => fn,
@@ -178,9 +178,12 @@ function scanHarness(h: ReturnType<typeof harness>, files: LocalEntry[]) {
           ];
         },
       },
-      "@/lib/local-library": h.library,
-      "@/lib/local-library/removals": h.removals,
-      "@/lib/local-library/sidecars": { clearSidecarCache() {}, countNfoFor: async () => 0 },
+      "@/features/library/local-library": h.library,
+      "@/features/library/local-library/removals": h.removals,
+      "@/features/library/local-library/sidecars": {
+        clearSidecarCache() {},
+        countNfoFor: async () => 0,
+      },
       "@/lib/settings": { useSettings: () => ({ settings: {}, update() {} }) },
       "@/lib/i18n": { useT: () => (text: string) => text },
       "./scan": { buildNfoEntry: build, buildTmdbEntry: build },

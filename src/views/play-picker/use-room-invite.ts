@@ -4,7 +4,7 @@ import type { RoomSnapshot } from "@/lib/together/client";
 import type { PlayInvite, SourceDescriptor } from "@/lib/together/protocol";
 import { buildPlayInvite } from "@/lib/together/build-invite";
 import { hostSourceMatchesMedia, type HostSourceInfo } from "@/lib/together/room-derive";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 export function useRoomInvite(params: {
   meta: Meta;

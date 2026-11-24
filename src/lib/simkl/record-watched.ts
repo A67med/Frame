@@ -12,7 +12,7 @@ import { isDetectedAnime } from "@/lib/anime-detect";
 import { animeEntryTarget } from "@/lib/anime-entry-target";
 import { kitsuToMal } from "@/lib/providers/anime-mapping";
 import type { ScrobbleInfo } from "./scrobble-body";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 const ANIME_ID = /^(kitsu|mal|anilist|anidb):/;
 

@@ -430,7 +430,7 @@ export function createSettingsAnchorAudit(ROOT) {
     return hits;
   }
 
-  const nav = read(path.join(SETTINGS, "nav.tsx"));
+  const nav = read(path.resolve(SETTINGS, "../../features/settings/search/options.ts"));
   const entries = settingsSearchEntries(nav).map((e, i) => ({
     ...e,
     index: i,

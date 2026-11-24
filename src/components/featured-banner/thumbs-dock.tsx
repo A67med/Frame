@@ -2,7 +2,7 @@ import { X } from "lucide-react";
 import { ThumbsDownIcon, ThumbsUpIcon } from "@/components/icons/harbor-glyphs";
 import { useEffect, useState } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import { trackEvent } from "@/lib/discover/store";
+import { trackEvent } from "@/features/discovery/discover/store";
 import { getVote, setVote, subscribePrefs, type FeedVote } from "@/lib/feed/preferences";
 import { useT } from "@/lib/i18n";
 import { useOnboarding } from "@/lib/onboarding";

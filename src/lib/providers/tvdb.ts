@@ -1,6 +1,6 @@
 import { lruSet } from "@/lib/cache";
 import { registerCache } from "@/lib/memory-profiler";
-import { safeFetch as tauriFetch } from "@/lib/safe-fetch";
+import { safeFetch as tauriFetch } from "@/infrastructure/networking/safe-fetch";
 
 const BASE = "https://api4.thetvdb.com/v4";
 const TOKEN_KEY = "harbor.tvdb.token.v1";

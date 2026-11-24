@@ -7,7 +7,7 @@ import { runPipeline } from "@/lib/streams/pipeline";
 import { resolveStream } from "@/lib/streams/resolve";
 import { buildStreamIdsWithIdentity } from "@/lib/streams/anime-identity";
 import type { Resolution, ScoredStream } from "@/lib/streams/types";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { readSettings } from "./context";
 
 export type DownloadPick = { url: string; headers?: Record<string, string>; label: string };

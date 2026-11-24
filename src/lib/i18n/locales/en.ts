@@ -1,78 +1,10 @@
 import playOrders from "./en/play-orders";
 import frameInterface from "./en/frame-interface";
-import gameRomLibrary from "./en/game-rom-library";
-import gameNotes from "./en/game-notes";
-import gameLibraryRefinements from "./en/game-library-refinements";
-import gamePokemonUi from "./en/game-pokemon-ui";
 import customArtwork from "./en/custom-artwork";
-import gameAtlasDiscovery from "./en/game-atlas-discovery";
-import gameDiscoveryPicker from "./en/game-discovery-picker";
-import gameLibraryManagement from "./en/game-library-management";
-import gameHydraImport from "./en/game-hydra-import";
-import gameStudioCatalog from "./en/game-studio-catalog";
-import gameArtwork from "./en/game-artwork";
-import gameMetadataMatching from "./en/game-metadata-matching";
-import gameAgeRatings from "./en/game-age-ratings";
-import gameLibraryLinks from "./en/game-library-links";
-import gameModHub from "./en/game-mod-hub";
-import gameLibraryTitles from "./en/game-library-titles";
-import gameStoreSearch from "./en/game-store-search";
-import gameSteamShortcuts from "./en/game-steam-shortcuts";
-import gameGallery from "./en/game-gallery";
-import gameStardew from "./en/game-stardew";
-import gameSourceAlerts from "./en/game-source-alerts";
-import gamePokemon from "./en/game-pokemon";
-import gameSims from "./en/game-sims";
-import gameTarkov from "./en/game-tarkov";
-import gameTft from "./en/game-tft";
-import gameEve from "./en/game-eve";
-import gameOsrs from "./en/game-osrs";
-import gameFfxiv from "./en/game-ffxiv";
-import gameFortnite from "./en/game-fortnite";
-import gameSetup from "./en/game-setup";
 import torrentDialog from "./en/torrent-dialog";
-import gameDownloadNotifications from "./en/game-download-notifications";
-import gameDownloadCenter from "./en/game-download-center";
-import warhammerUniverse from "./en/warhammer-universe";
-import gameValorant from "./en/game-valorant";
-import gameAudience from "./en/game-audience";
-import gameDetailFlow from "./en/game-detail-flow";
-import gameWowTalents from "./en/game-wow-talents";
-import gameWowProgress from "./en/game-wow-progress";
-import gameWowRuns from "./en/game-wow-runs";
-import gamePlaytime from "./en/game-playtime";
-import gameLaunchHealth from "./en/game-launch-health";
-import gameUnifiedLibrary from "./en/game-unified-library";
-import gameDota from "./en/game-dota";
-import gameLeague from "./en/game-league";
-import gameOverwatch from "./en/game-overwatch";
-import gameWowEquipment from "./en/game-wow-equipment";
-import gameRecommendations from "./en/game-recommendations";
-import gameOwnedDiscovery from "./en/game-owned-discovery";
-import gameBackups from "./en/game-backups";
-import gameArchives from "./en/game-archives";
-import gameSourceDiscovery from "./en/game-source-discovery";
-import gameGuides from "./en/game-guides";
-import gameModUpdates from "./en/game-mod-updates";
-import gameMinecraft from "./en/game-minecraft";
-import gameRoms from "./en/game-roms";
-import gameExploreRows from "./en/game-explore-rows";
-import gameHackDiscovery from "./en/game-hack-discovery";
-import gameHub from "./en/game-hub";
 import floatingPlayer from "./en/floating-player";
-import gameAntiCheat from "./en/game-anti-cheat";
-import gameDock from "./en/game-dock";
-import gameCompanion from "./en/game-companion";
-import gameWow from "./en/game-wow";
-import gameSearch from "./en/game-search";
 import mediaStart from "./en/media-start";
 import spooktober from "./en/spooktober";
-import music from "./en/music";
-import games from "./en/games";
-import gamePlayer from "./en/game-player";
-import gameDiscovery from "./en/game-discovery";
-import gameDetails from "./en/game-details";
-import gameAchievements from "./en/game-achievements";
 import settingsRefinements from "./en/settings-refinements";
 import dataSafety from "./en/data-safety";
 import uiPolish from "./en/ui-polish";
@@ -92,62 +24,16 @@ const en: Record<string, string> = {
   ...frameInterface,
   "collections.feed.more": "Load more collections",
   "collections.feed.error": "Couldn't load collections. Try again.",
-  ...gamePokemon,
   ...torrentDialog,
-  ...gameAudience,
-  ...gameUnifiedLibrary,
-  ...gameStoreSearch,
-  ...gameLibraryTitles,
-  ...gameLibraryLinks,
-  ...gameHub,
   ...floatingPlayer,
-  ...gameAntiCheat,
-  "sports.guide.athletes": "Athletes",
-  "sports.guide.athlete": "Athlete",
-  "sports.guide.athleteCount": "{n} athletes",
-  "sports.guide.athleteIntro": "Athletes from published events and standings.",
-  "sports.guide.viewAthletes": "View all athletes",
-  "sports.guide.searchAthletes": "Search athletes",
-  "sports.guide.noAthleteMatch": "No athletes match your search.",
-  "sports.guide.noAthletes": "This feed has not published an athlete list.",
-  "sports.boxing.wins": "Wins",
-  "sports.boxing.losses": "Losses",
-  "sports.boxing.draws": "Draws",
-  "sports.boxing.knockouts": "KOs",
-  "sports.boxing.tba": "Fighter to be announced",
-  Translations: "Translations",
+  "Translations": "Translations",
   "Translating…": "Translating…",
   "Showing {lang}": "Showing {lang}",
   "Show all": "Show all",
-  "games.download.queueOrder": "Queue order {position}",
-  "games.download.earlier": "Move {name} earlier",
-  "games.download.later": "Move {name} later",
   ...mediaStart,
   ...spooktober,
   ...videoCast,
-  ...music,
-  ...games,
-  ...gamePlaytime,
-  ...gameLaunchHealth,
-  ...gamePlayer,
-  ...gameDiscovery,
-  ...gameDetails,
-  ...gameAchievements,
-  ...gameSearch,
-  ...gameDock,
-  ...gameCompanion,
-  ...gameFortnite,
-  ...gameFfxiv,
-  ...gameOsrs,
-  ...gameTarkov,
-  ...gameModHub,
-  ...gameSims,
-  ...gameStardew,
-  ...gameTft,
-  ...gameEve,
-  ...warhammerUniverse,
-  ...gameWow,
-  Soccer: "Football",
+  "Soccer": "Football",
   "Build identity. Useful when filing a bug report.":
     "Build identity. Useful when filing a bug report.",
   "nav.home": "Home",
@@ -161,10 +47,7 @@ const en: Record<string, string> = {
   "nav.following": "Following",
   "nav.kids": "Watch",
   "nav.anime": "Anime",
-  "nav.manga": "Manga",
-  "nav.ebook": "eBook",
   "nav.live": "Live TV",
-  "nav.sports": "Sports",
   "nav.playlists": "Playlists",
   "nav.calendar": "Calendar",
   "nav.library": "My Library",
@@ -236,26 +119,26 @@ const en: Record<string, string> = {
   "Episode Not Found": "Episode Not Found",
   "Episode information is not available": "Episode information is not available.",
   "Unable to connect": "Unable to connect",
-  Stills: "Stills",
+  "Stills": "Stills",
   "Guest Stars": "Guest Stars",
   "Guest Stars · {n}": "Guest Stars · {n}",
-  Overview: "Overview",
+  "Overview": "Overview",
   "Go Back": "Go Back",
-  Retry: "Retry",
+  "Retry": "Retry",
   "Loading episode details...": "Loading episode details...",
   "View Series": "View Series",
   "Play Episode": "Play Episode",
-  min: "min",
+  "min": "min",
   "Episode {n}": "Episode {n}",
   "{n} min": "{n} min",
   "Unable to load series information": "Unable to load series information",
   "An unexpected error occurred": "An unexpected error occurred",
   "TMDB Rating": "TMDB Rating",
-  Votes: "Votes",
+  "Votes": "Votes",
   "Air Date": "Air Date",
-  Runtime: "Runtime",
+  "Runtime": "Runtime",
 
-  My: "My",
+  "My": "My",
   "Reveal comments": "Reveal comments",
   "Comments are hidden": "Comments are hidden",
   "You haven't commented yet": "You haven't commented yet",
@@ -295,25 +178,15 @@ const en: Record<string, string> = {
   "Blurs the hero image and stills on the episode detail page until you click reveal.":
     "Blurs the hero image and stills on the episode detail page until you click reveal.",
 
-  Likes: "Likes",
-  Newest: "Newest",
-  Oldest: "Oldest",
+  "Likes": "Likes",
+  "Newest": "Newest",
+  "Oldest": "Oldest",
   "Contains spoiler": "Contains spoiler",
   "Write a comment...": "Write a comment...",
   "Comments may take a moment to appear on Trakt": "Comments may take a moment to appear on Trakt",
   "Spoiler — Click to reveal": "Spoiler — Click to reveal",
   "Spoiler — Click": "Spoiler — Click",
-  "sports.customize": "Customize",
-  "sports.customize.title": "Customize Leagues",
-  "sports.customize.selected": "{n} selected",
-  "sports.customize.all": "All",
-  "sports.customize.selectGroupAll": "Select all",
-  "sports.customize.deselectGroupAll": "Deselect all",
-  "sports.customize.selectAll": "Select all",
-  "sports.customize.clearAll": "Clear all",
-  "sports.customize.cancel": "Cancel",
-  "sports.customize.save": "Save",
-  Upcoming: "Upcoming",
+  "Upcoming": "Upcoming",
 
   "Add Custom Source": "Add Custom Source",
   "Provide a JSON link or paste it directly.": "Provide a JSON link or paste it directly.",
@@ -336,20 +209,20 @@ const en: Record<string, string> = {
     "This section relies on TMDB discovery features.",
   "Please add your TMDB API key in the Library & Metadata settings to view this folder.":
     "Please add your TMDB API key in the Library & Metadata settings to view this folder.",
-  OK: "OK",
+  "OK": "OK",
   "Loading...": "Loading...",
 
   "Top People": "Top People",
   "Ranking source": "Ranking source",
   "How Frame Rank works": "How Frame Rank works",
   "Frame Rank": "Frame Rank",
-  Trending: "Trending",
+  "Trending": "Trending",
   "Top on TMDB": "Top on TMDB",
   "Top on IMDb": "Top on IMDb",
-  Consensus: "Consensus",
-  Frame: "Frame",
-  TMDB: "TMDB",
-  IMDb: "IMDb",
+  "Consensus": "Consensus",
+  "Frame": "Frame",
+  "TMDB": "TMDB",
+  "IMDb": "IMDb",
   "Our all-time ranking of a body of work, fully explained.":
     "Our all-time ranking of a body of work, fully explained.",
   "Who is breaking out this week. Live, with weekly movement.":
@@ -360,16 +233,16 @@ const en: Record<string, string> = {
   "A blend of the sources above by percentile. Degrades gracefully when one is missing.":
     "A blend of the sources above by percentile. Degrades gracefully when one is missing.",
 
-  Actors: "Actors",
-  Directors: "Directors",
-  Producers: "Producers",
-  Writers: "Writers",
-  Actor: "Actor",
-  Director: "Director",
-  Producer: "Producer",
-  Writer: "Writer",
-  Department: "Department",
-  Country: "Country",
+  "Actors": "Actors",
+  "Directors": "Directors",
+  "Producers": "Producers",
+  "Writers": "Writers",
+  "Actor": "Actor",
+  "Director": "Director",
+  "Producer": "Producer",
+  "Writer": "Writer",
+  "Department": "Department",
+  "Country": "Country",
   "All countries": "All countries",
   "Birthplace, not nationality": "Birthplace, not nationality",
   "Filter by name or title": "Filter by name or title",
@@ -390,7 +263,7 @@ const en: Record<string, string> = {
   "Open {title}": "Open {title}",
   "Award winner": "Award winner",
   "{v} avg": "{v} avg",
-  SCORE: "SCORE",
+  "SCORE": "SCORE",
   "{avg} avg · {n} rated": "{avg} avg · {n} rated",
   "{wins} wins": "{wins} wins",
   "{noms} noms": "{noms} noms",
@@ -402,7 +275,7 @@ const en: Record<string, string> = {
   "Not enough rated work yet": "Not enough rated work yet",
   "Blended from": "Blended from",
 
-  NEW: "NEW",
+  "NEW": "NEW",
   "New this week": "New this week",
   "Up {n} this week": "Up {n} this week",
   "Down {n} this week": "Down {n} this week",
@@ -457,46 +330,22 @@ const en: Record<string, string> = {
   ...soundtrack,
   ...country,
   ...personCraft,
-  ...gameHackDiscovery,
-  ...gameStudioCatalog,
-  ...gameDiscoveryPicker,
-  ...gameLibraryManagement,
-  ...gameAtlasDiscovery,
-  ...gameRoms,
-  ...gameDetailFlow,
-  ...gameExploreRows,
-  ...gameSourceDiscovery,
-  ...gameDownloadCenter,
-  ...gameDownloadNotifications,
-  ...gameSourceAlerts,
-  ...gameModUpdates,
-  ...gameMinecraft,
-  ...gameGuides,
-  ...gameRecommendations,
-  ...gameOverwatch,
-  ...gameValorant,
-  ...gameDota,
-  ...gameLeague,
-  ...gameWowEquipment,
-  ...gameWowTalents,
-  ...gameWowProgress,
-  ...gameWowRuns,
-  ...gameOwnedDiscovery,
-  ...gameBackups,
-  ...gameArchives,
-  ...gameSetup,
-  ...gameHydraImport,
-  ...gameSteamShortcuts,
-  ...gameGallery,
-  ...gameAgeRatings,
-  ...gameMetadataMatching,
-  ...gameArtwork,
-  ...gamePokemonUi,
   ...customArtwork,
-  ...gameLibraryRefinements,
-  ...gameRomLibrary,
-  ...gameNotes,
   ...playOrders,
+  "music.miku.adaptation": "Retro model by Animasa; conversion by Kyo Akito. Unofficial.",
+  "music.cast.airplay": "AirPlay 2 audio is not supported in Frame.",
+  "music.cast.stop": "Stop casting",
+  "music.cast.loading": "Connecting to speaker…",
+  "music.legal.personalTitle": "Saving and remixing music",
+  "music.legal.personal":
+    "Frame can save a track for offline listening, save a version shaped by the speed, pitch and reverb controls, and mix tracks on the DJ deck. These tools are intended for music you already own or otherwise have legal access to, and the files they produce are for your own personal use. Sharing, publishing or otherwise redistributing them may infringe the rights of the copyright holders, and that remains your responsibility. Frame hosts no music and grants no rights to any recording.",
+  "Lyrics": "Lyrics",
+  "Hide lyrics": "Hide lyrics",
+  "Lyric sync": "Lyric sync",
+  "Lyrics earlier": "Lyrics earlier",
+  "Lyrics later": "Lyrics later",
+  "Finding lyrics": "Finding lyrics",
+  "Karaoke": "Karaoke",
 };
 
 export default en;

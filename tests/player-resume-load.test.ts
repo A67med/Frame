@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { hookHarness, flushPromises } from "./helpers/hook-harness.ts";
-import { playerLoadIdentity } from "../src/lib/player/load-identity.ts";
+import { playerLoadIdentity } from "../src/features/player/engine/load-identity.ts";
 
 function harness() {
   const loads: any[] = [];
@@ -37,15 +37,15 @@ function harness() {
     "@/lib/settings": { useSettings: () => ({ settings }) },
     "@/lib/stremio": { cloudWriteId: (id: string) => id },
     "./use-stremio-sync": { videoIdFor: () => "tt100:1:1" },
-    "@/lib/player/resume-start": {
+    "@/features/player/engine/resume-start": {
       resolveStartMs: () => {
         resolves++;
         return resolve();
       },
     },
-    "@/lib/player/startup-profile": { playbackStartupProfile: () => "standard" },
-    "@/lib/player/live-src": { isLivePlaybackSrc: (src: any) => !!src.live },
-    "@/lib/player/load-identity": { playerLoadIdentity },
+    "@/features/player/engine/startup-profile": { playbackStartupProfile: () => "standard" },
+    "@/features/player/engine/live-src": { isLivePlaybackSrc: (src: any) => !!src.live },
+    "@/features/player/engine/load-identity": { playerLoadIdentity },
     "@/lib/stream-proxy": { releaseStreamProxy() {}, retainStreamProxy() {} },
   });
   return {

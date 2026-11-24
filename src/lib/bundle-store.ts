@@ -3,7 +3,7 @@ import { clientId, type MyUpload } from "./theme-store";
 import { installAwardPack, type AwardPack } from "./award-icons";
 import { installStreamBadgePack } from "./community-badge-packs";
 import { HARBOR_API_BASE } from "@/lib/config/endpoints";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 
 const ORIGIN = HARBOR_API_BASE;
 const API = `${ORIGIN}/themes/api`;

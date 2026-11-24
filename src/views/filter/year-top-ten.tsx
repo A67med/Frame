@@ -5,7 +5,7 @@ import { loadListItems } from "@/lib/curated/items";
 import { curatedList, itemMeta } from "@/lib/curated/registry";
 import type { CuratedListItem } from "@/lib/curated/types";
 import { useT } from "@/lib/i18n";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { RailHeading } from "./brand-rails";
 
 const LIST_ID = "nbr-top-ten";

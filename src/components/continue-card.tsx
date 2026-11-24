@@ -19,14 +19,14 @@ import {
 } from "@/lib/stremio";
 import { useHasNewEpisode } from "@/lib/new-episodes";
 import { Tooltip } from "@/views/detail/tooltip";
-import { useProfiles, sharesStremioStorage } from "@/lib/profiles";
+import { useProfiles, sharesStremioStorage } from "@/features/profiles/profiles";
 import { useAuth } from "@/lib/auth";
 import { useSettings } from "@/lib/settings";
-import { useView, type PlayEpisode } from "@/lib/view";
+import { useView, type PlayEpisode } from "@/app/navigation/view";
 import { getWatchedBy } from "@/lib/watched-by";
-import { resolveLocalPlayVersions } from "@/lib/local-library/playback";
-import { localPlayerSrc } from "@/lib/local-library/player-src";
-import { openLocalVersions } from "@/lib/player/local-versions-modal";
+import { resolveLocalPlayVersions } from "@/features/library/local-library/playback";
+import { localPlayerSrc } from "@/features/library/local-library/player-src";
+import { openLocalVersions } from "@/features/player/engine/local-versions-modal";
 import { mediaServerConnections } from "@/lib/media-server/connections";
 import { mediaServerItems } from "@/lib/media-server/index-store";
 import { matchingServerItems, serverPlayableCopies } from "@/lib/media-server/selectors";
@@ -44,7 +44,7 @@ import {
   isForeignSplitSeason,
   splitFranchiseDisplaySeason,
 } from "@/lib/streams/anime-identity-core";
-import { classifyAnimeNumbering } from "@/lib/subtitles/anime-numbering";
+import { classifyAnimeNumbering } from "@/features/subtitles/anime-numbering";
 import { ThreeLiquidGlassSurface } from "@/components/ThreeLiquidGlassSurface";
 
 // Bleach: Thousand-Year Blood War is split across four cours that carry their

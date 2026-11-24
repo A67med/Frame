@@ -4,7 +4,6 @@ import { WindowControlButton, WindowControlGlyph } from "@/chrome/window-control
 import { FrameMark } from "@/components/icons/frame-mark";
 import { UiIcon } from "@/components/ui-icon";
 import { useT } from "@/lib/i18n";
-import { osClass } from "@/lib/platform";
 
 type Style = "transparent" | "glass" | "filled";
 
@@ -37,7 +36,6 @@ export function WindowControlArt({ style }: { style: Style }) {
 }
 
 export function TitleBarArt() {
-  const mac = osClass() === "macos";
   return (
     <div
       aria-hidden
@@ -45,20 +43,16 @@ export function TitleBarArt() {
       data-window-preview="native"
       className="pointer-events-none flex h-8 w-full items-center overflow-hidden rounded-t-lg border border-edge-soft bg-elevated"
     >
-      {mac && <WindowCaptionPreview native />}
-      <span
-        className={`flex min-w-0 flex-1 items-center gap-2 px-2 text-[12px] text-ink ${mac ? "justify-center pe-16" : ""}`}
-      >
-        {!mac && <FrameMark className="h-4 w-4 shrink-0" />}
+      <span className="flex min-w-0 flex-1 items-center gap-2 px-2 text-[12px] text-ink">
+        <FrameMark className="h-4 w-4 shrink-0" />
         Frame
       </span>
-      {!mac && <WindowCaptionPreview native />}
+      <WindowCaptionPreview native />
     </div>
   );
 }
 
 export function HybridBarArt() {
-  const mac = osClass() === "macos";
   return (
     <div
       aria-hidden
@@ -66,13 +60,12 @@ export function HybridBarArt() {
       data-window-preview="hybrid"
       className="pointer-events-none flex h-9 w-full items-center overflow-hidden rounded-t-lg border border-edge-soft/70 bg-canvas/80 backdrop-blur-md"
     >
-      {mac && <WindowCaptionPreview />}
       <div className="h-full min-w-0 flex-1 overflow-hidden">
         <div className="h-full w-max">
           <HybridMenuBar />
         </div>
       </div>
-      {!mac && <WindowCaptionPreview />}
+      <WindowCaptionPreview />
     </div>
   );
 }

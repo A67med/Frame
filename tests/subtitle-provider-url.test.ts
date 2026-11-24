@@ -4,17 +4,17 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { deduplicateAndRankSubtitleResults } from "../src/lib/subtitles/search.ts";
+import { deduplicateAndRankSubtitleResults } from "../src/features/subtitles/search.ts";
 import {
   isPublicNetworkHost,
   isSafeProviderSubtitleUrl,
   SUBTITLE_PUBLIC_NETWORK_HEADER,
-} from "../src/lib/subtitles/provider-url.ts";
+} from "../src/features/subtitles/provider-url.ts";
 import {
   providerSubtitleDownloadHeaders,
   subtitleTrackDownloadHeaders,
-} from "../src/lib/subtitles/provider-auth.ts";
-import type { SubResult } from "../src/lib/subtitles/types.ts";
+} from "../src/features/subtitles/provider-auth.ts";
+import type { SubResult } from "../src/features/subtitles/types.ts";
 
 test("provider subtitles accept only public HTTP(S) URLs", () => {
   for (const value of [
@@ -71,11 +71,11 @@ test("provider download policy is marked internally and pinned natively", () => 
     { [SUBTITLE_PUBLIC_NETWORK_HEADER]: "1" },
   );
   const safeFetchSource = readFileSync(
-    new URL("../src/lib/safe-fetch.ts", import.meta.url),
+    new URL("../src/infrastructure/networking/safe-fetch.ts", import.meta.url),
     "utf8",
   );
   const nativeSource = readFileSync(
-    new URL("../src-tauri/src/http_fetch.rs", import.meta.url),
+    new URL("../src-tauri/src/infrastructure/networking/http_fetch.rs", import.meta.url),
     "utf8",
   );
   assert.match(safeFetchSource, /publicNetworkOnly/);
@@ -94,8 +94,8 @@ test("public-network policy applies only to provider-derived subtitle tracks", (
 });
 
 test("player bridges allow explicitly trusted generated tracks without weakening provider checks", () => {
-  const mpvSource = readFileSync("src/lib/player/mpv.ts", "utf8");
-  const html5Source = readFileSync("src/lib/player/html5/bridge.ts", "utf8");
+  const mpvSource = readFileSync("src/features/player/engine/mpv.ts", "utf8");
+  const html5Source = readFileSync("src/features/player/engine/html5/bridge.ts", "utf8");
 
   for (const source of [mpvSource, html5Source]) {
     assert.match(source, /metadata\?\.providerDerived \?\? Boolean\(metadata\?\.provider\)/);

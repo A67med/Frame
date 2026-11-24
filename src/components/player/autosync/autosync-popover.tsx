@@ -10,11 +10,11 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useT } from "@/lib/i18n";
-import { openSyncBar } from "@/lib/player/sub-sync";
-import { useAsrModelProgress } from "@/lib/subtitles/autosync/asr-model-progress";
+import { openSyncBar } from "@/features/player/engine/sub-sync";
+import { useAsrModelProgress } from "@/features/subtitles/autosync/asr-model-progress";
 import type { AutoSyncHandle } from "@/views/player/hooks/use-auto-sync";
-import type { PipelineOutcome } from "@/lib/subtitles/autosync/pipeline";
-import type { SyncTransform } from "@/lib/subtitles/autosync/fp-gate";
+import type { PipelineOutcome } from "@/features/subtitles/autosync/pipeline";
+import type { SyncTransform } from "@/features/subtitles/autosync/fp-gate";
 
 type Phase = "analyzing" | "synced" | "offer" | "wrong" | "declined" | "error";
 type Thumb = "up" | "down";

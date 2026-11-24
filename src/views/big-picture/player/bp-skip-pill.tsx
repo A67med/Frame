@@ -5,7 +5,7 @@ import { useGamepads } from "@/lib/gamepad/store";
 import { SFX } from "@/lib/sfx";
 import type { SkipSegment } from "@/lib/skip-intro";
 import type { SpoilerMask } from "@/lib/spoilers";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { useBpT } from "../bp-i18n";
 import { useBpPlayerOptional } from "./bp-player-context";
 import {

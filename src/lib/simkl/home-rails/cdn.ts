@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { SIMKL_APP_NAME, SIMKL_APP_VERSION, SIMKL_CLIENT_ID } from "../config";
 import type { SimklItem } from "../types";
 import { parseSimklCalendar, type SimklCdnItem } from "../calendar-data";

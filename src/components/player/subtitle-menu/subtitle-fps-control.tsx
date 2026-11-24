@@ -4,9 +4,9 @@ import { getCurrentWindow } from "@tauri-apps/api/window";
 import { HoverTooltip } from "@/components/hover-tooltip";
 import { useAutoSyncHandle } from "@/components/player/autosync/autosync-store";
 import { useT } from "@/lib/i18n";
-import type { TrackInfo } from "@/lib/player/bridge";
-import { readMpvSubtitleFps } from "@/lib/player/mpv-properties";
-import { createSubtitleFpsAvailabilityController } from "@/lib/player/subtitle-fps";
+import type { TrackInfo } from "@/features/player/engine/bridge";
+import { readMpvSubtitleFps } from "@/features/player/engine/mpv-properties";
+import { createSubtitleFpsAvailabilityController } from "@/features/player/engine/subtitle-fps";
 import { SubtitleFpsIcon } from "./subtitle-fps-icon";
 import { SubtitleFpsPanel } from "./subtitle-fps-panel";
 

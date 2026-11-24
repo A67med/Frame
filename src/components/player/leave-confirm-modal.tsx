@@ -4,7 +4,7 @@ import {
   closeLeaveConfirm,
   getLeaveConfirm,
   subscribeLeaveConfirm,
-} from "@/lib/player/leave-confirm";
+} from "@/features/player/engine/leave-confirm";
 
 export function LeaveConfirmModal({ mediaKey }: { mediaKey?: string } = {}) {
   const t = useT();

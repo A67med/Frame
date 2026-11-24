@@ -13,7 +13,7 @@ import {
   closeLeaveConfirm,
   getLeaveConfirm,
   subscribeLeaveConfirm,
-} from "@/lib/player/leave-confirm";
+} from "@/features/player/engine/leave-confirm";
 import { SFX } from "@/lib/sfx";
 import { pushBpBack } from "../bp-back";
 import { useBpT } from "../bp-i18n";

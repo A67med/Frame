@@ -17,7 +17,7 @@ import {
   useSleepAtEnd,
   type QueueItem,
 } from "@/lib/queue";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { parseKitsuId } from "@/lib/providers/kitsu";
 import { splitFranchiseDisplaySeason } from "@/lib/streams/anime-identity-core";
 

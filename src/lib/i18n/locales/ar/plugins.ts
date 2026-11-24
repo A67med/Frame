@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "المكوّنات الإضافية",
-  Repositories: "المستودعات",
+  "Plugins": "المكوّنات الإضافية",
+  "Repositories": "المستودعات",
   "Installed plugins": "المكوّنات الإضافية المثبّتة",
   "Plugin repositories": "مستودعات المكوّنات الإضافية",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -31,8 +31,8 @@ const plugins: Record<string, string> = {
     "أضف مستودعًا ثم ثبّت المزوّدين الذين تريدهم. ستظهر هنا.",
   "Add a repository": "إضافة مستودع",
   "Movies and series": "أفلام ومسلسلات",
-  Script: "سكربت",
-  Verified: "موثّق",
+  "Script": "سكربت",
+  "Verified": "موثّق",
   "v{version} available": "الإصدار v{version} متاح",
   "Paused after {n} failures. Turn it back on to try again.":
     "أُوقف مؤقتًا بعد {n} إخفاقًا. أعد تفعيله للمحاولة مجددًا.",
@@ -61,7 +61,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} من {repo}، ثُبّت {when}.",
   "Update to v{version}": "التحديث إلى v{version}",
   "Revert to v{version}": "الرجوع إلى v{version}",
-  Reaches: "يتصل بـ",
+  "Reaches": "يتصل بـ",
   "Any public website. This plugin did not say which sites it uses.":
     "أي موقع عام. لم يحدد هذا المكوّن الإضافي المواقع التي يستخدمها.",
   "Seen so far: {hosts}": "شوهد حتى الآن: {hosts}",
@@ -129,7 +129,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "إزالة وإلغاء تثبيت {count}؟",
   "Could not reach this repository. Installed plugins keep working.":
     "تعذّر الوصول إلى هذا المستودع. المكوّنات الإضافية المثبّتة تستمر في العمل.",
-  "This repository lists no plugins.": "لا يدرج هذا المستودع أي مكوّنات إضافية.",
   "This repository is not for stream plugins.": "هذا المستودع ليس لمكوّنات البث الإضافية.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "ليس مكوّنًا إضافيًا للبث: لا يصدّر دالة getStreams أو streams.",

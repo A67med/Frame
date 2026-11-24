@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import type { RoomSnapshot } from "@/lib/together/client";
 import { GUEST_ESCAPE_MS, READY_STALE_MS } from "../player-utils";
 

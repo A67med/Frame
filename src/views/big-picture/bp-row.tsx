@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import { isAndroidTv } from "@/lib/platform";
 import { useSettings } from "@/lib/settings";
 import type { HomeRow } from "@/views/home/home-types";
 import { BpTile, type BpTileShape } from "./bp-tile";
@@ -32,7 +31,6 @@ const NEAR_END_PX = 900;
 // Android TV only. Desktop keeps the 900px, which is the right lookahead for a
 // mouse or trackpad producing a stream of scroll events rather than one centred
 // jump per press.
-const TV_NEAR_END = 0.25;
 
 // TRAP, for whoever tries to take this further. The obvious next step is to move
 // the page-in off the press entirely and grow on the ring settle, the way
@@ -154,7 +152,7 @@ export function BpRow({
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    const tv = isAndroidTv();
+
     const onScroll = () => {
       // A glide fires a scroll event per frame where a jump fired one per press,
       // and setShown adds a CHUNK on each, so one press would page in a hundred
@@ -167,7 +165,7 @@ export function BpRow({
       const remaining = track.scrollWidth - (scrolled + width);
       // A collapsed track (empty:hidden, a row still resolving) reports 0 and
       // would read as "at the end" on every scroll it never has.
-      const near = tv ? (width >= 2 ? width * TV_NEAR_END : -1) : NEAR_END_PX;
+      const near = NEAR_END_PX;
       if (remaining > near) return;
       setShown((n) => (n >= totalRef.current ? n : n + CHUNK));
       if (shownRef.current >= totalRef.current - CHUNK) void loadMore();

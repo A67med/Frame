@@ -18,10 +18,6 @@ export function declaredVersions(root) {
     "src-tauri/tauri.conf.json": JSON.parse(read("src-tauri/tauri.conf.json")).version ?? null,
     "src-tauri/Cargo.toml": match("src-tauri/Cargo.toml", /^version = "([^"]+)"/m),
     "src-tauri/Cargo.lock": match("src-tauri/Cargo.lock", /name = "frame"\nversion = "([^"]+)"/),
-    "flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml": match(
-      "flatpak/io.github.abdallahkattriah_sketch.Frame.metainfo.xml",
-      /<release version="([^"]+)"/,
-    ),
   };
 }
 

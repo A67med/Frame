@@ -285,7 +285,7 @@ function harness(
           };
         },
       },
-      "@/lib/safe-fetch": {
+      "@/infrastructure/networking/safe-fetch": {
         async safeFetch(url: string, init: { headers?: unknown } = {}) {
           calls.fetchUrls.push(url);
           calls.fetchHeaders.push(init.headers);
@@ -409,7 +409,7 @@ test("account requests use native-aware transport and retry with the refreshed t
       HARBOR_API_BASE: "https://example.test",
       HARBOR_RELEASES_URL: "https://github.com/abdallahkattriah-sketch/frame/releases",
     },
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async (url: string, options: { headers: unknown; signal: unknown }) => {
         calls.push({
           url,
@@ -1010,9 +1010,9 @@ test("backups neither enroll another device nor erase this device's channel or s
     "src/lib/backup.ts",
     {
       "@/lib/download-text": empty,
-      "@/lib/profile-sync/backup-payload": { buildSyncBackup: () => ({}) },
+      "@/features/profiles/sync/backup-payload": { buildSyncBackup: () => ({}) },
       "@/lib/theme-storage": empty,
-      "@/lib/profiles": { readAllProfilesIdentity: () => [] },
+      "@/features/profiles/profiles": { readAllProfilesIdentity: () => [] },
       "@/lib/active-profile-id": { activeProfileId: () => "local" },
       "@/lib/secret-store": {
         getAllSecrets: () => ({}),
@@ -1020,7 +1020,7 @@ test("backups neither enroll another device nor erase this device's channel or s
         flushSecrets: async () => {},
       },
       "@/lib/storage-recovery": h.recovery,
-      "@/lib/local-library": {
+      "@/features/library/local-library": {
         localLibraryReady: async () => {},
         readLocalLibrary: () => ({}),
         restoreLocalLibrary() {},
@@ -1061,7 +1061,7 @@ test("experimental settings live between updates and backup, with search pointin
   const source = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
   const updates = source("src/views/settings/updates-panel.tsx");
   const advanced = source("src/views/settings/advanced-panel/system-tab.tsx");
-  const navigation = source("src/views/settings/nav.tsx");
+  const navigation = source("src/features/settings/search/options.ts");
   const experimentalSection = source("src/views/settings/experimental-builds-section.tsx");
   const placement = updates.indexOf("<ExperimentalBuildsSection />");
 

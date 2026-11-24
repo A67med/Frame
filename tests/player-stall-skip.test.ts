@@ -2,7 +2,10 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { canAutoRetryStuckLoad, hasPlaybackStartedForStallCheck } from "../src/lib/player/stall-wait.ts";
+import {
+  canAutoRetryStuckLoad,
+  hasPlaybackStartedForStallCheck,
+} from "../src/features/player/engine/stall-wait.ts";
 
 test("paused playback is not treated as a stalled stream", () => {
   assert.equal(
@@ -56,7 +59,10 @@ test("stuck load retry is disabled while paused, including a pause before the fi
 
 test("stuck load retry is disabled once a frame, duration or progress exists", () => {
   assert.equal(canAutoRetryStuckLoad({ ...unstarted, firstFrameReady: true }, 0), false);
-  assert.equal(canAutoRetryStuckLoad({ ...unstarted, videoWidth: 1280, videoHeight: 720 }, 0), false);
+  assert.equal(
+    canAutoRetryStuckLoad({ ...unstarted, videoWidth: 1280, videoHeight: 720 }, 0),
+    false,
+  );
   assert.equal(canAutoRetryStuckLoad({ ...unstarted, durationSec: 90 }, 0), false);
   assert.equal(canAutoRetryStuckLoad(unstarted, 0.5), false);
 });

@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Plugin",
-  Repositories: "Kho lưu trữ",
+  "Plugins": "Plugin",
+  "Repositories": "Kho lưu trữ",
   "Installed plugins": "Plugin đã cài",
   "Plugin repositories": "Kho lưu trữ plugin",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -29,8 +29,8 @@ const plugins: Record<string, string> = {
     "Thêm một kho lưu trữ, rồi cài các nhà cung cấp bạn muốn. Chúng sẽ hiện ở đây.",
   "Add a repository": "Thêm kho lưu trữ",
   "Movies and series": "Phim và phim bộ",
-  Script: "Tập lệnh",
-  Verified: "Đã xác minh",
+  "Script": "Tập lệnh",
+  "Verified": "Đã xác minh",
   "v{version} available": "Có v{version}",
   "Paused after {n} failures. Turn it back on to try again.":
     "Tạm dừng sau {n} lần lỗi. Bật lại để thử lần nữa.",
@@ -52,7 +52,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} từ {repo}, cài {when}.",
   "Update to v{version}": "Cập nhật lên v{version}",
   "Revert to v{version}": "Quay về v{version}",
-  Reaches: "Truy cập",
+  "Reaches": "Truy cập",
   "Any public website. This plugin did not say which sites it uses.":
     "Bất kỳ trang web công khai nào. Plugin này không cho biết nó dùng những trang nào.",
   "Seen so far: {hosts}": "Đã thấy đến nay: {hosts}",
@@ -100,7 +100,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "Gỡ và xóa {count} plugin?",
   "Could not reach this repository. Installed plugins keep working.":
     "Không thể kết nối tới kho lưu trữ này. Các plugin đã cài vẫn hoạt động.",
-  "This repository lists no plugins.": "Kho lưu trữ này không liệt kê plugin nào.",
   "This repository is not for stream plugins.": "Kho lưu trữ này không dành cho plugin luồng phát.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "Không phải plugin luồng phát: không xuất hàm getStreams hay streams.",

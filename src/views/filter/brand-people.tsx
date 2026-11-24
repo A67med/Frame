@@ -2,7 +2,7 @@ import { Row, usePosterRow } from "@/components/row";
 import { CastCard } from "@/views/detail/cast-card";
 import { useT } from "@/lib/i18n";
 import type { BrandPerson, BrandStats } from "@/lib/providers/tmdb/tmdb-brands";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 
 type Branded = MetaFilter & { kind: "studio" | "network"; id: number; name: string };
 

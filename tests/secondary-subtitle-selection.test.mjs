@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import ts from "typescript";
-import * as formats from "../src/lib/player/sub-format.ts";
-import { pickBestTrack } from "../src/lib/subtitles/language.ts";
+import * as formats from "../src/features/player/engine/sub-format.ts";
+import { pickBestTrack } from "../src/features/subtitles/language.ts";
 
 const source = readFileSync(
   new URL("../src/views/player/hooks/use-secondary-sub.ts", import.meta.url),
@@ -18,10 +18,13 @@ function select(choice, tracks, lang = "en") {
     picked = [];
   const dependencies = {
     react: { useEffect: (effect) => effects.push(effect), useRef: (current) => ({ current }) },
-    "@/lib/player/secondary-sub": { resetSecondarySub() {}, useSecondarySubChoice: () => choice },
-    "@/lib/player/sub-format": formats,
-    "@/lib/player/sub-style": { applySecondarySubNative: async () => {} },
-    "@/lib/subtitles/language": { pickBestTrack },
+    "@/features/player/engine/secondary-sub": {
+      resetSecondarySub() {},
+      useSecondarySubChoice: () => choice,
+    },
+    "@/features/player/engine/sub-format": formats,
+    "@/features/player/engine/sub-style": { applySecondarySubNative: async () => {} },
+    "@/features/subtitles/language": { pickBestTrack },
   };
   const module = { exports: {} };
   new Function("require", "module", "exports", compiled)(

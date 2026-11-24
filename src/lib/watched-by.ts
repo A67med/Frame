@@ -4,7 +4,7 @@ import {
   normalizeWatchedBy,
   WATCHED_BY_MAX,
   type WatchedByMap,
-} from "@/lib/profile-sync/watched-by-merge";
+} from "@/features/profiles/sync/watched-by-merge";
 
 const KEY = "harbor.watchedby.v1";
 

@@ -5,9 +5,9 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
 import type { Settings } from "../src/lib/settings/types.ts";
-import { compileMpvOptions, svpMpvLines } from "../src/lib/player/mpv-tuning.ts";
-import { resolvePlaybackDownloadedFraction } from "../src/lib/player/playback-clock.ts";
-import { playbackStartupProfile } from "../src/lib/player/startup-profile.ts";
+import { compileMpvOptions, svpMpvLines } from "../src/features/player/engine/mpv-tuning.ts";
+import { resolvePlaybackDownloadedFraction } from "../src/features/player/engine/playback-clock.ts";
+import { playbackStartupProfile } from "../src/features/player/engine/startup-profile.ts";
 
 test("only the P2P engine reports whole-file download progress", () => {
   assert.equal(

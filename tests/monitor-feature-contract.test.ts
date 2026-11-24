@@ -8,12 +8,12 @@ import test from "node:test";
 const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
 const monitorsRs = read("src-tauri/src/monitors.rs");
-const mpvRs = read("src-tauri/src/mpv.rs");
+const mpvRs = read("src-tauri/src/features/playback/mpv.rs");
 const usePlayerMedia = read("src/views/player/hooks/use-player-media.ts");
 const engineSection = read("src/views/settings/player-panel/engine-section.tsx");
 const displayPicker = read("src/views/settings/player-panel/display-picker.tsx");
 const defaults = read("src/lib/settings/defaults.ts");
-const playerMpv = read("src/lib/player/mpv.ts");
+const playerMpv = read("src/features/player/engine/mpv.ts");
 
 // The friendly monitor name must come from the DisplayConfig API, which is the
 // EDID-derived string Windows Settings shows. EnumDisplayDevicesW is only the

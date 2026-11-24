@@ -10,8 +10,8 @@ import {
   directScoreMeasurement,
   nativeScoreMeasurement,
   torrentScoreInvokeArgs,
-} from "../src/lib/subtitles/autosync/direct-validation.ts";
-import type { PipelineContext } from "../src/lib/subtitles/autosync/pipeline.ts";
+} from "../src/features/subtitles/autosync/direct-validation.ts";
+import type { PipelineContext } from "../src/features/subtitles/autosync/pipeline.ts";
 
 const CONTEXT: PipelineContext = {
   mediaUrl: "file:///movie.mkv",

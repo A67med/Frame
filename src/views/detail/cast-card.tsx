@@ -2,7 +2,7 @@ import { Poster } from "@/components/poster";
 import { RankBadge } from "@/components/rank-badge";
 import type { CastEntry } from "@/lib/providers/tmdb";
 import { useRankings } from "@/lib/rankings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function CastCard({ cast }: { cast: CastEntry }) {
   const { openPerson } = useView();

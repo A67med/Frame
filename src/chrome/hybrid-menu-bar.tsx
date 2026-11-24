@@ -6,7 +6,7 @@ import { close, openUrl } from "@/lib/window";
 import { toggleWindowFullscreen } from "@/lib/fullscreen-state";
 import { checkForUpdate } from "@/lib/updater/use-update";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { HARBOR_BUG_FORM_URL } from "@/lib/config/endpoints";
 

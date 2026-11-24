@@ -1,7 +1,6 @@
+use crate::infrastructure::networking::http_redirect;
 use axum::body::{to_bytes, Body};
 use axum::extract::{Path, State};
-#[cfg(target_os = "linux")]
-use axum::http::{header, Method};
 use axum::http::{HeaderMap, HeaderName, HeaderValue, StatusCode};
 use axum::response::{IntoResponse, Redirect, Response};
 use axum::routing::get;
@@ -10,12 +9,8 @@ use futures_util::StreamExt;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::net::SocketAddr;
-#[cfg(target_os = "linux")]
-use std::path::PathBuf;
 use std::sync::Arc;
 use std::time::{Duration, Instant};
-#[cfg(target_os = "linux")]
-use tokio::io::{AsyncReadExt, AsyncSeekExt};
 use tokio::net::TcpListener;
 use tokio::sync::{watch, RwLock};
 use uuid::Uuid;
@@ -24,8 +19,8 @@ use crate::cast_hls::HlsState;
 use crate::transcode::{handle_transcode, TranscodeProfile};
 #[path = "cast_audio.rs"]
 mod cast_audio;
-pub(crate) use cast_audio::{AudioCastFormat, AudioCastInput};
 use cast_audio::AudioCastState;
+pub(crate) use cast_audio::{AudioCastFormat, AudioCastInput};
 
 #[derive(Clone)]
 struct Session {
@@ -36,13 +31,6 @@ struct Session {
     profile: TranscodeProfile,
     burn_sub: Option<(String, String)>,
     prebuffer: Option<watch::Receiver<PrebufferState>>,
-    created_at: Instant,
-}
-
-#[derive(Clone)]
-#[cfg(target_os = "linux")]
-struct LocalFile {
-    path: PathBuf,
     created_at: Instant,
 }
 
@@ -62,11 +50,7 @@ struct PreparedPrefix {
 #[derive(Clone)]
 pub struct ProxyState {
     sessions: Arc<RwLock<HashMap<String, Session>>>,
-    #[cfg(target_os = "linux")]
-    local_files: Arc<RwLock<HashMap<String, LocalFile>>>,
     port: u16,
-    #[cfg(target_os = "linux")]
-    local_port: u16,
     client: reqwest::Client,
     hls: HlsState,
     audio: AudioCastState,
@@ -104,11 +88,7 @@ impl ProxyState {
     pub fn placeholder() -> Self {
         ProxyState {
             sessions: Arc::new(RwLock::new(HashMap::new())),
-            #[cfg(target_os = "linux")]
-            local_files: Arc::new(RwLock::new(HashMap::new())),
             port: 0,
-            #[cfg(target_os = "linux")]
-            local_port: 0,
             client: reqwest::Client::builder()
                 .redirect(reqwest::redirect::Policy::none())
                 .build()
@@ -126,21 +106,6 @@ impl ProxyState {
             .local_addr()
             .map_err(|e| format!("local_addr: {}", e))?
             .port();
-        #[cfg(target_os = "linux")]
-        let (local_listener, local_port) =
-            match TcpListener::bind(SocketAddr::from(([127, 0, 0, 1], 0))).await {
-                Ok(listener) => {
-                    let port = listener
-                        .local_addr()
-                        .map_err(|e| format!("local media local_addr: {e}"))?
-                        .port();
-                    (Some(listener), port)
-                }
-                Err(error) => {
-                    eprintln!("[stream-proxy] local media bind failed: {error}");
-                    (None, 0)
-                }
-            };
         let client = reqwest::Client::builder()
             .redirect(reqwest::redirect::Policy::none())
             .pool_idle_timeout(std::time::Duration::from_secs(60))
@@ -149,11 +114,7 @@ impl ProxyState {
         let hls = HlsState::new();
         let state = ProxyState {
             sessions: Arc::new(RwLock::new(HashMap::new())),
-            #[cfg(target_os = "linux")]
-            local_files: Arc::new(RwLock::new(HashMap::new())),
             port,
-            #[cfg(target_os = "linux")]
-            local_port,
             client,
             hls: hls.clone(),
             audio: AudioCastState::default(),
@@ -166,56 +127,15 @@ impl ProxyState {
             )
             .route("/health", get(handle_health))
             .with_state(state.clone());
-        let app = proxy_routes.merge(crate::cast_hls::router(hls)).merge(state.audio.clone().router());
-        #[cfg(target_os = "linux")]
-        let local_media = Router::new()
-            .route(
-                "/trailer/{id}",
-                get(handle_local_file).head(handle_local_file),
-            )
-            .with_state(state.clone());
+        let app = proxy_routes
+            .merge(crate::cast_hls::router(hls))
+            .merge(state.audio.clone().router());
         tokio::spawn(async move {
             if let Err(e) = axum::serve(listener, app).await {
                 eprintln!("[stream-proxy] server error: {}", e);
             }
         });
-        #[cfg(target_os = "linux")]
-        if let Some(local_listener) = local_listener {
-            tokio::spawn(async move {
-                if let Err(e) = axum::serve(local_listener, local_media).await {
-                    eprintln!("[stream-proxy] local media server error: {e}");
-                }
-            });
-        }
         Ok(state)
-    }
-
-    #[cfg(target_os = "linux")]
-    pub async fn register_local_file(&self, path: PathBuf) -> Result<String, String> {
-        if self.local_port == 0 {
-            return Err("local media server is unavailable".to_string());
-        }
-        let path = tokio::fs::canonicalize(path)
-            .await
-            .map_err(|e| format!("local media path: {e}"))?;
-        let metadata = tokio::fs::metadata(&path)
-            .await
-            .map_err(|e| format!("local media metadata: {e}"))?;
-        if !metadata.is_file() {
-            return Err("local media path is not a file".to_string());
-        }
-        let size = metadata.len();
-        let id = Uuid::new_v4().to_string();
-        self.local_files.write().await.insert(
-            id.clone(),
-            LocalFile {
-                path,
-                created_at: Instant::now(),
-            },
-        );
-        let url = format!("http://127.0.0.1:{}/trailer/{}.mp4", self.local_port, id);
-        eprintln!("[stream-proxy] serving local trailer bytes={size} url={url}");
-        Ok(url)
     }
 
     pub async fn register(&self, args: RegisterArgs) -> RegisterResult {
@@ -361,10 +281,16 @@ impl ProxyState {
         self.sessions.write().await.remove(session_id);
     }
 
-    pub(crate) async fn register_audio_cast(&self, input: AudioCastInput) -> Result<RegisterResult, String> {
-        let host = reachable_ip_for(&input.target_host).or_else(lan_ip)
+    pub(crate) async fn register_audio_cast(
+        &self,
+        input: AudioCastInput,
+    ) -> Result<RegisterResult, String> {
+        let host = reachable_ip_for(&input.target_host)
+            .or_else(lan_ip)
             .ok_or("No network route to the speaker")?;
-        if self.port == 0 { return Err("Speaker audio server is not ready".into()); }
+        if self.port == 0 {
+            return Err("Speaker audio server is not ready".into());
+        }
         let session_id = self.audio.register(input).await?;
         let url = format!("http://{host}:{}/cast/audio/{session_id}", self.port);
         Ok(RegisterResult { session_id, url })
@@ -375,7 +301,9 @@ impl ProxyState {
     }
 
     pub async fn stop_hls_session(&self, session_id: &str) -> bool {
-        if session_id.starts_with("audio-") { return self.audio.stop(session_id).await; }
+        if session_id.starts_with("audio-") {
+            return self.audio.stop(session_id).await;
+        }
         self.hls.stop_session(session_id).await
     }
 
@@ -400,13 +328,6 @@ impl ProxyState {
             }
             stale.len()
         };
-        #[cfg(target_os = "linux")]
-        {
-            let mut map = self.local_files.write().await;
-            let before = map.len();
-            map.retain(|_, file| now.duration_since(file.created_at) <= PROXY_MAX_AGE);
-            removed += before - map.len();
-        }
         removed += self.hls.evict_idle(HLS_IDLE).await;
         removed += self.audio.gc().await;
         removed
@@ -451,86 +372,7 @@ async fn handle_health() -> &'static str {
     "ok"
 }
 
-#[cfg(target_os = "linux")]
-async fn handle_local_file(
-    State(state): State<ProxyState>,
-    Path(id_with_ext): Path<String>,
-    method: Method,
-    headers: HeaderMap,
-) -> Response {
-    let id = id_with_ext.trim_end_matches(".mp4");
-    let path = {
-        let files = state.local_files.read().await;
-        match files.get(id) {
-            Some(file) => file.path.clone(),
-            None => return (StatusCode::NOT_FOUND, "trailer not found").into_response(),
-        }
-    };
-    let mut file = match tokio::fs::File::open(&path).await {
-        Ok(file) => file,
-        Err(_) => return (StatusCode::NOT_FOUND, "trailer file missing").into_response(),
-    };
-    let len = match file.metadata().await {
-        Ok(metadata) => metadata.len(),
-        Err(error) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                format!("trailer metadata: {error}"),
-            )
-                .into_response();
-        }
-    };
-    let requested_range = headers
-        .get(header::RANGE)
-        .and_then(|value| value.to_str().ok());
-    let (status, start, end) = match requested_range {
-        Some(raw) => match parse_file_range(raw, len) {
-            Some((start, end)) => (StatusCode::PARTIAL_CONTENT, start, end),
-            None => {
-                let mut response =
-                    (StatusCode::RANGE_NOT_SATISFIABLE, Body::empty()).into_response();
-                response.headers_mut().insert(
-                    header::CONTENT_RANGE,
-                    HeaderValue::from_str(&format!("bytes */{len}")).unwrap(),
-                );
-                return response;
-            }
-        },
-        None => (StatusCode::OK, 0, len),
-    };
-    if start > 0 && file.seek(std::io::SeekFrom::Start(start)).await.is_err() {
-        return (StatusCode::INTERNAL_SERVER_ERROR, "trailer seek failed").into_response();
-    }
-    let content_len = end - start;
-    let mut response_headers = HeaderMap::new();
-    response_headers.insert(header::ACCEPT_RANGES, HeaderValue::from_static("bytes"));
-    response_headers.insert(header::CONTENT_TYPE, HeaderValue::from_static("video/mp4"));
-    response_headers.insert(
-        header::CONTENT_LENGTH,
-        HeaderValue::from_str(&content_len.to_string()).unwrap(),
-    );
-    response_headers.insert(
-        header::ACCESS_CONTROL_ALLOW_ORIGIN,
-        HeaderValue::from_static("*"),
-    );
-    response_headers.insert(
-        header::ACCESS_CONTROL_EXPOSE_HEADERS,
-        HeaderValue::from_static("Content-Length, Content-Range, Accept-Ranges"),
-    );
-    if status == StatusCode::PARTIAL_CONTENT {
-        response_headers.insert(
-            header::CONTENT_RANGE,
-            HeaderValue::from_str(&format!("bytes {}-{}/{len}", start, end - 1)).unwrap(),
-        );
-    }
-    if method == Method::HEAD {
-        return (status, response_headers, Body::empty()).into_response();
-    }
-    let stream = tokio_util::io::ReaderStream::with_capacity(file.take(content_len), 64 * 1024);
-    (status, response_headers, Body::from_stream(stream)).into_response()
-}
-
-#[cfg(any(target_os = "linux", test))]
+#[cfg(test)]
 fn parse_file_range(raw: &str, len: u64) -> Option<(u64, u64)> {
     if len == 0 {
         return None;
@@ -592,7 +434,11 @@ fn playlist_parts(url: &str) -> Option<(String, String, Option<String>)> {
     if last_seg.is_empty() {
         return None;
     }
-    Some((path_part[..last_slash].to_string(), last_seg.to_string(), query))
+    Some((
+        path_part[..last_slash].to_string(),
+        last_seg.to_string(),
+        query,
+    ))
 }
 
 /** True when a request names the manifest itself rather than something it refers to.
@@ -744,7 +590,7 @@ async fn fetch_prebuffer_prefix(
         }
         req = req.header(key, value);
     }
-    let upstream = crate::http_redirect::send_get(&client, req, url).await?;
+    let upstream = http_redirect::send_get(&client, req, url).await?;
     let status = upstream.status();
     if status != StatusCode::PARTIAL_CONTENT {
         return Err("range");
@@ -975,7 +821,7 @@ async fn forward_upstream(
         req = req.header(k, v);
     }
 
-    let upstream = match crate::http_redirect::send_get(&state.client, req, &session.url).await {
+    let upstream = match http_redirect::send_get(&state.client, req, &session.url).await {
         Ok(r) => r,
         Err(e) => {
             return (StatusCode::BAD_GATEWAY, format!("upstream error: {}", e)).into_response();

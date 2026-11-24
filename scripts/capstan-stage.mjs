@@ -337,7 +337,7 @@ async function verifyOrDie() {
   );
 }
 
-// pnpm dev runs the app straight from the checkout: src-tauri/src/capstan/locate.rs walks up for
+// pnpm dev runs the app straight from the checkout: src-tauri/src/features/addons/capstan/locate.rs walks up for
 // android-extension-compat/out/capstan.jar and falls back to JAVA_HOME for a runtime, so a
 // developer needs the layer built but not staged. Name whichever of those is missing, then let
 // the dev server start regardless.

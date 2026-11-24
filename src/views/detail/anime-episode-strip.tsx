@@ -7,7 +7,7 @@ import type { Meta } from "@/lib/cinemeta";
 import type { KitsuEpisode } from "@/lib/providers/kitsu";
 import { useSettings } from "@/lib/settings";
 import { SPOILER_TEXT_CLASS, SPOILER_THUMB_CLASS, type SpoilerMask } from "@/lib/spoilers";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import {
   animePlayEpisode,
   animeSeasonKey,

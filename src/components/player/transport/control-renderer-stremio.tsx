@@ -13,10 +13,10 @@ import {
   SkipForward,
 } from "lucide-react";
 import { NavGlyph } from "@/components/icons/nav-glyph";
-import { hdrFormatLabel, realQualityLabel } from "@/lib/player/resolution-label";
-import type { PlayerCapabilities, PlayerSnapshot } from "@/lib/player/bridge";
+import { hdrFormatLabel, realQualityLabel } from "@/features/player/engine/resolution-label";
+import type { PlayerCapabilities, PlayerSnapshot } from "@/features/player/engine/bridge";
 import type { ReactNode } from "react";
-import type { SubtitleAddHandler } from "@/lib/player/subtitle-load";
+import type { SubtitleAddHandler } from "@/features/player/engine/subtitle-load";
 import type { Meta } from "@/lib/cinemeta";
 import {
   getCustomIcon,

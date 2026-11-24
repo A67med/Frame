@@ -1,6 +1,6 @@
 import type { Meta } from "@/lib/cinemeta";
-import type { LocalEntry } from "@/lib/local-library";
-import type { PlayEpisode, PlayerSrc } from "@/lib/view";
+import type { LocalEntry } from "@/features/library/local-library";
+import type { PlayEpisode, PlayerSrc } from "@/app/navigation/view";
 import type { DownloadItem } from "./downloads-store";
 
 export function downloadPlayerSrc(

@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 // @ts-expect-error Node test types are intentionally outside the browser-only tsconfig.
 import test from "node:test";
-import { deltaFn } from "../src/lib/subtitles/text-sync.ts";
+import { deltaFn } from "../src/features/subtitles/text-sync.ts";
 
 test("nearby manual alignments do not extrapolate reaction-time error into runaway drift", () => {
   const offset = deltaFn(

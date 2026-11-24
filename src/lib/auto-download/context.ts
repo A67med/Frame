@@ -1,11 +1,11 @@
 import { fetchInstalledAddons, fetchManifestAt, filterEnabled } from "@/lib/addon-store";
 import { userAddons, withDebridKeys, type Addon } from "@/lib/addons";
-import { applyOrderToItems, loadDisplayOrder } from "@/lib/addons-store/reorder";
+import { applyOrderToItems, loadDisplayOrder } from "@/features/addons/catalog/reorder";
 import { buildDebridClients } from "@/lib/debrid/registry";
 import type { DebridStore } from "@/lib/debrid/types";
 import { loadEffective } from "@/lib/settings/profile-store";
 import type { Settings } from "@/lib/settings";
-import { loadStreamPlugins, pluginAddons, setStreamPluginConfig } from "@/lib/streams/plugins";
+import { loadStreamPlugins, pluginAddons, setStreamPluginConfig } from "@/features/addons/streams";
 
 export type AutoDlContext = {
   settings: Settings;

@@ -2,10 +2,9 @@ import { Cast, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchTrailer, resolveTrailerQuality, trailerSrc } from "@/lib/trailer";
-import { isMacDesktop } from "@/lib/platform";
 import { openUrl } from "@/lib/window";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { NativeTrailerPlayer } from "./native-trailer-player";
 import { Tooltip } from "./tooltip";
@@ -87,17 +86,9 @@ export function TrailerOverlay({
       aria-label={t("Trailer")}
       className="fixed inset-0 z-[170] flex cursor-zoom-out items-center justify-center"
       style={{
-        backgroundColor: open
-          ? isMacDesktop()
-            ? "rgba(0,0,0,1)"
-            : "rgba(0,0,0,0.82)"
-          : "rgba(0,0,0,0)",
-        backdropFilter: isMacDesktop() ? "none" : open ? "blur(32px) saturate(1.2)" : "blur(0px)",
-        WebkitBackdropFilter: isMacDesktop()
-          ? "none"
-          : open
-            ? "blur(32px) saturate(1.2)"
-            : "blur(0px)",
+        backgroundColor: open ? "rgba(0,0,0,0.82)" : "rgba(0,0,0,0)",
+        backdropFilter: open ? "blur(32px) saturate(1.2)" : "blur(0px)",
+        WebkitBackdropFilter: open ? "blur(32px) saturate(1.2)" : "blur(0px)",
         transition:
           "background-color 360ms cubic-bezier(0.32,0.72,0.24,1), backdrop-filter 360ms cubic-bezier(0.32,0.72,0.24,1)",
       }}
@@ -138,11 +129,7 @@ export function TrailerOverlay({
         {streamUrl ? (
           <NativeTrailerPlayer src={streamUrl} videoRef={videoRef} />
         ) : extractFailed ? (
-          isMacDesktop() ? (
-            <ExternalTrailerFallback id={id} title={title} logo={logo} />
-          ) : (
-            <YouTubeEmbed id={id} title={title} />
-          )
+          <YouTubeEmbed id={id} title={title} />
         ) : (
           <TrailerLoader title={title} logo={logo} />
         )}
@@ -196,46 +183,6 @@ function YouTubeEmbed({ id, title }: { id: string; title: string }) {
         {t("Watch on YouTube")}
       </button>
     </>
-  );
-}
-
-function ExternalTrailerFallback({
-  id,
-  title,
-  logo,
-}: {
-  id: string;
-  title: string;
-  logo?: string;
-}) {
-  const t = useT();
-  return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8 text-center">
-      {logo ? (
-        <img
-          src={logo}
-          alt={title}
-          className="max-h-24 w-auto max-w-[55%] object-contain opacity-90 drop-shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
-        />
-      ) : (
-        <p className="font-display text-[40px] font-medium leading-[0.98] tracking-tight text-white drop-shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
-          {title}
-        </p>
-      )}
-      <p className="max-w-sm text-[14px] leading-relaxed text-white/55">
-        {t("This trailer plays on YouTube.")}
-      </p>
-      <button
-        type="button"
-        onClick={(e) => {
-          e.stopPropagation();
-          openUrl(`https://www.youtube.com/watch?v=${id}`);
-        }}
-        className="flex h-11 items-center rounded-full bg-white px-6 text-[14px] font-semibold text-black shadow-[0_8px_22px_rgba(0,0,0,0.4)] transition-transform active:scale-[0.97]"
-      >
-        {t("Watch on YouTube")}
-      </button>
-    </div>
   );
 }
 

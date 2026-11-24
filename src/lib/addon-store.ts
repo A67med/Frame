@@ -1,13 +1,13 @@
-import { safeFetch as fetch, safeFetchLocal } from "@/lib/safe-fetch";
+import { safeFetch as fetch, safeFetchLocal } from "@/infrastructure/networking/safe-fetch";
 import { isLocalNetworkUrl } from "@/lib/local-network";
 import { readActiveStremioAuthKey } from "./auth";
-import { setUserAddons, userAddons, type Addon } from "./addons";
+import { setUserAddons, userAddons, type Addon } from "@/features/addons/catalog/account";
 import {
   applyOrderToItems,
   loadDisplayOrder,
   replaceUrlsInOrder,
   saveDisplayOrder,
-} from "./addons-store/reorder";
+} from "../features/addons/catalog/reorder";
 
 const PROFILES_KEY = "harbor.profiles.v1";
 

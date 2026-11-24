@@ -12,7 +12,7 @@ const bundled = JSON.parse(read("src/lib/updater/bundled-release-notes.json"));
 function harness() {
   let requests = 0;
   const mocks: Record<string, unknown> = {
-    "@/lib/safe-fetch": {
+    "@/infrastructure/networking/safe-fetch": {
       safeFetch: async () => {
         requests++;
         return {

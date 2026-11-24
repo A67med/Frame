@@ -1,5 +1,5 @@
 import { useMemo, useSyncExternalStore } from "react";
-import { useCollections, type Collection } from "@/lib/collections";
+import { useCollections, type Collection } from "@/features/collections/store";
 
 const KEY = "harbor.pagecollrows.v1";
 const CAP_PER_PAGE = 6;

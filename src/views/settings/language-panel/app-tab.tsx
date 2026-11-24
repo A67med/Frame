@@ -5,7 +5,7 @@ import { tvFocus } from "@/lib/keyboard-navigation";
 import { navOwnsFocus } from "@/lib/keyboard-navigation/geometry";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
-import { ALL_LANGUAGE_NAMES } from "@/lib/subtitles/language";
+import { ALL_LANGUAGE_NAMES } from "@/features/subtitles/language";
 import { Section, ToggleRow } from "../shared";
 import { SettingRow } from "../kit";
 import { usePageActions } from "../page-actions";

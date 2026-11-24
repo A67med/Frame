@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import type { Affinity } from "@/lib/discover/types";
+import type { Affinity } from "@/features/discovery/discover/types";
 import type { Settings, StreamingService } from "@/lib/settings";
 import type { ShelfMeta } from "@/components/feed-shelf";
 import { CATALOG, type ExpandedRow } from "./daily-rows-catalog";

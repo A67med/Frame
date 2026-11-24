@@ -5,7 +5,7 @@ import { ParentalPinModal } from "@/components/parental-pin-modal";
 import { useT } from "@/lib/i18n";
 import { useParental } from "@/lib/parental";
 import { useSettings } from "@/lib/settings";
-import { useView, type View } from "@/lib/view";
+import { useView, type View } from "@/app/navigation/view";
 import { useAvailableNavItems, applyNavCustomization, type NavItem } from "@/chrome/nav-items";
 import { NavHiddenTray, NavHideBadge, useNavDrag } from "@/chrome/nav-edit";
 import { useNavEditMode } from "@/chrome/nav-edit-mode";

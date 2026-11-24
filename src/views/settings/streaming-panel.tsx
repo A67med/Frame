@@ -3,7 +3,7 @@ import { Search } from "@/components/icons/search-icon";
 import { useEffect, useState } from "react";
 import { AddonLogo } from "@/components/addon-logo";
 import { Flag } from "@/components/flag";
-import { ALL_LANGUAGE_NAMES } from "@/lib/subtitles/language";
+import { ALL_LANGUAGE_NAMES } from "@/features/subtitles/language";
 import { ServiceLogo } from "@/components/service-logo";
 import { SERVICES } from "@/lib/providers/streaming";
 import {

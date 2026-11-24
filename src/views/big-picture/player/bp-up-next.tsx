@@ -10,7 +10,7 @@ import { X } from "lucide-react";
 import { Play } from "@/components/icons/play-filled";
 import { SFX } from "@/lib/sfx";
 import type { SpoilerMask } from "@/lib/spoilers";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { bpBoxCss, bpBoxPx, bpCardArt, type BpArtBox } from "../bp-art";
 import { pushBpBack } from "../bp-back";
 import { useBpT } from "../bp-i18n";

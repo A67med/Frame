@@ -8,7 +8,7 @@ import {
 } from "@/lib/providers/tmdb/tmdb-meta-mappers";
 import type { Meta } from "@/lib/cinemeta";
 import { topMovies, topSeries } from "@/lib/cinemeta";
-import { watchlistAllIds } from "@/lib/watchlist";
+import { watchlistAllIds } from "@/features/watchlist/watchlist";
 
 type TrendingItem = (RawMovie & { media_type: "movie" }) | (RawSeries & { media_type: "tv" });
 

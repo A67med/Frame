@@ -92,7 +92,6 @@ const NAMES: Record<string, string> = {
   "live-tv": "Live TV",
   tv: "TV",
   xray: "X-Ray",
-  ebook: "eBook",
   "wt-waiting-dark": "Watch together (dark)",
   "wt-waiting-white": "Watch together (light)",
   "flame-streak": "Flame streak",

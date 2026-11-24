@@ -6,7 +6,7 @@
 import { Check, RotateCcw, Type, X } from "lucide-react";
 import { useEffect } from "react";
 import { useT } from "@/lib/i18n";
-import { closeSyncBar, useSyncBarState } from "@/lib/player/sub-sync";
+import { closeSyncBar, useSyncBarState } from "@/features/player/engine/sub-sync";
 import { AutosyncPopover } from "./autosync/autosync-popover";
 import { useAutoSyncHandle } from "./autosync/autosync-store";
 

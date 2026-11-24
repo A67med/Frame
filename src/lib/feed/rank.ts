@@ -1,6 +1,6 @@
 import type { Meta } from "@/lib/cinemeta";
 import type { FeedItem } from "@/lib/feed";
-import { getStore } from "@/lib/discover/store";
+import { getStore } from "@/features/discovery/discover/store";
 import { loadStoredSettings } from "@/lib/settings/load";
 import { localeWeights } from "./locale";
 

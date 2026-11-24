@@ -1,4 +1,4 @@
-import type { Affinity } from "@/lib/discover/types";
+import type { Affinity } from "@/features/discovery/discover/types";
 import type { Settings } from "@/lib/settings";
 import { mixSeed, mulberry32 } from "./tags";
 

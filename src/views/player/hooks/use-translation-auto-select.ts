@@ -1,12 +1,12 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
-import { markAddedSub } from "@/lib/subtitles/added-subs";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
+import { markAddedSub } from "@/features/subtitles/added-subs";
 import {
   clearTranslationJobs,
   completeTranslationJob,
   expiredTranslationJobs,
   useTranslationJobs,
-} from "@/lib/subtitles/translation-jobs";
+} from "@/features/subtitles/translation-jobs";
 
 /** How often a still-pending translation is re-checked. */
 const POLL_MS = 30_000;

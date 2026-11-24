@@ -1,5 +1,5 @@
 import { loadStoredSettings } from "@/lib/settings/load";
-import { normalizeLang } from "@/lib/subtitles/language";
+import { normalizeLang } from "@/features/subtitles/language";
 
 const NO_LANGS: string[] = [];
 let lastNames: readonly string[] = NO_LANGS;

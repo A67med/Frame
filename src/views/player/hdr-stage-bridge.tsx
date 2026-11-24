@@ -11,9 +11,9 @@ import {
   type HdrStageSubtitleTrackRequest,
   type HdrNavigationRequest,
 } from "@/lib/hdr-overlay";
-import { usePlayerNavigation } from "@/lib/view";
-import type { PlayerBridge } from "@/lib/player/bridge";
-import { buildSubtitleTimingMediaKey } from "@/lib/player/subtitle-fps";
+import { usePlayerNavigation } from "@/app/navigation/view";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
+import { buildSubtitleTimingMediaKey } from "@/features/player/engine/subtitle-fps";
 import type { HdrStagePayload } from "../hdr-overlay-app";
 
 export type HdrStageHandlers = {

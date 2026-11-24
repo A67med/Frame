@@ -15,20 +15,9 @@ import { getCachedPlaylist } from "@/lib/iptv/store";
 import type { StoredPlaylist } from "@/lib/iptv/playlists-store";
 import { arabicAwareMatch } from "@/lib/iptv/rtl";
 import { loadStoredSettings } from "@/lib/settings/load";
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { anilistAnimeSearch } from "@/lib/anilist/browse";
-import type { MangaSummary } from "@/lib/manga/model";
 import type { CharacterHit } from "@/lib/anilist/character";
-import type { EBook } from "@/lib/ebook/api";
-import type { SportsEventHit } from "@/lib/sports/search-events";
-
-export type MusicSearchHit = {
-  id: string;
-  kind: "artist" | "album" | "track";
-  title: string;
-  subtitle: string;
-  artwork?: string;
-};
 
 export type SearchPerson = {
   id: number;
@@ -90,10 +79,6 @@ export type SearchResults = {
   series: Meta[];
   liveTv: LiveTvHit[];
   anime: AnimeHit[];
-  manga: MangaSummary[];
-  music: MusicSearchHit[];
-  ebooks: EBook[];
-  sports: SportsEventHit[];
   characters: CharacterHit[];
   addonGroups: AddonResultGroup[];
   addons: AddonHit[];
@@ -301,10 +286,6 @@ export async function searchAll(
       series: [],
       liveTv: [],
       anime: [],
-      manga: [],
-      music: [],
-      ebooks: [],
-      sports: [],
       characters: [],
       addonGroups: [],
       addons: [],
@@ -320,10 +301,6 @@ export async function searchAll(
       series: [],
       liveTv: [],
       anime: [],
-      manga: [],
-      music: [],
-      ebooks: [],
-      sports: [],
       characters: [],
       addonGroups: [],
       addons: [],
@@ -345,10 +322,6 @@ export async function searchAll(
       series: [],
       liveTv: [],
       anime: [],
-      manga: [],
-      music: [],
-      ebooks: [],
-      sports: [],
       characters: [],
       addonGroups: [],
       addons: [],
@@ -468,10 +441,6 @@ export async function searchAll(
     series: series.slice(0, 12),
     liveTv: [],
     anime: [],
-    manga: [],
-    music: [],
-    ebooks: [],
-    sports: [],
     characters: [],
     addonGroups: [],
     addons: [],

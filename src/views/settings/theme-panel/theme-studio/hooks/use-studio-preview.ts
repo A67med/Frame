@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { ThemeLayout, ThemeBackground, ThemeLogo } from "@/lib/theme";
 import type { NavCustomization } from "@/chrome/nav-items";
 import { setThemePreview } from "@/lib/theme-preview";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function useStudioPreview(
   layout: ThemeLayout,

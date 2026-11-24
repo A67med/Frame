@@ -5,16 +5,16 @@ import test from "node:test";
 import {
   DEFAULT_BUNDLE,
   type CalibrationBundle,
-} from "../src/lib/subtitles/autosync/calibration.ts";
+} from "../src/features/subtitles/autosync/calibration.ts";
 import {
   measuredQuality,
   unknownQuality,
   type QualityMeasurementRequest,
-} from "../src/lib/subtitles/autosync/fp-gate.ts";
+} from "../src/features/subtitles/autosync/fp-gate.ts";
 import {
   DIRECT_EXPLICIT_HELD_OUT_PROVENANCE,
   DIRECT_HELD_OUT_PROVENANCE,
-} from "../src/lib/subtitles/autosync/direct-validation.ts";
+} from "../src/features/subtitles/autosync/direct-validation.ts";
 import {
   PIVOT_HELD_OUT_PROVENANCE,
   PIVOT_VAD_HELD_OUT_PROVENANCE,
@@ -23,15 +23,15 @@ import {
   preferAutoSyncOutcome,
   runExperimentalPivotAutoSync,
   type PivotRuntimeSettings,
-} from "../src/lib/subtitles/autosync/pivot-runtime.ts";
+} from "../src/features/subtitles/autosync/pivot-runtime.ts";
 import type {
   PipelineContext,
   PipelineOutcome,
   TierPorts,
-} from "../src/lib/subtitles/autosync/pipeline.ts";
-import type { PreparedSubtitle } from "../src/lib/subtitles/prepare.ts";
-import type { SubResult, SubSearchQuery } from "../src/lib/subtitles/types.ts";
-import type { PlayerSrc } from "../src/lib/view.tsx";
+} from "../src/features/subtitles/autosync/pipeline.ts";
+import type { PreparedSubtitle } from "../src/features/subtitles/prepare.ts";
+import type { SubResult, SubSearchQuery } from "../src/features/subtitles/types.ts";
+import type { PlayerSrc } from "../src/app/navigation/view.tsx";
 import { PIVOT_CUES, TARGET_CUES } from "./fixtures/subtitle-p2-fixtures.ts";
 
 const SETTINGS: PivotRuntimeSettings = {

@@ -7,7 +7,7 @@ import {
   saveSubPresets,
   snapshotSub,
   type SubPreset,
-} from "@/lib/player/sub-presets";
+} from "@/features/player/engine/sub-presets";
 import { useT } from "@/lib/i18n";
 
 function styleMatches(s: Settings, p: SubPreset): boolean {

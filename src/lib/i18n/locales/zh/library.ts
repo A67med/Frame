@@ -1,5 +1,5 @@
 const library: Record<string, string> = {
-  Library: "媒体库",
+  "Library": "媒体库",
   "My Library": "我的媒体库",
   "Couldn't find a Trakt avatar on your account.": "未在你的 Trakt 账号中找到头像。",
   "Couldn't reach Trakt.": "无法连接 Trakt。",
@@ -16,16 +16,16 @@ const library: Record<string, string> = {
   "Preparing download": "正在准备下载",
   "Couldn't download, try again": "下载失败，请重试",
   "Back to library": "返回媒体库",
-  Download: "下载",
+  "Download": "下载",
   "Download failed": "下载失败",
   "Download to disk": "下载到磁盘",
-  List: "列表",
+  "List": "列表",
   "Reset sync": "重置同步",
-  Saved: "已保存",
+  "Saved": "已保存",
   "Saved to disk": "已保存到磁盘",
   "Saved to {folder} · open folder": "已保存到 {folder} · 打开文件夹",
   "Search {n} favorite": "搜索 {n} 个收藏项",
-  Sync: "同步",
+  "Sync": "同步",
   "Your copy runs {guest}, host's runs {host}. Sync may drift.":
     "你的版本时长为 {guest}，房主的版本时长为 {host}。同步可能会逐渐偏移。",
   "Next and Previous follow your queue": "“下一项”和“上一项”将按你的队列顺序跳转",
@@ -54,7 +54,7 @@ const library: Record<string, string> = {
   "Your Stremio sign-in. Library, watch progress, and addons sync from here.":
     "你的 Stremio 登录账户。媒体库、观看进度和插件均从这里同步。",
   "Library & metadata": "媒体库和元数据",
-  Simkl: "Simkl",
+  "Simkl": "Simkl",
   "Connect your Simkl account to mark what you finish as watched and sync your plan-to-watch list across apps.":
     "连接 Simkl 账户，将看完的内容标记为已观看，并在不同应用间同步计划观看列表。",
   "MDBList · Letterboxd and Trakt scores": "MDBList · Letterboxd 和 Trakt 评分",
@@ -155,7 +155,7 @@ const library: Record<string, string> = {
     "公开模式只需用户名，即可访问想看清单、喜欢的电影、热门电影和 Top 250，无需密码。",
   "Remove list": "移除列表",
   "letterboxd.com/username/list/slug": "letterboxd.com/username/list/slug",
-  Watchlist: "想看清单",
+  "Watchlist": "想看清单",
   "Could not resolve that Letterboxd list URL.": "无法解析该 Letterboxd 列表 URL。",
   "Saved frame": "保存的画面",
   "Auto-sync subtitles": "自动同步字幕",
@@ -415,7 +415,7 @@ const library: Record<string, string> = {
   "Saved for Now": "暂时收藏",
   "More from a Favorite Director": "更多心仪导演的作品",
   "Starring a Favorite": "心仪演员主演的作品",
-  Collection: "合集",
+  "Collection": "合集",
   "No films found in this collection.": "此合集中未找到电影。",
   "Open the queue": "打开队列",
   "{title} will not come back in the Discovery Queue.": "{title} 将不再出现在发现队列中。",
@@ -431,7 +431,7 @@ const library: Record<string, string> = {
   "Trakt Comments": "Trakt 评论",
   "Open on Trakt": "在 Trakt 上打开",
   "Comments may take a moment to appear on Trakt": "评论可能需要片刻才会在 Trakt 上显示",
-  History: "历史",
+  "History": "历史",
   "Frame couldn't resolve a usable ID for this title. Add a TMDB key in Library settings or sign in to Stremio to broaden coverage.":
     "Frame 无法为此条目解析出可用 ID。请在媒体库设置中添加 TMDB 密钥，或登录 Stremio 以扩大匹配范围。",
   "Brings in your library, watchlist, and installed addons.":
@@ -491,7 +491,7 @@ const library: Record<string, string> = {
   "Added {n} to your Frame watchlist": "已将 {n} 部作品添加到你的 Frame 片单",
   "Authorize Frame on Simkl": "在 Simkl 上授权 Frame",
   "Authorize Frame on Trakt": "在 Trakt 上授权 Frame",
-  Calendar: "日历",
+  "Calendar": "日历",
   "Choose which Simkl rails appear on your home screen.": "选择要在主屏幕上显示的 Simkl 内容栏。",
   "Clear history": "清除历史记录",
   "Community comments from Trakt that appear on movie and show pages.":
@@ -518,7 +518,7 @@ const library: Record<string, string> = {
     "使用此 Frame 的每个人都拥有各自的观看历史、头像、颜色和可选 PIN。可随时切换。",
   "Exit sync mode": "退出同步模式",
   "Export to Trakt": "导出到 Trakt",
-  Favorite: "收藏",
+  "Favorite": "收藏",
   "Found {n}: {names}. Saved under the wrong id by the 0.9.65 bug, which breaks Continue Watching and Trakt marking.":
     "找到 {n} 个：{names}。由于 0.9.65 版本的错误，这些内容被保存到了错误的 ID 下，导致“继续观看”和 Trakt 标记失效。",
   "Full list": "完整列表",
@@ -544,7 +544,7 @@ const library: Record<string, string> = {
   "Pick up partly-watched episodes and movies at your saved spot. Anything watched past 80% always restarts. Turn this off to always start from the beginning, handy if you rewatch shows.":
     "从保存的位置继续播放未看完的剧集和电影。观看进度超过 80% 的内容始终会从头播放。关闭此项后所有内容都会从头播放，适合重看剧集。",
   "Plays + ratings sync from Frame to Trakt.tv.": "播放记录和评分会从 Frame 同步到 Trakt.tv。",
-  Queue: "播放队列",
+  "Queue": "播放队列",
   "Rate on SIMKL": "在 SIMKL 上评分",
   "Read titles, ids, and any poster/logo/backdrop already saved next to your files. Missing images are filled from TMDB.":
     "读取标题、ID，以及已保存在文件旁的海报、Logo 和背景图。缺失的图片将从 TMDB 补充。",
@@ -578,7 +578,7 @@ const library: Record<string, string> = {
     "请先登录 Stremio。此操作会读取当前个人资料的媒体库。",
   "Sign in to Stremio first. This scans the active profile's library.":
     "请先登录 Stremio。此操作会扫描当前个人资料的媒体库。",
-  SIMKL: "SIMKL",
+  "SIMKL": "SIMKL",
   "SIMKL community rating. Works independently, no API key required.":
     "SIMKL 社区评分。可独立使用，无需 API 密钥。",
   "Step 1 · Open Simkl": "第 1 步 · 打开 Simkl",
@@ -598,7 +598,7 @@ const library: Record<string, string> = {
     "此列表需要你的 {key} API 密钥。请在设置中添加，然后刷新。",
   "Track everything you watch, see your watchlist, and get personalized recommendations on Frame's home page. Free at trakt.tv.":
     "记录你观看的所有内容、查看片单，并在 Frame 首页获取个性化推荐。可在 trakt.tv 免费使用。",
-  Trakt: "Trakt",
+  "Trakt": "Trakt",
   "Trakt account limit reached. Upgrade to Trakt VIP or trim your watchlist.":
     "已达到 Trakt 账户上限。请升级到 Trakt VIP 或精简片单。",
   "Trakt community rating as a percentage.": "以百分比显示 Trakt 社区评分。",
@@ -626,24 +626,8 @@ const library: Record<string, string> = {
   "Your Trakt watchlist is empty, nothing to import.": "你的 Trakt 片单为空，没有可导入的内容。",
   "Your watchlist is empty, nothing to send.": "你的片单为空，没有可发送的内容。",
   "Add favorite": "添加收藏",
-  "Could not reach the source list": "无法连接到来源列表",
   "Delete download": "删除下载内容",
-  "Download cheat sheet": "下载速查表",
-  "Download full API reference": "下载完整 API 参考文档",
-  "Make one folder for your library.": "为你的漫画库创建一个文件夹。",
-  "New downloads are saved here. Chapters you already saved stay where they are.":
-    "新下载内容将保存到此处。已保存的章节仍保留在原位置。",
   "Remove favorite": "取消收藏",
-  "Saved on your server": "已保存到您的服务器",
-  "Saved on your server, reads instantly": "已保存到您的服务器，可即时读取",
-  "That config is not valid. Check baseUrl, popularPath, list, chapters, and pages.":
-    "该配置无效。请检查 baseUrl、popularPath、list、chapters 和 pages。",
-  "That config is not valid. It needs baseUrl, popularPath, list (item + link), chapters (item + link), and pages (image).":
-    "该配置无效。需要包含 baseUrl、popularPath、list（item + link）、chapters（item + link）和 pages（image）。",
-  "Your sources are saved, we just could not load their details. Check your connection and try again.":
-    "您的来源已保存，但无法加载其详细信息。请检查网络连接后重试。",
-  "if the series page shows only the latest few chapters and the full list lives on another URL, this rewrites the series URL to it.":
-    "如果作品页面只显示最近几话，而完整列表位于另一个 URL，此项会将作品 URL 重写为该 URL。",
   "list view": "列表视图",
   "Couldn't load this collection": "无法加载此合集",
   "How cards look across Home, Discover, and your library. The preview updates live.":

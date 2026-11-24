@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge } from "@/lib/player/bridge";
+import type { PlayerBridge } from "@/features/player/engine/bridge";
 import { cloudWriteId } from "@/lib/stremio";
-import { resolveStartMs } from "@/lib/player/resume-start";
-import type { PlayerSrc } from "@/lib/view";
+import { resolveStartMs } from "@/features/player/engine/resume-start";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { videoIdFor } from "./use-stremio-sync";
 import { useSettings } from "@/lib/settings";
-import { playbackStartupProfile } from "@/lib/player/startup-profile";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
+import { playbackStartupProfile } from "@/features/player/engine/startup-profile";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
 import { releaseStreamProxy, retainStreamProxy } from "@/lib/stream-proxy";
-import { playerLoadIdentity } from "@/lib/player/load-identity";
+import { playerLoadIdentity } from "@/features/player/engine/load-identity";
 
 const RESUME_PROMPT_MIN_SEC = 30;
 // Same ratio that marks an episode watched (use-resume-autosave), so anything still unwatched resumes.

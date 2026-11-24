@@ -5,7 +5,8 @@ import { MOVIE_GENRES, TV_GENRES } from "@/lib/feed/tags";
 import { useT, useUiLanguage } from "@/lib/i18n";
 import type { BrandKind, BrandSummary } from "@/lib/providers/tmdb/tmdb-brands";
 import { useSettings } from "@/lib/settings";
-import { useScrollMemory, useView } from "@/lib/view";
+import { useScrollMemory } from "@/app/navigation/use-scroll-memory";
+import { useView } from "@/app/navigation/view";
 
 type Sort = "popular" | "titles" | "rated" | "alpha";
 

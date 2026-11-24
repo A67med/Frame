@@ -5,11 +5,14 @@ import { readFileSync } from "node:fs";
 // @ts-expect-error Node test types are outside the browser tsconfig.
 import test from "node:test";
 import ts from "typescript";
-import { navigateUnderPreview, previewPageStack } from "../src/lib/player/docked-navigation.ts";
+import {
+  navigateUnderPreview,
+  previewPageStack,
+} from "../src/features/player/engine/docked-navigation.ts";
 
 const source = ts.createSourceFile(
   "view.tsx",
-  readFileSync(new URL("../src/lib/view.tsx", import.meta.url), "utf8"),
+  readFileSync(new URL("../src/app/navigation/view.tsx", import.meta.url), "utf8"),
   ts.ScriptTarget.ESNext,
   true,
   ts.ScriptKind.TSX,
@@ -138,7 +141,7 @@ test("opening a different title retains ordinary forward navigation", () => {
 });
 
 test("returning to a series leaves a docked preview mounted", () => {
-  const dock = { kind: "player", src: { sportsDocked: true, url: "fixture-stream" } };
+  const dock = { kind: "player", src: { pipDocked: true, url: "fixture-stream" } };
   const h = fixture([home, parent, ep, dock]);
   h.openMeta(series);
   assert.deepEqual(h.stackRef.current, [home, parent, dock]);

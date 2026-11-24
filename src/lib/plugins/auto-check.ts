@@ -1,4 +1,3 @@
-import { isAndroidTv } from "@/lib/platform";
 import { pluginKinds } from "./index";
 
 const STAMP = "harbor.plugins.lastCheck.v1";
@@ -21,7 +20,7 @@ export function schedulePluginAutoCheck(enabled: boolean): void {
     window.clearTimeout(timer);
     timer = null;
   }
-  if (!enabled || typeof window === "undefined" || isAndroidTv()) return;
+  if (!enabled || typeof window === "undefined") return;
   let last = 0;
   try {
     last = Number(localStorage.getItem(STAMP) ?? 0);

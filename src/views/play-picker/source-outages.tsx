@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useT } from "@/lib/i18n";
-import { pluginHealth, runnableStreamPlugins, subscribeStreamPlugins } from "@/lib/streams/plugins";
+import {
+  pluginHealth,
+  runnableStreamPlugins,
+  subscribeStreamPlugins,
+} from "@/features/addons/streams";
 
 /** Long enough to cover a slow pick, short enough that yesterday's outage is not reported as now. */
 const FRESH_MS = 3 * 60_000;

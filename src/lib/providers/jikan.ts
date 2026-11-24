@@ -1,5 +1,5 @@
 import type { Meta } from "@/lib/cinemeta";
-import { adultContentHidden, isAdultText } from "@/lib/addons-store/adult-filter";
+import { adultContentHidden, isAdultText } from "@/features/addons/catalog/adult-filter";
 import { armKitsuIds, catalogGet, catalogSet } from "./jikan-cache";
 import { animeCatalogRequest } from "./anime-catalog-client";
 

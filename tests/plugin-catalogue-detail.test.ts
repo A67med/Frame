@@ -8,8 +8,8 @@ import {
   loadCapstanDetail,
   parseCapstanId,
   titlesAgree,
-} from "../src/lib/streams/plugins/extension/detail.ts";
-import type { BridgeMedia } from "../src/lib/streams/plugins/extension/bridge.ts";
+} from "../src/features/addons/streams/extension/detail.ts";
+import type { BridgeMedia } from "../src/features/addons/streams/extension/bridge.ts";
 
 const media = (over: Partial<BridgeMedia> = {}): BridgeMedia => ({
   name: "Example Show",

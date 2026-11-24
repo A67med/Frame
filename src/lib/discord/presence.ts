@@ -1,7 +1,4 @@
 import { HARBOR_DATA_BASE } from "@/lib/config/endpoints";
-import type { MangaReadingState } from "@/lib/manga-reading-state";
-import { stripColorTag } from "@/lib/manga/title";
-import { mangaDiscordCover, onMangaCoverResolved } from "./manga-cover";
 
 const IS_TAURI = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
 
@@ -22,19 +19,6 @@ type DiscordConfig = {
   showTimestamp: boolean;
   showPartyJoin: boolean;
   showMusic: boolean;
-};
-
-export type MusicPresence = {
-  title: string;
-  artist: string;
-  album?: string;
-  artwork?: string;
-  paused: boolean;
-  positionSec: number;
-  durationSec: number;
-  trackUrl?: string;
-  artistUrl?: string;
-  albumUrl?: string;
 };
 
 export type PlaybackPresence = {
@@ -78,8 +62,6 @@ let config: DiscordConfig = {
   showMusic: true,
 };
 let playback: PlaybackPresence | null = null;
-let music: MusicPresence | null = null;
-let reading: MangaReadingState = null;
 let browse: BrowsePresence | null = null;
 let party: PartyPresence | null = null;
 let lastEnabledSent: boolean | null = null;
@@ -134,85 +116,15 @@ function computeBase(): Base {
       key: `play:${playback.title}|${state ?? ""}|${playback.paused}|${playback.posterUrl ?? ""}|${live ? "ts" : "nots"}`,
     };
   }
-  if (music && config.showMusic && !party && !(music.paused && !config.showWhenPaused)) {
-    if (config.hideTitle) {
-      return {
-        payload: {
-          details: "Listening to something",
-          state: music.paused ? "Paused" : undefined,
-          posterUrl: HARBOR_LOGO,
-          activityType: "listening",
-          paused: music.paused,
-        },
-        key: `music:hide:${music.paused}`,
-      };
-    }
-    const nowSec = Math.floor(Date.now() / 1000);
-    const remaining = music.durationSec - music.positionSec;
-    const live = !music.paused && music.durationSec > 0 && remaining > 0;
-    const credit = music.album ? `${music.artist} · ${music.album}` : music.artist;
-    const state = music.paused ? `Paused · ${music.artist}` : credit;
-    return {
-      payload: {
-        details: music.title,
-        state,
-        posterUrl: (config.showPoster && music.artwork) || HARBOR_LOGO,
-        largeText: music.album ? `${music.album} by ${music.artist}` : music.artist,
-        smallUrl: STATIC_BUTTONS[0].url,
-        startTs: live && config.showTimestamp ? nowSec - Math.floor(music.positionSec) : undefined,
-        endTs: live && config.showTimestamp ? nowSec + Math.floor(remaining) : undefined,
-        activityType: "listening",
-        paused: music.paused,
-        buttons: STATIC_BUTTONS,
-      },
-      key: `music:${music.title}|${state}|${music.artwork ?? ""}|${live ? "ts" : "nots"}`,
-    };
-  }
-  if (reading) {
-    if (config.hideTitle) {
-      return {
-        payload: {
-          details: "Reading something",
-          state: reading.page > 0 ? `Page ${reading.page}/${reading.totalPages}` : undefined,
-          posterUrl: HARBOR_LOGO,
-        },
-        key: `read:hide:${reading.page}/${reading.totalPages}`,
-      };
-    }
-    const state = `${reading.chapterLabel}, page ${reading.page}/${reading.totalPages}`;
-    const title = stripColorTag(reading.title);
-    const poster = config.showPoster
-      ? mangaDiscordCover(reading.cover, title, reading.mangaId)
-      : undefined;
-    return {
-      payload: {
-        details: title,
-        state,
-        posterUrl: poster || HARBOR_LOGO,
-        largeText: title,
-      },
-      key: `read:${reading.title}|${state}|${poster ?? ""}`,
-    };
-  }
   if (browse && config.showWhenBrowsing) {
     if (config.hideTitle)
       return {
         payload: { details: "Browsing Frame", posterUrl: HARBOR_LOGO },
         key: "browse:hide",
       };
-    const isManga = browse.kind === "manga";
-    const details = isManga
-      ? stripColorTag(browse.details ?? "Browsing Frame")
-      : (browse.details ?? "Browsing Frame");
-    const largeText = isManga
-      ? stripColorTag(browse.largeText ?? browse.details ?? "")
-      : (browse.largeText ?? browse.details);
-    const poster =
-      (config.showPoster &&
-        (isManga
-          ? mangaDiscordCover(browse.largeImage, largeText, browse.id)
-          : browse.largeImage)) ||
-      HARBOR_LOGO;
+    const details = browse.details ?? "Browsing Frame";
+    const largeText = browse.largeText ?? browse.details;
+    const poster = (config.showPoster && browse.largeImage) || HARBOR_LOGO;
     return {
       payload: {
         details,
@@ -285,7 +197,6 @@ function schedule(): void {
 
 // An async AniList cover lookup landing after the first send must re-flush so
 // the poster shows without waiting for the next page turn.
-onMangaCoverResolved(schedule);
 
 export function configureDiscord(next: DiscordConfig): void {
   config = next;
@@ -314,16 +225,6 @@ export function setPlaybackPresence(p: PlaybackPresence | null): void {
   playback = p;
   schedule();
   emitActivity();
-}
-
-export function setMusicPresence(m: MusicPresence | null): void {
-  music = m;
-  schedule();
-}
-
-export function setReadingPresence(r: MangaReadingState): void {
-  reading = r;
-  schedule();
 }
 
 export function setBrowsePresence(b: BrowsePresence | null): void {

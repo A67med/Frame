@@ -11,7 +11,7 @@ const read = (p: string) => readFileSync(at(p), "utf8");
 const overlay = read("src/components/player/subtitle-overlay.tsx");
 const preview = read("src/views/settings/player-panel/internals.tsx");
 const picker = read("src/views/settings/player-panel/subtitle-section.tsx");
-const mpv = read("src/lib/player/sub-style.ts");
+const mpv = read("src/features/player/engine/sub-style.ts");
 const settings = read("src/lib/settings.tsx");
 const store = read("src/lib/settings/profile-store.ts");
 const indexHtml = read("index.html");

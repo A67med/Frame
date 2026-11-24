@@ -6,8 +6,8 @@ import {
   applyTimeTransform,
   fitPreferredTimeTransform,
   type TimeAnchor,
-} from "../src/lib/subtitles/autosync/alignment-fit.ts";
-import { alignCuesMonotonically } from "../src/lib/subtitles/autosync/monotonic-align.ts";
+} from "../src/features/subtitles/autosync/alignment-fit.ts";
+import { alignCuesMonotonically } from "../src/features/subtitles/autosync/monotonic-align.ts";
 import {
   PIVOT_CUES,
   PIVOT_WITH_EXTRA_RECAP,

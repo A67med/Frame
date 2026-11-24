@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { Row } from "@/components/row";
 import { useT } from "@/lib/i18n";
 import type { NewEpisode } from "@/lib/new-episodes";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 type Props = {
   episodes: NewEpisode[];

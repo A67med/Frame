@@ -1,7 +1,6 @@
 import { useState, type RefObject } from "react";
 import { Keyboard, Smartphone, Trash2 } from "lucide-react";
 import { Search } from "@/components/icons/search-icon";
-import { isAndroid } from "@/lib/platform";
 import { SFX } from "@/lib/sfx";
 import { useBpT } from "../bp-i18n";
 
@@ -84,10 +83,6 @@ export function BpSearchField({
             if (e.key !== "Enter") return;
             e.stopPropagation();
             onStartTyping();
-            if (isAndroid()) {
-              e.currentTarget.focus();
-              return;
-            }
             e.preventDefault();
           }}
           placeholder={t("Search Frame")}

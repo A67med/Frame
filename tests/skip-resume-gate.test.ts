@@ -13,8 +13,8 @@ test("a valid zero-start intro waits for playback and remains skippable after re
       eventToBinding: () => "",
       isTypingTarget: () => false,
     },
-    "@/lib/player/interaction-lock": { isPlayerInteractionLocked: () => false },
-    "@/lib/player/playback-clock": { usePlaybackPosition: () => position },
+    "@/features/player/engine/interaction-lock": { isPlayerInteractionLocked: () => false },
+    "@/features/player/engine/playback-clock": { usePlaybackPosition: () => position },
     "@/components/player/skip-pill": { SkipPill() {} },
     "@/views/big-picture/player/bp-skip-pill": { BpSkipPill() {} },
     "@/lib/skip-intro": {

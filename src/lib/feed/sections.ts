@@ -1,8 +1,8 @@
 import { topMovies, type Meta } from "@/lib/cinemeta";
 import type { Settings } from "@/lib/settings";
-import { topEntries } from "@/lib/discover/affinity";
-import { getStore } from "@/lib/discover/store";
-import { recentlyPlayed, watchTitleKey } from "@/lib/playback-history";
+import { topEntries } from "@/features/discovery/discover/affinity";
+import { getStore } from "@/features/discovery/discover/store";
+import { recentlyPlayed, watchTitleKey } from "@/features/player/history";
 import { tmdbDiscover, tmdbMovieRow, tmdbSeriesRow, tmdbTrending } from "@/lib/providers/tmdb";
 import { localizeFloor } from "./locale";
 import { getDownvotedIds, getUpvotedIds } from "./preferences";

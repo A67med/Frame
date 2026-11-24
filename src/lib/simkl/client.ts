@@ -1,4 +1,4 @@
-import { safeFetch } from "@/lib/safe-fetch";
+import { safeFetch } from "@/infrastructure/networking/safe-fetch";
 import { activeProfileId } from "@/lib/active-profile-id";
 import {
   SIMKL_API_BASE,

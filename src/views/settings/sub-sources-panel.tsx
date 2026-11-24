@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Blocks, ChevronRight, Languages, Puzzle } from "./icons";
 import { useAuth } from "@/lib/auth";
 import type { Addon } from "@/lib/addons";
-import { gatherSubtitleAddons } from "@/lib/subtitles/addon-source";
+import { gatherSubtitleAddons } from "@/features/subtitles/addon-source";
 import { useSettings } from "@/lib/settings";
 import { useT } from "@/lib/i18n";
 import {

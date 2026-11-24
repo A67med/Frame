@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
-import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/lib/player/bridge";
+import type { PlayerBridge, PlayerSnapshot, TrackInfo } from "@/features/player/engine/bridge";
 import { writePlayerPrefs } from "@/lib/player-prefs";
 import { writePlayerVolume } from "@/lib/player-volume";
 import {
@@ -10,21 +10,21 @@ import {
   type HotkeyId,
 } from "@/lib/hotkeys";
 import { isWindowsDesktop } from "@/lib/platform";
-import { isRtxHdrBlocked, isRtxVsrBlocked } from "@/lib/player/rtx-video-policy";
+import { isRtxHdrBlocked, isRtxVsrBlocked } from "@/features/player/engine/rtx-video-policy";
 import { mediaKeyGate } from "@/lib/media-session";
-import { setVideoOwnsMediaKeys } from "@/lib/player/media-key-owner";
+import { setVideoOwnsMediaKeys } from "@/features/player/engine/media-key-owner";
 import { useSettings } from "@/lib/settings";
 import { isAnyFullscreen, exitAnyFullscreen } from "@/lib/fullscreen-state";
 import { isBigPictureActive } from "@/lib/big-picture";
-import { getLeaveConfirm, openLeaveConfirm } from "@/lib/player/leave-confirm";
-import { isPlayerInteractionLocked } from "@/lib/player/interaction-lock";
+import { getLeaveConfirm, openLeaveConfirm } from "@/features/player/engine/leave-confirm";
+import { isPlayerInteractionLocked } from "@/features/player/engine/interaction-lock";
 import { round2 } from "../player-utils";
 import { SPEED_MAX, SPEED_MIN } from "@/components/player/speed-indicator";
 import { SFX } from "@/lib/sfx";
 import type { ActionFeedback } from "@/components/player/action-indicator";
 import { useT } from "@/lib/i18n";
 import { fmtTime } from "@/components/player/transport/transport-utils";
-import { subtitleTrackLanguageLabel } from "@/lib/subtitles/track-label";
+import { subtitleTrackLanguageLabel } from "@/features/subtitles/track-label";
 
 export function useKeyboardShortcuts(params: {
   bridgeRef: RefObject<PlayerBridge | null>;

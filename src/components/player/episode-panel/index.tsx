@@ -17,13 +17,13 @@ import {
   markPlaybackTrace,
 } from "@/lib/perf/playback-trace";
 import type { ScoredStream } from "@/lib/streams/types";
-import { usePlayerNavigation, type PlayEpisode } from "@/lib/view";
+import { usePlayerNavigation, type PlayEpisode } from "@/app/navigation/view";
 import { parseKitsuId } from "@/lib/providers/kitsu";
 import { splitFranchiseDisplaySeason } from "@/lib/streams/anime-identity-core";
 import { useQueue } from "@/lib/queue";
 import { QueueUpNext } from "./queue-up-next";
-import { playLocalAware } from "@/lib/local-library/playback";
-import { localPlayerSrc } from "@/lib/local-library/player-src";
+import { playLocalAware } from "@/features/library/local-library/playback";
+import { localPlayerSrc } from "@/features/library/local-library/player-src";
 import { useT } from "@/lib/i18n";
 import { EpisodeRow } from "./episode-row";
 import { SeasonStepper } from "@/views/detail/season-stepper";

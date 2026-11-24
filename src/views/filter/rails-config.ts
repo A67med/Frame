@@ -1,7 +1,7 @@
 import { selectSpotlights, type Spotlight } from "@/lib/feed/genre-spotlights";
 import { GENRE_TOPICS, type Topic } from "@/lib/feed/genre-topics";
 import { GENRE_MOVIE_TO_TV, GENRE_TV_TO_MOVIE, MOVIE_GENRES } from "@/lib/feed/tags";
-import type { MetaFilter } from "@/lib/view";
+import type { MetaFilter } from "@/app/navigation/view";
 import { languageRails } from "./language-rails";
 
 export type StandardRail = {

@@ -3,20 +3,24 @@ import { Check, Loader2, Plus, Search as SearchIcon } from "lucide-react";
 import { isVeryNewRelease } from "@/components/player/subtitle-menu/utils";
 import type { Addon } from "@/lib/addons";
 import { useAuth } from "@/lib/auth";
-import type { SubtitleAddHandler } from "@/lib/player/subtitle-load";
+import type { SubtitleAddHandler } from "@/features/player/engine/subtitle-load";
 import { useSettings } from "@/lib/settings";
-import { markAddedSub, useAddedSubs } from "@/lib/subtitles/added-subs";
-import { gatherSubtitleAddons } from "@/lib/subtitles/addon-source";
-import { useTranslationJobs } from "@/lib/subtitles/translation-jobs";
-import { languageName } from "@/lib/subtitles/language";
-import { providerLabel, releaseOf, subtitleLoadMetadataOf } from "@/lib/subtitles/provider-label";
-import { searchSubtitles, type SearchOptions } from "@/lib/subtitles/search";
+import { markAddedSub, useAddedSubs } from "@/features/subtitles/added-subs";
+import { gatherSubtitleAddons } from "@/features/subtitles/addon-source";
+import { useTranslationJobs } from "@/features/subtitles/translation-jobs";
+import { languageName } from "@/features/subtitles/language";
+import {
+  providerLabel,
+  releaseOf,
+  subtitleLoadMetadataOf,
+} from "@/features/subtitles/provider-label";
+import { searchSubtitles, type SearchOptions } from "@/features/subtitles/search";
 import {
   bestCandidate,
   parseTitleQuery,
   searchTitleCandidates,
-} from "@/lib/subtitles/title-search";
-import type { SubResult } from "@/lib/subtitles/types";
+} from "@/features/subtitles/title-search";
+import type { SubResult } from "@/features/subtitles/types";
 import { useBpT } from "../bp-i18n";
 import { BpKeyboard } from "../bp-keyboard";
 import {

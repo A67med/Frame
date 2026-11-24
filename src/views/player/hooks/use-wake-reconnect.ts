@@ -1,9 +1,9 @@
 import { useEffect, useRef, type RefObject } from "react";
-import type { PlayerBridge, PlayerSnapshot } from "@/lib/player/bridge";
-import { getPlaybackPosition } from "@/lib/player/playback-clock";
-import { isLocalUrl } from "@/lib/player/local-url";
-import { isLivePlaybackSrc } from "@/lib/player/live-src";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerBridge, PlayerSnapshot } from "@/features/player/engine/bridge";
+import { getPlaybackPosition } from "@/features/player/engine/playback-clock";
+import { isLocalUrl } from "@/features/player/engine/local-url";
+import { isLivePlaybackSrc } from "@/features/player/engine/live-src";
+import type { PlayerSrc } from "@/app/navigation/view";
 
 const WAKE_GAP_MS = 30_000;
 const TICK_MS = 2_000;

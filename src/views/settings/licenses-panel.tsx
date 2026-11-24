@@ -50,9 +50,6 @@ import easynewsLogo from "@/assets/addon-logos/easynews.png";
 import aiostreamsLogo from "@/assets/addon-logos/aiostreams.png";
 import aiostatusLogo from "@/assets/service-logos/aiostatus.png";
 import localFilesLogo from "@/assets/addon-logos/local-files.png";
-import mangaupdatesLogo from "@/assets/mangaupdates.png";
-import suwayomiLogo from "@/assets/service-logos/suwayomi.png";
-import mangayomiLogo from "@/assets/service-logos/mangayomi.png";
 import openrouterLogo from "@/assets/ai-logos/openrouter.png";
 import groqLogo from "@/assets/ai-logos/groq.png";
 import geminiLogo from "@/assets/ai-logos/gemini.png";
@@ -60,8 +57,6 @@ import jinaLogo from "@/assets/ai-logos/jina.png";
 import auddLogo from "@/assets/addon-logos/auddio.webp";
 import discordLogo from "@/assets/service-logos/discord.png";
 import telegramLogo from "@/assets/service-logos/telegram.png";
-import nytLogo from "@/assets/service-logos/nyt.png";
-import gutenbergLogo from "@/assets/gutenberg.png";
 import igdbLogo from "@/assets/service-logos/igdb.svg";
 import espnLogo from "@/assets/service-logos/espn.png";
 import cloudflareLogo from "@/assets/cloudflare.png";
@@ -342,23 +337,6 @@ const METADATA: Credit[] = [
     logo: metacriticLogo,
   },
   {
-    name: "The New York Times",
-    blurb: "Bestseller lists shown in the eBook section.",
-    url: "https://developer.nytimes.com",
-    logo: nytLogo,
-  },
-  {
-    name: "Project Gutenberg",
-    blurb: "Public-domain books for the eBook library.",
-    url: "https://www.gutenberg.org",
-    logo: gutenbergLogo,
-  },
-  {
-    name: "Gutendex",
-    blurb: "Searchable catalog for Project Gutenberg books.",
-    url: "https://gutendex.com",
-  },
-  {
     name: "IGDB",
     blurb: "Game metadata, artwork and release dates.",
     url: "https://www.igdb.com",
@@ -573,27 +551,6 @@ const ADDONS: Credit[] = [
     blurb: "Playback of media already stored on the device.",
     url: "https://www.stremio.com",
     logo: localFilesLogo,
-  },
-];
-
-const MANGA: Credit[] = [
-  {
-    name: "MangaUpdates",
-    blurb: "Series metadata, chapter counts and release tracking.",
-    url: "https://www.mangaupdates.com",
-    logo: mangaupdatesLogo,
-  },
-  {
-    name: "Suwayomi",
-    blurb: "The manga source server Frame connects to.",
-    url: "https://github.com/Suwayomi",
-    logo: suwayomiLogo,
-  },
-  {
-    name: "Mangayomi",
-    blurb: "Source extensions Frame can read.",
-    url: "https://github.com/kodjodevf/mangayomi",
-    logo: mangayomiLogo,
   },
 ];
 
@@ -821,7 +778,6 @@ export function LicensesPanel() {
         subtitle="Sources of the streams themselves."
         items={ADDONS}
       />
-      <Group title="Manga" subtitle="Manga sources, readers and tracking services." items={MANGA} />
       <Group
         title="AI and track identification"
         subtitle="Providers behind natural-language search and song identification."

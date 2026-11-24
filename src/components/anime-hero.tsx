@@ -6,7 +6,6 @@ import { NavArrow } from "@/components/nav-arrow";
 import { PopIcon } from "@/components/pop-icon";
 import { HeroPips } from "./anime-hero/hero-pips";
 import { HeroSlideBadges } from "./anime-hero/hero-slide-badges";
-import { HeroMangaAdaptation } from "./anime-hero/hero-manga-adaptation";
 import { awardSourceMeta, findTopAward, parseAwardYear } from "@/lib/anime-awards";
 import { useAwardMasterVersion } from "@/lib/anime-awards-source";
 import { useAwardIcon } from "@/lib/award-icons";
@@ -16,7 +15,7 @@ import { useT } from "@/lib/i18n";
 import { useMalRating } from "@/lib/mal-rating";
 import { useSettings } from "@/lib/settings";
 import { useTitleLogo } from "@/lib/title-logo";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { observe, usePageVisible } from "@/lib/visibility";
 import { useHeroLogos } from "./anime-hero/use-hero-logos";
 import { MalLogo } from "./icons/mal-logo";
@@ -216,7 +215,6 @@ export function AnimeHero({
           </h2>
           <div className="flex flex-col items-end gap-2.5">
             <div className="flex min-h-[48px] items-center gap-3">
-              <HeroMangaAdaptation meta={current} />
               <HeroSlideBadges meta={current} />
             </div>
             {slides.length > 1 && (

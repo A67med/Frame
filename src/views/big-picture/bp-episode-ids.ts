@@ -4,7 +4,7 @@ import type { Meta } from "@/lib/cinemeta";
 import { registerCache } from "@/lib/memory-profiler";
 import { animeSeriesFromStreamId, fetchEpisodeList, isAnimeId } from "@/lib/series-episodes";
 import { useSettings } from "@/lib/settings";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 
 export type BpEpisodeIds = {
   episodes: PlayEpisode[];

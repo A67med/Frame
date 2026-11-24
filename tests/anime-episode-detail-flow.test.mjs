@@ -216,7 +216,7 @@ test("both strip and grid information buttons pass the same playback payload as 
     "@/components/poster": { Poster: marker("poster") },
     "@/lib/settings": { useSettings: () => ({ settings: { instantPlay: true } }) },
     "@/lib/spoilers": {},
-    "@/lib/view": {
+    "@/app/navigation/view": {
       useView: () => ({
         openPicker: (...args) => calls.push({ play: args }),
         openEpisodeDetail: (...args) => calls.push({ detail: args }),

@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from "react";
 import type { Meta } from "@/lib/cinemeta";
-import type { PlayEpisode } from "@/lib/view";
+import type { PlayEpisode } from "@/app/navigation/view";
 import { persistCritical } from "@/lib/storage-recovery";
 import { isManuallyWatched, subscribeManualWatched } from "@/lib/manual-watched";
 import { isMovieWatchedLocal } from "@/lib/movie-watched";

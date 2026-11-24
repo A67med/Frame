@@ -1,6 +1,6 @@
 import { Check, Gauge, LoaderCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { PlayerSrc } from "@/lib/view";
+import type { PlayerSrc } from "@/app/navigation/view";
 import { switchMediaServerQuality } from "@/lib/media-server/playback";
 import { MEDIA_SERVER_QUALITIES } from "@/lib/media-server/quality";
 import type { MediaServerQuality } from "@/lib/media-server/types";

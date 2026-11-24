@@ -1,6 +1,6 @@
 const plugins: Record<string, string> = {
-  Plugins: "Plugin",
-  Repositories: "Repository",
+  "Plugins": "Plugin",
+  "Repositories": "Repository",
   "Installed plugins": "Plugin installati",
   "Plugin repositories": "Repository dei plugin",
   "Plugins run in the desktop app. Open Frame on your computer to add and manage them.":
@@ -31,8 +31,8 @@ const plugins: Record<string, string> = {
     "Aggiungi un repository, poi installa i provider che vuoi. Compariranno qui.",
   "Add a repository": "Aggiungi un repository",
   "Movies and series": "Film e serie",
-  Script: "Script",
-  Verified: "Verificato",
+  "Script": "Script",
+  "Verified": "Verificato",
   "v{version} available": "v{version} disponibile",
   "Paused after {n} failures. Turn it back on to try again.":
     "In pausa dopo {n} errori. Riattivalo per riprovare.",
@@ -58,7 +58,7 @@ const plugins: Record<string, string> = {
   "v{version} from {repo}, installed {when}.": "v{version} da {repo}, installato {when}.",
   "Update to v{version}": "Aggiorna alla v{version}",
   "Revert to v{version}": "Torna alla v{version}",
-  Reaches: "Raggiunge",
+  "Reaches": "Raggiunge",
   "Any public website. This plugin did not say which sites it uses.":
     "Qualsiasi sito pubblico. Questo plugin non ha indicato quali siti usa.",
   "Seen so far: {hosts}": "Visti finora: {hosts}",
@@ -112,7 +112,6 @@ const plugins: Record<string, string> = {
   "Remove and uninstall {count}?": "Rimuovere e disinstallare {count}?",
   "Could not reach this repository. Installed plugins keep working.":
     "Impossibile raggiungere questo repository. I plugin installati continuano a funzionare.",
-  "This repository lists no plugins.": "Questo repository non elenca plugin.",
   "This repository is not for stream plugins.": "Questo repository non è per plugin di stream.",
   "Not a stream plugin: it exports no getStreams or streams function.":
     "Non è un plugin di stream: non esporta nessuna funzione getStreams o streams.",

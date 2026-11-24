@@ -1,6 +1,6 @@
 import { evictLocalPrefix, idbCacheGet, idbCacheSet } from "@/lib/idb-cache";
 import type { KnownForEntry } from "./rankings";
-import { safeFetch } from "./safe-fetch";
+import { safeFetch } from "../infrastructure/networking/safe-fetch";
 import { HARBOR_DATA_BASE } from "./config/endpoints";
 
 export type RankSource =

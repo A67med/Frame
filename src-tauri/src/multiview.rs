@@ -127,10 +127,6 @@ fn pipe_path(slot: u32) -> String {
     {
         format!("\\\\.\\pipe\\harbor-mv-{}-{}", slot, std::process::id())
     }
-    #[cfg(not(windows))]
-    {
-        format!("/tmp/harbor-mv-{}-{}.sock", slot, std::process::id())
-    }
 }
 
 fn main_hwnd(app: &AppHandle) -> Result<isize, String> {
@@ -141,11 +137,6 @@ fn main_hwnd(app: &AppHandle) -> Result<isize, String> {
             .ok_or_else(|| "main window missing".to_string())?;
         let hwnd = win.hwnd().map_err(|e| format!("hwnd: {e}"))?;
         Ok(hwnd.0 as isize)
-    }
-    #[cfg(not(windows))]
-    {
-        let _ = app;
-        Err("Multiview is currently Windows-only".into())
     }
 }
 
@@ -161,11 +152,6 @@ fn client_scale(parent: isize, css_view_w: f64, css_view_h: f64) -> (f64, f64, i
     } else {
         (1.0, 1.0, 0, 0)
     }
-}
-
-#[cfg(not(windows))]
-fn client_scale(_parent: isize, _css_view_w: f64, _css_view_h: f64) -> (f64, f64, i32, i32) {
-    (1.0, 1.0, 0, 0)
 }
 
 pub(crate) fn css_to_physical(
@@ -253,11 +239,6 @@ fn find_child_by_pid_and_title(parent: isize, want_pid: u32, title: &str) -> Opt
     }
 }
 
-#[cfg(not(windows))]
-fn find_child_by_pid_and_title(_parent: isize, _want_pid: u32, _title: &str) -> Option<isize> {
-    None
-}
-
 #[cfg(windows)]
 pub(crate) fn place_child(hwnd_raw: isize, _parent_raw: isize, x: i32, y: i32, w: i32, h: i32) {
     use windows::Win32::Foundation::HWND;
@@ -295,12 +276,6 @@ fn move_child_only(hwnd_raw: isize, x: i32, y: i32) {
     }
 }
 
-#[cfg(not(windows))]
-pub(crate) fn place_child(_hwnd_raw: isize, _parent_raw: isize, _x: i32, _y: i32, _w: i32, _h: i32) {}
-
-#[cfg(not(windows))]
-fn move_child_only(_hwnd_raw: isize, _x: i32, _y: i32) {}
-
 #[cfg(windows)]
 fn kill_pid(pid: u32) {
     use windows::Win32::Foundation::CloseHandle;
@@ -326,9 +301,6 @@ fn kill_pid(pid: u32) {
             .status();
     }
 }
-
-#[cfg(not(windows))]
-fn kill_pid(_pid: u32) {}
 
 #[cfg(windows)]
 fn kill_orphan_mpv_for_slot(parent: isize, slot: u32, keep_pid: Option<u32>) {
@@ -371,9 +343,6 @@ fn kill_orphan_mpv_for_slot(parent: isize, slot: u32, keep_pid: Option<u32>) {
         kill_pid(pid);
     }
 }
-
-#[cfg(not(windows))]
-fn kill_orphan_mpv_for_slot(_parent: isize, _slot: u32, _keep_pid: Option<u32>) {}
 
 #[cfg(any(windows, test))]
 async fn write_ipc_messages<W>(
@@ -492,15 +461,6 @@ async fn connect_ipc(
 
     tauri::async_runtime::spawn(write_ipc_messages(writer, rx, shutdown_rx));
     Some(tx)
-}
-
-#[cfg(not(windows))]
-async fn connect_ipc(
-    _app: &AppHandle,
-    _slot: u32,
-    _pipe: &str,
-) -> Option<tokio::sync::mpsc::Sender<String>> {
-    None
 }
 
 fn spawn_mpv(

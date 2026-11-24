@@ -10,7 +10,7 @@ import { findCurrent } from "@/lib/iptv/xmltv";
 import type { EpgIndex, EpgProgram, IptvChannel, IptvPlaylist } from "@/lib/iptv/types";
 import type { Meta } from "@/lib/cinemeta";
 import { usePlaylists } from "@/lib/iptv/playlists-store";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 
 export function synthChannelMeta(ch: IptvChannel): Meta {
   return {

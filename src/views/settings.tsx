@@ -29,7 +29,7 @@ import { useThemeLibraryOpen } from "./settings/theme-panel/library-open-store";
 import { BackToTop } from "@/components/back-to-top";
 import { resetOmdbBudget } from "@/lib/providers/omdb";
 import { useSettings } from "@/lib/settings";
-import { useView } from "@/lib/view";
+import { useView } from "@/app/navigation/view";
 import { useT } from "@/lib/i18n";
 import { useMediaQuery } from "@/lib/use-media-query";
 import { useCinematicDesktop } from "@/lib/use-cinematic-desktop";
