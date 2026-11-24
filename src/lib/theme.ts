@@ -116,7 +116,7 @@ export type ThemePreset = {
 
 export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
   ...FRAME_THEME_COLLECTION,
-  // Frame's out-of-the-box look, taken from Default.framestyle.
+  // Frame's built-in default palette, exportable from Theme Studio.
   frame: {
     id: "frame",
     name: "Default",
@@ -143,7 +143,7 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
     bokeh: false,
     fontPair: "general-sans",
   },
-  // True black for OLED screens, taken from Amoled.framestyle.
+  // Frame's built-in true-black palette for OLED screens.
   amoled: {
     id: "amoled",
     name: "OLED Black",

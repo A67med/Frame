@@ -43,7 +43,7 @@ JSON exports contain an optional `design` object. `.framestyle` exports contain 
 
 Existing saved themes are not rewritten. An old `dracula`, `custom`, `royal` or other layout retains its original layout and code. Themes without new design metadata remain valid. Studio labels legacy layouts and allows an explicit conversion to Frame. Save as a new theme preserves the original. Historic `.harborstyle` files, `user:*` identities, storage keys and CSS hooks remain supported.
 
-The repository's `Default.framestyle` and `Amoled.framestyle` now describe the corresponding Frame-layout presets and do not hide navigation destinations. Previously imported copies remain untouched. Custom fonts are local resources and are not embedded in theme exports.
+Default and OLED Black remain built-in Frame-layout presets in `src/lib/theme.ts`; standalone sample files are no longer distributed at the repository root. Users can export their own `.framestyle` copies from Theme Studio. Previously imported copies remain untouched. Custom fonts are local resources and are not embedded in theme exports.
 
 ## Verification
 

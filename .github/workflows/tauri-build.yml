@@ -16,7 +16,6 @@ on:
       - "LICENSE"
       - ".gitignore"
       - ".gitattributes"
-      - ".dockerignore"
       - ".prettierignore"
   workflow_dispatch:
 
